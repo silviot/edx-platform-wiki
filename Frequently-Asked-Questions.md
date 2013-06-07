@@ -4,7 +4,7 @@
 
 'Courseware content' is stored in MongoDB and user-data (e.g. user tables, user state, authN, authZ, etc.) are stored in a relational database. For localdev environments, SQLite is used for the relational database to keep dependencies simple, for production environments mysql is used as the relational database. So there's actually really just two rather than three, from that perspective.
 
-Historically speaking, using MongoDB as a contentstore is relatively new (previous architectures used XML-based files from the filesystem) and it seemed like a good match since courseware are well modeled as flexible JSON documents. The use of relational datastores for user-data predated the transition of the contentstores and we did not migrate those databases to a NoSQL platform.
+In the history of edX, the use of MongoDB as a contentstore is relatively new (previous architectures used XML-based files from the filesystem) and it seemed like a good match since courseware are well modeled as flexible JSON documents. The use of relational datastores for user-data predated the transition of the contentstores and we did not migrate those databases to a NoSQL platform.
 
 ### Are the CMS and LMS suppose to use the same database or separate ones when in production?
 
