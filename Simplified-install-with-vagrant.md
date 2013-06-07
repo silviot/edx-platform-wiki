@@ -58,7 +58,7 @@ Once started, open the following URLs in your browser:
 
 You can develop by editing the files directly in the `edx-platform/` directory you 
 downloaded before, you don't need to connect to the VM to edit them (the VM uses
-those files used to run edX, mirroring the folder in `/edx/edx-platform`).
+those files to run edX, mirroring the folder in `/edx/edx-platform`).
 
 Stopping & starting
 -------------------
@@ -94,7 +94,7 @@ $ vagrant destroy -f && vagrant up
 ```
 
 This will delete the current VM, create a new VM, re-install all the dependencies,
-reconfigure and attempt to restart the servers.
+and reconfigure.
 
 ### "Mounting NFS shared folders failed"
 
