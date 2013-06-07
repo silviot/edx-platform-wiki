@@ -3,13 +3,14 @@ with a minimal amount of steps, using Vagrant. It is recommended for a first
 installation, as it will save you from many of the common pitfalls of the
 installation process.
 
-1. Install Git: http://git-scm.com/downloads
-2. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads
-3. Install Vagrant: http://www.vagrantup.com/ (Vagrant 1.2.2 or later)
-4. Open a terminal
-5. Download the project: `git clone git://github.com/antoviaque/edx-platform.git` (Important! The feature is still being tested, so **the repository is different from the official one**, you need to re-download it)
-6. Enter the project directory: `cd edx-platform/`
-7. Start: `vagrant up`
+1. Make sure you have plenty of available disk space, >1GB
+2. Install Git: http://git-scm.com/downloads
+3. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads
+4. Install Vagrant: http://www.vagrantup.com/ (Vagrant 1.2.2 or later)
+5. Open a terminal
+6. Download the project: `git clone git://github.com/antoviaque/edx-platform.git` (Important! The feature is still being tested, so **the repository is different from the official one**, you need to re-download it)
+7. Enter the project directory: `cd edx-platform/`
+8. Start: `vagrant up`
 
 The last step might require your administrator password to setup NFS. 
 
@@ -96,7 +97,27 @@ $ vagrant destroy -f && vagrant up
 This will delete the current VM, create a new VM, re-install all the dependencies,
 and reconfigure.
 
-### "Mounting NFS shared folders failed"
+### Mounting NFS shared folders
+
+#### "The following SSH command responded with a non-zero exit status."
+
+If you get:
+
+```
+[default] Mounting NFS shared folders...
+The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+mount -o vers=3 192.168.20.1:'/Users/Bluelysium/edx-platform' /edx/edx-platform
+```
+
+Try to disable your firewall (or look at http://askubuntu.com/questions/103910/nfs-is-blocked-by-ufw-even-though-ports-are-opened/104232#104232 for Linux) and retry with the following command to have more debug output:
+
+```
+$ VAGRANT_LOG=debug vagrant destroy -f && vagrant up
+```
+
+#### "It appears your machine doesn't support NFS"
 
 If you get the following error message when you run `$ vagrant up`:
 
