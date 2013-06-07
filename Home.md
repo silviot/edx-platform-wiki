@@ -1,3 +1,4 @@
 Welcome to the edx-platform wiki!
 
-[Frequently Asked Questions](wiki/FAQ)
+* [[Installation Guides]]
+* [[Frequently Asked Questions]]
