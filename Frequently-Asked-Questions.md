@@ -1,3 +1,9 @@
+## User Activation Link
+
+### I have my development server up and running and have registered a user. Where is the link to activate their account?
+
+When running with the development environment settings, the URL with their activation key is logged to the console. Copy it from there and paste it into the browser.
+
 ## Databases
 
 ### Why use three different databases (MySQL, SQLite & MongoDB) rather than a single one?
