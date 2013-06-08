@@ -1,8 +1,8 @@
 ## User Activation Link
 
-### I have my development server up and running and have registered a user. Where is the link to activate their account?
+### I have my development server up and running and have registered a user, but I haven't gotten an email to activate my new account. How do I activate this account?
 
-When running with the development environment settings, the URL with their activation key is logged to the console. Copy it from there and paste it into the browser.
+When running with the development environment settings, registration emails are not sent out. However, the URL with their activation key is logged to the console. Just copy it from there and paste it into the browser.
 
 ## Databases
 
