@@ -19,3 +19,13 @@ CMS and LMS should share the same databases (mysql/RDS for user-data and MongoDB
 ### With django-admin syncdb and migrate - is that run both in LMS and CMS or is it sufficient to run once?
 
 Yes, there are no new CMS specific tables in Django, so you should just have to run it once.
+
+## Outside access
+
+### How to make the site accessible to external devices?
+
+Modify the server deployment commands to include the IP address, like this: `rake cms[dev,0.0.0.0:8001]` and `rake lms[cms.dev,0.0.0.0:8000]`.
+
+From a [stackoverflow question on 0.0.0.0 in Django](http://stackoverflow.com/questions/1621457/about-ip-0-0-0-0django),
+
+> 0.0.0.0:80 is a shortcut meaning "bind to all IP addresses this computer supports". 127.0.0.1:80 makes it bind only to the "lo" or "loopback" interface. If you have just one NIC with just one IP address, you could bind to it explicitly with, say, "192.168.1.1:80" (if 192.168.1.1 was your IP address), or you could list all the IPs your computer responds to, but 0.0.0.0:80 is a shortcut for that.
