@@ -27,6 +27,12 @@ CMS and LMS should share the same databases (mysql/RDS for user-data and MongoDB
 
 Yes, there are no new CMS specific tables in Django, so you should just have to run it once.
 
+## Creating courses in Studio
+
+### I created a new course in Studio, but when I go to the LMS, I don't see it listed?
+
+Be sure to run the lms as `rake lms[cms.dev]` (and you can specify IP/port numbers as listed below). This configuration cms.dev will read the courseware from the MongoDB that Studio uses. As a bit of historical information, older courseware used to run as XML from the filesystem and the existing `rake lms` uses that configuration.
+
 ## Outside access
 
 ### How to make the site accessible to external devices?
