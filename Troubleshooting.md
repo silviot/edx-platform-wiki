@@ -29,3 +29,37 @@ db.contents.find()
 { "_id" : ObjectId("515c8eedb02379878b000006"), "votes" : { "up" : [ ], "down" : [ ], "up_count" : 0, "down_count" : 0, "count" : 0, "point" : 0 }, "tags_array" : [ ], "comment_count" : 0, "at_position_list" : [ ], "title" : "this should show up in alpha", "body" : "yes", "course_id" : "MITx/999/Robot_Super_Course", "commentable_id" : "c8d316ca8fc94e71ba6c8cc705e156e1", "_type" : "CommentThread", "anonymous" : false, "anonymous_to_peers" : false, "closed" : false, "author_id" : "1", "updated_at" : ISODate("2013-04-03T20:19:57.056Z"), "created_at" : ISODate("2013-04-03T20:19:57.056Z"), "last_activity_at" : ISODate("2013-04-03T20:19:57.056Z") }
 ```
 * Discussion Forums Data formats can be found here: http://data.edx.org/internal_data_formats/discussion_data.html
+
+### Handy commands to know
+#### Django apps (Studio and LMS)
+* To get rid of existing courses and templates:
+```
+mongo xmodule --eval "db.dropDatabase()"
+mongo xcontent --eval "db.dropDatabase()"
+```
+* To seed and/or update the templates:
+`rake django-admin[update_templates,cms,dev]`
+* To seed the permissions for the comment service for user 'robot' course MITx/999/Robot_Super_Course
+```
+export DJANGO_SETTINGS_MODULE=lms.envs.dev
+export PYTHONPATH=.
+django-admin.py seed_permissions_roles "MITx/999/Robot_Super_Course"
+django-admin.py assign_role robot Moderator "MITx/999/Robot_Super_Course"
+django-admin.py assign_role robot Administrator "MITx/999/Robot_Super_Course"
+```
+* To sync the user info from cms/lms over to the comment service:
+`rake django-admin[sync_user_info,lms,dev]`
+
+#### Comment Service
+* To run the automated tests:
+`rspec spec`
+* To delete the comment service db:
+`mongo cs_comments_service_development --eval "db.dropDatabase()"`
+* To reinitialize the comment service db:
+`bundle exec rake db:init`
+* To re-index the db (must have some data in it):
+`bundle exec rake db:reindex_search`
+* To start up the comment service:
+`ruby app.rb`
+* In your dev environment, to connect to a comment service other than localhost, put this into your settings.py file:
+`COMMENTS_SERVICE_URL = 'http://other_host:4567'`
