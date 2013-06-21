@@ -8,7 +8,7 @@
 
 * If you added users in LMS/CMS while the discussion service was not running, you need to one-way sync your users over to the discussion service back end DB. Do this with:
 ```
-rake django-admin[sync_user_info,lms,dev]
+rake django-admin[sync_user_info]
 ```
 
 * Mongo db info for troubleshooting from the courseware side, for course number 999:
