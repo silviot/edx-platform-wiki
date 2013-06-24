@@ -60,6 +60,21 @@ django-admin.py assign_role robot Administrator "MITx/999/Robot_Super_Course"
 rake django-admin[sync_user_info,lms,dev]
 ```
 
+#### Mongo (courseware)
+* To list all the courses:
+```
+use xmodule
+db.modulestore.find( { "_id.category" : "course" }, {'name':'1'} )
+```
+* To find all the updates for courses numbered 999:
+```
+db.modulestore.find({'_id.course': '999','_id.name':'updates'})
+```
+* To remove courses numbered 999 from all orgs:
+```
+db.modulestore.remove({'_id.course': '999'})
+```
+
 #### Comment Service
 * To run the automated tests:
 ```
