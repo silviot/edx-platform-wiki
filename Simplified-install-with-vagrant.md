@@ -85,7 +85,9 @@ $ vagrant up --no-provision
 Troubleshooting
 ---------------
 
-If you have any problem installing or starting the VM with Vagrant, first check that you have the required versions of VirtualBox (4.2.14 or later) and Vagrant (1.2.2 or later).
+### Check versions of VirtualBox/Vagrant
+
+If you have any problem installing or starting the VM with Vagrant, first check that you have the required versions of **VirtualBox (4.2.14 or later)** and **Vagrant (1.2.2 or later)**.
 
 ### Reinstalling
 
