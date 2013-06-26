@@ -5,7 +5,7 @@ installation process.
 
 1. Make sure you have plenty of available disk space, >1GB
 2. Install Git: http://git-scm.com/downloads
-3. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads
+3. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads (VirtualBox 4.2.14 or later)
 4. Install Vagrant: http://www.vagrantup.com/ (Vagrant 1.2.2 or later)
 5. Open a terminal
 6. Download the project: `git clone git://github.com/antoviaque/edx-platform.git` (Important! The feature is still being tested, so **the repository is different from the official one**, you need to re-download it)
@@ -84,6 +84,8 @@ $ vagrant up --no-provision
 
 Troubleshooting
 ---------------
+
+If you have any problem installing or starting the VM with Vagrant, first check that you have the required versions of VirtualBox (4.2.14 or later) and Vagrant (1.2.2 or later).
 
 ### Reinstalling
 
