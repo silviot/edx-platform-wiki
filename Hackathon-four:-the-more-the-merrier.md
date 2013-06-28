@@ -1,3 +1,8 @@
+# The "Community" Edition
+During this hackathon we are lucky to have some external friends and family at edX HQ. The best way to make friends is to hack on projects, so that's just what we're doing. We count among our friends this time:
+* Part of the Stanford team
+* ...
+
 # Why this would be useful
 * Learn about parts of the codebase that we rarely touch
 * Work with people we don't get to normally
