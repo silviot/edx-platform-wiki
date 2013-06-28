@@ -8,6 +8,8 @@
 1. July 8, 2013: *hack*
 2. July 9, 2013: *demo* (3:30-5pm) (will insert Google Hangout link here)
 
+# The Proposed Hacks
+
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
 | @markchang | demo-able instructor analytics | |
