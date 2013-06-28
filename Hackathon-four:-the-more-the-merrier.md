@@ -18,3 +18,4 @@ During this hackathon we are lucky to have some external friends and family at e
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
 | @markchang | demo-able instructor analytics | |
+| @Slater-Victoroff | extensible library for fuzz tests | |
