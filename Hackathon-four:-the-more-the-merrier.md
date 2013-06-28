@@ -19,3 +19,4 @@ During this hackathon we are lucky to have some external friends and family at e
 |----------|-------------|--------------------|
 | @markchang | demo-able instructor analytics | |
 | @Slater-Victoroff | extensible library for fuzz tests | |
+| @sarina | emoji in the forums | |
