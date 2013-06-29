@@ -17,6 +17,6 @@ During this hackathon we are lucky to have some external friends and family at e
 
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
-| @markchang | demo-able instructor analytics | |
+| @markchang | facebook-style stickers in the forums | |
 | @Slater-Victoroff | extensible library for fuzz tests | |
 | @sarina | emoji in the forums | |
