@@ -20,4 +20,4 @@ During this hackathon we are lucky to have some external friends and family at e
 | @markchang | facebook-style stickers in the forums | |
 | @Slater-Victoroff | extensible library for fuzz tests | |
 | @sarina | emoji in the forums | |
-| @wedaly | [diff-cover](https://github.com/edx/diff-cover) features: show original source lines in the HTML report, accept multiple coverage XML inputs, show pep8/pylint violations | |
+| @wedaly | New features for [diff-cover](https://github.com/edx/diff-cover): show original source lines in the HTML report, CSS styling of reports, combine multiple coverage XML inputs, show pep8/pylint violations, plug-in architecture using [stevadore](http://stevedore.readthedocs.org/en/latest/).  Any help much appreciated :) | |
