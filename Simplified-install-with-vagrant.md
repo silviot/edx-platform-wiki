@@ -101,10 +101,12 @@ $ vagrant destroy -f && vagrant up
 This will delete the current VM, create a new VM, re-install all the dependencies,
 and reconfigure.
 
-### Does this work from AWS or any VM I can rent on Internet?
+### Does this work from AWS or any VM provider on Internet?
 
 No, not unless the VM you want to run this from supports nested virtualization, as Vagrant will need to instantiate a VM on his own. Note that this is for setting up a local development version, not a production
 environment - try it first on your local computer, ie on bare metal/not from inside a VM.
+
+See [edx/configuration](https://github.com/edx/configuration) for production deployment on AWS.
 
 ### Mounting NFS shared folders
 
