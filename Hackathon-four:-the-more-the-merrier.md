@@ -22,3 +22,4 @@ During this hackathon we are lucky to have some external friends and family at e
 | @sarina | emoji in the forums | |
 | @wedaly | New features for [diff-cover](https://github.com/edx/diff-cover): show original source lines in the HTML report, CSS styling of reports, combine multiple coverage XML inputs, show pep8/pylint violations, plug-in architecture using [stevadore](http://stevedore.readthedocs.org/en/latest/).  Any help much appreciated :) | |
 | @pg | integrate [pythontutor.com](http://pythontutor.com/) into platform and forums for CS courses (since lots of students are already informally using it for 6.00x) | |
+| @natea | edX on [Docker](http://docker.io). Some work was already done on this at the last hackathon by Cale. See his [summary](https://edx-wiki.atlassian.net/wiki/display/ENG/How+we+deal+with+tons+of+services+on+setup+with+Docker), so this would be to continue that work. | |
