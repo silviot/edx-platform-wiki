@@ -42,7 +42,11 @@ Follow these guidelines:
         arg1, arg2, arg3
     ) 
 
-Important points: don't over-indent to make things line up with punctuation on the first line; closing paren should be on a line by itself, indented the same as the first line, and the first line ends with the open paren.
+Important points: 
+
+* Don't over-indent to make things line up with punctuation on the first line.
+* Closing paren should be on a line by itself, indented the same as the first line.
+* The first line ends with the open paren.
  
 Follow `PEP 257`_
 -----------------
