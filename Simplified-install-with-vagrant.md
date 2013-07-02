@@ -3,7 +3,7 @@ with a minimal amount of steps, using Vagrant. It is recommended for a first
 installation, as it will save you from many of the common pitfalls of the
 installation process.
 
-1. Make sure you have plenty of available disk space, >1GB
+1. Make sure you have plenty of available disk space, >5GB
 2. Install Git: http://git-scm.com/downloads
 3. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads (VirtualBox 4.2.14 or later)
 4. Install Vagrant: http://www.vagrantup.com/ (Vagrant 1.2.2 or later)
