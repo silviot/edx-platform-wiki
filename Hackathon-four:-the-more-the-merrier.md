@@ -11,7 +11,7 @@ During this hackathon we are lucky to have some external friends and family at e
 
 # The Schedule
 1. July 8, 2013: *hack*
-2. July 9, 2013: *demo* (3:30-5pm) (will insert Google Hangout link here)
+2. July 9, 2013: *demo* (3:30-5pm) ([Google Hangout](https://plus.google.com/hangouts/_/calendar/bWNoYW5nQGVkeC5vcmc.6pftm7tku5r4v8d8ofn8udukjo))
 
 # The Proposed Hacks
 
