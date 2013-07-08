@@ -19,7 +19,7 @@ During this hackathon we are lucky to have some external friends and family at e
 |----------|-------------|--------------------|
 | @markchang | facebook-style stickers in the forums | |
 | @Slater-Victoroff | extensible library for fuzz tests | |
-| @sarina | emoji in the forums | |
+| @sarina | emoji in the forums | @lapentab |
 | @wedaly | New features for [diff-cover](https://github.com/edx/diff-cover): show original source lines in the HTML report, CSS styling of reports, combine multiple coverage XML inputs, show pep8/pylint violations, plug-in architecture using [stevadore](http://stevedore.readthedocs.org/en/latest/).  Any help much appreciated :) | |
 | @pg | integrate [pythontutor.com](http://pythontutor.com/) into edX platform (useful for CS courses) | @rocha |
 | @natea | edX on [Docker](http://docker.io). Some work was already done on this at the last hackathon by Cale. See his [summary](https://edx-wiki.atlassian.net/wiki/display/ENG/How+we+deal+with+tons+of+services+on+setup+with+Docker), so this would be to continue that work. | |
