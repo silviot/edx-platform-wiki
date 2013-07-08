@@ -144,3 +144,19 @@ You need to install NFS. Under Debian/Ubuntu, for example:
 ```
 $ sudo apt-get install nfs-common nfs-kernel-server
 ```
+
+#### Download of `precise32` image fails
+
+If the download of the base image for the virtual machine, `precise32`, takes too much time or if you have an unreliable connection, you can download it manually from: http://files.vagrantup.com/precise32.box
+
+Then:
+
+```
+$ vagrant box add precise32 /path/to/precise32.box
+```
+
+Finally, from the `edx-platform` directory, run:
+
+```
+$ vagrant destroy -f && vagrant up
+```
