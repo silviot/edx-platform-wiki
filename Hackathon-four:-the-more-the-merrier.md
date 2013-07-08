@@ -23,6 +23,6 @@ During this hackathon we are lucky to have some external friends and family at e
 | @wedaly | New features for [diff-cover](https://github.com/edx/diff-cover): show original source lines in the HTML report, CSS styling of reports, combine multiple coverage XML inputs, show pep8/pylint violations, plug-in architecture using [stevadore](http://stevedore.readthedocs.org/en/latest/).  Any help much appreciated :) | @pbaratta |
 | @pg | integrate [pythontutor.com](http://pythontutor.com/) into edX platform (useful for CS courses) | @rocha |
 | @natea | edX on [Docker](http://docker.io). Some work was already done on this at the last hackathon by Cale. See his [summary](https://edx-wiki.atlassian.net/wiki/display/ENG/How+we+deal+with+tons+of+services+on+setup+with+Docker), so this would be to continue that work. | |
-| @csvoss | On the progress page, display a grade for only the sections attempted so far. | @felixsun, @csvoss |
+| @csvoss | On the progress page, display a projected grade for only the sections attempted so far. | @felixsun, @csvoss |
 | @marcotuts| concept sketches,clickable walkthrough, plus (?) for learner analytics redesign | 
 | @mlsteele, @rlucioni| courseware traversal visualization | 
