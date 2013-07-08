@@ -25,3 +25,4 @@ During this hackathon we are lucky to have some external friends and family at e
 | @natea | edX on [Docker](http://docker.io). Some work was already done on this at the last hackathon by Cale. See his [summary](https://edx-wiki.atlassian.net/wiki/display/ENG/How+we+deal+with+tons+of+services+on+setup+with+Docker), so this would be to continue that work. | |
 | @cvoss | Display a grade for only the sections attempted so far. | @felixsun |
 | @marcotuts| concept sketches,clickable walkthrough, plus (?) for learner analytics redesign | 
+| @mlsteele, @rlucioni| courseware traversal visualization | 
