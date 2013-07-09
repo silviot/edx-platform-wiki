@@ -124,13 +124,13 @@ Vagrant assumes that this means the command failed!
 mount -o vers=3 192.168.20.1:'/Users/Bluelysium/edx-platform' /edx/edx-platform
 ```
 
-Under MacOs, try to re-run - Vagrant is known to sometimes fail on the first try: 
+Under MacOs, try to re-run - Vagrant is known to sometimes fail on the first attempt to mount a NFS folder: 
 
 ```
 $ vagrant halt ; vagrant up
 ```
 
-Try to disable your firewall (or look at http://askubuntu.com/questions/103910/nfs-is-blocked-by-ufw-even-though-ports-are-opened/104232#104232 for Linux) and retry with the following command to have more debug output:
+If it still doesn't work, try to disable your firewall (or look at http://askubuntu.com/questions/103910/nfs-is-blocked-by-ufw-even-though-ports-are-opened/104232#104232 for Linux) and retry with the following command to have more debug output:
 
 ```
 $ VAGRANT_LOG=debug vagrant destroy -f && vagrant up
