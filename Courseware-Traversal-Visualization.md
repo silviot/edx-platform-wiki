@@ -1,4 +1,4 @@
-For [[Hackathon 4|Hackathon four: the more the merrier]] Miles Steele abd Renzo Lucioni prototyped a method of visualizing student paths through courseware. We came up with this interactive graph displaying randomly generated data.
+For [[Hackathon 4|Hackathon four: the more the merrier]], Miles Steele abd Renzo Lucioni prototyped a method of visualizing student paths through courseware. We came up with this interactive graph displaying randomly generated data.
 
 [[GitHub Repository|https://github.com/mlsteele/courseware-traversal]]
 
