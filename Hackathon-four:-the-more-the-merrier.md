@@ -10,6 +10,7 @@ During this hackathon we are lucky to have some external friends and family at e
 * Adding [[In-Progress Grades]] and testing the grades system
 * Prototype [[Courseware Traversal Visualization]]
 * [Jenkins Ansible provisioning] (https://github.com/edx/configuration/tree/will/jenkins)
+* Cleaning: a [hack](https://github.com/edx/edx-platform/pull/355) [in](https://github.com/edx/edx-platform/pull/352) [four](https://github.com/edx/edx-platform/pull/347) [parts](https://github.com/edx/edx-platform/pull/353)
 
 # Why this would be useful
 * Learn about parts of the codebase that we rarely touch
