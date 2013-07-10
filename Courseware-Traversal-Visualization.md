@@ -2,6 +2,8 @@ For [[Hackathon 4|Hackathon four: the more the merrier]], Miles Steele abd Renzo
 
 [[GitHub Repository|https://github.com/mlsteele/courseware-traversal]]
 
+[[Live Demo|http://mlsteele.github.io/courseware-traversal/]]
+
 In the colored graph pictured below, the thickness of each line represents how many students followed the path indicated by that line. Mousing over a line will make it black and more opaque.
 ![visualization-colorful](http://snag.gy/mv1lK.jpg)
 
