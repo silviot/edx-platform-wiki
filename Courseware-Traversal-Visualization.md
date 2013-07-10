@@ -5,3 +5,6 @@ In this colored graph, the thickness of each line represents how many students f
 
 In this grayscale graph, each line represents the path of a single student. Mousing over a line will make it red and more opaque.
 ![visualization-br](http://snag.gy/tIzZN.jpg)
+
+Neither of these graphs have an explicit horizontal axis. What appears to be a horizontal axis is composed of student paths which visit each component of the courseware in order.
+
