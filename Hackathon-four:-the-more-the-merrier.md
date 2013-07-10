@@ -7,6 +7,7 @@ During this hackathon we are lucky to have some external friends and family at e
 
 * [[Diff Coverage]] hacks
 * Adding [[In-Progress Grades]] and testing the grades system
+* Prototype [[Courseware Traversal Visualization]]
 
 # Why this would be useful
 * Learn about parts of the codebase that we rarely touch
