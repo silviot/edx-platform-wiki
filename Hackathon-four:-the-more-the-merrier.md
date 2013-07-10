@@ -9,6 +9,7 @@ During this hackathon we are lucky to have some external friends and family at e
   - [Diff Quality](https://github.com/edx/edx-platform/wiki/Diff-Quality)
 * Adding [[In-Progress Grades]] and testing the grades system
 * Prototype [[Courseware Traversal Visualization]]
+* [Jenkins Ansible provisioning] (https://github.com/edx/configuration/tree/will/jenkins)
 
 # Why this would be useful
 * Learn about parts of the codebase that we rarely touch
