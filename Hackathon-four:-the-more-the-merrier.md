@@ -5,7 +5,7 @@ During this hackathon we are lucky to have some external friends and family at e
 
 # The Hacks
 
-* [[Diff Coverage]] hacks
+* [Diff Cover](https://github.com/edx/diff-cover) hacks
   - [Diff Quality](https://github.com/edx/edx-platform/wiki/Diff-Quality)
 * Adding [[In-Progress Grades]] and testing the grades system
 * Prototype [[Courseware Traversal Visualization]]
