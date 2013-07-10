@@ -6,6 +6,7 @@ During this hackathon we are lucky to have some external friends and family at e
 # The Hacks
 
 * [[Diff Coverage]] hacks
+* Adding [[In-Progress Grades]] and testing the grades system
 
 # Why this would be useful
 * Learn about parts of the codebase that we rarely touch
