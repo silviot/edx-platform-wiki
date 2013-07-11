@@ -35,3 +35,7 @@ db.contents.find()
 { "_id" : ObjectId("515c8eedb02379878b000006"), "votes" : { "up" : [ ], "down" : [ ], "up_count" : 0, "down_count" : 0, "count" : 0, "point" : 0 }, "tags_array" : [ ], "comment_count" : 0, "at_position_list" : [ ], "title" : "this should show up in alpha", "body" : "yes", "course_id" : "MITx/999/Robot_Super_Course", "commentable_id" : "c8d316ca8fc94e71ba6c8cc705e156e1", "_type" : "CommentThread", "anonymous" : false, "anonymous_to_peers" : false, "closed" : false, "author_id" : "1", "updated_at" : ISODate("2013-04-03T20:19:57.056Z"), "created_at" : ISODate("2013-04-03T20:19:57.056Z"), "last_activity_at" : ISODate("2013-04-03T20:19:57.056Z") }
 ```
 * Discussion Forums Data formats can be found here: http://data.edx.org/internal_data_formats/discussion_data.html
+* In your dev environment, to connect to a comment service other than localhost, put this into your settings.py file:
+```
+COMMENTS_SERVICE_URL = 'http://other_host:4567'
+```
