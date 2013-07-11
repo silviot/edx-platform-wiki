@@ -1,6 +1,11 @@
 ### Studio
 
-* **Q:** I have created a course in Studio on my development server but when I press the View Live button to view the course in lms, I get a 404 not found error. **A:** `rake lms`, or `rake lms[dev]` will start up lms using the courseware defined in xml files in the data dir. In order for the lms to use the mongo backed DB for courseware (which is where Studio creates courses), you should use: `rake lms[cms.dev]` This will use the settings file located at lms/envs/cms/dev.py
+* **Q:** I have created a course in Studio on my development server but when I press the View Live button to view the course in lms, I get a 404 not found error.
+* **A:** `rake lms`, or `rake lms[dev]` will start up lms using the courseware defined in xml files in the data dir. In order for the lms to use the mongo backed DB for courseware (which is where Studio creates courses), you should use: `rake lms[cms.dev]` This will use the settings file located at lms/envs/cms/dev.py
+
+* **Q:** I created a new course in Studio, but when I go to the LMS, I don't see it listed?
+* **A:** Be sure to run the lms as `rake lms[cms.dev]` (and you can specify IP/port numbers as listed below). This configuration cms.dev will read the courseware from the MongoDB that Studio uses. As a bit of historical information, older courseware used to run as XML from the filesystem and the existing `rake lms` uses that configuration.
+
 
 ### Discussion Service
 
