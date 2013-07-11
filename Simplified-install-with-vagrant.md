@@ -93,6 +93,8 @@ $ vagrant destroy -f && vagrant up
 Dealing with line endings and symlinks under Windows
 ----------------------------------------------------
 
+To run the commands below, you will need to install [cygwin](http://cygwin.com/install.html), and type the commands from the Cygwin terminal. If this sounds a bit scary, note that you can use the [MITx Vagrant box](https://people.csail.mit.edu/ichuang/edx/) instead. It will be less handy to contribute to the code source, but that might be easier if all you want is to get up and running under Windows.
+
 Before running `vagrant up` under Windows, go to the root `edx-platform` folder 
 and enter the following commands:
 
