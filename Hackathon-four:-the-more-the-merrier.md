@@ -11,6 +11,7 @@ During this hackathon we are lucky to have some external friends and family at e
 * Prototype [[Courseware Traversal Visualization]]
 * [Jenkins Ansible provisioning] (https://github.com/edx/configuration/tree/will/jenkins)
 * Cleaning: a [hack](https://github.com/edx/edx-platform/pull/355) [in](https://github.com/edx/edx-platform/pull/352) [four](https://github.com/edx/edx-platform/pull/347) [parts](https://github.com/edx/edx-platform/pull/353)
+* Integrating [Online Python Tutor](http://www.pythontutor.com) visualizations into edX Studio (in [`rocha/pythontutor` branch](https://github.com/edx/edx-platform/tree/rocha/pythontutor) of edX platform)
 
 # Why this would be useful
 * Learn about parts of the codebase that we rarely touch
