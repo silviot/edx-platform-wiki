@@ -57,7 +57,3 @@ bundle exec rake db:reindex_search
 ```
 ruby app.rb
 ```
-* In your dev environment, to connect to a comment service other than localhost, put this into your settings.py file:
-```
-COMMENTS_SERVICE_URL = 'http://other_host:4567'
-```
