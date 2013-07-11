@@ -1,4 +1,3 @@
-### Handy commands to know
 #### Django apps (Studio and LMS)
 * To get rid of existing courses and templates:
 ```
