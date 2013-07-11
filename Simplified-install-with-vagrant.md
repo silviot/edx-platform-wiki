@@ -8,6 +8,8 @@ See the repository README to get the [installation instructions](https://github.
 Troubleshooting
 ---------------
 
+Note: This section deals with issues specific to the Vagrant install - see also the [general troubleshooting page](Troubleshooting) for more common issues.
+
 ### Check versions of VirtualBox/Vagrant
 
 If you have any problem installing or starting the VM with Vagrant, first check that you have the required versions of **VirtualBox (4.2.12)** and **Vagrant (1.2.2 or later)**.
