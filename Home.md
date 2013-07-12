@@ -12,4 +12,4 @@ Welcome to the edx-platform wiki!
 * [[Python Guidelines]]
 * [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/doc/testing.md)
 * [[Hackathons]]
-* [[Writing new XModules]]
+* [[Writing easily XBlock portable XModules]]
