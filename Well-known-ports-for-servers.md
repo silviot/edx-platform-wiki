@@ -1,4 +1,4 @@
-Here is a list of default ports associated with servers both those developed by edX and supporting servers(ie, db, web server, queue).
+edX leverages a wide variety of servers. Here is a list of default ports associated with servers both those developed by edX and supporting servers(ie, db, web server, queue). The ports are assigned differently based on development verses production. 
 
 <table cellpadding="0" cellspacing="0" class="c11">
 	<tbody>
