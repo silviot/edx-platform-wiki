@@ -2,6 +2,10 @@ Here is a list of default ports associated with servers both those developed by 
 
 <table cellpadding="0" cellspacing="0" class="c11">
 	<tbody>
+                <tr>
+			<th>server</th>
+			<th>dev</th>
+                </td>
 		<tr>
 			<td>mongod</td>
 			<td>27017</td>
@@ -13,6 +17,10 @@ Here is a list of default ports associated with servers both those developed by 
 		<tr>
 			<td>nginx</td>
 			<td>80</td>
+		</tr>
+		<tr>
+			<td>Rabbit MQ</td>
+			<td>5672</td>
 		</tr>
 		<tr >
 			<td>lms</td>
