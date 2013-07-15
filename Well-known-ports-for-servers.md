@@ -18,11 +18,6 @@ Here is a list of default ports associated with servers both those developed by 
 			<td></td>
 		</tr>
 		<tr>
-			<td>nginx</td>
-			<td>80</td>
-                        <td>80</td>
-		</tr>
-		<tr>
 			<td>Rabbit MQ</td>
 			<td>5672</td>
                         <td>5672</td>
