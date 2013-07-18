@@ -2,6 +2,14 @@
 
 When running with the development environment settings, registration emails are not sent out. However, the URL with their activation key is logged to the console. Just copy it from there and paste it into the browser.
 
+To make the registration emails being sent out, change the file edx-platform/cms/envs/common.py the line
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+to the line
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 #### How do I specify the image for my course?
 
 Using Studio, upload an image named images_course_image.jpg
