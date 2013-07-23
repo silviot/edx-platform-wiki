@@ -7,6 +7,7 @@ Welcome to the edx-platform wiki!
 * [[Shell Commands]]
 * [[Troubleshooting]]
 * [[Well known ports for servers]]
+* [[Changelog]]
 
 ### Development
 
