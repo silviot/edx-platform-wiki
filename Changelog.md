@@ -1,0 +1,1 @@
+A more product-focused log of changes to the edX platform. Pretty large-grain at the moment, and mostly user-facing changes. We'll iterate.
