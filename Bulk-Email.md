@@ -1,4 +1,4 @@
-# Bulk Email
+## Overview
 
 Course staff can now compose emails and send them to course staff.  The
 key features are:
@@ -12,14 +12,14 @@ key features are:
 
 * Mails are CAN-SPAM compliant: messages automatically have an optout link in the footer.
 
-Credit goes to [Jason Bau](jb) for developing the
-feature in Class2Go.  Students [Kevin Lau](kl) and [Akshay
-Jaggadish](aj) took that code and ported to OpenEdX over Summer
+Credit goes to Jason Bau (<jbau@stanford.edu>) for developing the
+feature in Class2Go.  Students Kevin Luo (<kevluo@stanford.edu>) and Akshay
+Jaggadish <akshayj@berkeley.edu> took that code and ported to OpenEdX over Summer
 2013.
 
-  [jb]: mailto:jbau@stanford.edu
-  [kl]: mailto:kevluo@stanford.edu
-  [aj]: mailto:akshayj@berkeley.edu
+
+## Feature Description
+
 
 ![Creating an email](image/bulkemail-editor.png)
 
@@ -30,4 +30,4 @@ messages on our behalf using DKIM to reduce the likelihood that they
 will be treated by spam by the receiver.  Not the signature in the
 following screenshot.
 
-![Message is signed](image/bulkemail-dkim.png)
+![Message signing](image/bulkemail-dkim.png)
