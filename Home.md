@@ -15,3 +15,7 @@ Welcome to the edx-platform wiki!
 * [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/doc/testing.md)
 * [[Hackathons]]
 * [[Writing easily XBlock portable XModules]]
+
+## Features
+
+* [[Bulk Email]]
