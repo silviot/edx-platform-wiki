@@ -98,6 +98,7 @@ To run the commands below, you will need to install [http://cygwin.com/install.h
 Before running `vagrant up` under Windows, go to the root `edx-platform` folder 
 and enter the following commands:
 
+ # You need to run this from cygwin, not the Windows command-line (see above)
  git rm --cached -r . && git reset --hard
  git config --global alias.add-symlink '!__git_add_symlink(){ dst=$(echo "$2")/../$(echo "$1"); if [ -e "$dst" ]; then hash=$(echo "$1" | git hash-object -w --stdin); git update-index --add --cacheinfo 120000 "$hash" "$2"; git checkout -- "$2"; else echo "ERROR: Target $dst does not exist!"; echo "       Not creating invalid symlink."; fi; }; __git_add_symlink "$1" "$2"'
  git config --global alias.rm-symlink '!__git_rm_symlink(){ git checkout -- "$1"; link=$(echo "$1"); POS=$'\''/'\''; DOS=$'\''\\\\'\''; doslink=${link//$POS/$DOS}; dest=$(dirname "$link")/$(cat "$link"); dosdest=${dest//$POS/$DOS}; if [ -f "$dest" ]; then rm -f "$link"; cmd //C mklink //H "$doslink" "$dosdest"; elif [ -d "$dest" ]; then rm -f "$link"; cmd //C mklink //J "$doslink" "$dosdest"; else echo "ERROR: Something went wrong when processing $1 . . ."; echo "       $dest may not actually exist as a valid target."; fi; }; __git_rm_symlink "$1"'
