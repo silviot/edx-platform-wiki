@@ -53,3 +53,5 @@ following screenshot.
 ## Optouts
 
 Users have the option to opt out of course specific emails in the user dashboard through an Email Settings link for each course.
+
+![Optout UI](image/bulkemail-optout.png)
