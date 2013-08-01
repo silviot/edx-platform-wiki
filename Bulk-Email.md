@@ -36,7 +36,10 @@ The djangoapp bulk_email handles the email-sending action by getting the recipie
 list and batching the emails to different celery tasks to do the actual sending. The
 number of emails each task sends is configurable with EMAILS_PER_TASK. It requires
 the lynx package to convert HTML email to plaintext for multipart emails. SMTP errors
-are handled appropriately by retrying or falling through to the next email. 
+are handled appropriately by retrying or falling through to the next email. There are
+several configurable settings with defaults. DEFAULT_BULK_FROM_EMAIL specifies the
+from address for email. EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD,
+and EMAIL_USE_TLS are for the SMTP email backend settings.
 
 ![Resulting message](image/bulkemail-footer.png)
 
@@ -46,3 +49,8 @@ will be treated by spam by the receiver.  Not the signature in the
 following screenshot.
 
 ![Message signing](image/bulkemail-dkim.png)
+
+## Optouts
+
+Users have the option to opt out of course specific emails in the user dashboard through an Email Settings link for each course.
+
