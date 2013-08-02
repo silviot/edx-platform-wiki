@@ -6,7 +6,7 @@ IT HASN'T BEEN PULLED INTO THE EDX-CORE YET.
 
 ## Overview
 
-Course staff can now compose emails and send them to course staff.  The
+Course staff can now compose emails and send them to course members.  The
 key features are:
 
 * Ability to compose HTML messages in the site.
@@ -32,7 +32,10 @@ International Content - Unicode characters in the email subject and body is supp
 ## Feature Description
 
 Instructors access the feature through the instructor dashboard by clicking the Email link.
-This is toggled by the feature flag ENABLE_INSTRUCTOR_EMAIL.
+This is toggled by the feature flag ENABLE_INSTRUCTOR_EMAIL. The HTML editor is ported from
+the Studio side to allow users to compose email either visually or in raw HTML. It is loaded
+as an XModule which bring some unused code, so eventually factoring a self-contained library
+will be good.
 ![Creating an email](image/bulkemail-editor.png)
 
 ## Backend
@@ -59,6 +62,6 @@ information.
 
 ## Optouts
 
-Users have the option to opt out of course specific emails in the user dashboard through an Email Settings link for each course. If they chose to do so, they will not receive emails sent by the instructor for the course.
+Users have the option to opt out of course specific emails in the user dashboard through an Email Settings link for each course.
 
 ![Optout UI](image/bulkemail-optout.png)
