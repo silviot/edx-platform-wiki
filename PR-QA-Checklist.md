@@ -3,13 +3,15 @@
 # Before you Review #
 * Read the [[Python Guidelines]]. Especially follow the links to Pep8 and Pep257.
 * Read [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/doc/testing.md)
+* Read [Internationalization/Localization](https://edx-wiki.atlassian.net/wiki/pages/viewpage.action?pageId=12517501&src=search)
 * Read [Strunk & White](https://en.wikipedia.org/wiki/The_Elements_of_Style)
 
 # The QA Checklist #
 * Quiz the authors (face to face if possible) about how things work and how it's been manually tested. Think about functionality corner cases (configuration left undefined, very high usage, very low usage, etc.), and brainstorm likely design mistakes. Generally convinced yourself of the authors' conscientiousness.
 * Is test coverage over 95%? (If not, does that make sense?)
 * How is test style and coverage, conceptually? (e.g., Is there a clear mapping between tests and new/edited code? Is new code covered by at least a smoke test? Are edits?  If a bugfix is involved, do the tests ensure that the pre-fixed code will fail, and the post-fixed code will pass?)
-* Check pylint and pep8 violations - they should not increase over master. With recent rebases, this should be checkable with ```rake quality```
+* Check pylint and pep8 violations - they should not increase over master. With a recent rebase, this should be verifiable by running ```rake quality```
+* Are strings output to the user in LMS and CMS internationalized? Do you see the ```_()``` being used everywhere it makes sense?
 * Skim the code for structure; does it have a nice shape? (e.g., nontrivial work will probably span more than one file, functions shouldn't be too long, variable names should be descriptive, etc...)
 * Run the tests!
 * Read the docstrings. Are there any? Are they accurate? Do new classes/modules have good descriptive strings? Are they free from grammar and spelling mistakes?
