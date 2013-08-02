@@ -18,7 +18,7 @@ key features are:
 
 * Mails are CAN-SPAM compliant: messages automatically have an optout link in the footer that directs them to the dashboard where users can set email settings for the course.
 
-The detailed stories for the feature are [here](https://docs.google.com/document/d/1s1Jq1SId-aeDV1XlW3Qoq9L9R0-UTkrO6XLqiTa0nRU/edit).
+The detailed stories for the feature are [here](https://docs.google.com/document/d/1s1Jq1SId-aeDV1XlW3Qoq9L9R0-UTkrO6XLqiTa0nRU/edit). Marketing mail is still to be done.
 
 Credit goes to Jason Bau (<jbau@stanford.edu>) for developing the
 feature in Class2Go.  Students Kevin Luo (<kevluo@stanford.edu>) and Akshay
@@ -48,15 +48,17 @@ and EMAIL_USE_TLS are for the SMTP email backend settings.
 
 ![Resulting message](image/bulkemail-footer.png)
 
+Any SMTP server may be specified for the email backend settings.
 We use Amazon SES to send our mails.  We have SES configured to sign
 messages on our behalf using DKIM to reduce the likelihood that they
-will be treated by spam by the receiver.  Not the signature in the
-following screenshot.
+will be treated by spam by the receiver.  Note the signature in the
+following screenshot. See [here](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/dkim.html) for more
+information.
 
 ![Message signing](image/bulkemail-dkim.png)
 
 ## Optouts
 
-Users have the option to opt out of course specific emails in the user dashboard through an Email Settings link for each course.
+Users have the option to opt out of course specific emails in the user dashboard through an Email Settings link for each course. If they chose to do so, they will not receive emails sent by the instructor for the course.
 
 ![Optout UI](image/bulkemail-optout.png)
