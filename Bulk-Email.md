@@ -18,11 +18,16 @@ key features are:
 
 * Mails are CAN-SPAM compliant: messages automatically have an optout link in the footer that directs them to the dashboard where users can set email settings for the course.
 
+The detailed stories for the feature are [here](https://docs.google.com/document/d/1s1Jq1SId-aeDV1XlW3Qoq9L9R0-UTkrO6XLqiTa0nRU/edit).
+
 Credit goes to Jason Bau (<jbau@stanford.edu>) for developing the
 feature in Class2Go.  Students Kevin Luo (<kevluo@stanford.edu>) and Akshay
-Jaggadish <akshayj@berkeley.edu> took that code and ported to OpenEdX over Summer
+Jagadeesh (<akshayj@berkeley.edu>) took that code and ported to OpenEdX over Summer
 2013.
 
+## Known Issues
+
+International Content - Unicode characters in the email subject and body is supported, but not in the recipient's name or the course title when included in the email footer. See [issue](https://github.com/Stanford-Online/edx-platform/issues/3).
 
 ## Feature Description
 
