@@ -34,8 +34,8 @@ International Content - Unicode characters in the email subject and body is supp
 Instructors access the feature through the instructor dashboard by clicking the Email link.
 This is toggled by the feature flag ENABLE_INSTRUCTOR_EMAIL. The HTML editor is ported from
 the Studio side to allow users to compose email either visually or in raw HTML. It is loaded
-as an XModule which bring some unused code, so eventually factoring a self-contained library
-will be good.
+as an XModule which brings along some unused code, so eventually factoring out the editor as
+a self-contained library will be ideal.
 ![Creating an email](image/bulkemail-editor.png)
 
 ## Backend
