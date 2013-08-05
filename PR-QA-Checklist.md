@@ -14,7 +14,7 @@
 * Are strings output to the user in LMS and CMS internationalized? Do you see the ```_()``` being used everywhere it makes sense?
 * Skim the code for structure; does it have a nice shape? (e.g., nontrivial work will probably span more than one file, functions shouldn't be too long, variable names should be descriptive, etc...)
 * Run the tests!
-* Read the docstrings. Are there any? Are they accurate? Do new classes/modules have good descriptive strings? Are they free from grammar and spelling mistakes?
+* Read the docstrings. Are there any? Are they accurate? Do new classes/modules have good descriptive strings? Are they free from grammar and spelling mistakes? Do comments have one space after the hash? Are they written in complete sentences with a period?
 * Read the commit history. Do the commits fit together in a nice way? Most changes can probably be squashed into one big commit, or a few commits whose commit messages "tell a story".  See "A note about squashing" below.
 * How do the commit messages read? Check grammar and spelling, but also formatting and completeness. See "A note about commit messages" below.
 * Have AUTHORS and CHANGELOG been updated?
