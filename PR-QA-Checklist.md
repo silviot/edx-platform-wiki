@@ -16,7 +16,7 @@
 * Run the tests!
 * Read the docstrings. Are there any? Are they accurate? Do new classes/modules have good descriptive strings? Are they free from grammar and spelling mistakes? Do comments have one space after the hash? Are they written in complete sentences with a period?
 * Read the commit history. Do the commits fit together in a nice way? Most changes can probably be squashed into one big commit, or a few commits whose commit messages "tell a story".  See "A note about squashing" below.
-* How do the commit messages read? Check grammar and spelling, but also formatting and completeness. See "A note about commit messages" below.
+* How do the commit messages read? Check grammar and spelling, but also formatting and completeness. Are necessary database migrations called out in a visually obvious way?  See "A note about commit messages" below.
 * Have AUTHORS and CHANGELOG been updated?
 
 ## A note about squashing ##
@@ -34,6 +34,8 @@ Sample commit makes everything into rock candy
 This commit does stuff. It's really sweet, and it totally rocks.  Nothing needs
 to be done to deploy, it's enabled by default. If you want to continue to use
 the old, bland behavior, just set IHATECANDY=True in asw.py.
+
+***** Migration required: Adds 'rocktable'
 
 Co-authored-by: Willy Wonka <wonkawonka@example.com>
 Co-authored-by: Rocky Balboa <rocky.pugnacious@example.com>
