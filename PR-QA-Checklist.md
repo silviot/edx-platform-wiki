@@ -2,7 +2,7 @@
 
 # Before you Review #
 * Read the [[Python Guidelines]]. Especially follow the links to Pep8 and Pep257.
-* Read [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/doc/testing.md)
+* Read [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/docs/internal/testing.md)
 * Read [Internationalization/Localization](https://edx-wiki.atlassian.net/wiki/pages/viewpage.action?pageId=12517501&src=search)
 * Read [Strunk & White](https://en.wikipedia.org/wiki/The_Elements_of_Style)
 
