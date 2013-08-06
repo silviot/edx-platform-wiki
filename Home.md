@@ -12,7 +12,7 @@ Welcome to the edx-platform wiki!
 ### Development
 
 * [[Python Guidelines]]
-* [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/doc/testing.md)
+* [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/docs/internal/testing.md)
 * [[Hackathons]]
 * [[Writing easily XBlock portable XModules]]
 
