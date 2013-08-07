@@ -94,7 +94,7 @@ $ vagrant destroy -f && vagrant up
 == Dealing with line endings and symlinks under Windows ==
 
 Under Windows, before running `vagrant up` you will need to:
-# Install a *recent* version of [http://cygwin.com/install.html cygwin]
+# Install a '''recent''' version of [http://cygwin.com/install.html cygwin]
 # Type the commands below from the Cygwin terminal
 
 If this sounds a bit scary, note that you can use the [https://people.csail.mit.edu/ichuang/edx/ MITx Vagrant box] instead. It will be less handy to contribute to the code source, but that might be easier if all you want is to get up and running under Windows.
@@ -124,6 +124,6 @@ See http://stackoverflow.com/a/16754068/1265417 for details. Be sure to run
 and `git rm-symlinks` to replace them back with symlinks, when you need to run 
 the edX services.
 
-Important: be sure to type the commands in a *recent* version of cygwin.
+Important: be sure to type the commands in a ''recent'' version of cygwin.
 
 __NOTOC__
