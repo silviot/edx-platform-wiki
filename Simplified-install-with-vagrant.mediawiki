@@ -124,6 +124,6 @@ See http://stackoverflow.com/a/16754068/1265417 for details. Be sure to run
 and `git rm-symlinks` to replace them back with symlinks, when you need to run 
 the edX services.
 
-Important: be sure to type the commands in a ''recent'' version of cygwin.
+Important: be sure to type the commands in a ''recent'' version of cygwin. Issues have been reported with older versions of the command line utility.
 
 __NOTOC__
