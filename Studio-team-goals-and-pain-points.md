@@ -24,4 +24,6 @@
 
 1. CoffeeScript vs. JavaScript. Do we want to keep writing in a mixture of the two?
 
-1. Create a JavaScript style guide
+1. Create a JavaScript style guide with preferred patterns (and description of when each pattern should be used)
+
+1. Old files containing anti-patterns should be labeled as such with a comment in the top of the file
