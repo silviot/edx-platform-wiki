@@ -106,6 +106,7 @@ References
 * https://docs.djangoproject.com/en/1.5/internals/contributing/writing-code/coding-style/
 * https://python-guide.readthedocs.org/en/latest/
 * http://google-styleguide.googlecode.com/svn/trunk/pyguide.html
+* http://www.nilunder.com/blog/2013/08/03/pythonic-sensibilities/
 
 .. _PEP 8: http://www.python.org/dev/peps/pep-0008/
 .. _PEP 257: http://www.python.org/dev/peps/pep-0257/
