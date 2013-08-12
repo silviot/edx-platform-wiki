@@ -62,3 +62,11 @@ The following is a list of useful JSDoc 3 tags:
 - [@link](http://usejsdoc.org/tags-link.html) Inline tag - create a link.
 - [@member](http://usejsdoc.org/tags-member.html) Document a member.
 - [@method](http://usejsdoc.org/tags-method.html) Describe a method or function.
+- [@module](http://usejsdoc.org/tags-module.html) Document a JavaScript module.
+- [@namespace](http://usejsdoc.org/tags-namespace.html) Document a namespace object.
+- [@param](http://usejsdoc.org/tags-param.html) Document the parameter to a function.
+- [@private](http://usejsdoc.org/tags-private.html) This symbol is meant to be private.
+- [@property](http://usejsdoc.org/tags-property.html) Document a property of an object.
+- [@protected](http://usejsdoc.org/tags-protected.html) This member is meant to be protected.
+- [@public](http://usejsdoc.org/tags-public.html) This symbol is meant to be public.
+- [@readonly](http://usejsdoc.org/tags-readonly.html) This symbol is meant to be read-only.
