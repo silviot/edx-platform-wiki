@@ -45,7 +45,7 @@ The front-end is lacking in unit testing. There is a Jasmine based testing found
 ## Documentation
 Some programmers document their code, others do not. The world of JavaScript has a nifty informal documentation spec JSDoc. It is currently at version 3. Complete reference is located at [GitHub page](https://github.com/jsdoc3/jsdoc), and [official site](http://usejsdoc.org/).
 
-The following is a list of useful JSDoc 3 tags:
+The following is a list of useful JSDoc version 3 tags:
 - [@access](http://usejsdoc.org/tags-access.html) Specify the access level of this member - private, public, or protected.
 - [@author](http://usejsdoc.org/tags-author.html) Identify the author of an item.
 - [@callback](http://usejsdoc.org/tags-callback.html) Document a callback function.
