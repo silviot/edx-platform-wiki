@@ -63,6 +63,9 @@ As a tool, JSDoc takes JavaScript code with special /** */ comments and produces
         }
     };
 
+ends up looking something like:
+![Example output by JSDoc](https://raw.github.com/valera-rozuvan/stuff/master/test_js_doc.png)
+
 The following is a list of useful JSDoc (version 3) tags:
 - [@access](http://usejsdoc.org/tags-access.html) Specify the access level of this member - private, public, or protected.
 - [@author](http://usejsdoc.org/tags-author.html) Identify the author of an item.
