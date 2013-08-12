@@ -70,3 +70,12 @@ The following is a list of useful JSDoc 3 tags:
 - [@protected](http://usejsdoc.org/tags-protected.html) This member is meant to be protected.
 - [@public](http://usejsdoc.org/tags-public.html) This symbol is meant to be public.
 - [@readonly](http://usejsdoc.org/tags-readonly.html) This symbol is meant to be read-only.
+- [@requires](http://usejsdoc.org/tags-requires.html) This file requires a JavaScript module.
+- [@returns](http://usejsdoc.org/tags-returns.html) Document the return value of a function.
+- [@see](http://usejsdoc.org/tags-see.html) Refer to some other documentation for more information.
+- [@summary](http://usejsdoc.org/tags-summary.html) A shorter version of the full description.
+- [@this](http://usejsdoc.org/tags-this.html) What does the 'this' keyword refer to here?
+- [@throws](http://usejsdoc.org/tags-throws.html) Describe what errors could be thrown.
+- [@todo](http://usejsdoc.org/tags-todo.html) Document tasks to be completed.
+- [@type](http://usejsdoc.org/tags-type.html) Document the type of an object.
+- [@version](http://usejsdoc.org/tags-version.html) Documents the version number of an item.
