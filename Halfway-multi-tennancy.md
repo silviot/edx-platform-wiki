@@ -14,9 +14,17 @@ Non-Goals
 3. Full isolation
 
 Proposal
---------
+========
 
-![Pre Diagram](image/multi-pre.png)
+Before Diagram
+--------------
 
-![Post Diagram](image/multi-post.png)
+![Pre](image/multi-pre.png)
+
+After Diagram
+--------------
+
+Note the additions for CME are in blue, Carnegie in red.
+
+![Post](image/multi-post.png)
 
