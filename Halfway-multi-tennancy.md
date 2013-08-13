@@ -16,6 +16,7 @@ Non-Goals
 Proposal
 --------
 
-![image/multi-pre.png]
+![Pre Diagram](image/multi-pre.png)
 
-![image/multi-post.png]
+![Post Diagram](image/multi-post.png)
+
