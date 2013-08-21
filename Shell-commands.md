@@ -6,7 +6,7 @@ mongo xcontent --eval "db.dropDatabase()"
 ```
 * To delete one course:
 ```
-django-admin.py delete_course "MITx/999/Robot_Super_Course" commit --settings=cms.ens.dev --pythonpath=.
+django-admin.py delete_course "MITx/999/Robot_Super_Course" commit --settings=cms.envs.dev --pythonpath=.
 ```
 * To seed and/or update the templates:
 ```
