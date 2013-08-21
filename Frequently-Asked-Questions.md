@@ -1,3 +1,7 @@
+#### How can I get a translation of the Open edX platform into a different spoken language
+
+We are using Transifex as our translation platform. We have a number of translations in progress now. Please go to our Transifex page at: https://www.transifex.com/projects/p/edx-platform/
+
 #### I haven't received the email to activate my newly created account
 
 When running with the development environment settings, registration emails are not sent out. However, the URL with their activation key is logged to the console. Just copy it from there and paste it into the browser.
