@@ -4,6 +4,10 @@
 mongo xmodule --eval "db.dropDatabase()"
 mongo xcontent --eval "db.dropDatabase()"
 ```
+* To delete one course:
+```
+django-admin.py delete_course "MITx/999/Robot_Super_Course" commit --settings=cms.ens.dev --pythonpath=.
+```
 * To seed and/or update the templates:
 ```
 rake django-admin[update_templates,cms,dev]
