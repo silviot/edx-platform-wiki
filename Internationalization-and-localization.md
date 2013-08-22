@@ -2,6 +2,7 @@ We are currently hosting all translations of Open edX framework on www.transifex
 
 In order to run your Open edX instance under a different spoken language:
 
+```
 1. Configure your  ~/.transifexrc file:
 
     [https://www.transifex.com]
@@ -35,3 +36,4 @@ $ rake i18n:generate
 5. When you launch your LMS instance you launch it with the environment:
 
 $ rake lms[dev_es,0.0.0.0:8000]
+```
