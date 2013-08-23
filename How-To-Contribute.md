@@ -1,4 +1,4 @@
-Contributions are very welcome. The easiest way is to fork th repo and then make a pull request from your fork. Before your pull request is merged, it will be reviewed by at least one person. There may be feedback so expect comments on the pull request. Add yourself to the AUTHORS file in your first pull request.
+Contributions are very welcome. The easiest way is to fork the repo and then make a pull request from your fork. Before your pull request is merged, it will be reviewed by at least one person. There may be feedback so expect comments on the pull request. Add yourself to the AUTHORS file in your first pull request.
 
 Please review:
 
