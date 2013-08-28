@@ -1,6 +1,6 @@
 We are currently hosting all translations of Open edX framework on www.transifex.com. Please feel free to make translation contributions there.
 
-In order to run your Open edX instance under a different spoken language:
+In order to run your Open edX instance under a different spoken language, for instance for [Spanish (Latin American)](https://www.transifex.com/projects/p/edx-platform/language/es_419/):
 
 ```
 1. Configure your  ~/.transifexrc file:
@@ -24,6 +24,7 @@ Token is left blank. You have to have permissions for the project (edx-platform)
 
 from .dev import *
 
+USE_I18N = True
 LANGUAGES = ( ('es_419', 'Spanish'), )
 TIME_ZONE = 'America/Guayaquil'
 LANGUAGE_CODE = 'es_419'
