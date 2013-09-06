@@ -54,8 +54,8 @@ Note the additions for CME are in blue, Carnegie in red.
 Issues
 ======
 
-1. Shared Studio?
+1. Shared Studio?  No, too weird, and "view live" gets exciting.
 
-2. Redirects between instances?
+2. Redirects between instances?  Hope not.
 
 
