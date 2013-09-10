@@ -1,4 +1,4 @@
-## Official Installation Guiedes
+## Official Installation Guides
 * [Install edX on any Ubuntu 12.04 server with Ansible](https://github.com/edx/configuration/wiki#installing-edx-on-a-single-ubuntu-1204-precise-server)
 * [Install edX using Vagrant with Ansible](https://github.com/edx/configuration/wiki#installing-edx-on-a-single-ubuntu-1204-virtual-machine-with-vagrant)
 
