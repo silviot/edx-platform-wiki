@@ -11,7 +11,7 @@ Note: This section deals with issues specific to the Vagrant install - see also 
 
 === Check versions of VirtualBox/Vagrant ===
 
-If you have any problem installing or starting the VM with Vagrant, first check that you have the required versions of '''VirtualBox (4.2.12)''' and '''Vagrant (1.2.2 or later)'''.
+If you have any problem installing or starting the VM with Vagrant, first check that you have the required versions of [http://download.virtualbox.org/virtualbox/4.2.12/ VirtualBox 4.2.12] and [http://downloads.vagrantup.com/tags/v1.2.2 Vagrant 1.2.2].
 
 === Reinstalling ===
 
