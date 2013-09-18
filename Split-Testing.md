@@ -1,4 +1,4 @@
-## Introduction ##
+### Introduction ###
 
 Whenever we want to add a new feature to the LMS, we should split test it before rolling out a full implementation to all of our users. There is no excuse not to test new features in this way. Also called A/B testing, split testing will tell us what effect a new feature will have on our core metrics before we deploy it fully. In this manner, we can avoid rolling out a new feature if it does not provide a significant boost to, or even worse, hurts, our metrics.
 
