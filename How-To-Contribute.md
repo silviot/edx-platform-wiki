@@ -8,6 +8,6 @@ Please review:
 
 Coding conventions should be followed and your commit should *increase* test coverage, not decrease it. For more involved contributions, you may want to discuss your intentions on the mailing list *before* you start coding.
 
-Before your first pull request is merged, you'll need to sign the [individual contributor agreement](http://code.edx.org/individual-contributor-agreement.pdf) and send it in. This confirms you have the authority to contribute the code in the pull request and ensures we can relicense it.
+Before your first pull request is merged, you'll need to sign the [individual contributor agreement](http://code.edx.org/individual-contributor-agreement.pdf) and send it in via email or snail-mail (see the details in the PDF itself). This confirms you have the authority to contribute the code in the pull request and ensures we can relicense it.
 
 If you have any questions, please ask on the [mailing list](https://groups.google.com/forum/#!forum/edx-code).
