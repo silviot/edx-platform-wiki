@@ -18,6 +18,7 @@ Welcome to the edx-platform wiki!
 * [[Hackathons]]
 * [[Writing easily XBlock portable XModules]]
 * [[Internationalization and Localization]]
+* [[Split Testing]]
 
 ### Features
 
