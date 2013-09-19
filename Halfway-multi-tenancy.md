@@ -1,4 +1,4 @@
-Instead of doing true multi-tennancy, this is an immediate solution
+Instead of doing true multi-tenancy, this is an immediate solution
 that will allow us to have multiple instances sharing much of the
 infrastructure, without fully duplicated instances.
 
