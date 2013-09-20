@@ -19,6 +19,7 @@ Welcome to the edx-platform wiki!
 * [[Writing easily XBlock portable XModules]]
 * [[Internationalization and Localization]]
 * [[Split Testing]]
+* [[Object Identities]]
 
 ### Features
 
