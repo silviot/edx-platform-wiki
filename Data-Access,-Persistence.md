@@ -20,3 +20,4 @@ When we launched Studio, we needed a read-write storage mechanism and data acces
 
 We created `SplitMongoModuleStore` to fix the expense and fragility of inheritance. In addition it offers full versioning of all edits, the ability to share the same content and settings between courses, as many named branches of a course or named-subcourse structure as you need (e.g., draft, alpha, stage, honors, live). Once again we've convoluted the persistence technology (Mongo) with the DAO functionality (CRUD operations on xblocks). We're hoping to separate these very soon so that this versioning, structure persisting DAO can sit on any non-SQL db.
 
+This page describes this DAO in some detail: [[Split:-the-versioning,-structure-saving-DAO]]
