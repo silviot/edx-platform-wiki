@@ -1,5 +1,5 @@
 #### Django apps (Studio and LMS)
-* To get rid of existing courses and templates:
+* To get rid of existing courses. Note this will not clear out data on the django side like course groups:
 ```
 mongo xmodule --eval "db.dropDatabase()"
 mongo xcontent --eval "db.dropDatabase()"
@@ -7,10 +7,6 @@ mongo xcontent --eval "db.dropDatabase()"
 * To delete one course:
 ```
 django-admin.py delete_course "MITx/999/Robot_Super_Course" commit --settings=cms.envs.dev --pythonpath=.
-```
-* To seed and/or update the templates:
-```
-rake django-admin[update_templates,cms,dev]
 ```
 * To seed the permissions for the comment service for user 'robot' course MITx/999/Robot_Super_Course
 ```
@@ -35,7 +31,7 @@ db.modulestore.find( { "_id.category" : "course" }, {'name':'1'} )
 ```
 db.modulestore.find({'_id.course': '999','_id.name':'updates'})
 ```
-* To remove courses numbered 999 from all orgs:
+* To remove courses numbered 999 from all orgs. Note this will not clear out data on the django side like course groups:
 ```
 db.modulestore.remove({'_id.course': '999'})
 ```
