@@ -16,3 +16,4 @@
 
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
+| Will     | [pip wheel](http://wheel.readthedocs.org/): let's speed up virtualenv creation and stop the scipy recompilation madness! |     |
