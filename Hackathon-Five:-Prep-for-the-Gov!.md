@@ -1,6 +1,6 @@
 # The Hacks
 
-* 
+* This will be a great run for the big hackathon that we are working on for next November time frame!
 
 # Why this would be useful
 * Learn about parts of the codebase that we rarely touch
