@@ -61,3 +61,14 @@ Because just updating a single node's fields will be a common publish step, ther
 
 ### Publish API
 
+`publish( course_locator_w_source_branch, destination_branch, subtree_list, blacklist, node_list )`
+
+* `course_locator_w_source_branch`: a CourseLocator with either a specific version id or a branch from which publishing will occur.
+* `destination_branch`: can be either a branch id (just a string) or a CourseLocator with a branch id. Cannot be a version id as the act of publishing implies updating the head of a branch? It is possible to publish from one course to another; however, the block ids may conflict (the old branch's `Chapter4` may be overwritten to something which has no similarity nor commonality). In this case, the system won't do anything to ensure the resulting tree is truly a tree versus a dag where a node may occur more than once.
+* `subtree_list`: subtree root block ids where the root and all of its descendants except those in `blacklist` will be copied from source to destination. Can be simply block ids or Locators. If Locators, it's an error if any reference any structure other than the one referenced by `course_locator_w_source_branch`.
+* `blacklist`: the subtree roots not to copy from source to destination. Follows the same rules as `subtree_list` and directly subtracts subtrees from `subtree_list`. Note, if any of these nodes already exist in destination, they will remain in their current state. To delete, you need to include the parent in `subtree_list` and not put the node in `blacklist` thus implying making the node the same in destination as in source (deleted).
+* `node_list`: just copy the node's fields from source to destination. As if including the node in `subtree_list` but all of its children in `blacklist`.
+
+All changes will occur as if happening in one transaction. Even if the changes to `destination_branch` result in numerous versions, the head won't update until the system commits all changes. Thus, the LMS users' experience should maintain consistency.
+
+In addition to all explicitly listed nodes, publish will ensure each ancestor exists in destination. It will not update any fields of the ancestors which already existed. However, those which did not exist will get their field values from source.
