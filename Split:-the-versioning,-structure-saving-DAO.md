@@ -25,3 +25,39 @@
 <p>A block locator finds a specific node in a specific version of a course. Thus, it needs a course locator plus a <code>block_guid</code>.</p><h4 id="MongostoreDataStructure-Definitionlocator(definition_loc)">Definition locator (definition_loc)</h4>
 <p>Just a <code>guid</code>.</p><h4 id="MongostoreDataStructure-Partialdescriptorcollectionslocators(partial)">Partial descriptor collections locators (partial)</h4>
 <p>In the most general case, and to simplify implementation, these can be any payload passable to mongo for doing the lookup. The specification of which collection to look into can be implied by which lookup function your code calls (get_courses, get_blocks, get_definitions) or we could add it as another property. For now, I will leave this as merely a search string. Thus, to find all courses for org = mitx, <code>{&quot;org&quot;: &quot;mitx&quot;}</code>. To find all blocks in a course whose display name contains &quot;circuit example&quot;, call <code>get_blocks</code> with the course locator plus <code>{&quot;fields.display_name&quot; : /circuit example/i}</code> (the i makes it case insensitive and is just an example). To find if a definition is used in a course, call get_blocks with the course locator plus <code>{definition : definition_guid}</code>. Note, this looks for a specific version of the definition. If you wanted to see if it used any of a set of versions, use <code><span>{definition : {&quot;$in&quot; : [definition_guid*]}}</span></code></p>
+
+## Publishing
+
+Publishing is the process of making content which is available on one branch also available on another branch. Usually the source branch is a 'draft' or 'editing' branch and the destination branch is a 'published' or 'live' branch. Sometimes we may want the destination branches to be preview, staging, alpha, beta, A-test, honors, or other variants. The new representation makes arbitrary branches very easy.
+
+The difficulty in publishing is that a common use case is to only publish some parts of the course. For example, publish weeks 1 - 3 but not the quiz in week 3 because it's still being edited. Publishing by itself does not imply that the students can see the material because the LMS uses start dates and other mechanisms to decide whether content should be accessible. The reason that partial publication is a "problem" is that it cannot use the simple expediency of just pointing the destination branch to the same structure version as the source branch. Instead it needs to create a new branch which is a subset of the source branch but using the same identities and version information. However, this poses a problem in the history of the destination branch. Is its predecessor version the source branch or the previous published version?
+
+In the old Mongo, there were only 2 branches: live and draft. All course content above verticals (all nodes 2 or more levels above the leaves) was in both at the same time. The act of publishing was the act of copying verticals or leaf components from 'draft' to live. All changes to elements above verticals immediately impacted both the draft and live course (element crud, moving, attribute setting).
+
+In the new Modulestore, the authoring team can select how many branches to support. They could have one: the live one is the draft one. All changes take effect immediately. They could have dozens (draft, experimental, alpha, staged, honors, live, scaffolded, ...). The could publish from any of these to any of the others although in practice that wouldn't make sense.
+
+Publishing a node from one branch to another must imply:
+* ensure all of that node's parents are in the destination branch
+* ensure the node is in the destination branch in the same relative order vis-a-vis its published siblings under its parent.
+* ensure the fields of the node in the destination are the same as the source
+
+What's subject to opinion and how the design will progress:
+* publish the node's children to the destination unless they were explicitly excluded via a blacklist provided to the publish api. (That is, publishing works on subtrees not individual nodes).
+* if when the node was previously published it had children which no longer exist in the source, remove those from the destination (unless they are also in the blacklist).
+* if the node being published is deleted in the source but exists in the destination, then the semantics are to delete the node from the destination.
+* any node deletion implies deleting the whole subtree with that given root.
+
+Subject to opinion but will not go into initial implementation:
+* update the fields of all tree ancestors of the node to their values in the source branch. The reason to include this behavior is that many of these fields are "policies" governing the behavior of the node's subtree; however, the publishing api should not worry about policy v local field distinctions, imho.
+
+Because just updating a single node's fields will be a common publish step, there should be a version of publish which merely updates the fields. This publishing function should not only update the regular fields but also the order of children and remove any children which have been deleted. It should not add any children, however. The interesting caveat to this is that moving a node involves adding it to one parent and deleting it from another. The api should support this as a single call and not cause the node to disappear from the destination.
+
+### Common publishing use cases
+
+* Update a given node's fields (e.g., display name, dates, grading policy, or change the order of subnodes)
+* Move a node from one parent to another
+* Publish a "ready" subtree except for some specific not quite ready subtrees under it
+
+
+### Publish API
+
