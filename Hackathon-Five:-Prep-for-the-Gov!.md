@@ -17,3 +17,4 @@
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
 | Will     | [pip wheel](http://wheel.readthedocs.org/): let's speed up virtualenv creation and stop the scipy recompilation madness! |     |
+| Sarina   | Peer Grading data - go through and analyze a bunch of data on peer grading pulled from the Spring 2013 run of 6.00x |  |
