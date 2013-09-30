@@ -16,7 +16,7 @@
 
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
-| Will     | [pip wheel](http://wheel.readthedocs.org/): let's speed up virtualenv creation and stop the scipy recompilation madness! |     |
+| Will     | [pip wheel](http://wheel.readthedocs.org/): let's speed up virtualenv creation and stop the scipy recompilation madness! | DB    |
 | Sarina   | Peer Grading data - go through and analyze a bunch of data on peer grading pulled from the Spring 2013 run of 6.00x |  |
 | DHM     | Restful CRUD for courses, xblocks, and definitions |     |
 | DHM     | Enable use by configuration of pymongo v Google DataStore |     |
