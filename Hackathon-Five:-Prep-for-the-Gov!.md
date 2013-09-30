@@ -22,3 +22,4 @@
 | DHM     | Enable use by configuration of pymongo v Google DataStore |     |
 | DHM     | Prototype governance by domain for org, dept, course ids |     |
 | Dave O  | Alternative student courseware state storage, configurable on a per-course basis |    |
+| Feanil  | Break apart configuration cloudformation template by service and combine them programmatically|    |
