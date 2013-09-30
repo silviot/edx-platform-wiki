@@ -21,3 +21,4 @@
 | DHM     | Restful CRUD for courses, xblocks, and definitions |     |
 | DHM     | Enable use by configuration of pymongo v Google DataStore |     |
 | DHM     | Prototype governance by domain for org, dept, course ids |     |
+| Dave O  | Alternative student courseware state storage, configurable on a per-course basis |    |
