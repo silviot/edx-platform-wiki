@@ -15,6 +15,8 @@ In /edx-platform/cms/envs/common.py, or your extension of it, add _'DISABLE_COUR
 ### Marking a user as "is_staff"
 There is a Django admin command for marking an account as "is_staff": _/manage.py lms set_staff emailaddress_
 
+Note that "is_staff" is a [Django auth field](https://docs.djangoproject.com/en/dev/ref/contrib/auth/). It is completely unrelated to the course staff concept within Studio.
+
 ### Setting a contact e-mail address
 If DISABLE_COURSE_CREATION is True, users not marked "is_staff" may see a message on the Studio dashboard prompting them to e-mail if they need a course to be created. This message will only be shown if an e-mail address has been set as the value of _'STUDIO_REQUEST_EMAIL'_ in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). You should also customize the language in this message so it does not refer to edX (/edx-platform/cms/templates/index.html)
 
