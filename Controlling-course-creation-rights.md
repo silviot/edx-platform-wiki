@@ -4,6 +4,8 @@ _This feature was added to the edX platform in July, 2013._
 
 There are a couple of settings you can enable to allow control over who can create new courses in Studio.
 
+NOTE: We use the phrase "is_staff" to indicate the bit in the auth_user table that is the standard Django identity framework. This bit grants users with "admin" rights to the site and the ability to see/edit all content. Readers of this document might get confused between "is_staff" - the Django setting - and our use of the words "staff" or "course staff" which are application level permissions groups to indicate users that have been authorized to create/edit content.
+
 ## Disable course creation for users not marked "is_staff"
 You can completely disable the ability for any user who is not marked "is_staff" to create a new course. Users who have been added as staff to existing courses will be able to view and edit those courses, but the ability to create a new course will only be shown to users with the "is_staff" Django user setting.
 
