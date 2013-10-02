@@ -31,7 +31,7 @@ If ENABLE_CREATOR_GROUP is set to True, this is the workflow for a new Studio us
 1. The user sees on the dashboard that they are in the "pending" state. When you grant the user access, they will receive an e-mail letting them know that they should return to the Studio dashboard. At that point, they will be able to create courses.
 1. If you deny the user access, they will also receive an e-mail message. When they go to the Studio dashboard, they will see a message saying that they have been denied access. 
 
-_Caveats-- language in these messages is specific to edX and our xConsortium partners. We recommend that you modify this language for your instance of platform (/edx-platform/cms/templates/index.html)._
+_Caveat-- language in these messages is specific to edX and our xConsortium partners. We recommend that you modify this language for your instance of platform (/edx-platform/cms/templates/index.html)._
 
 ### The Course Creator Admin Table
 The url for the course creator admin table is /admin/course_creators/coursecreator/ (relative to where you are running your instance of the edX platform). You must log in with a username for an account with "is_staff" marked. See above for instructions on how to mark an account as "is_staff".
