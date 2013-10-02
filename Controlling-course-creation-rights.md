@@ -13,5 +13,29 @@ In /edx-platform/cms/envs/common.py, or your extension of it, add _'DISABLE_COUR
 ### Marking a user as "is_staff"
 There is a Django admin command for marking an account as "is_staff": _/manage.py lms set_staff emailaddress_
 
-### Setting an e-mail address for questions
-If DISABLE_COURSE_CREATION is True, users not marked "is_staff" may see a message on the Studio dashboard prompting them to e-mail if they need a course to be created. This message will only be shown if an e-mail address has been set as the value of _'STUDIO_REQUEST_EMAIL'_ in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). 
+### Setting a contact e-mail address
+If DISABLE_COURSE_CREATION is True, users not marked "is_staff" may see a message on the Studio dashboard prompting them to e-mail if they need a course to be created. This message will only be shown if an e-mail address has been set as the value of _'STUDIO_REQUEST_EMAIL'_ in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). You should also customize the language in this message so it does not refer to edX (/edx-platform/cms/templates/index.html)
+
+## Selectively enable course creation
+You can grant and revoke course creation rights to individual users via a Django admin table. User accounts marked "is_staff" do not need to go through this process-- those users are always allowed to create courses, and there is not a way to revoke their access.
+
+### Enabling control of course creation rights
+In /edx-platform/cms/envs/common.py, or your extension of it, set _'ENABLE_CREATOR_GROUP': True_ to MITX_FEATURES. Note that DISABLE_COURSE_CREATION (discussed above) takes precedence over ENABLE_CREATOR_GROUP, so make sure that DISABLE_COURSE_CREATION is not set to True.
+
+### User workflow
+If ENABLE_CREATOR_GROUP is set to True, this is the workflow for a new Studio user:
+
+1. User creates a new account. Their status in the admin table will be "unrequested".
+1. When the user goes to the Studio dashboard, they will see a message about becoming a course creator in Studio.
+1. The user can request the ability to create courses, which changes their status in the admin table to "pending".
+1. The user sees on the dashboard that they are in the "pending" state. When you grant the user access, they will receive an e-mail letting them know that they should log in again. At that point they will be able to create courses.
+1. If you deny the user access, they will also receive an e-mail message. When they go to the Studio dashboard, they will see a message saying that they have been denied access. 
+
+_Caveats-- language in these messages is specific to edX and our xConsortium partners. We recommend that you modify this language for your instance of platform (/edx-platform/cms/templates/index.html)._
+
+### The Course Creator Admin Table
+Mention is_staff
+### Grandfathering existing users
+Script to run
+
+### Contact e-mail
