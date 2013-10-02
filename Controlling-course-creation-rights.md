@@ -28,14 +28,18 @@ If ENABLE_CREATOR_GROUP is set to True, this is the workflow for a new Studio us
 1. User creates a new account. Their status in the admin table will be "unrequested".
 1. When the user goes to the Studio dashboard, they will see a message about becoming a course creator in Studio.
 1. The user can request the ability to create courses, which changes their status in the admin table to "pending".
-1. The user sees on the dashboard that they are in the "pending" state. When you grant the user access, they will receive an e-mail letting them know that they should log in again. At that point they will be able to create courses.
+1. The user sees on the dashboard that they are in the "pending" state. When you grant the user access, they will receive an e-mail letting them know that they should return to the Studio dashboard. At that point, they will be able to create courses.
 1. If you deny the user access, they will also receive an e-mail message. When they go to the Studio dashboard, they will see a message saying that they have been denied access. 
 
 _Caveats-- language in these messages is specific to edX and our xConsortium partners. We recommend that you modify this language for your instance of platform (/edx-platform/cms/templates/index.html)._
 
 ### The Course Creator Admin Table
-Mention is_staff
-### Grandfathering existing users
-Script to run
+The url for the course creator admin table is /admin/course_creators/coursecreator/ (relative to where you are running your instance of the edX platform). You must log in with a username for an account with "is_staff" marked. See above for instructions on how to mark an account as "is_staff".
 
-### Contact e-mail
+### Setting a contact e-mail address
+You should set a contact e-mail address as the value of _'STUDIO_REQUEST_EMAIL'_ in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). This address will receive notification when someone has requested course creation access, and it will be included in e-mails sent out to users when their course creation status changes.
+
+### Grandfathering existing users
+If you wish to grant course creation access to all existing course instructors (users who have previously created courses) on your instance of the platform, you can do so via a Django admin command: _./manage.py cms populate_creators_
+
+Course staff (users who have been added to courses as staff, but did not originally create the courses) will be added to the table with status "unrequested".
