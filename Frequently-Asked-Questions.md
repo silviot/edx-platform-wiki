@@ -18,6 +18,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 Using Studio, upload an image named images_course_image.jpg
 
+#### How do I restrict who can create new courses?
+
+Please read: [Controlling-course-creation-rights]
+
 #### How to make the site accessible to external devices?
 
 Modify the server deployment commands to include the IP address, like this: `rake cms[dev,0.0.0.0:8001]` and `rake lms[cms.dev,0.0.0.0:8000]`.
