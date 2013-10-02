@@ -34,7 +34,7 @@ If ENABLE_CREATOR_GROUP is set to True, this is the workflow for a new Studio us
 _Caveat-- language in these messages is specific to edX and our xConsortium partners. We recommend that you modify this language for your instance of platform (/edx-platform/cms/templates/index.html)._
 
 ### The Course Creator Admin Table
-The url for the course creator admin table is /admin/course_creators/coursecreator/ (relative to where you are running your instance of the edX platform). You must log in with a username for an account with "is_staff" marked. See above for instructions on how to mark an account as "is_staff".
+The url for the course creator admin table is /admin/course_creators/coursecreator/ (relative to where you are running your instance of the edX platform). You must log in with a username for an account marked "is_staff". See above for instructions on how to mark an account as "is_staff".
 
 ### Setting a contact e-mail address
 You should set a contact e-mail address as the value of _'STUDIO_REQUEST_EMAIL'_ in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). This address will receive notification when someone has requested course creation access, and it will be included in e-mails sent out to users when their course creation status changes.
