@@ -23,4 +23,5 @@
 | DHM     | Prototype governance by domain for org, dept, course ids |     |
 | Dave O  | Alternative student courseware state storage, configurable on a per-course basis |    |
 | Feanil  | Break apart configuration cloudformation template by service and combine them programmatically|    |
-| Marco   | Google Hangout prototype feedback and discussion sessions, to be scheduled during hackathon twice for each of the following topics - discussion forums, lms redesign (content/navigation), visual analytics for instructors, learner profiles, SPOC experience, synchronous online group activities, (list can be adjusted)  |   |
+| Marco   | Google Hangout prototype feedback and discussion sessions, to be scheduled during hackathon twice for each of the following topics - discussion forums, lms redesign (content/navigation), visual analytics for instructors, learner profiles, SPOC experience, synchronous online group activities, (list can be adjusted) |   |
+| Will    | In-memory ModuleStore ==> fast tests |   |
