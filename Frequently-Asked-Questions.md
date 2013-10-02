@@ -20,7 +20,7 @@ Using Studio, upload an image named images_course_image.jpg
 
 #### How do I restrict who can create new courses?
 
-Please read: [Controlling-course-creation-rights]
+Please read: https://github.com/edx/edx-platform/wiki/Controlling-course-creation-rights
 
 #### How to make the site accessible to external devices?
 
