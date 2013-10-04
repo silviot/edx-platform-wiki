@@ -24,5 +24,5 @@ Welcome to the edx-platform wiki!
 ### Features
 
 * [[Bulk Email]]
-* [[Halfway multi tennancy]]
+* [[Halfway multi-tennancy]]
 * [[Controlling Course Creation Rights]]
