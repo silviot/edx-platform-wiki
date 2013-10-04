@@ -59,3 +59,24 @@ Issues
 2. Redirects between instances?  Hope not.
 
 
+
+8/13 Review Notes
+=================
+
+Jarv: why not just run separate silos (new cloudformation runs)?
+
+Summary
+
+1. Split frontends - OK
+
+2. Shared databases with different instances -- fine, don't just separate instances, separate accounts as well
+
+3. Shared memcache but with prefix key -- fine
+
+4. Rabbit / celery - virtual hosts, OK
+
+5. Separate workers - OK
+
+6. Separate heroku - OK
+
+  - 
