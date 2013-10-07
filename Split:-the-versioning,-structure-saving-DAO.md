@@ -134,27 +134,22 @@ In the most general case, and to simplify implementation, these can be any paylo
 
 Publishing is the process of making content which is available on one branch also available on another branch. Usually the source branch is a 'draft' or 'editing' branch and the destination branch is a 'published' or 'live' branch. Sometimes we may want the destination branches to be preview, staging, alpha, beta, A-test, honors, or other variants. The new representation makes arbitrary branches very easy.
 
-The difficulty in publishing is that a common use case is to only publish some parts of the course. For example, publish weeks 1 - 3 but not the quiz in week 3 because it's still being edited. Publishing by itself does not imply that the students can see the material because the LMS uses start dates and other mechanisms to decide whether content should be accessible. The reason that partial publication is a "problem" is that it cannot use the simple expediency of just pointing the destination branch to the same structure version as the source branch. Instead it needs to create a new branch which is a subset of the source branch but using the same identities and version information. However, this poses a problem in the history of the destination branch. Is its predecessor version the source branch or the previous published version?
+The difficulty in publishing is that a common use case is to only publish some parts of the course. For example, publish weeks 1 - 3 but not the quiz in week 3 because it's still being edited. Publishing by itself does not imply that the students can see the material because the LMS uses start dates and other mechanisms to decide whether content should be accessible. The reason that partial publication is a "problem" is that it cannot use the simple expediency of just pointing the destination branch to the same structure version as the source branch. Instead it needs to create a new branch which is a subset of the source branch but using the same identities and version information. 
 
-In the old Mongo, there were only 2 branches: live and draft. All course content above verticals (all nodes 2 or more levels above the leaves) was in both at the same time. The act of publishing was the act of copying verticals or leaf components from 'draft' to live. All changes to elements above verticals immediately impacted both the draft and live course (element crud, moving, attribute setting).
+In the old Mongo, there were only 2 branches: live and draft. All course content above verticals (all nodes 2 or more levels above the leaves) was in both at the same time. The act of publishing was the act of copying verticals or leaf components from 'draft' to live. All changes to elements above verticals immediately impacted both the draft and live course (element crud, moving, attribute setting). Live courses constantly stumble over pointers to 'private' verticals generating ItemNotFoundErrors and slowing down some pages significantly by repeatedly searching for the private verticals. These will not be problems in split mongo.
 
-In the new Modulestore, the authoring team can select how many branches to support. They could have one: the live one is the draft one. All changes take effect immediately. They could have dozens (draft, experimental, alpha, staged, honors, live, scaffolded, ...). The could publish from any of these to any of the others although in practice that wouldn't make sense.
+In the new Modulestore, the authoring team can select how many branches to support. They could have one: the live one is the draft one. All changes take effect immediately. They could have dozens (draft, experimental, alpha, staged, honors, live, scaffolded, ...). They could publish from any of these to any of the others although in practice that wouldn't make sense.
 
 Publishing a node from one branch to another must imply:
-* ensure all of that node's parents are in the destination branch
+* ensure all of that node's ancestors are in the destination branch. If not, throw an exception.
 * ensure the node is in the destination branch in the same relative order vis-a-vis its published siblings under its parent.
 * ensure the fields of the node in the destination are the same as the source
 
 What's subject to opinion and how the design will progress:
 * publish the node's children to the destination unless they were explicitly excluded via a blacklist provided to the publish api. (That is, publishing works on subtrees not individual nodes).
-* if when the node was previously published it had children which no longer exist in the source, remove those from the destination (unless they are also in the blacklist).
+* if the previously published node had children which no longer exist in the source, remove those from the destination (unless they are also in the blacklist).
 * if the node being published is deleted in the source but exists in the destination, then the semantics are to delete the node from the destination.
 * any node deletion implies deleting the whole subtree with that given root.
-
-Subject to opinion but will not go into initial implementation:
-* update the fields of all tree ancestors of the node to their values in the source branch. The reason to include this behavior is that many of these fields are "policies" governing the behavior of the node's subtree; however, the publishing api should not worry about policy v local field distinctions, imho.
-
-Because just updating a single node's fields will be a common publish step, there should be a version of publish which merely updates the fields. This publishing function should not only update the regular fields but also the order of children and remove any children which have been deleted. It should not add any children, however. The interesting caveat to this is that moving a node involves adding it to one parent and deleting it from another. The api should support this as a single call and not cause the node to disappear from the destination.
 
 ### Common publishing use cases
 
@@ -165,13 +160,12 @@ Because just updating a single node's fields will be a common publish step, ther
 
 ### Publish API
 
-`publish( course_locator_w_source_branch, destination_branch, subtree_list, blacklist, node_list )`
+`publish( course_locator_w_source_branch, destination_branch, subtree_list, blacklist )`
 
 * `course_locator_w_source_branch`: a CourseLocator with either a specific version id or a branch from which publishing will occur.
 * `destination_branch`: can be either a branch id (just a string) or a CourseLocator with a branch id. Cannot be a version id as the act of publishing implies updating the head of a branch? It is possible to publish from one course to another; however, the block ids may conflict (the old branch's `Chapter4` may be overwritten to something which has no similarity nor commonality). In this case, the system won't do anything to ensure the resulting tree is truly a tree versus a dag where a node may occur more than once.
 * `subtree_list`: subtree root block ids where the root and all of its descendants except those in `blacklist` will be copied from source to destination. Can be simply block ids or Locators. If Locators, it's an error if any reference any structure other than the one referenced by `course_locator_w_source_branch`.
 * `blacklist`: the subtree roots not to copy from source to destination. Follows the same rules as `subtree_list` and directly subtracts subtrees from `subtree_list`. Note, if any of these nodes already exist in destination, they will remain in their current state. To delete, you need to include the parent in `subtree_list` and not put the node in `blacklist` thus implying making the node the same in destination as in source (deleted).
-* `node_list`: just copy the node's fields from source to destination. As if including the node in `subtree_list` but all of its children in `blacklist`.
 
 All changes will occur as if happening in one transaction. Even if the changes to `destination_branch` result in numerous versions, the head won't update until the system commits all changes. Thus, the LMS users' experience should maintain consistency.
 
