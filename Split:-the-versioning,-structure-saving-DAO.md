@@ -1,30 +1,134 @@
-<p>This document describes the split mongostore representation which</p><ul><li>separates course structure from content where each course run (or partial course) can have its own structure and content can have many using structures</li><li>and versions everything</li></ul>
-<p>It does not describe the original mongostore representation which combined structure and content and used the key to distinguish draft from published elements.</p>
-<p>This document does not describe mongo nor its operations. See <a href="http://www.mongodb.org/" class="external-link" rel="nofollow">http://www.mongodb.org/</a> for information on Mongo.</p>
+This document describes the split mongostore representation which
 
-<h2 id="MongostoreDataStructure-Representation">Representation</h2>
-<p><a href="https://docs.google.com/presentation/d/1u4EoOPwrsQPdZR5Jp9ny1EnRpPgUwsTIybuydkkt4xg/edit?usp=sharing" class="external-link" rel="nofollow">This presentation</a> on google docs provides an overview which may or may not be useful w/o narration.</p>
-<p>The xmodule collections:</p><ul><li><code>modulestore.active_versions</code>: this collection maps the org, course, and run to the current draft and published versions of the course.</li><li><code>modulestore.structures</code>: this collection has one entry per course run and one for the template.</li><li><code>modulestore.definitions</code>: this collection has one entry per &quot;module&quot; or &quot;block&quot; version.</li></ul>
+* separates course structure from content where each course run (or partial course) can have its own structure and content can have many using structures
+* and versions everything
 
-<p><strong><span>modulestore.active_versions: </span></strong><span>a simple map for dereferencing the correct course from the structures collection. It allows naming courses or structures, giving them addressable branches, and using them to fetch the &quot;correct&quot; version for any given course and branch. No course run will have more than one entry in this collection.</span></p>
-<pre><span>{</span> '_id' : uniqueid,<br />  'versions' : { &lt;versionName&gt; : versionGuid, ..}<br />  'edited_by' : user_id,<br />  'edited_on' : date (native mongo rep)} </pre><ul><li><code>id </code>is a unique id for finding this course run. It's a location-reference string, like <code>mit.eng.eecs.6002x.industry.spring2013</code>. (see <a href="https://edx-wiki.atlassian.net/wiki/pages/viewpage.action?pageId=30868230">Locators (successor to Locations)</a>)</li><li><span><code>versions</code>: These are references to <code>modulestore.structures</code>. A location-reference like <code>mit.eng.eecs.6002x.industry.spring2013/branch/draft</code> refers to the value associated with <code>draft</code> for this document.</span><ul><li><span><code>versionName</code> is <code>draft</code>, <code>published</code>, or another user-defined string.</span></li><li><code>versionGuid</code> is a system generated globally unique id (hash). It points to the entry in <code>modulestore.structures</code><br /><code><br /></code></li></ul></li></ul>
-<p>SplitMongo generates a new structure for each change to a structure: that is, for each move, deletion, node creation, or metadata change it adds a new structure and does not modify the old one. If the change was done using a pointer to a from active_index (i.e., course_id and branch), it will update the active_index entry to point to the new structure. No other pointers to the old structure will update. If the change is done using only a structure pointer or if Split determines that the head pointer has moved and the change is really occurring to an &quot;old&quot; structure, the head will not update but split will create a new structure (perhaps forking the structure's history).</p>
-<p>Creating a course (creating a new run of a course or such) will create a new entry in this table with just a <code>draft</code> branch and will cause a copy of the corresponding entry in <span><code>modulestore.structures</code>. The entry in <code>structures</code> will point to its version parent in the source course.</span></p>
-<p><strong>modulestore.structures</strong>: the entries in this collection follow this definition:</p>
-<pre>{ '_id' : course_guid,<br />  'blocks' : <br />    { block_guid :  // the guid is an arbitrary id to represent this node in the course tree<br />        { 'fields' : {'children': [ block_guid* ], ...}<br />          'definition' : definition_guid,<br />          'category' : 'section' | 'sequence' | ... <br />          'edit_info' : {'edited_on' : date, 'edited_by' : user, 'previous_version': course_guid} 
+It does not describe the original mongostore representation which combined structure and content and used the key to distinguish draft from published elements.
+
+This document does not describe mongo nor its operations. See http://www.mongodb.org for information on Mongo.
+
+## Representation
+[This presentation](https://docs.google.com/presentation/d/1u4EoOPwrsQPdZR5Jp9ny1EnRpPgUwsTIybuydkkt4xg/edit?usp=sharing) on google docs provides an overview which may or may not be useful w/o narration.
+
+The xmodule collections:
+
+* `modulestore.active_versions`: this collection maps the org, course, and run to the current draft and published versions of the course.
+* `modulestore.structures`: this collection has one entry per course run and one for the template.
+* `modulestore.definitions`: this collection has one entry per "module" or "block" version.
+
+**modulestore.active_versions**: a simple map for dereferencing the correct course from the structures collection. It allows naming courses or structures, giving them addressable branches, and using them to fetch the "correct" version for any given course and branch. No course run will have more than one entry in this collection.
+
+```
+{
+  "_id" : uniqueid,
+  "versions" : { <versionName> : versionGuid, ...}
+  "edited_by" : user_id,
+  "edited_on" : date (native mongo rep)
+}
+```
+
+* `_id` is a unique id for finding this course run. It's a location-reference string, like `mit.eng.eecs.6002x.industry.spring2013`. (see [Locators (successor to Locations)](https://edx-wiki.atlassian.net/wiki/pages/viewpage.action?pageId=30868230))
+* `versions`: These are references to `modulestore.structures`. A location-reference like `mit.eng.eecs.6002x.industry.spring2013/branch/draft` refers to the value associated with `draft` for this document.
+
+* `versionName` is `draft`, `published`, or another user-defined string.
+* `versionGuid` is a system generated globally unique id (hash). It points to the entry in `modulestore.structures`
+
+SplitMongo generates a new structure for each change to a structure: that is, for each move, deletion, node creation, or metadata change it adds a new structure and does not modify the old one. If the change was done using a pointer to a from active_index (i.e., course_id and branch), it will update the active_index entry to point to the new structure. No other pointers to the old structure will update. If the change is done using only a structure pointer or if Split determines that the head pointer has moved and the change is really occurring to an "old" structure, the head will not update but split will create a new structure (perhaps forking the structure's history).
+
+Creating a course (creating a new run of a course or such) will create a new entry in this table with just a `draft` branch and will cause a copy of the corresponding entry in `modulestore.structures`. The entry in `structures` will point to its version parent in the source course.
+
+**modulestore.structures**: the entries in this collection follow this definition:
+
+```
+{
+  "_id" : course_guid,
+  "blocks" : {
+    block_guid : {  // the guid is an arbitrary id to represent this node in the course tree
+      "fields" : {"children": [ block_guid* ], ...}
+      "definition" : definition_guid,
+      "category" : "section" | "sequence" | ...
+      "edit_info" : {"edited_on" : date, "edited_by" : user, "previous_version": course_guid}
       ...// more guids
-    },<br />  'root' : block_guid,<br />  'original' : course_guid, // the first version of this course from which all others were derived<br />  'previous' : course_guid | null, // the previous revision of this course (null if this is the original)<br />  'edited_by' : user_id,<br />  'edited_on' : date<br />} </pre><ul><li><code>blocks</code>: each block is a node in the course such as the course, a section, a subsection, a unit, or a component. The block ids remain the same over edits (they're not versioned). </li><li><code>root</code>: the true top of the course. Not all nodes without parents are truly roots. Some are orphans or ancillary data (e.g., course_info).</li><li><code>course_guid, block_guid, definition_guid</code> are not those specific strings but instead some system generated globally unique id.<ul><li>The one which gets passed around and pointed to by urls is the <code>block_guid</code>; so, it will be the one the system ensures is readable. Unlike the other guids, this one stays the same over revisions and can even be the same between course runs (although the course run contextualizes it to distinguish its instantiated version).</li></ul></li><li><code>definition</code> points to the specific revision of the given element in <code>modulestore.definitions</code> which this version of the course includes.</li><li><code>children</code> lists the <span style="font-family: monospace;">block_guids</span> which are the children of this node in the course tree. It's an error if the guid in the <code>children</code> list does not occur in the <code>blocks</code> dictionary. (This will change shortly to enable structures to include other structures by reference.)</li><li>the rest of '<code>fields</code>' will contain the other scope.settings (scope usage = 1, user = 0) fields.</li></ul>
-<p><strong style="font-size: 14.0px;line-height: 1.4285715;">modulestore.definitions</strong>: the data associated with each version of each node in the structures. Many courses may point to the same definition or may point to different versions derived from the same original definition.</p>
-<pre>{ '_id' : guid,<br />  'fields' : ..,<br />  'default_settings' : {'display_name':..,..}, // a starting point for new uses of this definition<br />  'category' : xblocktype, // the xmodule/xblock type such as course, problem, html, video, about<br />  'edit_info' : {<br />    'original_version' : guid, // the first kept version of this definition from which all others were derived<br />    'previous_version' : guid | null, // the previous revision of this definition (null if this is the original)<br />    'edited_by' : user_id,  // the id of whomever pressed the draft or publish button<br />    'edited_on' : date<br />  }<br />}</pre><ul><li><code>_id</code>: a guid to uniquely identify the definition.</li><li><code>fields</code> is the json representation of the scope.content (definition = 1) fields used by the xmodule.</li><li><code>category</code> is the xmodule type and used to figure out which xmodule to instantiate.</li></ul><h3 id="MongostoreDataStructure-Templates">Templates</h3>
-<p>All field defaults will be defined through the xblock field.default mechanism. Templates, otoh, are for representing optional boilerplate usually for examples such as a multiple-choice problem or a video component with the fields all filled in. Templates are stored in yaml files which provide a template name, sorting and filtering information (e.g., requires advanced editor v allows simple editor), and then field: value pairs for setting xblocks' fields upon template selection.</p><h3 id="MongostoreDataStructure-Import/export">Import/export</h3>
-<p>Export should allow the user to select the version of the course to export which can be any of the draft or published versions. At a minimum, the user should choose between draft or published.</p>
-<p>Import should import the course as a draft course or whatever branch the user chooses regardless of whether it was exported as a published or draft one. If there's already a draft for the same course, in the best of all worlds, it would have the guid to see if the guid exists in the structures collection, and, if so, just make that the current structure (don't do any actual data changes). If there's no guid or the guid doesn't exist in the structures collection, then we'll need to work out the logic for how to decide what definitions to create v update v point to.</p><h3 id="MongostoreDataStructure-Location">Location</h3>
-<p>The purpose of <code>Locator</code> is to identify content. That is, to be able to locate content by providing sufficient addressing. Our code needs to locate several types of things and uses several different types of locators for these. These are the types of things we need to address. Some of these can be the same as others, but I wanted to lay them out fairly fine grained here before proposing my distinctions:</p><ol><li>Courses: an object representing a course as an offering but not any of its content. Used for dashboards and other such navigators. These may specify a version or merely reference the idea of the course's existence.</li><li>Course structures: the names (and other metadata), identifiers, and children pointers but not definitions for all the blocks in a course or a subtree of a course. Our applications often display contextual, outline, or other such structural information which do not need to include definitions but need to show display names, graded as, and other status info. This document's design makes fetching these a single document fetch; however, if it has to fetch the full course, it will require far more work (getting all definitions too) than the apps need.</li><li>Blocks (uses of definitions within a version of a course including metadata, pointers to children, and type specific content)</li><li>Definitions: use independent definitions of content without metadata (and currently w/o pointers to children).</li><li>Version trees: Fetching the time history portrayal of a definition, course, or block including branching.</li><li>Collections of courses, definitions, or blocks matching some partial descriptors (e.g., all courses for org x, all definitions of type foo, all blocks in course y of type x, all currently accessible courses (published with startdate &lt; today and enddate &gt; today)). </li><li>Fetching of courses, blocks, or definitions via &quot;human readable&quot; urls. #6 (partial descriptors) may suffice for this as human readable does not guarantee uniqueness.</li></ol>
-<p>Some of these differ not so much in how to address them but in what should be returned. The content should be up to the functions not the addressing scheme. So, I think the addressable things are:</p><ol><li>Course as in #1 above: usually a specific offering of a course. Often used as a context for the other queries.</li><li>Blocks (aka usages) as in #3 above: a specific block contextualized in a course</li><li>Definitions (#4): a specific definition</li><li>Collections of courses, blocks within a specific course, or definitions matching a partial descriptor</li></ol><h4 id="MongostoreDataStructure-Courselocator(course_loc)">Course locator (course_loc)</h4>
-<p>There are 3 ways to locate a course:</p><ol><li>By its unique id in the <code>active_versions</code> collection with an implied or specified selection of draft or published version.</li><li>By its <code>org</code> and <code>prettyid</code> in the <code>active_versions</code> collection with an implied or specified selection of draft or published version. The server should raise an error on any attempt to use this addressing if it does not uniquely identify an entry in the <code>active_versions</code> collection. (For now, I'm only supporting this in the partial locator)</li><li>By its unique id in the <code>structures</code> collection.</li></ol><h4 id="MongostoreDataStructure-Blocklocator(block_loc)">Block locator (block_loc)</h4>
-<p>A block locator finds a specific node in a specific version of a course. Thus, it needs a course locator plus a <code>block_guid</code>.</p><h4 id="MongostoreDataStructure-Definitionlocator(definition_loc)">Definition locator (definition_loc)</h4>
-<p>Just a <code>guid</code>.</p><h4 id="MongostoreDataStructure-Partialdescriptorcollectionslocators(partial)">Partial descriptor collections locators (partial)</h4>
-<p>In the most general case, and to simplify implementation, these can be any payload passable to mongo for doing the lookup. The specification of which collection to look into can be implied by which lookup function your code calls (get_courses, get_blocks, get_definitions) or we could add it as another property. For now, I will leave this as merely a search string. Thus, to find all courses for org = mitx, <code>{&quot;org&quot;: &quot;mitx&quot;}</code>. To find all blocks in a course whose display name contains &quot;circuit example&quot;, call <code>get_blocks</code> with the course locator plus <code>{&quot;fields.display_name&quot; : /circuit example/i}</code> (the i makes it case insensitive and is just an example). To find if a definition is used in a course, call get_blocks with the course locator plus <code>{definition : definition_guid}</code>. Note, this looks for a specific version of the definition. If you wanted to see if it used any of a set of versions, use <code><span>{definition : {&quot;$in&quot; : [definition_guid*]}}</span></code></p>
+    },
+  },
+  "root" : block_guid,
+  "original" : course_guid, // the first version of this course from which all others were derived
+  "previous" : course_guid | null, // the previous revision of this course (null if this is the original)
+  "edited_by" : user_id,
+  "edited_on" : date
+}
+```
+
+* `blocks`: each block is a node in the course such as the course, a section, a subsection, a unit, or a component. The block ids remain the same over edits (they're not versioned).
+* `root`: the true top of the course. Not all nodes without parents are truly roots. Some are orphans or ancillary data (e.g., course_info).
+* `course_guid`, `block_guid`, `definition_guid` are not those specific strings but instead some system generated globally unique id.
+  * The one which gets passed around and pointed to by urls is the `block_guid`; so, it will be the one the system ensures is readable. Unlike the other guids, this one stays the same over revisions and can even be the same between course runs (although the course run contextualizes it to distinguish its instantiated version).
+* `definition` points to the specific revision of the given element in `modulestore.definitions` which this version of the course includes.
+* `children` lists the `block_guids` which are the children of this node in the course tree. It's an error if the guid in the `children` list does not occur in the `blocks` dictionary. (This will change shortly to enable structures to include other structures by reference.)
+* the rest of `fields` will contain the other scope.settings (scope usage = 1, user = 0) fields.
+
+**modulestore.definitions**: the data associated with each version of each node in the structures. Many courses may point to the same definition or may point to different versions derived from the same original definition.
+
+```
+{
+  "_id" : guid,
+  "fields" : ..,
+  "default_settings" : {"display_name":..,..}, // a starting point for new uses of this definition
+  "category" : xblocktype, // the xmodule/xblock type such as course, problem, html, video, about
+  "edit_info" : {
+    "original_version" : guid, // the first kept version of this definition from which all others were derived
+    "previous_version" : guid | null, // the previous revision of this definition (null if this is the original)
+    "edited_by" : user_id,  // the id of whomever pressed the draft or publish button
+    "edited_on" : date
+  }
+}
+```
+
+* `_id`: a guid to uniquely identify the definition.
+* `fields` is the json representation of the scope.content (definition = 1) fields used by the xmodule.
+* `category` is the xmodule type and used to figure out which xmodule to instantiate.
+
+### Templates
+All field defaults will be defined through the xblock field.default mechanism. Templates, otoh, are for representing optional boilerplate usually for examples such as a multiple-choice problem or a video component with the fields all filled in. Templates are stored in yaml files which provide a template name, sorting and filtering information (e.g., requires advanced editor v allows simple editor), and then field: value pairs for setting xblocks' fields upon template selection.
+
+### Import/export
+Export should allow the user to select the version of the course to export which can be any of the draft or published versions. At a minimum, the user should choose between draft or published.
+
+Import should import the course as a draft course or whatever branch the user chooses regardless of whether it was exported as a published or draft one. If there's already a draft for the same course, in the best of all worlds, it would have the guid to see if the guid exists in the structures collection, and, if so, just make that the current structure (don't do any actual data changes). If there's no guid or the guid doesn't exist in the structures collection, then we'll need to work out the logic for how to decide what definitions to create v update v point to.
+
+### Location
+The purpose of `Locator` is to identify content. That is, to be able to locate content by providing sufficient addressing. Our code needs to locate several types of things and uses several different types of locators for these. These are the types of things we need to address. Some of these can be the same as others, but I wanted to lay them out fairly fine grained here before proposing my distinctions:
+
+1. Courses: an object representing a course as an offering but not any of its content. Used for dashboards and other such navigators. These may specify a version or merely reference the idea of the course's existence.
+2. Course structures: the names (and other metadata), identifiers, and children pointers but not definitions for all the blocks in a course or a subtree of a course. Our applications often display contextual, outline, or other such structural information which do not need to include definitions but need to show display names, graded as, and other status info. This document's design makes fetching these a single document fetch; however, if it has to fetch the full course, it will require far more work (getting all definitions too) than the apps need.
+3. Blocks (uses of definitions within a version of a course including metadata, pointers to children, and type specific content)
+4. Definitions: use independent definitions of content without metadata (and currently w/o pointers to children).
+5. Version trees: Fetching the time history portrayal of a definition, course, or block including branching.
+6. Collections of courses, definitions, or blocks matching some partial descriptors (e.g., all courses for org x, all definitions of type foo, all blocks in course y of type x, all currently accessible courses (published with startdate < today and enddate > today)).
+7. Fetching of courses, blocks, or definitions via "human readable" urls. #6 (partial descriptors) may suffice for this as human readable does not guarantee uniqueness.
+
+Some of these differ not so much in how to address them but in what should be returned. The content should be up to the functions not the addressing scheme. So, I think the addressable things are:
+
+1. Course as in #1 above: usually a specific offering of a course. Often used as a context for the other queries.
+2. Blocks (aka usages) as in #3 above: a specific block contextualized in a course
+3. Definitions (#4): a specific definition
+4. Collections of courses, blocks within a specific course, or definitions matching a partial descriptor</li
+
+#### Course locator (course_loc)
+There are 3 ways to locate a course:
+
+1. By its unique id in the `active_versions` collection with an implied or specified selection of draft or published version.
+2. By its `org` and `prettyid` in the `active_versions` collection with an implied or specified selection of draft or published version. The server should raise an error on any attempt to use this addressing if it does not uniquely identify an entry in the `active_versions` collection. (For now, I'm only supporting this in the partial locator)
+3. By its unique id in the `structures` collection.
+
+#### Block locator (block_loc)
+A block locator finds a specific node in a specific version of a course. Thus, it needs a course locator plus a `block_guid`.
+
+#### Definition locator (definition_loc)
+Just a `guid`.
+
+#### Partial descriptor collections locators (partial)
+In the most general case, and to simplify implementation, these can be any payload passable to mongo for doing the lookup. The specification of which collection to look into can be implied by which lookup function your code calls (get_courses, get_blocks, get_definitions) or we could add it as another property. For now, I will leave this as merely a search string. Thus, to find all courses for org = mitx, `{"org": "mitx"}`. To find all blocks in a course whose display name contains "circuit example", call `get_blocks` with the course locator plus `{"fields.display_name" : /circuit example/i}` (the i makes it case insensitive and is just an example). To find if a definition is used in a course, call get_blocks with the course locator plus `{definition : definition_guid}`. Note, this looks for a specific version of the definition. If you wanted to see if it used any of a set of versions, use `{definition : {"$in" : [definition_guid*]}}`
 
 ## Publishing
 
