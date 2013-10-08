@@ -26,3 +26,4 @@
 | Marco   | Google Hangout prototype feedback and discussion sessions, to be scheduled during hackathon twice for each of the following topics - discussion forums, lms redesign (content/navigation), visual analytics for instructors, learner profiles, SPOC experience, synchronous online group activities, (list can be adjusted) |   |
 | Will    | In-memory ModuleStore ==> fast tests |   |
 | Adam    | Add an app enabling students to take notes on what they're learning as they learn |   |
+| Feanil  |Replace the edx-platform vagrant environment that more closely matches production.|    |
