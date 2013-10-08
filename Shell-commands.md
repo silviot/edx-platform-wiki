@@ -4,7 +4,7 @@
 mongo xmodule --eval "db.dropDatabase()"
 mongo xcontent --eval "db.dropDatabase()"
 ```
-* To delete one course first locate your Organization, Course Number, and Course Name in the CMS> Settings> Schedule & Details page then issues this command.  For <a href="/edX/configuration/wiki" target="_blank">configuration</a> issues with "Installing edX on a single Ubuntu 12.04 (Precise) server", please change 'env' to 'aws'.
+* To delete one course first locate your Organization, Course Number, and Course Name in the CMS> Settings> Schedule & Details page then issues this command.  For <a href="/edX/configuration/wiki" target="_blank">configuration</a> issues with <strong>Installing edX on a single Ubuntu 12.04 (Precise) server</strong>, please change 'env' to 'aws'.
 ```
 #Command: rake django-admin[delete_course,cms,env,"{Organization}/{Course Number}/{Course Name} commit"]
 rake django-admin[delete_course,cms,aws,"MITx/999/Robot_Super_Course commit"]
