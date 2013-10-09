@@ -34,3 +34,4 @@
 | JZ | Rewrite [lettuce](https://github.com/gabrielfalcao/lettuce) to generate nose tests and format output using a nose plugin so that we get things like rerunning failed tests for free | |
 | Talbs | Update Sass, Bourbon, Neat FED Tools | |
 | Talbs | LMS Front End Architecture/UI Clean-up | |
+| Julian | Studio-integrated Problem Bank ||
