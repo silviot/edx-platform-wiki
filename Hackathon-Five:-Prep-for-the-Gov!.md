@@ -17,8 +17,7 @@
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
 | Will     | [pip wheel](http://wheel.readthedocs.org/): let's speed up virtualenv creation and stop the scipy recompilation madness! | DB    |
-| DHM     | Restful CRUD for courses, xblocks, and definitions |     |
-| DHM     | Enable use by configuration of pymongo v Google DataStore |     |
+| DHM     | mongo schema migration |     |
 | DHM     | Prototype governance by domain for org, dept, course ids |     |
 | Dave O  | Alternative student courseware state storage, configurable on a per-course basis |    |
 | Feanil  | Break apart configuration cloudformation template by service and combine them programmatically|    |
