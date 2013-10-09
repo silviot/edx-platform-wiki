@@ -28,4 +28,4 @@
 | Feanil  |Replace the edx-platform vagrant environment with one that more closely matches production.|  Will  |
 | James   | Rewrite scripts for pull request aging and contributor list / AUTHORS file checking, and partially automate checking of whether contributor agreements signed | |
 | Cale | Per-hunk drag-and-drop interactive rebase (aka Patch Juggler) | Cale |
-| Cale | Use Docker (or some other container solution) to run more tests aws instance (while maintaining isolation) | |
+| Cale | Use Docker (or some other container solution) to run more tests per aws instance (while maintaining isolation) | |
