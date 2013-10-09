@@ -31,3 +31,4 @@
 | Cale | Use Docker (or some other container solution) to run more tests per aws instance (while maintaining isolation) | |
 | JZ | Remove all Pearson code from the codebase | |
 | JZ | Architect and implement thorough tests of the import/export feature of Studio | |
+| JZ | Rewrite [lettuce](https://github.com/gabrielfalcao/lettuce) to generate nose tests and format output using a nose plugin so that we get things like rerunning failed tests for free | |
