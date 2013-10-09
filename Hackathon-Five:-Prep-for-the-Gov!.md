@@ -27,4 +27,4 @@
 | Adam    | Add an app enabling students to take notes on what they're learning as they learn |   |
 | Feanil  |Replace the edx-platform vagrant environment with one that more closely matches production.|  Will  |
 | James   | Rewrite scripts for pull request aging and contributor list / AUTHORS file checking, and partially automate checking of whether contributor agreements signed | |
-| Cale | Per-hunk drag-and-drop interactive rebase | |
+| Cale | Per-hunk drag-and-drop interactive rebase (aka Patch Juggler) | |
