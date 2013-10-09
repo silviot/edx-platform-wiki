@@ -28,7 +28,7 @@
 | Feanil  |Replace the edx-platform vagrant environment with one that more closely matches production.|  Will  |
 | James   | Rewrite scripts for pull request aging and contributor list / AUTHORS file checking, and partially automate checking of whether contributor agreements signed | |
 | Cale | Per-hunk drag-and-drop interactive rebase (aka Patch Juggler) | Cale |
-| Cale | Use Docker (or some other container solution) to run more tests per aws instance (while maintaining isolation) | |
+| Cale | Use Docker (or some other container solution) to run more tests per aws instance (while maintaining isolation) | Nate |
 | JZ | Remove all Pearson code from the codebase | |
 | JZ | Architect and implement thorough tests of the import/export feature of Studio | |
 | JZ | Rewrite [lettuce](https://github.com/gabrielfalcao/lettuce) to generate nose tests and format output using a nose plugin so that we get things like rerunning failed tests for free | |
