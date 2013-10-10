@@ -1,4 +1,22 @@
 #### Django apps (Studio and LMS)
+* To run django admin commands use manage.py with the following syntax:
+
+```
+path/to/edx-platform/manage.py  [lms|cms]  --settings=aws  --service-variant lms  <cmd>
+```
+
+For example to see all of the available lms commands on the single server vagrant image:
+
+```
+sudo -u www-data /opt/edx/bin/python /opt/wwc/edx-platform/manage.py lms --settings=aws --service-variant lms  help
+```
+
+* To create a superuser account on the edX vagrant image
+```
+sudo -u www-data /opt/edx/bin/python /opt/wwc/edx-platform/manage.py lms --settings=aws --service-variant lms createsuperuser --username <user>
+```
+
+
 * To get rid of existing courses. Note this will not clear out data on the django side like course groups:
 ```
 mongo xmodule --eval "db.dropDatabase()"
