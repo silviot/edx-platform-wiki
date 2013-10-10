@@ -34,3 +34,4 @@
 | Talbs | Update Sass, Bourbon, Neat FED Tools | |
 | Talbs | LMS Front End Architecture/UI Clean-up | |
 | Julian | Studio-integrated Problem Bank ||
+| Lyla | Student MOOC-tracking profile | Nate |
