@@ -35,3 +35,4 @@
 | Talbs | LMS Front End Architecture/UI Clean-up | |
 | Julian | Studio-integrated Problem Bank ||
 | Lyla | Student MOOC-tracking profile | Nate |
+| Chris D | NodeJS and Web Services to support marketing aggregation across a network of Open edX instances | |
