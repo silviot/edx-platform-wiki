@@ -19,7 +19,7 @@
 | Will     | [pip wheel](http://wheel.readthedocs.org/): let's speed up virtualenv creation and stop the scipy recompilation madness! | DB    |
 | DHM     | mongo schema migration |     |
 | DHM     | Prototype governance by domain for org, dept, course ids |     |
-| Dave O  | Alternative student courseware state storage, configurable on a per-course basis |    |
+| Dave O  | Alternative student courseware state storage, configurable on a per-course basis. Work on this is in the ormsbee/student_state branch - basic courseware and progress works with sharded SQL database or MongoDB. |    |
 | Feanil  | Break apart configuration cloudformation template by service and combine them programmatically|    |
 | Marco   | Google Hangout prototype feedback and discussion sessions, to be scheduled during hackathon twice for each of the following topics - discussion forums, lms redesign (content/navigation), visual analytics for instructors, learner profiles, SPOC experience, synchronous online group activities, (list can be adjusted) |   |
 | Will    | In-memory ModuleStore ==> fast tests |   |
