@@ -57,3 +57,7 @@ Now comes the fun part. Login to Mixpanel and select the "edX production" projec
 **Clean Up**
 
 Once you've run your experiment to completion, use your data to determine which version of your change is best. Now you can touch up this "best" version, test it thoroughly, and then roll it out to all users by permanently adding it to the codebase. Remember to remove the code corresponding to your other tests from the codebase - we don't want unused conditionals sitting around. Don't forget to use the Django admin page to delete your now unused flags!
+
+### Other Notes ###
+
+To temporarily deactivate experiments, set cookies marked with the prefix "waffle_falg_" to False. The easiest way to do this is to download an extension such as [Edit this Cookie](https://chrome.google.com/webstore/detail/edit-this-cookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=en) for Chrome, or [Cookies Manager+](http://mzl.la/1cu7yki) for Firefox.
