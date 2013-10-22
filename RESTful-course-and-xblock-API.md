@@ -54,7 +54,7 @@ The course relative access with be using urls which merely add `/block/_blockId_
 
 To get a specific version (note these are non-course run specific: i.e., they may be shared among course runs), the syntax is `/version/_guid_/block/_blockId_`; thus, for example,  `http://xblock/version/0123456789abcdef0123456789abcdef/block/root` which may return the same xblock as the course request above. As above, the caller may insert `edx://` before `version` with no adverse effects.
 
-xblock definitions are never course relative and, for now, always use guids for ids. So, addressing them is via either a `defx://` tag or by the prefix of the url implying the type being a definition. Examples: `http://definition/0123456789abcdef0123456789abcdef', `http://definition/defx://0123456789abcdef0123456789abcdef'.
+xblock definitions are never course relative and, for now, always use guids for ids. So, addressing them is via either a `defx://` tag or by the prefix of the url implying the type being a definition. Examples: `http://definition/0123456789abcdef0123456789abcdef`, `http://definition/defx://0123456789abcdef0123456789abcdef`.
 
 ## operator and header semantics, data types
 
