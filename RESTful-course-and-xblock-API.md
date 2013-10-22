@@ -68,6 +68,14 @@ As of October 2013 we're implementing handlers for `course`, `assets`, `checklis
 
 ### `course`
 
-A `GET` without any arguments should return all courses. A `POST` should create a course if the json payload is valid (not implemented yet).
+A `GET` without any arguments should return all courses. A `POST` should create a course if the json payload is valid (not implemented yet). The `GET` without arguments behaves differently than all of the other operations and thus may be wrong: it returns a list of courses with just the ids, display names, and common information such as dates (last edited, enrollment, start, end).
 
-Any method invocation with a fully specified course id, should do the relevant operation on the course. In the case of `GET`
+Any method invocation with a fully specified course id, should do the relevant operation on the course. In the case of `GET`, it returns not only the top level course information, but also the full course tree without content (just structure with display name labels and xblock node types).
+
+### `assets`
+
+Asset manipulation always requires a course id with an optional asset id (checklists do too). We will not provide a means to retrieve all assets for all courses. The asset url: `http://assets/_courseId_` with optional `/_assetId_` where the assetId is the filename. In the case of assets, at least for now, `branch` is meaningless but harmless, `version` is useless and inadequate.
+
+### `item`
+
+`item` is an xblock subtree accessor. It operates on the xblock and its descendants. (The name is vestigial and a bit misleading).
