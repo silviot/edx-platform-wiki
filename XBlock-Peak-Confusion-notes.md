@@ -6,6 +6,6 @@ Old-to-new conversions:
 
 Confusing things:
 
-- ParentTracker: this fundamentally is about multiple parents for blocks, but with the usage/definition split, we no longer need to have multiple parents. 
+- ParentTracker: this deals with multiple parents for blocks, but with the usage/definition split, we no longer need to have multiple parents. 
 - Lots of places that need an id for a block use `.location.url()`, which will be going away.  What should replace it?
  
