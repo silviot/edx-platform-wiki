@@ -2,7 +2,7 @@ This is a laundry list of things that are maximally confusing as we approach the
 
 Old-to-new conversions:
 
-- XModules had .location and class Location.  These are implementation details of the CMS/LMS world, and pure XBlock code can't assume ids are implemented this way.  We need to move away from .location, and toward usage_ids.
+- XModules has `.location` and `class Location`.  These are implementation details of the CMS/LMS world, and pure XBlock code can't assume ids are implemented this way.  We need to move away from .location, and toward usage_ids.
 
 Confusing things:
 
