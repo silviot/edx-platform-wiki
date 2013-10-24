@@ -20,7 +20,7 @@ XModule Guidelines:
 
         class LTIModule(XModule):
             lti_secret = String(scope=Scope.settings)
-        
+            
             def get_html(self):
                 ... self.lti_secret ...
             
