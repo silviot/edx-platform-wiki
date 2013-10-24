@@ -14,6 +14,9 @@ XModule Guidelines:
 * Don't import `xmodule.modulestore.django` or `xmodule.contentstore.django` from inside an XModule.
     * Rational: Those libraries are externally facing in order to make it easy for a django project (LMS and Studio) to interface w/ XModules. By importing one into an XModule, you make that XModule dependent on Django, which will make it harder to convert to an XBlock later
 
+* If an XModule (or XBlock) uses the contents of a field, then that field should be defined on that XModule (or XBlock). Don't rely on the definition of the field in the InheritanceMixin
+    * Rational: XBlocks should be usable without the Inheritance mechanism (they should be stand-alone), so that they can be tested independently.
+
 * Don't ask about the course in an XModule
     * Rational: XModules (and XBlocks) aren't always going to live inside a course. We might want to embed one directly into a page. As such, they shouldn't be trying to access their containing course to find out information about it.
     * Alternative: A common reason for trying to get to the course object is to allow users to set an attribute on the course to influence all of the blocks of a particular type inside that course. To solve this problem, use inheritance (provided by the LMS and Studio) instead.
