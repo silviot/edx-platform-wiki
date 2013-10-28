@@ -1,10 +1,8 @@
-The edx platform is moving to a RESTful service-oriented interface for most data and page access. This page will not attempt to define nor defend RESTful as there are many better places for that discussion (wikipedia and google are your friends here.)
-
-The first step will be defining and implementing the RESTful interface. The second will be locating and isolating it properly in the architectural implementation so that the services can be easily scaled.
+The edx platform is moving to a [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) [service-oriented](http://en.wikipedia.org/wiki/Service-oriented_architecture) interface for most data and page access. The first step will be defining and implementing the RESTful interface. The second will be locating and isolating it properly in the architectural implementation so that the services can be easily scaled.
 
 ## What will it address?
 
-The RESTful interface should make full CRUD access available for all xblocks, courses, and ancillary information (e.g., assets). Its default will be to consume and produce json representations of these, but the same url patterns should also support generating application appropriate html by setting the HTTP_ACCEPT to `text/html`.
+The RESTful interface should make full CRUD access available for all xblocks, courses, and ancillary information (e.g., assets). Its default will be to consume and produce JSON representations of these, but the same url patterns should also support generating application-appropriate html by setting the HTTP `Accept` header to `text/html`.
 
 ## Authorization requirements
 
