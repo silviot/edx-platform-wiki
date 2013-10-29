@@ -1,5 +1,18 @@
 This is a laundry list of things that are maximally confusing as we approach the point where XBlocks run in edx-platform, but most of the code is still written using XModule concepts.
 
+Outline of things to change to move down from Peak Confusion:
+
+- Per-block runtimes (created by modulestore, module_render)
+- Per-block field datas (created by modulestore, module_render)
+    - FieldDatas should know how to read/write to the DB, rather than just having local memory state that something else persists
+- Separate runtimes for XModules and XModuleDescriptors
+- Ball-of-mud runtimes (runtimes without segregated responsibilities)
+- Use of the word `system`
+- Conglomeration of serialization (xml import) and storage (in-memory) in the XML Module Store
+- Modulestore api (divide responsibilities between FieldData, UsageStore, and separate interface for version management)
+- Use of `to_json` and `from_json` for client facing code. 
+    - Use `singledispatch` to allow for many serialization targets?
+
 Old-to-new conversions:
 
 - XModules has `.location` and `class Location`.  These are implementation details of the CMS/LMS world, and pure XBlock code can't assume ids are implemented this way.  We need to move away from .location, and toward usage_ids.
