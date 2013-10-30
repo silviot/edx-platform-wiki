@@ -12,6 +12,7 @@ Outline of things to change to move down from Peak Confusion:
 - Modulestore api (divide responsibilities between FieldData, UsageStore, and separate interface for version management)
 - Use of `to_json` and `from_json` for client facing code. 
     - Use `singledispatch` to allow for many serialization targets?
+- Use of `handler_prefix` to implement JS `handler_url` code
 
 Old-to-new conversions:
 
