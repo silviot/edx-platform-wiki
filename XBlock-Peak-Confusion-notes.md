@@ -13,6 +13,8 @@ Outline of things to change to move down from Peak Confusion:
 - Use of `to_json` and `from_json` for client facing code. 
     - Use `singledispatch` to allow for many serialization targets?
 - Use of `handler_prefix` to implement JS `handler_url` code
+- `ErrorModules` and `ErrorDescriptors` don't act like the `XModule`s and `XModuleDescriptor`s they replace
+    - Use `ErrorMixin` instead that has an `is_error` attribute, and possibly overrides views with debugging info?
 
 Old-to-new conversions:
 
