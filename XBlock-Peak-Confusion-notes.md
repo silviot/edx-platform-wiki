@@ -15,6 +15,7 @@ Outline of things to change to move down from Peak Confusion:
 - Use of `handler_prefix` to implement JS `handler_url` code
 - `ErrorModules` and `ErrorDescriptors` don't act like the `XModule`s and `XModuleDescriptor`s they replace
     - Use `ErrorMixin` instead that has an `is_error` attribute, and possibly overrides views with debugging info?
+- XBlock javascript must use AMD (and the python API should encourage/support that)
 
 Old-to-new conversions:
 
