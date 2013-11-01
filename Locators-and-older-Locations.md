@@ -13,7 +13,7 @@ The old syntax assumed that the organization name (<em>`org`</em>) and a course 
 
 <p>Locators allow addressing of courses, course-like structures not necessarily used by courses, blocks within courses, and definitions for blocks. Because of this flexibility, they're more complex than Locations. The addressing of a block within a course does the same function as Locations; so, I'll limit this discussion to those. Even these are more flexible than Locations and allow for more optional elements (demarcated with parentheses). The optional version can be either a named tag or a specific version id (akin to a commit id).</p>
 
-<ul><li><code>edx://<em>structured_course_id(</em>/branch/<em>branch_name/)(</em>version<span style="font-family: Arial , sans-serif;">/</span></code><code><em>version_id</em>)(/block/<em>blockid</em>)</code></li></ul>
+`(edx://)structured_course_id(/branch/branch_name)(/version/version_id)(/block/blockid)`
 
 <p>All characters should be legal characters for urls. The system will not rewrite any of the ids by replacing spaces with underscores or such but will instead just pass the strings through urlencode to escape any included illegal chars. Also, all fields will be case insensitive; so, do not use case to distinguish ids nor tags.</p>
 
@@ -53,4 +53,3 @@ The old syntax assumed that the organization name (<em>`org`</em>) and a course 
 <p>The current implementation names blocks by their categories in serial order of creation. So, the first chapter created is 'chapter1', the 7th is 'chapter7'.</p>
 
 <ul><li><code>edu.utc.chem.organic.advanced_intro/branch/live/block/chapter1</code></li></ul>
-
