@@ -15,13 +15,13 @@ The old syntax provided the ability to optionally append '@draft' to specify tha
 
 Locators allow addressing of courses, course-like structures not necessarily used by courses, blocks within courses, and definitions for blocks. Because of this flexibility, they're more complex than Locations. The addressing of a block within a course does the same function as Locations; so, I'll limit this discussion to those. Even these are more flexible than Locations and allow for more optional elements (demarcated with parentheses). The optional version can be either a named tag or a specific version id (akin to a commit id).
 
-`(edx://)structured_course_id(/branch/branch_name)(/version/version_id)(/block/blockid)`
+`(edx://)structured.course.id.as.a.dotpath(/branch/branch_name)(/version/version_id)(/block/blockid)`
 
 All characters should be legal characters for urls. The system will not rewrite any of the ids by replacing spaces with underscores or such but will instead just pass the strings through urlencode to escape any included illegal chars. Also, all fields will be case insensitive; so, do not use case to distinguish ids nor tags.
 
-### structured_course_id
+### structured course ID
 
-A structured_course_id can be any urlencodable sequence of characters which uniquely identifies the course. Neither Locators nor the mongostore impose any particular syntax nor restrictions other than uniqueness on these; however, we strongly suggest and may possibly require that they follow a specific syntax and pattern to enable future smarter dashboards, delegated governance, and data aggregation.
+A structured course ID can be any urlencodable sequence of characters which uniquely identifies the course. Neither Locators nor the mongostore impose any particular syntax nor restrictions other than uniqueness on these; however, we strongly suggest and may possibly require that they follow a specific syntax and pattern to enable future smarter dashboards, delegated governance, and data aggregation.
 
 We strongly recommend and may require in the future that course ids follow this convention: that they are a dot separated scoping list identifying organizations and then optionally course families followed by the organization's course id and optionally a run id. We decided the name should not strictly follow java-like packaging with the inclusion of 'edu' or 'com' as the first element. Here are some examples starting from simple to more encompassing:
 
