@@ -15,7 +15,7 @@ The old syntax provided the ability to optionally append '@draft' to specify tha
 
 Locators allow addressing of courses, course-like structures not necessarily used by courses, blocks within courses, and definitions for blocks. Because of this flexibility, they're more complex than Locations. The addressing of a block within a course does the same function as Locations; so, I'll limit this discussion to those. Even these are more flexible than Locations and allow for more optional elements (demarcated with parentheses). The optional version can be either a named tag or a specific version id (akin to a commit id).
 
-`(edx://)structured.course.id.as.a.dotpath(/branch/branch_name)(/version/version_id)(/block/blockid)`
+`(edx://)structured.course.id.as.a.dotpath(/branch/branch_name)(/version/version_id)(/block/block_id)`
 
 All characters should be legal characters for urls. The system will not rewrite any of the ids by replacing spaces with underscores or such but will instead just pass the strings through urlencode to escape any included illegal chars. Also, all fields will be case insensitive; so, do not use case to distinguish ids nor tags.
 
@@ -50,9 +50,9 @@ The optional version id points to how a course looked at a specific point of tim
 
 It is possible to provide both the version tag and id. In this case, if the tag does not match the current head of the version tag, you get a version conflict error. This is how Studio stops simultaneous edits of the same block.
 
-### blockid
+### block_id
 
-The blockid uniquely identifies a block within a course version. The current code does not guarantee that the same blockid in 2 different course versions identify the same semantic block because it opts for more human readable ids and the only real way to guarantee uniqueness over variants is with UUIDs.
+The block_id uniquely identifies a block within a course version. The current code does not guarantee that the same block_id in 2 different course versions identify the same semantic block because it opts for more human readable ids and the only real way to guarantee uniqueness over variants is with UUIDs.
 
 The current implementation names blocks by their categories in serial order of creation. So, the first chapter created is 'chapter1', the 7th is 'chapter7'.
 
