@@ -9,6 +9,8 @@ This document is [copied from Apiary](http://docs.edxapi.apiary.io/), and the ca
 The edX API is designed to allow clients to instrospect and manipulate XBlocks and
 their related models.
 
+![index/snapshot overview](https://s3.amazonaws.com/uploads.hipchat.com/26537/313915/C41Suikkfgpl4PG/api.png)
+
 # Group XBlocks
 Conceptually, an XBlock is any component that knows how to render itself, at least
 in a certain context. XBlocks can contain other XBlocks. XBlocks can define their
