@@ -4,9 +4,8 @@ This document is [copied from Apiary](http://docs.edxapi.apiary.io/), and the ca
 
 @singingwolfboy: here's an example of a comment.
 
-
 # edX RESTful API
-The edX API is designed to allow clients to instrospect and manipulate XBlocks and
+The edX API is designed to allow clients to introspect and manipulate XBlocks and
 their related models.
 
 ![index/snapshot overview](https://s3.amazonaws.com/uploads.hipchat.com/26537/313915/C41Suikkfgpl4PG/api.png)
@@ -96,6 +95,10 @@ types of indexes could also exist.
           "status": "active",
           "created_by": 84,
           "created_on": "2013-05-18T07:20:51Z",
+          "starts_on": "2013-06-18T07:20:51Z",
+          "ends_on": "2013-05-18T07:20:51Z",
+          "enrollment_starts_on": "2013-05-18T07:20:51Z",
+          "enrollment_ends_on": "2013-05-18T07:20:51Z",
           "permissions": {
             "read": {
               "user": [84],
@@ -111,12 +114,25 @@ types of indexes could also exist.
           "branches": {
             "live": "1c82df57-6b6d-47a7-9f31-24c19d6c6236",
             "draft": "19450641-4f77-4646-a78e-6ee07a784fb3"
+          },
+          "display": {
+            "name": "Intro to SQL",
+            "organization": "My University",
+            "number": "101X",
+            "run": "Fall 2014",
+            "image": "/v1/assets/845/raw",
+            "summary": "A short description of the course",
+            "description": "A longer description of the course"
           }
         }, {
           "id": "myu.compsci.db.sql.t1_2015",
           "status": "development",
           "created_by": 83,
           "created_on": "2013-05-16T17:10:31Z",
+          "starts_on": "2013-06-18T07:20:51Z",
+          "ends_on": "2013-05-18T07:20:51Z",
+          "enrollment_starts_on": "2013-05-18T07:20:51Z",
+          "enrollment_ends_on": "2013-05-18T07:20:51Z",
           "permissions": {
             "read": {
               "user": [83],
@@ -133,12 +149,25 @@ types of indexes could also exist.
             "live": "6173b78b-cc3e-440a-b84f-aed720f320e6",
             "draft": "cca0d370-37be-4168-90c3-7fc4a818e8fc",
             "honors": "29210e12-66c0-4dba-ac61-a74c35cbdc4e"
+          },
+          "display": {
+            "name": "Intro to SQL",
+            "organization": "My University",
+            "number": "101X",
+            "run": "Fall 2015",
+            "image": "/v1/assets/847/raw",
+            "summary": "A short description of the course",
+            "description": "A longer description of the course"
           }
         }, {
           "id": "anotheru.english.shakespeare.Spring2012",
           "status": "finished",
           "created_by": 56,
           "created_on": "2013-11-10T09:20:20Z",
+          "starts_on": "2013-06-18T07:20:51Z",
+          "ends_on": "2013-05-18T07:20:51Z",
+          "enrollment_starts_on": "2013-05-18T07:20:51Z",
+          "enrollment_ends_on": "2013-05-18T07:20:51Z",
           "permissions": {
             "read": {
               "user": [56],
@@ -154,6 +183,15 @@ types of indexes could also exist.
           "branches": {
             "live": "da8e5827-0fd0-4fb3-8ce4-a163598130e0",
             "reading_group": "624133f6-3a7a-43e7-afc9-d30824f24b28"
+          },
+          "display": {
+            "name": "Intro to Shakespeare",
+            "organization": "Another University",
+            "number": "101X",
+            "run": "Spring 2012",
+            "image": "/v1/assets/102/raw",
+            "summary": "A short description of the course",
+            "description": "A longer description of the course"
           }
         }]
 
@@ -170,6 +208,10 @@ etc) will not be returned by this endpoint.
           "status": "active",
           "created_by": 84,
           "created_on": "2013-05-18T07:20:51Z",
+          "starts_on": "2013-06-18T07:20:51Z",
+          "ends_on": "2013-05-18T07:20:51Z",
+          "enrollment_starts_on": "2013-05-18T07:20:51Z",
+          "enrollment_ends_on": "2013-05-18T07:20:51Z",
           "permissions": {
             "read": {
               "user": [],
@@ -185,6 +227,15 @@ etc) will not be returned by this endpoint.
           "branches": {
             "live": "1c82df57-6b6d-47a7-9f31-24c19d6c6236",
             "draft": "19450641-4f77-4646-a78e-6ee07a784fb3"
+          },
+          "display": {
+            "name": "Intro to SQL",
+            "organization": "My University",
+            "number": "101X",
+            "run": "Fall 2014",
+            "image": "/v1/assets/102/raw",
+            "summary": "A short description of the course",
+            "description": "A longer description of the course"
           }
         }]
 
@@ -206,6 +257,10 @@ then "mit.eecs.7001X" and "mit.eecs.8910X.Dec2014" would match, but
           "status": "active",
           "created_by": 84,
           "created_on": "2013-05-18T07:20:51Z",
+          "starts_on": "2013-06-18T07:20:51Z",
+          "ends_on": "2013-05-18T07:20:51Z",
+          "enrollment_starts_on": "2013-05-18T07:20:51Z",
+          "enrollment_ends_on": "2013-05-18T07:20:51Z",
           "permissions": {
             "read": {
               "user": [],
@@ -221,12 +276,25 @@ then "mit.eecs.7001X" and "mit.eecs.8910X.Dec2014" would match, but
           "branches": {
             "live": "1c82df57-6b6d-47a7-9f31-24c19d6c6236",
             "draft": "19450641-4f77-4646-a78e-6ee07a784fb3"
+          },
+          "display": {
+            "name": "Intro to SQL",
+            "organization": "My University",
+            "number": "101X",
+            "run": "Fall 2014",
+            "image": "/v1/assets/102/raw",
+            "summary": "A short description of the course",
+            "description": "A longer description of the course"
           }
         }, {
           "id": "myu.compsci.db.sql.t1_2015",
           "status": "development",
           "created_by": 84,
           "created_on": "2013-05-18T07:20:51Z",
+          "starts_on": "2013-06-18T07:20:51Z",
+          "ends_on": "2013-05-18T07:20:51Z",
+          "enrollment_starts_on": "2013-05-18T07:20:51Z",
+          "enrollment_ends_on": "2013-05-18T07:20:51Z",
           "permissions": {
             "read": {
               "user": [],
@@ -243,12 +311,21 @@ then "mit.eecs.7001X" and "mit.eecs.8910X.Dec2014" would match, but
             "live": "6173b78b-cc3e-440a-b84f-aed720f320e6",
             "draft": "cca0d370-37be-4168-90c3-7fc4a818e8fc",
             "honors": "29210e12-66c0-4dba-ac61-a74c35cbdc4e"
+          },
+          "display": {
+            "name": "Intro to SQL",
+            "organization": "My University",
+            "number": "101X",
+            "run": "Fall 2015",
+            "image": "/v1/assets/987/raw",
+            "summary": "A short description of the course",
+            "description": "A longer description of the course"
           }
         }]
 
 ## Index Details [/v1/indexes/{id}]
 + Parameters
-    + id (required, locator string, `myu.compsci.db.sql.t1_2014`)
+    + id (required, locator string, `arizona.latin.spring-2014`)
 
 ### Create [POST]
 Create a new index with the information provided. An index can only
@@ -258,6 +335,8 @@ a user could not create a course under the `mit` namespace unless
 the user has permission to modify that namespace. New namespaces
 can be arbitrarily created by anyone.
 
+The "id" parameter in the request is optional; if specified, it
+must match the id in the URL for this request.
 The "branches" and "permissions" maps are both optional.
 If the "branches" is not included in the request; it will
 be populated by the server with one branch named "draft". If the
@@ -275,10 +354,14 @@ the index, and no other permissions for anyone.
 + Response 201 (application/json)
 
         {
-          "id": "myu.compsci.db.sql.t1_2014",
+          "id": "arizona.latin.spring-2014",
           "status": "development",
           "created_by": 89,
           "created_on": "2013-11-20T14:15:16Z",
+          "starts_on": null,
+          "ends_on": null,
+          "enrollment_starts_on": null,
+          "enrollment_ends_on": null,
           "permissions": {
             "read": {
               "user": [89],
@@ -293,7 +376,8 @@ the index, and no other permissions for anyone.
           },
           "branches": {
             "draft": "0d72a223-8b56-417d-9f5d-dfacc5955f2d"
-          }
+          },
+          "display": {}
         }
 
 
@@ -301,10 +385,14 @@ the index, and no other permissions for anyone.
 + Response 200 (application/json)
 
         {
-          "id": "myu.compsci.db.sql.t1_2014",
+          "id": "arizona.latin.spring-2014",
           "status": "development",
           "created_by": 89,
           "created_on": "2013-11-20T14:15:16Z",
+          "starts_on": null,
+          "ends_on": null,
+          "enrollment_starts_on": null,
+          "enrollment_ends_on": null,
           "permissions": {
             "read": {
               "user": [89],
@@ -334,10 +422,14 @@ the index, and no other permissions for anyone.
 + Response 200 (application/json)
 
         {
-          "id": "myu.compsci.db.sql.t1_2014",
+          "id": "arizona.latin.spring-2014",
           "status": "cancelled",
           "created_by": 89,
           "created_on": "2013-11-20T14:15:16Z",
+          "starts_on": null,
+          "ends_on": null,
+          "enrollment_starts_on": null,
+          "enrollment_ends_on": null,
           "permissions": {
             "read": {
               "user": [89],
@@ -563,6 +655,26 @@ locked (private) assets, as well.
           }
         }
 
+## XBlock Metadata in Snapshot Filtered by Type [/v1/snapshots/{id}/xblocks?type={type_id}]
++ Parameters
+    + id (required, UUID, `5884ec28-f2a8-4735-a9f9-d54158405af5`)
+    + type_id (optional, string, `video`)
+    
+        The type_id must match one of the XBlock Type IDs.
+    
+### Read [GET]
++ Response 200 (application/json)
+
+        {
+          "chapter1": {
+            "name": "Chapter One",
+            "children": ["chapter3"]
+          }
+          "chapter3": {
+            "name": "Chapter Three",
+            "children": []
+          }
+        }
 
 ## XBlock Instance [/v1/snapshots/{id}/xblocks/{name}]
 Like snapshots, XBlock instances are immutable. Any operation that would
