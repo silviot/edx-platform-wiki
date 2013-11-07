@@ -1,6 +1,6 @@
 ## Note:
 
-This document is [copied from Apiary](http://docs.edxapi.apiary.io/), and the canonical version lives there. This page is more easily edited and references; apiary's design is optimized for APIs, but comments are lost easily. If you wish to comment on part of the API, please do it on this document by editing the page and adding your comment, prefixed with your Github username, like this:
+This document is [copied from Apiary](http://docs.edxapi.apiary.io/), and the canonical version lives there. This page is more easily edited and referenced; apiary's design is optimized for APIs, but comments are lost easily. If you wish to comment on part of the API, please do it on this document by editing the page and adding your comment, prefixed with your Github username, like this:
 
 @singingwolfboy: here's an example of a comment.
 
