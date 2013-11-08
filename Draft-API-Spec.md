@@ -208,6 +208,8 @@ types of indexes could also exist.
 
 ## Active Indexes [/v1/indexes/active]
 
+@ormsbee: Why not use a querystring param here? Having indexes/active as a list but indexes/{id} as a detail seems unnecessarily inconsistent.
+
 ### Read [GET]
 This API response only returns information about indexes with the status "active".
 Other indexes (for example, completed courses, courses still under development,
