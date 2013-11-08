@@ -98,6 +98,8 @@ for who can read the index, and who can modify its contents
 A Course is the definitive example of an index, but other
 types of indexes could also exist.
 
+@ormsbee: The term "index" is really generic and only makes sense to people if they know git (and even then, it's not really the same thing). If the reason we're not using the term "course" is because we want to allow for things that are smaller than courses, then let's talk to the folks in services and come up with an acceptable generic term that covers both courses and smaller units of instruction.
+
 ## Indexes [/v1/indexes]
 
 ### Read [GET]
