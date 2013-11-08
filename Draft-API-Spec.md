@@ -81,6 +81,11 @@ supports.
         }
         
 
+
+@ormsbee: Since this is the exact same information as what's in the listing, why would someone want to use this? Wouldn't they typically come through the list view to get here?
+
+@ormsbee: I'm not sure if this is within the scope of the API, but once I'm at a detail view for an XBlock type, what can I do with this information? Is there a resource that can be linked off of here that would bring me to something where I could create a new content piece based off of this XBlock type? See its editor? A sample problem?
+
 # Group Indexes
 Conceptually, an index is simply a mapping of branches
 (such as "live", "draft", "honors", etc) to the latest snapshot
