@@ -53,6 +53,10 @@ supports.
 
 @ormsbee: Why are we exposing the XBlock Type's schema?
 
+@ormsbee: Will XBlock Types have versions? Authors?
+
+@ormsbee: What is the use case for this? Studio querying to see what XBlock types are available for authoring? If so, does it need any additional information about how to categorize them?
+
 ## XBlock Type Detail [/v1/xblock_types/{id}]
 + Parameters
     + id (required, string, `schema_ex`)
