@@ -51,6 +51,8 @@ supports.
           }
         }]
 
+@ormsbee: Why are we exposing the XBlock Type's schema?
+
 ## XBlock Type Detail [/v1/xblock_types/{id}]
 + Parameters
     + id (required, string, `schema_ex`)
