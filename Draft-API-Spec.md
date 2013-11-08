@@ -4,6 +4,8 @@ This document is [copied from Apiary](http://docs.edxapi.apiary.io/), and the ca
 
 @singingwolfboy: here's an example of a comment.
 
+@ormsbee: As a sort of meta-comment about the API as a whole -- I would really like to see use cases here for the various API calls. Not use cases as in "I would like to see a list of courses", but use cases as in "the LMS needs to render a list of active courses that can be filtered on the following things for display on XYZ pages". Maybe this is already internalized for you folks since you're coming at this from the studio side of things, but in many cases it's not clear to me. For instance, when I think of snapshots, getting them by ID is definitely good, but one of the first things that comes to mind is a researcher being able to say "Hey, that's a funny pattern in the event logs -- get me the snapshot of this course as it existed at this timestamp." or "Get me all the snapshots that were live between X and Y times, along with the times they became live."
+
 # edX RESTful API
 The edX API is designed to allow clients to introspect and manipulate XBlocks and
 their related models.
