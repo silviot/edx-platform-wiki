@@ -1,4 +1,3 @@
-
 ***
 
 Just wanted to post a few of the tools I've been using to debug issues that I've found helpful.
@@ -16,7 +15,7 @@ If you've used a tool that's helped you to understand, troubleshoot or install, 
 * [MySQL GUI Tools](http://dev.mysql.com/downloads/gui-tools/5.0.html)
 * SequelPro
 
-You'll need to configure mongodb and mysql to accept external connections.
+You'll need to configure mongodb and mysql to accept external connections, or alternatively set up a SSH tunnel.
 
 ## Web-based tools
 * [RockMongo](http://rockmongo.com/)
