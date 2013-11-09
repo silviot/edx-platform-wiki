@@ -20,6 +20,7 @@ Welcome to the edx-platform wiki!
 * [[Split Testing]]
 * [[Object Identities]]
 * [[Data-Access,-Persistence]]
+* [[Helpful Tools]]
 
 ### Features
 
