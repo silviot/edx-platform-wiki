@@ -6,17 +6,21 @@ This document is [copied from Apiary](http://docs.edxapi.apiary.io/), and the ca
 
 @ormsbee: As a sort of meta-comment about the API as a whole -- I would really like to see use cases here for the various API calls. Not use cases as in "I would like to see a list of courses", but use cases as in "the LMS needs to render a list of active courses that can be filtered on the following things for display on XYZ pages". Maybe this is already internalized for you folks since you're coming at this from the studio side of things, but in many cases it's not clear to me. For instance, when I think of snapshots, getting them by ID is definitely good, but one of the first things that comes to mind is a researcher being able to say "Hey, that's a funny pattern in the event logs -- get me the snapshot of this course as it existed at this timestamp." or "Get me all the snapshots that were live between X and Y times, along with the times they became live."
 
+
 # edX RESTful API
 The edX API is designed to allow clients to introspect and manipulate XBlocks and
 their related models.
-
-![index/snapshot overview](https://s3.amazonaws.com/uploads.hipchat.com/26537/313915/C41Suikkfgpl4PG/api.png)
 
 # Group XBlocks
 Conceptually, an XBlock is any component that knows how to render itself, at least
 in a certain context. XBlocks can contain other XBlocks. XBlocks can define their
 own schema for storing data, which must consist only of primitive types
 (string, int, list, mapping)
+
+The "title" and "description" strings are meant to be displayed in a UI, and as such
+should be translated into the language specified by the `Accept-Language` header
+in the request. If the server is unable to translate the strings into the requested
+language, they will be returned untranslated.
 
 *Note:* This API is read-only. XBlock types cannot be created, modified, or deleted
 through this API; available XBlock types are solely controlled by the server
@@ -30,16 +34,21 @@ supports.
 
         [{
           "id": "thumbs",
+          "version": "1.0",
           "title": "Thumbs",
           "description": "a simple control to indicate thumbs-up or thumbs-down, and aggregate responses",
           "schema": {},
+          "defaults": {}
         }, {
           "id": "randomize",
+          "version": "0.1a",
           "title": "Randomize",
           "description": "randomize children",
-          "schema": {}
+          "schema": {},
+          "defaults": {}
         }, {
           "id": "schema_ex",
+          "version": "2.5.4",
           "title": "Schema Type Example",
           "description": "just demonstrates all the different schema types",
           "schema": {
@@ -50,6 +59,9 @@ supports.
             },
             "list_of_strings": ["string"],
             "list_of_ints": ["int"]
+          },
+          "defaults": {
+            "name": "Empty"
           }
         }]
 
@@ -69,6 +81,7 @@ supports.
 
         {
           "id": "schema_ex",
+          "version": "2.5.4",
           "title": "Schema Type Example",
           "description": "just demonstrates all the different schema types",
           "schema": {
@@ -79,14 +92,16 @@ supports.
             },
             "list_of_strings": ["string"],
             "list_of_ints": ["int"]
+          },
+          "defaults": {
+            "name": "Empty"
           }
         }
-        
-
 
 @ormsbee: Since this is the exact same information as what's in the listing, why would someone want to use this? Wouldn't they typically come through the list view to get here?
 
 @ormsbee: I'm not sure if this is within the scope of the API, but once I'm at a detail view for an XBlock type, what can I do with this information? Is there a resource that can be linked off of here that would bring me to something where I could create a new content piece based off of this XBlock type? See its editor? A sample problem?
+        
 
 # Group Indexes
 Conceptually, an index is simply a mapping of branches
@@ -95,12 +110,55 @@ for that branch. Indexes also contain permission information
 for who can read the index, and who can modify its contents
 (or the contents of its child snapshots).
 
+The "display" hash is meant to be displayed in a UI, and as such
+should be translated into the language specified by the `Accept-Language` header
+in the request. If the server is unable to translate the strings into the requested
+language, they will be returned untranslated.
+
 A Course is the definitive example of an index, but other
 types of indexes could also exist.
 
 @ormsbee: The term "index" is really generic and only makes sense to people if they know git (and even then, it's not really the same thing). If the reason we're not using the term "course" is because we want to allow for things that are smaller than courses, then let's talk to the folks in services and come up with an acceptable generic term that covers both courses and smaller units of instruction.
 
+![index/snapshot diagram](https://s3.amazonaws.com/uploads.hipchat.com/26537/313915/C41Suikkfgpl4PG/api.png)
+
 ## Indexes [/v1/indexes]
+
+This API endpoint can take several query parameters to filter results,
+as follows:
+
+* `root={partial_id}`
+  - Filter based on organization, department, etc. Index IDs are
+    dotted paths like `mit.eecs.1234.Fall2013`; you can consider
+    indexes to exist in a tree where each node of the tree is a
+    dot-separated section of the dotpath. For example, if the client
+    requests `/v1/indexes?root=mit.eecs`, the response will contain
+    all indexes that start with `mit.eecs`
+    and exist under that node of the tree. This means that
+    `mit.eecs.7001X` and `mit.eecs.8910X.Dec2014` would match, but
+    `mit.eecs7001X` would not match (because `eecs` is not the
+    same as `eecs7001X`). `harvard.mit.eecs` also would not match,
+    because it doesn't start with the given `partial_id`.
+* `status={status}`
+  - Filter by the given `status`. For example, if the client requests
+    `/v1/indexes?status=cancelled`, only indexes where the status
+    attribute equals the string `cancelled` will be returned. This
+    parameter is case-sensitive.
+* `starts_before={datetime}`
+* `starts_after={datetime}`
+* `ends_before={datetime}`
+* `ends_after={datetime}`
+  - Filter by course start date and/or end datetime. The provided `datetime`
+    must be an ISO8601-formatted string, either representing a date
+    (`YYYY-MM-DD`) or representing a datetime (`YYYY-MM-DDTHH:MM:SSZ`).
+    If provided as a date, it is assumed that the time component of
+    the datetime is 00:00:00. Alternatively, clients may pass the string
+    `NOW` to indicate an arbitrary datetime within a 5 minute delta of
+    when that the request is received, or `TODAY` to indicate a datetime
+    corresponding to 00:00:00 on the current date. Note that these special
+    strings must be passed in all capital letters. (`NOW`'s 5-minute delta
+    is so that the response can be effectively cached.)
+    
 
 ### Read [GET]
 + Response 200 (application/json)
@@ -210,62 +268,14 @@ types of indexes could also exist.
           }
         }]
 
+
 ## Active Indexes [/v1/indexes/active]
 
-@ormsbee: Why not use a querystring param here? Having indexes/active as a list but indexes/{id} as a detail seems unnecessarily inconsistent.
+This API endpoint is a synonym for
+`/v1/indexes?status=active&starts_after=NOW&ends_before=NOW`.
+It is included as a convienence for clients, since the
+developers of this API anticipate that this will be a common need.
 
-### Read [GET]
-This API response only returns information about indexes with the status "active".
-Other indexes (for example, completed courses, courses still under development,
-etc) will not be returned by this endpoint.
-+ Response 200 (application/json)
-
-        [{
-          "id": "myu.compsci.db.sql.t1_2014",
-          "status": "active",
-          "created_by": 84,
-          "created_on": "2013-05-18T07:20:51Z",
-          "starts_on": "2013-06-18T07:20:51Z",
-          "ends_on": "2013-05-18T07:20:51Z",
-          "enrollment_starts_on": "2013-05-18T07:20:51Z",
-          "enrollment_ends_on": "2013-05-18T07:20:51Z",
-          "permissions": {
-            "read": {
-              "user": [],
-              "group": [],
-              "world": false
-            },
-            "write": {
-              "user": [],
-              "group": [],
-              "world": false
-            }
-          },
-          "branches": {
-            "live": "1c82df57-6b6d-47a7-9f31-24c19d6c6236",
-            "draft": "19450641-4f77-4646-a78e-6ee07a784fb3"
-          },
-          "display": {
-            "name": "Intro to SQL",
-            "organization": "My University",
-            "number": "101X",
-            "run": "Fall 2014",
-            "image": "/v1/assets/102/raw",
-            "summary": "A short description of the course",
-            "description": "A longer description of the course"
-          }
-        }]
-
-## Indexes by Organization [/v1/indexes?qualifier={partial_id}]
-Returns a qualified list of indexes as specified by a partial ID. This allows
-API clients to filter API responses based on organization, department, etc.
-This is a simple string prefix match, but the match must be followed either
-by a dot or by the end of the string. For example, if the `partial_id` is "mit.eecs",
-then "mit.eecs.7001X" and "mit.eecs.8910X.Dec2014" would match, but
-"mit.eecs7001X" would not match, nor would "harvard.mit.eecs"
-+ Parameters
-    + partial_id (optional, string, `myu.compsci`)
-    
 ### Read [GET]
 + Response 200 (application/json)
 
@@ -300,41 +310,6 @@ then "mit.eecs.7001X" and "mit.eecs.8910X.Dec2014" would match, but
             "number": "101X",
             "run": "Fall 2014",
             "image": "/v1/assets/102/raw",
-            "summary": "A short description of the course",
-            "description": "A longer description of the course"
-          }
-        }, {
-          "id": "myu.compsci.db.sql.t1_2015",
-          "status": "development",
-          "created_by": 84,
-          "created_on": "2013-05-18T07:20:51Z",
-          "starts_on": "2013-06-18T07:20:51Z",
-          "ends_on": "2013-05-18T07:20:51Z",
-          "enrollment_starts_on": "2013-05-18T07:20:51Z",
-          "enrollment_ends_on": "2013-05-18T07:20:51Z",
-          "permissions": {
-            "read": {
-              "user": [],
-              "group": [],
-              "world": false
-            },
-            "write": {
-              "user": [],
-              "group": [],
-              "world": false
-            }
-          },
-          "branches": {
-            "live": "6173b78b-cc3e-440a-b84f-aed720f320e6",
-            "draft": "cca0d370-37be-4168-90c3-7fc4a818e8fc",
-            "honors": "29210e12-66c0-4dba-ac61-a74c35cbdc4e"
-          },
-          "display": {
-            "name": "Intro to SQL",
-            "organization": "My University",
-            "number": "101X",
-            "run": "Fall 2015",
-            "image": "/v1/assets/987/raw",
             "summary": "A short description of the course",
             "description": "A longer description of the course"
           }
@@ -511,6 +486,15 @@ request to partially update the index.
     + name (required, string, `live`)
 
 ### Redirect to Snapshot [GET]
+This also supports a query parameter:
+
+* `at={datetime}`
+  - An ISO8601 formatted date or datetime, or the strings `NOW` or
+    `TODAY`, as described in the `/v1/indexes` endpoint. This will
+    return a redirect to the snapshot for the branch as it existed
+    at the provided datetime. If no `at` parameter is passed, it
+    defaults to `NOW`.
+
 + Response 302
     + Headers
     
@@ -519,6 +503,25 @@ request to partially update the index.
     + Body
 
             {"id": "cca0d370-37be-4168-90c3-7fc4a818e8fc"}
+
+### Create or Reset Snapshot on Branch [POST]
+Creates an empty snapshot identified by the branch name. The
+created snapshot has no parent snapshot, and no content.
+If this API endpoint is called on a branch that already has an
+existing snapshot, a new snapshot is still created, and
+the course's branch pointer is updated to point to this new
+snapshot.
++ Response 201 (application/json)
+    + Headers
+    
+            Location: /v1/snapshots/0298b9f7-b8ef-4bcb-ab33-8f712aa520bd
+
+    + Body
+    
+            {
+              "message": "created",
+              "id": "0298b9f7-b8ef-4bcb-ab33-8f712aa520bd"
+            }
 
 ### Update Branch Pointer [PUT]
 Point the branch at a new snapshot identified by the given ID.
@@ -698,6 +701,11 @@ Like snapshots, XBlock instances are immutable. Any operation that would
 modify an existing XBlock instance instead creates a new instance, and
 returns a reference to that newly-created instance.
 
+`type` refers to the ID of an XBlock Type, and`type_version` is refers
+to the version of the XBlock Type. If `type_version` is null or is
+unspecified, it is assumed that the instance is an instance of the latest
+version of this XBlock Type that the server supports.
+
 + Parameters
     + id (required, UUID, `a7e3233a-c19d-40d4-b450-2046bd099501`)
         The ID of the snapshot that contains this xblock, usually a UUID.
@@ -713,6 +721,7 @@ may resemble URLs. That's why they do not start with `/v1`.
         {
           "id": "/snapshots/a7e3233a-c19d-40d4-b450-2046bd099501/xblocks/chapter7",
           "type": "schema_ex",
+          "type_version": "2.5.4",
           "parent": "/snapshots/e78ff15e-da0b-4d77-845e-30a30d265106/xblocks/chapter7",
           "children": [],
           "name": "my_name",
@@ -724,10 +733,47 @@ may resemble URLs. That's why they do not start with `/v1`.
           "list_of_ints": [1, 2, 3, 4, 5]
         }
 
+### Create empty XBlock instance [POST]
+This will create a new snapshot based on this snapshot, with an empty
+XBlock instance with name provided in the URL. The request must
+specify a `type` in the request body, which is the ID of an XBlock
+type that this server supports. The "parent" attribute on the
+newly-created XBlock instance will be `null`.
+
+In addition to the `type` attribute, this request *may* contain other
+attributes to set for the newly-created XBlock instance, based on
+the schema of the XBlock type. Those attributes will be set on the
+newly-created XBlock instance. Unspecified attributes will be set
+based on the defaults of the XBlock type.
+
+If this API endpoint is called on an existing XBlock, the
+newly-created snapshot will contain an empty XBlock instance
+instead, effectively resetting the XBlock instance. This
+is also the way to change the type of an XBlock instance.
+
++ Request (application/json)
+
+        {"type": "randomize"}
+
++ Response 201 (application/json)
+    + Headers
+        
+            Location: /v1/snapshots/b6bbab4a-3a21-485e-ab41-094488ae0847/xblocks/chapter7
+
+    + Body
+
+            {
+              "message": "created",
+              "location": "/v1/snapshots/b6bbab4a-3a21-485e-ab41-094488ae0847/xblocks/chapter7"
+            }
+
 ### Create new XBlock instance based on partially updating this instance [PUT]
 Note that this will create a new snapshot based on this snapshot, and a new
 XBlock instance based on this XBlock instance. The response is simply a
 pointer to the newly-created XBlock instance under the newly-created snapshot.
+
+The `type` of an XBlock instance cannot be updated using this API endpoint.
+To change the `type` of an XBlock instance, replace it using the POST verb.
 
 + Request (application/json)
             
@@ -782,8 +828,7 @@ in the system.
 + Request (application/json)
 
         {
-          "first_name": "Cookie",
-          "last_name": "Monster",
+          "name": "Cookie Monster",
           "roles": ["learner"]
         }
 
@@ -806,18 +851,15 @@ in the system.
 
                 [{
                   "id": 1,
-                  "first_name": "Anant",
-                  "last_name": "Agarwal",
+                  "name": "Anant Agarwal",
                   "roles": ["admin"]
                 }, {
                   "id": 2,
-                  "first_name": "Joe",
-                  "last_name": "Learner",
+                  "name": "Joe Learner",
                   "roles": ["learner"]
                 }, {
                   "id": 3,
-                  "first_name": "Sarah",
-                  "last_name": "Staff",
+                  "name": "Sarah Staff",
                   "roles": ["course_creator", "learner"],
                 }]
 
@@ -830,22 +872,20 @@ in the system.
 
         {
           "id": 1,
-          "first_name": "Anant",
-          "last_name": "Agarwal",
+          "name": "Anant Agarwal",
           "roles": ["admin"]
         }
 
 ### Partial update [PUT]
 + Request (application/json)
 
-        {"first_name": "Bigshot"}
+        {"name": "Bigshot"}
 
 + Response 200 (application/json)
 
         {
           "id": 1,
-          "first_name": "Bigshot",
-          "last_name": "Agarwal",
+          "name": "Bigshot",
           "roles": ["admin"]
         }
 
