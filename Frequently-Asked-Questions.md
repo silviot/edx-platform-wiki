@@ -40,7 +40,7 @@ In the history of edX, the use of MongoDB as a contentstore is relatively new (p
 
 #### Are the CMS and LMS suppose to use the same database or separate ones when in production?
 
-CMS and LMS should share the same databases (mysql/RDS for user-data and MongoDB for courseware content) for any deployments. SSO is accomplished by both Django Apps using shared cookies (e.g.   *.edx.org, in our case) as well as the same Session database. So if you're deployment is on *.foo.com, then the cookie domain should be set to .foo.com, where the LMS is on www.foo.com and the CMS is on studio.foo.com.
+CMS and LMS should share the same databases (mysql/RDS for user-data and MongoDB for courseware content and discussion forums) for any deployments. SSO is accomplished by both Django Apps using shared cookies (e.g.   *.edx.org, in our case) as well as the same Session database. So if you're deployment is on *.foo.com, then the cookie domain should be set to .foo.com, where the LMS is on www.foo.com and the CMS is on studio.foo.com.
 
 #### With django-admin syncdb and migrate - is that run both in LMS and CMS or is it sufficient to run once?
 
