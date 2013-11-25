@@ -169,4 +169,6 @@ What's subject to opinion and how the design will progress:
 
 All changes will occur as if happening in one transaction. Even if the changes to `destination_branch` result in numerous versions, the head won't update until the system commits all changes. Thus, the LMS users' experience should maintain consistency.
 
-In addition to all explicitly listed nodes, publish will ensure each ancestor exists in destination. It will not update any fields of the ancestors which already existed. However, those which did not exist will get their field values from source.
+In addition to all explicitly listed nodes, publish will ensure each subtree root's parent exists in destination. It will raise exceptions if any parents are missing.
+
+Any exceptions will cause publish to fail rather than to be partial.
