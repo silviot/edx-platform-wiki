@@ -8,6 +8,12 @@ Welcome to the edx-platform wiki!
 * [[Troubleshooting]]
 * [[Well known ports for servers]]
 
+## Open edX Sandbox
+
+edX operates and maintains a special Sandbox hosting environment for people to try out. Note that we purge and refresh this environment frequently. It is merely an site for Open edX prospective users to learn more about the Open edX product. This is not meant to host "live" courses and we do not maintain a SLA or guarantee any uptime on this environment.
+
+* [[Open edX Sandbox Website]]
+
 ## Development
 
 * [[How to Contribute]]
