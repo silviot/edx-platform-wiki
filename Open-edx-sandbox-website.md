@@ -10,6 +10,5 @@ There are some dummy accounts created on the sandbox:
 
 honor@example.com
 
-Each user is by default enrolled in the demo course as an honor code, 
-verified, and audit student. 
-The password for all three of these accounts is "edx". 
+Each user is by default enrolled in the demo course as an honor code student. 
+The password for this account is "edx". 
