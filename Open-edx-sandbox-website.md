@@ -8,9 +8,12 @@ By default it will be rebuilt once a week and refreshed with the
 latest version of the demo course. 
 There are some dummy accounts created on the sandbox: 
 
+```
 honor@example.com
+```
+```
 verified@example.com 
-
+```
 Each user is by default enrolled in the demo course as an honor code, 
 verified, and audit student. 
 The password for all three of these accounts is "edx". 
