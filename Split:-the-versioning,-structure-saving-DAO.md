@@ -142,7 +142,7 @@ In the new Modulestore, the authoring team can select how many branches to suppo
 
 Publishing a node from one branch to another must imply:
 * ensure all of that node's ancestors are in the destination branch. If not, throw an exception.
-* ensure the node is in the destination branch in the same relative order vis-a-vis its published siblings under its parent.
+* put the node is in the destination branch in the same relative order vis-a-vis its published siblings under its parent. NOTE: to ensure the resulting order is determinate, publishing may involve changing the order of previously published siblings. For example, if publishing `[c, d]` and source parent has children `[a, b, c, d, e]` and destination parent currently has children `[e, b]`, there's no obviously correct resulting order; thus, publish will reorder destination to `[b, c, d, e]` to make it conformant with the destination.
 * ensure the fields of the node in the destination are the same as the source
 
 What's subject to opinion and how the design will progress:
