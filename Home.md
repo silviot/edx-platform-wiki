@@ -14,6 +14,10 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 
 * [[Open edX Sandbox Website]]
 
+## Roadmap
+
+* [Open edX Public Product Roadmap](https://edx-wiki.atlassian.net/wiki/display/OPENPROD/OpenEdX+Public+Product+Roadmap)
+
 ## Development
 
 * [[How to Contribute]]
