@@ -13,7 +13,10 @@ You can completely disable the ability for any user who is not marked "is_staff"
 In /edx-platform/cms/envs/common.py, or your extension of it, add _'DISABLE_COURSE_CREATION': True_ to MITX_FEATURES.
 
 ### Marking a user as "is_staff"
-There is a Django admin command for marking an account as "is_staff": _/manage.py lms set_staff emailaddress_
+There is a Django admin command for marking an account as "is_staff": 
+```
+_/manage.py lms set_staff emailaddress_
+```
 
 Note that "is_staff" is a [Django auth field](https://docs.djangoproject.com/en/dev/ref/contrib/auth/). It is completely unrelated to the course staff concept within Studio.
 
