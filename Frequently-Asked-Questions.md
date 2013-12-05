@@ -45,3 +45,7 @@ CMS and LMS should share the same databases (mysql/RDS for user-data and MongoDB
 #### With django-admin syncdb and migrate - is that run both in LMS and CMS or is it sufficient to run once?
 
 Yes, there are no new CMS specific tables in Django, so you should just have to run it once.
+
+#### Why doesn't the preview button work in Studio
+
+You need to put the server name in the PREVIEW_LMS_BASE variable, found in the cms.env.json and lmd.env.json files.
