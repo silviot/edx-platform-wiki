@@ -19,4 +19,4 @@ There will be lots of functionality that can be added later, but here are a few 
 
 1. Analytics available per cohort will at first only be grades, but later include as much as possible (e.g. time spent per activity, etc.).
 
-
+[Screenshots](https://drive.google.com/folderview?id=0B9SB2dXuuXEDSVVXa3RSUnRHYkE&usp=sharing)
