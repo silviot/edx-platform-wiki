@@ -1,9 +1,3 @@
-<p align=center>
-THIS IS A DRAFT DOCUMENT OF A FEATURE IN DEVELOPMENT.<br>
-IT HASN'T BEEN PULLED INTO THE EDX-CORE YET.
-</p>
-
-
 ## Overview
 
 Course staff can now compose emails and send them to course members.  The
