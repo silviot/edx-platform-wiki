@@ -1,0 +1,8 @@
+**_## Warning: this page is in progress._**
+
+The edX Platform has the ability to integrate with an alternate site for serving pages that are likely to change at a different pace than the code base itself. For example: the FAQ page, terms of service, privacy policy, etc.
+
+Important django configuration settings:
+* FEATURES['ENABLE_MKTG_SITE'] - toggle to enable alternate urls for certain pages e.g. terms of service, faq, etc. This is for anything that has marketing_link('foo') in its template html.
+* When ENABLE_MKTG_SITE is set to False: MKTG_URL_LINK_MAP - dict of marketing page names used in templates and the corresponding string that a reverse of which would resolve to the correct page. For example /lms/templates/footer.html defines these links, so in order for it to work the map would need to contain keys for "ABOUT", "JOBS", "PRESS", "FAQ", "CONTACT". Beware that we have a tricky piece of code in lms/urls.py that assumes that we have a template named foo.html and a corresponding url pattern for ^foo for every key FOO in the MKTG_URL_LINK_MAP, other than ROOT, COURSES, and FAQ which are handled separately.
+* When ENABLE_MKTG_SITE is set to True: MKTG_URLS - dict of marketing page names used in templates (see above), along with the paths to add on to the root of the alternate site that they should navigate to. Note that they must contain a leading "/". You need to define them in this dict because otherwise django would not know how to resolve them. Note that in this dict you must define an item with the key "ROOT" which points to the root of the alternate site. E.g. "http://www.example.com"
