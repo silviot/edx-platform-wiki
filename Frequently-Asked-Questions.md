@@ -14,6 +14,20 @@ to the line
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+#### How to I make my account global staff?
+
+When you make a new account on your local dev environment, it will be a standard student account. You can drop into the sql shell and make your account global staff, which means that it will automatically have access to "Instructor" tab on all courses in the LMS. To do this, drop into the sql shell:
+
+`./manage.py lms dbshell`
+
+The following command will make all local users global staff:
+
+`update auth_user set is_staff=1;`
+
+A similar command will make all local users global superusers, which means they'll have unrestricted access to `localhost:8000/admin`:
+
+`update auth_user set is_superuser=1;`
+
 #### How do I specify the image for my course?
 
 Using Studio, upload an image named images_course_image.jpg
