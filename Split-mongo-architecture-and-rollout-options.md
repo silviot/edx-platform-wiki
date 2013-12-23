@@ -67,8 +67,17 @@ Of the above use case, Studio's existing RESTful api supports:
 
 This section covers how the system worked before split mongo and the location mapper.
 
-Stack
-![Pre-split mongo architecture stack](https://github.com/edx/edx-platform/blob/dhm/arch-docs/docs/architecture/presplit.jpg)
+### Pre-split architecture stack
+
+![Pre-split mongo architecture stack](https://raw.github.com/edx/edx-platform/dhm/arch-docs/docs/architecture/presplit.jpg)
+
+This document does not currently fully explain this stack, but some notes on this diagram.
+
+* The top (yellow) are the user facing clients: currently just browser clients.
+* The next layer (light green) shows the app layer which is primarily restful and non-restful url handlers with any client models and app logic (e.g., most grading).
+* The dark green shows (external) grading and analytics as disconnected services purely as a reminder that these and others like these (e.g., drupal) exist not to show how they use the back end. It would be good to get diagrams of how these plug into the back ends.
+* The cyan layer is the data access and modeling layer. It handles figuring out the identities and repositories, serializing and deserializing data, determining authorization, etc.
+* The xblock runtime currently is subordinate to the modulestore layer which instantiates it, computes addresses, and feeds it data models. lms writes directly to it for student state data which the runtime then persists directly in SQL; however, all courseware writes go through the modulestore layer.
 
 LMS
 
