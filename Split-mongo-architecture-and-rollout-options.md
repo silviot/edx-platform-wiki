@@ -193,3 +193,26 @@ The eventual split mongo architecture will execute the use case above as follows
 
 The focus of this document is which of several intermediate state options should we support. The reason for the intermediate hybrid state is to incrementally deploy functionality and to not require a big bang conversion of all existing course material and records.
 
+Roadblocks to big bang conversion:
+
+1. To enable reusing content among courses and versioning content, the new representation has a richer and slightly incompatible addressing scheme ([Locators](https://github.com/edx/edx-platform/wiki/Locators-and-older-Locations)). This complicates
+  1. student state which uses the old locations
+  1. analytics using the old locations
+  1. references within a course to other course locations
+     1. especially if the material is now being referenced in a different course than the original course because the references will reference the original course not the course-invariant address nor the new-course relative address.
+  1. similarly references to assets because for some reason they're identified relative to the creating course.
+1. Risk around the data migration scripts which have unit tests but which have had no real course content test.
+1. The length of time it's taking to finish writing the code for the hypothetical future state.
+1. The absence of Studio UX design and development to take advantage of the new functionality (reusing content, undo, comparison, controlled publication, etc)
+
+Strategy for mitigating the risks and roadblocks:
+
+1. To mitigate the addressing schema change,
+  1. we've implemented and made live an address scheme mapping service (loc_mapper) which we need to wire wherever needed (it's currently wired at the highest levels of the Studio App and the Studio Client is using the new address scheme).
+  1. we decided to temporarily not use the new address scheme in lms so that student state, analytics, grading, drupal, and other such things won't need to be aware of the new address scheme.
+  1. we'll use loc_mapper to generate the asset addresses for now
+  1. we'll use loc_mapper to try to recode cross-course references (assets and xblocks) into within course relative-references. _n_ Locations map to same Locator. loc_mapper knows how to convert to the Locator and then from the Locator to the Location for any of the _n_ course ids which map to it.
+1. to mitigate migration risk,
+  1. we'll manually invoke migration on a subset of courses and ensure they work well in practice before migrating the others
+  1. this some-migrated-some-not state will require ensuring Studio can write to either back end depending on which repository owns the course.
+  1. we _may_ make mixed modulestore broadcast each write to each representation (which means it needs both addressing schemes simultaneously and a strategy for handling old mongo's restrictive capabilities).
