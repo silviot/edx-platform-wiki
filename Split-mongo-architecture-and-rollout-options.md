@@ -68,6 +68,7 @@ Of the above use case, Studio's existing RESTful api supports:
 This section covers how the system worked before split mongo and the location mapper.
 
 Stack
+![Pre-split mongo architecture stack](https://github.com/edx/edx-platform/blob/dhm/arch-docs/docs/architecture/presplit.jpg)
 
 LMS
 
