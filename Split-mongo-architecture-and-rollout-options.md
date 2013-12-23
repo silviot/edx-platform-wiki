@@ -136,9 +136,60 @@ This document does not currently fully explain this stack, but some notes on thi
 1. Student2 works through u_0..u_i (LMS)
   1. LMS records student state via xblock runtime to SQL
 1. Teacher "publishes" u_0..u_i including u_k..u_l (Studio)
-  1. Studio uses MixedModulestore to overwrite non-draft entries with draft ones in Mongo
+  1. Studio uses MixedModulestore to converts draft entries to non-draft overwriting the existing non-drafts (and losing the drafts) in Mongo
 1. Student3 looks at course content (LMS)
   1. LMS uses MixedModulestore to access the courseware
   1. Student sees content in its new order all the way down and new content
 1. Student3 works through u_0..u_i (LMS)
   1. LMS records student state via xblock runtime to SQL
+
+## Long-term split mongo architecture
+
+Eventually split mongo will completely replace the current mongo; so, the diagram will look just like the above one except that Mongo Modulestore will be Split Mongo Modulestore with its 3 collections giving it the ability to support editing undo, reusing content among courses, tracking changes over time (who and when), adding organizational governance over course id namespaces, and running courses over and over without export, rename, and import. The version tracking, for example, will enable the lms to know that student1 did not see the subsequently inserted material and mark which of u_0..u_i changed since the student saw them so the student can decide whether to check out the changes. It will enable analytics to compare performance before and after a courseware change. It will enable course authors to compare versions.
+
+The eventual split mongo architecture will execute the use case above as follows:
+
+1. Teacher creates course, sections, and subsections (Studio)
+  1. Studio uses MixedModulestore to create entries in draft course version in Mongo
+1. Student1 registers for course (LMS)
+  1. LMS uses auth svcs to create entries in SQL
+1. Student1 looks at course content (LMS)
+  1. LMS uses MixedModulestore to notice that **there is no published content yet for the course**
+  1. Student sees that the course has no content nor outline yet
+1. Teacher creates units and components (Studio)
+  1. Studio uses MixedModulestore to create draft entries in Mongo
+1. Teacher edits titles and dates for the course, sections, and subsections (Studio)
+  1. Studio uses MixedModulestore to update the entries in Mongo
+1. Teacher configures grading policy and marks some subsections as graded (Studio)
+  1. Studio uses MixedModulestore to update the entries in Mongo
+1. Student1 looks at course content (LMS)
+  1. LMS uses MixedModulestore to notice that **there is no published content yet for the course**
+  1. Student sees that the course has no content nor outline yet
+1. Teacher publishes some units (u_0..u_i) and their parents (Studio)
+  1. Studio uses MixedModulestore to create a published branch and version and then copies the draft entries into it via Mongo
+1. Student1 looks at course content (LMS)
+  1. LMS uses MixedModulestore to access the courseware
+  1. Student sees content
+1. Student1 works through u_0..u_i (LMS)
+  1. LMS records student state via xblock runtime to SQL
+1. Teacher edits titles, dates, and subsection order for the course, sections, and subsections (Studio)
+  1. Studio uses MixedModulestore to update the entries in draft branch in Mongo
+1. Teacher edits u_0..u_i adding new units u_k..u_l between 0 and i and changing the order of some units (Studio)
+  1. Studio uses MixedModulestore to update the entries in draft branch in Mongo
+1. Student2 looks at course content (LMS)
+  1. LMS uses MixedModulestore to access the courseware
+  1. **Student2 sees same content as Student1 saw in the same order**
+1. Student2 works through u_0..u_i (LMS)
+  1. LMS records student state via xblock runtime to SQL
+1. Teacher "publishes" u_0..u_i including u_k..u_l (Studio)
+  1. Studio uses MixedModulestore to create a new live version with the changes in being published draft entries in Mongo
+1. Student3 looks at course content (LMS)
+  1. LMS uses MixedModulestore to access the courseware
+  1. **Student3 sees content in its new order all the way down and new content**
+1. Student3 works through u_0..u_i (LMS)
+  1. LMS records student state via xblock runtime to SQL
+
+## Hybrid intermediate state of split running with old mongo
+
+The focus of this document is which of several intermediate state options should we support. The reason for the intermediate hybrid state is to incrementally deploy functionality and to not require a big bang conversion of all existing course material and records.
+
