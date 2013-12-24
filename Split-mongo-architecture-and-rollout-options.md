@@ -121,28 +121,29 @@ This document does not currently fully explain this stack, but some notes on thi
   1. Studio uses MixedModulestore to update the entries in Mongo
 1. Student1 looks at course content (LMS)
   1. LMS uses MixedModulestore to access all of the courseware from step 1
-  1. Student just sees an outline of the course with no content but with grading and dates
+  1. Student1 sees an outline of the course with no content but with grading, dates, and new titles
 1. Teacher makes some units (u_0..u_i) public (Studio)
   1. Studio uses MixedModulestore to rename draft entries as non-draft ones in Mongo
 1. Student1 looks at course content (LMS)
   1. LMS uses MixedModulestore to access all of the courseware from step 1
-  1. Student sees content
+  1. Student1 sees content
 1. Student1 works through u_0..u_i (LMS)
   1. LMS records student state via xblock runtime to SQL
 1. Teacher edits titles, dates, and subsection order for the course, sections, and subsections (Studio)
   1. Studio uses MixedModulestore to update the entries in Mongo
-1. Teacher edits u_0..u_i adding new units u_k..u_l between 0 and i and changing the order of some units (Studio)
+1. Teacher edits u_0..u_i adding new units u_k..u_l between 0 and i and changing the order of some units and components (Studio)
   1. Studio uses MixedModulestore to copy non-draft entries into ones marked draft and update the draft entries in Mongo
+  1. Studio updates the children of the subsections for the inserts and reorders.
 1. Student2 looks at course content (LMS)
   1. LMS uses MixedModulestore to access the courseware
-  1. Student sees content in its new chapter, section, and subsection order but not new unit order and does not see the new units nor the changes to u_0..u_i
+  1. Student2 sees content in its new chapter, section, subsection, and unit order but not new component order and does not see the new units nor the changes to u_0..u_i
 1. Student2 works through u_0..u_i (LMS)
   1. LMS records student state via xblock runtime to SQL
 1. Teacher "publishes" u_0..u_i including u_k..u_l (Studio)
-  1. Studio uses MixedModulestore to converts draft entries to non-draft overwriting the existing non-drafts (and losing the drafts) in Mongo
+  1. Studio uses MixedModulestore to convert draft entries to non-draft overwriting the existing non-drafts (and removing the drafts) in Mongo
 1. Student3 looks at course content (LMS)
   1. LMS uses MixedModulestore to access the courseware
-  1. Student sees content in its new order all the way down and new content
+  1. Student3 sees all content in its new order and material
 1. Student3 works through u_0..u_i (LMS)
   1. LMS records student state via xblock runtime to SQL
 
