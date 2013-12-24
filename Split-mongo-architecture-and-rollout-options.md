@@ -26,7 +26,9 @@ Split mongo use cases whose scope is unknown:
 There are 2 RESTful APIs:
 
 1. Studio's existing one
-1. The proposed central one
+1. The proposed [central one](https://github.com/edx/edx-platform/wiki/RESTful-course-and-xblock-API).
+
+The proposed central one depends upon split mongo or at least a full integration of the new Locator syntax.
 
 Of the above use case, Studio's existing RESTful api supports:
 
@@ -237,11 +239,18 @@ The above diagram's depiction of converting at the app tier does not work for us
 
 Considered approaches:
 
-1. just use the new Locators wherever we know that a field is an address instead of using strings or other inert types.
+1. use only the new Locators wherever we know that a field is an address instead of using strings, Locations, or other inert types (dicts, tuples, arrays).
   1. add behavior to these Locators for them to mock old Location functionality for read as well as create and write (calling loc_mapper as necessary)
   1. ensure every code place does not merely pass these around as assumed strings or ensure that the objects present such strings wherever such assumptions lie.
 1. move the mapping functionality to the low level modulestore methods having them accept any address form and converting it to whatever representation that modulestore needs via the loc_mapper.
   1. to ensure existing higher level code does not trip on alternative representations, we'd have to 
      1. ensure those functions just pass the address around inertly, 
-     1. duplicate each xblock field which we know holds addresses and have a version of the field for each repr, or 
-     1. ensure each access stipulates what type of address it wants (and provides the course_id).
+     1. duplicate each xblock field which we know holds addresses and have a version of the field for each repr, 
+     1. ensure each access stipulates what type of address it wants (and provides the course_id), or
+     1. tell the modulestore which representation to populate into the reference fields according to which app requested it.
+
+Of the 2 above approaches, the first seems cleanest. It does have some risks including performance because our code frequently calls Location methods, race conditions if the code requests a translation before the loc_mapper knows about the course, and the need to do 2 pass conversions for inadvertent wrong-course hard-coded references (see above where I described asset and in course references for things borrowed by other courses) (this dual conversion problem exists in both approaches). For the second approach, none of the sub-approaches is sufficient in and of themselves. The last (encoding the address according to the application's preference) may be the closest to sufficient; however, because the code will not know how to find each reference in an xblock, some will leak to the upper layers which will need to catch address failures and attempt conversions.
+
+For either approach, we'll need to decide whether to convert the existing mongo (aka, "old mongo") to read and write persisted addresses in either representation or only use Locations because that's what old mongo uses now.
+
+In the long run, I'd like to deprecate the old Location and its behavior; however, it's not clear how we get there.
