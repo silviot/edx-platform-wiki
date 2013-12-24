@@ -231,7 +231,7 @@ The difference here is the insertion of the loc_mapper and its store. The studio
 
 This change has no effect on the current use case other than the form of the urls (which the use case does not discuss).
 
-The problem is how to wire split mongo which uses Locators while keeping old mongo and xml which use Locations without having the applications know which of the two addressing schemes the underlying data access and modeling layer uses. This problem is complicated by the fact that addresses are usually passed around merely as strings without any hint to their semantics and often hidden within other structures.
+The problem is how to wire split mongo which uses Locators and old mongo and xml which use Locations without having the applications know which of the two addressing schemes the underlying data access and modeling layer uses. This problem is complicated by the fact that addresses are usually passed around merely as strings without any hint to their semantics and often hidden within other structures. Another complication is that those using Locations must also provide the unique id for the course to get a valid Locator. The loc_mapper will give a mapping even if it doesn't know which course is really in effect, but that mapping may be wrong. In practice, we don't allow more than one course with the same org and "course name"; so, most mappings will be correct; however, we cannot guarantee that they will.
 
 The above diagram's depiction of converting at the app tier does not work for using split mongo which does not want the conversion.
 
@@ -244,4 +244,4 @@ Considered approaches:
   1. to ensure existing higher level code does not trip on alternative representations, we'd have to 
      1. ensure those functions just pass the address around inertly, 
      1. duplicate each xblock field which we know holds addresses and have a version of the field for each repr, or 
-     1. ensure each access stipulates what type of address it wants.
+     1. ensure each access stipulates what type of address it wants (and provides the course_id).
