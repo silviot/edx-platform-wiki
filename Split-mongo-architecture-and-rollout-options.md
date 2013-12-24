@@ -43,6 +43,8 @@ Of the above use case, Studio's existing RESTful api supports:
 **Decisions/options requiring action:**
 
 1. Have Studio support both back ends at the same time for not only read but also write to enable gradual and deliberate course migration (hybrid split)?
+  1. broadcast updates to both to enable reversion to old if needed?
+  1. just assign courses to one or the other (split v old)?
 1. Course migration from old to split mongo:
   1. Big bang: migrate all courses or all that may be edited?
   1. Lazy: migrate upon attempt to write to old mongo?
@@ -55,7 +57,8 @@ Of the above use case, Studio's existing RESTful api supports:
 **Punchlist:**
 
 1. xml export from split
-1. mixed modulestore figure out whether to source & write to split v old mongo v xml
+1. mixed modulestore figure out whether to read & write to split v old mongo v xml
+  1. if using broadcast model of updates, implement that.
 1. command line or admin page to invoke course migration from old to split mongo (unless using lazy migration only)
 1. what if any of the split mongo use cases above to support in Studio? What to do w/ that functionality in case of hybrid split b/c old won't support the use cases?
 1. hook up Studio to split &/or hybrid
