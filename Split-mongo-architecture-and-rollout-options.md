@@ -54,6 +54,7 @@ Of the above use case, Studio's existing RESTful api supports:
       1. Does Studio need to support unmigrated courses for more than read access? (hybrid split)
       1. Will this strategy only apply to edx or also edge and other sites?
 1. Use & extend Studio's existing restful api or implement the more general one we proposed (in the short-run)?
+1. Choose where to put the locator - location mapping (see [locator-location-locus](#locator-location-locus)
 
 
 **Punchlist:**
@@ -237,7 +238,7 @@ The problem is how to wire split mongo which uses Locators and old mongo and xml
 
 The above diagram's depiction of converting at the app tier does not work for using split mongo which does not want the conversion.
 
-Considered approaches:
+Considered approaches<a name="locator-location-locus"/>:
 
 1. use only the new Locators wherever we know that a field is an address instead of using strings, Locations, or other inert types (dicts, tuples, arrays).
   1. add behavior to these Locators for them to mock old Location functionality for read as well as create and write (calling loc_mapper as necessary)
