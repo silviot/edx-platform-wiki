@@ -257,4 +257,4 @@ In the long run, I'd like to deprecate the old Location and its behavior; howeve
 
 Whichever approach we use for addresses, the architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
 
-[Location translation at the modulestore layer](https://github.com/edx/edx-platform/raw/dhm/arch-docs/docs/architecture/locator_ubiquity.jpg)
+![Location translation at the modulestore layer](https://github.com/edx/edx-platform/raw/dhm/arch-docs/docs/architecture/locator_ubiquity.jpg)
