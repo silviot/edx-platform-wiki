@@ -1,8 +1,8 @@
 # Executive Summary & Action page
 
-**Issue:** how to wire up split mongo asap with as little risk as possible?
+**Issue:** how to wire up [split mongo](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO) asap with as little risk as possible?
 
-**Real issue:** how to get RESTful api asap for SPOCs and other uses?
+**Real issue:** how to get [RESTful api](https://github.com/edx/edx-platform/wiki/RESTful-course-and-xblock-API) asap for SPOCs and other uses?
 
 Goal RESTful API use cases:
 
