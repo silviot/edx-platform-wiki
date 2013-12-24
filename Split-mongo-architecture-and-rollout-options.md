@@ -259,3 +259,22 @@ In the long run, I'd like to deprecate the old Location and its behavior; howeve
 Whichever approach we use for addresses, the architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
 
 ![Location translation at the modulestore layer](https://github.com/edx/edx-platform/raw/dhm/arch-docs/docs/architecture/locator_ubiquity.jpg)
+
+### Hybrid approaches
+
+The hybrid approaches for running split mongo along side old mongo have several control dimensions:
+
+1. Which courses persist in split and which into old mongo?
+  1. All courses: one time big bang conversion--unlikely approach.
+  1. All current and future courses: leave archived courses alone but don't allow access from Studio--also unlikely.
+  1. Any course being edited in Studio: proactively move any course which should be accessible in Studio and have Studio only use split mongo.
+  1. Lazily any course being edited in Studio: read from either store, but only allow writes to split mongo. This was the approach I was working on. It would force migration from old to split upon first update attempt.
+  1. All new courses, but leave old ones in old mongo: this strategy doesn't save any work but may reduce risk for running courses by ensuring that no addresses change. It requires having Studio able to read and write to both stores and having LMS able to read from both (all of the below do as well).
+  1. All new courses plus a gradually increasing set of other deliberately migrated courses.
+1. Should Studio use split but LMS use old mongo?
+  1. Requires writing a publish mechanism from split to old mongo.
+  1. Still requires determining strategy for when to move courses to split for Studio.
+1. Should Studio broadcast updates to both stores to enable easy roll-back?
+  1. Will require some additional work as well as analysis as what information is lost in the old mongo version and whether we care about that loss.
+
+Whatever choice we make is an interim choice; so, we need to patch together a path from all old mongo to all split no matter how hypothetical that end point may be.
