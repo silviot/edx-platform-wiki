@@ -220,3 +220,28 @@ Strategy for mitigating the risks and roadblocks:
   1. we'll manually invoke migration on a subset of courses and ensure they work well in practice before migrating the others
   1. this some-migrated-some-not state will require ensuring Studio can write to either back end depending on which repository owns the course.
   1. we _may_ make mixed modulestore broadcast each write to each representation (which means it needs both addressing schemes simultaneously and a strategy for handling old mongo's restrictive capabilities).
+
+### Current Architecture (work-in-progress): 
+
+Location mapping in studio app. Using new Locators in studio client. 
+
+![Location mapping for studio app diagram](https://raw.github.com/edx/edx-platform/dhm/arch-docs/docs/architecture/studio%20mapping.jpg)
+
+The difference here is the insertion of the loc_mapper and its store. The studio app takes each outgoing Location and uses the loc_mapper to convert it to a Locator so that all the client sees are Locators. It takes each incoming Locator and reconverts it back to a Location so that all the MixedModulestore sees is Locations.
+
+This change has no effect on the current use case other than the form of the urls (which the use case does not discuss).
+
+The problem is how to wire split mongo which uses Locators while keeping old mongo and xml which use Locations without having the applications know which of the two addressing schemes the underlying data access and modeling layer uses. This problem is complicated by the fact that addresses are usually passed around merely as strings without any hint to their semantics and often hidden within other structures.
+
+The above diagram's depiction of converting at the app tier does not work for using split mongo which does not want the conversion.
+
+Considered approaches:
+
+1. just use the new Locators wherever we know that a field is an address instead of using strings or other inert types.
+  1. add behavior to these Locators for them to mock old Location functionality for read as well as create and write (calling loc_mapper as necessary)
+  1. ensure every code place does not merely pass these around as assumed strings or ensure that the objects present such strings wherever such assumptions lie.
+1. move the mapping functionality to the low level modulestore methods having them accept any address form and converting it to whatever representation that modulestore needs via the loc_mapper.
+  1. to ensure existing higher level code does not trip on alternative representations, we'd have to 
+     1. ensure those functions just pass the address around inertly, 
+     1. duplicate each xblock field which we know holds addresses and have a version of the field for each repr, or 
+     1. ensure each access stipulates what type of address it wants.
