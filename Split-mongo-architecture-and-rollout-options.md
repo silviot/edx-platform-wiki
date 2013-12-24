@@ -254,3 +254,7 @@ Of the 2 above approaches, the first seems cleanest. It does have some risks inc
 For either approach, we'll need to decide whether to convert the existing mongo (aka, "old mongo") to read and write persisted addresses in either representation or only use Locations because that's what old mongo uses now.
 
 In the long run, I'd like to deprecate the old Location and its behavior; however, it's not clear how we get there.
+
+Whichever approach we use for addresses, the architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
+
+[Location translation at the modulestore layer](https://github.com/edx/edx-platform/raw/dhm/arch-docs/docs/architecture/locator_ubiquity.jpg)
