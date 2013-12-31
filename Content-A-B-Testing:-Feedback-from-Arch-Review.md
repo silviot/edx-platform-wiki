@@ -19,3 +19,5 @@ Several key thoughts about this proposed design direction:
 * When the users global context is added to analytics events, it should add the user's global tags
 * User tags should be exposed to xblocks via the runtime (eventually, as part of a user service capability, once XBlock Runtimes support a notion of capabilities).
 
+
+New code at https://github.com/edx/edx-platform/pull/2042, including new docs https://github.com/edx/edx-platform/blob/238623b99407c7bd64f7c69422ba295e64aeea9c/docs/developers/source/experiments.rst
