@@ -128,4 +128,6 @@ Important: be sure to type the commands in a ''recent'' version of cygwin. Issue
 
 __NOTOC__
 
+
+_______Recent Change?  Link to Vagrant-specific installation instructions?________
 This page used to link to a Vagrant-specific set of installation instructions.  It now links to the README that points back to the CONFIGURATION instructions; as far as I can tell the link to the Vagrant-specific instructions is no longer available?
