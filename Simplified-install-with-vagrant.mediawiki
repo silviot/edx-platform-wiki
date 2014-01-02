@@ -127,3 +127,5 @@ the edX services.
 Important: be sure to type the commands in a ''recent'' version of cygwin. Issues have been reported with older versions of the command line utility.
 
 __NOTOC__
+
+This page used to link to a Vagrant-specific set of installation instructions.  It now links to the README that points back to the CONFIGURATION instructions; as far as I can tell the link to the Vagrant-specific instructions is no longer available?
