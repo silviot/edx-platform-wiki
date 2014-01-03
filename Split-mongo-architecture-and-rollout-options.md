@@ -62,17 +62,18 @@ Of the above use case, Studio's existing RESTful api supports:
 1. Choose where to put the locator - location mapping (see [locator-location-locus](#locator-location-locus)
 
 
-**Punchlist:**
+**Punchlist for go-live:**
 
 1. xml export from split
 1. mixed modulestore figure out whether to read & write to split v old mongo v xml
   1. if using broadcast model of updates, implement that.
+  1. if using hybrid, reconcile the method signatures or have mixed know how to invoke each
 1. command line or admin page to invoke course migration from old to split mongo (unless using lazy migration only)
 1. what if any of the split mongo use cases above to support in Studio? What to do w/ that functionality in case of hybrid split b/c old won't support the use cases?
 1. hook up Studio to split &/or hybrid
 1. hook up lms to hybrid or split
 1. test, test, test
-1. extend the studio api or implement the general one
+1. extend the studio restful api or implement the general one
 
 # Architectural depictions with options
 
@@ -110,7 +111,7 @@ This document does not currently fully explain this stack, but some notes on thi
 * The next layer (light green) shows the app layer which is primarily restful and non-restful url handlers with any client models and app logic (e.g., most grading).
 * The dark green shows (external) grading and analytics as disconnected services purely as a reminder that these and others like these (e.g., drupal) exist not to show how they use the back end. It would be good to get diagrams of how these plug into the back ends.
 * The cyan layer is the data access and modeling layer. It handles figuring out the identities and repositories, serializing and deserializing data, determining authorization, etc.
-* The xblock runtime currently is subordinate to the modulestore layer which instantiates it, computes addresses, and feeds it data models. lms writes directly to it for student state data which the runtime then persists directly in SQL; however, all courseware writes go through the modulestore layer.
+* The xblock runtime currently is subordinate to the modulestore layer which instantiates it, computes addresses, and feeds it data models. lms writes directly to it for student state data which the runtime then persists directly in SQL; however, all courseware writes go through the modulestore layer. I believe @Cale envisions the xblock runtime as above or encompassing the modulestore; however, it currently doesn't and it's not obvious to me how it can.
 
 ### Use case
 
