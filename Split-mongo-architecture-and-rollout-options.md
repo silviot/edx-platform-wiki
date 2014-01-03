@@ -206,6 +206,13 @@ The eventual split mongo architecture will execute the use case above as follows
 
 The focus of this document is which of several intermediate state options should we support. The reason for the intermediate hybrid state is to incrementally deploy functionality and to not require a big bang conversion of all existing course material and records.
 
+We have 2 possible approaches:
+
+1. make a purely split version of studio and lms and run on separate server(s) than the current one
+1. make the current one simultaneously support some things in split and some in old mongo
+
+Of these, the first is the easiest but runs the risk of another long-running code branch and the expense of nginx having to route requests based on course id (or lack thereof).
+
 Roadblocks to big bang conversion:
 
 1. To enable reusing content among courses and versioning content, the new representation has a richer and slightly incompatible addressing scheme ([Locators](https://github.com/edx/edx-platform/wiki/Locators-and-older-Locations)). This complicates
@@ -225,9 +232,10 @@ Strategy for mitigating the risks and roadblocks:
   1. we decided to temporarily not use the new address scheme in lms so that student state, analytics, grading, drupal, and other such things won't need to be aware of the new address scheme.
   1. we'll use loc_mapper to generate the asset addresses for now
   1. we'll use loc_mapper to try to recode cross-course references (assets and xblocks) into within course relative-references. _n_ Locations map to same Locator. loc_mapper knows how to convert to the Locator and then from the Locator to the Location for any of the _n_ course ids which map to it.
+  1. If we separate the split and old mongo servers, then we don't need as much wiring for addresses. We could begin using the new address scheme in lms, but we'd need to either map to old for analytics, student state, drupal or update those to the new address scheme.
 1. to mitigate migration risk,
   1. we'll manually invoke migration on a subset of courses and ensure they work well in practice before migrating the others
-  1. this some-migrated-some-not state will require ensuring Studio can write to either back end depending on which repository owns the course.
+  1. this some-migrated-some-not state will require ensuring Studio can write to either back end depending on which repository owns the course or using separate code branches.
   1. we _may_ make mixed modulestore broadcast each write to each representation (which means it needs both addressing schemes simultaneously and a strategy for handling old mongo's restrictive capabilities).
 
 ### Current Architecture (work-in-progress): 
@@ -255,25 +263,32 @@ Considered approaches<a name="locator-location-locus"/>:
      1. duplicate each xblock field which we know holds addresses and have a version of the field for each repr, 
      1. ensure each access stipulates what type of address it wants (and provides the course_id), or
      1. tell the modulestore which representation to populate into the reference fields according to which app requested it.
+1. use separate code branch and servers: 
+  1. leave the current as-is and focus on making a split only version
+  1. use the current to migrate courses over to the new
+  1. in the new, use only Locators no Locations
+      1. verify that student state, analytics, and drupal will accept Locators or
+      1. convert the Locators to Locations for any outside service which cannot handle Locators or
+      1. update the outside services to handle Locators perhaps also on separate branch w/ separate servers?
 
-Of the 2 above approaches, the first seems cleanest. It does have some risks including performance because our code frequently calls Location methods, race conditions if the code requests a translation before the loc_mapper knows about the course, and the need to do 2 pass conversions for inadvertent wrong-course hard-coded references (see above where I described asset and in course references for things borrowed by other courses) (this dual conversion problem exists in both approaches). For the second approach, none of the sub-approaches is sufficient in and of themselves. The last (encoding the address according to the application's preference) may be the closest to sufficient; however, because the code will not know how to find each reference in an xblock, some will leak to the upper layers which will need to catch address failures and attempt conversions.
+Of the 2 above approaches, the first and last seem cleanest. The first has some risks including performance because our code frequently calls Location methods, race conditions if the code requests a translation before the loc_mapper knows about the course, and the need to do 2 pass conversions for inadvertent wrong-course hard-coded references (see above where I described asset and in course references for things borrowed by other courses) (this dual conversion problem exists in both approaches). For the second approach, none of the sub-approaches is sufficient in and of themselves. The last (encoding the address according to the application's preference) may be the closest to sufficient; however, because the code will not know how to find each reference in an xblock, some will leak to the upper layers which will need to catch address failures and attempt conversions.
 
-For either approach, we'll need to decide whether to convert the existing mongo (aka, "old mongo") to read and write persisted addresses in either representation or only use Locations because that's what old mongo uses now.
+For either approach, we'll need to decide whether to convert the existing mongo (aka, "old mongo") to read and write persisted addresses in either representation or only use Locations because that's what old mongo uses now. For the separate server approach, it will only use the new Locators.
 
 In the long run, I'd like to deprecate the old Location and its behavior; however, it's not clear how we get there.
 
-Whichever approach we use for addresses, the architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
+If we use either mixed address approach, the architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
 
 ![Location translation at the modulestore layer](https://github.com/edx/edx-platform/raw/dhm/arch-docs/docs/architecture/locator_ubiquity.jpg)
 
 ### Hybrid approaches
 
-The hybrid approaches for running split mongo along side old mongo have several control dimensions:
+The hybrid approaches for running split mongo alongside or on a separate server from old mongo have several control dimensions:
 
 1. Which courses persist in split and which into old mongo?
   1. All courses: one time big bang conversion--unlikely approach.
   1. All current and future courses: leave archived courses alone but don't allow access from Studio--also unlikely.
-  1. Any course being edited in Studio: proactively move any course which should be accessible in Studio and have Studio only use split mongo.
+  1. Any course being edited in Studio: proactively move any course which should be accessible in Studio and have Studio only use split mongo. (not possible in the separate server implementation)
   1. Lazily any course being edited in Studio: read from either store, but only allow writes to split mongo. This was the approach I was working on. It would force migration from old to split upon first update attempt.
   1. All new courses, but leave old ones in old mongo: this strategy doesn't save any work but may reduce risk for running courses by ensuring that no addresses change. It requires having Studio able to read and write to both stores and having LMS able to read from both (all of the below do as well).
   1. All new courses plus a gradually increasing set of other deliberately migrated courses.
@@ -289,7 +304,9 @@ Whatever choice we make is an interim choice; so, we need to patch together a pa
 
 ##### Locator - Location approaches
 
-1. Locator w/ Location veneer
+Needed for cohabiting approaches, not the dual server approach.
+
+1. Locator w/ Location veneer 
   1. Remove assumptions that Location is a tuple
   1. Change loc_mapper to know that these are not distinct types
   1. Upon instantiation, loc_map each Location to populate the Locator fields.
@@ -309,7 +326,7 @@ Whatever choice we make is an interim choice; so, we need to patch together a pa
 
 ##### Hybrid approaches
 
-Most of these approaches require that the app (at least Studio) never tries to write to any particular modulestore but lets the mixed modulestore layer figure out the routing. That entails changing all modulestore() and get_modulestore() calls as well as writing router logic in mixed.
+The cohabiting approaches require that the app (at least Studio) never tries to write to any particular modulestore but lets the mixed modulestore layer figure out the routing. That entails changing all modulestore() and get_modulestore() calls as well as writing router logic in mixed.
 
 Any implementation in which Studio must support both old and split mongo for write access is roughly equivalent in effort and additional effort over the existing planned work (which assumes we're converting all writes to Split). I'm fairly concerned about not only the amount of work for this simultaneous support but also the functional limitations as I was envisioning the app tier quickly becoming more version aware so that we can begin implementing conflict management (detection as well as resolution), reuse (e.g., spoc reuse of course, course reuse of modules), version comparison, history tracking (show the user who and when last changed each xblock), etc.
 
