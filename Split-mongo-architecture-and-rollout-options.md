@@ -1,10 +1,10 @@
 # Executive Summary & Action page
 
-**Issue:** how to wire up [split mongo](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO) asap with as little risk as possible?
+**Goal:** how to wire up [split mongo](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO) asap with as little risk as possible?
 
-**Real issue:** how to get [RESTful api](https://github.com/edx/edx-platform/wiki/RESTful-course-and-xblock-API) asap for SPOCs and other uses?
+**Real goal:** how to get [RESTful api](https://github.com/edx/edx-platform/wiki/RESTful-course-and-xblock-API) asap for SPOCs and other uses?
 
-Goal RESTful API use cases:
+In particular, @rrubin says he wants to see these RESTful API use cases running:
 
 1. SPOC subsetting
     1. Create new course from existing course
@@ -17,7 +17,7 @@ Goal RESTful API use cases:
     1. Set dates
     1. Publish
 
-Split mongo use cases whose scope is unknown:
+I don't know the priority of these Split mongo use cases, but they've been my highest priorities:
 
 1. Flag conflicting edits (forks)
 1. Undo edits
@@ -37,22 +37,27 @@ Of the above use case, Studio's existing RESTful api supports:
 1. Create, update, or delete any xblocks
 1. Publish subtree
 
-**Risks:**
+**Risks of going live on split mongo:**
 
-1. Performance: effect of any data migrations if done lazily
+1. Performance: effect of any data migrations if done lazily. That is, will large course migrations block user access during migration.
 1. Non-invertability of migration: what to do if a migrated course has a defect since migration is only from old to split?
 
 **Decisions/options requiring action:**
 
-1. Have Studio support both back ends at the same time for not only read but also write to enable gradual and deliberate course migration (hybrid split)?
-  1. broadcast updates to both to enable reversion to old if needed?
-  1. just assign courses to one or the other (split v old)?
 1. Course migration from old to split mongo:
   1. Big bang: migrate all courses or all that may be edited?
   1. Lazy: migrate upon attempt to write to old mongo?
   1. Controlled dribble: explicitly migrate some subset and increase that subset over time
       1. Does Studio need to support unmigrated courses for more than read access? (hybrid split)
       1. Will this strategy only apply to edx or also edge and other sites?
+      1. Can we implement this strategy by having two separate code branches and servers? One for old mongo and one for split?
+1. Hybrid split if chosen: Have Studio support both back ends at the same time for not only read but also write to enable gradual and deliberate course migration?
+  1. broadcast updates to both to enable reversion to old if needed?
+  1. just assign courses to one or the other (split v old)?
+1. Separate code branches and servers?
+  1. Much less time to go live: don't need to work out co-habitation which has been the main impediment
+  1. Requires updating lms to use split backend or changing publishing to publish to old as well as split
+  1. Requires production ops to go back to the same type of dispatching as we were using when we had xml and old mongo running on separate servers. At a minimum, this should be a short-term strategy.
 1. Use & extend Studio's existing restful api or implement the more general one we proposed (in the short-run)?
 1. Choose where to put the locator - location mapping (see [locator-location-locus](#locator-location-locus)
 
@@ -65,7 +70,7 @@ Of the above use case, Studio's existing RESTful api supports:
 1. command line or admin page to invoke course migration from old to split mongo (unless using lazy migration only)
 1. what if any of the split mongo use cases above to support in Studio? What to do w/ that functionality in case of hybrid split b/c old won't support the use cases?
 1. hook up Studio to split &/or hybrid
-1. hook up lms to hybrid
+1. hook up lms to hybrid or split
 1. test, test, test
 1. extend the studio api or implement the general one
 
