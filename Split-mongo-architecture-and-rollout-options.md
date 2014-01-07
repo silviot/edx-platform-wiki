@@ -42,10 +42,36 @@ Of the above use case, Studio's existing RESTful api supports:
 **Risks of going live on split mongo:**
 
 1. Performance: effect of any data migrations if done lazily. That is, will large course migrations block user access during migration.
-1. Non-invertability of migration: what to do if a migrated course has a defect since migration is only from old to split?
+1. Non-invertability of migration: what to do if a split has a defect since migration is only from old to split?
+1. Interruption of in flight or archived courses:
+   1. saved bookmarks may not work
+   1. hardcoded references may not work (e.g., anchor tags, jumps, etc)
+   1. ORA location references need to change to locators
+   1. converting student state to reference Locators not Locations
+   1. change in address syntax in middle of analytics stream
 
 **Decisions/options requiring action:**
 
+1. Choose approach (described in detail in main doc below):
+  1. LMS & Studio use only Locators: this is the long-term goal, but unlikely in short term
+     1. Requires converting lms, ora, student state, and all hard-coded references
+  1. Studio uses Locators, LMS uses Locations
+     1. Options for managing this address faceting
+        1. all references are really the new Locators but they behave like Locations when asked
+            1. requires the least amount of new code but is very complicated
+            1. will invoke loc_mapper far more frequently
+            1. will require changing a lot of hardcoded uses of Locations which use strings, dicts, tuples, or arrays rather than objects (these have to eventually change to make lms use Locators only)
+        1. mixed modulestore acts as more than a router and converts all addresses to consumer's format
+            1. make mixed wrap each method w/ proper conversion code
+            1. change all uses of modulestore through lms and cms to only use mixed not directly go to default, draft, or direct
+            1. provide 2 mixed modulestore instances: a locator-based one and a location-based one which ensure they treat all calls as providing the declared type and requiring the declared type back on all calls.
+            1. to get proper repr to lower level modulestores (Locators to split, Locations to old-mongo):
+               1. either use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one
+               1. or have all modulestores accept either repr and do its own call to the mapper for any it receives of the undesired repr
+    1. May still need to change Locator and Location to handle the app mistakenly treating as if they were the other for any hardcoded references that slip through
+    1. Complete the conversion of Studio to use Locators all the way through (not just in client-server urls, auth, and such places it does now.); however, either
+        1. don't take advantage of new split functionality (xblock reuse, ability to make multiple runs of same course, undo, version comparisions, deliberate rather than incidental publishing, etc) or
+        1. make studio "know" which low-level modulestore it got the course from and disable split functionality for old-mongo courses.
 1. Course migration from old to split mongo:
   1. Big bang: migrate all courses or all that may be edited?
   1. Lazy: migrate upon attempt to write to old mongo?
