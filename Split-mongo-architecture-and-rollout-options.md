@@ -74,7 +74,11 @@ Of the above use case, Studio's existing RESTful api supports:
         1. make studio "know" which low-level modulestore it got the course from and disable split functionality for old-mongo courses.
 1. Course migration from old to split mongo:
   1. Big bang: migrate all courses or all that may be edited?
+     1. simplifies Studio as it can assume all courses are in split and thus take advantage of split functionality
+     1. riskiest in terms of system performance, interrupting in flight courses, etc (see above risks)
   1. Lazy: migrate upon attempt to write to old mongo?
+     1. Slightly less simple but not much less
+     1. Slightly less risky in that fewer courses are converted, but still has same risks.
   1. Controlled dribble: explicitly migrate some subset and increase that subset over time
       1. Does Studio need to support unmigrated courses for more than read access? (hybrid split)
       1. Will this strategy only apply to edx or also edge and other sites?
