@@ -21,6 +21,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 ## Development
 
 * [[How to Contribute]]
+* [[How to Rebase a Pull Request]]
 * [[Python Guidelines]]
 * [[JavaScript Guidelines]]
 * [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/docs/internal/testing.md)
