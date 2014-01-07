@@ -55,6 +55,11 @@ Of the above use case, Studio's existing RESTful api supports:
 1. Choose approach (described in detail in main doc below):
   1. LMS & Studio use only Locators: this is the long-term goal, but unlikely in short term
      1. Requires converting lms, ora, student state, and all hard-coded references
+     1. Probably requires:
+         1. adding Locator column in student state table and logic which prefers this column but can use the existing if this is empty.
+         1. possibly duplicating the loc_map table from mongo into rds to enable fast loc mapping in joins in rds
+         1. updating ora's table similarly (add another column)
+         1. and all of the below
   1. Studio uses Locators, LMS uses Locations
      1. Options for managing this address faceting
         1. all references are really the new Locators but they behave like Locations when asked
