@@ -4,7 +4,7 @@ When many different people are working on a project simulateously, pull requests
 
 <img alt="master" src="git-diagrams/master.png" style="float:right">
 
-To understand this, we need to understand a bit about how git works. A git reposity is a tree structure, where the nodes of the tree are commits. Here's an example of a very simple repository: it has four commits on the master branch, and each commit has an ID (in this case, `a`, `b`, `c`, and `d`). You'll notice that `d` is currently the latest commit (or HEAD) of the `master` branch.
+To understand this, we need to understand a bit about how git works. A git repository is a tree structure, where the nodes of the tree are commits. Here's an example of a very simple repository: it has four commits on the master branch, and each commit has an ID (in this case, `a`, `b`, `c`, and `d`). You'll notice that `d` is currently the latest commit (or HEAD) of the `master` branch.
 
 <div style="clear:both"></div>
 <img alt="master and my-branch" src="git-diagrams/branch.png" style="float:right">
