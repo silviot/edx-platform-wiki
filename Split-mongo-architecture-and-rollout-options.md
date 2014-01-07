@@ -17,7 +17,9 @@ In particular, @rrubin says he wants to see these RESTful API use cases running:
     1. Set dates
     1. Publish
 
-I don't know the priority of these Split mongo use cases, but they've been my highest priorities:
+Note: these do not require any lms functionality (grading, student tracking, randomization). The focus is on xblock CRUD and sharing.
+
+I don't know the priority of the following Split mongo use cases, but they've been my highest priorities:
 
 1. Flag conflicting edits (forks)
 1. Undo edits
