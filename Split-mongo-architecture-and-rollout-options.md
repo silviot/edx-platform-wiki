@@ -44,14 +44,14 @@ High priority split mongo functionality which is subordinate to the api includes
 ## Phase 1 plan
 
 1. Studio uses Locators, LMS uses Locations
-        1. assumes LMS always has the old org/coursenum/run triple which the loc_mapper needs to uniquely map to Locators (if there's more than one course run with the same org/coursenum).
-        1. mixed modulestore acts as more than a router and converts all addresses to consumer's format
-            1. make mixed wrap each method w/ proper conversion code
-            1. change all uses of modulestore through lms and cms to only use mixed not directly go to default, draft, or direct
-            1. provide 2 mixed modulestore instances: a locator-based one and a location-based one which ensure they treat all calls as providing the declared type and requiring the declared type back on all calls.
-                * Convert not only reference fields but also known special indicators inside the data payload like /static, /jump-to, and /jump-to-module (need full enumeration)
-            1. to get proper repr to lower level modulestores (Locators to split, Locations to old-mongo) use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one.
-            1. Mixed will look at a local cache to see where the course is. If the cache doesn't say, it will look in split. If it doesn't find it there, it will look in old mongo. When it finds the course, it will record the routing in a memcache to expedite future retrieval.
+    1. assumes LMS always has the old org/coursenum/run triple which the loc_mapper needs to uniquely map to Locators (if there's more than one course run with the same org/coursenum).
+    1. mixed modulestore acts as more than a router and converts all addresses to consumer's format
+        1. make mixed wrap each method w/ proper conversion code
+        1. change all uses of modulestore through lms and cms to only use mixed not directly go to default, draft, or direct
+        1. provide 2 mixed modulestore instances: a locator-based one and a location-based one which ensure they treat all calls as providing the declared type and requiring the declared type back on all calls.
+            * Convert not only reference fields but also known special indicators inside the data payload like /static, /jump-to, and /jump-to-module (need full enumeration)
+        1. to get proper repr to lower level modulestores (Locators to split, Locations to old-mongo) use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one.
+        1. Mixed will look at a local cache to see where the course is. If the cache doesn't say, it will look in split. If it doesn't find it there, it will look in old mongo. When it finds the course, it will record the routing in a memcache to expedite future retrieval.
 1. May still need to write top level view handlers for lms which handle any url requests for Locators which somehow slip through the mixed modulestore conversion and convert to Locations, but we believe that any hardcoded Locator references will be authoring errors not things the app should translate.
 1. Complete the conversion of Studio to use Locators all the way through (not just in client-server urls, auth, and such places it does now.). For phase 1, don't take advantage of new split functionality.
 1. Course migration from old to split mongo will be a controlled dribble: explicitly migrate some subset and increase that subset over time.
@@ -108,7 +108,7 @@ LMS is Locator based. There is no more location mapping. student, ora, and analy
 1. hook up Studio to hybrid
 1. uploaded assets addressing
 1. test, test, test
-1. extend the studio restful api or implement the general one
+1. implement the restful api
 
 # Architectural depictions with options
 
