@@ -88,7 +88,7 @@ Of the above use case, Studio's existing RESTful api supports:
      1. Slightly less simple but not much less
      1. Slightly less risky in that fewer courses are converted, but still has same risks.
   1. **Controlled dribble: explicitly migrate some subset and increase that subset over time**
-      1. **Does Studio need to support unmigrated courses for more than read access? (hybrid split)**
+      1. **Studio needs to support unmigrated courses for more than read access (hybrid split)**
       1. Will this strategy only apply to edx or also edge and other sites?
       1. Can we implement this strategy by having two separate code branches and servers? One for old mongo and one for split?
 1. Hybrid split if chosen: Have Studio support both back ends at the same time for not only read but also write to enable gradual and deliberate course migration?
