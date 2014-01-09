@@ -41,7 +41,9 @@ Of the above use case, Studio's existing RESTful api supports:
 
 **Risks of going live on split mongo:**
 
-1. Performance: effect of any data migrations if done lazily. That is, will large course migrations block user access during migration.
+1. Performance: 
+  1. effect of any data migrations if done lazily. That is, will large course migrations block user access during migration.
+  1. split creates new versions of courses for every edit. These new versions may significantly expand our storage requirements and may take longer to persist
 1. Non-invertability of migration: what to do if a split has a defect since migration is only from old to split?
 1. Interruption of in flight or archived courses:
    1. saved bookmarks may not work
@@ -68,19 +70,19 @@ Of the above use case, Studio's existing RESTful api supports:
             1. will invoke loc_mapper far more frequently
             1. will require changing a lot of hardcoded uses of Locations which use strings, dicts, tuples, or arrays rather than objects (these have to eventually change to make lms use Locators only)
         1. **mixed modulestore acts as more than a router and converts all addresses to consumer's format**
-            1. make mixed wrap each method w/ proper conversion code
-            1. change all uses of modulestore through lms and cms to only use mixed not directly go to default, draft, or direct
-            1. provide 2 mixed modulestore instances: a locator-based one and a location-based one which ensure they treat all calls as providing the declared type and requiring the declared type back on all calls.
+            1. **make mixed wrap each method w/ proper conversion code**
+            1. **change all uses of modulestore through lms and cms to only use mixed not directly go to default, draft, or direct**
+            1. **provide 2 mixed modulestore instances: a locator-based one and a location-based one which ensure they treat all calls as providing the declared type and requiring the declared type back on all calls.**
             1. to get proper repr to lower level modulestores (Locators to split, Locations to old-mongo):
                1. **either use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one**
                1. or have all modulestores accept either repr and do its own call to the mapper for any it receives of the undesired repr
     1. May still need to change Locator and Location to handle the app mistakenly treating as if they were the other for any hardcoded references that slip through. I believe the only possible slip would be in urls or embedded in xml which would be inert as far as Studio's concerned (just presented like any other link) but could trip lms on user click.
         1. Write standin methods for each of the other repr's methods or
-        1. **Write top level view handlers for lms which handle these and convert to Locatons** or
+        1. **Write top level view handlers for lms which handle these and convert to Locatons** (has the convenience of being on track for the eventual conversion to all Locators) or
         1. Require callers to catch exceptions and do the conversion
-    1. Complete the conversion of Studio to use Locators all the way through (not just in client-server urls, auth, and such places it does now.); however, either
-        1. don't take advantage of new split functionality (xblock reuse, ability to make multiple runs of same course, undo, version comparisions, deliberate rather than incidental publishing, etc) or
-        1. make studio "know" which low-level modulestore it got the course from and disable split functionality for old-mongo courses.
+    1. **Complete the conversion of Studio to use Locators all the way through** (not just in client-server urls, auth, and such places it does now.); however, either
+        1. _don't take advantage of new split functionality_ (xblock reuse, ability to make multiple runs of same course, undo, version comparisions, deliberate rather than incidental publishing, etc) or
+        1. _make studio "know" which low-level modulestore_ it got the course from and disable split functionality for old-mongo courses.
 1. Course migration from old to split mongo:
   1. Big bang: migrate all courses or all that may be edited?
      1. simplifies Studio as it can assume all courses are in split and thus take advantage of split functionality
@@ -100,7 +102,7 @@ Of the above use case, Studio's existing RESTful api supports:
   1. Requires updating lms to use split backend or changing publishing to publish to old as well as split
   1. Requires production ops to go back to the same type of dispatching as we were using when we had xml and old mongo running on separate servers. At a minimum, this should be a short-term strategy.
 1. Use & extend Studio's existing restful api or **implement the more general one** we proposed (in the short-run)?
-1. Uploaded assets addressing?
+1. _Uploaded assets addressing_?
   1. Convert also to locators or
     1. handle and rewrite old locations
   1. Copy to each reusing course or
@@ -111,15 +113,17 @@ Of the above use case, Studio's existing RESTful api supports:
 
 **Punchlist for go-live:**
 
+(Out of date until we resolve the above.)
+
 1. xml export from split
 1. xml import to split
 1. mixed modulestore figure out whether to read & write to split v old mongo v xml
-  1. if using broadcast model of updates, implement that.
-  1. if using hybrid, reconcile the method signatures or have mixed know how to invoke each
+  1. reconcile the method signatures or have mixed know how to invoke each
+  1. write loc_mapping calls into mixed as method wrappers
 1. command line or admin page to invoke course migration from old to split mongo (unless using lazy migration only)
 1. what if any of the split mongo use cases above to support in Studio? What to do w/ that functionality in case of hybrid split b/c old won't support the use cases?
-1. hook up Studio to split &/or hybrid
-1. hook up lms to hybrid or split
+1. hook up Studio to hybrid
+1. uploaded assets addressing
 1. test, test, test
 1. extend the studio restful api or implement the general one
 
