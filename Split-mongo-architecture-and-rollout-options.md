@@ -61,20 +61,22 @@ Of the above use case, Studio's existing RESTful api supports:
          1. possibly duplicating the loc_map table from mongo into rds to enable fast loc mapping in joins in rds
          1. updating ora's table similarly (add another column)
          1. and all of the below
-  1. Studio uses Locators, LMS uses Locations
+  1. **Studio uses Locators, LMS uses Locations**
      1. Options for managing this address faceting
         1. all references are really the new Locators but they behave like Locations when asked
             1. requires the least amount of new code but is very complicated
             1. will invoke loc_mapper far more frequently
             1. will require changing a lot of hardcoded uses of Locations which use strings, dicts, tuples, or arrays rather than objects (these have to eventually change to make lms use Locators only)
-        1. mixed modulestore acts as more than a router and converts all addresses to consumer's format
+        1. **mixed modulestore acts as more than a router and converts all addresses to consumer's format**
             1. make mixed wrap each method w/ proper conversion code
             1. change all uses of modulestore through lms and cms to only use mixed not directly go to default, draft, or direct
             1. provide 2 mixed modulestore instances: a locator-based one and a location-based one which ensure they treat all calls as providing the declared type and requiring the declared type back on all calls.
             1. to get proper repr to lower level modulestores (Locators to split, Locations to old-mongo):
-               1. either use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one
+               1. **either use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one**
                1. or have all modulestores accept either repr and do its own call to the mapper for any it receives of the undesired repr
     1. May still need to change Locator and Location to handle the app mistakenly treating as if they were the other for any hardcoded references that slip through
+        1. **Write standin methods for each of the other repr's methods** or
+        1. Require callers to catch exceptions and do the conversion
     1. Complete the conversion of Studio to use Locators all the way through (not just in client-server urls, auth, and such places it does now.); however, either
         1. don't take advantage of new split functionality (xblock reuse, ability to make multiple runs of same course, undo, version comparisions, deliberate rather than incidental publishing, etc) or
         1. make studio "know" which low-level modulestore it got the course from and disable split functionality for old-mongo courses.
@@ -85,8 +87,8 @@ Of the above use case, Studio's existing RESTful api supports:
   1. Lazy: migrate upon attempt to write to old mongo?
      1. Slightly less simple but not much less
      1. Slightly less risky in that fewer courses are converted, but still has same risks.
-  1. Controlled dribble: explicitly migrate some subset and increase that subset over time
-      1. Does Studio need to support unmigrated courses for more than read access? (hybrid split)
+  1. **Controlled dribble: explicitly migrate some subset and increase that subset over time**
+      1. **Does Studio need to support unmigrated courses for more than read access? (hybrid split)**
       1. Will this strategy only apply to edx or also edge and other sites?
       1. Can we implement this strategy by having two separate code branches and servers? One for old mongo and one for split?
 1. Hybrid split if chosen: Have Studio support both back ends at the same time for not only read but also write to enable gradual and deliberate course migration?
