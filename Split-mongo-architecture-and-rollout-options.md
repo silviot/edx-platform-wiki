@@ -93,12 +93,12 @@ Of the above use case, Studio's existing RESTful api supports:
       1. Can we implement this strategy by having two separate code branches and servers? One for old mongo and one for split?
 1. Hybrid split if chosen: Have Studio support both back ends at the same time for not only read but also write to enable gradual and deliberate course migration?
   1. broadcast updates to both to enable reversion to old if needed?
-  1. just assign courses to one or the other (split v old)?
+  1. **just assign courses to one or the other (split v old)?**
 1. Separate code branches and servers?
   1. Much less time to go live: don't need to work out co-habitation which has been the main impediment
   1. Requires updating lms to use split backend or changing publishing to publish to old as well as split
   1. Requires production ops to go back to the same type of dispatching as we were using when we had xml and old mongo running on separate servers. At a minimum, this should be a short-term strategy.
-1. Use & extend Studio's existing restful api or implement the more general one we proposed (in the short-run)?
+1. Use & extend Studio's existing restful api or **implement the more general one** we proposed (in the short-run)?
 1. Uploaded assets addressing?
   1. Convert also to locators or
     1. handle and rewrite old locations
