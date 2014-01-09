@@ -74,8 +74,9 @@ Of the above use case, Studio's existing RESTful api supports:
             1. to get proper repr to lower level modulestores (Locators to split, Locations to old-mongo):
                1. **either use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one**
                1. or have all modulestores accept either repr and do its own call to the mapper for any it receives of the undesired repr
-    1. May still need to change Locator and Location to handle the app mistakenly treating as if they were the other for any hardcoded references that slip through
-        1. **Write standin methods for each of the other repr's methods** or
+    1. May still need to change Locator and Location to handle the app mistakenly treating as if they were the other for any hardcoded references that slip through. I believe the only possible slip would be in urls or embedded in xml which would be inert as far as Studio's concerned (just presented like any other link) but could trip lms on user click.
+        1. Write standin methods for each of the other repr's methods or
+        1. **Write top level view handlers for lms which handle these and convert to Locatons** or
         1. Require callers to catch exceptions and do the conversion
     1. Complete the conversion of Studio to use Locators all the way through (not just in client-server urls, auth, and such places it does now.); however, either
         1. don't take advantage of new split functionality (xblock reuse, ability to make multiple runs of same course, undo, version comparisions, deliberate rather than incidental publishing, etc) or
