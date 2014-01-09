@@ -112,6 +112,7 @@ Of the above use case, Studio's existing RESTful api supports:
 **Punchlist for go-live:**
 
 1. xml export from split
+1. xml import to split
 1. mixed modulestore figure out whether to read & write to split v old mongo v xml
   1. if using broadcast model of updates, implement that.
   1. if using hybrid, reconcile the method signatures or have mixed know how to invoke each
