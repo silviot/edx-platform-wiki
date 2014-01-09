@@ -220,7 +220,7 @@ The eventual split mongo architecture will execute the use case above as follows
   1. LMS uses auth svcs to create entries in SQL
 1. Student1 looks at course content (LMS)
   1. LMS uses MixedModulestore to notice that **there is no published content yet for the course**
-  1. Student sees that the course has no content nor outline yet
+  1. **Student sees that the course has no content nor outline yet**
 1. Teacher creates units and components (Studio)
   1. Studio uses MixedModulestore to create draft entries in Mongo
 1. Teacher edits titles and dates for the course, sections, and subsections (Studio)
@@ -229,7 +229,7 @@ The eventual split mongo architecture will execute the use case above as follows
   1. Studio uses MixedModulestore to update the entries in Mongo
 1. Student1 looks at course content (LMS)
   1. LMS uses MixedModulestore to notice that **there is no published content yet for the course**
-  1. Student sees that the course has no content nor outline yet
+  1. **Student sees that the course has no content nor outline yet**
 1. Teacher publishes some units (u_0..u_i) and their parents (Studio)
   1. Studio uses MixedModulestore to create a published branch and version and then copies the draft entries into it via Mongo
 1. Student1 looks at course content (LMS)
