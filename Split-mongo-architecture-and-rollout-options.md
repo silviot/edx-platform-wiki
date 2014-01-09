@@ -49,6 +49,7 @@ Of the above use case, Studio's existing RESTful api supports:
    1. ORA location references need to change to locators
    1. converting student state to reference Locators not Locations
    1. change in address syntax in middle of analytics stream
+1. Deciding how to handle uploaded assets: currently course relative which makes reuse problematic
 
 **Decisions/options requiring action:**
 
@@ -96,7 +97,13 @@ Of the above use case, Studio's existing RESTful api supports:
   1. Requires updating lms to use split backend or changing publishing to publish to old as well as split
   1. Requires production ops to go back to the same type of dispatching as we were using when we had xml and old mongo running on separate servers. At a minimum, this should be a short-term strategy.
 1. Use & extend Studio's existing restful api or implement the more general one we proposed (in the short-run)?
-1. Choose where to put the locator - location mapping (see [locator-location-locus](#locator-location-locus)
+1. Uploaded assets addressing?
+  1. Convert also to locators or
+    1. handle and rewrite old locations
+  1. Copy to each reusing course or
+    1. means supporting old locations in studio just for assets
+  1. Move out to the webserver with a new asset specific addressing scheme
+    1. handle and rewrite old locations
 
 
 **Punchlist for go-live:**
