@@ -174,7 +174,7 @@ Contacting Us
 ### Mailing list
 
 If you have any questions, please ask on the
-[mailing list](https://groups.google.com/forum/#!forum/edx-code). It's always a good idea to
+[edx-code mailing list](https://groups.google.com/forum/#!forum/edx-code). It's always a good idea to
 first search through the archives, to see if any of your questions have already been asked and
 answered.
 
@@ -187,8 +187,10 @@ posted on a Git related message list or forum).
 Questions about translations, XBlock, creating courses, or using Studio are not appropriate for
 the edx-code mailing list. We have a few other mailing lists you may be interested in:
 * [openedx-translation](https://groups.google.com/forum/#!forum/openedx-translation)
-* [edx-xblock](https://groups.google.com/forum/#!forum/edx-xblock)
 * [openedx-studio](https://groups.google.com/forum/#!forum/openedx-studio)
+* [edx-xblock](https://groups.google.com/forum/#!forum/edx-xblock)
+  * *Note (Jan. 2014):* We're proposing closing [edx-xblock](https://groups.google.com/forum/#!forum/edx-xblock), favoring [edx-code](https://groups.google.com/forum/#!forum/edx-code) for xblock questions as well.
+
 
 ### IRC
 
