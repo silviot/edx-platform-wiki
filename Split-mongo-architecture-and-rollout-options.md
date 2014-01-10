@@ -239,14 +239,7 @@ The eventual split mongo architecture will execute the use case above as follows
 
 ## Hybrid intermediate state of split running with old mongo
 
-The focus of this document is which of several intermediate state options should we support. The reason for the intermediate hybrid state is to incrementally deploy functionality and to not require a big bang conversion of all existing course material and records.
-
-We have 2 possible approaches:
-
-1. make a purely split version of studio and lms and run on separate server(s) than the current one
-1. make the current one simultaneously support some things in split and some in old mongo
-
-Of these, the first is the easiest but runs the risk of another long-running code branch and the expense of nginx having to route requests based on course id (or lack thereof).
+The focus of this document is the intermediate states we will support as we transition from Location-based to Locator-based. The reason for the intermediate hybrid state is to incrementally deploy functionality and to not require a big bang conversion of all existing course material and records.
 
 Roadblocks to big bang conversion:
 
@@ -256,6 +249,7 @@ Roadblocks to big bang conversion:
   1. references within a course to other course locations
      1. especially if the material is now being referenced in a different course than the original course because the references will reference the original course not the course-invariant address nor the new-course relative address.
   1. similarly references to assets because for some reason they're identified relative to the creating course.
+  1. ORA because it uses the Locations to track the lifecycle of each response.
 1. Risk around the data migration scripts which have unit tests but which have had no real course content test.
 1. The length of time it's taking to finish writing the code for the hypothetical future state.
 1. The absence of Studio UX design and development to take advantage of the new functionality (reusing content, undo, comparison, controlled publication, etc)
@@ -265,13 +259,11 @@ Strategy for mitigating the risks and roadblocks:
 1. To mitigate the addressing schema change,
   1. we've implemented and made live an address scheme mapping service (loc_mapper) which we need to wire wherever needed (it's currently wired at the highest levels of the Studio App and the Studio Client is using the new address scheme).
   1. we decided to temporarily not use the new address scheme in lms so that student state, analytics, grading, drupal, and other such things won't need to be aware of the new address scheme.
-  1. we'll use loc_mapper to generate the asset addresses for now
+  1. we'll use loc_mapper to generate Location-based asset addresses for now, but this means that each course using the same modules must have its own copy of each asset.
   1. we'll use loc_mapper to try to recode cross-course references (assets and xblocks) into within course relative-references. _n_ Locations map to same Locator. loc_mapper knows how to convert to the Locator and then from the Locator to the Location for any of the _n_ course ids which map to it.
-  1. If we separate the split and old mongo servers, then we don't need as much wiring for addresses. We could begin using the new address scheme in lms, but we'd need to either map to old for analytics, student state, drupal or update those to the new address scheme.
 1. to mitigate migration risk,
   1. we'll manually invoke migration on a subset of courses and ensure they work well in practice before migrating the others
   1. this some-migrated-some-not state will require ensuring Studio can write to either back end depending on which repository owns the course or using separate code branches.
-  1. we _may_ make mixed modulestore broadcast each write to each representation (which means it needs both addressing schemes simultaneously and a strategy for handling old mongo's restrictive capabilities).
 
 ### Current Architecture (work-in-progress): 
 
