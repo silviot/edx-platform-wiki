@@ -48,6 +48,8 @@ High priority split mongo functionality which is subordinate to the api includes
     1. mixed modulestore acts as more than a router and converts all addresses to consumer's format
         1. make mixed wrap each method w/ proper conversion code
         1. change all uses of modulestore through lms and cms to only use mixed not directly go to default, draft, or direct
+           1. Change mixed to route to draft if given a Location and revision=='draft'
+           1. Change explicit uses of modulestore('draft') to either use a Locator with branch=='draft' or a Location with revision=='draft'
         1. provide 2 mixed modulestore instances: a locator-based one and a location-based one which ensure they treat all calls as providing the declared type and requiring the declared type back on all calls.
             * Convert not only reference fields but also known special indicators inside the data payload like /static, /jump-to, and /jump-to-module (need full enumeration)
         1. to get proper repr to lower level modulestores (Locators to split, Locations to old-mongo) use a config or method on lower level ones which mixed consults and uses to do the conversions in the wrapped methods when sending into the lower level one.
