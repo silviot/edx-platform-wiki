@@ -297,14 +297,9 @@ Considered approaches<a name="locator-location-locus"/>:
       1. verify that student state, analytics, and drupal will accept Locators or
       1. convert the Locators to Locations for any outside service which cannot handle Locators or
       1. update the outside services to handle Locators perhaps also on separate branch w/ separate servers?
+1. **Make mixed modulestore know whether the caller and whether the lower level persistence layer wants Locators or Locations and convert all references on the way in and out to the appropriate type.**
 
-Of the 2 above approaches, the first and last seem cleanest. The first has some risks including performance because our code frequently calls Location methods, race conditions if the code requests a translation before the loc_mapper knows about the course, and the need to do 2 pass conversions for inadvertent wrong-course hard-coded references (see above where I described asset and in course references for things borrowed by other courses) (this dual conversion problem exists in both approaches). For the second approach, none of the sub-approaches is sufficient in and of themselves. The last (encoding the address according to the application's preference) may be the closest to sufficient; however, because the code will not know how to find each reference in an xblock, some will leak to the upper layers which will need to catch address failures and attempt conversions.
-
-For either approach, we'll need to decide whether to convert the existing mongo (aka, "old mongo") to read and write persisted addresses in either representation or only use Locations because that's what old mongo uses now. For the separate server approach, it will only use the new Locators.
-
-In the long run, I'd like to deprecate the old Location and its behavior; however, it's not clear how we get there.
-
-If we use either mixed address approach, the architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
+The architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
 
 ![Location translation at the modulestore layer](https://raw2.github.com/edx/edx-platform/master/docs/architecture/locator_ubiquity.jpg)
 
