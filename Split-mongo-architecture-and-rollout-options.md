@@ -303,61 +303,12 @@ The architecture becomes the following where most of the location mapping is don
 
 ![Location translation at the modulestore layer](https://raw2.github.com/edx/edx-platform/master/docs/architecture/locator_ubiquity.jpg)
 
-### Hybrid approaches
-
-The hybrid approaches for running split mongo alongside or on a separate server from old mongo have several control dimensions:
-
-1. Which courses persist in split and which into old mongo?
-  1. All courses: one time big bang conversion--unlikely approach.
-  1. All current and future courses: leave archived courses alone but don't allow access from Studio--also unlikely.
-  1. Any course being edited in Studio: proactively move any course which should be accessible in Studio and have Studio only use split mongo. (not possible in the separate server implementation)
-  1. Lazily any course being edited in Studio: read from either store, but only allow writes to split mongo. This was the approach I was working on. It would force migration from old to split upon first update attempt.
-  1. All new courses, but leave old ones in old mongo: this strategy doesn't save any work but may reduce risk for running courses by ensuring that no addresses change. It requires having Studio able to read and write to both stores and having LMS able to read from both (all of the below do as well).
-  1. All new courses plus a gradually increasing set of other deliberately migrated courses.
-1. Should Studio use split but LMS use old mongo?
-  1. Requires writing a publish mechanism from split to old mongo.
-  1. Still requires determining strategy for when to move courses to split for Studio.
-1. Should Studio broadcast updates to both stores to enable easy roll-back?
-  1. Will require some additional work as well as analysis as what information is lost in the old mongo version and whether we care about that loss.
-
-Whatever choice we make is an interim choice; so, we need to patch together a path from all old mongo to all split no matter how hypothetical that end point may be.
-
-#### Comparative effort estimates
-
-##### Locator - Location approaches
-
-Needed for cohabiting approaches, not the dual server approach.
-
-1. Locator w/ Location veneer 
-  1. Remove assumptions that Location is a tuple
-  1. Change loc_mapper to know that these are not distinct types
-  1. Upon instantiation, loc_map each Location to populate the Locator fields.
-  1. Upon Location attr access, loc_map each Locator to get its Location fields (map once, cache)
-1. Lazy Locator w/ Location veneer. Location is a separate class. Attempts to access Location attrs on a Locator forces mapping and vice versa.
-  1. Don't need to change any access patterns
-  1. Upon Locator attr access, loc_map each Location to get its Locator fields (map once, cache)
-  1. Upon Location attr access, loc_map each Locator to get its Location fields (map once, cache)
-1. Make app ignore reference type and have all mapping done at modulestore.
-  1. Update all modulestore functions to take either Locator or Location and call loc_mapper if it didn't get the type it expected.
-  1. Deserialize ids and children etc from persistence into either Locator or Location according to 
-     1. runtime preference?
-     1. type info in serialized form?
-  1. Have app tier pass Location/Locator around as intact objects rather than fields:
-     1. Change each url and view function to accept either set of fields and cons up the appropriate object
-     1. Refactor each app tier access of Location/Locator attrs to get via correct pattern or not use attr
-
-##### Hybrid approaches
-
 The cohabiting approaches require that the app (at least Studio) never tries to write to any particular modulestore but lets the mixed modulestore layer figure out the routing. That entails changing all modulestore() and get_modulestore() calls as well as writing router logic in mixed.
 
-Any implementation in which Studio must support both old and split mongo for write access is roughly equivalent in effort and additional effort over the existing planned work (which assumes we're converting all writes to Split). I'm fairly concerned about not only the amount of work for this simultaneous support but also the functional limitations as I was envisioning the app tier quickly becoming more version aware so that we can begin implementing conflict management (detection as well as resolution), reuse (e.g., spoc reuse of course, course reuse of modules), version comparison, history tracking (show the user who and when last changed each xblock), etc.
+Cohabiting makes it difficult to make Studio more version aware so that we can begin implementing conflict management (detection as well as resolution), reuse (e.g., spoc reuse of course, course reuse of modules), version comparison, history tracking (show the user who and when last changed each xblock), etc.
 
 The signature and pattern of the methods for split modulestore's create, update, and delete methods differs from old mongo; so, simultaneous support will require that mixed modulestore mediate that difference and we code the app tier to the superset of functionality with some way of handling attempts to use split functionality on a non-split course.
 
 The upside to a gradual migration is that if the version spamming of split has performance implications, the gradual migration will give us time to implement larger granularity version updates as well as other performance improvements before all authors are affected.
 
-The additional work for broadcast update over supporting either will mainly impact performance, but it will require a few days of development work at the mixed modulestore layer. 
-
-If split does not have to lazily convert any courses, it does remove that behavior from mixed modulestore which will save some work (not a lot).
-
-Keeping LMS using only old mongo reduces work on LMS but adds the task of either reverse migration from split to old mongo or, better, changing publish from split to support writing to old mongo. In the short-run, the main impact will be flattening out reuse references into copies of reused content in old mongo. In the long-run, it will keep LMS from tracking versions and thus reconstructing what the student saw or controlling what the student sees by giving the student a consistent version w/in some courseware scope. As long as the publish action also publishes to split's published branch, we'd be able to reconstruct what the student saw via the edited on dates of the published versions in split.
+Keeping LMS using only old mongo, keeps LMS from tracking versions and thus reconstructing what the student saw or controlling what the student sees by giving the student a consistent version w/in some courseware scope. As long as the publish action also publishes to split's published branch, we'd be able to reconstruct what the student saw via the edited on dates of the published versions in split.
