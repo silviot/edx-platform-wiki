@@ -43,7 +43,7 @@ rake django-admin[sync_user_info,lms,dev]
 #### Mongo (courseware)
 * To list all the courses:
 ```
-use xmodule
+use edxapp
 db.modulestore.find( { "_id.category" : "course" }, {'name':'1'} )
 ```
 * To find all the updates for courses numbered 999:
