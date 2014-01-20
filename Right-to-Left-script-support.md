@@ -134,7 +134,7 @@ For this command to execute successfully with the settings I am using, you need 
 
 To be able to switch between your languages, you need to add the language switcher form. A very easy to use form is already available on django documentation, all it needs is a minimal changes to work inside the mako templates. This is the form I used to switch languages first.
 ```
-<form action="/i18n/setlang/" method="POST" style="display: none" id="language_form">
+<form action="/i18n/setlang/" method="POST" id="language_form">
     <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }"/>
     <!--<input name="next" type="hidden" value="/next/page/" />-->
     <select name="language" id="language_code">
