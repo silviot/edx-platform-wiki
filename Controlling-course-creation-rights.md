@@ -10,24 +10,24 @@ NOTE: We use the phrase "is_staff" to indicate the bit in the auth_user table th
 You can completely disable the ability for any user who is not marked "is_staff" to create a new course. Users who have been added as staff to existing courses will be able to view and edit those courses, but the ability to create a new course will only be shown to users with the "is_staff" Django user setting.
 
 ### Disabling course creation
-In /edx-platform/cms/envs/common.py, or your extension of it, add _'DISABLE_COURSE_CREATION': True_ to MITX_FEATURES.
+In /edx-platform/cms/envs/common.py, or your extension of it, add 'DISABLE_COURSE_CREATION': True to MITX_FEATURES.
 
 ### Marking a user as "is_staff"
 There is a Django admin command for marking an account as "is_staff": 
 ```
-_/manage.py lms set_staff emailaddress_
+./manage.py lms set_staff emailaddress
 ```
 
 Note that "is_staff" is a [Django auth field](https://docs.djangoproject.com/en/dev/ref/contrib/auth/). It is completely unrelated to the course staff concept within Studio.
 
 ### Setting a contact e-mail address
-If DISABLE_COURSE_CREATION is True, users not marked "is_staff" may see a message on the Studio dashboard prompting them to e-mail if they need a course to be created. This message will only be shown if an e-mail address has been set as the value of _'STUDIO_REQUEST_EMAIL'_ in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). You should also customize the language in this message so it does not refer to edX (/edx-platform/cms/templates/index.html)
+If DISABLE_COURSE_CREATION is True, users not marked "is_staff" may see a message on the Studio dashboard prompting them to e-mail if they need a course to be created. This message will only be shown if an e-mail address has been set as the value of 'STUDIO_REQUEST_EMAIL' in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). You should also customize the language in this message so it does not refer to edX (/edx-platform/cms/templates/index.html)
 
 ## Selectively enable course creation
 You can grant and revoke course creation rights to individual users via a Django admin table. User accounts marked "is_staff" do not need to go through this process-- those users are always allowed to create courses, and there is not a way to revoke their access.
 
 ### Enabling control of course creation rights
-In /edx-platform/cms/envs/common.py, or your extension of it, set _'ENABLE_CREATOR_GROUP': True_ to MITX_FEATURES. Note that DISABLE_COURSE_CREATION (discussed above) takes precedence over ENABLE_CREATOR_GROUP, so make sure that DISABLE_COURSE_CREATION is not set to True.
+In /edx-platform/cms/envs/common.py, or your extension of it, set 'ENABLE_CREATOR_GROUP': True to MITX_FEATURES. Note that DISABLE_COURSE_CREATION (discussed above) takes precedence over ENABLE_CREATOR_GROUP, so make sure that DISABLE_COURSE_CREATION is not set to True.
 
 ### User workflow
 If ENABLE_CREATOR_GROUP is set to True, this is the workflow for a new Studio user:
@@ -44,9 +44,9 @@ _Caveat-- language in these messages is specific to edX and our xConsortium part
 The url for the course creator admin table is /admin/course_creators/coursecreator/ (relative to where you are running your instance of the edX platform). You must log in with a username for an account marked "is_staff". See above for instructions on how to mark an account as "is_staff".
 
 ### Setting a contact e-mail address
-You should set a contact e-mail address as the value of _'STUDIO_REQUEST_EMAIL'_ in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). This address will receive notification when someone has requested course creation access, and it will be included in e-mails sent out to users when their course creation status changes.
+You should set a contact e-mail address as the value of 'STUDIO_REQUEST_EMAIL' in MITX_FEATURES in /edx-platform/cms/envs/common.py (or your extension of it). This address will receive notification when someone has requested course creation access, and it will be included in e-mails sent out to users when their course creation status changes.
 
 ### Grandfathering existing users
-If you wish to grant course creation access to all existing course instructors (users who have previously created courses) on your instance of the platform, you can do so via a Django admin command: _./manage.py cms populate_creators_
+If you wish to grant course creation access to all existing course instructors (users who have previously created courses) on your instance of the platform, you can do so via a Django admin command: ./manage.py cms populate_creators
 
 Course staff (users who have been added to courses as staff, but did not originally create the courses) will be added to the table with status "unrequested".
