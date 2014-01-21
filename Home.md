@@ -24,7 +24,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[How to Rebase a Pull Request]]
 * [[Python Guidelines]]
 * [[JavaScript Guidelines]]
-* [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/docs/en_us/internal/testing.md)
+* [[Test Engineering and Automated Testing]]
 * [[Hackathons]]
 * [[Writing easily XBlock portable XModules]]
 * [[Internationalization and Localization]]
