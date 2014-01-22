@@ -31,7 +31,7 @@ This feature enables separate, deployable "micro-themes" (e.g. branding elements
  * **course_index_overlay_text** - Text to override the "Explore free courses from leading universities." tag line that is shown on the course index page.
  * **course_about_show_social_links** - boolean toggle for displaying the social links in the course about page's sidebar. Defaults to True if not set.
  * **course_about_twitter_account** - Optional override for the account on the twitter social link. Defaults to "@edxonline"
- * **course_about_facebook_link** - Optional override for URL of the facebook social link. Defaults to "ttp://www.facebook.com/EdxOnline"
+ * **course_about_facebook_link** - Optional override for URL of the facebook social link. Defaults to "http://www.facebook.com/EdxOnline"
 
 * **MICROSITE_ROOT_DIR** - a directory that contains subdirectories of assets for each microsite including css, images, template overrides. The assets of each microsite are located under a subdirectory with the same name as the microsite key in the MICROSITE_CONFIGURATION dict (described above).
 
