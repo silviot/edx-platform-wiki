@@ -21,7 +21,7 @@ This feature enables separate, deployable "micro-themes" (e.g. branding elements
  * **email_from_address** - From address for emails. Overrides DEFAULT_FROM_EMAIL. Used by account creation, paid cert order, direct enrollment via instructor dashboard, etc.
  * **payment_support_email** - Payment support email address, used for email sent when a payment processing error occurs. Overrides PAYMENT_SUPPORT_EMAIL.
  * **ENABLE_MKTG_SITE** - Optional boolean toggle to override ENABLE_MKTG_SITE. Defaults to True if ENABLE_MKTG_SITE is not set at the global level.
- * **SITE_NAME** - hostname and port portion of the URI for the microsite web address
+ * **SITE_NAME** - hostname portion of the URI for the microsite web address. E.g. "foo.edx.org"
  * **course_org_filter** - string value to use for displaying the correct courses on the student dashboard
  * **show_partners** - boolean toggle for displaying the edX university partners (MIT, Harvard, etc.) on the microsite's home page. Defaults to True.
  * **homepage_overlay_html** - Optional html that is shown within div.outer-wrapper > div.title > hgroup on the microsite's home page in place of the "\<h1>The Future of Online Education\</h1>\<h2>For anyone, anywhere, anytime\</h2>" tag line.
