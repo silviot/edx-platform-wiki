@@ -13,22 +13,22 @@ This feature enables separate, deployable "micro-themes" (e.g. branding elements
 * MICROSITE_NAMES - list of microsites
 * MICROSITE_ROOT_DIR - directory containing subdirectories of assets for each microsite including css, images, template overrides
 * MICROSITE_CONFIGURATION - A dict of dicts. Each key in the microsite configuration dict specifies the config for a microsite. There should be a configuration for each of the items in the MICROSITE_NAMES list. Keys within each microsite's config are as follows:
-** domain_prefix 
-** university 
-** platform_name 
-** logo_image_url 
-** email_from_address 
-** payment_support_email 
-** ENABLE_MKTG_SITE 
-** SITE_NAME 
-** course_org_filter 
-** course_about_show_social_links 
-** css_overrides_file 
-** show_partners 
-** show_homepage_promo_video 
-** course_index_overlay_text 
-** course_index_overlay_logo_file 
-** homepage_overlay_html 
+ * domain_prefix 
+ * university 
+ * platform_name 
+ * logo_image_url 
+ * email_from_address 
+ * payment_support_email 
+ * ENABLE_MKTG_SITE 
+ * SITE_NAME 
+ * course_org_filter 
+ * course_about_show_social_links 
+ * css_overrides_file 
+ * show_partners 
+ * show_homepage_promo_video 
+ * course_index_overlay_text 
+ * course_index_overlay_logo_file 
+ * homepage_overlay_html 
 
 ## Other Django configuration settings that are important to microsites configuration
 
