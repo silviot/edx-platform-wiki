@@ -10,6 +10,7 @@ This feature enables separate, deployable "micro-themes" (e.g. branding elements
 ## Django configuration settings used specifically for microsites
 
 * **MICROSITE_NAMES** - list of microsites
+* **SUBDOMAIN_BRANDING** - dict that maps a subdomain to a university. e.g. {'foo' : 'FooX'}
 * **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for a microsite. There should be a configuration for each of the items in the MICROSITE_NAMES list. Keys within each microsite's config are as follows:
  * **domain_prefix** - the subdomain that specifies the microsite. E.g. for foo.edx.org it would be "foo"
  * **university** - the university associated with the microsite. E.g. "FooX"
@@ -39,8 +40,5 @@ This feature enables separate, deployable "micro-themes" (e.g. branding elements
 
 * **FEATURES('ENABLE_MKTG_SITE')** - This is used to determine whether or not certain links (e.g. course listing page, FAQ, etc.) should be handled by the lms django app or by an external app. See [[Alternate site for marketing links]]
 * **MAKO_TEMPLATES['main']** - list of directories to look in for the compiled template files. The microsite root directory gets appended to this list.
-* **SUBDOMAIN_BRANDING** - Boolean toggle for signaling that the microsites configuration dict has contents???
 * **VIRTUAL_UNIVERSITIES** - list of university landing pages to display on the lms home page. These will be displayed whether or not they have courses created for that org. Clicking on the link for a given university will bring the user to the course catalog for the university.
 * **FEATURES('USE_MICROSITES')** - Internal Boolean toggle for enabling the microsites feature. This is not configured directly in a settings.py file, but instead is overridden in the code itself.
-
-## Template Changes
