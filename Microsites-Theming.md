@@ -41,3 +41,11 @@ This feature enables separate, deployable "micro-themes" (e.g. branding elements
 * **MAKO_TEMPLATES['main']** - list of directories to look in for the compiled template files. The microsites' root directories are appended to this list.
 * **VIRTUAL_UNIVERSITIES** - list of university landing pages to display on the lms home page. These will be displayed whether or not they have courses created for the universities. Clicking on the link for a given university will bring the user to the course catalog for that university.
 * **FEATURES('USE_MICROSITES')** - Internal Boolean toggle for enabling the microsites feature. This is not configured directly in a settings.py file, but instead is overridden in the code itself.
+
+
+## Styling overrides
+
+Create a directory with the same name as the microsite key under MICROSITE_ROOT_DIR. Under this directory create 3 folders. See common/test/test_microsites/test_microsite for examples.
+* **css** - create a .css file under this dir and specify it with the css_overrides_file setting
+* **images** - create this folder, and in it put your background image, header logo, etc. Specify them with the logo_image_url and course_index_overlay_logo_file settings.
+* **templates** - create a directory named "templates" (hard coded. See common/djangoapps/microsite_configuration/middleware.py method get_microsite_template_path). Under here you would put any mako templates you want to override.
