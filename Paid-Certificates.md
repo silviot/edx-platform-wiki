@@ -21,11 +21,11 @@ This feature enables the ability to set different course tracks and process paym
  * Visit the studio admin dashboard with a user that has superuser access. (There's a column in the auth_user database called is_superuser)
  * Click 'Course Modes'
  * Add a new course mode info
-  * Mode slug is the name of the mode (e.g. 'verified', 'audit', 'honor')
-  * The min price is an integer field. 
-  * The suggested prices fields takes a comma separated value: ex. "25,50,100" - set the expiration_date to the date when you no longer want to allow people to sign up for this course mode (all dates are in UTC)
- * Create other modes, e.g. mode slugs of 'audit' and 'honor' with a min price of 0 and no suggested prices.
- * When you try to register for the course, you should now be given an option of which mode to choose.
+    * Mode slug is the name of the mode (e.g. 'verified', 'audit', 'honor')
+    * The min price is an integer field. 
+    * The suggested prices fields takes a comma separated value: ex. "25,50,100" - set the expiration_date to the date when you no longer want to allow people to sign up for this course mode (all dates are in UTC)
+   * Create other modes, e.g. mode slugs of 'audit' and 'honor' with a min price of 0 and no suggested prices.
+   * When you try to register for the course, you should now be given an option of which mode to choose.
 
 * Reports - See lms/djangoapps/shoppingcart/reports.py. Currently available reports:
  * Refunds
