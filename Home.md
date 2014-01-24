@@ -39,3 +39,4 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Halfway multi tenancy]]
 * [[Controlling Course Creation Rights]]
 * [[Alternate site for marketing links]]
+* [[Microsites Theming]]
