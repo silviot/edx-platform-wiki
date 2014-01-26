@@ -18,6 +18,7 @@ IMPORTANT: Right now this enforcement only happens on new account creation. Howe
 
 ## Example on how to Configure to use Policies
 
+<code>
 FEATURES['USE_PASSWORD_POLICY_ENFORCEMENT'] = True
 
 PASSWORD_MIN_LENGTH = 4
@@ -30,3 +31,4 @@ PASSWORD_COMPLEXITY = {
 }
 # Not the best setting name, but this is the list of passwords to not allow similarity to
 PASSWORD_DICTIONARY = ['password', 'abcdef']
+</code>
