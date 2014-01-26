@@ -7,6 +7,24 @@ Please see PR #2061 for the latest comments and status
 
 This feature enables separate, deployable "micro-themes" (e.g. branding elements, Mako template overrides, etc.) for subdomains (e.g. foo.edx.org, bar.edx.org) in order to provide branding "multi-tenancy".
 
+This work is similar to the 'Stanford' theming that the fine folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant.
+
+There are some limitations to Microsites compared to the 'Stanford' theming:
+
+- One cannot use Sass or any compiled means to generate .css at 'deploy time'. However, one could use Sass at design time and compile to .css. At this point in time, our current deployment scripts at edX do Sass compilation at deploy time.
+
+- One can only use .css to override style definitions
+
+IMPORTANT NOTE: While this does allow for multi-tenancy with respect to visual branding, there is no multi-tenancy at the User database level. Therefore it is the same user account on foo.edx.org and bar.edx.org, i.e. if I had an account on www.edx.org, it'd be the same account on foo.edx.org as well as bar.edx.org. We'd like to extend the ability to have separate user accounts per subdomain, this work is still TBD. If you have interest in taking this on as an Open Source contribution, let us know.
+
+## How to define a 'Microsite'
+
+There are two main things that you will have to do to use Microsites:
+
+* Define a Django configuration (see below)
+
+* Provide a directory (typically a peer directory to edx-platform) which contains all of the microsite content and Mako template overrides
+
 ## Django configuration settings used specifically for microsites
 
 * **SUBDOMAIN_BRANDING** - dict that maps a subdomain to a university. e.g. {'foo' : 'FooX'}
