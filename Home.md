@@ -41,3 +41,4 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Alternate site for marketing links]]
 * [[Microsites Theming]]
 * [[Paid Certificates]]
+* [[Optional Password Policy Enforcement]]
