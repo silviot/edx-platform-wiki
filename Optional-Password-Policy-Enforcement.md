@@ -20,7 +20,6 @@ IMPORTANT: Right now this enforcement only happens on new account creation. Howe
 
 <code>
 FEATURES['USE_PASSWORD_POLICY_ENFORCEMENT'] = True
-
 PASSWORD_MIN_LENGTH = 4
 PASSWORD_MAX_LENGTH = 12
 PASSWORD_COMPLEXITY = {
