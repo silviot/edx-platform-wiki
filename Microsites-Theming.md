@@ -5,17 +5,15 @@ Please see PR #2061 for the latest comments and status
 ***
 ## Overview
 
-This feature enables separate, deployable "micro-themes" (e.g. branding elements, Mako template overrides, etc.) for subdomains (e.g. foo.edx.org, bar.edx.org) in order to provide branding "multi-tenancy".
+This feature enables separate, deployable "micro-themes" (e.g. branding elements, Mako template overrides, etc.) for subdomains (e.g. foo.edx.org, bar.edx.org) in order to provide branding "multi-tenancy". This feature also supports the ability (as a configurable option, see below) to map a subdomain to an "ORG" in the courseware catalog. For example, if you wanted foo.edx.org to only show the courses with an "ORG"="Foo" (or "FooX"). Likewise, with this filtering, the User Dashboard on foo.edx.org would only show registered courses in the same ORG filtering. Conversely, in this case, "ORG"="Foo" courses would be filtered *out* of all other course catalog listing on other subdomain, e.g. bar.edx.org would not show "ORG"="Foo" courses.
 
-This work is similar to the 'Stanford' theming that the fine folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant.
+This work is similar to the 'Stanford' theming that the fine folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant and doesn't support this course catalog partitioning.
 
 There are some limitations to Microsites compared to the 'Stanford' theming:
 
 - One cannot use Sass or any compiled means to generate .css at 'deploy time'. However, one could use Sass at design time and compile to .css. At this point in time, our current deployment scripts at edX do Sass compilation at deploy time.
 
-- One can only use .css to override style definitions
-
-IMPORTANT NOTE: While this does allow for multi-tenancy with respect to visual branding, there is no multi-tenancy at the User database level. Therefore it is the same user account on foo.edx.org and bar.edx.org, i.e. if I had an account on www.edx.org, it'd be the same account on foo.edx.org as well as bar.edx.org. We'd like to extend the ability to have separate user accounts per subdomain, this work is still TBD. If you have interest in taking this on as an Open Source contribution, let us know.
+IMPORTANT NOTE: While this does allow for multi-tenancy with respect to visual branding, there is no multi-tenancy at the User database level. Therefore it is the same user account on foo.edx.org and bar.edx.org, i.e. if I had an account on www.edx.org, it'd be the same account on foo.edx.org as well as bar.edx.org. We'd like to extend the ability to have separate user accounts per subdomain, this work is still TBD. If you have interest in taking this on as an Open Source contribution, let us know. There are a few things to consider, such as also partitioning Sessions between subdomains (so a active login on foo.edx.org isn't picked up on bar.edx.org), etc.
 
 ## How to define a 'Microsite'
 
@@ -27,15 +25,14 @@ There are two main things that you will have to do to use Microsites:
 
 ## Django configuration settings used specifically for microsites
 
-* **SUBDOMAIN_BRANDING** - dict that maps a subdomain to a university. e.g. {'foo' : 'FooX'}
 * **MICROSITE_ROOT_DIR** - a directory that contains subdirectories of assets for each microsite including css, image and template overrides. The assets for each microsite are located under a subdirectory with the same name as the microsite key in the MICROSITE_CONFIGURATION dict.
 * **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. Keys within each microsite's config are as follows:
  * **domain_prefix** - the subdomain that specifies the microsite. E.g. for foo.edx.org it would be "foo"
  * **university** - the university associated with the microsite. E.g. "FooX"
  * **platform_name** - Optional path to override the value of PLATFORM_NAME. Used by many templates in the edx_platform applications.
  * **favicon_path** - Optional path to override the value of FAVICON_PATH
- * **css_overrides_file** - path to stylesheet for css overrides. This is relative to the MICROSOFT_ROOT_DIR
- * **logo_image_url** - path to the branded logo image to use. This is relative to the MICROSOFT_ROOT_DIR
+ * **css_overrides_file** - path to stylesheet for css overrides. This is relative to the MICROSITE_ROOT_DIR
+ * **logo_image_url** - path to the branded logo image to use. This is relative to the MICROSITE_ROOT_DIR
  * **google_analytics_file** - optional override for '../google_analytics.html' which is included in the header of all application pages
  * **email_from_address** - From address for emails. Used by account creation, paid cert order, direct enrollment via instructor dashboard, etc. Overrides DEFAULT_FROM_EMAIL.
  * **payment_support_email** - Payment support email address, used for the email sent when a payment processing error occurs. Overrides PAYMENT_SUPPORT_EMAIL.
@@ -51,9 +48,11 @@ There are two main things that you will have to do to use Microsites:
  * **course_about_show_social_links** - boolean toggle for displaying the social links in the course about page's sidebar. Defaults to True.
  * **course_about_twitter_account** - Optional override for the account on the twitter social link. Defaults to "@edxonline".
  * **course_about_facebook_link** - Optional override for URL of the facebook social link. Defaults to "http://www.facebook.com/EdxOnline".
-
+* **SUBDOMAIN_BRANDING** - dict that maps a subdomain to a university. e.g. {'foo' : 'FooX'}. NOTE: This is a legacy construct and you will not need to set this yourself.
 
 ## Other Django configuration settings that are important to microsites configuration
+
+Note, this is informational. You should not need to manipulate these settings as they get managed in the enable_microsites() method.
 
 * **FEATURES('ENABLE_MKTG_SITE')** - This is used to determine whether or not certain links (e.g. course listing page, FAQ, etc.) should be handled by the lms django app or by an external app. See [[Alternate site for marketing links]]
 * **MAKO_TEMPLATES['main']** - list of directories to look in for the compiled template files. The microsites' root directories are appended to this list.
@@ -61,9 +60,13 @@ There are two main things that you will have to do to use Microsites:
 * **FEATURES('USE_MICROSITES')** - Internal Boolean toggle for enabling the microsites feature. This is not configured directly in a settings.py file, but instead is overridden in the code itself.
 
 
-## Styling overrides
+## Mako Template and Styling overrides
 
 Create a directory with the same name as the microsite key under MICROSITE_ROOT_DIR. Under this directory create 3 folders. See common/test/test_microsites/test_microsite for examples.
 * **css** - create a .css file under this dir and specify it with the css_overrides_file setting
 * **images** - create this folder, and in it put your background image, header logo, etc. Specify them with the logo_image_url and course_index_overlay_logo_file settings.
-* **templates** - create a directory named "templates" (hard coded. See common/djangoapps/microsite_configuration/middleware.py method get_microsite_template_path). Under here you would put any mako templates you want to override.
+* **templates** - create a directory named "templates" (hard coded. See common/djangoapps/microsite_configuration/middleware.py method get_microsite_template_path). Under here you would put any mako templates you want to override. These must have the same relative paths as the templates under /lms/templates. For example, if you wanted to override the templates/emails/activation_email.txt, then it should have the same pathing in your overrides directory.
+
+## Examples
+
+TBD
