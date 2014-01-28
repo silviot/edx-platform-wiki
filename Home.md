@@ -43,3 +43,4 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Paid Certificates]]
 * [[Optional Login Session timeout after inactivity]]
 * [[Optional Password Policy Enforcement]]
+* [[Optional Account lockout after excessive login failures]]
