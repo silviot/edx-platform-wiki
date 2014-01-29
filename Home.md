@@ -41,7 +41,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Alternate site for marketing links]]
 * [[Microsites Theming]]
 * [[Paid Certificates]]
-* [[Customizing the Registration Fields]]
+* [[Customizing the Registration Form Fields]]
 * [[Optional Login Session timeout after inactivity]]
 * [[Optional Password Policy Enforcement]]
 * [[Optional Account lockout after excessive login failures]]
