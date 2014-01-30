@@ -67,7 +67,7 @@ the section on **Contacting Us**, below, for more.
 Testing Coverage Guidelines
 ---
 
-Before you submit a pull request, please refer to the [edx-platform testing documentation](https://github.com/edx/edx-platform/blob/master/docs/internal/testing.md).
+Before you submit a pull request, please refer to the [edx-platform testing documentation](https://github.com/edx/edx-platform/blob/master/docs/en_us/internal/testing.md).
 
 Code you commit should *increase* test coverage, not decrease it. For more involved
 contributions, you may want to discuss your intentions on the mailing list *before* you
