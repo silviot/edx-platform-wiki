@@ -2,7 +2,7 @@ Welcome to the edx-platform wiki!
 
 ## Installation & Usage
 
-* [[Installation Guides]]
+* [Installation Guides](https://github.com/edx/configuration/wiki#wiki-installation)
 * [[Frequently Asked Questions]]
 * [[Shell Commands]]
 * [[Troubleshooting]]
