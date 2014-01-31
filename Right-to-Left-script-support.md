@@ -1,6 +1,6 @@
 # Warning:
 This is a draft document for a feature that has not yet been merged into the edX platform.
-Please see PR #2056 for the latest comments and status
+Please see PR #2137 and #2138 for the latest comments and status.
 ***
 ## Overview
 
