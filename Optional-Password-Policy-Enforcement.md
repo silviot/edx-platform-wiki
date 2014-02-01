@@ -1,5 +1,3 @@
-NOTE: This documentation is related to a new feature that is in Pull Request (https://github.com/edx/edx-platform/pull/2312)
-
 ## Overview
 
 This feature is to be able to enforce Open edX account password policies, via reuse of the django-password project. This feature is enabled via a FEATURES["USE_PASSWORD_POLICY_ENFORCEMENT"] = True switch. Default is False (aka don't use this feature).
