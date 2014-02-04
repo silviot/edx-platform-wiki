@@ -15,11 +15,15 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 ```
 vagrant reload
 ```
-* Set the VAGRANT_X11 environment variable on your host machine, then ssh into the vagrant image. Note you will be the 'vagrant' user. Then copy that user's ~/.Xauthority file somewhere that the 'edxapp' user can get to it (like the /tmp dir). Then as the 'edxapp' user copy that .Xauthority file to its home directory. Also as the 'edxapp' user, set the DISPLAY environment variable to the host display.
+* Set the VAGRANT_X11 environment variable on your host machine, then ssh into the vagrant image. Note you will be the 'vagrant' user. Start up firefox, **then quit it**. (It will be passed through to your host machine's display).
 ```
 export VAGRANT_X11=1
 vagrant ssh
 
+firefox
+```
+* Now copy the 'vagrant' user's ~/.Xauthority file somewhere that the 'edxapp' user can get to it (like the /tmp dir). Then as the 'edxapp' user copy that .Xauthority file to its home directory. Also as the 'edxapp' user, set the DISPLAY environment variable to the host display.
+```
 cp .Xauthority /tmp
 chmod 0666 /tmp/.Xauthority 
 sudo su edxapp
