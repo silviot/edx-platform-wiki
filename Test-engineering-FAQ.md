@@ -12,13 +12,13 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
       config.ssh.forward_x11 = true
   end
 ```
-* If you had to change your Vagrantfile, you need to reload the image. Note that the reload will *not* reprovision your vagrant image if it has already been provisioned. It *will* redo the port forwarding and setting up of the file shares. See the vagrant docs for more info on the vagrant commands.
-```
-vagrant reload
-```
-* Set the VAGRANT_X11 environment variable on your host machine, then ssh into the vagrant image. Note you will be the 'vagrant' user. Start up firefox, **then quit it**. (It will be passed through to your host machine's display).
+* Set the VAGRANT_X11 environment variable on your host machine, then reload the image. Note that the reload will *not* reprovision your vagrant image if it has already been provisioned. It *will* redo the port forwarding and setting up of the file shares. See the vagrant docs for more info on the vagrant commands.
 ```
 export VAGRANT_X11=1
+vagrant reload
+```
+* ssh into the vagrant image. Note you will be the 'vagrant' user. Start up firefox, **then quit it**. (It will be passed through to your host machine's display).
+```
 vagrant ssh
 
 firefox
