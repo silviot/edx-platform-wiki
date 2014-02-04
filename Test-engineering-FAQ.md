@@ -11,13 +11,13 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
       config.ssh.forward_x11 = true
   end
 ```
-* Set the VAGRANT_X11 environment variable on your host machine and reload the config, then ssh into your vagrant image. Note that the reload will *not* reprovision your vagrant image if it has already been provisioned. It *will* redo the port forwarding and setting up of the file shares. See the vagrant docs for more info on the vagrant commands.
+* If you had to change your Vagrantfile, you need to reload the image. Note that the reload will *not* reprovision your vagrant image if it has already been provisioned. It *will* redo the port forwarding and setting up of the file shares. See the vagrant docs for more info on the vagrant commands.
 ```
-export VAGRANT_X11=1
 vagrant reload
 ```
-* ssh into the vagrant image. Note you will be the 'vagrant' user. Then copy that user's ~/.Xauthority file somewhere that the 'edxapp' user can get to it (like the /tmp dir). Then as the 'edxapp' user copy that .Xauthority file to its home directory. Also as the 'edxapp' user, set the DISPLAY environment variable to the host display.
+* Set the VAGRANT_X11 environment variable on your host machine, then ssh into the vagrant image. Note you will be the 'vagrant' user. Then copy that user's ~/.Xauthority file somewhere that the 'edxapp' user can get to it (like the /tmp dir). Then as the 'edxapp' user copy that .Xauthority file to its home directory. Also as the 'edxapp' user, set the DISPLAY environment variable to the host display.
 ```
+export VAGRANT_X11=1
 vagrant ssh
 
 cp .Xauthority /tmp
