@@ -28,6 +28,11 @@ A similar command will make all local users global superusers, which means they'
 
 `update auth_user set is_superuser=1;`
 
+#### How do I upgrade to a newer version
+
+You can reuse the same playbook which you used for installation. Just put use the deploy tag with  "--tags deploy".
+
+
 #### How do I specify the image for my course?
 
 Using Studio, upload an image named images_course_image.jpg
