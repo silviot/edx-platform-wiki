@@ -18,7 +18,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 When you make a new account on your local dev environment, it will be a standard student account. You can drop into the sql shell and make your account global staff, which means that it will automatically have access to "Instructor" tab on all courses in the LMS. To do this, drop into the sql shell:
 
-`./manage.py lms dbshell`
+`sudo -u www-data /edx/app/edxapp/venvs/edxapp/bin/python /edx/app/edxapp/edx-platform/manage.py lms --settings aws dbshell`
 
 The following command will make all local users global staff:
 
