@@ -67,4 +67,4 @@ Yes, there are no new CMS specific tables in Django, so you should just have to 
 
 #### Why doesn't the preview button work in Studio
 
-You need to put the server name in the PREVIEW_LMS_BASE variable, found in the cms.env.json and lmd.env.json files.
+You need to put the server name in the PREVIEW_LMS_BASE variable, found in the cms.env.json and lms.env.json files.
