@@ -97,3 +97,8 @@ sudo su edxapp
 cp /tmp/.Xauthority ~
 export DISPLAY=localhost:10.0
 ```
+
+* Once this has been set up, if you want to run the acceptance tests without browser windows popping up, redirect the DISPLAY environment variable.
+```
+export DISPLAY=:1
+```
