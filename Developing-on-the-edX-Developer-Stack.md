@@ -71,6 +71,10 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Change the "Script parameters" to "cms runserver --settings=devstack 0.0.0.0:8001"
   * Click "OK" to save the new configuration
 
+### Testing your changes
+
+See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
+
 ### Contributing your changes
 
 See [Contributing to the edX platform](https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst) for details as to how to become a contributor.
