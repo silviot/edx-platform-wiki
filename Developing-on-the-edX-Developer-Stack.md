@@ -70,38 +70,3 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Change the name to "Studio"
   * Change the "Script parameters" to "cms runserver --settings=devstack 0.0.0.0:8001"
   * Click "OK" to save the new configuration
-
-### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
-
-* First off, you need [XQuartz](http://xquartz.macosforge.org/) installed on your host *nix system. We have tested with version 2.7.5.
-* Put this stanza into your Vagrantfile (in the devstack directory, from which you usually `vagrant up`) at the same level as the other config.vm.* commands. E.g. before or after the config.vm.network statements.
-```
-  # Enable X11 forwarding so we can interact with GUI applications
-  if ENV['VAGRANT_X11']
-      config.ssh.forward_x11 = true
-  end
-```
-* Set the VAGRANT_X11 environment variable on your host machine, then reload the image. Note that the reload will *not* reprovision your vagrant image if it has already been provisioned. It *will* redo the port forwarding and setting up of the file shares. See the vagrant docs for more info on the vagrant commands.
-```
-export VAGRANT_X11=1
-vagrant reload
-```
-* ssh into the vagrant image. Note you will be the 'vagrant' user. Start up firefox, **then quit it**. (It will be passed through to your host machine's display).
-```
-vagrant ssh
-
-firefox
-```
-* Now copy the 'vagrant' user's ~/.Xauthority file somewhere that the 'edxapp' user can get to it (like the /tmp dir). Then as the 'edxapp' user copy that .Xauthority file to its home directory. Also as the 'edxapp' user, set the DISPLAY environment variable to the host display.
-```
-cp .Xauthority /tmp
-chmod 0666 /tmp/.Xauthority 
-sudo su edxapp
-cp /tmp/.Xauthority ~
-export DISPLAY=localhost:10.0
-```
-
-* Once this has been set up, if you want to run the acceptance tests without browser windows popping up, redirect the DISPLAY environment variable.
-```
-export DISPLAY=:1
-```
