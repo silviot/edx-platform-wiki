@@ -40,6 +40,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Controlling Course Creation Rights]]
 * [[Alternate site for marketing links]]
 * [[Microsites Theming]]
+* [[Stanford Theming]]
 * [[Paid Certificates]]
 * [[Customizing the Registration Form Fields]]
 * [[Optional Login Session timeout after inactivity]]
