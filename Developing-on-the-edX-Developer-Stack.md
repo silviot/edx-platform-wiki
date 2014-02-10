@@ -75,6 +75,19 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 
 See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
 
-### Contributing your changes
+### Other resources
 
-See [Contributing to the edX platform](https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst) for details as to how to become a contributor.
+There are a number of other useful documents on the edX platform wiki:
+
+* [[How to Contribute]]
+* [[How to Rebase a Pull Request]]
+* [[Python Guidelines]]
+* [[JavaScript Guidelines]]
+* [[Test Engineering FAQ]]
+* [[Hackathons]]
+* [[Writing easily XBlock portable XModules]]
+* [[Internationalization and Localization]]
+* [[Split Testing]]
+* [[Object Identities]]
+* [[Data-Access,-Persistence]]
+* [[Helpful Tools]]
