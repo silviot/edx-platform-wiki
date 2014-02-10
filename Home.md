@@ -20,6 +20,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 
 ## Development
 
+* [[Developing on the edX Developer Stack]]
 * [[How to Contribute]]
 * [[How to Rebase a Pull Request]]
 * [[Python Guidelines]]
