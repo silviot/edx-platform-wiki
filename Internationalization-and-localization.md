@@ -14,12 +14,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
     Token is left blank. You have to have permissions for the project (edx-platform) AFAIK - https://www.transifex.com/projects/p/edx-platform/ 
 
-2. Add the language you want in `conf/locale/config`, for instance for the language es_419 (Spanish Latinamerican) it is going to be: 
-
-        {
-         "locales" : ["en", "es_419"],
-         "dummy-locale" : "eo"
-        }
+2. All of the languages on Transifex are already configured in the edx-platform repo.  If you've added a new language to Transifex, and we haven't added it to the configuration yet, you can add it to `conf/locale/config.yaml`.
 
 3. Configure it in your `lms/env/environment.py`, for instance create one called `dev_es.py` with the following: 
 
