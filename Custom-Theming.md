@@ -10,7 +10,7 @@ edxapp_theme_version: 'HEAD'
 ```
 If the repository is private also add
 ```
-edxapp_git_identity: '/edx/app/edxapp/.ssh/id_rsa'
+edxapp_git_identity: '/edx/app/edxapp/tmp_id_rsa'
 EDXAPP_LOCAL_GIT_IDENTITY: '/edx/app/edxapp/.ssh/id_rsa'
 EDXAPP_USE_GIT_IDENTITY: true
 ```
