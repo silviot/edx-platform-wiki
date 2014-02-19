@@ -6,7 +6,7 @@ The edX devstack is a Vagrant instance designed for local development. Before be
 
 ### Debugging the devstack image
 
-Debugging with devstack is a little convoluted, as the source code lives on your local machine but the code is executing within the Vagrant image. One solution is to use [PyCharm](http://www.jetbrains.com/pycharm/) from JetBrains. It is able to debug devstack using its concept of [remote Python interpreters](http://blog.jetbrains.com/pycharm/2013/03/how-pycharm-helps-you-with-remote-development/).
+Debugging with devstack is a little convoluted, as the source code lives on your local machine but the code is executing within the Vagrant image. One solution is to use [PyCharm](http://www.jetbrains.com/pycharm/) from JetBrains. It is able to debug devstack using its concept of [remote Python interpreters](http://blog.jetbrains.com/pycharm/2013/03/how-pycharm-helps-you-with-remote-development/). This only works for the Professional edition.
 
 Here are the steps to use PyCharm on MacOS (other Unix environments should be similar). Note that this has been tested with PyCharm 3.1, and that these steps will *not* work on the free PyCharm Community Edition.
 
