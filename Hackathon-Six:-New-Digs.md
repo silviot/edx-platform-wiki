@@ -10,3 +10,4 @@
 
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
+| gprice | Relative diff quality metrics | gprice |
