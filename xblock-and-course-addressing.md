@@ -49,7 +49,7 @@ We will define two Key services; however, any persistence layer may add any othe
 `CourseKey` is an abstract subclass of `Key` to represent keys which are course ids. These should add support for the following:
 * `course_id` is a property of a `CourseKey` instance which returns the unique id for a given course offering. Note, this is not a `course` xblock but instead the offering to which students register, instructors add staff, and SplitMongo provides indices. A `course_id` is a unicode string which uniquely identifies the course. It must obey the same syntax rules as `Key.url()`.
 * `CourseKey.from_course_id(course_id)` is a `CourseKey` constructor which inverts the `course_id` property with the concomitant equality requirements.
-* `org`? I'm concerned that org is actually ambiguous. `harvard` is an org, but so are `harvard.humanities` and `harvard.humanities.political_science`; however, we could define `org` as a 
+* `org`? I'm concerned that org is actually ambiguous. `harvard` is an org, but so are `harvard.humanities` and `harvard.humanities.political_science`. 
 
 `CourseId` is a concrete implementation of `CourseKey` which represents edX's traditional org, partial course id, and run id triple. Applications should never assume that a `CourseKey` is or will be a `CourseId` and thus should not depend on these 3 fields having any meaning with respect to a `CourseKey`. The `LocationService` defines and supports the `CourseId` class. NOTE, no application should treat course ids as strings of triples any more.
 
