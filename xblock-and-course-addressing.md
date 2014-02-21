@@ -57,7 +57,22 @@ We will define two Key services; however, any persistence layer may add any othe
 
 #### Usage id key class
 
+`UsageKey` is a key which an xblock can use as the usage id: identifies a particularly xblock in a particular xblock tree (which may or may have a course as its root). xblocks which usages identify have not only `Scope.content` fields but also `Scope.children` and `Scope.settings` fields. This class adds support for one more property:
+* `block_id`: a string id for the xblock which is guaranteed to be unique within the context of its course. It is not invertible by itself.
+* `from_course_block_ids(course_id, block_id)`: returns a `UsageKey` such that `UsageKey.from_course_block_ids(key.course_id, key.block_id) == key`
+* `category`? Does it make sense to require the services to answer `category` queries given usage keys or to make `category` something apps should get from the xblock instance?
+* `course_id`? If the usage key was retrieved in the context of a `CourseKey`, it would seem reasonable to be able to retrieve the course_id or `CourseKey` from the usage id. Some usage keys will be to usages not in the context of a course; so, it won't make sense for those (e.g., from an orphaned xblock tree fragment) This property is `None` if the usage was not retrieved as part of a course.
 
+`Location`: the `LocationService` defines the `Location` class as the concrete implementation of this key class. Note that its implementation of `block_id` combines the information from the old `category` and `name` fields. 
 
-In addition to the above properties and functions, this supports the following which only the persistence layer should count on.
-* `version` 
+`BlockUsageLocator`: the `LocatorService` defines the existing `BlockUsageLocator` concrete implementation of usage key ids. In addition to the above properties and functions, this supports the following which only the persistence layer should count on.
+* `version` which returns a unique id for the version such that any other `BlockUsageLocator` with the same version is guaranteed to exist in the same snapshot at the same time.
+* `branch`: if the Usage was retrieved in the context of a course, it may have a `branch` which indicates its lifecycle snapshot (e.g., draft, beta, alpha, stage, preview, live, archive).
+
+#### Definition id key class
+
+`DefinitionKey` is the id of the context independent definition of the xblock's content. That is, it points to the xblock's `Scope.content` fields. Courseware development apps will want to use this to reuse content among courses or even within a course.
+
+The `LocationService` has no separate definition key. When asked for the definition key for an xblock, it will give back the `Location` which is really a `UsageKey` and is not reusable.
+
+`DefinitionLocator`: The `LocatorService` defines `DefinitionLocator` to represent the unique id of context independent definitions. It provides no additional properties over the implementation of the `Key` properties and functions.
