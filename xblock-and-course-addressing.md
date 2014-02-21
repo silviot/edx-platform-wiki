@@ -95,6 +95,10 @@ The `LocationService` has no separate definition key. When asked for the definit
 * leave old urls in place as deprecated for backward compatibility
 * ensure both can work at the same time
 
+### Change all LMS html and js to use a `data-` attr rather than `id` attr
+for storing the xblock's id. 
+* If we need to use `pageurl#xblock-id` linking, then figure out a better way to generate that relative id.
+
 ### Change all Studio code to no longer assume ids are either Locators nor Locations and no longer access the subfields.
 
 ### Change all Studio urls to no longer parse id components
