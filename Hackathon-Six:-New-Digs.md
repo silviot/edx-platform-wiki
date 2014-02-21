@@ -18,3 +18,4 @@
 | Jarv | using reddit as forums - Reddit is open source and is easily installed alongside the LMS, add it as one of the forums options for universities who want polished looking forums as well as event data from it | Jarv |
 | Ned | Coverage testing of Mako templates | Ned |
 | Ned | Responsive how-to XBlock (riffing on [Git choose your own adventure](http://nedbatchelder.com/blog/201401/git_choose_your_own_adventure.html)) | Ned |
+| Marco | *airquotes* Finish *airquotes* previous LMS Redesign Design Mocks HackProject, demo through InvisionApp | Marco |
