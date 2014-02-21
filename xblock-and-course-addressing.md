@@ -1,14 +1,14 @@
 ### Problem statement
 
-EdX code treats xblock and course ids as transparent, introspectable, and frequently manipulated addresses with a known set of fields throughout the stack. The applications serialize and deserialize these ids as parsable urls with fixed syntax (org, partial course id, category, block id or org, partial course id, course unique id). This treatment makes it almost impossible to add semantics such as versioning, subordinate organizations, lifecycle snapshots (e.g., draft, review, alpha, beta, published), or course encapsulation to the applications.
+EdX code throughout the stack currently treats xblock and course ids as transparent, introspectable, and frequently manipulated addresses with a known set of fields. The applications serialize and deserialize these ids as parsable urls with fixed syntax (org, partial course id, category, block id or org, partial course id, course unique id). This treatment makes it almost impossible to add semantics such as versioning, subordinate organizations, lifecycle snapshots (e.g., draft, review, alpha, beta, published), or course encapsulation to the applications.
 
-The db rearchitecture task known as "[Split Mongo](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO)" uses all of the additional semantics listed above as well as separating the identity of courses and reusable definitions from the identity of xblocks within courses (usages). Xblock also distinguishes usages from definitions; so, this change is not unilateral. LMS and others always informally separated course identity from xblock usage identity. [Split makes these distinctions formal](https://github.com/edx/edx-platform/wiki/Locators-and-older-Locations).
+The db rearchitecture task known as "[Split Mongo](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO)" uses all of the additional semantics listed above as well as separating the identity of courses and reusable definitions from the identity of xblocks within courses (usages). Xblock also distinguishes usages from definitions; so, this change is not unilateral. LMS has also always informally separated course identity from xblock usage identity; however, without treating the course id as an object. [Split makes these distinctions formal](https://github.com/edx/edx-platform/wiki/Locators-and-older-Locations).
 
 We had a plan to have the two id representations exist simultaneously with continuous translation between them as necessary ([Rollout Options](https://github.com/edx/edx-platform/wiki/Split-mongo-architecture-and-rollout-options)); however, this plan raised significant performance questions as well as risks around fragility (possibly not finding some hardcoded ids and translating them to the proper representation for the caller or receiver.)
 
 Discussion with Cale, Rob, Ned, DB, and others drove home the point that only the persistence layer should care about xblock usage and definition ids and only the persistence, auth, and registration layers should care about course ids. The application layers (LMS, CMS, analytics, ORA, Forums) should treat these ids as opaque tokens used to perform data CRUD and reference. The application layers should not parse the ids and should not request semantic information from the ids (e.g., category, org, course_id).
 
-However, all of the apps currently serialize and deserialize the ids as subfields from urls; thus, to make the apps able to handle any persistence layer's id representations, we will need to change all of the urls and the url parsing. However, we must provide deprecated backward compatibility which can still interpret hardcoded and bookmarked urls using the existing syntax.
+All edX apps currently serialize and deserialize the ids as subfields from urls; thus, to make the apps able to handle any persistence layer's id representations, we will need to change all of the urls and the url parsing. Nevertheless, we must provide deprecated backward compatibility which can still interpret hardcoded and bookmarked urls using the existing syntax.
 
 ## Proposed solution
 
@@ -20,3 +20,44 @@ A corollary of this change is that no application should assume the serialized (
 
 ### Proposed classes and behaviors
 
+`Key` common superclass representing an address or id of something.
+* `unicode(Key)` produces a string representation which will have no slashes, question marks, nor ampersands but may have spaces and other non url safe characters for the given `Key`. NOTE, rather than storing a much more restricted stringified version of the key in an html `id` attr, store this string or the url below in the `data-id` or any other `data-xxx` field which allows any string chars unlike html attrs which gravely restrict the char set.
+* `Key.url()` produces a url safe string for the key which will have no url tag (that is, no `i4x://`), slashes, ampersands, nor question marks and is safe to use as a field in a url.
+* `Key(unicode)` constructs a `Key` from the `unicode`. The following must be true: `Key(unicode(key)) == key`.
+* `Key.from_url(url)` constructs a `Key` from the url. The following must be true: `Key.from_url(key.url()) == key`.
+
+`Key` is an abstract class and cannot be instantiated. Keys will have namespaces (type indicators) which Key uses to figure out which concrete subclass to instantiate; however, no application should ever try to interpret the namespace indicator nor the payload.
+
+`Key` concrete classes register themselves and their unique namespace id with the `Key` class. The namespaces, of course, cannot collide. If they do, then `Key` may arbitrarily choose which concrete class it uses. (or should it raise an Exception?)
+
+#### Key Services
+
+To do more than just serialize and deserialize a key, apps will need to send keys to services which will answer reasonable queries about the keys. Such queries may include `org`, `category`, `course_id` for keys which are not `CourseKey`, `version`, `branch`, etc. Key Services define concrete `Key` classes which implement the `Key` class interface and register their namespaces with `Key`.
+
+We will define two Key services; however, any persistence layer may add any other Key services.
+
+##### LocationService
+
+`LocationService` is a `Key` service roughly corresponding to our existing `Location` type. It defines `CourseId` and `XblockLocation` classes and accepts instances of these to answer queries such as `category` and `org`.
+
+##### LocatorService
+
+`LocatorService` is a `Key` service which handles the `Locator` concrete classes.
+
+#### Course identity key classes
+
+`CourseKey` is an abstract subclass of `Key` to represent keys which are course ids. These should add support for the following:
+* `course_id` is a property of a `CourseKey` instance which returns the unique id for a given course offering. Note, this is not a `course` xblock but instead the offering to which students register, instructors add staff, and SplitMongo provides indices. A `course_id` is a unicode string which uniquely identifies the course. It must obey the same syntax rules as `Key.url()`.
+* `CourseKey.from_course_id(course_id)` is a `CourseKey` constructor which inverts the `course_id` property with the concomitant equality requirements.
+* `org`? I'm concerned that org is actually ambiguous. `harvard` is an org, but so are `harvard.humanities` and `harvard.humanities.political_science`; however, we could define `org` as a 
+
+`CourseId` is a concrete implementation of `CourseKey` which represents edX's traditional org, partial course id, and run id triple. Applications should never assume that a `CourseKey` is or will be a `CourseId` and thus should not depend on these 3 fields having any meaning with respect to a `CourseKey`. The `LocationService` defines and supports the `CourseId` class. NOTE, no application should treat course ids as strings of triples any more.
+
+`CourseLocator` is the existing `CourseLocator` class. `LocatorService` defines and supports this class.
+
+#### Usage id key class
+
+
+
+In addition to the above properties and functions, this supports the following which only the persistence layer should count on.
+* `version` 
