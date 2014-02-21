@@ -76,3 +76,28 @@ We will define two Key services; however, any persistence layer may add any othe
 The `LocationService` has no separate definition key. When asked for the definition key for an xblock, it will give back the `Location` which is really a `UsageKey` and is not reusable.
 
 `DefinitionLocator`: The `LocatorService` defines `DefinitionLocator` to represent the unique id of context independent definitions. It provides no additional properties over the implementation of the `Key` properties and functions.
+
+## Stories
+
+### Create Key class and its abstract subclasses
+* must have mechanism for services to register namespaces mapping to concrete classes (or the services?)
+* define the Key class methods and properties
+* define `UsageKey` and `DefinitionKey` classes w/ their interfaces too
+
+### Create `LocationService` and refactor `Location` to this api
+
+### Create `LocatorService` and refactor `Locator` (and its subclasses) to this api
+
+### Change all LMS code to no longer assume the ids are Locations and no longer access the subfields
+* use LocationService where necessary, but preferably remove any introspection or move to introspection on xblock
+
+### Change all LMS urls to no longer parse id components but just take the key as a whole
+* leave old urls in place as deprecated for backward compatibility
+* ensure both can work at the same time
+
+### Change all Studio code to no longer assume ids are either Locators nor Locations and no longer access the subfields.
+
+### Change all Studio urls to no longer parse id components
+* no need to leave deprecated urls in place
+
+### Change any other edx platform accessors or manipulators of id fields or url patterns
