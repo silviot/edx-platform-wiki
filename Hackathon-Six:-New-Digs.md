@@ -16,3 +16,5 @@
 | Jarv | external status board - status.edx.org |   Jarv/devops |
 | Jarv | engineering blog - All or a subset of individuals are chosen to present a blog post about their hack, we stagger the posts to keep the blog fresh |  engineering |
 | Jarv | using reddit as forums - Reddit is open source and is easily installed alongside the LMS, add it as one of the forums options for universities who want polished looking forums as well as event data from it | Jarv |
+| Ned | Coverage testing of Mako templates | Ned |
+| Ned | Responsive how-to XBlock | Ned |
