@@ -140,7 +140,7 @@ This section covers how the system worked before split mongo and the location ma
 
 ### Pre-split architecture stack
 
-![Pre-split mongo architecture stack](https://raw2.github.com/edx/edx-platform/master/docs/architecture/presplit.jpg)
+![Pre-split mongo architecture stack](https://raw2.github.com/edx/edx-platform/master/docs/en_us/architecture/presplit.jpg)
 
 This document does not currently fully explain this stack, but some notes on this diagram.
 
@@ -271,7 +271,7 @@ Strategy for mitigating the risks and roadblocks:
 
 Location mapping in studio app. Using new Locators in studio client. 
 
-![Location mapping for studio app diagram](https://raw2.github.com/edx/edx-platform/master/docs/architecture/studio%20mapping.jpg)
+![Location mapping for studio app diagram](https://raw2.github.com/edx/edx-platform/master/docs/en_us/architecture/studio%20mapping.jpg)
 
 The difference here is the insertion of the loc_mapper and its store. The studio app takes each outgoing Location and uses the loc_mapper to convert it to a Locator so that all the client sees are Locators. It takes each incoming Locator and reconverts it back to a Location so that all the MixedModulestore sees is Locations.
 
@@ -303,7 +303,7 @@ Considered approaches<a name="locator-location-locus"/>:
 
 The architecture becomes the following where most of the location mapping is done at the modulestore layer and only inadvertent references get mapped in the apps. The xblock runtime may need to use the loc_mapper as well.
 
-![Location translation at the modulestore layer](https://raw2.github.com/edx/edx-platform/master/docs/architecture/locator_ubiquity.jpg)
+![Location translation at the modulestore layer](https://raw2.github.com/edx/edx-platform/master/docs/en_us/architecture/locator_ubiquity.jpg)
 
 The cohabiting approaches require that the app (at least Studio) never tries to write to any particular modulestore but lets the mixed modulestore layer figure out the routing. That entails changing all modulestore() and get_modulestore() calls as well as writing router logic in mixed.
 
