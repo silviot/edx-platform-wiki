@@ -11,3 +11,5 @@
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
 | gprice | Relative diff quality metrics | gprice |
+| sarina | fix beta instructor dashboard!! | sarina |
+| sarina/dkh | finish intern badging project | |
