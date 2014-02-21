@@ -100,4 +100,7 @@ The `LocationService` has no separate definition key. When asked for the definit
 ### Change all Studio urls to no longer parse id components
 * no need to leave deprecated urls in place
 
+### Change roles.py and enrollment to use new course ids
+* while continuing to provide backward compatibility for existing course ids in the `org/partial/run` format.
+
 ### Change any other edx platform accessors or manipulators of id fields or url patterns
