@@ -6,7 +6,7 @@ This is configurable through the use of the `REGISTRATION_EXTRA_FIELDS` setting,
 * `optional`: to display the field, and make it non-mandatory
 * `hidden`: to not display the field
 
-The default value of the setting is the following, set in edx-platform/lms/envs/common.py :
+The default value of the setting is the following, set in `edx-platform/lms/envs/common.py`:
 
 ```python
 REGISTRATION_EXTRA_FIELDS = {
