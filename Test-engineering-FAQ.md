@@ -8,7 +8,7 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
-* First off, you need [XQuartz](http://xquartz.macosforge.org/) installed on your host *nix system. We have tested with version 2.7.5.
+* First off, for Mac OS you will need [XQuartz](http://xquartz.macosforge.org/) installed to support X Windows. We have tested with version 2.7.5.
 * Put this stanza into your Vagrantfile (in the devstack directory, from which you usually `vagrant up`) at the same level as the other config.vm.* commands. E.g. before or after the config.vm.network statements.
 ```
   # Enable X11 forwarding so we can interact with GUI applications
