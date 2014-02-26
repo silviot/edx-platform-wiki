@@ -19,3 +19,9 @@
 | Ned | Coverage testing of Mako templates | Ned |
 | Ned | Responsive how-to XBlock (riffing on [Git choose your own adventure](http://nedbatchelder.com/blog/201401/git_choose_your_own_adventure.html)) | Ned |
 | Marco | *airquotes* Finish *airquotes* previous LMS Redesign Design Mocks HackProject, demo through InvisionApp | Marco |
+| JZ | Combine the microsites and theming features | |
+| JZ | Deprecate the instructor dashboard | |
+| JZ | Bring the Paver PR to completion | |
+| JZ | Improve the way that jenkins counts the pylint / pep8 diff so it's your merged PR vs. master instead of vs. the last build of the job | |
+| JZ | Create a rules-based risk calculation for PRs | |
+| JZ | Develop an ansible script for provisioning JMeter engines for performance testing | |
