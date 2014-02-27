@@ -23,4 +23,4 @@
 | JZ | Bring the Paver PR to completion | |
 | JZ | Create a rules-based risk calculation for PRs | |
 | JZ | Develop an ansible script for provisioning JMeter engines for performance testing | |
-| AndyA | Develop an XBlocks Install Manager for Studio, i.e. Chrome Extensions for Studio | |
+| AndyA | Develop an XBlocks Install Manager for Studio, i.e. Chrome Extensions for Studio | AndyA |
