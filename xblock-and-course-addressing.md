@@ -71,6 +71,7 @@ To do more than just serialize and deserialize a key, apps will need to send key
 
 1. How should apps specify lifecycle branch such as draft, published, staged, etc when asking for a Key?
 1. How should apps represent instance revision addressing and revision conflict errors (since you accessed xblock foo, someone else changed it; so, your change branches it or clobbers it. If it branches it, here's the pointers to the competing branch versions. Now, tell me which one you want me to label as the correct one.)
+1. How should apps represent what they want to search for xblocks usages and definitions?
 
 ## Stories
 
