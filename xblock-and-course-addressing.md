@@ -14,7 +14,7 @@ All edX apps currently serialize and deserialize the ids as subfields from urls;
 
 The crux of the proposed solution is that all ids (course, xblock, definition) will be opaque keys to the applications. The persistence, auth, and enrollment modules may introspect these keys as necessary for additional information. If an application needs additional information such as org, course_id, category and just has an id, the application must ask either the mixed modulestore, the specific persistence layer, or the key.
 
-If we implement these methods on the keys, then the key should refuse to give the information if the information is not practically free to compute. If, however, we implement these methods on the modulestores, then the caller must treat these as potentially expensive. No application should assume such requests are free: that is, the modulestore may perform db operations or other non-trivial lookups to answer the query. 
+If we implement the informational methods such as 'org' on the keys, then the key should refuse to give the information if the information is not practically free to compute. If, however, we implement these methods on the modulestores, then the caller must treat these as potentially expensive. No application should assume such requests are free: that is, the modulestore may perform db operations or other non-trivial lookups to answer the query. 
 
 Sometimes context will make it clear what behaviors the service will likely support for the id (e.g., course_id for an xblock usage but not for an xblock definition, org for a course_id but not necessarily for a definition, category for an xblock usage or definition but not for a course id) but some services may support behaviors which other services don't support (e.g., version and version history for an xblock usage, list of available lifecycle snapshots such as draft v preview v live). Xblocks will themselves support some of these behaviors and, so, in many cases, it may make more sense for the app to retrieve the xblock given the address and query it.
 
@@ -32,7 +32,7 @@ A corollary of this change is that no application should assume the serialized (
 
 `Key` concrete classes register themselves and their unique namespace id with the `Key` class. The namespaces, of course, cannot collide. If they do, then `Key` may arbitrarily choose which concrete class it uses. (or should it raise an Exception?)
 
-To do more than just serialize and deserialize a key, apps will need to send keys to either a modulestore or request it of the key which will answer reasonable queries about the keys. Such queries may include `org`, `category`, `course_id` for keys which are not `CourseKey`, `version`, `branch`, etc. Key Services define concrete `Key` classes which implement the `Key` class interface and register their namespaces with `Key`.
+To do more than just serialize and deserialize a key, apps will need to send keys to either a modulestore or request it of the key which will answer reasonable queries about the keys. Such queries may include `org`, `category`, `course_id` for keys which are not `CourseKey`, `version`, `branch`, etc. Key concrete classes  implement the `Key` class interface and register their namespaces with `Key`.
 
 #### Course identity key classes
 
@@ -47,13 +47,13 @@ To do more than just serialize and deserialize a key, apps will need to send key
 
 #### Usage id key class
 
-`UsageKey` is a key which an xblock can use as the usage id: identifies a particularly xblock in a particular xblock tree (which may or may have a course as its root). xblocks which usages identify have not only `Scope.content` fields but also `Scope.children` and `Scope.settings` fields. This class adds support for one more property:
+`UsageKey` is an xblock usage id: that is, it identifies a particularly xblock in a particular xblock tree (which may or may have a course as its root). xblocks which usages identify have not only `Scope.content` fields but also `Scope.children` and `Scope.settings` fields. This class adds support for one more property:
 * `block_id`: a string id for the xblock which is guaranteed to be unique within the context of its course. It is not invertible by itself.
 * `from_course_block_ids(course_id, block_id)`: returns a `UsageKey` such that `UsageKey.from_course_block_ids(key.course_id, key.block_id) == key`
 * `category`? Does it make sense to require the services to answer `category` queries given usage keys or to make `category` something apps should get from the xblock instance or modulestore? `BlockUsageLocator` instances do not know the `category` of their xblocks.
 * `course_id`? If the usage key was retrieved in the context of a `CourseKey`, it would seem reasonable to be able to retrieve the course_id or `CourseKey` from the usage id. Some usage keys will be to usages not in the context of a course; so, it won't make sense for those (e.g., from an orphaned xblock tree fragment) This property is `None` if the usage was not retrieved as part of a course.
 
-`Location`: the `Location` class is a concrete implementation of this key class. Note that its implementation of `block_id` combines the information from the old `category` and `name` fields. `Location` is not a complete id; so, we may require that instantiating a `Location` requires passing a `CourseId` unlike the current system. Given a `CourseId`, a `Location` is unique. The current Mongo system has a bug in that it uses only the `Location` as a key and thus cannot handle courses whose ids vary purely in their "run".
+`Location`: the `Location` class is a concrete implementation of this key class. Note that its implementation of `block_id` combines the information from the old `category` and `name` fields. `Location` is not a complete id; so, we will require that instantiating a `Location` requires passing a `CourseId` unlike the current system. Given a `CourseId`, a `Location` is unique. The current Mongo system has a bug in that it uses only the `Location` as a key and thus cannot handle courses whose ids vary purely in their "run".
 
 `BlockUsageLocator`: the `LocatorService` defines the existing `BlockUsageLocator` concrete implementation of usage key ids. In addition to the above properties and functions, this supports the following which only the persistence layer should count on.
 * `version` which returns a unique id for the version such that any other `BlockUsageLocator` with the same version is guaranteed to exist in the same snapshot at the same time.
@@ -67,30 +67,16 @@ To do more than just serialize and deserialize a key, apps will need to send key
 
 `DefinitionLocator`: `Locator`-based system define `DefinitionLocator` to represent the unique id of context independent definitions. These have no additional properties over the implementation of the `Key` properties and functions.
 
+## Other open issues
+
+1. How should apps specify lifecycle branch such as draft, published, staged, etc when asking for a Key?
+1. How should apps represent instance revision addressing and revision conflict errors (since you accessed xblock foo, someone else changed it; so, your change branches it or clobbers it. If it branches it, here's the pointers to the competing branch versions. Now, tell me which one you want me to label as the correct one.)
+
 ## Stories
 
-### Create Key class and its abstract subclasses
-* must have mechanism for services to register namespaces mapping to concrete classes (or the services?)
-* define the Key class methods and properties
-* define `UsageKey` and `DefinitionKey` classes w/ their interfaces too
-
-### Change all LMS code to no longer assume the ids are Locations and no longer access the subfields
-* preferably remove any introspection or move to introspection on xblock or, if necessary, a query against the modulestore
-
-### Change all LMS urls to no longer parse id components but just take the key as a whole
-* leave old urls in place as deprecated for backward compatibility
-* ensure both can work at the same time
-
-### Change all LMS html and js to use a `data-` attr rather than `id` attr
-for storing the xblock's id. 
-* If we need to use `pageurl#xblock-id` linking, then figure out a better way to generate that relative id.
-
-### Change all Studio code to no longer assume ids are either Locators nor Locations and no longer access the subfields.
-
-### Change all Studio urls to no longer parse id components
-* no need to leave deprecated urls in place
-
-### Change roles.py and enrollment to use new course ids
-* while continuing to provide backward compatibility for existing course ids in the `org/partial/run` format.
-
-### Change any other edx platform accessors or manipulators of id fields or url patterns
+* STUD-1352: convert urls for all apps
+* STUD-1350: convert lms, cms, etc to introspection service
+* STUD-1348: introspection service
+* STUD-1343: refactor Locations to include full course id
+* STUD-1342: engineering spec
+* STUD-1341: requirements analysis
