@@ -29,3 +29,4 @@
 | e0d | Work on clojure/neo4j deployment mapper "clueprint."  Dynamically map AWS entities and relate them to arbitrary other entities from other domains, like git commits, visualize as a graph, use cypher or gremlin DSLs to bootstrap commonly needed visualizations. | e0d |
 | DB | Set up a bot for IRC. Maybe extend Hubot? Needs to do channel logging. | DB |
 | DB | Github bot for pull requests from new contributors. Check for contribution agreement, AUTHORS file, add a comment if they're missing. Maybe also check for new tests? | DB |
+| DB | Make a Pirate language for edX! | |
