@@ -27,3 +27,4 @@
 | e0d | FED love for our Asgard fork, Hammer of the Gods.  The tool is super powerful, with confusing buttons... | |
 | e0d | Run edx-platform and the forums in uWSGI, better performance, same runtime for Python and Ruby... | e0d? |
 | e0d | Work on clojure/neo4j deployment mapper "clueprint."  Dynamically map AWS entities and relate them to arbitrary other entities from other domains, like git commits, visualize as a graph, use cypher or gremlin DSLs to bootstrap commonly needed visualizations. | e0d |
+| DB | Set up a bot for IRC. Maybe extend Hubot? Needs to do channel logging. | DB |
