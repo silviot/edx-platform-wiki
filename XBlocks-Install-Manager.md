@@ -33,7 +33,7 @@ Technical challenges
   * Is there a way to know precisely which version is required of each XBlock?
 
 Tools to look at
-* (Chrome extensions)[http://0.tqn.com/d/browsers/1/0/w/p/-/-/chrome-disable-extensions-plugins-2.jpg]
+* [Chrome extensions](http://0.tqn.com/d/browsers/1/0/w/p/-/-/chrome-disable-extensions-plugins-2.jpg)
 * Firefox add-ons
 * Eclipse plugins
 * Apple App Store
