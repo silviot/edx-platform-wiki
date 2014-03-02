@@ -1,3 +1,12 @@
+## Motivation
+
+* As an XBlock developer it is too difficult to install and play with an XBlock today
+  * See [deployment documentation](https://github.com/edx/edx-platform/blob/master/docs/en_us/developers/source/xblocks.rst#deploying-your-xblock)
+* It is impossible for a course developer to install and use a new XBlock
+* There is no registry of available XBlocks to choose from
+* It would be great to have a list of edX approved XBlocks
+* Can we encourage a community of XBlock developers?
+
 ## Ideas for improving ways of installing and managing XBlocks.
 
 * Platform developer support
@@ -6,17 +15,22 @@
 * Course developer support
   * Add a pre-installed XBlock to a course (is "Advanced Modules" the right way to do this?)
   * Get documentation for an XBlock
+  * Browse a list of known XBlocks
+  * Search for an XBlock that provides a desired capability
 * Studio administrator
   * Register one or more known XBlocks
   * See a list of all XBlocks installed into Studio
   * Determine if newer versions are available and install them
   * Uninstall an XBlock
   * Hide an XBlock
-  * Configuration option to allow course developers to add new XBlocks
+  * Configuration option to allow or disallow course developers from adding new XBlocks
+  * Block XBlocks that are known to be problematic
 * XBlock developer
+  * Define XBlock dependencies that will be automatically installed with your XBlock
   * Provide a repository of XBlocks that can be consumed
   * Provide a thumbnail for an XBlock
   * Provide online help for an XBlock
+  * Contribute XBlock to a public repository 
 
 ## UX ideas
 
@@ -29,6 +43,7 @@
 
 ## Technical challenges
 
+* Need all functionality to be available without code changes 
 * How can XBlock installation be supported in production?
   * Is Studio authorized to execute 'pip install' or equivalent programmatically?
 * Can a course developed in Studio automatically install its required XBlocks into LMS?
