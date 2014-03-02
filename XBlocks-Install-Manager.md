@@ -32,12 +32,13 @@ Technical challenges
 * Can a course developed in Studio automatically install its required XBlocks into LMS?
   * Is there a way to know precisely which version is required of each XBlock?
 
-Tools to look at
+Tools to look at (both for UX and for functionality)
 * Chrome extensions
   * ![Chrome extensions](http://0.tqn.com/d/browsers/1/0/w/p/-/-/chrome-disable-extensions-plugins-2.jpg)
 * Firefox add-ons
-* Eclipse plugins
-* Apple App Store
+  * ![Fixefox add-ons](http://www.accessfirefox.org/Firefox_Beginners_Guide/Add-ons_Customize/Extensions_Options.png)
+* Apple App Stores
+  * ![Apple Software Update](http://cdn.cultofmac.com/wp-content/uploads/2012/02/Screen-Shot-2012-02-16-at-12.12.02-PM.jpg)
 
 Future directions
 * Provide a plugin framework for all aspects of edX tooling (not everything can be an XBlock)
