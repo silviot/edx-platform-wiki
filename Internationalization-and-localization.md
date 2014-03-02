@@ -16,7 +16,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
 2. All of the languages on Transifex are already configured in the edx-platform repo.  If you've added a new language to Transifex, and we haven't added it to the configuration yet, you can add it to `conf/locale/config.yaml`.
 
-3. Configure it in your `lms/env/environment.py`, for instance create one called `dev_es.py` with the following: 
+3. Configure it in your `lms/env/common.py`, for instance create one called `dev_es.py` with the following: 
 
         from .dev import *
         
