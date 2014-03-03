@@ -31,3 +31,4 @@
 | DB | Github bot for pull requests from new contributors. Check for contribution agreement, AUTHORS file, add a comment if they're missing. Maybe also check for new tests? | DB |
 | DB | Make a Pirate language for edX! (i18n) | |
 | DB | Upgrade to Django 1.6 | |
+| Brian | Analytics geolocation task | Brian, Olga |
