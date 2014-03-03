@@ -81,6 +81,8 @@ This refactoring has some potentially serious risks:
 
 I've submitted a [stack overflow question](http://stackoverflow.com/questions/22155488/using-an-object-subdocument-with-varying-fields-as-id) to get advice on any other gotchas and issues with respect to changing the document fields of the primary key. I will also try to get advice from 10gen.
 
+NOTE: whether we add run id or the course id triple (org/course/run string) as the new field has no impact on the above. If we choose to add the course id triple instead of just the run id, we have the small additional risk that the duplicated fields (org and course) don't match. That is, we're intentionally denormalizing within one field. The main impact of this will be on import and other rewriting operations.
+
 #### Definition id key class
 
 `DefinitionKey` is the id of the context independent definition of the xblock's content. That is, it points to the xblock's `Scope.content` fields. Courseware development apps will want to use this to reuse content among courses or even within a course.
