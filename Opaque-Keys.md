@@ -1,6 +1,8 @@
 # Background
 
-Our database uses keys that contain structured data: our Mongo keys are literally JSON objects, with key-value pairs for `tag`, `org`, `course`, `category`, `name`, and `revision`. XModule provides two different abstraction layers over these Mongo keys: `Location`, which is used by "old Mongo", and `Locator`, which is used by "split Mongo". (Because they refer to data in the same database, a Locator can be transformed into a Location, and vice versa -- although doing so is nontrivial, since the two classes contain different data.)
+Our codebase is in the midst of a database rearchitecture. Our production database currently is referred to as "old Mongo", in preparation for the move to the new architecture known as ["split Mongo"](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO), but currently all of our production data is stored in old Mongo. The old Mongo database uses keys that contain structured data: our Mongo keys are literally JSON objects, with key-value pairs for `tag`, `org`, `course`, `category`, `name`, and `revision`. XModule provides the `Location` class as an abstraction layer over these Mongo keys. Split Mongo, by contrast, uses unique IDs for database keys -- some of them are uniquely-created strings, and some are Mongo ObjectIds. The split Mongo project provides the `Locator` class as an abstraction layer over these unique IDs.
+
+Because the same data can exist in both old Mongo and split Mongo simultaneously, we also have a `loc_mapper`: a database-backed mapping table to map Locations to Locators and Locators to Locations.
 
 # The Problem
 
