@@ -1,3 +1,14 @@
+### LMS
+
+#### When I log in I keep getting redirected to the login page
+
+The symptom here is after login you get bounced right back to the login page, this time with a breadcrumb to the dashboard page.  This can happen when the login endpoint is failing due to a schema issue.  When Django views fail on a server error, in debug mode, you get a nice error page pointing you to the missing migration.  But login happens via an call to ```/login_ajax```.  If that call fails with a 500 error, it's not obvious from the UI, and you just end up with a redirect.
+
+This can happen in the Stanford environment with the devstack because we have some schema differences that are only hit during login.  The specific problematic migration is ```common/djangoapps/student/migrations/0029_auto__add_field_userprofile_nonregistered.py```.  To fix that in our environment, since there are other migrations with number 29, use this trick
+
+    ./manage.py lms migrate --settings=devstack --merge
+
+
 ### Studio
 
 #### The View Live button gives a 404 not found error
