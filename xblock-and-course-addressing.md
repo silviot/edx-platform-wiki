@@ -74,10 +74,10 @@ This refactoring has some potentially serious risks:
 * If we choose to "leave out the run id" on queries, we'll need to query via dotted notation rather than subdocument. That is, `find({'_id': {'tag': .., 'org': .., 'course'...}})` must become `find({'_id.tag': .., '_id.org': .., '_id.course'...})` as the former requires all matching docs to exactly match the subdoc. I believe such queries are less performant but I will check.
 * When updating documents, we will need to be very careful that we don't accidentally duplicate the docs by writing them out with run ids if the source doc did not have the run id unless we delete the runless source doc.
 * If, instead of the above, we decide to rewrite every document in order to populate the run id, we will need to 
-** ensure we can find the run id for every xblock
-** take edX off-line during the update in order to migrate the db
-** ensure everyone hosting their own dbs knows about this process
-** follow standard db migration testing and rollback patterns.
+  * ensure we can find the run id for every xblock
+  * take edX off-line during the update in order to migrate the db
+  * ensure everyone hosting their own dbs knows about this process
+  * follow standard db migration testing and rollback patterns.
 
 I've submitted a [stack overflow question](http://stackoverflow.com/questions/22155488/using-an-object-subdocument-with-varying-fields-as-id) to get advice on any other gotchas and issues with respect to changing the document fields of the primary key. I will also try to get advice from 10gen.
 
