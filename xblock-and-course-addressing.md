@@ -63,7 +63,7 @@ To do more than just serialize and deserialize a key, apps will need to send key
 
 Because `Location` does not encode the whole course id and because our existing Mongo modulestore uses `Location` as the primary key, we cannot have two courses which use the same org and catalog number and vary only by run id. We could fix this bug as part of this refactoring by adding the course run to the `Location` and persisting it as part of the key in new documents in the existing mongo stores.
 
-This refactoring would enable course creators to just use the run id as a distinguishing element among their courses.
+This refactoring would enable course creators to just use the run id as a distinguishing element among their courses. For example, `myUx/c101/2014_t1` and `myUx/c101/2014_t2` could co-exist after this change whereas now we don't allow them to.
 
 This refactoring has some potentially serious risks:
 * The `Location` dict is used as the primary key. Primary keys must be unique and immutable. Because they're immutable, we cannot upgrade existing documents' primary keys to include the course run or change the order of the fields in the key.
