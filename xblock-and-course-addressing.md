@@ -53,11 +53,33 @@ To do more than just serialize and deserialize a key, apps will need to send key
 * `category`? Does it make sense to require the services to answer `category` queries given usage keys or to make `category` something apps should get from the xblock instance or modulestore? `BlockUsageLocator` instances do not know the `category` of their xblocks.
 * `course_id`? If the usage key was retrieved in the context of a `CourseKey`, it would seem reasonable to be able to retrieve the course_id or `CourseKey` from the usage id. Some usage keys will be to usages not in the context of a course; so, it won't make sense for those (e.g., from an orphaned xblock tree fragment) This property is `None` if the usage was not retrieved as part of a course.
 
-`Location`: the `Location` class is a concrete implementation of this key class. Note that its implementation of `block_id` combines the information from the old `category` and `name` fields. `Location` is not a complete id; so, we will require that instantiating a `Location` requires passing a `CourseId` unlike the current system. Given a `CourseId`, a `Location` is unique. The current Mongo system has a bug in that it uses only the `Location` as a key and thus cannot handle courses whose ids vary purely in their "run".
-
 `BlockUsageLocator`: the `LocatorService` defines the existing `BlockUsageLocator` concrete implementation of usage key ids. In addition to the above properties and functions, this supports the following which only the persistence layer should count on.
 * `version` which returns a unique id for the version such that any other `BlockUsageLocator` with the same version is guaranteed to exist in the same snapshot at the same time.
 * `branch`: if the Usage was retrieved in the context of a course, it may have a `branch` which indicates its lifecycle snapshot (e.g., draft, beta, alpha, stage, preview, live, archive).
+
+`Location`: the `Location` class is a concrete implementation of this key class. Note that its implementation of `block_id` combines the information from the old `category` and `name` fields. `Location` is not a complete id; so, we will require that instantiating a `Location` requires passing a `CourseId` unlike the current system. Given a `CourseId`, a `Location` is unique. The current Mongo system has a bug in that it uses only the `Location` as a key and thus cannot handle courses whose ids vary purely in their "run". We potentially propose to "fix" this error for new xblocks.
+
+##### Fixing Location non-uniqueness
+
+Because `Location` does not encode the whole course id and because our existing Mongo modulestore uses `Location` as the primary key, we cannot have two courses which use the same org and catalog number and vary only by run id. We could fix this bug as part of this refactoring by adding the course run to the `Location` and persisting it as part of the key in new documents in the existing mongo stores.
+
+This refactoring would enable course creators to just use the run id as a distinguishing element among their courses.
+
+This refactoring has some potentially serious risks:
+* The `Location` dict is used as the primary key. Primary keys must be unique and immutable. Because they're immutable, we cannot upgrade existing documents' primary keys to include the course run or change the order of the fields in the key.
+* We must either rewrite existing documents into new documents to incorporate the run id or ensure we continue to find and update the existing documents (find w/o run id) while writing new documents to have the additional subfield in the id.
+* Mongo indexes subdocuments by ordered fields and cannot tolerate the fields being in varying orders; thus, if we add the run id (or course_id), we must add it as the last field unless we re-write every document in the db and re-index the db.
+* When fetching documents, we must either have 2 query keys--one with and one w/o the run id--or always leave out the run id and filter on run id in the returned cursor.
+* Making the queries more flexible will by necessity make them less performant.
+* If we choose to "leave out the run id" on queries, we'll need to query via dotted notation rather than subdocument. That is, `find({'_id': {'tag': .., 'org': .., 'course'...}})` must become `find({'_id.tag': .., '_id.org': .., '_id.course'...})` as the former requires all matching docs to exactly match the subdoc. I believe such queries are less performant but I will check.
+* When updating documents, we will need to be very careful that we don't accidentally duplicate the docs by writing them out with run ids if the source doc did not have the run id unless we delete the runless source doc.
+* If, instead of the above, we decide to rewrite every document in order to populate the run id, we will need to 
+** ensure we can find the run id for every xblock
+** take edX off-line during the update in order to migrate the db
+** ensure everyone hosting their own dbs knows about this process
+** follow standard db migration testing and rollback patterns.
+
+I've submitted a [stack overflow question](http://stackoverflow.com/questions/22155488/using-an-object-subdocument-with-varying-fields-as-id) to get advice on any other gotchas and issues with respect to changing the document fields of the primary key. I will also try to get advice from 10gen.
 
 #### Definition id key class
 
