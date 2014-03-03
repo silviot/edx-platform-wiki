@@ -51,6 +51,8 @@
 
 ## Tools to look at (both for UX and for functionality)
 
+* WordPress plugins
+  * ![WordPress plugins](http://cdn.sixrevisions.com/0278-02_manage_wordpress_plugin_screen.jpg)
 * Chrome extensions
   * ![Chrome extensions](http://0.tqn.com/d/browsers/1/0/w/p/-/-/chrome-disable-extensions-plugins-2.jpg)
 * Firefox add-ons
