@@ -27,16 +27,19 @@ vagrant ssh
 
 firefox
 ```
-* Now copy the 'vagrant' user's ~/.Xauthority file somewhere that the 'edxapp' user can get to it (like the /tmp dir). Then as the 'edxapp' user copy that .Xauthority file to its home directory. Also as the 'edxapp' user, set the DISPLAY environment variable to the host display.
+* Now try it as the edxapp user.
 ```
-cp .Xauthority /tmp
-chmod 0666 /tmp/.Xauthority 
 sudo su edxapp
-cp /tmp/.Xauthority ~
-export DISPLAY=localhost:10.0
+
+firefox
 ```
 
 * Once this has been set up, if you want to run the acceptance tests without browser windows popping up, redirect the DISPLAY environment variable.
 ```
 export DISPLAY=:1
+```
+
+* If you want to switch back to using your host system's display:
+```
+export DISPLAY=localhost:10.0
 ```
