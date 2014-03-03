@@ -67,7 +67,7 @@ This refactoring would enable course creators to just use the run id as a distin
 
 This refactoring has some potentially serious risks:
 * The `Location` dict is used as the primary key. Primary keys must be unique and immutable. Because they're immutable, we cannot upgrade existing documents' primary keys to include the course run or change the order of the fields in the key.
-* We must either rewrite existing documents into new documents to incorporate the run id or ensure we continue to find and update the existing documents (find w/o run id) while writing new documents to have the additional subfield in the id.
+* We must either rewrite existing documents into new documents which incorporate the run id and delete the existing documents, or we must ensure we continue to find and update the existing documents (find w/o run id) while writing new documents to have the run id in the id.
 * Mongo indexes subdocuments by ordered fields and cannot tolerate the fields being in varying orders; thus, if we add the run id (or course_id), we must add it as the last field unless we re-write every document in the db and re-index the db.
 * When fetching documents, we must either have 2 query keys--one with and one w/o the run id--or always leave out the run id and filter on run id in the returned cursor.
 * Making the queries more flexible will by necessity make them less performant.
