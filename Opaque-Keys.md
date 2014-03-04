@@ -23,3 +23,11 @@ Parts of our application that currently introspect the key object will have seve
 # Key Introspection API
 
 Because not all of our application can be refactored to treat keys as truly opaque, we will create some kind of key introspection API that all of our database key abstractions (Locations and Locators) support. Most likely, this API will be very similar to the `.get()` method present on Python dictionaries, to keep it familiar and concise. The purpose of this API will be to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a single (or a very small number of) functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (Locations and Locators) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
+
+# Gotchas
+
+There are a few known issues with this transition, detailed below:
+
+## URLs
+
+We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a Location could be serialized as `org%2Fcourse%2Fname`. The allows the serialized string to form a readable component of the URL while still being easy to parse with a regular expression (since it contains no slashes).
