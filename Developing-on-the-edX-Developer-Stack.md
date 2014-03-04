@@ -68,12 +68,40 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Select "LMS"
   * Click the "Copy configuration" button (next to the "-" button)
   * Change the name to "Studio"
-  * Change the "Script parameters" to "cms runserver --settings=devstack 0.0.0.0:8001"
+  * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
 
 ### Testing your changes
 
 See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
+
+### Debugging your tests
+
+PyCharm can also be used to debug Python tests.
+
+* Create a debug configuration for an edX common unit test
+  * Choose "Run > Edit Configurations..."
+  * Select the "Studio" configuration
+  * Click the "Copy configuration" button (next to the "-" button)
+  * Change the name to "Studio CommonTests"
+  * Change the script to ```/edx/app/edxapp/venvs/edxapp/bin/nosetests```
+  * Change the "Script parameters" to run the test:
+    * e.g. ```cms --settings test test cms/djangoapps/contentstore/views/tests/test_helpers.py```
+* Create a debug configuration for an edX CMS unit test
+  * Choose "Run > Edit Configurations..."
+  * Select the "Studio" configuration
+  * Click the "Copy configuration" button (next to the "-" button)
+  * Change the name to "Studio Tests"
+  * Change the "Script parameters" to run the test:
+    * e.g. ```cms --settings test test cms/djangoapps/contentstore/views/tests/test_helpers.py```
+* Create a debug configuration for an edX acceptance test
+  * Choose "Run > Edit Configurations..."
+  * Select the "Studio" configuration
+  * Click the "Copy configuration" button (next to the "-" button)
+  * Change the name to "Studio Acceptance Tests"
+  * Change the "Script parameters" to run the test:
+    * e.g. ```cms --settings acceptance harvest --traceback --debug-mode --verbosity 2 --with-xunit --xunit-file /edx/app/edxapp/edx-platform/reports/acceptance/cms.xml cms/djangoapps/contentstore/features/problem-editor.feature```
+  
 
 ### Other resources
 
