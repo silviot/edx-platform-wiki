@@ -11,7 +11,7 @@
 | Advocate | Description | Interested Parties |
 |----------|-------------|--------------------|
 | gprice / JZ | Relative diff quality metrics so it's your merged PR vs. master instead of vs. the last build on jenkins | gprice |
-| sarina / JZ | fix beta instructor dashboard!! | sarina adam (and deprecate legacy!) |
+| sarina / JZ | fix beta instructor dashboard!! (and deprecate legacy!) | sarina adam frances |
 | sarina/dkh | finish intern badging project | |
 | Jarv | external status board - status.edx.org |   Jarv/Talbs |
 | Jarv | engineering blog - All or a subset of individuals are chosen to present a blog post about their hack, we stagger the posts to keep the blog fresh |  engineering |
@@ -24,7 +24,7 @@
 | JZ | Create a rules-based risk calculation for PRs | |
 | JZ | Develop an ansible script for provisioning JMeter engines for performance testing | |
 | AndyA | Develop an [[XBlocks Install Manager]] for Studio, i.e. Chrome Extensions for Studio | AndyA, Christina |
-| e0d | FED love for our Asgard fork, Hammer of the Gods.  The tool is super powerful, with confusing buttons... | |
+| e0d | FED love for our Asgard fork, Hammer of the Gods.  The tool is super powerful, with confusing buttons... | frances |
 | e0d | Run edx-platform and the forums in uWSGI, better performance, same runtime for Python and Ruby... | e0d? |
 | e0d | Work on clojure/neo4j deployment mapper "clueprint."  Dynamically map AWS entities and relate them to arbitrary other entities from other domains, like git commits, visualize as a graph, use cypher or gremlin DSLs to bootstrap commonly needed visualizations. | e0d |
 | DB | Set up a bot for IRC. Maybe extend Hubot? Needs to do channel logging. | DB |
@@ -33,3 +33,4 @@
 | DB | Upgrade to Django 1.6 | |
 | Brian | Analytics geolocation task | Brian, Olga |
 | Talbs | April Fools Joke - edX Bumper Stickers |   Victor/Talbs |
+| Frances | LMS CSS cleanup - death to poorly scoped rules! | |
