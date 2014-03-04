@@ -88,7 +88,7 @@ PyCharm can also be used to debug Python tests.
   * Change the name to "Studio CommonTests"
   * Change the script to ```/edx/app/edxapp/venvs/edxapp/bin/nosetests```
   * Change the "Script parameters" to run the test:
-    * e.g. ```cms --settings test test cms/djangoapps/contentstore/views/tests/test_helpers.py```
+    * e.g. ```common/lib/xmodule/xmodule/tests/test_resource_templates.py```
 * Create a debug configuration for an edX CMS unit test
   * Choose "Run > Edit Configurations..."
   * Select the "Studio" configuration
