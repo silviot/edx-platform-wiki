@@ -71,6 +71,8 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
 
+Note: for more details, check out the [PyCharm remote debugging documentation](http://www.jetbrains.com/pycharm/webhelp/remote-debugging.html).
+
 ### Testing your changes
 
 See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
