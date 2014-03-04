@@ -101,7 +101,9 @@ PyCharm can also be used to debug Python tests.
   * Change the name to "Studio Acceptance Tests"
   * Change the "Script parameters" to run the test:
     * e.g. ```cms --settings acceptance harvest --traceback --debug-mode --verbosity 2 --with-xunit --xunit-file /edx/app/edxapp/edx-platform/reports/acceptance/cms.xml cms/djangoapps/contentstore/features/problem-editor.feature```
-  
+
+Debugging Bok Choy tests is more complex, as several processes are started up at once including LMS and Studio. If one of these processes is already running then Bok Choy will use it instead. So, if you want to set a breakpoint in Studio, you need to create a clone of the Studio configuration that has the following Script parameter
+* ```./manage.py cms runserver --settings bok_choy 0.0.0.0:8031```
 
 ### Other resources
 
