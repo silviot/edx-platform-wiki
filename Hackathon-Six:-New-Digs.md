@@ -34,4 +34,4 @@
 | Brian | Analytics geolocation task | Brian, Olga |
 | Talbs | April Fools Joke - edX Bumper Stickers |   Victor/Talbs |
 | Frances | LMS CSS cleanup - death to poorly scoped rules! | |
-| Gabe | Millions of students served - a visualization of the number of correct answer submissions over time | Gabe, Miki |
+| Gabe | Millions of students served - a visualization of the number of correct answer submissions over time | Gabe, Miki, Marco |
