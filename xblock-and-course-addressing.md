@@ -78,10 +78,11 @@ This refactoring has some potentially serious risks:
   * take edX off-line during the update in order to migrate the db
   * ensure everyone hosting their own dbs knows about this process
   * follow standard db migration testing and rollback patterns.
+* I'd like to argue for doing the db migration. I talked to EdZ about it and he seemed to think it's plausible. I wrote up the stories in [STU-1343](https://edx-wiki.atlassian.net/browse/STUD-1343).
 
 I've submitted a [stack overflow question](http://stackoverflow.com/questions/22155488/using-an-object-subdocument-with-varying-fields-as-id) to get advice on any other gotchas and issues with respect to changing the document fields of the primary key. I will also try to get advice from 10gen.
 
-NOTE: whether we add run id or the course id triple (org/course/run string) as the new field has no impact on the above. If we choose to add the course id triple instead of just the run id, we have the small additional risk that the duplicated fields (org and course) don't match. That is, we're intentionally denormalizing within one field. The main impact of this will be on import and other rewriting operations.
+If we rewrite the existing documents, then we may as well convert all Locations to Locators which already meld course_id and block_id with revision. Making this change has significant advantages of having only one address representational hierarchy with clearer semantics.
 
 #### Definition id key class
 
