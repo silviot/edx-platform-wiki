@@ -8,8 +8,8 @@
 
 # The Proposed Hacks
 
-| Advocate | Description | Interested Parties |
-|----------|-------------|--------------------|
+| Advocate | Description | Interested Parties | Results |
+|----------|-------------|--------------------|---------|
 | gprice / JZ | Relative diff quality metrics so it's your merged PR vs. master instead of vs. the last build on jenkins | gprice |
 | sarina / JZ | fix beta instructor dashboard!! (and deprecate legacy!) | sarina adam frances |
 | sarina/dkh | finish intern badging project | |
@@ -23,7 +23,7 @@
 | JZ | Bring the Paver PR to completion | |
 | JZ | Create a rules-based risk calculation for PRs | |
 | JZ | Develop an ansible script for provisioning JMeter engines for performance testing | |
-| AndyA | Develop an [[XBlocks Install Manager]] for Studio, i.e. Chrome Extensions for Studio | AndyA, Christina |
+| AndyA | Develop an [[XBlocks Install Manager]] for Studio, i.e. Chrome Extensions for Studio | AndyA, Christina | [GitHub branch](https://github.com/edx/edx-platform/compare/hackathon;studio-xblock-manager) |
 | e0d | FED love for our Asgard fork, Hammer of the Gods.  The tool is super powerful, with confusing buttons... | frances |
 | e0d | Run edx-platform and the forums in uWSGI, better performance, same runtime for Python and Ruby... | e0d? |
 | e0d | Work on clojure/neo4j deployment mapper "clueprint."  Dynamically map AWS entities and relate them to arbitrary other entities from other domains, like git commits, visualize as a graph, use cypher or gremlin DSLs to bootstrap commonly needed visualizations. | e0d |
