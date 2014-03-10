@@ -59,6 +59,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
     * Deselect "Add content roots to PYTHONPATH"
     * Deselect "Add source roots to PYTHONPATH"
   * Click "OK" to save the new debug configuration
+* Rake assets (ssh into vagrant first). rake assets[lms,devstack] 
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up
@@ -70,6 +71,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Change the name to "Studio"
   * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
+* Remember to rake assets (ssh into vagrant first) before running Studio from Pycharm. rake assets[cms,devstack]
 
 Note: for more details, check out the [PyCharm remote debugging documentation](http://www.jetbrains.com/pycharm/webhelp/remote-debugging.html).
 
