@@ -31,3 +31,7 @@ There are a few known issues with this transition, detailed below:
 ## URLs
 
 We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a Location could be serialized as `org%2Fcourse%2Fname`. The allows the serialized string to form a readable component of the URL while still being easy to parse with a regular expression (since it contains no slashes).
+
+# Steps to Reach This Goal
+
+We can reach this goal in several steps, some of which can be executed concurrently.
