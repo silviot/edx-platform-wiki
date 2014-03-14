@@ -10,4 +10,7 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [Pepper](http://pepperpd.com) - Joshua Marks
 * [IONIS Education Group](https://edx.courses.ionis-group.com/) - Philippe Chiu
 * [University of Zurich](https://edx.uzh.ch) - Many courses internally - Paul-Olivier Dehaye 
+* [Educate Workforce](https://educateworkforce.com/)
+* [Proversity](http://proversity.org)
+
 
