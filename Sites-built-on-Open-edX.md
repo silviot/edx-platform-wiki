@@ -9,5 +9,5 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [MongoDB University](https://education.mongodb.com/)
 * [Pepper](http://pepperpd.com) - Joshua Marks
 * [IONIS Education Group](https://edx.courses.ionis-group.com/) - Philippe Chiu
-* [University of Zurich](https://edx.uzh.ch) Many courses internally - Paul-Olivier Dehaye 
+* [University of Zurich](https://edx.uzh.ch) - Many courses internally - Paul-Olivier Dehaye 
 
