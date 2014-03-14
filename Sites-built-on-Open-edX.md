@@ -2,7 +2,6 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a two
 
 * [edX](http://edx.org) The original, with dozens of members.
 * [Stanford Open edX](https://class.stanford.edu/) Stanford's edX courses.
-
 * [Nanolearning](http://applied.nanolearning.me/)
 * [Code Coalition](https://www.codecoalition.com/)
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/)
