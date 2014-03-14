@@ -7,4 +7,7 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
 * [eduNext - Colombia](http://edx.edunext.co/) ([http://www.edunext.co/](http://www.edunext.co/))
 * [MongoDB University](https://education.mongodb.com/)
+* [Pepper](http://pepperpd.com) - Joshua Marks
+* [IONIS Education Group](https://edx.courses.ionis-group.com/) - Philip Chiu
+* [University of Zurich - MAT101: Python programming for mathematicians](https://edx.math.uzh.ch) - Paul-Oliver Dehaye
 
