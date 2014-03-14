@@ -41,7 +41,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
     * Check "Save password"
     * Specify "/edx/app/edxapp/venvs/edxapp/bin/python" for "Python interpreter path"
   * Click "Test connection..." to verify that the settings are correct
-  * Click "Save"
+  * Click "OK"
   * Click "Yes" to the prompt "Do you want to set this interpreter as Project Interpreter?"
   * You should now have a remote interpreter. See [PyCharm's documentation for remote interpreters](http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html#remote_vagrant) if you want more details
 * Create a debug configuration for LMS
