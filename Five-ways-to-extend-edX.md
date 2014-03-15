@@ -6,7 +6,7 @@ I can think of five ways that someone could extend edX.  Here they are in order 
 
 1. **jsinput** -- Create a "Custom JavaScript Grade and Display" component, and then provide JS with getState(), setState(), and getGrade() methods.
 2. **LTI** -- edX supports LTI 1.1 now, LTI 2.0 in development
-3. **custom grader** -- Code can be run on an external server to do arbitrary work to grade problems.  With our [Database Class](http://db.class.stanford.edu/) we've had some success returning not just grades, but also an HTML block to be rendered with an answer.  We return the query result, complete with HTML table formatting tags, see <img src="dbclass_external_grader.png">
+3. **custom grader** -- Code can be run on an external server to do arbitrary work to grade problems.  With our [Database Class](http://db.class.stanford.edu/) we've had some success returning not just grades, but also an HTML block to be rendered with an answer.  We return the query result, complete with HTML table formatting tags.  See [this screenshot](image/dbclass_external_grader.png) as an example.
 4. **XBlock**
 5. **hack on core code**
 
