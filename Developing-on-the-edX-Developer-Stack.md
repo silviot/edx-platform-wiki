@@ -109,6 +109,82 @@ PyCharm can also be used to debug Python tests.
 Debugging Bok Choy tests is more complex, as several processes are started up at once including LMS and Studio. If one of these processes is already running then Bok Choy will use it instead. So, if you want to set a breakpoint in Studio, you need to create a clone of the Studio configuration that has the following Script parameter
 * ```./manage.py cms runserver --settings bok_choy 0.0.0.0:8031```
 
+
+### Configuring Themes in Devstack
+
+There are currently two ways to theme the platform:
+
+* **"Stanford Theming"** -- This is a set of conditions in the code
+  that key off a settings (```settings.FEATURES.USE_CUSTOM_THEME``` and
+  ```settings.THEME_NAME```) to look aside to custom styling (assets)
+  and templates.  It's a bit of a hack due to pipeline complexity
+  (sass/ruby dependencies) and how Mako templates are named and loaded.
+
+* **"Microsites"** -- These are separate conditions that change site
+  appearance dynamicaly keyed off the hostname of the request.
+  foo.edx.org can appear one way, and bar.edx.org can appear another.  
+
+This section describes how to use the former with devstack, written by
+Sef (<sef@stanford.edu>).
+
+1. **Configure**. Change two settings in ```/edx/app/edxapp/lms.envs.json```
+
+        "FEATURES": {
+            ...
+            "USE_CUSTOM_THEME": true
+            ...
+        },
+
+
+    and
+
+        ...
+        "THEME_NAME": "yourtheme",
+        ...
+
+
+2. **Mount**. Make sure Vagrant mounts the "theme" directory from the host.
+   See [PR #884](https://github.com/edx/configuration/pull/884) for the way
+   I do this.
+
+3. **Check out**. The rest of the devstack code checks out repos
+   as part of the provision step, but I don't have that working (yet).
+   So I just check out my theme there manually.  
+   But **please** do not use the Stanford theme as your own.  Use your
+   own styling and assets!
+
+        cd themes
+        git clone git@github.com:Stanford-Online/edx-theme.git yourtheme
+
+
+4. **Gather assets**. The rest of the devstack methods seems to imply the
+   service variant (lms or cms) automatically, but this doesn't work
+   with the theme pipeline.  So to make this work I have to gather assets
+   this way:
+
+        vagrant ssh
+        sudo su edxapp
+        SERVICE_VARIANT=lms rake lms:gather_assets:devstack
+
+5. **From PyCharm**.  I created an external command to do this from
+   PyCharm. 
+
+    1. Open up "Remote SSH External Tools"
+    2. Name = "lms assets"
+    3. Connection settings = Default interpreter.  This assumes that
+       you've setup up pycharm with the default interpreter to ssh into
+       the edxapp user. 
+    4. Program = ```bash```
+    5. Parameters = ```-c "SERVICE_VARIANT=lms /edx/app/edxapp/.gem/bin/rake lms:gather_assets:devstack"```
+    6. Working directory = ```/edx/app/edxapp/edx-platform```
+    7. A few screenshots:
+       [configuring](image/devstack_themes_gather_config.png),
+       [resulting menu item](image/devstack_themes_gather_menu.png), 
+       [expected output 1](image/devstack_themes_gather_output1.png), and 
+       [expected output 2](image/devstack_themes_gather_output1.png).
+
+
+
 ### Other resources
 
 There are a number of other useful documents on the edX platform wiki:
