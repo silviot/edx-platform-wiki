@@ -105,5 +105,5 @@ Here’s my initial attempt at a grid to summarize , but I’m sure there are mo
 
 Notes:
 * [1] Only LTI components delivered via https can be iframed in  Many are served over http only.  And even then they usually have their own look and feel.  For example, Piazza can be iFramed in, but has its own navigation elements and their color scheme (see <http://networking.class.stanford.edu/> for an example).
-* [3] JSInput does have a small place where python could do server side grading, but doing it there would be pretty hacky and difficult to maintain. 
+* [2] JSInput does have a small place where python could do server side grading, but doing it there would be pretty hacky and difficult to maintain. 
 * [3] JSInput really only exposes the getState, putState, getGrade methods.  But is there any reason why we can’t also document / publish the tracking endpoint (/events/user_track I believe)
