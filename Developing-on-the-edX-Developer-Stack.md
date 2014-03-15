@@ -178,8 +178,8 @@ Sef (<sef@stanford.edu>).
     5. Parameters = ```-c "SERVICE_VARIANT=lms /edx/app/edxapp/.gem/bin/rake lms:gather_assets:devstack"```
     6. Working directory = ```/edx/app/edxapp/edx-platform```
     7. Screenshots:
-       [configuring](image/devstack_themes_gather_config.png) and 
-       [resulting menu item](image/devstack_themes_gather_menu.png).
+       [configuring](image/devstack_theme_gather_config.png) and 
+       [resulting menu item](image/devstack_theme_gather_menu.png).
 
 
 ### Other resources
