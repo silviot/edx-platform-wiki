@@ -93,11 +93,20 @@ Here’s my initial attempt at a grid to summarize , but I’m sure there are mo
 <td>yes (?)</td>
 <td>yes</td>
 </tr>
+<tr>
 <td>Provision in Studio -- the containers for all these kinds can be created from Studio, but only XBlocks re cleanly listed and configurable in Studio</td>
 <td>no</td>
 <td>no</td>
 <td>no</td>
 <td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Privacy loss compared to the hosting of OpenEdX [4]</td>
+<td>no</td>
+<td>possibly [4]</td>
+<td>possibly [4]</td>
+<td>no</td>
 <td>no</td>
 </tr>
 </table>
@@ -107,3 +116,4 @@ Notes:
 * [1] Only LTI components delivered via https can be iframed in  Many are served over http only.  And even then they usually have their own look and feel.  For example, Piazza can be iFramed in, but has its own navigation elements and their color scheme (see <http://networking.class.stanford.edu/> for an example).
 * [2] JSInput does have a small place where python could do server side grading, but doing it there would be pretty hacky and difficult to maintain. 
 * [3] JSInput really only exposes the getState, putState, getGrade methods.  But is there any reason why we can’t also document / publish the tracking endpoint (/events/user_track I believe)
+* [4] Privacy and secrecy issues are important in some areas of the world, and only becoming more important because of the news. If you have to self host OpenEdx because of that, this row indicates the guarantees that you can offer your students in that area. "Possibly" indicates that the guarantees will have to depend on the solution chosen for that particular use case. Note that both LTI and external graders allow for anonymization, but this might not be enough to allow for the use of some external tools within the constraints. 
