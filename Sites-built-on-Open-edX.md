@@ -12,5 +12,5 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [University of Zurich](https://edx.uzh.ch) - Many courses internally - Paul-Olivier Dehaye 
 * [Educate Workforce](https://educateworkforce.com/)
 * [Proversity](http://proversity.org)
-
+* [Escola - Portugal](http://cursos.escola.org)
 
