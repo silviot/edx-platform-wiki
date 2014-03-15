@@ -1,13 +1,13 @@
-(Originally written by Sef Kloninger (<sef@stanford.edu>), transcribed by Ned)
+(Originally written by Sef (<sef@stanford.edu>), transcribed by Ned)
 
 # Five Ways to Extend edX
 
 I can think of five ways that someone could extend edX.  Here they are in order of difficulty:
- # jsinput
- # LTI
- # custom grader
- # XBlock
- # hack on core code
+1. **jsinput** -- Create a "Custom JavaScript Grade and Display" component, and then provide JS with getState(), setState(), and getGrade() methods.
+2. **LTI** -- edX supports LTI 1.1 now, LTI 2.0 in development
+3. **custom grader** -- Code can be run on an external server to do arbitrary work to grade problems.
+4. **XBlock**
+5. **hack on core code**
 
 Here’s my initial attempt at a grid to summarize , but I’m sure there are more rows that we’d want to consider:
 
