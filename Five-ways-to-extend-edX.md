@@ -1,4 +1,4 @@
-(Originally written by Sef (<sef@stanford.edu>), transcribed by Ned)
+Originally written by Sef (<sef@stanford.edu>), transcribed by Ned
 
 # Five Ways to Extend edX
 
