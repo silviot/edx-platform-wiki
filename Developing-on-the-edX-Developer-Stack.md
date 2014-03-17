@@ -109,7 +109,7 @@ PyCharm can also be used to debug Python tests.
 Debugging Bok Choy tests is more complex, as several processes are started up at once including LMS and Studio. If one of these processes is already running then Bok Choy will use it instead. So, if you want to set a breakpoint in Studio, you need to create a clone of the Studio configuration that has the following Script parameter
 * ```./manage.py cms runserver --settings bok_choy 0.0.0.0:8031```
 
-
+<a name="theme"></a>
 ### Configuring Themes in Devstack
 
 There are currently two ways to theme the platform:
