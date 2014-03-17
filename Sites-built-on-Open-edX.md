@@ -13,4 +13,4 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [Educate Workforce](https://educateworkforce.com/)
 * [Proversity](http://proversity.org)
 * [Escola - Portugal](http://cursos.escola.org)
-* [Universidad Carlos III](http://spoc.uc3m.es)
+* [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
