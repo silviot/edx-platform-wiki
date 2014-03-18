@@ -43,7 +43,7 @@ From a [stackoverflow question on 0.0.0.0 in Django](http://stackoverflow.com/qu
 
 #### How can I change a setting?
 
-The simplest way is with the .json files at /edx/app/edxapp/{cms,lms}.{auth,env}.json .  These files are read by the other settings files.  You can also create a private.py in cms/envs or lms/envs, settings there will override others.
+For devstack, the simplest way is to create a private.py in cms/envs or lms/envs, settings there will override others.
 
 ### Database
 
