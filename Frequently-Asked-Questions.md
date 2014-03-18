@@ -41,6 +41,10 @@ From a [stackoverflow question on 0.0.0.0 in Django](http://stackoverflow.com/qu
 
 > 0.0.0.0:80 is a shortcut meaning "bind to all IP addresses this computer supports". 127.0.0.1:80 makes it bind only to the "lo" or "loopback" interface. If you have just one NIC with just one IP address, you could bind to it explicitly with, say, "192.168.1.1:80" (if 192.168.1.1 was your IP address), or you could list all the IPs your computer responds to, but 0.0.0.0:80 is a shortcut for that.
 
+#### How can I change a setting?
+
+The simplest way is with the .json files at /edx/app/edxapp/{cms,lms}.{auth,env}.json .  These files are read by the other settings files.  You can also create a private.py in cms/envs or lms/envs, settings there will override others.
+
 ### Database
 
 #### Why use three different databases (MySQL, SQLite & MongoDB) rather than a single one?
