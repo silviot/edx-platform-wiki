@@ -5,6 +5,7 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [Code Coalition](https://www.codecoalition.com/)
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
+* [XuetangX 学堂在线](http://www.xuetangx.com/)
 * [eduNext - Colombia](http://edx.edunext.co/) ([http://www.edunext.co/](http://www.edunext.co/))
 * [MongoDB University](https://education.mongodb.com/)
 * [Pepper](http://pepperpd.com) - Joshua Marks
