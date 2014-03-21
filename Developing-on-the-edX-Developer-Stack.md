@@ -181,6 +181,36 @@ Sef (<sef@stanford.edu>).
        [configuring](image/devstack_theme_gather_config.png) and 
        [resulting menu item](image/devstack_theme_gather_menu.png).
 
+### The edx-platform database that devstack uses
+Devstack uses mySQL as the DB engine for the edx-platform app.
+You can tell this by starting up the Django shell with:
+
+```
+./manage.py lms shell --settings=devstack
+```
+
+Then in the Django shell:
+```
+from django.conf import settings
+settings.DATABASES
+```
+
+You can manipulate the database with the mysql command line interface from within your vagrant terminal session:
+```
+mysql --user=root --port=3306  edxapp
+```
+
+If you want to use a GUI tool from your host system, that is also possible.
+E.g. for MySQL Workbench, you would set up a new Server connection with these settings:
+* Connection Method: Standard TCP/IP over SSH
+* SSH Hostname: 192.168.33.10:22
+* SSH Username: vagrant (the password is 'vagrant')
+* MySQL Hostname: 127.0.0.1
+* MySQL Server Port: 3306
+* Username: root (no password)
+* Default Schema: edxapp
+
+
 
 ### Other resources
 
