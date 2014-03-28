@@ -2,7 +2,7 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 
 * [edX](http://edx.org) - The original, with dozens of members.
 * [Stanford Open edX](https://class.stanford.edu/) - Stanford's edX courses.
-* [Code Coalition](https://www.codecoalition.com/)
+* [Code Coalition](https://www.codecoalition.com/) - moving to udemy (around 3/18/2014)
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
 * [XuetangX 学堂在线](http://www.xuetangx.com/)
