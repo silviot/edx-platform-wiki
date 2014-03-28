@@ -210,6 +210,7 @@ E.g. for MySQL Workbench, you would set up a new Server connection with these se
 * Username: root (no password)
 * Default Schema: edxapp
 
+Note: You may also need to specify the SSH Key File, which should be located at "~/.vagrant.d/insecure_private_key"
 
 
 ### Other resources
