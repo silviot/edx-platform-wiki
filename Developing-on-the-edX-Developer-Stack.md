@@ -49,11 +49,12 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Right-click on the file and choose "Create 'manage'..." to create a debug configuration
   * Specify the settings for the new configuration
     * Change the name to something more memorable, e.g. "LMS"
+    * Specify "./manage.py" for "Script" (thus using a relative path rather than an absolute one)
     * Specify "lms runserver --settings=devstack 0.0.0.0:8000" for "Script parameters"
     * Specify "/edx/app/edxapp/edx-platform" for "Working directory"
     * Click to edit the "Path mappings" property
       * Click the "+" button to add a new mapping
-      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/andya/devstack/edx-platform"
+      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/andya/devstack/edx-platform"  (Be sure to specify "Users" rather than the shorthand "~" here.)
       * Specify "/edx/app/edxapp/edx-platform" for "Remote path"
       * Click "OK" to save the mappings
     * Deselect "Add content roots to PYTHONPATH"
