@@ -28,6 +28,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[How to Rebase a Pull Request]]
 * [[Python Guidelines]]
 * [[JavaScript Guidelines]]
+* [[i18n Coding Guidelines]]
 * [[Test Engineering FAQ]]
 * [[Hackathons]]
 * [[Writing easily XBlock portable XModules]]
