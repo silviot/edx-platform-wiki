@@ -24,9 +24,11 @@ Overall, when i18n, try to:
 
 Example:
 
-`-      <h2>${_('{span_start}{platform_name}{span_end} Help').format(span_start='<span class="edx">', span_end='</span>', platform_name=platform_name)}</h2>`
+Before:
+`<h2>${_('{span_start}{platform_name}{span_end} Help').format(span_start='<span class="edx">', span_end='</span>', platform_name=platform_name)}</h2>`
 
-`+      <h2>${_('{platform_name} Help').format(platform_name=u'<span class="edx">{}</span>'.format(platform_name))}</h2>  # Make sure the second string is u""!`
+After:
+`<h2>${_('{platform_name} Help').format(platform_name=u'<span class="edx">{}</span>'.format(platform_name))}</h2>  # Make sure the second string is u""!`
 
 
 **Lesson 2.** Similar to Lesson 1, this involves <mailto> tags and is super common in the LMS. Do not do this!
