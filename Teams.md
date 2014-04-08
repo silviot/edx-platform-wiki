@@ -12,3 +12,5 @@ The people who work for edX are divided up into several teams, and each one has 
 * **@edx/team-escalation**: responsible for fixing high-priority bugs that affect edx.org
 * **@edx/team-blades**: responsible for developing and supporting components that cut across many layers in the tech stack.
 * **@edx/team-opensource**: responsible for supporting the open source community, and developing and supporting software and features related to that effort.
+
+Anywhere that you can do [@mentions](https://github.com/blog/821), you can use a team mention instead with one of the above teams. If you do, everyone on that team will be notified.
