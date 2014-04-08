@@ -63,8 +63,7 @@ Before:
 After:
 ```
 _("{platform_name} servers").format(
-    platform_name=u"<em>{}</em>".format(settings.PLATFORM_NAME)
-
+    platform_name=u"<em>{}</em>".format(settings.PLATFORM_NAME)  # Make sure this is u"" for Unicode platform names
 )
 ```
 
@@ -84,7 +83,7 @@ Before: `gettext("%(voteNum)s%(startSrSpan)s vote (click to vote)%(endSrSpan)s")
 
 
 
-After:` "%(voteNum)s%(startSrSpan)s " + gettext("vote (click to vote)") + "%(endSrSpan)s"`
+After: `"%(voteNum)s%(startSrSpan)s " + gettext("vote (click to vote)") + "%(endSrSpan)s"`
 
 
 
@@ -94,5 +93,8 @@ After:` "%(voteNum)s%(startSrSpan)s " + gettext("vote (click to vote)") + "%(end
 Before: `${_("{a_start}Return to where you left off{a_end}").format(`
 
 
-After: `${"{a_start}{text}{a_end}".format(`
-         `text=_("Return to where you left off"),`
+After:
+```
+${"{a_start}{text}{a_end}".format(
+    text=_("Return to where you left off"),
+```
