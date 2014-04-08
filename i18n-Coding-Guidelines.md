@@ -11,15 +11,14 @@ Additionally, here are some general guidelines you should always follow:
 
 
 Overall, when i18n, try to:
-
+--------
    1. Shove HTML tags into other variables rather than including them in the strings
 
    2. Use string concatenation to avoid i18ning parts of strings unnecessarily (eg, to avoid i18ning formatting around text)
 
    3. A valuable tool is that you can call _() within a .format() clause, allowing you to just i18n the text of a string that has a bunch of other weird placeholders or markup.
 
-Examples follow.
---------
+### Examples
 
 **Lesson 1**. {span_start}{something}{span_end} - why are there 3 tags here? This can be seriously messed up by translators. Put everything into {something} and just have one tag.
 
