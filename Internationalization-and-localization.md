@@ -21,9 +21,11 @@ In order to run your Open edX instance under a different spoken language, for in
         from .dev import *
         
         USE_I18N = True
-        LANGUAGES = ( ('es_419', 'Spanish'), )
+        LANGUAGES = ( ('es-419', 'Spanish'), )
         TIME_ZONE = 'America/Guayaquil'
-        LANGUAGE_CODE = 'es_419'
+        LANGUAGE_CODE = 'es-419'
+
+Languages need to be specified with codes Django likes, so a code such as "de_DE" must be specified as "de-de" in these configuration files.
 
 4. Execute the following commands in your edx-platform directory with your edx-platform virtualenv, replacing it with the language you want.
 
