@@ -16,7 +16,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
 2. All of the languages on Transifex are already configured in the edx-platform repo.  If you've added a new language to Transifex, and we haven't added it to the configuration yet, you can add it to `conf/locale/config.yaml`.
 
-3. Configure it in your `lms/env/common.py`, for instance create one called `dev_es.py` with the following: 
+3. Configure `LANGUAGE_CODE` in your `lms/env/common.py`. Or, for development purposes, create a dev file called `dev_LANGCODE.py` - eg `dev_es.py` - with the following: 
 
         from .dev import *
         
@@ -35,3 +35,7 @@ Languages need to be specified with codes Django likes, so a code such as "de_DE
 5. When you launch your LMS instance you launch it with the environment:
 
         $ rake lms[dev_es,0.0.0.0:8000]
+
+6. If you experience issues:
+   - Be sure your browser is set to prefer the language set in `LANGUAGE_CODE`
+   - In `common/djangoapps/student/views.py`, the user's language code is tried to be obtained from a saved preferences file. So if you are having issues seeing your language served up, it may be because your User object has a different language saved as a preference. Try creating a new user in your environment, this should clear up the issue.
