@@ -8,6 +8,7 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [eduNext - Colombia](http://edx.edunext.co/) ([http://www.edunext.co/](http://www.edunext.co/))
 * [MongoDB University](https://education.mongodb.com/)
 * [Pepper](http://pepperpd.com) - Joshua Marks
+* [MOOC FranceTv Education](http://mooc.francetveducation.fr/)
 * [IONISx](https://courses.ionis-group.com) by [IONIS Education Group](http://www.ionis-group.com) - France - Philippe Chiu
 * [University of Zurich](http://www.edx.uzh.ch) - Many courses internally - Paul-Olivier Dehaye 
 * [Educate Workforce](https://educateworkforce.com/)
