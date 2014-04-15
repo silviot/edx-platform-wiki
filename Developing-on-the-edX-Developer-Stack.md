@@ -35,7 +35,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Click on "Remote..." to choose the type of interpreter
   * Click on "Fill from vagrant config"
   * Specify your devstack directory and hit "OK"
-  * Update the settings for your new interpreter
+  * Update the settings for your new interpreter (this doesn't work because the SSH server settings in the VM disallow password based authentication currently)
     * Specify "edxapp" for "User name"
     * Select "Password" for "Auth type"
     * Specify your edxapp password 
