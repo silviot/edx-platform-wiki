@@ -12,11 +12,11 @@ Debugging with devstack is a little convoluted, as the source code lives on your
 Here are the steps to use PyCharm on MacOS (other Unix environments should be similar). Note that this has been tested with PyCharm 3.1, and that these steps will *not* work on the free PyCharm Community Edition.
 
 * First, start up a terminal and give the 'edxapp' user a password
-
+```
   vagrant ssh
   sudo passwd edxapp
   [type in a password of your choice]
-
+```
 * Edit `/etc/ssh/sshd_config` and change PasswordAuthentication to `yes`
 
 * Next, create the .pycharm_helpers directory where PyCharm will store its remote debugging code
