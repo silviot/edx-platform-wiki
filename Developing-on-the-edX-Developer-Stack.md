@@ -168,7 +168,7 @@ Sef (<sef@stanford.edu>).
 
         vagrant ssh
         sudo su edxapp
-        SERVICE_VARIANT=lms rake lms:gather_assets:devstack
+        paver update_assets lms --settings=devstack
 
 5. **From PyCharm**.  I created an external command to do this from
    PyCharm. 
