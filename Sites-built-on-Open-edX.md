@@ -17,6 +17,7 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
 * [Neodemia.com](https://neodemia.com)
+* [University of Alaska](http://edx.alaska.edu)
 
 Not sure if these are public:
 
