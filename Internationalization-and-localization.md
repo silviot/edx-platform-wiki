@@ -25,7 +25,7 @@ In order to run your Open edX instance under a different spoken language, for in
         TIME_ZONE = 'America/Guayaquil'
         LANGUAGE_CODE = 'es-419'
 
-Languages need to be specified with codes Django likes, so a code that is specific on Transifex such as `"de_DE"` must be specified as `"de-de"` in these configuration files. See https://groups.google.com/forum/#!topic/openedx-translation/vrOpMKzA0kU
+  Languages need to be specified with codes Django likes, so a code that is specific on Transifex such as `"de_DE"` must be specified as `"de-de"` in these configuration files. See https://groups.google.com/forum/#!topic/openedx-translation/vrOpMKzA0kU
 
 4. Execute the following commands in your edx-platform directory with your edx-platform virtualenv, replacing it with the language you want.
 
