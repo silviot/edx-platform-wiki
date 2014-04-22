@@ -186,6 +186,12 @@ Sef (<sef@stanford.edu>).
        [resulting menu item](image/devstack_theme_gather_menu.png).
 
 ### The edx-platform database that devstack uses
+To syncdb and migrate from the shell as the edxapp user:
+```
+./manage.py lms --settings=devstack syncdb
+./manage.py lms --settings=devstack migrate
+```
+
 Devstack uses mySQL as the DB engine for the edx-platform app.
 You can tell this by starting up the Django shell with:
 
@@ -215,7 +221,6 @@ E.g. for MySQL Workbench, you would set up a new Server connection with these se
 * Default Schema: edxapp
 
 Note: You may also need to specify the SSH Key File, which should be located at "~/.vagrant.d/insecure_private_key"
-
 
 ### Other resources
 
