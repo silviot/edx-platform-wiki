@@ -143,23 +143,20 @@ Sef (<sef@stanford.edu>).
     and
 
         ...
-        "THEME_NAME": "yourtheme",
+        "THEME_NAME": "default",
         ...
 
-
 2. **Mount**. Make sure Vagrant mounts the "theme" directory from the host.
-   See [PR #884](https://github.com/edx/configuration/pull/884) for the way
-   I do this.
+   This should be the case with Johnnycake or later Vagrant installations.  If
+   you have an older Vagrantfile, see [PR #884](https://github.com/edx/configuration/pull/884).
 
-3. **Check out**. The rest of the devstack code checks out repos
-   as part of the provision step, but I don't have that working (yet).
-   So I just check out my theme there manually.  
-   But **please** do not use the Stanford theme as your own.  Use your
-   own styling and assets!
+3. **Check out**. The rest of the devstack code checks out repos as part
+   of the provision step, but that tooling doesn't happen for themes.  You
+   need to check out a theme yourself.  I recommend you start with the "null theme" 
+   that we've made here at Stanford:
 
         cd themes
-        git clone git@github.com:Stanford-Online/edx-theme.git yourtheme
-
+        git clone git@github.com:Stanford-Online/edx-default-theme.git default
 
 4. **Gather assets**. The rest of the devstack methods seems to imply the
    service variant (lms or cms) automatically, but this doesn't work
@@ -184,6 +181,12 @@ Sef (<sef@stanford.edu>).
     7. Screenshots:
        [configuring](image/devstack_theme_gather_config.png) and 
        [resulting menu item](image/devstack_theme_gather_menu.png).
+
+There is nothing special about the name "default" in steps 1 and 3 above.  They just have to match up: the configuration file should have the same name as the directory in themes.  For example, I have both "stanford" and "default" subdirectories there and switching between them is just a matter of changing lms.envs.json, re-gathering assets, and restarting LMS.
+
+
+
+
 
 ### The edx-platform database that devstack uses
 To syncdb and migrate from the shell as the edxapp user:
