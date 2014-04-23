@@ -1,6 +1,6 @@
 To enable Stanford theming in a sandbox instance:
 
-1) Add the following lines to /edx/var/edx_ansible/server-vars.yml
+1) Add the following lines to /edx/app/edx_ansible/server-vars.yml
 
 ```
 edxapp_use_custom_theme: true
