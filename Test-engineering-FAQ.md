@@ -9,32 +9,8 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
 * First off, for Mac OS you will need [XQuartz](http://xquartz.macosforge.org/) installed to support X Windows. We have tested with version 2.7.5.
-* Make sure this stanza is in your Vagrantfile (in the devstack directory, from which you usually `vagrant up`). It should be, as this was [merged in on 2/28/2014](https://github.com/edx/configuration/commits/master/vagrant/release/devstack/Vagrantfile).
-```
-  # Enable X11 forwarding so we can interact with GUI applications
-  if ENV['VAGRANT_X11']
-      config.ssh.forward_x11 = true
-  end
-```
-* Set the VAGRANT_X11 environment variable on your host machine, then reload the image. Note that the reload will *not* reprovision your vagrant image if it has already been provisioned. It *will* redo the port forwarding and setting up of the file shares. See the vagrant docs for more info on the vagrant commands.
-```
-export VAGRANT_X11=1
-vagrant reload
-```
-* ssh into the vagrant image. Note you will be the 'vagrant' user. Start up firefox, **then quit it**. (It will be passed through to your host machine's display).
-```
-vagrant ssh
-
-firefox
-```
-* Now try it as the edxapp user.
-```
-sudo su edxapp
-
-firefox
-```
-
-* Once this has been set up, if you want to run the acceptance tests without browser windows popping up, redirect the DISPLAY environment variable.
+* We used to have to do a bunch of manual stuff to update the .Xauthority files, etc. This has been fixed programmatically in the configuration repo, prior to the release of 20140418-injera-devstack.box
+* If you want to run the acceptance tests without browser windows popping up on your host system, as the edxapp user redirect the DISPLAY environment variable.
 ```
 export DISPLAY=:1
 ```
