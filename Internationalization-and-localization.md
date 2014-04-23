@@ -27,10 +27,13 @@ In order to run your Open edX instance under a different spoken language, for in
 
   Languages need to be specified with codes Django likes, so a code that is specific on Transifex such as `"de_DE"` must be specified as `"de-de"` in these configuration files. See https://groups.google.com/forum/#!topic/openedx-translation/vrOpMKzA0kU
 
-4. Execute the following commands in your edx-platform directory with your edx-platform virtualenv, replacing it with the language you want.
+4. Execute the following command in your edx-platform directory with your edx-platform virtualenv. 
 
-        $ tx pull -l es_419
-        $ rake i18n:generate
+        $ rake i18n:robot:pull
+
+  Note that this command will pull *reviewed* translations for **all** languages that are listed in `conf/locale/config.yaml`. To only pull down some languages, edit `conf/locale/config.yaml` appropriately.
+
+  To pull *unreviewed* translations along with reviewed translations, edit `i18n/transifex.py`. Particularly, the line `execute('tx pull --mode=reviewed --all')` should be changed to `execute('tx pull --all')`
 
 5. When you launch your LMS instance you can launch it normally and things should display properly. However, if in Step 3 you created a special "dev_LANGUAGECODE" file, you'll need to launch the LMS with the environment file explicitly stated:
 
