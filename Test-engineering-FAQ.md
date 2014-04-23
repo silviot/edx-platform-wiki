@@ -44,6 +44,15 @@ export DISPLAY=:1
 export DISPLAY=localhost:10.0
 ```
 
+### Everything was working at first, but now my tests hang and fail without launching the host browser.  What happened?
+
+If you are seeing messages like this on a Mac:
+```
+WebDriverException: Message: 'The browser appears to have exited before we could connect. The output was: Error: cannot open display: localhost:10.0\n'
+```
+then you may be experiencing X11 forwarding timeouts.  The problem and solution are discussed in detail [here](http://b.kl3in.com/2012/01/x11-display-forwarding-fails-after-some-time/), and the quick fix is to increase the value for `ForwardX11Timeout` in /etc/ssh_config to a nice high value (596h is the apparent maximum).
+
+
 ### I've changed some code and in the diff-cover report, those lines are coming up as uncovered. But I know I'm testing them!
 * Changes to .coffee files will always show up as uncovered by diff-cover. This is because JsCover is the coverage reporter and it doesn't know about .coffee files, just .js files.
 * Changes to /common/lib files that are covered with tests under /foo/djangoapps (where foo = common, cms, lms) are reported as uncovered. That's not a unit test. Your test code should also be somewhere under /common/lib, close to what you are testing. Common library functionality should not presume a Django implementation.
