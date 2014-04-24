@@ -8,10 +8,10 @@ When running with the development environment settings, registration emails are 
 
 #### Which are Default Accounts on EDX
 
-User: honor Password: edx
-User: audit Password: edx
-User: verified Password: edx
-User: staff Password:edx
+* User: honor Password: edx
+* User: audit Password: edx
+* User: verified Password: edx
+* User: staff Password:edx
 
 
 #### How do I make my account global staff?
