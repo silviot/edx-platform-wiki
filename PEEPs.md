@@ -1,9 +1,27 @@
 # Proposed edX Enhancements Proposals (PEEPs)
 
-![[image/redundancy.jpg|float|width=300|align=right]]
+## Links to Individual PEEPs
 
-# Links to Individual PEEPs
+<table>
+<tr>
+<th></th>
+<th>Owner</th>
+<th>Title</th>
+</tr>
 
-- PEEP-1 Definition
+<tr>
+<td>PEEP-1</td>
+<td>Ned Batchelder</td>
+<td>Definition</td>
+</tr>
 
-- PEEP-2 Timed Exams
+<tr>
+<td>PEEP-2</td>
+<td>Steven Burch, Jason Bau</td>
+<td>Timed Exams</td>
+</tr>
+
+</table>
+
+[[image/redundancy.jpg|width=400px|float]]
+
