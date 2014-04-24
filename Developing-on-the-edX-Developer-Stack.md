@@ -63,7 +63,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
     * Deselect "Add content roots to PYTHONPATH"
     * Deselect "Add source roots to PYTHONPATH"
   * Click "OK" to save the new debug configuration
-* Rake assets (ssh into vagrant first). rake assets[lms,devstack] 
+* Rake assets (ssh into vagrant first, and su as edxapp user). rake assets[lms,devstack] 
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up
