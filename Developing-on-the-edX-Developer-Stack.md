@@ -46,7 +46,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Click "Test connection..." to verify that the settings are correct
   * Click "OK"
   * Click "Yes" to the prompt "Do you want to set this interpreter as Project Interpreter?"
-  * You should now have a remote interpreter. See [PyCharm's documentation for remote interpreters](http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html#remote_vagrant) if you want more details
+  * You should now have a remote interpreter, *do check*. Something is not fully understood here, it might be that you need to "apply" as well as "saving" at some point. If this step is not properly done, you won't find the "path mapping" step later in the process. Otherwise, you can consult [PyCharm's documentation for remote interpreters](http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html#remote_vagrant) if you want more details
 * Create a debug configuration for LMS
   * Open the file 'edx-platform/manage.py' in your devstack folder
   * Right-click on the file and choose "Create 'manage'..." to create a debug configuration
