@@ -6,6 +6,14 @@ We are using Transifex as our translation platform. We have a number of translat
 
 When running with the development environment settings, registration emails are not sent out. However, the URL with their activation key is logged to the console. Just copy it from there and paste it into the browser.
 
+#### Which are Default Accounts on EDX
+
+User: honor Password: edx
+User: audit Password: edx
+User: verified Password: edx
+User: staff Password:edx
+
+
 #### How do I make my account global staff?
 
 When you make a new account on your local dev environment, it will be a standard student account. You can drop into the sql shell and make your account global staff, which means that it will automatically have access to "Instructor" tab on all courses in the LMS. To do this, drop into the sql shell:
