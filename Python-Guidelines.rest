@@ -103,7 +103,19 @@ Most of our code using an older style::
         score, and `outof` is the maximum possible score.
      
         """
- 
+
+If you only have a single line in your docstring, first, consider that this is almost certainly not enough documentation, and write some more.  But if you do have just one line, format it similarly to a multi-line docstring::
+
+    def foo(a, b):
+        """
+        Computes the foo of a and b.
+        """
+
+Not like this::
+
+    def foo(a, b):
+        """Computes the foo of a and b.""" # NO NO NO
+
 Pylint Guidelines and Practices
 ===============================
 
