@@ -37,4 +37,6 @@ It is possible to get information from these objects. For example, if you are gi
 ## Serializing Opaque Keys
 
 ### Database fields
-While we are in the process of migrating all of the 
+In many places, we serialize out the `location` or `course_id` to the database. In the past, when these were strings, we used straight `CharField`s to write out the data.
+
+Now that these keys are opaque, we have a few specialized Django Fields written to handle all the serialization/deserialization: `CourseKeyField` and `LocationKeyField`. The implementation of these fields can be found in `common/djangoapps/xmodule_django/models.py`
