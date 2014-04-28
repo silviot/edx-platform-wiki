@@ -14,14 +14,19 @@ course_key = SlashSeparatedCourseKey('org', 'course', 'run')
 location = Location('org', 'course', 'run', 'category', 'name', 'revision')
 ```
 
+### Dealing with old-style serialized data
+
 As of right now, the use of opaque keys (especially on the LMS) is mostly reserved for in-memory representations. While we are in the process of trying to update and migrate old data correctly, you might need to construct an opaque key out of an old-style string-representation of the `course_id` or `location`. This is especially true when it comes to urls or external services that send across the old-style strings. We have a few standard patterns for parsing the old-style strings correctly.
 
 For constructing course keys:
 ```
-SlashSeparatedCourseKey.from_deprecated_string('org/course/run')
+course_key = SlashSeparatedCourseKey.from_deprecated_string('org/course/run')
 ```
 
-For 
+For constructing locations:
+```
+course_key
+```
 
 
 
