@@ -38,7 +38,7 @@ Most likely, this API will be very similar to the `.get()` method present on Pyt
 
 # OpaqueKey Relationships
 
-The base Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main key classes: `CourseKey`, `DefKey`, `UsageKey`, and `AssetKey`:
+The base Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main key classes: `CourseKey`, `DefinitionKey`, `UsageKey`, and `AssetKey`, defined within `common/lib/xmodule/xmodule/modulestore/keys.py`:
 
                                           OpaqueKey                                         
                     +-------------------+-------------+----------------+                    
@@ -67,17 +67,16 @@ Further, keys are related in the following way:
                                     |                                                   
                                     v                                                   
                                   DefKey
-# Gotchas
 
-There are a few known issues with this transition, detailed below:
 
-## URLs
+# URLs
 
-We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a Location could be serialized as `org%2Fcourse%2Fname`. The allows the serialized string to form a readable component of the URL while still being easy to parse with a regular expression (since it contains no slashes).
+We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a `CourseKey` is serialized as `org+offering` (where `offering` is the complement of `org`; in old-style course ids, this would correspond to `course/run`).
 
-# Steps to Reach This Goal
 
-We can reach this goal in several steps, some of which can be executed concurrently.
+# Completed and Ongoing Work
+
+The goal of completing the full transition to OpaqueKeys will comprise several steps, some of which can be executed concurrently.
 
 1. *Pass Location and course_id together throughout applications.* Currently, there are many functions in our codebase that only take a Location or only take a course_id; this is not enough information to uniquely identify a single record in the database, and so we frequently try to look up one from the other. We need to modify our code to always pass Location and course_id together, even if only one or the other is used; this will make it possible for us to replace Location and course_id with Locator.
 2. *Convert URLs to use opaque keys.* Currently, our URLs are defined using difference pieces of information from Location in different parts of the URL. For example, `/courses/org/course/name/gradebook`. We need to change these URLs so that the information can be parsed in one segment using a regular expression: perhaps something like `/courses/org%2Fcourse%2Fname/gradebook` or `/courses/org-course-name/gradebook`. In Studio, we have URLs that have a serialized Locator, such as `/assets/org.course.name/branch-name/asset_id` -- we also need to remove the slashes from the Locator ID, so that we end up with something more like `/assets/org.coruse.name%2Fbranch-name/asset_id`.
