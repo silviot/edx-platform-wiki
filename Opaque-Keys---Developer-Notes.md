@@ -36,3 +36,5 @@ It is possible to get information from these objects. For example, if you are gi
 
 ## Serializing Opaque Keys
 
+### Database fields
+While we are in the process of migrating all of the 
