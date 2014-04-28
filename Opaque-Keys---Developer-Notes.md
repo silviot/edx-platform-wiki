@@ -42,3 +42,11 @@ In many places, we serialize out the `location` or `course_id` to the database. 
 Now that these keys are opaque, we have a few specialized Django Fields written to handle the serialization/deserialization in the database automatically: `CourseKeyField` and `LocationKeyField`. The implementation of these fields can be found in `common/djangoapps/xmodule_django/models.py`
 
 Retrieving the value of one of these fields will give you an opaque key. Trying to assign something other than a `CourseKey` to a `CourseKeyField` or a `Location` to a `LocationKeyField` will cause a validation error.
+
+### Serializing to strings
+It is unlikely that you will need to produce old-style strings from these opaque keys in any new development that gets done. You will most likely want to pass around the opaque keys as much as possible. But if you need the serialized strings, this is still possible using `to_deprecated_string`.
+
+For example:
+```
+old_course_id = course_key.to_deprecated_string()
+```
