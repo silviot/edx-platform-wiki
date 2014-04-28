@@ -30,8 +30,9 @@ For constructing locations/usage keys from old-style `i4x` strings (where `cours
 usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/category/name')
 ```
 
-
-
 ## Getting information out of Opaque Keys
 
 It is possible to get information from these objects. For example, if you are given a `course_key`, you can use `course_key.org` to get the organization the course belongs to.
+
+## Serializing Opaque Keys
+
