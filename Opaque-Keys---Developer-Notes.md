@@ -1,8 +1,10 @@
 Currently a WIP
 
-What you should do in your new glorious opaque keys future.
+What you should do in your new glorious [opaque keys](https://github.com/edx/edx-platform/wiki/Opaque-Keys) future.
 
 For the most part, extending the platform should not be substantially different. Now instead of passing around `course_id` strings and `location` strings, we will now be passing around OpaqueKey objects.
+
+# LMS
 
 ## Constructing Opaque Keys
 
@@ -11,7 +13,7 @@ In general, the best way to construct an opaque key is to use the correct constr
 For example:
 ```
 course_key = SlashSeparatedCourseKey('org', 'course', 'run')
-location = Location('org', 'course', 'run', 'category', 'name', 'revision')
+usage_key = Location('org', 'course', 'run', 'category', 'name', 'revision')
 ```
 
 ### Dealing with old-style serialized data
@@ -23,9 +25,9 @@ For constructing course keys:
 course_key = SlashSeparatedCourseKey.from_deprecated_string('org/course/run')
 ```
 
-For constructing locations:
+For constructing locations/usage keys from old-style `i4x` strings (where `course_key` is a `CourseKey` for the course that the location is within):
 ```
-course_key
+usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/category/name')
 ```
 
 
