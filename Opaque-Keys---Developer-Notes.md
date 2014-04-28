@@ -4,19 +4,18 @@ What you should do in your new glorious [opaque keys](https://github.com/edx/edx
 
 For the most part, extending the platform should not be substantially different. Now instead of passing around `course_id` strings and `location` strings, we will now be passing around OpaqueKey objects.
 
-# LMS
-
 ## Constructing Opaque Keys
 
 In general, the best way to construct an opaque key is to use the correct constructor for the correct type of opaque key.
 
 For example:
 ```
-course_key = SlashSeparatedCourseKey('org', 'course', 'run')
+course_key = SlashSeparatedCourseKey('org', 'course', 'run')  # Old-style identifiers
+course_key = CourseLocator(org='mit.eecs', offering='6002x', branch = 'published')
 usage_key = Location('org', 'course', 'run', 'category', 'name', 'revision')
 ```
 
-### Dealing with old-style serialized data
+### Dealing with old-style serialized data (LMS only)
 
 As of right now, the use of opaque keys (especially on the LMS) is mostly reserved for in-memory representations. While we are in the process of trying to update and migrate old data correctly, you might need to construct an opaque key out of an old-style string-representation of the `course_id` or `location`. This is especially true when it comes to urls or external services that send across the old-style strings. We have a few standard patterns for parsing the old-style strings correctly.
 
@@ -30,7 +29,7 @@ For constructing locations/usage keys from old-style `i4x` strings (where `cours
 usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/category/name')
 ```
 
-*Note*: Try not to use this pattern. Use it only when absolutely necessary.
+*Note*: Try not to use this pattern. Use it only when absolutely necessary. Studio does not use this pattern.
 
 ## Getting information out of Opaque Keys
 
