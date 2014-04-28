@@ -1,6 +1,6 @@
 Currently a WIP
 
-What you should do in your new glorious [opaque keys](https://github.com/edx/edx-platform/wiki/Opaque-Keys) future.
+What you should do in your new glorious [opaque keys](https://github.com/edx/edx-platform/wiki/Opaque-Keys) future. It is also useful to understand the architecture of [split Mongo](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO).
 
 For the most part, extending the platform should not be substantially different. Now instead of passing around `course_id` strings and `location` strings, we will now be passing around OpaqueKey objects.
 
