@@ -18,7 +18,7 @@ One example of this is found in the way that Studio structures its URLs. URL con
 
 This key introspection also means that different parts of our application can only accept `Location`s or only accept `Locator`s, which is odd since both types of keys refer to the same data. It means we must spend time converting from one key abstraction to another, maintaining a `loc_mapper` data structure for the sole purpose of remembering which `Location` refers to which `Locator` and vice versa -- which means lots of extra database queries and performance penalties. It also makes reasoning about how we store our data much more difficult.
 
-### The Solution
+## The Solution
 
 To solve this problem, we will convert these "transparent keys" (keys where the application can and does see the internal structure) into "opaque keys" (keys where the application cannot, or chooses not to, get any information about the internal structure). In effect, the goal is to make a key do one thing and one thing only: point to a specific database record. It cannot provide information directly about the record in any way: no org/course/name, no "draft" vs "direct", nothing. This will restore the traditional database key abstraction, and greatly simplify how we interact with our data.
 
@@ -30,15 +30,17 @@ Parts of our application that currently introspect the key object will have seve
 
 The other key benefit of this solution is it will allow us to migrate our data from `Location`s to `Locator`s, something we have been trying to do for quite some time. This will make it easier to reason about where and how our data is stored and accessed.
 
+Read on for more about the architecture of OpaqueKeys. For help understanding how to utilize them in your application, see [[Opaque-Keys---Developer-Notes]].
+
 ### Key Introspection API
 
 Because not all of our application can be refactored to treat keys as truly opaque, we have created a key introspection API, `opaque_keys`, that all of our database key abstractions (`Location`s and `Locator`s) support.
 
-Most likely, this API will be very similar to the `.get()` method present on Python dictionaries, to keep it familiar and concise. The purpose of this API will be to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a single (or a very small number of) functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (Locations and Locators) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
+The purpose of this API is to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a very small number of functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (`Location`s and `Locators`) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
 
-### OpaqueKey Relationships
+## OpaqueKey Hierarchy
 
-The base Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main key classes: `CourseKey`, `DefinitionKey`, `UsageKey`, and `AssetKey`, defined within `common/lib/xmodule/xmodule/modulestore/keys.py`:
+The base abstract Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main base abstract key classes: `CourseKey`, `DefinitionKey`, `UsageKey`, and `AssetKey`, defined within `common/lib/xmodule/xmodule/modulestore/keys.py`:
 
                                           OpaqueKey                                         
                     +-------------------+-------------+----------------+                    
@@ -52,11 +54,22 @@ The base Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/
     SlashSeparated     Course    Def        Location        BlockUsage     AssetLocation    
       CourseKey         Locator   Locator                      Locator                      
                                                                                         
-                                                                                        
+                                                                 
+`CourseKey`s identify courses. A `SlashSeparatedCourseKey` is the course key used for old style `org/course/run` identifiers; a `CourseLocator` is a course key that supports the new style `org+offering` identifier that provides more flexibility in naming conventions.
 
-The subclasses `SlashSeparatedCourseKey` and `Location` both have the `toDeprecatedString` method. This method enables users to get the CourseKey in the old-style "course id" format.
+A `DefinitionKey` is a type of `OpaqueKey` that will be used to identify an XBlock scope. Implementation of `DefinitionKey`s is reserved for a later point in the Opaque Key transition.
 
-Further, keys are related in the following way:
+A `UsageKey` identifies an XBlock usage. `BlockUsageLocator`s identify a block (aka module) situated within a particular course.
+
+A `Location` is both a `DefinitionKey` and a `UsageKey`. `Location`s identify a particular module within a course; they also know about the module's XBlock scope.
+
+An `AssetKey` supports static assets. Typically these are uploaded by course authors through Studio.
+
+The classes `SlashSeparatedCourseKey` and `Location` both have the `toDeprecatedString` method. This method enables users to get the CourseKey in the old-style "course id" format.
+
+### Key Relationships
+
+Keys are related in the following way:
                                                                                         
                           CourseKey                                                     
                           ^       ^                                                     
@@ -68,15 +81,16 @@ Further, keys are related in the following way:
                                     v                                                   
                                   DefKey
 
+A `CourseKey` knows about its `AssetKey`s and `UsageKey`s. An `AssetKey` and a `UsageKey` each knows which `CourseKey` it is associated with. Further, given a `UsageKey`, it is possible to obtain its associated `DefinitionKey`.
 
 ### URLs
 
 We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a `CourseKey` is serialized as `org+offering` (where `offering` is the complement of `org`; in old-style course ids, this would correspond to `course/run`).
 
 
-### Completed and Ongoing Work
+## Completed and Ongoing Work
 
-The goal of completing the full transition to OpaqueKeys will comprise several steps, some of which can be executed concurrently.
+Completing the full transition to OpaqueKeys will comprise several steps, some of which can be executed concurrently.
 
 1. *Pass Location and course_id together throughout applications.* Currently, there are many functions in our codebase that only take a Location or only take a course_id; this is not enough information to uniquely identify a single record in the database, and so we frequently try to look up one from the other. We need to modify our code to always pass Location and course_id together, even if only one or the other is used; this will make it possible for us to replace Location and course_id with Locator.
 2. *Convert URLs to use opaque keys.* Currently, our URLs are defined using difference pieces of information from Location in different parts of the URL. For example, `/courses/org/course/name/gradebook`. We need to change these URLs so that the information can be parsed in one segment using a regular expression: perhaps something like `/courses/org%2Fcourse%2Fname/gradebook` or `/courses/org-course-name/gradebook`. In Studio, we have URLs that have a serialized Locator, such as `/assets/org.course.name/branch-name/asset_id` -- we also need to remove the slashes from the Locator ID, so that we end up with something more like `/assets/org.coruse.name%2Fbranch-name/asset_id`.
