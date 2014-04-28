@@ -1,6 +1,6 @@
 This document discusses the design of the Opaque Keys system, as well as the problem Opaque Keys seeks to solve. For practical understanding of how Opaque Keys impacts edX development, see [[Opaque-Keys---Developer-Notes]].
 
-# Background
+### Background
 
 Our codebase is in the midst of a database rearchitecture. Our production database currently is referred to as "old Mongo", in preparation for the move to the new architecture known as ["split Mongo"](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO), but currently all of our production data is stored in old Mongo. The old Mongo database uses keys that contain structured data. These Mongo keys are literally JSON objects, with key-value pairs for `tag`, `org`, `course`, `category`, `name`, and `revision`. XModule provides the `Location` class as an abstraction layer over these Mongo keys. 
 
@@ -8,7 +8,7 @@ Split Mongo, by contrast, uses unique IDs for database keys -- some of them are 
 
 Because the same data can exist in both old Mongo and split Mongo simultaneously, we also have a `loc_mapper`: a database-backed mapping table to map old-style `Location`s to new-style `Locator`s, and vice-versa.
 
-# The Problem
+### The Problem
 
 We pass around Location and Locator objects throughout our codebase, as reference to the actual data in Mongo; this is fine. However, in addition to simply passing these objects around, we also have lots of code that introspects these objects, pulling out various pieces of information like `course`, `org`, and `name`, and recombining them in various ways for various purposes. As a result, our key abstraction breaks down: rather than merely being a pointer, our application treats these keys as data in their own right, and as a result our application contains all sorts of assumptions and expectations around the API that these keys support to access that data, what data is available, how to modify one key to create a different key, and so on.
 
@@ -18,7 +18,7 @@ One example of this is found in the way that Studio structures its URLs. URL con
 
 This key introspection also means that different parts of our application can only accept `Location`s or only accept `Locator`s, which is odd since both types of keys refer to the same data. It means we must spend time converting from one key abstraction to another, maintaining a `loc_mapper` data structure for the sole purpose of remembering which `Location` refers to which `Locator` and vice versa -- which means lots of extra database queries and performance penalties. It also makes reasoning about how we store our data much more difficult.
 
-# The Solution
+### The Solution
 
 To solve this problem, we will convert these "transparent keys" (keys where the application can and does see the internal structure) into "opaque keys" (keys where the application cannot, or chooses not to, get any information about the internal structure). In effect, the goal is to make a key do one thing and one thing only: point to a specific database record. It cannot provide information directly about the record in any way: no org/course/name, no "draft" vs "direct", nothing. This will restore the traditional database key abstraction, and greatly simplify how we interact with our data.
 
@@ -30,13 +30,13 @@ Parts of our application that currently introspect the key object will have seve
 
 The other key benefit of this solution is it will allow us to migrate our data from `Location`s to `Locator`s, something we have been trying to do for quite some time. This will make it easier to reason about where and how our data is stored and accessed.
 
-# Key Introspection API
+### Key Introspection API
 
 Because not all of our application can be refactored to treat keys as truly opaque, we have created a key introspection API, `opaque_keys`, that all of our database key abstractions (`Location`s and `Locator`s) support.
 
 Most likely, this API will be very similar to the `.get()` method present on Python dictionaries, to keep it familiar and concise. The purpose of this API will be to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a single (or a very small number of) functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (Locations and Locators) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
 
-# OpaqueKey Relationships
+### OpaqueKey Relationships
 
 The base Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main key classes: `CourseKey`, `DefinitionKey`, `UsageKey`, and `AssetKey`, defined within `common/lib/xmodule/xmodule/modulestore/keys.py`:
 
@@ -69,12 +69,12 @@ Further, keys are related in the following way:
                                   DefKey
 
 
-# URLs
+### URLs
 
 We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a `CourseKey` is serialized as `org+offering` (where `offering` is the complement of `org`; in old-style course ids, this would correspond to `course/run`).
 
 
-# Completed and Ongoing Work
+### Completed and Ongoing Work
 
 The goal of completing the full transition to OpaqueKeys will comprise several steps, some of which can be executed concurrently.
 
