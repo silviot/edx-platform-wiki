@@ -32,8 +32,41 @@ The other key benefit of this solution is it will allow us to migrate our data f
 
 # Key Introspection API
 
-Because not all of our application can be refactored to treat keys as truly opaque, we will create some kind of key introspection API that all of our database key abstractions (Locations and Locators) support. Most likely, this API will be very similar to the `.get()` method present on Python dictionaries, to keep it familiar and concise. The purpose of this API will be to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a single (or a very small number of) functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (Locations and Locators) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
+Because not all of our application can be refactored to treat keys as truly opaque, we have created a key introspection API, `opaque_keys`, that all of our database key abstractions (`Location`s and `Locator`s) support.
 
+Most likely, this API will be very similar to the `.get()` method present on Python dictionaries, to keep it familiar and concise. The purpose of this API will be to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a single (or a very small number of) functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (Locations and Locators) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
+
+# OpaqueKey Relationships
+
+The base Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main key classes: `CourseKey`, `DefKey`, `UsageKey`, and `AssetKey`:
+
+                                          OpaqueKey                                         
+                    +-------------------+-------------+----------------+                    
+                    |                   |             |                |                    
+                    |                   |             |                |                    
+                    +                   +             +                +                    
+                CourseKey            DefKey        UsageKey         AssetKey                
+            +--------------+       +--------+    +----------+       +------+                
+            |              |       |        +-++-+          |              |                
+            +              +       +          ++            +              +                
+    SlashSeparated     Course    Def        Location        BlockUsage     AssetLocation    
+      CourseKey         Locator   Locator                      Locator                      
+                                                                                        
+                                                                                        
+
+The subclasses `SlashSeparatedCourseKey` and `Location` both have the `toDeprecatedString` method. This method enables users to get the CourseKey in the old-style "course id" format.
+
+Further, keys are related in the following way:
+                                                                                        
+                          CourseKey                                                     
+                          ^       ^                                                     
+                          |       |                                                     
+                          v       v                                                     
+                    AssetKey     UsageKey                                               
+                                    +                                                   
+                                    |                                                   
+                                    v                                                   
+                                  DefKey
 # Gotchas
 
 There are a few known issues with this transition, detailed below:
