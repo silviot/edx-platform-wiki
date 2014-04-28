@@ -6,7 +6,7 @@ For the most part, extending the platform should not be substantially different.
 
 ## Constructing Opaque Keys
 
-In general, the best way to construct an opaque key is to use the correct constructor for the correct type of opaque key.
+In general, the best way to construct an opaque key is to use the correct constructor for the correct type of opaque key. See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Keys#opaquekey-hierarchy) to understand what types of keys are available.
 
 For example:
 ```
