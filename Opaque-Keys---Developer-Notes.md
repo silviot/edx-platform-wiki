@@ -56,43 +56,55 @@ old_course_id = course_key.to_deprecated_string()
 
 ### URL Reverse calls
 Reverse calls with new URLs and serialization of keys
+
 OLD:
+
     course_locator.url_reverse('course/', ''),
 
 NEW:
+
     course_url = reverse(
          'contentstore.views.course_handler',
          kwargs={'course_key_string': unicode(course.id)}
     )
 
 ### Deserialize keys in handlers
+
     usage_key = UsageKey.from_string(usage_key_string)
 
     course_key = CourseKey.from_string(course_key_string)
 
 ### Pass in opaque keys in handlers
+
 Remove no longer needed parameters in handlers and methods.  For example:
 
 OLD:
+
     def course_handler(request, tag=None, org=None, offering=None, branch=None, version_guid=None, block=None):
 
 NEW:
+
     def course_handler(request, course_key_string=None):
 
 ### Remove loc_mapper calls
+
 * remove from top import statements
 * delete all calls
 
 ### Create usage keys when needed
 OLD:
+
     handouts_old_location = course_module.location.replace(category='course_info', name='handouts')
     handouts_locator = loc_mapper().translate_location(handouts_old_location, False, True)
+
 or
+
     handouts_locator = BlockUsageLocator(
           course_key=updates_locator.course_key.version_agnostic(), block_id=block
     )
 
 NEW:
+
     handouts_locator = course_key.make_usage_key('course_info', 'handouts')
 
 ### Creating asset keys (Studio)
@@ -107,9 +119,11 @@ Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the as
 ### Location Transformations
 
 OLD: 
+
     MITx.999.Robot_Super_Course/branch/draft/block/Robot_Super_Course
 
 NEW: 
+
     location:MITx+999+Robot_Super_Course+course+Robot_Super_Course
  
 Don't call `Location`, but instead use `course_key.make_usage_key`
