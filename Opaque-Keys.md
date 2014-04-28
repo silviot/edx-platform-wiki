@@ -1,3 +1,5 @@
+Warning: this is a WIP and discusses as-of-yet unmerged features implemented in https://github.com/edx/edx-platform/pull/2905
+
 This document discusses the design of the Opaque Keys system, as well as the problem Opaque Keys seeks to solve. For practical understanding of how Opaque Keys impacts edX development, see [[Opaque-Keys---Developer-Notes]].
 
 ### Background
