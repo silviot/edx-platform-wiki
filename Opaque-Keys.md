@@ -8,7 +8,7 @@ Our codebase is in the midst of a database rearchitecture. Our production databa
 
 Split Mongo, by contrast, uses unique IDs for database keys -- some of them are uniquely-created strings, and some are Mongo ObjectIds. The split Mongo project provides the `Locator` class as an abstraction layer over these unique IDs.
 
-Because the same data can exist in both old Mongo and split Mongo simultaneously, we also have a `loc_mapper`: a database-backed mapping table to map old-style `Location`s to new-style `Locator`s, and vice-versa.
+Because data can migrate from old Mongo to split Mongo, we also have a `loc_mapper`: a database-backed mapping table to map old-style `Location`s to new-style `Locator`s, and vice-versa.
 
 ### The Problem
 
