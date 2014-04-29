@@ -16,7 +16,7 @@ We pass around Location and Locator objects throughout our codebase, as referenc
 
 This makes it difficult or impossible to effectively reason about how we store our data, and creates nasty ties between the data storage layer and the presentation layer.
 
-One example of this is found in the way that Studio structures its URLs. URL construction is highly dependent on the org/course/name triple that is present in our keys, and those three components are parsed separately from the URL.
+One example of this is found in the way that LMS structures its URLs. URL construction is highly dependent on the `org/course/run` triple that is present in our keys, and those three components are parsed separately from the URL. Studio, on the other hand, has been using the Locator syntax of `org.course.run/branch/version/block`.
 
 This key introspection also means that different parts of our application can only accept `Location`s or only accept `Locator`s, which is odd since both types of keys refer to the same data. It means we must spend time converting from one key abstraction to another, maintaining a `loc_mapper` data structure for the sole purpose of remembering which `Location` refers to which `Locator` and vice versa -- which means lots of extra database queries and performance penalties. It also makes reasoning about how we store our data much more difficult.
 
