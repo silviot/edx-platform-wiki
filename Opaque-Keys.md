@@ -73,6 +73,12 @@ An `AssetKey` supports static assets. Typically these are uploaded by course aut
 
 The classes `SlashSeparatedCourseKey` and `Location` both have the `toDeprecatedString` method. This method enables users to get the CourseKey in the old-style "org/course/run" format.
 
+### Utilizing Keys
+
+Eventually, no application or interface should specify the type of key needed, only the abstract class (UsageKey, AssetKey,  CourseKey are good, Location and others are bad).
+
+Requiring a Location is a temporary short cut due to LMS not truly treating keys as opaque. We are migrating to a world of true opaqueness, where only the persistence layer (modulestore) should control the concrete key class. Do not write new code that depends on specific types of keys.
+
 ### Key Relationships
 
 Keys are related in the following way:
