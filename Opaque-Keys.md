@@ -24,7 +24,7 @@ This key introspection also means that different parts of our application can on
 
 To solve this problem, we will convert these "transparent keys" (keys where the application can and does see the internal structure) into "opaque keys" (keys where the application cannot, or chooses not to, get any information about the internal structure). In effect, the goal is to make a key do one thing and one thing only: point to a specific database record. It cannot provide information directly about the record in any way: no org/course/name, no "draft" vs "direct", nothing. This will restore the traditional database key abstraction, and greatly simplify how we interact with our data.
 
-There is a caveat here: not all of the codebase can be easily refactored to treat keys as totally opaque. We do provide a Key Introspection API, discussed in the next section, to do so. However, we wish to continually move in the direction of treating keys as totally opaque.
+There is a caveat here: not all of the codebase can be easily refactored to treat keys as totally opaque. We do provide a Key Introspection API, discussed in the next section, to do so. However, we wish to continually move in the direction of treating keys as totally opaque. Architecturally, a key introspection API is perfectly fine, as long as it provides 'identity' information and NOT 'data' information.  It's up to us designers to determine where exactly to draw the line between 'identity' and 'data'.
 
 Parts of our application that currently introspect the key object will have several options for how they can be refactored:
 
