@@ -146,3 +146,9 @@ NEW:
 Don't call `Location`, but instead use `course_key.make_usage_key`
 
 And NEVER EVER call `Location` with an array, dict, or tuple, and never ever call it w/ `'i4x'` or `'c4x'` prefixes.
+
+## xblock usages of Opaque Keys
+
+The "children" field of an xblock should now contain UsageKeys instead of strings.
+
+The "Reference" type fields (that refer to content defined elsewhere in the course) should also use UsageKeys instead of strings.
