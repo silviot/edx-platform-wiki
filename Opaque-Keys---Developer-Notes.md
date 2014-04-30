@@ -78,7 +78,7 @@ NEW (Studio):
 NEW (LMS):
 
     course_url = reverse(
-         'contentstore.views.course_handler',
+         'instructor.views.instructor_dashboard',
          kwargs={'course_key_string': course.id.to_deprecated_string()}
     )
 
