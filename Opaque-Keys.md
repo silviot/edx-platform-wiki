@@ -4,7 +4,7 @@ This document discusses the design of the Opaque Keys system, as well as the pro
 
 ### Background
 
-Our codebase is in the midst of a database rearchitecture. Our production database currently is referred to as "old Mongo", in preparation for the move to the new architecture known as ["split Mongo"](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO), but currently all of our production data is stored in old Mongo. The old Mongo database uses keys that contain structured data. These Mongo keys are literally JSON objects, with key-value pairs for `tag`, `org`, `course`, `category`, `name`, and `revision`. XModule provides the `Location` class as an abstraction layer over these Mongo keys. `Location` had a serious deficiency for uniquely identifying xblocks: it does not fully specify the course id (it leaves out the 'run'); thus, old mongo can not uniquely identify xblocks in fully qualified courses. 
+Our codebase is in the midst of a database rearchitecture. Our production database currently is referred to as "old Mongo", in preparation for the move to the new architecture known as ["split Mongo"](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO), but currently all of our production data is stored in old Mongo. The old Mongo database uses keys that contain structured data. These Mongo keys are literally JSON objects, with key-value pairs for `tag`, `org`, `course`, `category`, `name`, and `revision`. XModule provides the `Location` class as an abstraction layer over these Mongo keys. `Location` had a serious deficiency for uniquely identifying xblocks: it does not fully specify the old-style org/course/run identifier (it leaves out the 'run'); thus, old mongo can not uniquely identify xblocks in fully qualified courses. 
 
 Split Mongo, by contrast, uses unique IDs for database keys -- some of them are uniquely-created strings, and some are Mongo ObjectIds. The split Mongo project provides the `Locator` class as an abstraction layer over these unique IDs.
 
@@ -71,7 +71,7 @@ A `Location` is both a `DefinitionKey` and a `UsageKey`. `Location`s identify a 
 
 An `AssetKey` supports static assets. Typically these are uploaded by course authors through Studio.
 
-The classes `SlashSeparatedCourseKey` and `Location` both have the `toDeprecatedString` method. This method enables users to get the CourseKey in the old-style "course id" format.
+The classes `SlashSeparatedCourseKey` and `Location` both have the `toDeprecatedString` method. This method enables users to get the CourseKey in the old-style "org/course/run" format.
 
 ### Key Relationships
 
@@ -91,7 +91,7 @@ A `CourseKey` knows about its `AssetKey`s and `UsageKey`s. An `AssetKey` and a `
 
 ### URLs
 
-We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a `CourseKey` is serialized as `org+offering` (where `offering` is the complement of `org`; in old-style course ids, this would correspond to `course/run`).
+We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a `CourseKey` is serialized as `org+offering` (where `offering` is the complement of `org`; in old-style "org/course/run" identifiers, this would correspond to `course/run`).
 
 
 ## Completed and Ongoing Work
