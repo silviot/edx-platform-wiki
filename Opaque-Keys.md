@@ -53,7 +53,7 @@ The base abstract Opaque Key class is implemented at `common/lib/opaque_keys/opa
                     |                   |              |                |                    
                     |                   |              |                |                    
                     +                   +              +                +                    
-                CourseKey        DefinitonKey        UsageKey         AssetKey                
+                CourseKey          DefinitonKey     UsageKey         AssetKey                
             +--------------+       +----------+    +----------+       +------+                
             |              |       |          +-++-+          |              |                
             +              +       +            ++            +              +                
