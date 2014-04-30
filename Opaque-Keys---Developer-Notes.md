@@ -6,6 +6,8 @@ For the most part, extending the platform should not be substantially different.
 
 ## Constructing Opaque Keys
 
+Note: The application layer should have no need for constructing an opaque key. The only place we should be explicitly constructing key types is in tests.
+
 In general, the best way to construct an opaque key is to use the correct constructor for the correct type of opaque key. See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Keys#opaquekey-hierarchy) to understand what types of keys are available.
 
 For example:
@@ -19,6 +21,8 @@ usage_key = Location('org', 'course', 'run', 'category', 'name', 'revision')
 
 As of right now, the use of opaque keys (especially on the LMS) is mostly reserved for in-memory representations. While we are in the process of trying to update and migrate old data correctly, you might need to construct an opaque key out of an old-style string-representation of the `course_id` or `location`. This is especially true when it comes to urls or external services that send across the old-style strings. We have a few standard patterns for parsing the old-style strings correctly.
 
+Note: In the transition period, the LMS should be using the 'from_deprecated_string' family of functions at the outer edge of the system, and in the future, it should just be using 'from_string' functions.
+
 For constructing course keys:
 ```
 course_key = SlashSeparatedCourseKey.from_deprecated_string('org/course/run')
@@ -29,7 +33,7 @@ For constructing locations/usage keys from old-style `i4x` strings (where `cours
 usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/category/name')
 ```
 
-*Note*: Try not to use this pattern. Use it only when absolutely necessary. Studio does not use this pattern.
+Studio does not use the `from_deprecated_string` function.
 
 ## Getting information out of Opaque Keys
 
@@ -55,18 +59,27 @@ old_course_id = course_key.to_deprecated_string()
 ## Successfully using Opaque Keys
 
 ### URL Reverse calls
+
 Reverse calls with new URLs and serialization of keys
 
 OLD:
 
     course_locator.url_reverse('course/', ''),
 
-NEW:
+NEW (Studio):
 
     course_url = reverse(
          'contentstore.views.course_handler',
          kwargs={'course_key_string': unicode(course.id)}
     )
+
+NEW (LMS):
+
+    course_url = reverse(
+         'contentstore.views.course_handler',
+         kwargs={'course_key_string': course.id.to_deprecated_string()}
+    )
+
 
 ### Deserialize keys in handlers
 
