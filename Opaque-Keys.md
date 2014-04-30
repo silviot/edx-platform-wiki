@@ -38,7 +38,9 @@ Read on for more about the architecture of OpaqueKeys. For help understanding ho
 
 ### Key Introspection API
 
-Because not all of our application can be refactored to treat keys as truly opaque, we have created a key introspection API, `opaque_keys`, that all of our database key abstractions (`Location`s and `Locator`s) support.
+Note: This API is provided to support back-compatibility in our application. In the effort to transition to a fully-opaque world, use of this API is discouraged. Particularly, new features should not use this, and efforts should be made to migrate old features off of a dependency on key introspection.
+
+Because not all of our application can be easily refactored to treat keys as truly opaque, we have created a key introspection API, `opaque_keys`, that all of our database key abstractions (`Location`s and `Locator`s) support.
 
 The purpose of this API is to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a very small number of functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (`Location`s and `Locators`) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
 
@@ -47,16 +49,16 @@ The purpose of this API is to allow parts of the application to indirectly intro
 The base abstract Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main base abstract key classes: `CourseKey`, `DefinitionKey`, `UsageKey`, and `AssetKey`, defined within `common/lib/xmodule/xmodule/modulestore/keys.py`:
 
                                           OpaqueKey                                         
-                    +-------------------+-------------+----------------+                    
-                    |                   |             |                |                    
-                    |                   |             |                |                    
-                    +                   +             +                +                    
-                CourseKey            DefKey        UsageKey         AssetKey                
-            +--------------+       +--------+    +----------+       +------+                
-            |              |       |        +-++-+          |              |                
-            +              +       +          ++            +              +                
-    SlashSeparated     Course    Def        Location        BlockUsage     AssetLocation    
-      CourseKey         Locator   Locator                      Locator                      
+                    +-------------------+--------------+----------------+                    
+                    |                   |              |                |                    
+                    |                   |              |                |                    
+                    +                   +              +                +                    
+                CourseKey        DefinitonKey        UsageKey         AssetKey                
+            +--------------+       +----------+    +----------+       +------+                
+            |              |       |          +-++-+          |              |                
+            +              +       +            ++            +              +                
+    SlashSeparated     Course    Definition   Location        BlockUsage     AssetLocation    
+      CourseKey         Locator     Locator                      Locator                      
                                                                                         
                                                                  
 `CourseKey`s identify courses. A `SlashSeparatedCourseKey` is the course key used for old style `org/course/run` identifiers; a `CourseLocator` is a course key that supports the new style `org+offering` identifier that provides more flexibility in naming conventions.
