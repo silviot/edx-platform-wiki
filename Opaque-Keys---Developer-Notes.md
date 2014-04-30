@@ -56,6 +56,8 @@ For example:
 old_course_id = course_key.to_deprecated_string()
 ```
 
+Studio should not use `to_deprecated_string`, unless it is constructing an LMS URL.
+
 ## Successfully using Opaque Keys
 
 ### URL Reverse calls
