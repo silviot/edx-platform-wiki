@@ -18,7 +18,5 @@ This is a list of sites running on Open edX.  Feel free to add yours, with a sho
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
 * [Neodemia.com](https://neodemia.com)
 * [University of Alaska](http://edx.alaska.edu)
-
-Not sure if these are public:
-
+* [Online Open Education](http://www.ooed.org/) - Architecture education
 * [Rocketpedia](http://rocketpedia.org/)
