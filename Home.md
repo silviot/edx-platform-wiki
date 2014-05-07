@@ -1,6 +1,6 @@
 Welcome to the edx-platform wiki!
 
-* [[Sites built on Open edX]]
+* [[Sites powered by Open edX]]
 * [[List of XBlocks]]
 
 ## Installation & Usage
