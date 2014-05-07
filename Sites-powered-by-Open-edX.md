@@ -21,3 +21,4 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Online Open Education](http://www.ooed.org/) - Architecture education
 * [Rocketpedia](http://rocketpedia.org/)
 * [Edraak](https://edraak.org/) - Queen Rania Foundation
+* [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
