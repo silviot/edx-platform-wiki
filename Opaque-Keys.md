@@ -6,31 +6,23 @@ This document discusses the design of the Opaque Keys system, as well as the pro
 
 Our codebase is in the midst of a database rearchitecture. Our production database currently is referred to as "old Mongo", in preparation for the move to the new architecture known as ["split Mongo"](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO), but currently all of our production data is stored in old Mongo. The old Mongo database uses keys that contain structured data. These Mongo keys are literally JSON objects, with key-value pairs for `tag`, `org`, `course`, `category`, `name`, and `revision`. XModule provides the `Location` class as an abstraction layer over these Mongo keys. `Location` had a serious deficiency for uniquely identifying xblocks: it does not fully specify the old-style org/course/run identifier (it leaves out the 'run'); thus, old mongo can not uniquely identify xblocks in fully qualified courses. 
 
-Split Mongo, by contrast, uses unique IDs for database keys -- some of them are uniquely-created strings, and some are Mongo ObjectIds. The split Mongo project provides the `Locator` class as an abstraction layer over these unique IDs.
+Split Mongo uses the full org + course + run but also adds branch and snapshot version (like a git commit hash). The split Mongo project provides the `Locator` class as an abstraction layer over these.
 
 Because data can migrate from old Mongo to split Mongo, we also have a `loc_mapper`: a database-backed mapping table to map old-style `Location`s to new-style `Locator`s, and vice-versa.
 
 ### The Problem
 
-We pass around Location and Locator objects throughout our codebase, as reference to the actual data in Mongo; this is fine. However, in addition to simply passing these objects around, we also have lots of code that introspects these objects, pulling out various pieces of information like `course`, `org`, and `name`, and recombining them in various ways for various purposes. As a result, our key abstraction breaks down: rather than merely being a pointer, our application treats these keys as data in their own right, and as a result our application contains all sorts of assumptions and expectations around the API that these keys support to access that data, what data is available, how to modify one key to create a different key, and so on.
+We pass around serialized Locations and course ids throughout our codebase and allow code to parse these as they see fit. This means that we cannot add fields (such as run, branch, and version) without breaking existing code. As a result, our key abstraction breaks down: rather than merely being a pointer, our application treats these strings as data in their own right, and as a result our application contains all sorts of assumptions and expectations around what data is available, how to modify one key to create a different key, and so on.
 
 This makes it difficult or impossible to effectively reason about how we store our data, and creates nasty ties between the data storage layer and the presentation layer.
 
-One example of this is found in the way that LMS structures its URLs. URL construction is highly dependent on the `org/course/run` triple that is present in our keys, and those three components are parsed separately from the URL. Studio, on the other hand, has been using the Locator syntax of `org.course.run/branch/version/block`.
+One example of this is found in the way that LMS structures its URLs. URL construction is highly dependent on the `org/course/run` triple that is present in our keys, and those three components are parsed separately from the URL. 
 
 This key introspection also means that different parts of our application can only accept `Location`s or only accept `Locator`s, which is odd since both types of keys refer to the same data. It means we must spend time converting from one key abstraction to another, maintaining a `loc_mapper` data structure for the sole purpose of remembering which `Location` refers to which `Locator` and vice versa -- which means lots of extra database queries and performance penalties. It also makes reasoning about how we store our data much more difficult.
 
 ## The Solution
 
-To solve this problem, we will convert these "transparent keys" (keys where the application can and does see the internal structure) into "opaque keys" (keys where the application cannot, or chooses not to, get any information about the internal structure). In effect, the goal is to make a key do one thing and one thing only: point to a specific database record. It cannot provide information directly about the record in any way: no org/course/name, no "draft" vs "direct", nothing. This will restore the traditional database key abstraction, and greatly simplify how we interact with our data.
-
-There is a caveat here: not all of the codebase can be easily refactored to treat keys as totally opaque. We do provide a Key Introspection API, discussed in the next section, to do so. However, we wish to continually move in the direction of treating keys as totally opaque. Architecturally, a key introspection API is perfectly fine, as long as it provides 'identity' information and NOT 'data' information.  It's up to us designers to determine where exactly to draw the line between 'identity' and 'data'.
-
-Parts of our application that currently introspect the key object will have several options for how they can be refactored:
-
-1. The first and best option is to simply not use any information about the key, but only treat it as a pointer. If the application needs to do a database lookup to get information it needs, that's fine; but it will not get information from the key itself.
-2. The second option is to examine the larger scope of the problem, and see if the function's caller has done a database lookup to get the information that the function needs: if so, the code can be refactored so that the function accepts the database object rather than the key object. The database object can and should be introspected, because it contains all the information for that record.
-3. The third option is to use the key introspection API, as detailed below.
+To solve this problem, we will convert these "transparent keys" (keys where the application can and does manipulate internal structure and serialized form) into "opaque keys" (keys where the application should be agnostic with respect to key format and use an api to get information about the key and construct new keys). 
 
 The other key benefit of this solution is it will allow us to migrate our data from `Location`s to `Locator`s, something we have been trying to do for quite some time. This will make it easier to reason about where and how our data is stored and accessed.
 
@@ -65,15 +57,15 @@ The base abstract Opaque Key class is implemented at `common/lib/opaque_keys/opa
                                                                  
 `CourseKey`s identify courses. A `SlashSeparatedCourseKey` is the course key used for old style `org/course/run` identifiers; a `CourseLocator` is a course key that supports the new style `org+offering` identifier that provides more flexibility in naming conventions.
 
-A `DefinitionKey` is a type of `OpaqueKey` that will be used to identify an XBlock scope. Implementation of `DefinitionKey`s is reserved for a later point in the Opaque Key transition.
+A `DefinitionKey` is a type of `OpaqueKey` that will be used to identify an XBlock's reusable content.
 
-A `UsageKey` identifies an XBlock usage. `BlockUsageLocator`s identify a block (aka module) situated within a particular course.
+A `UsageKey` identifies an XBlock usage in a particular context (usually a course). `Location`s and `BlockUsageLocator`s are examples.
 
 A `Location` is both a `DefinitionKey` and a `UsageKey`. `Location`s identify a particular module within a course; they also know about the module's XBlock scope.
 
 An `AssetKey` supports static assets. Typically these are uploaded by course authors through Studio.
 
-The classes `SlashSeparatedCourseKey` and `Location` both have the `toDeprecatedString` method. This method enables users to get the CourseKey in the old-style "org/course/run" format.
+The classes `SlashSeparatedCourseKey` and `Location` both have the `to_deprecated_string` method and `from_deprecated_string` classmethod. This method enables users to serialize and deserialize the CourseKey in the old-style "org/course/run" format and the `Location` in the `i4x://org/course/category/id` format.
 
 ### Utilizing Keys
 
@@ -85,32 +77,25 @@ Requiring a Location is a temporary short cut due to LMS not truly treating keys
 
 Keys are related in the following way:
                                                                                         
-                          CourseKey                                                     
+                          CourseKey        DefKey                                             
                           ^       ^                                                     
                           |       |                                                     
                           v       v                                                     
                     AssetKey     UsageKey                                               
-                                    +                                                   
-                                    |                                                   
-                                    v                                                   
-                                  DefKey
 
-A `CourseKey` knows about its `AssetKey`s and `UsageKey`s. An `AssetKey` and a `UsageKey` each knows which `CourseKey` it is associated with. Further, given a `UsageKey`, it is possible to obtain its associated `DefinitionKey`.
+A `CourseKey` knows about its `AssetKey`s and `UsageKey`s. An `AssetKey` and a `UsageKey` each knows which `CourseKey` it is associated with. DefKey's are context independent.
 
 ### URLs
 
-We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, a `CourseKey` is serialized as `org+offering` (where `offering` is the complement of `org`; in old-style "org/course/run" identifiers, this would correspond to `course/run`).
+We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, most `CourseKey`s serialize as `org+course+run` plus possibly other information such as branch and version snapshot id.
 
 
 ## Completed and Ongoing Work
 
 Completing the full transition to OpaqueKeys will comprise several steps, some of which can be executed concurrently.
 
-1. *Pass Location and course_id together throughout applications (LMS)* Currently, there are many functions in our codebase that only take a Location or only take a course_id; this is not enough information to uniquely identify a single record in the database, and so we frequently try to look up one from the other. We need to modify our code to always pass Location and course_id together, even if only one or the other is used; this will make it possible for us to replace Location and course_id with Locator.
-2. *Convert URLs to use opaque keys (done in Studio, needs to be completed in LMS).* Before, our URLs were defined using different pieces of information from Location in different parts of the URL. For example, `/courses/org/course/name/gradebook`. We need to change these URLs so that the information can be parsed in one segment using a regular expression, something like `courses+org+offering+gradebook`. In Studio, we had URLs that had a serialized Locator, such as `/assets/org.course.name/branch-name/asset_id` -- we have leveraged opaque keys such that a url, for example, an asset handler, looks like this: `assets/slashes:edx+101+2014/asset-location:edx+101+2014+asset+file_name.ext`.
-3. *Prepare for a Mongo migration.* This will take us from a world where all of our course data is stored in the Location format, to a world where all of our course data is stored in the Locator format. This will involve writing migration scripts, copying our production databases to testing databases, and running the migration scripts on the test data to be sure that the migration will be successful. This will also give us an idea of how long our Mongo database will be unavailable (due to the migration).
-4. *Prepare our SQL databases to refer to the new Mongo format.* Our SQL databases have some records that contain serialized Locations. We need to create a table in our SQL database that will map old Locations to new Locators, and prepare our queries to join on this table as necessary.
+1. *Pass Location and course_id together throughout applications (LMS) or use the new Location serialization which includes the run* Currently, there are many functions in our codebase that only take a Location or only take a course_id; this is not enough information to uniquely identify a single record in the database, and so we frequently try to look up one from the other. We need to modify our code to always pass Location and course_id together, even if only one or the other is used; this will make it possible for us to replace Location and course_id with Locator.
+2. *Convert URLs to use opaque keys (done in Studio, needs to be completed in LMS).* Before, our URLs were defined using different pieces of information from Location in different parts of the URL. For example, `/courses/org/course/name/gradebook`. We need to change these URLs so that the information can be parsed in one segment using a regular expression, something like `slashes:org+course+run/gradebook`. In Studio, we had URLs that had a serialized Locator, such as `/assets/org.course.name/branch-name/asset_id` -- we have leveraged opaque keys such that a url, for example, an asset handler, looks like this: `assets/slashes:edx+101+2014/asset-location:edx+101+2014+asset+file_name.ext`.
+4. *Prepare our SQL databases to refer to the new serialized format.* Our SQL databases have some records that contain serialized Locations. We need to create a table in our SQL database that will map old Locations to new Locators, and prepare our queries to join on this table as necessary.
 5. *Switch from Locations to Locators.* Because our application will be using opaque keys, the application layer won't be able to tell the difference. This will allow us to remove the course_id being passed everywhere through our application; a Locator contains all the information in both the Location and the course_id, so only once is necessary. This is the reason why we originally had to refactor our application to pass Location and course_id around together; so that we could ensure that we could replace the two of them with one Locator everywhere. Note that for Studio, this will have to be done in such a way that there is a switch that controls whether it writes data in the old Location format or the new Locator format.
-6. *Take down Studio and migrate Mongo.* LMS will be able to continue running while our migration script copies all the course data from the old format to the new format. Because LMS is now using Locators, LMS will transparently start reading from the new format as soon as it exists in Mongo. When we bring Studio back online, we will flip the switch so that it will write new data in the new Locator format.
 7. *Check performance, optimize indexes.* Undoubtably, there will be performance implications in the new data format. We'll be able to estimate these performance implications in preparing for the migration, but there are always unknowns. If there are extreme problems, we can rollback to the old data.
-8. *Delete the old data.* This can be done at some point down the line, when we're sure that the migration was successful.
