@@ -53,7 +53,8 @@ It is unlikely that you will need to produce old-style strings from these opaque
 
 For example:
 ```
-old_course_id = course_key.to_deprecated_string()
+old_course_id = course_key.to_deprecated_string() # produces 'org/course/run'
+old_i4x_id = location.to_deprecated_string() # produces 'i4x://org/course/category/name'
 ```
 
 Studio should not use `to_deprecated_string`, unless it is constructing an LMS URL.
@@ -64,7 +65,7 @@ Studio should not use `to_deprecated_string`, unless it is constructing an LMS U
 
 Reverse calls with new URLs and serialization of keys
 
-OLD:
+OLD (Studio):
 
     course_locator.url_reverse('course/', ''),
 
@@ -75,6 +76,12 @@ NEW (Studio):
          kwargs={'course_key_string': unicode(course.id)}
     )
 
+OLD (LMS):
+
+    course_url = reverse(
+        'instructor.views.instructor_dashboard',
+         kwargs={'course_key_string': course.id}
+    )
 NEW (LMS):
 
     course_url = reverse(
@@ -83,7 +90,7 @@ NEW (LMS):
     )
 
 
-### Deserialize keys in handlers
+### Deserialize keys (Studio or opaque urls)
 
     usage_key = UsageKey.from_string(usage_key_string)
 
@@ -143,7 +150,7 @@ NEW:
 
     location:MITx+999+Robot_Super_Course+course+Robot_Super_Course
  
-Don't call `Location`, but instead use `course_key.make_usage_key`
+Don't call `Location`, but instead use `course_key.make_usage_key` or `UsageKey.from_string(location_string)` or one of the explicit constructors from above.
 
 And NEVER EVER call `Location` with an array, dict, or tuple, and never ever call it w/ `'i4x'` or `'c4x'` prefixes.
 
