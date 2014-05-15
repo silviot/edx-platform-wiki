@@ -36,9 +36,9 @@ Before, you would save `course_id` and `location` strings to the database; now y
 <a name="serialization"/>
 ## Serializing
 
-#### In CMS
+#### In Studio
 
-To serialize a key of any sort (CourseKey, UsageKey, etc) into a string representation, call `unicode(opaque_key)`, where opaque_key is the string you're wanting to serialize.
+To serialize a key of any sort (CourseKey, UsageKey, etc) into a string representation, call `unicode(opaque_key)`, where opaque_key is the key you're wanting to serialize.
 
 #### In LMS
 
@@ -49,14 +49,14 @@ STUFF
 <a name="deserialization"/>
 ## Deserializing
 
-#### CMS
+#### In Studio
 
-In the CMS, ___.
+In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key, where `bar_string` is the serialized version of that key.  (Examples of serialized keys: `"edx:org+course.run+branch+foo+version+bar+type+baz+block+id"`, `"course-locator:$org+$course.$run+branch+$branch+version+$version+type"`, `"ssck: slashes:$org+$course+$run"`...)
 
 <a name="lms_old"/>
 #### LMS
 
-In the LMS, the use of opaque keys is mostly reserved for in-memory representations.  While we are in the process of updating and migrating the old ___, you will need to construct opaque keys out of old-style string represntations of `course_id`s or `location`s.
+In the LMS, the use of opaque keys is mostly reserved for in-memory representations.  While we are in the process of updating and migrating the old data, you will need to construct opaque keys out of old-style string representations of `course_id`s or `location`s.
 
 Old-style course_ids have the format `"org/course/run"`.  Old-style locations have several different formats: `"i4x://org/course/category/name`, `"c4x://org/course/category/name"`, or `"Org.Course.Run/branch/draft/block/Robot_Super_Course"`.
 
@@ -69,6 +69,10 @@ To construct a UsageKey from an old-style `i4x` string (where `course_key` is a 
 ```
 usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/category/name')
 ```
+
+In very rare cases you may
+usage_key = UsageKey.from_deprecated_string(usage_key_string) BLABLA
+
 <a name="#introspect"/>
 ## Introspecting
 
@@ -98,19 +102,19 @@ course_locator.url_reverse('course/', ''),
 NEW WAY (Studio):
 
 ````python
-course_url = reverse(`
+course_url = reverse(
      'contentstore.views.course_handler',
      kwargs={'course_key_string': unicode(course.id)}
-`)
+)
 ````
 
 OLD WAY (LMS):
 
 ````python
-course_url = reverse(`
+course_url = reverse(
     'instructor.views.instructor_dashboard',
      kwargs={'course_key_string': course.id}
-`)
+)
 ````
 
 NEW WAY (LMS):
@@ -119,35 +123,10 @@ NEW WAY (LMS):
 course_url = reverse(
      'instructor.views.instructor_dashboard',
      kwargs={'course_key_string': course.id.to_deprecated_string()}
-`)
+)
 ````
 
 ## Other Notes
-
-<a name="reverse"/>
-
-
-NEW (LMS):
-
-    course_url = reverse(
-         'instructor.views.instructor_dashboard',
-         kwargs={'course_key_string': course.id.to_deprecated_string()}
-    )
-
-<a name="deserialize"/>
-#### Deserializing keys from view handlers
-
-In CMS:
-
-    usage_key = UsageKey.from_string(usage_key_string)
-
-    course_key = CourseKey.from_string(course_key_string)
-
-in LMS:
-
-    usage_key = UsageKey.from_deprecated_string(usage_key_string)
-
-For LMS or other applications reading keys without namespace tags (pre opaque urls), use [[lms deserialization|dealing-with-old-style-serialized-data-lms-only]]
 
 <a name="view_handlers"/>
 #### Pass in opaque keys in view handlers
