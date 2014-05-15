@@ -6,10 +6,6 @@ For things that were formerly `course_id`s, we now use CourseKeys.
 
 For things that were formerly `locations`, we now use UsageKeys.
 
-Course identifiers used to be strings, e.g. `course_id = "org/course/run"`.
-
-For the most part, extending the platform should not be substantially different. Now instead of passing around `course_id` strings and `location` strings, we will now be passing around OpaqueKey objects.
-
 ## Constructing Opaque Keys
 
 <bold>**This should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</b>
@@ -92,6 +88,8 @@ In CMS:
 in LMS:
 
     usage_key = UsageKey.from_deprecated_string(usage_key_string)
+
+For LMS or other applications reading keys without namespace tags (pre opaque urls), use [[lms deserialization|dealing-with-old-style-serialized-data-lms-only]]
 
 ### Pass in opaque keys in view handlers
 
