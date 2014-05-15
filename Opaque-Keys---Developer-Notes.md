@@ -13,14 +13,10 @@
   * URL Reverse Calls
 1. [Other Notes](#other_notes)
   * [Constructing Opaque Keys by Hand](#constructing)  
-  * [Remove loc_mapper calls](#loc_mapper)  
-  * [xblock usages of Opaque Keys](#xblock)  
+  * [Creating Usage Keys](#create_usage)
+  * [Creating Asset Keys](#create_asset)
+  * [XBlock Usages of Opaque Keys](#xblock)  
   * [Further Reading](#reading)
-
-[Pass in opaque keys in view handlers](#view_handlers)  
-[Create usage keys when needed](#create)  
-[Creating asset keys (Studio)](#assets)  
-
 
 <a name="quick"/>
 ## The Quick Version
@@ -134,6 +130,7 @@ course_url = reverse(
 <a name="other_notes"/>
 ## Other Notes
 
+<a name="constructing"/>
 #### Constructing Opaque Keys by Hand
 
 <bold>**This should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</bold>
@@ -149,7 +146,7 @@ usage_key = Location('org', 'course', 'run', 'category', 'name', 'revision')
 
 See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Keys#opaquekey-hierarchy) to understand what types of keys are available.
 
-<a name="create"/>
+<a name="create_usage"/>
 #### Creating Usage Keys
 
 OLD WAY:
@@ -170,8 +167,8 @@ NEW:
 ````
     handouts_locator = course_key.make_usage_key('course_info', 'handouts')
 ````
-<a name="assets"/>
-#### Creating asset keys (Studio)
+<a name="create_asset"/>
+#### Creating Asset Keys (Studio)
 
     course_key = CourseKey.from_string('org/class/run')
     asset_key = course_key.make_asset_key('asset', 'my_file_name.jpg')
@@ -181,7 +178,7 @@ NEW:
 Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the asset itself, and `'thumbnail'`, a thumbnail version of the asset.
 
 <a name="xblock"/>
-#### xblock usages of Opaque Keys
+#### XBlock usages of Opaque Keys
 
 The "children" field of an xblock should now contain UsageKeys instead of strings.
 
