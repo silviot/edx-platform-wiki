@@ -96,6 +96,8 @@ NEW (LMS):
 
     course_key = CourseKey.from_string(course_key_string)
 
+For LMS or other applications reading keys without namespace tags (pre opaque urls), use [[lms deserialization|dealing-with-old-style-serialized-data-lms-only]]
+
 ### Pass in opaque keys in handlers
 
 Remove no longer needed parameters in handlers and methods.  For example:
@@ -150,7 +152,7 @@ NEW:
 
     location:MITx+999+Robot_Super_Course+course+Robot_Super_Course
  
-Don't call `Location`, but instead use `course_key.make_usage_key` or `UsageKey.from_string(location_string)` or one of the explicit constructors from above.
+Don't call `Location`, but instead use `course_key.make_usage_key` or `UsageKey.from_string(location_string)` or one of the [[explicit constructors|constructing-opaque-keys]] from above.
 
 And NEVER EVER call `Location` with an array, dict, or tuple, and never ever call it w/ `'i4x'` or `'c4x'` prefixes.
 
