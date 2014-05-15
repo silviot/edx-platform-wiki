@@ -9,7 +9,7 @@
 [URL Reverse calls](#reverse)  
 [Deserializing keys from view handlers](#deserialize)  
 [Pass in opaque keys in view handlers](#view_handlers)  
-[Remove loc_mapper calls][#loc_mapper]
+[Remove loc_mapper calls][#loc_mapper]  
 [Create usage keys when needed](#create)  
 [Creating asset keys (Studio)](#assets)  
 [xblock usages of Opaque Keys](#xblock)  
