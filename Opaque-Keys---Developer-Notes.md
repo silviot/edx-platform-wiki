@@ -161,26 +161,27 @@ See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Ke
 
 `loc_mapper` should no longer be used by any CMS or LMS code, except where code is *explicitly* dealing with the Split Mongo store. The application layer has no need to access `loc_mapper`.
 
-* remove from top import statements
-* delete all calls
-
 <a name="create"/>
-#### Create usage keys when needed
-OLD:
+#### Creating Usage Keys
 
+OLD WAY:
+
+````
     handouts_old_location = course_module.location.replace(category='course_info', name='handouts')
     handouts_locator = loc_mapper().translate_location(handouts_old_location, False, True)
+````
 
 or
 
+````
     handouts_locator = BlockUsageLocator(
           course_key=updates_locator.course_key.version_agnostic(), block_id=block
     )
-
+````
 NEW:
-
+````
     handouts_locator = course_key.make_usage_key('course_info', 'handouts')
-
+````
 <a name="assets"/>
 #### Creating asset keys (Studio)
 
