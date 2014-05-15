@@ -134,7 +134,7 @@ course_url = reverse(
 <a name="other_notes"/>
 ## Other Notes
 
-#### Constructing Opaque Keys
+#### Constructing Opaque Keys by Hand
 
 <bold>**This should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</bold>
 
