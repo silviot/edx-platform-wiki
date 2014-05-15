@@ -2,11 +2,11 @@
 
 1. [The Quick Version](#quick)  
 1. [Serializing](#serialization)  
-  * Studio
-  * LMS
+  * In Studio
+  * In LMS
 1. [Deserializing](#deserialization)  
-  * Studio
-  * LMS
+  * In Studio
+  * In LMS
 1. [Introspecting  OpaqueKey Objects](#introspect)  
 1. [Saving to the Database](#database)  
 1. [Related Changes](#related)
@@ -51,9 +51,13 @@ STUFF
 
 #### In Studio
 
-In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key, where `bar_string` is the serialized version of that key.  (Examples of serialized keys: `"edx:org+course.run+branch+foo+version+bar+type+baz+block+id"`, `"course-locator:$org+$course.$run+branch+$branch+version+$version+type"`, `"ssck: slashes:$org+$course+$run"`...)
+In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key, where `bar_string` is the serialized version of that key.  Examples of serialized keys: 
+````
+"edx:org+course.run+branch+foo+version+bar+type+baz+block+id"
+"course-locator:$org+$course.$run+branch+$branch+version+$version+type"
+"ssck:slashes:$org+$course+$run"
+````
 
-<a name="lms_old"/>
 #### In LMS
 
 In the LMS, the use of opaque keys is mostly reserved for in-memory representations.  While we are in the process of updating and migrating the old data, you will need to construct opaque keys out of old-style string representations of `course_id`s or `location`s.
@@ -73,8 +77,8 @@ usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/c
 In very rare cases you may
 usage_key = UsageKey.from_deprecated_string(usage_key_string) BLABLA
 
-<a name="#introspect"/>
-## Introspecting
+<a name="introspect"/>
+## Introspecting OpaqueKey Objects
 
 It is possible to get information from these objects. For example, if you are given a `course_key`, you can use `course_key.org` to get the organization the course belongs to. The specific pieces of information that can be retrieved from the keys is dependent on the type of key. Check the implementation of the key to see what pieces of information are available; [you can read about the different types of OpaqueKeys here](https://github.com/edx/edx-platform/wiki/Opaque-Keys).
 
