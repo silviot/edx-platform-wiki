@@ -11,7 +11,7 @@
 1. [Saving to the Database](#database)  
 1. [Related Changes](#related)
   * URL Reverse Calls
-1. Other Notes
+1. [Other Notes](#other_notes)
   * [Constructing Opaque Keys by Hand](#constructing)  
   * [Remove loc_mapper calls](#loc_mapper)  
   * [xblock usages of Opaque Keys](#xblock)  
@@ -131,6 +131,7 @@ course_url = reverse(
 )
 ````
 
+<a name="other_notes"/>
 ## Other Notes
 
 #### Constructing Opaque Keys
