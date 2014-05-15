@@ -8,8 +8,6 @@ Our codebase is in the midst of a database rearchitecture. Our production databa
 
 Split Mongo uses the full org + course + run but also adds branch and snapshot version (like a git commit hash). The split Mongo project provides the `Locator` class as an abstraction layer over these.
 
-Because data can migrate from old Mongo to split Mongo, we also have a `loc_mapper`: a database-backed mapping table to map old-style `Location`s to new-style `Locator`s, and vice-versa.
-
 ### The Problem
 
 We pass around serialized Locations and course ids throughout our codebase and allow code to parse these as they see fit. This means that we cannot add fields (such as run, branch, and version) without breaking existing code. As a result, our key abstraction breaks down: rather than merely being a pointer, our application treats these strings as data in their own right, and as a result our application contains all sorts of assumptions and expectations around what data is available, how to modify one key to create a different key, and so on.
@@ -63,7 +61,7 @@ A `UsageKey` identifies an XBlock usage in a particular context (usually a cours
 
 A `Location` is both a `DefinitionKey` and a `UsageKey`. `Location`s identify a particular module within a course; they also know about the module's XBlock scope.
 
-An `AssetKey` supports static assets. Typically these are uploaded by course authors through Studio.
+An `AssetKey` supports static assets such as pictures, pdfs, and mp3s uploaded by course authors through Studio.
 
 The classes `SlashSeparatedCourseKey` and `Location` both have the `to_deprecated_string` method and `from_deprecated_string` classmethod. This method enables users to serialize and deserialize the CourseKey in the old-style "org/course/run" format and the `Location` in the `i4x://org/course/category/id` format.
 
@@ -95,6 +93,8 @@ We want to have meaningful URLs where possible, which means using slugs instead 
 Completing the full transition to OpaqueKeys will comprise several steps, some of which can be executed concurrently.
 
 1. *Pass Location and course_id together throughout applications (LMS) or use the new Location serialization which includes the run* Currently, there are many functions in our codebase that only take a Location or only take a course_id; this is not enough information to uniquely identify a single record in the database, and so we frequently try to look up one from the other. We need to modify our code to always pass Location and course_id together, even if only one or the other is used; this will make it possible for us to replace Location and course_id with Locator.
+Part of this phase is changing Studio's urls once again but this time to the opaque urls. So, an existing url of `https://studio.stage-edge.edx.org/course/test.99.test_import/branch/draft/block/test_import` will become `https://studio.stage-edge.edx.org/course/location:test+99+test_import+course+test_import`. That is, `/org.course.cat.num.run/branch/draft/block/block.id` will become `/location:org+course.cat.num+run+xblock_type+block.id`
+
 2. *Convert URLs to use opaque keys (done in Studio, needs to be completed in LMS).* Before, our URLs were defined using different pieces of information from Location in different parts of the URL. For example, `/courses/org/course/name/gradebook`. We need to change these URLs so that the information can be parsed in one segment using a regular expression, something like `slashes:org+course+run/gradebook`. In Studio, we had URLs that had a serialized Locator, such as `/assets/org.course.name/branch-name/asset_id` -- we have leveraged opaque keys such that a url, for example, an asset handler, looks like this: `assets/slashes:edx+101+2014/asset-location:edx+101+2014+asset+file_name.ext`.
 4. *Prepare our SQL databases to refer to the new serialized format.* Our SQL databases have some records that contain serialized Locations. We need to create a table in our SQL database that will map old Locations to new Locators, and prepare our queries to join on this table as necessary.
 5. *Switch from Locations to Locators.* Because our application will be using opaque keys, the application layer won't be able to tell the difference. This will allow us to remove the course_id being passed everywhere through our application; a Locator contains all the information in both the Location and the course_id, so only once is necessary. This is the reason why we originally had to refactor our application to pass Location and course_id around together; so that we could ensure that we could replace the two of them with one Locator everywhere. Note that for Studio, this will have to be done in such a way that there is a switch that controls whether it writes data in the old Location format or the new Locator format.
