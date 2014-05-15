@@ -1,4 +1,4 @@
-### The Quick Version
+## The Quick Version
 
 We used to pass around `course_id`s and `location`s as strings.  Now, we are passing these values around as OpaqueKey objects.
 
