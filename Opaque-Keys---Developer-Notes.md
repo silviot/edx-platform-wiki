@@ -54,7 +54,7 @@ STUFF
 In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key, where `bar_string` is the serialized version of that key.  (Examples of serialized keys: `"edx:org+course.run+branch+foo+version+bar+type+baz+block+id"`, `"course-locator:$org+$course.$run+branch+$branch+version+$version+type"`, `"ssck: slashes:$org+$course+$run"`...)
 
 <a name="lms_old"/>
-#### LMS
+#### In LMS
 
 In the LMS, the use of opaque keys is mostly reserved for in-memory representations.  While we are in the process of updating and migrating the old data, you will need to construct opaque keys out of old-style string representations of `course_id`s or `location`s.
 
@@ -88,6 +88,7 @@ Retrieving the value of one of these fields will give you an opaque key. Trying 
 
 Use `CourseKeyField`s and `LocationKeyField`s instead of `CharField`s to store those data types.
 
+<a name="related"/>
 ## Related Changes
 #### URL reverse calls
 
@@ -128,19 +129,6 @@ course_url = reverse(
 
 ## Other Notes
 
-<a name="view_handlers"/>
-#### Pass in opaque keys in view handlers
-
-Remove no longer needed parameters in handlers and methods.  For example:
-
-OLD:
-
-    def course_handler(request, tag=None, org=None, offering=None, branch=None, version_guid=None, block=None):
-
-NEW:
-
-    def course_handler(request, course_key_string=None):
-
 #### Constructing Opaque Keys
 
 <bold>**This should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</bold>
@@ -155,11 +143,6 @@ usage_key = Location('org', 'course', 'run', 'category', 'name', 'revision')
 ```
 
 See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Keys#opaquekey-hierarchy) to understand what types of keys are available.
-
-<a name="loc_mapper"/>
-#### Remove loc_mapper calls
-
-`loc_mapper` should no longer be used by any CMS or LMS code, except where code is *explicitly* dealing with the Split Mongo store. The application layer has no need to access `loc_mapper`.
 
 <a name="create"/>
 #### Creating Usage Keys
