@@ -1,14 +1,20 @@
-Currently a WIP
+### The Quick Version
 
-What you should do in your new glorious [opaque keys](https://github.com/edx/edx-platform/wiki/Opaque-Keys) future. It is also useful to understand the architecture of [split Mongo](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO).
+We used to pass around `course_id`s and `location`s as strings.  Now, we are passing these values around as OpaqueKey objects.
+
+For things that were formerly `course_id`s, we now use CourseKeys.
+
+For things that were formerly `locations`, we now use UsageKeys.
+
+Course identifiers used to be strings, e.g. `course_id = "org/course/run"`.
 
 For the most part, extending the platform should not be substantially different. Now instead of passing around `course_id` strings and `location` strings, we will now be passing around OpaqueKey objects.
 
 ## Constructing Opaque Keys
 
-Note: The application layer should have no need for constructing an opaque key. The only place we should be explicitly constructing key types is in tests.
+<bold>**This should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</b>
 
-In general, the best way to construct an opaque key is to use the correct constructor for the correct type of opaque key. See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Keys#opaquekey-hierarchy) to understand what types of keys are available.
+The best way to construct an opaque key is to use the correct constructor for the correct type of opaque key.
 
 For example:
 ```
@@ -17,11 +23,13 @@ course_key = CourseLocator(org='mit.eecs', offering='6002x', branch = 'published
 usage_key = Location('org', 'course', 'run', 'category', 'name', 'revision')
 ```
 
+See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Keys#opaquekey-hierarchy) to understand what types of keys are available.
+
 ### Dealing with old-style serialized data (LMS only)
 
-As of right now, the use of opaque keys (especially on the LMS) is mostly reserved for in-memory representations. While we are in the process of trying to update and migrate old data correctly, you might need to construct an opaque key out of an old-style string-representation of the `course_id` or `location`. This is especially true when it comes to urls or external services that send across the old-style strings. We have a few standard patterns for parsing the old-style strings correctly.
+As of right now, the use of opaque keys (especially on the LMS) is mostly reserved for in-memory representations. While we are in the process of trying to update and migrate old data correctly, you might need to construct an opaque key out of an old-style string-representation of the `course_id` or `location`.
 
-Note: In the transition period, the LMS should be using the 'from_deprecated_string' family of functions at the outer edge of the system, and in the future, it should just be using 'from_string' functions.
+Old-style course_ids have the format `"org/course/run"`.  Old-style locations have the format `"i4x://org/course/category/name`.
 
 For constructing course keys:
 ```
@@ -37,7 +45,7 @@ Studio does not use the `from_deprecated_string` function.
 
 ## Getting information out of Opaque Keys
 
-It is possible to get information from these objects. For example, if you are given a `course_key`, you can use `course_key.org` to get the organization the course belongs to. The specific pieces of information that can be retrieved from the keys is dependent on the type of key. Check the implementation of the key to see what pieces of information are available.
+It is possible to get information from these objects. For example, if you are given a `course_key`, you can use `course_key.org` to get the organization the course belongs to. The specific pieces of information that can be retrieved from the keys is dependent on the type of key. Check the implementation of the key to see what pieces of information are available; you can see the docs INCLUDE LINK HERE.
 
 ## Serializing Opaque Keys
 
@@ -48,24 +56,13 @@ Now that these keys are opaque, we have a few specialized Django Fields written 
 
 Retrieving the value of one of these fields will give you an opaque key. Trying to assign something other than a `CourseKey` to a `CourseKeyField` or a `Location` to a `LocationKeyField` will cause a validation error.
 
-### Serializing to strings
-It is unlikely that you will need to produce old-style strings from these opaque keys in any new development that gets done. You will most likely want to pass around the opaque keys as much as possible. But if you need the serialized strings, this is still possible using `to_deprecated_string`.
-
-For example:
-```
-old_course_id = course_key.to_deprecated_string() # produces 'org/course/run'
-old_i4x_id = location.to_deprecated_string() # produces 'i4x://org/course/category/name'
-```
-
-Studio should not use `to_deprecated_string`, unless it is constructing an LMS URL.
-
 ## Successfully using Opaque Keys
 
 ### URL Reverse calls
 
 Reverse calls with new URLs and serialization of keys
 
-OLD (Studio):
+OLD:
 
     course_locator.url_reverse('course/', ''),
 
@@ -76,12 +73,6 @@ NEW (Studio):
          kwargs={'course_key_string': unicode(course.id)}
     )
 
-OLD (LMS):
-
-    course_url = reverse(
-        'instructor.views.instructor_dashboard',
-         kwargs={'course_key_string': course.id}
-    )
 NEW (LMS):
 
     course_url = reverse(
@@ -90,15 +81,19 @@ NEW (LMS):
     )
 
 
-### Deserialize keys (Studio or opaque urls)
+### Deserializing keys from view handlers
+
+In CMS:
 
     usage_key = UsageKey.from_string(usage_key_string)
 
     course_key = CourseKey.from_string(course_key_string)
 
-For LMS or other applications reading keys without namespace tags (pre opaque urls), use [[lms deserialization|dealing-with-old-style-serialized-data-lms-only]]
+in LMS:
 
-### Pass in opaque keys in handlers
+    usage_key = UsageKey.from_deprecated_string(usage_key_string)
+
+### Pass in opaque keys in view handlers
 
 Remove no longer needed parameters in handlers and methods.  For example:
 
@@ -152,7 +147,7 @@ NEW:
 
     location:MITx+999+Robot_Super_Course+course+Robot_Super_Course
  
-Don't call `Location`, but instead use `course_key.make_usage_key` or `UsageKey.from_string(location_string)` or one of the [[explicit constructors|constructing-opaque-keys]] from above.
+Don't call `Location`, but instead use `course_key.make_usage_key`
 
 And NEVER EVER call `Location` with an array, dict, or tuple, and never ever call it w/ `'i4x'` or `'c4x'` prefixes.
 
@@ -161,3 +156,9 @@ And NEVER EVER call `Location` with an array, dict, or tuple, and never ever cal
 The "children" field of an xblock should now contain UsageKeys instead of strings.
 
 The "Reference" type fields (that refer to content defined elsewhere in the course) should also use UsageKeys instead of strings.
+
+## Further Reading
+
+[Opaque Keys Overview](https://github.com/edx/edx-platform/wiki/Opaque-Keys)
+
+[Split Mongo Architecture](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO).
