@@ -13,4 +13,4 @@ In this phase, the LMS will be updated to support the new OpaqueKeys serializati
 In this phase, the data accessible using the `OpaqueKeys` api will be explicitly represented in the event context in emitted events.
 
 ## 5. Decompose keys in XBlocks
-In this phase, the data accessible using the `OpaqueKeys` api will be made available to XBlocks via an XBlock service.
+In this phase, the data accessible using the `OpaqueKeys` api will be made available to XBlocks via an XBlock service. This data will be exposed to CapaProblem input types and response types, and made available in html for access by instructor-written javascript in course content.
