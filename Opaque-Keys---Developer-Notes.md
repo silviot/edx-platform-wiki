@@ -184,7 +184,7 @@ Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the as
 <a name="xblock"/>
 #### XBlock usages of Opaque Keys
 
-The "children" field of an xblock should now contain UsageKeys instead of strings.
+The "children" field of an XBlock should now contain UsageKeys instead of strings.
 
 The "Reference" type fields (that refer to content defined elsewhere in the course) should also use UsageKeys instead of strings.
 
