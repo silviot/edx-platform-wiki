@@ -58,20 +58,24 @@ In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key
 
 In the LMS, the use of opaque keys is mostly reserved for in-memory representations.  While we are in the process of updating and migrating the old data, you will need to construct opaque keys out of old-style string representations of `course_id`s or `location`s.
 
-Old-style course_ids have the format `"org/course/run"`.  Old-style locations have several different formats: `"i4x://org/course/category/name`, `"c4x://org/course/category/name"`, or `"Org.Course.Run/branch/draft/block/Robot_Super_Course"`.
+Old-style `course_id`s have the format `"org/course/run"`.  Old-style `location`s have several different formats: `"i4x://org/course/category/name`, `"c4x://org/course/category/name"`, or `"Org.Course.Run/branch/draft/block/Robot_Super_Course"`.
 
 To construct a course key from an old-style course_id:
-```
+```python
 course_key = SlashSeparatedCourseKey.from_deprecated_string('org/course/run')
 ```
 
 To construct a UsageKey from an old-style `i4x` string (where `course_key` is a `CourseKey` for the course that the location is within):
-```
+
+```python
 usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/category/name')
 ```
 
-In very rare cases you may
-usage_key = UsageKey.from_deprecated_string(usage_key_string) BLABLA
+If you have no CourseKey (and no `course_id` that you can use to create a CourseKey), a fallback is the UsageKey.from_deprecated_string() method shown below.  Note that this is not preferred; please use the previous method if there's any way you can access the CourseKey.
+
+````python
+usage_key = Location.from_deprecated_string('i4x://org/course/category/name')
+````
 
 <a name="introspect"/>
 ## Introspecting OpaqueKey Objects
