@@ -44,11 +44,7 @@ Read on for more about the architecture of OpaqueKeys. For help understanding ho
 
 Because not all of our application can be easily refactored to treat keys as truly opaque, we have created a key introspection API, `opaque_keys`, that all of our database key abstractions (`Location`s and `Locator`s) support.
 
-The purpose of this API is to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a very small number of functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (`Location`s and `Locators`) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.
-
-Note: Keys are identification information to data. It's OK to introspect keys as long as you are accessing 'identification' info.  So, for example, getting a 'course ID' from a UsageKey is alright. You are essentially asking an addressing identifier a parental context of its address, that use is supported and encouraged.
-
-That said, it is NOT OK to be able to obtain 'data' about an object from its key.  So, for example, getting the 'number of children of that object' from a Key would not be acceptable.
+The purpose of this API is to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a very small number of functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (`Location`s and `Locators`) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.  _Thus, key information should only be retrieved using that key's public methods._
 
 <a name="hierarchy"/>
 ### OpaqueKey Hierarchy
