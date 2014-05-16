@@ -42,8 +42,6 @@ To serialize a key of any sort (CourseKey, UsageKey, etc) into a string represen
 
 To serialize a CourseKey into a string representation, call `foo.to_deprecated_string()`, where `foo` is your CourseKey.
 
-STUFF
-
 <a name="deserialization"/>
 ## Deserializing
 
