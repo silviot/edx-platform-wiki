@@ -20,7 +20,7 @@ This key introspection also means that different parts of our application can on
 
 ## The Solution
 
-To solve this problem, we convert these "transparent keys" (keys where the application can and does manipulate internal structure and serialized form) into "opaque keys" (keys where the application should be agnostic with respect to key format and use an api to get information about the key and construct new keys). 
+To solve this problem, we convert these "transparent keys" (keys where the application can and does manipulate internal structure and serialized form) into "opaque keys" (keys where the application should be agnostic with respect to key format, and uses an API to get information about the key and construct new keys). 
 
 The other key benefit of this solution is it allows us to migrate our data from `Location`s to `Locator`s, something we have been trying to do for quite some time. This makes it easier to reason about where and how our data is stored and accessed.
 
