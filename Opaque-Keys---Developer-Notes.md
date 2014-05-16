@@ -1,3 +1,5 @@
+When [pull request 2905](https://github.com/edx/edx-platform/pull/2905) is merged to master, the way we handle `course_id`s and `location`s will be changing.  This guide includes everything you need to know about how to handle them.
+
 ## Table of Contents
 
 1. [The Quick Version](#quick)  
