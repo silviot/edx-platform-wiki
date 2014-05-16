@@ -47,8 +47,8 @@ To serialize a CourseKey into a string representation, call `foo.to_deprecated_s
 
 #### In Studio
 
-In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key, where `bar_string` is the serialized version of that key.  Examples of serialized keys: 
-````
+In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key, where `bar_string` is the serialized version of that key.  Some examples of serialized keys are: 
+````python
 "edx:org+course.run+branch+foo+version+bar+type+baz+block+id"
 "course-locator:$org+$course.$run+branch+$branch+version+$version+type"
 "ssck:slashes:$org+$course+$run"
