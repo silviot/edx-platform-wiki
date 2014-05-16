@@ -156,29 +156,29 @@ See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Ke
 OLD WAY:
 
 ````python
-    handouts_old_location = course_module.location.replace(category='course_info', name='handouts')
-    handouts_locator = loc_mapper().translate_location(handouts_old_location, False, True)
+handouts_old_location = course_module.location.replace(category='course_info', name='handouts')
+handouts_locator = loc_mapper().translate_location(handouts_old_location, False, True)
 ````
 
 or
 
 ````python
-    handouts_locator = BlockUsageLocator(
-          course_key=updates_locator.course_key.version_agnostic(), block_id=block
-    )
+handouts_locator = BlockUsageLocator(
+    course_key=updates_locator.course_key.version_agnostic(), block_id=block
+)
 ````
 NEW:
 ````python
-    handouts_locator = course_key.make_usage_key('course_info', 'handouts')
+handouts_locator = course_key.make_usage_key('course_info', 'handouts')
 ````
 <a name="create_asset"/>
 #### Creating Asset Keys (Studio)
 
 ````python
-    course_key = CourseKey.from_string('org/class/run')
-    asset_key = course_key.make_asset_key('asset', 'my_file_name.jpg')
+course_key = CourseKey.from_string('org/class/run')
+asset_key = course_key.make_asset_key('asset', 'my_file_name.jpg')
 
-    thumbnail_key = course_key.make_asset_key('thumbnail', 'my_thumbnail_file_name.jpg')
+thumbnail_key = course_key.make_asset_key('thumbnail', 'my_thumbnail_file_name.jpg')
 ````
 
 Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the asset itself, and `'thumbnail'`, a thumbnail version of the asset.
