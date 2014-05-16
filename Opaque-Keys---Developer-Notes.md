@@ -174,10 +174,12 @@ NEW:
 <a name="create_asset"/>
 #### Creating Asset Keys (Studio)
 
+````python
     course_key = CourseKey.from_string('org/class/run')
     asset_key = course_key.make_asset_key('asset', 'my_file_name.jpg')
 
     thumbnail_key = course_key.make_asset_key('thumbnail', 'my_thumbnail_file_name.jpg')
+````
 
 Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the asset itself, and `'thumbnail'`, a thumbnail version of the asset.
 
