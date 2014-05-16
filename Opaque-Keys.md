@@ -6,22 +6,22 @@ This document discusses the design of the Opaque Keys system, as well as the pro
 1. [Background](#background)
 1. [The Problem](#problem)
 1. [The Solution](#solution)
-2. [Key Introspection API](#introspection)
-1. [OpaqueKey Hierarchy](#hierarchy)
-1. [Utilizing Keys](#utilizing)
-1. [Key Relationships](#relationships)
-1. [URLs](#urls)
+  * [Key Introspection API](#introspection)
+  * [OpaqueKey Hierarchy](#hierarchy)
+  * [Utilizing Keys](#utilizing)
+  * [Key Relationships](#relationships)
+  * [URLs](#urls)
 1. [Completed and Ongoing Work](#work)
 
 <a name="background"/>
-### Background
+## Background
 
 Our codebase is in the midst of a database rearchitecture. Our production database currently is referred to as "old Mongo", in preparation for the move to the new architecture known as ["split Mongo"](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO), but currently all of our production data is stored in old Mongo. The old Mongo database uses keys that contain structured data. These Mongo keys are literally JSON objects, with key-value pairs for `tag`, `org`, `course`, `category`, `name`, and `revision`. XModule provides the `Location` class as an abstraction layer over these Mongo keys. `Location` had a serious deficiency for uniquely identifying xblocks: it does not fully specify the old-style org/course/run identifier (it leaves out the 'run'); thus, old mongo can not uniquely identify xblocks in fully qualified courses. 
 
 Split Mongo uses the full org + course + run but also adds branch and snapshot version (like a git commit hash). The split Mongo project provides the `Locator` class as an abstraction layer over these.
 
 <a name="problem"/>
-### The Problem
+## The Problem
 
 We pass around serialized Locations and course ids throughout our codebase and allow code to parse these as they see fit. This means that we cannot add fields (such as run, branch, and version) without breaking existing code. As a result, our key abstraction breaks down: rather than merely being a pointer, our application treats these strings as data in their own right, and as a result our application contains all sorts of assumptions and expectations around what data is available, how to modify one key to create a different key, and so on.
 
@@ -52,7 +52,7 @@ Note: Keys are identification information to data. It's OK to introspect keys as
 That said, it is NOT OK to be able to obtain 'data' about an object from its key.  So, for example, getting the 'number of children of that object' from a Key would not be acceptable.
 
 <a name="hierarchy"/>
-## OpaqueKey Hierarchy
+### OpaqueKey Hierarchy
 
 The base abstract Opaque Key class is implemented at `common/lib/opaque_keys/opaque_keys/__init__.py`. There are four main base abstract key classes: `CourseKey`, `DefinitionKey`, `UsageKey`, and `AssetKey`, defined within `common/lib/xmodule/xmodule/modulestore/keys.py`:
 
