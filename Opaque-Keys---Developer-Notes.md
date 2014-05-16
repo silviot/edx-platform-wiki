@@ -15,8 +15,7 @@ When [pull request 2905](https://github.com/edx/edx-platform/pull/2905) is merge
   * URL Reverse Calls
 1. [Other Notes](#other_notes)
   * [Constructing Opaque Keys by Hand](#constructing)  
-  * [Creating Usage Keys](#create_usage)
-  * [Creating Asset Keys](#create_asset)
+  * [Old Way vs. New Way](#old_vs_new)
   * [XBlock Usages of Opaque Keys](#xblock)  
   * [Further Reading](#reading)
 
@@ -137,9 +136,9 @@ course_url = reverse(
 <a name="constructing"/>
 #### Constructing Opaque Keys by Hand
 
-<bold>**This should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</bold>
+<bold>**In general, this should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</bold>
 
-To construct an opaque key by hand, use the correct constructor for the correct type of opaque key.
+To construct an opaque key by hand, you can always use the correct constructor for the correct type of opaque key.
 
 For example:
 ```python
@@ -148,12 +147,23 @@ course_key = CourseLocator(org='mit.eecs', offering='6002x', branch = 'published
 usage_key = Location('org', 'course', 'run', 'category', 'name', 'revision')
 ```
 
+**However, for UsageKeys and AssetKeys, it is generally preferable to use the make_usage_key and make_asset_key methods on CourseKey.**  For example, given a CourseKey course_key, you can make usage_key and asset_key for that course as follows:
+
+````python
+usage_key = course_key.make_usage_key('course_info', 'handouts')  # 'course_info' is block_type, 'handouts' is the name
+asset_key = course_key.make_asset_key('asset', 'my_file_name.jpg')  # 'asset' is type, 'my_file_name.jpg' is the path
+````
+
+Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the asset itself, and `'thumbnail'`, a thumbnail version of the asset.
+
 See the [OpaqueKey hierarchy](https://github.com/edx/edx-platform/wiki/Opaque-Keys#opaquekey-hierarchy) to understand what types of keys are available.
 
-<a name="create_usage"/>
-#### Creating Usage Keys
+<a name="old_vs_new"/>
+#### Old Way vs New Way
 
-OLD WAY:
+If you encounter legacy code that seems confusing or wrong, see if you can find that pattern in these "old way" examples, and see the "new way" to write that code:
+
+USAGE KEYS, OLD WAY:
 
 ````python
 handouts_old_location = course_module.location.replace(category='course_info', name='handouts')
@@ -167,21 +177,10 @@ handouts_locator = BlockUsageLocator(
     course_key=updates_locator.course_key.version_agnostic(), block_id=block
 )
 ````
-NEW:
+USAGE KEYS, NEW WAY:
 ````python
 handouts_locator = course_key.make_usage_key('course_info', 'handouts')
 ````
-<a name="create_asset"/>
-#### Creating Asset Keys (Studio)
-
-````python
-course_key = CourseKey.from_string('org/class/run')
-asset_key = course_key.make_asset_key('asset', 'my_file_name.jpg')
-
-thumbnail_key = course_key.make_asset_key('thumbnail', 'my_thumbnail_file_name.jpg')
-````
-
-Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the asset itself, and `'thumbnail'`, a thumbnail version of the asset.
 
 <a name="xblock"/>
 #### XBlock usages of Opaque Keys
@@ -189,6 +188,8 @@ Note that `AssetKey`s only support two `asset_type`s: `'asset'`, which is the as
 The "children" field of an XBlock should now contain UsageKeys instead of strings.
 
 The "Reference" type fields (that refer to content defined elsewhere in the course) should also use UsageKeys instead of strings.
+
+`xblock.id` used to return locations.  This has been changed; now, to access an xblock's location, use `xblock.location`.
 
 <a name="reading"/>
 #### Further Reading
