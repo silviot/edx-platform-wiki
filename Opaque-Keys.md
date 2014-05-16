@@ -11,7 +11,6 @@ This document discusses the design of the Opaque Keys system, as well as the pro
   * [Utilizing Keys](#utilizing)
   * [Key Relationships](#relationships)
   * [URLs](#urls)
-1. [Completed and Ongoing Work](#work)
 
 <a name="background"/>
 ## Background
@@ -105,20 +104,3 @@ A `CourseKey` knows about its `AssetKey`s and `UsageKey`s. An `AssetKey` and a `
 ### URLs
 
 We want to have meaningful URLs where possible, which means using slugs instead of numerical IDs or GUIDs. The simple resolution for this is to serialize and deserialize these opaque keys in such a way that the information is not obscured; for example, most `CourseKey`s serialize as `org+course+run` plus possibly other information such as branch and version snapshot id.
-
-<a name="work"/>
-## Completed and Ongoing Work
-
-Completing the full transition to OpaqueKeys will comprise several steps, some of which can be executed concurrently.
-
-1. *Pass Location and course_id together throughout applications (LMS) or use the new Location serialization which includes the run* Currently, there are many functions in our codebase that only take a Location or only take a course_id; this is not enough information to uniquely identify a single record in the database, and so we frequently try to look up one from the other. We need to modify our code to always pass Location and course_id together, even if only one or the other is used; this will make it possible for us to replace Location and course_id with Locator.
-
-2. *Convert URLs to use opaque keys (done in Studio, needs to be completed in LMS).* Before, our URLs were defined using different pieces of information from Location in different parts of the URL. For example, `/courses/org/course/name/gradebook`. We need to change these URLs so that the information can be parsed in one segment using a regular expression, something like `slashes:org+course+run/gradebook`.
-In Studio, we had URLs that had a serialized Locator, such as `/assets/org.course.name/branch-name/asset_id`. We have changed Studio's urls to opaque urls. For example, the asset handler, now looks like `assets/slashes:edx+101+2014/asset-location:edx+101+2014+asset+file_name.ext`.
-As another example, a URL of `https://studio.stage-edge.edx.org/course/test.99.test_import/branch/draft/block/test_import` becomes `https://studio.stage-edge.edx.org/course/location:test+99+test_import+course+test_import`. That is, `/org.course.cat.num.run/branch/draft/block/block.id` becomes `/location:org+course.cat.num+run+xblock_type+block.id`
-
-3. *Prepare our SQL databases to refer to the new serialized format.* Our SQL databases have some records that contain serialized Locations. We need to create a table in our SQL database that will map old Locations to new Locators, and prepare our queries to join on this table as necessary.
-
-4. *Switch from Locations to Locators.* Because our application will be using opaque keys, the application layer won't be able to tell the difference. This will allow us to remove the course_id being passed everywhere through our application; a Locator contains all the information in both the Location and the course_id, so only one is necessary. This is the reason why we originally had to refactor our application to pass Location and course_id around together; so that we could ensure that we could replace the two of them with one Locator everywhere. Note that for Studio, this will have to be done in such a way that there is a switch that controls whether it writes data in the old Location format or the new Locator format.
-
-5. *Check performance, optimize indexes.* Undoubtedly, there will be performance implications in the new data format. We'll be able to estimate these performance implications in preparing for the migration, but there are always unknowns. If there are extreme problems, we can rollback to the old data.
