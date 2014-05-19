@@ -4,6 +4,8 @@ This first phase is currently implement on the opaque-keys branch (https://githu
 ## 2. Extract OpaqueKeys library and plugins
 The `opaque_keys` library, the `CourseKey`, `UsageKey`, `DefinitionKey`, and `AssetKey` base classes, and the `locations.py` and `locators.py` implementations of those base classes will be extracted into a separately installable library. This library will be published to Github and PyPI, and included into the LMS and Studio via a pip installation dependency.
 
+During this phase we will also be looking to consolidate the currently separate `Location` and `Locator` key classes, as they have drifted closer and closer in design over the course of the project, and at this point it appears that `Locator` is simply a superset of the `Location` functionality.
+
 ## 3. Use OpaqueKeys serialization format in LMS urls
 This phase depends on 2., and may be merged only after giving the research community sufficient notice so that they can update their code to use the `OpaqueKeys` library.
 
