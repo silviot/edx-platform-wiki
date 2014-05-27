@@ -12,3 +12,10 @@ Demo day is Friday the 13th, hopefully the demos aren't too scary! Extra points 
 
 | Advocate | Description | Interested Parties | Results |
 |----------|-------------|--------------------|---------|
+| dave  | Course grading speed improvements | | |
+| jarv  | Celery task for certificate generation | | |
+| dave  | Improving LMS browser load times (JS, assets) | | |
+| dave  | Improving Studio browser laod times (JS, assets) | | |
+| dave  | edX as an OAuth provider (i.e. SSO between edX apps) | | |
+| dave  | Submissions app as XBlock Runtime Service | | |
+
