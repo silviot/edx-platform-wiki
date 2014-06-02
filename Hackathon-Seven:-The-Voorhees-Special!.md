@@ -20,4 +20,4 @@ Demo day is Friday the 13th, hopefully the demos aren't too scary! Extra points 
 | dave  | Submissions app as XBlock Runtime Service | | |
 | dave  | Downloads service | | |
 | dave  | Cheap pull-only course/item/user level notifications | | |
-
+| dave  | Video source service (different locations/encodings) | | |
