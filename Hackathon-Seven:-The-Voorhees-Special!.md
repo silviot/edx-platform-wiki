@@ -18,4 +18,6 @@ Demo day is Friday the 13th, hopefully the demos aren't too scary! Extra points 
 | dave  | Improving Studio browser laod times (JS, assets) | | |
 | dave  | edX as an OAuth provider (i.e. SSO between edX apps) | | |
 | dave  | Submissions app as XBlock Runtime Service | | |
+| dave  | Downloads service | | |
+| dave  | Cheap pull-only course/item/user level notifications | | |
 
