@@ -6,3 +6,4 @@ DB      | Django 1.6! | It's a crazy idea. But I want to give it a shot. ([the w
 Christina| Improvement to Advanced Settings page in Studio | Display names, help, hide "deprecated" fields, possibly validation
 JZ      | Create a rules-based risk calculation for PRs | I got started with this [here](https://github.com/jzoldak/gh-pr-risk)
 Ned     | Coverage measurement of Django templates | Last time was Mako, let's try Django.
+Will    | Mobile study groups app  |  |
