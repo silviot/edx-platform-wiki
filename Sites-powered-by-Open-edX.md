@@ -24,4 +24,3 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
 * [UNC Online](https://mooc.northcarolina.edu/)
 * [BistuX](http://x.bistu.edu.cn)
-* [Harvard HBX](http://hbx.hbs.edu/) 
