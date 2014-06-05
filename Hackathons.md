@@ -9,3 +9,4 @@ We've had three hackathons so far and are hosting our first broader community ha
   * [[Hackathon Four: The More the Merrier]]
   * [[Hackathon Five: Prep for the Gov!]]
   * [[Hackathon Six: New Digs]]
+  * [[Hackathon Seven: The Voorhees Special]]
