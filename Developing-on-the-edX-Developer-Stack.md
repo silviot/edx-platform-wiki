@@ -30,6 +30,9 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Choose "Empty project" for "Project type" (note: don't choose "Django project" as that can't currently be interpreted remotely)
   * Say "Yes" to the question about using existing sources for the project
 * Create a PyCharm remote interpreter:
+
+  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described below in section 'Creating a remote python interpreter (PyCharm v3.4+)' below. When you finish with those steps continue back here with the next section below.)
+
   * Select "Preferences..." from the Apple menu
   * Expand "Project Interpreter" under "Project Settings"
   * Select "Python Interpreters"
@@ -189,6 +192,23 @@ Sef (<sef@stanford.edu>).
        [resulting menu item](image/devstack_theme_gather_menu.png).
 
 There is nothing special about the name "default" in steps 1 and 3 above.  They just have to match up: the configuration file should have the same name as the directory in themes.  For example, I have both "stanford" and "default" subdirectories there and switching between them is just a matter of changing lms.envs.json, re-gathering assets, and restarting LMS.
+
+
+
+### Creating a remote python interpreter (PyCharm v3.4+)
+In June of 2014 JetBrains released a new version of PyCharm. The new version handles the creation of a remote interpreter a bit differently than the steps described above for earlier versions. 
+* Create a PyCharm remote interpreter:
+  * Select "Preferences..." from the Apple menu
+  * Expand "Project Interpreter" under "Project Settings"
+  * Click the icon in the upper right corner of the dialog box--it looks like it may be a gear or a star.
+  * In the popup dialog that appears, click on "Add Remote"
+  * When the remote dialog appears, select the "Vagrant" radio button
+  * Click on the "..." navigation icon to the right of the "Vagrant Instance Folder:" textbox
+  * In the "Select Path" dialog box that appears, navigate to and select the directory where your ".vagrant" folder and "Vagrantfile" live 
+  * You should see a small dialog with a progress bar and the message "Running Vagrant ssh-config"
+  * When the process completes and the dialog disappears, test your connection by clicking on the ssh hyperlink indicated by "Vagrant Host URL:"
+  * Specify "/edx/app/edxapp/venvs/edxapp/bin/python" for "Python interpreter path"
+
 
 
 
