@@ -7,3 +7,4 @@ Christina| Improvement to Advanced Settings page in Studio | Display names, help
 JZ      | Create a rules-based risk calculation for PRs | I got started with this [here](https://github.com/jzoldak/gh-pr-risk)
 Ned     | Coverage measurement of Django templates | Last time was Mako, let's try Django.
 Will    | Mobile study groups app  |  |
+Steve   | Group Project Assessments | Allow a group of students to collaborate on a single project, submit it for review, then grade peer groups |
