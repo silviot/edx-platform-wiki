@@ -31,7 +31,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Say "Yes" to the question about using existing sources for the project
 * Create a PyCharm remote interpreter:
 
-  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described below in section 'Creating a remote python interpreter (PyCharm v3.4+)' below. When you finish with those steps continue back here with the next section below.)
+  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described in section 'Creating a remote python interpreter (PyCharm v3.4+)' below. When you finish with those steps continue back here with the next section below.)
 
   * Select "Preferences..." from the Apple menu
   * Expand "Project Interpreter" under "Project Settings"
