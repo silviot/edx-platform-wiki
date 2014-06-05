@@ -31,6 +31,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[JavaScript Guidelines]]
 * [[i18n Coding Guidelines]]
 * [[Test Engineering FAQ]]
+* [[Code Ownership]]
 * [[Hackathons]]
 * [[Writing easily XBlock portable XModules]]
 * [[Internationalization and Localization]]
