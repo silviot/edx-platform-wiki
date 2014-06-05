@@ -1,4 +1,4 @@
-UNDER CONSTRUCTION!
+Let's focus on APIs if we can, but completely understand if we want to focus on other things.
 
 # The Hacks
 
