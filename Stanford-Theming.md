@@ -4,8 +4,8 @@ To enable Stanford theming in a sandbox instance:
 
 ```
 edxapp_use_custom_theme: true
-edxapp_theme_name: 'stanford'
-edxapp_theme_source_repo: 'git://github.com/Stanford-Online/edx-theme.git'
+edxapp_theme_name: 'default'
+edxapp_theme_source_repo: 'git://github.com/Stanford-Online/edx-default-theme.git'
 edxapp_theme_version: 'HEAD'
 ```
 
