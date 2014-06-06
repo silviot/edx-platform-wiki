@@ -20,8 +20,10 @@ Implementation:
 * ORA drops in Python apps which requires some small amount of platform configuration
 * ORA has back-end services that manage all of its own data
 
-Challenges:
+Requirements:
 * All ORA configuration UI is done through the Studio xblock editor because there is no other option
+* [[https://edx-wiki.atlassian.net/browse/TIM-512]] - Course authors can create and configure student assessor training
+* [[https://edx-wiki.atlassian.net/browse/TIM-520]] - Authors can create and calibrate an AI assessment for student use
 
 ### Use Case 2: Forums
 
