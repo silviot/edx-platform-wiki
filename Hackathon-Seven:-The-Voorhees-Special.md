@@ -9,3 +9,4 @@ Ned     | Coverage measurement of Django templates | Last time was Mako, let's t
 Will    | Mobile study groups app  |  |
 Steve   | Group Project Assessments | Allow a group of students to collaborate on a single project, submit it for review, then grade peer groups |
 AndyA | [[XBlock Admin Views|xblock-admin-views]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
+Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
