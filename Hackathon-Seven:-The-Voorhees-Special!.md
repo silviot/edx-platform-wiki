@@ -21,3 +21,5 @@ Demo day is Friday the 13th, hopefully the demos aren't too scary! Extra points 
 | dave  | Downloads service | | |
 | dave  | Cheap pull-only course/item/user level notifications | | |
 | dave  | Video source service (different locations/encodings) | | |
+| dave  | A better terminal-based viewer for profiling results | | |
+| dave  | Something to automatically dump profiles of views in dev | | |
