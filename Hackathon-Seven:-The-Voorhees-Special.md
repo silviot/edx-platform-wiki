@@ -11,3 +11,14 @@ Steve   | Group Project Assessments | Allow a group of students to collaborate o
 AndyA | [[XBlock Admin Views|xblock-admin-views]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
 Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
 Jarv | Packages for open-edx installations | Install edX without having to go out to pypi, github, with a package for every role. How about `apt-get install edx`?
+| dave  | Faster Grading | A few different possibilities, starting with reducing SQL queries.
+| dave  | Cert Generation via Celery Task | 
+| dave  | Improving LMS browser load times | 
+| dave  | Improving Studio browser load times |
+| dave  | edX as an OAuth provider | i.e. SSO between edX apps
+| dave  | Submissions app as XBlock Runtime Service | 
+| dave  | Downloads service | A facility for writing files to S3 that would be made available for XBlocks.
+| dave  | Cheap pull-only course/item/user level notifications | 
+| dave  | Video source service | abstract away different locations/encodings
+| dave  | A better terminal-based viewer for profiling results | i.e. a better RunSnakeRun 
+| dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier
