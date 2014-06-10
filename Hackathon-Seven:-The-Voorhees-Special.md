@@ -14,6 +14,7 @@ Jun 13, 2014: *demo* (3:00-4:30pm) (Google Hangout, Drinks and Snacks!)
 * Steve
 * Adam
 * Carlos
+* Will
 * Jay
 
 # Hackathon Ideas
