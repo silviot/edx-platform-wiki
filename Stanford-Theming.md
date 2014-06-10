@@ -32,6 +32,6 @@ The `themes/<theme-name>/templates` directory must contain 4 files :
 - theme-footer.html
 - theme-google-analytics.html
 
-3) You shall then [recompile the assets](https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack#compile-assets-manually).
+3) You shall then [recompile the LMS assets](https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack#compile-assets-manually).
 
 If you want deeper customisations, you shall begin by looking at [the lms/templates/main.html file](https://github.com/edx/edx-platform/blob/master/lms/templates/main.html).
