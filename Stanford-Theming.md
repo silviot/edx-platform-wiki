@@ -25,12 +25,12 @@ Theming only works for the LMS.
 
 2) You must put theme files in `/edx/app/edxapp/themes/<theme-name>/`.
 Put your images in `themes/<theme-name>/static/images`.
-The `themes/<theme-name>/static/sass` directory should at least contain a file named `_<theme-name>.scss`.
+The `themes/<theme-name>/static/sass` directory should at least contain a file named `_<theme-name>.scss` (can be empty).
 The `themes/<theme-name>/templates` directory must contain 4 files :
+- theme-head-extra.html (can be empty)
 - theme-header.html
-- theme-head-extra.html
 - theme-footer.html
-- theme-google-analytics.html
+- theme-google-analytics.html (can be empty)
 
 3) You shall then [recompile the LMS assets](https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack#compile-assets-manually).
 
