@@ -31,7 +31,7 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | dave  | Downloads service | A facility for writing files to S3 that would be made available for XBlocks.
 | dave  | Cheap pull-only course/item/user level notifications | 
 | dave  | Video source service | abstract away different locations/encodings
-| dave  | A better terminal-based viewer for profiling results | i.e. a better RunSnakeRun 
+| dave  | A better terminal-based viewer for profiling results | i.e. a better RunSnakeRun (something like/based on https://github.com/nedbat/memsee could be cool)
 | dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier
 | dave  | PostgreSQL 9.4 modulestore! |
 | dave  | User info XBlock Service |
@@ -39,3 +39,5 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | talbs | edX basic print & digital color scheme doc |
 | cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) |
 | cale  | Micro-app to manage racheting up/down of values (coverage, pep8/pylint, etc) |
+| cale  | Try out new load-test options (swarm? gatling?) |
+| cale  | Test plan generator
