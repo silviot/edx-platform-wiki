@@ -34,3 +34,5 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier
 | dave  | PostgreSQL 9.4 modulestore! |
 | dave  | User info XBlock Service |
+| talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462)
+| talbs | edX basic print & digital color scheme doc |
