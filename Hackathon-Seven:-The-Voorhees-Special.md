@@ -37,3 +37,5 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | dave  | User info XBlock Service |
 | talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462)
 | talbs | edX basic print & digital color scheme doc |
+| cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) |
+| cale  | Micro-app to manage racheting up/down of values (coverage, pep8/pylint, etc) |
