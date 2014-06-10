@@ -52,4 +52,4 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | cale  | Micro feature flags: need to migrate auth roles? Just disable things that create new auth roles |
 | cale  | More db-backed configuration |
 | Marco  | Make progress on LMS Redesign Phases 1-4 see: https://edx-wiki.atlassian.net/wiki/display/LMS/LMS+Redesign+-+Project+Phasing, summary  |
-| Sef | Collect basic stats from open-source deployments, collect up for KPI's.  | Reqts: Opt in.  management command to preview what would be sent, send once, or send periodically (celery beat?).  Server to collect stats.  What transport, email? I can't participate myself, but would be a fun feature to hack in |
+| Sef | Gather and send basic stats from open-source deployments, collect up for KPI's.  | Reqts: Opt in.  management command to preview what would be sent, send once, or send periodically (celery beat?).  Aggregate stats only: enrollments, certificates, etc.  Server to collect stats.  What transport, email? I can't participate myself, but would be a fun feature to hack in |
