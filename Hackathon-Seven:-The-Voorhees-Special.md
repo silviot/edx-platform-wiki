@@ -53,3 +53,4 @@ Team | Suggested By | Idea        | Notes
 || cale  | More db-backed configuration |
 || Marco  | Make progress on LMS Redesign Phases 1-4 see: https://edx-wiki.atlassian.net/wiki/display/LMS/LMS+Redesign+-+Project+Phasing, summary  |
 || Sef | Gather and send basic stats from open-source deployments, collect up for KPI's.  | Reqts: Opt in.  management command to preview what would be sent, send once, or send periodically (celery beat?).  Aggregate stats only: enrollments, certificates, etc.  Server to collect stats.  What transport, email? I can't participate myself, but would be a fun feature to hack in |
+|| cale | Try using http://django-compressor.readthedocs.org/en/latest/ instead of django-pipeline for our assets |
