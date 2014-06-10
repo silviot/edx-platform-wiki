@@ -32,3 +32,4 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | dave  | Video source service | abstract away different locations/encodings
 | dave  | A better terminal-based viewer for profiling results | i.e. a better RunSnakeRun 
 | dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier
+| dave  | PostgreSQL 9.4 modulestore! |
