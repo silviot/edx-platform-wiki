@@ -5,8 +5,16 @@ Let's focus on APIs if we can, but completely understand if we want to focus on 
 Demo day is Friday the 13th, hopefully the demos aren't too scary! Extra points for incorporating the theme into your demos!
 
 # The Schedule
-1. Jun 12, 2014: *hack* (6:00pm - Dinner?)
-2. Jun 13, 2014: *demo* (3:00-4:30pm) (Google Hangout, Drinks and Snacks!)
+Jun 12, 2014: *hack* (6:00pm - Dinner)
+Jun 13, 2014: *demo* (3:00-4:30pm) (Google Hangout, Drinks and Snacks!)
+
+# Dinner Attendees
+* Andy A.
+* Gabe 
+* Steve
+* Adam
+* Carlos
+* Jay
 
 # Hackathon Ideas
 
