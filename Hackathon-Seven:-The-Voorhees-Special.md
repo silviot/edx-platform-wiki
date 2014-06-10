@@ -12,7 +12,7 @@ Demo day is Friday the 13th, hopefully the demos aren't too scary! Extra points 
 
 Name(s) | Idea        | Notes
 --------|-------------|-------
-DB      | Django 1.6! | It's a crazy idea. But I want to give it a shot. ([the work begins here](https://github.com/edx/xblock-sdk/pull/10))
+DB      | Django 1.6! | It's a crazy idea. But I want to give it a shot. ([the work begins here](https://github.com/edx/xblock-sdk/pull/10)); (dave: maybe 1.7? It's almost out...)
 Christina| Improvement to Advanced Settings page in Studio | Display names, help, hide "deprecated" fields, possibly validation
 JZ, BenP     | Create a rules-based risk calculation for PRs | I got started with this [here](https://github.com/jzoldak/gh-pr-risk)
 Ned     | Coverage measurement of Django templates | Last time was Mako, let's try Django.
