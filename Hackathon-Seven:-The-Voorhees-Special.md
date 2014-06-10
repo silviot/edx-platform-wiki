@@ -13,7 +13,7 @@ Demo day is Friday the 13th, hopefully the demos aren't too scary! Extra points 
 Name(s) | Idea        | Notes
 --------|-------------|-------
 Adam    | Analysis of "goals" field in auth_userprofile | Why do people sign up for edX? Do student goals correlate with success? Completion rates? Courses enrolled in?
-DB      | Django 1.6! | It's a crazy idea. But I want to give it a shot. ([the work begins here](https://github.com/edx/xblock-sdk/pull/10)); (dave: maybe 1.7? It's almost out... cale: shoot for 1.7!)
+DB      | Django 1.6! | It's a crazy idea. But I want to give it a shot. ([the work begins here](https://github.com/edx/xblock-sdk/pull/10)); (dave: maybe 1.7? It's almost out... cale: shoot for 1.7! Also, see https://github.com/edx/edx-platform/wiki/Moving-to-Django-1.7)
 Christina| Improvement to Advanced Settings page in Studio | Display names, help, hide "deprecated" fields, possibly validation
 JZ, BenP     | Create a rules-based risk calculation for PRs | I got started with this [here](https://github.com/jzoldak/gh-pr-risk)
 Ned     | Coverage measurement of Django templates | Last time was Mako, let's try Django.
