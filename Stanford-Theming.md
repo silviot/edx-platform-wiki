@@ -20,9 +20,10 @@ sudo /edx/bin/update edx-platform master
 # Manual method
 
 Theming only works for the LMS.
-You should first modify `/edx/app/edxapp/lms.auth.json`, and set USE_CUSTOM_THEME (True), THEME_NAME (the theme directory name) and PLATFORM_NAME (it will replace "edX" in many views).
 
-You must put theme files in `/edx/app/edxapp/themes/<theme-name>/`.
+1) You should first modify `/edx/app/edxapp/lms.auth.json`, and set USE_CUSTOM_THEME (True), THEME_NAME (the theme directory name) and PLATFORM_NAME (it will replace "edX" in many views).
+
+2) You must put theme files in `/edx/app/edxapp/themes/<theme-name>/`.
 Put your images in `themes/<theme-name>/static/images`.
 The `themes/<theme-name>/static/sass` directory should at least contain a file named `_<theme-name>.scss`.
 The `themes/<theme-name>/templates` directory must contain 4 files :
@@ -31,6 +32,6 @@ The `themes/<theme-name>/templates` directory must contain 4 files :
 - theme-footer.html
 - theme-google-analytics.html
 
-You shall then [recompile the assets](If you're on the production stack, run the commands at https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack#compile-assets-manually).
+3) You shall then [recompile the assets](If you're on the production stack, run the commands at https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack#compile-assets-manually).
 
 If you want deeper customisations, you shall begin by looking at [the lms/templates/main.html file](https://github.com/edx/edx-platform/blob/master/lms/templates/main.html).
