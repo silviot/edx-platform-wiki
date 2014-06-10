@@ -51,3 +51,4 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | cale  | Test plan generator |
 | cale  | Micro feature flags: need to migrate auth roles? Just disable things that create new auth roles |
 | cale  | More db-backed configuration |
+| Marco  | Make progress on LMS Redesign Phases 1-4 see: https://edx-wiki.atlassian.net/wiki/display/LMS/LMS+Redesign+-+Project+Phasing, summary  |
