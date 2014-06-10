@@ -40,4 +40,6 @@ Jarv | Packages for open-edx installations | Install edX without having to go ou
 | cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) |
 | cale  | Micro-app to manage racheting up/down of values (coverage, pep8/pylint, etc) |
 | cale  | Try out new load-test options (swarm? gatling?) |
-| cale  | Test plan generator
+| cale  | Test plan generator |
+| cale  | Micro feature flags: need to migrate auth roles? Just disable things that create new auth roles |
+| cale  | More db-backed configuration |
