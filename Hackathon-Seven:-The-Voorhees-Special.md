@@ -56,3 +56,4 @@ Team | Suggested By | Idea        | Notes |
 || Sef | Gather and send basic stats from open-source deployments, collect up for KPI's.  | Reqts: Opt in.  management command to preview what would be sent, send once, or send periodically (celery beat?).  Aggregate stats only: enrollments, certificates, etc.  Server to collect stats.  What transport, email? I can't participate myself, but would be a fun feature to hack in |
 || cale | Try using http://django-compressor.readthedocs.org/en/latest/ instead of django-pipeline for our assets |
 || cale | Experiment w/ using django-storages to power our static assets (thorny issue: locked assets and one-time urls for same |
+|| carlos | Provide some automatic extension points for external django apps to the LMS.| The idea is to move apps like psychometrics and licenses to their own reports, but still let people easily include them in their deployments with just changes to django settings (not to url.py)|
