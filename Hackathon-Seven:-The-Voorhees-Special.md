@@ -31,7 +31,7 @@ Team | Suggested By | Idea        | Notes |
 ||AndyA | [[XBlock Admin Views|xblock-admin-views]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
 ||Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
 ||Jarv | Packages for open-edx installations | Install edX without having to go out to pypi, github, with a package for every role. How about `apt-get install edx`? |
-|| dave  | Faster Grading | A few different possibilities, starting with reducing SQL queries. |
+|dave| dave  | Faster Grading | A few different possibilities, starting with reducing SQL queries. |
 || dave  | Cert Generation via Celery Task | 
 || dave  | Improving LMS browser load times | 
 || dave  | Improving Studio browser load times |
