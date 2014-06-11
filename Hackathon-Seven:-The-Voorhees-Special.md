@@ -42,17 +42,17 @@ Team | Suggested By | Idea        | Notes |
 || dave  | Video source service | abstract away different locations/encodings |
 || dave  | A better terminal-based viewer for profiling results | i.e. a better RunSnakeRun (something like/based on https://github.com/nedbat/memsee could be cool) |
 || dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier |
-|| dave  | PostgreSQL 9.4 modulestore! |
-|| dave  | User info XBlock Service |
-|| talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462) |
-|| talbs | edX basic print & digital color scheme doc |
-|| cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) |
-|| cale  | Micro-app to manage racheting up/down of values (coverage, pep8/pylint, etc) |
-|| cale  | Try out new load-test options (swarm? gatling?) |
-|| cale  | Test plan generator |
-|| cale  | Micro feature flags: need to migrate auth roles? Just disable things that create new auth roles |
-|| cale  | More db-backed configuration |
-|| Marco  | Make progress on LMS Redesign Phases 1-4 see: https://edx-wiki.atlassian.net/wiki/display/LMS/LMS+Redesign+-+Project+Phasing, summary  |
+|| dave  | PostgreSQL 9.4 modulestore! | |
+|| dave  | User info XBlock Service | |
+|| talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462) | Sarina: If you're going to improve the pipeline maybe we can also do RTL..?? |
+|| talbs | edX basic print & digital color scheme doc | |
+|| cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) | |
+|| cale  | Micro-app to manage racheting up/down of values (coverage, pep8/pylint, etc) | Sarina: Am curious what you're thinking for this |
+|| cale  | Try out new load-test options (swarm? gatling?) | |
+|| cale  | Test plan generator | |
+|| cale  | Micro feature flags: need to migrate auth roles? Just disable things that create new auth roles | |
+|| cale  | More db-backed configuration | |
+|| Marco  | Make progress on LMS Redesign Phases 1-4 see: https://edx-wiki.atlassian.net/wiki/display/LMS/LMS+Redesign+-+Project+Phasing, summary  | |
 || Sef | Gather and send basic stats from open-source deployments, collect up for KPI's.  | Reqts: Opt in.  management command to preview what would be sent, send once, or send periodically (celery beat?).  Aggregate stats only: enrollments, certificates, etc.  Server to collect stats.  What transport, email? I can't participate myself, but would be a fun feature to hack in |
 || cale | Try using http://django-compressor.readthedocs.org/en/latest/ instead of django-pipeline for our assets |
 || cale | Experiment w/ using django-storages to power our static assets (thorny issue: locked assets and one-time urls for same |
