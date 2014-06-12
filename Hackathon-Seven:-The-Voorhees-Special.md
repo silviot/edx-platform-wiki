@@ -61,7 +61,7 @@ Team | Suggested By | Idea        | Notes |
 || cale | Try using http://django-compressor.readthedocs.org/en/latest/ instead of django-pipeline for our assets |
 || cale | Experiment w/ using django-storages to power our static assets (thorny issue: locked assets and one-time urls for same |
 || carlos | Provide some automatic extension points for external django apps to the LMS.| The idea is to move apps like psychometrics and licenses to their own reports, but still let people easily include them in their deployments with just changes to django settings (not to url.py)|
-|| nimisha | Update Studio Analytics | We already upload data using segment.io, but some is buggy and more should be tracked.|
+|| nimisha | Update [[Studio Analytics|https://edx-wiki.atlassian.net/wiki/display/STU/Studio+Analytics]]  | We already upload data using segment.io, but some is buggy and more should be tracked.|
 || nimisha | Touch of gamification: crossword puzzle problem xBlock | Add a little "fun" way of testing students. |
 || dave | Log releases in New Relic | https://rpm.newrelic.com/accounts/88178/applications/1588430/deployments/instructions
 || grady | EASE --> EASiEr | I think that sums it up.  Diving into EASE, doing a deep clean. Removing Redundancy, speeding things up.  Not doing quadruple checking for ASCII formatting.  Etc. |
