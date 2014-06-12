@@ -19,6 +19,7 @@ Jun 13, 2014: *demo* (3:00-4:30pm) (Google Hangout, Drinks and Snacks!)
 * Ben
 * Grady
 * Dennis
+* Ben McMorran
 
 # Hackathon Ideas
 
