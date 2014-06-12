@@ -61,8 +61,8 @@ Team | Suggested By | Idea        | Notes |
 || cale | Try using http://django-compressor.readthedocs.org/en/latest/ instead of django-pipeline for our assets |
 || cale | Experiment w/ using django-storages to power our static assets (thorny issue: locked assets and one-time urls for same |
 || carlos | Provide some automatic extension points for external django apps to the LMS.| The idea is to move apps like psychometrics and licenses to their own reports, but still let people easily include them in their deployments with just changes to django settings (not to url.py)|
-| BenM | nimisha | Update [[Studio Analytics|https://edx-wiki.atlassian.net/wiki/display/STU/Studio+Analytics]]  | We already upload data using segment.io, but some is buggy and more should be tracked.|
-|| nimisha | Touch of gamification: crossword puzzle problem xBlock | Add a little "fun" way of testing students. |
+| BenM, Nimisha | nimisha | Update [[Studio Analytics|https://edx-wiki.atlassian.net/wiki/display/STU/Studio+Analytics]]  | We already upload data using segment.io, but some is buggy and more should be tracked.|
+|BenM, Nimisha | nimisha | Touch of gamification: crossword puzzle problem xBlock | Add a little "fun" way of testing students. |
 || dave | Log releases in New Relic | https://rpm.newrelic.com/accounts/88178/applications/1588430/deployments/instructions
 || nikhil | API instead of iframes for Course about pages | https://edx-wiki.atlassian.net/browse/WEB-869
 || nikhil | Integration of platform with interactive Raspberry Pi preview & code generator |
