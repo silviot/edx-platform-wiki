@@ -33,7 +33,7 @@ Team | Suggested By | Idea        | Notes |
 |Mat P| Will    | Mobile study groups app  |  |
 |Steve |Steve   | Group Project Assessments | Allow a group of students to collaborate on a single project, submit it for review, then grade peer groups. Yay! |
 ||AndyA | [[XBlock Admin Views|xblock-admin-views]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
-| Brian, Dennis |Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
+| Brian, Dennis, Gabe |Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
 ||Jarv | Packages for open-edx installations | Install edX without having to go out to pypi, github, with a package for every role. How about `apt-get install edx`? |
 |dave| dave  | Faster Grading | A few different possibilities, starting with reducing SQL queries. |
 || dave  | Cert Generation via Celery Task | 
