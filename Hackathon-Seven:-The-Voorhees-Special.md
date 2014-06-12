@@ -71,3 +71,5 @@ Team | Suggested By | Idea        | Notes |
 | Olga | Olga | Analytics Wish List | Gather questions from teams about our courses and students |
 | gprice | gprice | diff-quality 2.0 | Productizing work from last hackathon |
 | dmitchell | dmitchell | heartbeat | refactor heartbeat to scale and to test service |
+| sarina, feanil | feanil | refactor django-pipeline | remove coffeescript and sass compilation from paver and into django-pipeline |
+| sarina | sarina | language selection menu in CMS | wire up Talbs' UX prototype of CMS language selector menu |
