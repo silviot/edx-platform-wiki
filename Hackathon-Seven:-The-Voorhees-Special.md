@@ -48,8 +48,8 @@ Team | Suggested By | Idea        | Notes |
 || dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier |
 || dave  | PostgreSQL 9.4 modulestore! | |
 || dave  | User info XBlock Service | |
-|| talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462) | Sarina: If you're going to improve the pipeline maybe we can also do RTL..?? |
-|| talbs | edX basic print & digital color scheme doc | |
+|| talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462) | |
+|| talbs | edX Mobile iOS UX Concepts | exploring experience and UI ideas |
 || cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) | |
 || cale  | Micro-app to manage ratcheting up/down of values (coverage, pep8/pylint, etc) | Sarina: Am curious what you're thinking for this |
 || cale  | Try out new load-test options (swarm? gatling?) | |
