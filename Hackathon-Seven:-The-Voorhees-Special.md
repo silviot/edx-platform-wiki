@@ -73,3 +73,4 @@ Team | Suggested By | Idea        | Notes |
 | dmitchell | dmitchell | heartbeat | refactor heartbeat to scale and to test service |
 | sarina, feanil | feanil | refactor django-pipeline | remove coffeescript and sass compilation from paver and into django-pipeline |
 | sarina | sarina | language selection menu in CMS | wire up Talbs' UX prototype of CMS language selector menu |
+| Will | Will | Outsource the test infrastructure | Try out SolanoLabs as a replacement for Jenkins |
