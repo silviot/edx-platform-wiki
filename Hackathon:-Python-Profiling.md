@@ -4,7 +4,7 @@ A more full fledged profile viewer using http://urwid.org/
 
 a tree view example:
 http://urwid.org/examples/index.html#browse-py
-which would be great for generating something like the thread profiles in https://rpm.newrelic.com/accounts/88178/key_transactions/8111/...
+which would be great for generating something like the thread profiles in https://rpm.newrelic.com/accounts/88178/key_transactions/8111/x_rays/902/profiles
 (with the cumulative numbers)
 
 the pstats module already has a commandline functionality (python -m pstats <profile file>), but actually being able to drill down and see the tree is a pain
