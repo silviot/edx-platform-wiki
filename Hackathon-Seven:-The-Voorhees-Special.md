@@ -29,7 +29,7 @@ Team | Suggested By | Idea        | Notes |
 | clintonb | DB      | Django 1.6! | It's a crazy idea. But I want to give it a shot. ([the work begins here](https://github.com/edx/xblock-sdk/pull/10)); (dave: maybe 1.7? It's almost out... cale: shoot for 1.7! Also, see https://github.com/edx/edx-platform/wiki/Moving-to-Django-1.7) |
 | Christina, Frances, Mark | Christina| Improvement to Advanced Settings page in Studio | Display names, help, hide "deprecated" fields, possibly validation. Add some structure; links to docs for each |
 | JZ, BenP | JZ | Create a rules-based risk calculation for PRs | I got started with this [here](https://github.com/jzoldak/gh-pr-risk) |
-|| Ned     | Coverage measurement of Django templates | Last time was Mako, let's try Django. |
+|Ned | Ned     | Coverage measurement of Django templates | Last time was Mako, let's try Django. |
 |Mat P| Will    | Mobile study groups app  |  |
 |Steve |Steve   | Group Project Assessments | Allow a group of students to collaborate on a single project, submit it for review, then grade peer groups. Yay! |
 ||AndyA | [[XBlock Admin Views|xblock-admin-views]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
