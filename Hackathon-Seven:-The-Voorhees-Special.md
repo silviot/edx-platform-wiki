@@ -18,6 +18,7 @@ Jun 13, 2014: *demo* (3:00-4:30pm) (Google Hangout, Drinks and Snacks!)
 * Jay
 * Ben
 * Grady
+
 # Hackathon Ideas
 
 Team | Suggested By | Idea        | Notes |
