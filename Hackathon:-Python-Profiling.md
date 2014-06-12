@@ -25,7 +25,7 @@ pstats source code: http://hg.python.org/cpython/file/f89216059edf/Lib/pstats.py
 
 and of course, lots of profiles to try out:
 
-https://edx-wiki.atlassian.net/wiki/display/LMS/Opaque+Keys+Profile...
+https://edx-wiki.atlassian.net/wiki/display/LMS/Opaque+Keys+Profile+Results
 
 fwiw, almost everyone uses cProfile to generate pstats files. i'm not sure if profile produces slightly different data, but i think it's safe to ignore for the first pass. all the profiles nimisha, cale, and i posted were generated with cProfile
 
