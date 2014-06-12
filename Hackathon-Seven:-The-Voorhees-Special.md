@@ -65,3 +65,4 @@ Team | Suggested By | Idea        | Notes |
 || nimisha | Touch of gamification: crossword puzzle problem xBlock | Add a little "fun" way of testing students. |
 || dave | Log releases in New Relic | https://rpm.newrelic.com/accounts/88178/applications/1588430/deployments/instructions
 || grady | EASE --> EASiEr | I think that sums it up.  Diving into EASE, doing a deep clean. Removing Redundancy, speeding things up.  Not doing quadruple checking for ASCII formatting.  Etc. |
+|| Olga | Analytics Wish List | Gather questions from teams about our courses and students |
