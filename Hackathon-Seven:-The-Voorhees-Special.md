@@ -29,7 +29,7 @@ Team | Suggested By | Idea        | Notes |
 |Mat P| Will    | Mobile study groups app  |  |
 ||Steve   | Group Project Assessments | Allow a group of students to collaborate on a single project, submit it for review, then grade peer groups. Yay! |
 ||AndyA | [[XBlock Admin Views|xblock-admin-views]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
-||Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
+| Brian |Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
 ||Jarv | Packages for open-edx installations | Install edX without having to go out to pypi, github, with a package for every role. How about `apt-get install edx`? |
 |dave| dave  | Faster Grading | A few different possibilities, starting with reducing SQL queries. |
 || dave  | Cert Generation via Celery Task | 
@@ -47,7 +47,7 @@ Team | Suggested By | Idea        | Notes |
 || talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462) | Sarina: If you're going to improve the pipeline maybe we can also do RTL..?? |
 || talbs | edX basic print & digital color scheme doc | |
 || cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) | |
-|| cale  | Micro-app to manage racheting up/down of values (coverage, pep8/pylint, etc) | Sarina: Am curious what you're thinking for this |
+|| cale  | Micro-app to manage ratcheting up/down of values (coverage, pep8/pylint, etc) | Sarina: Am curious what you're thinking for this |
 || cale  | Try out new load-test options (swarm? gatling?) | |
 || cale  | Test plan generator | |
 || cale  | Micro feature flags: need to migrate auth roles? Just disable things that create new auth roles | |
