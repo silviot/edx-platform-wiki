@@ -74,3 +74,4 @@ Team | Suggested By | Idea        | Notes |
 | sarina, feanil | feanil | refactor django-pipeline | remove coffeescript and sass compilation from paver and into django-pipeline |
 | sarina | sarina | language selection menu in CMS | wire up Talbs' UX prototype of CMS language selector menu |
 | Will | Will | Outsource the test infrastructure | Try out SolanoLabs as a replacement for Jenkins |
+| Brian & Lou | Brian & Lou | edX in a Mobile World | What would edX designed from the ground up for mobile look like? |
