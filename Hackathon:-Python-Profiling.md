@@ -31,6 +31,6 @@ fwiw, almost everyone uses cProfile to generate pstats files. i'm not sure if pr
 
 urwid's a little light on docs for some features, so it might be easiest to start with their browse.py example and modify it to suit your needs, rather than building one from scratch. though i haven't looked into that hardly at all.
 
-https://github.com/wardi/urwid/blob/master/examples/brows...
+https://github.com/wardi/urwid/blob/master/examples/browse.py
 
 http://urwid.org/
