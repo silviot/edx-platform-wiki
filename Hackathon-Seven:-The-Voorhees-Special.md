@@ -44,7 +44,7 @@ Team | Suggested By | Idea        | Notes |
 || dave  | Downloads service | A facility for writing files to S3 that would be made available for XBlocks. |
 || dave  | Cheap pull-only course/item/user level notifications | 
 || dave  | Video source service | abstract away different locations/encodings |
-|| dave  | A better terminal-based viewer for profiling results | i.e. a better RunSnakeRun (something like/based on https://github.com/nedbat/memsee could be cool) (dave: python -m pstats already provides basic cmdline functionality, but I was looking to make a tree listing cumulative view and other context-specific data via something like urwid) |
+|dkh, flowerhack| dave  | A better terminal-based viewer for profiling results | i.e. a better RunSnakeRun (something like/based on https://github.com/nedbat/memsee could be cool) (dave: python -m pstats already provides basic cmdline functionality, but I was looking to make a tree listing cumulative view and other context-specific data via something like urwid) |
 || dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier |
 || dave  | PostgreSQL 9.4 modulestore! | |
 || dave  | User info XBlock Service | |
