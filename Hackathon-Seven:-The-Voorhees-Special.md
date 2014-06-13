@@ -75,3 +75,4 @@ Team | Suggested By | Idea        | Notes |
 | sarina | sarina | language selection menu in CMS | wire up Talbs' UX prototype of CMS language selector menu |
 | Will | Will | Outsource the test infrastructure | Try out SolanoLabs as a replacement for Jenkins |
 | Brian & Lou | Brian & Lou | edX in a Mobile World | What would edX designed from the ground up for mobile look like? |
+|Justin H | Justin H | Report Generation Automation | link dependent tasks to run with one command with Luigi framework
