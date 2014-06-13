@@ -25,4 +25,4 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [UNC Online](https://mooc.northcarolina.edu/)
 * [BistuX](http://x.bistu.edu.cn)
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](http://upex.iaen.edu.ec)
-* [edxUCL](http://edx.ucl.br/)
+* [edXUCL](http://edx.ucl.br/)
