@@ -1,5 +1,3 @@
-# Powered by Open edX Logos
-
 We ask that all instances of Open edX use one of the following logos in their footer (there is a pull-request for `footer.html` to do this by default).
 
 Please use the S3 URLs rather than host yourself.
