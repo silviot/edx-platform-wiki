@@ -1,5 +1,10 @@
 _Work in progress..._
 
+## Update
+
+Here's the PR for the hackathon project: https://github.com/edx/edx-platform/pull/4079
+Here are the changes for once the PR is closed: https://github.com/edx/edx-platform/compare/master...hackathon;andya;xblock-admin-pages
+
 ## Overview
 
 Currently, the only way to introduce new UI into Studio is either (a) xblocks to add new modules or (b) coding directly into the platform. In discussions with other groups, they all would like to plug in Studio capabilities without touching the code base. My idea is that we should think of xblock as being a platform plugin capability, rather than purely a way to build components for units. 
