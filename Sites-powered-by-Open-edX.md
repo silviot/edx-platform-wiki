@@ -26,3 +26,4 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [BistuX](http://x.bistu.edu.cn)
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](http://upex.iaen.edu.ec)
 * [edXUCL](http://edx.ucl.br/)
+* [MoocIT](http://learn-moocit.fr/)
