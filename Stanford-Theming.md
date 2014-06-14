@@ -21,7 +21,7 @@ sudo /edx/bin/update edx-platform master
 
 Theming only works for the LMS.
 
-1) You should first modify `/edx/app/edxapp/lms.auth.json`, and set USE_CUSTOM_THEME (True), THEME_NAME (the theme directory name) and PLATFORM_NAME (it will replace "edX" in many views).
+1) You should first modify `/edx/app/edxapp/lms.env.json`, and set USE_CUSTOM_THEME (True), THEME_NAME (the theme directory name) and PLATFORM_NAME (it will replace "edX" in many views).
 
 2) You must put theme files in `/edx/app/edxapp/themes/<theme-name>/`.
 Put your images in `themes/<theme-name>/static/images`.
