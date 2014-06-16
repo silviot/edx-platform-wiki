@@ -32,7 +32,7 @@ Team | Suggested By | Idea        | Notes |
 |Ned | Ned     | Coverage measurement of Django templates | Last time was Mako, let's try Django. |
 || Will    | Mobile study groups app  |  |
 |Steve |Steve   | Group Project Assessments | https://github.com/edx/edx-ora2/tree/sanchez/group_projects Allow a group of students to collaborate on a single project, submit it for review, then grade peer groups. Yay! |
-||AndyA | [[XBlock Admin Views|xblock-admin-views]] [[Project PR|https://github.com/edx/edx-platform/pull/4079]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
+||AndyA | [[XBlock Admin Views|xblock-admin-views]], [[Project PR|https://github.com/edx/edx-platform/pull/4079]] | Support global/course-scoped admin pages for xblocks (for Studio, but would love help with Instructor Dashboard integration) |
 | Brian, Dennis, Gabe |Gabe | Hive Data Pipeline | Load all event data (and maybe some other sources) in to hive tables to experiment with and run adhoc queries against. |
 ||Jarv | Packages for open-edx installations | Install edX without having to go out to pypi, github, with a package for every role. How about `apt-get install edx`? |
 |dave| dave  | Faster Grading | A few different possibilities, starting with reducing SQL queries. |
