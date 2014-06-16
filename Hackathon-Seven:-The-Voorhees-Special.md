@@ -67,7 +67,7 @@ Team | Suggested By | Idea        | Notes |
 || nikhil | Integration of platform with interactive Raspberry Pi preview & code generator |
 || nikhil | Integration of platform with chat application |
 || grady | EASE --> EASiEr | I think that sums it up.  Diving into EASE, doing a deep clean. Removing Redundancy, speeding things up.  Not doing quadruple checking for ASCII formatting.  Etc. |
-| Olga | Olga | Analytics Wish List | Gather questions from teams about our courses and students |
+| Olga | Olga | Analytics Wish List | Gather questions from teams about our courses and students. Some results and PPT: https://edx-wiki.atlassian.net/wiki/display/AN/Analytics+Wish+List |
 | gprice | gprice | diff-quality 2.0 | Productizing work from last hackathon |
 | dmitchell | dmitchell | heartbeat | refactor heartbeat to scale and to test service https://github.com/edx/edx-platform/pull/4078|
 | sarina, feanil | feanil | refactor django-pipeline | remove coffeescript and sass compilation from paver and into django-pipeline |
