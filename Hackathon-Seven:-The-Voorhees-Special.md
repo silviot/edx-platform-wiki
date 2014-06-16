@@ -48,8 +48,7 @@ Team | Suggested By | Idea        | Notes |
 || dave  | Middleware to automatically dump profiles of views in dev | to make performance debugging easier |
 || dave  | PostgreSQL 9.4 modulestore! | |
 || dave  | User info XBlock Service | |
-|| talbs | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462) | Status: **Merged**|
-|| talbs | edX Mobile iOS UX Concepts | exploring experience and UI ideas | [Prototype screens can be viewed here](http://invis.io/2FXUPJKD)
+|| Brian T. | Help move [Sass/Bourbon/Neat update](https://github.com/edx/edx-platform/pull/3462) | Status: **Merged**|
 || cale  | Turn modulestores into FieldDatas (to continue the XBlockification of edx-platform) | |
 || cale  | Micro-app to manage ratcheting up/down of values (coverage, pep8/pylint, etc) | Sarina: Am curious what you're thinking for this |
 || cale  | Try out new load-test options (swarm? gatling?) | |
@@ -74,5 +73,5 @@ Team | Suggested By | Idea        | Notes |
 | sarina, feanil | feanil | refactor django-pipeline | remove coffeescript and sass compilation from paver and into django-pipeline |
 | sarina | sarina | language selection menu in CMS | wire up Talbs' UX prototype of CMS language selector menu |
 | Will | Will | Outsource the test infrastructure | Try out SolanoLabs as a replacement for Jenkins |
-| Brian & Lou | Brian & Lou | edX in a Mobile World | What would edX designed from the ground up for mobile look like? |
+| Brian & Lou | Brian & Lou | edX in a Mobile World | What would edX designed from the ground up for mobile look like? [Prototype screens can be viewed here](http://invis.io/2FXUPJKD) |
 |Justin H | Justin H | Report Generation Automation | link dependent tasks to run with one command with Luigi framework
