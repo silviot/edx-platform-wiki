@@ -2,3 +2,4 @@
 * [Paella Video XBlock](https://github.com/polimediaupv/paellaXBlock)
 * [Mathematica Cdf XBlock](https://github.com/polimediaupv/paellaXBlock)
 * [Staff graded assignment](https://github.com/jazkarta/edx-sga)
+* [PDF XBlock]( https://github.com/polimediaupv/pdfXBlock )
