@@ -35,7 +35,7 @@ interface that third parties can register for. As an example:
                 "versions": ["1", "dev"]
             },
             "demographics": {
-                "url": "https://api.edx.org/api/edx.analytics/courses/edX+Open_DemoX+edx_demo_course/enrollment"
+                "url": "https://analytics-api.edx.org/courses/edX+Open_DemoX+edx_demo_course/demographics"
                 "versions": ["dev"]
             }
         },
