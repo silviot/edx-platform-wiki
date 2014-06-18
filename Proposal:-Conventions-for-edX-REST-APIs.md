@@ -68,7 +68,7 @@ may cross app boundaries (say related apps in a repo). The basic guidelines:
 2. These would often be Django apps, but could also be very thin config pieces
    that do nothing more than point to services living on a different server.
 3. If there are versions specified for a given URL, it means that it will obey
-   the convention of passing a ?v={version} querystring parameter. Without
+   the convention of passing a `?v={version}` querystring parameter. Without
    an explicit version, apps should default to the latest. This does require a
    little more intelligence on the part of the client, but it makes things much
    more compact. There is the problem of moving the URLs -- this proposal would
@@ -79,7 +79,7 @@ may cross app boundaries (say related apps in a repo). The basic guidelines:
    database or network access to determine whether or not a resource URL will
    show up. This means that sometimes you might follow a link straight into a
    403 error and have to account for that.
-5. The URL for the canonical entities also respect a version ?v={version} param,
+5. The URL for the canonical entities also respect a version `?v={version}` param,
    but that version only applies to the minimal core data exposed. It does not
    apply to the resource list, which can change at any time when new services
    are added. 
