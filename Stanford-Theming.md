@@ -19,7 +19,7 @@ sudo /edx/bin/update edx-platform master
 
 # Manual method
 
-Theming only works for the LMS.
+Theming only works for the LMS. The CMS and the Wiki are left unchanged.
 
 1) You should first modify `/edx/app/edxapp/lms.env.json`, and set USE_CUSTOM_THEME (True), THEME_NAME (the theme directory name) and PLATFORM_NAME (it will replace "edX" in many views).
 
