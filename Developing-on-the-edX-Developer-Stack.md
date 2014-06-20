@@ -88,7 +88,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
 * Remember to rake assets (ssh into vagrant first) before running Studio from Pycharm. rake assets[cms,devstack]
-* To create other testing configurations (Bok Choy, Acceptance, CMS, ...) see the next section.
+* To create other testing configurations (Bok Choy, Acceptance, CMS, ...) see the [next section] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#debugging-your-tests).
 
 Note: for more details, check out the [PyCharm remote debugging documentation](http://www.jetbrains.com/pycharm/webhelp/remote-debugging.html).
 
