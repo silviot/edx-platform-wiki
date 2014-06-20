@@ -28,7 +28,7 @@ interface that third parties can register for. As an example:
 {
     "course_id": "edX+Open_DemoX+edx_demo_course",
     "name": "edX Demonstration Course", 
-    "resources": {
+    "_links": {
         "edx.analytics": {
             "enrollment": {
                 "url": "https://analytics-api.edx.org/courses/edX+Open_DemoX+edx_demo_course/enrollment"
