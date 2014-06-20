@@ -31,7 +31,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Say "Yes" to the question about using existing sources for the project
 * Create a PyCharm remote interpreter:
 
-  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described in [section below] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#creating-a-remote-python-interpreter-pycharm-v34). When you finish with those steps continue back here with the next section below.)
+  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described in [section below] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#creating-a-remote-python-interpreter-pycharm-v34). When you finish with those steps continue back here with the [next section] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#create-debug-configuration-for-pycharm).)
 
   * Select "Preferences..." from the Apple menu
   * Expand "Project Interpreter" under "Project Settings"
@@ -74,7 +74,8 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Click "OK" to save the new debug configuration
 * Rake assets (ssh into vagrant first, and su as edxapp user). rake assets[lms,devstack]
 
-### Create Debug Configuration for PyCharm 
+### Create Debug Configuration for PyCharm
+
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up
