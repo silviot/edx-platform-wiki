@@ -9,6 +9,8 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
 * First off, for Mac OS you will need [XQuartz](http://xquartz.macosforge.org/) installed to support X Windows. We have tested with version 2.7.5.
+* XQuartz is useful because we can use it to visually interact with GUI from the vagrant instance on the host machine. 
+* To test XQuartz's installation, in your vagrant machine, type "firefox" in the terminal. This should bring up Firefox on the host machine. If you have servers running on the vagrant machine (Studio, LMS, ...) you can use this Firefox instance to connect to those servers like they are being run on the host machine.
 * On your host machine, run `export VAGRANT_X11=1`. You may want to put this in your .bashrc or similar file so it will always execute at startup. If you have already been running vagrant, do `vagrant reload` after you have set the VAGRANT_X11 system environment variable on your host system.
 * We used to have to do a bunch of manual stuff to update the .Xauthority files, etc. This has been fixed programmatically in the configuration repo, prior to the release of 20140418-injera-devstack.box
 * If you want to run the acceptance tests without browser windows popping up on your host system, as the edxapp user redirect the DISPLAY environment variable.
