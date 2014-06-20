@@ -36,3 +36,13 @@ then you may be experiencing X11 forwarding timeouts.  The problem and solution 
 ### I've changed some code and in the diff-cover report, those lines are coming up as uncovered. But I know I'm testing them!
 * Changes to .coffee files will always show up as uncovered by diff-cover. This is because JsCover is the coverage reporter and it doesn't know about .coffee files, just .js files.
 * Changes to /common/lib files that are covered with tests under /foo/djangoapps (where foo = common, cms, lms) are reported as uncovered. That's not a unit test. Your test code should also be somewhere under /common/lib, close to what you are testing. Common library functionality should not presume a Django implementation.
+
+### I just got a new vagrant instance but some of my tests (Bok Choy, Acceptance, ...) seem to be failing. Should I be worried?
+* Check the particular test's instruction to see if you have accidentally skipped a step. Possible solutions include:
+  * Clean up the git repo: `git clean` and rebuild the static files: `rake assets[cms,devstack]`
+  * Restart MongoDB server: 
+`vagrant up
+vagrant ssh
+sudo rm /edx/var/mongo/mongodb/mongod.lock
+sudo start mongodb`
+  * In the worst case, get a fresh Vagrant instance. 
