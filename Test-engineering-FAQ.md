@@ -12,6 +12,7 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 * XQuartz is useful because we can use it to visually interact with GUI from the vagrant instance on the host machine. 
 * On your host machine, run `export VAGRANT_X11=1`. You may want to put this in your .bashrc, .bash_profile or similar file so it will always execute at startup. If you have already been running vagrant, do `vagrant reload` after you have set the VAGRANT_X11 system environment variable on your host system.
 * To test XQuartz's installation, in your vagrant machine, type `firefox` in the terminal. This should bring up Firefox on the host machine. If you have servers running on the vagrant machine (Studio, LMS, ...) you can use this Firefox instance to connect to those servers like they are being run on the host machine.
+[Vagrant's Firefox on Host Machine](https://drive.google.com/a/edx.org/file/d/0BxQlaq542xl2QzBHNjU0WUNMRGM/edit?usp=sharing)
 * Similarly, you can also run `rake test:bok_choy` (or if you have compiled the asset files, then `rake test:bok_choy:fast`) in vagrant's terminal. This should also bring up the browser in the host machine.
 * We used to have to do a bunch of manual stuff to update the .Xauthority files, etc. This has been fixed programmatically in the configuration repo, prior to the release of 20140418-injera-devstack.box
 * If you want to run the acceptance tests without browser windows popping up on your host system, as the edxapp user redirect the DISPLAY environment variable.
