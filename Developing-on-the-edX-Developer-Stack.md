@@ -56,6 +56,9 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
     * lms/djangoapps and lms/lib
     * cms/djangoapps and cms/lib
     * common/djangoapps and common/lib
+
+### Create Debug Configuration (LMS, Studio) for PyCharm
+
 * Create a debug configuration for LMS
   * Open the file 'edx-platform/manage.py' in your devstack folder
   * Right-click on the file and choose "Create 'manage'..." to create a debug configuration
@@ -73,9 +76,6 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
     * Deselect "Add source roots to PYTHONPATH"
   * Click "OK" to save the new debug configuration
 * Rake assets (ssh into vagrant first, and su as edxapp user). rake assets[lms,devstack]
-
-### Create Debug Configuration for PyCharm
-
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up
