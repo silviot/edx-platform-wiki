@@ -123,6 +123,9 @@ Debugging Bok Choy tests is more complex, as several processes are started up at
 * ```./manage.py cms runserver --settings bok_choy 0.0.0.0:8031```
 
 <a name="theme"></a>
+### Visually debug your tests
+You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ).
+
 ### Configuring Themes in Devstack
 
 There are currently two ways to theme the platform:
