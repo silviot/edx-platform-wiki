@@ -31,7 +31,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Say "Yes" to the question about using existing sources for the project
 * Create a PyCharm remote interpreter:
 
-  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described in [section below] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#creating-a-remote-python-interpreter-pycharm-v34). When you finish with those steps continue back here with the [next section] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#create-debug-configuration-for-pycharm).)
+  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described in [section below] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#creating-a-remote-python-interpreter-pycharm-v34). When you finish with those steps continue back here with the [next section to create debug configurations] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#create-debug-configuration-lms-studio-for-pycharm).)
 
   * Select "Preferences..." from the Apple menu
   * Expand "Project Interpreter" under "Project Settings"
