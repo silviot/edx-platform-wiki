@@ -5,9 +5,9 @@ API clients.
 An incomplete list of challenges (leaving authn/authz aside for now):
 
 1. Canonical entity representation (e.g. Course, User, Enrollment)
-2. Versioning
-3. Enabling third party additions
-4. Discovery
+2. Enabling third party additions
+3. Discovery (what mix of APIs are live on this particular edx-platform instance?)
+4. Versioning
 
 ### Big Open Questions
 
