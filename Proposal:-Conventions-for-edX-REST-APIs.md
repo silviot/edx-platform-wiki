@@ -30,7 +30,7 @@ minimal base representation, exposing most functionality via a pluggable
 interface that third parties can register for. As an example:
 
 ```JavaScript
-// GET /api/edx.core/courses/edX+Open_DemoX+edx_demo_course
+// GET /api/edx.canonical/courses/edX+Open_DemoX+edx_demo_course
 {
     "course_id": "edX+Open_DemoX+edx_demo_course",
     "name": "edX Demonstration Course", 
@@ -100,7 +100,7 @@ may cross app boundaries (say related apps in a repo). The basic guidelines:
 Here we omit the sub-resources and versions...
 
 ```JavaScript
-// GET /api/edx.core/courses/edX+Open_DemoX+edx_demo_course
+// GET /api/edx.canonical/courses/edX+Open_DemoX+edx_demo_course
 {
     "course_id": "edX+Open_DemoX+edx_demo_course",
     "name": "edX Demonstration Course", 
