@@ -11,8 +11,8 @@ API clients.
 
 ### Big Open Questions
 
-1. Should canonical entities even bother pointing to different versions?
-2. Should canonical entities only point to top level sub-api pages like `analytics.edx.org/api/courses/my_course` instead of the sub-resources? Would simplify.
+1. Should canonical entities only point to top level sub-api pages like `analytics.edx.org/api/courses/my_course` instead of the sub-resources? Would simplify.
+2. Should canonical entities even bother pointing to different versions?
 3. How to stitch them together? Explicit Django settings with ("name", "url")?
 
 ### Example Using a Canoncial Entity
