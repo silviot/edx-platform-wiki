@@ -2,12 +2,12 @@ Several groups are currently working on REST APIs for edx-platform (Analytics,
 Solutions, Mobile), and we need conventions to present a consistent interface to
 API clients.
 
-An incomplete list of challenges (leaving authn/authz aside for now):
+### Goals
 
-1. Canonical entity representation (e.g. Course, User, Enrollment)
-2. Enabling third party additions
+1. Determine a convention for canonical entity representation (e.g. Course, User, Enrollment)
+2. Enable third party additions to be on equal footing with internally developed edX apps
 3. Discovery (what mix of APIs are live on this particular edx-platform instance?)
-4. Versioning(?)
+4. Versioning (maybe)
 
 ### Big Open Questions
 
