@@ -215,7 +215,7 @@ In June of 2014 JetBrains released a new version of PyCharm. The new version han
   * You should see a small dialog with a progress bar and the message "Running Vagrant ssh-config"
   * When the process completes and the dialog disappears, test your connection by clicking on the ssh hyperlink indicated by "Vagrant Host URL:"
   * Specify "/edx/app/edxapp/venvs/edxapp/bin/python" for "Python interpreter path"
-![Pre-split mongo architecture stack](https://raw.github.com/edx/edx-platform/master/docs/en_us/architecture/presplit.jpg)
+![PyCharm 3.4+ conf](https://drive.google.com/file/d/0BxQlaq542xl2Vlp6ZE0tY2JPa2s/edit?usp=sharing)
 
 
 
