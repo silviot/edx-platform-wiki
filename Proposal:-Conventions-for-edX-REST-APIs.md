@@ -9,6 +9,11 @@ An incomplete list of challenges (leaving authn/authz aside for now):
 3. Enabling third party additions
 4. Discovery
 
+### Big Open Questions
+
+1. Should canonical entities even bother pointing to different versions?
+2. Should canonical entities only point to top level sub-api pages like `analytics.edx.org/api/courses/my_course` instead of the sub-resources? Would simplify.
+
 ### Example Using a Canoncial Entity
 
 There are certain entities that are such a core concept to edX that they are
