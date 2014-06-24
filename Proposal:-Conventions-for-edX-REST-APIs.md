@@ -94,6 +94,31 @@ may cross app boundaries (say related apps in a repo). The basic guidelines:
    parties can register their own. The exact mechanism for how we do this hasn't
    been determined yet.
 
+### A Simpler Canonical Entity
+
+Here we omit the sub-resources and versions...
+
+```JavaScript
+// GET /api/edx.core/courses/edX+Open_DemoX+edx_demo_course
+{
+    "course_id": "edX+Open_DemoX+edx_demo_course",
+    "name": "edX Demonstration Course", 
+    "_links": {
+        "edx.analytics": {
+            "url": "https://analytics-api.edx.org/courses/edX+Open_DemoX+edx_demo_course"
+        },
+        "edx.content": {
+            "url": "https://api.edx.org/api/edx.content/courses/edX+Open_DemoX+edx_demo_course/authors"
+        },
+        "edx.videos": {
+            "url": "https://api.edx.org/api/edx.video/video_listings/courses/edX+Open_DemoX+edx_demo_course"
+        }
+    },
+    "_version": "1",
+    "_versions": ["1"]
+}
+```
+
 ### High Level Discovery
 
 Each API would also define a top level entry point that would be shown when a
