@@ -55,7 +55,9 @@ interface that third parties can register for. As an example:
                 "versions": ["dev"]
             }
         }
-    }
+    },
+    "_version": "1",
+    "_versions": ["1"]
 }
 ```
 
