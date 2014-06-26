@@ -29,9 +29,10 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Select your devstack folder as the "Location"
   * Choose "Empty project" for "Project type" (note: don't choose "Django project" as that can't currently be interpreted remotely)
   * Say "Yes" to the question about using existing sources for the project
-* Create a PyCharm remote interpreter:
 
-  (NOTE: If you are using PyCharm v3.4 or later, skip this section and use the steps described in [section below] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#creating-a-remote-python-interpreter-pycharm-v34). When you finish with those steps continue back here with the [next section to create debug configurations] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#create-debug-configuration-lms-studio-for-pycharm).)
+### Create a PyCharm remote interpreter (v.3.3 and below):
+
+  (NOTE: If you are using PyCharm v3.4 or later, use the steps described in [section below] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#creating-a-remote-python-interpreter-pycharm-v34).)
 
   * Select "Preferences..." from the Apple menu
   * Expand "Project Interpreter" under "Project Settings"
@@ -57,7 +58,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
     * cms/djangoapps and cms/lib
     * common/djangoapps and common/lib
 
-### Creating a remote python interpreter (PyCharm v3.4+)
+### Create a PyCharm remote interpreter (PyCharm v3.4+)
 In June of 2014 JetBrains released a new version of PyCharm. The new version handles the creation of a remote interpreter a bit differently than the steps described above for earlier versions. 
 * Create a PyCharm remote interpreter:
   * Select "Preferences..." from the Apple menu
