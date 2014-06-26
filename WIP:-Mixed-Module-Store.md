@@ -1,9 +1,9 @@
 In preparation for updating edx-platform to use the [Split Modulestore](https://github.com/edx/edx-platform/wiki/Split%3A-the-versioning%2C-structure-saving-DAO), we have implemented an intermediary step 
 
 # MixedModuleStore API
-    Updated Studio and LMS so all callers, with a few exceptions, go through the MixedModulestore.
-        to find the exceptions (a few tests and 2 management commands), search for callers to _get_modulestore_by_type.
-    Updated the MixedModuleStore API and all their callers to take in the user_id for all Edit operations.
+* Updated Studio and LMS so all callers, with a few exceptions, go through the MixedModulestore.
+** to find the exceptions (a few tests and 2 management commands), search for callers to _get_modulestore_by_type.
+* Updated the MixedModuleStore API and all their callers to take in the user_id for all Edit operations.
 
 # Mongo Modulestore
 
