@@ -30,7 +30,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Choose "Empty project" for "Project type" (note: don't choose "Django project" as that can't currently be interpreted remotely)
   * Say "Yes" to the question about using existing sources for the project
 
-### Create a PyCharm remote interpreter (v.3.3 and below):
+### Create a PyCharm remote interpreter (PyCharm v.3.3 and below):
 
   (NOTE: If you are using PyCharm v3.4 or later, use the steps described in [section below] (https://github.com/edx/edx-platform/wiki/Developing-on-the-edX-Developer-Stack#creating-a-remote-python-interpreter-pycharm-v34).)
 
