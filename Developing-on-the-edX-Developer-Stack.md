@@ -57,6 +57,17 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
     * cms/djangoapps and cms/lib
     * common/djangoapps and common/lib
 
+### Creating a remote python interpreter (PyCharm v3.4+)
+In June of 2014 JetBrains released a new version of PyCharm. The new version handles the creation of a remote interpreter a bit differently than the steps described above for earlier versions. 
+* Create a PyCharm remote interpreter:
+  * Select "Preferences..." from the Apple menu
+  * Expand "Project Interpreter" under "Project Settings"
+  * Click the icon in the upper right corner of the dialog box--it looks like it may be a gear or a star.
+  * In the popup dialog that appears, click on "Add Remote"
+  * When the remote dialog appears, select the "SSH Credentials" radio button.
+  * Specify the following configurations:
+![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
+
 ### Create Debug Configuration (LMS, Studio) for PyCharm
 
 * Create a debug configuration for LMS
@@ -199,24 +210,6 @@ Sef (<sef@stanford.edu>).
        [resulting menu item](image/devstack_theme_gather_menu.png).
 
 There is nothing special about the name "default" in steps 1 and 3 above.  They just have to match up: the configuration file should have the same name as the directory in themes.  For example, I have both "stanford" and "default" subdirectories there and switching between them is just a matter of changing lms.envs.json, re-gathering assets, and restarting LMS.
-
-
-
-### Creating a remote python interpreter (PyCharm v3.4+)
-In June of 2014 JetBrains released a new version of PyCharm. The new version handles the creation of a remote interpreter a bit differently than the steps described above for earlier versions. 
-* Create a PyCharm remote interpreter:
-  * Select "Preferences..." from the Apple menu
-  * Expand "Project Interpreter" under "Project Settings"
-  * Click the icon in the upper right corner of the dialog box--it looks like it may be a gear or a star.
-  * In the popup dialog that appears, click on "Add Remote"
-  * When the remote dialog appears, select the "Vagrant" radio button
-  * Click on the "..." navigation icon to the right of the "Vagrant Instance Folder:" textbox
-  * In the "Select Path" dialog box that appears, navigate to and select the directory where your ".vagrant" folder and "Vagrantfile" live 
-  * You should see a small dialog with a progress bar and the message "Running Vagrant ssh-config"
-  * When the process completes and the dialog disappears, test your connection by clicking on the ssh hyperlink indicated by "Vagrant Host URL:"
-  * Specify "/edx/app/edxapp/venvs/edxapp/bin/python" for "Python interpreter path"
-![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
-
 
 
 
