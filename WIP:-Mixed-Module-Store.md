@@ -20,6 +20,7 @@ Also, each server instance had duplicated configuraton settings for the various 
 Now, all code goes through the common `MixedModuleStore` API, and there is a clearer distinction between modulestore-level logic (hierarchy traversal, handling revisions) and higher-level logic (handling `xBlock` exceptional cases such as for `StaticTab`s).
 
 **Server Configuration Settings**
+
 Since different servers may have differing default preferences for the revisions they require, we have 
 introduced a new server configuration setting (`MODULESTORE_BRANCH`) for specifying this preference, with currently supported values being `draft-preferred` (set by Studio) and `published-only` (set by LMS and Preview).
 
@@ -76,9 +77,18 @@ Additionally, we have changed the data structure for `Options[stores]` in the `M
 
 
 ***Overriding the Branch Setting via a contextmanager***
+
 Callers to the modulestore may, at (rare) times, need to override the server's default branch setting for certain operations.  For such cases, we have introduced a `contextmanager` named `store_branch_setting` to temporarily override the default branch setting.
 
+'''
+# sample usage of the store_branch_setting context manager
+# export only the published content
+with store_branch_setting(course.runtime.modulestore, BRANCH_PUBLISHED_ONLY):
+    course.add_xml_to_node(root)
+'''
+
 ***Optional Revision Parameter***
+
 In other cases, callers may need more detail control of the specific revisions of an xBlock that they want to access.  For such usage, we have provided an optional revision parameter in certain modulestore methods so the caller has more control of which revisions are queried. Currently, the following methods support a revision parameter: `has_item`, `get_item`, `get_items`, `get_parent_location`, and `delete_item`.
 
 The branch and revision constants can be found in the `ModuleStoreEnum` class:
@@ -131,6 +141,7 @@ class ModuleStoreEnum(object):
 ```
 
 **A Smarter Mongo**
+
 As part of this effort, we have updated the Mongo (and Draft) modulestore implementation so it is smarter about which revisions to update and automatically traversing the hierarchy when appropriate.  In particular, the `publish`, `unpublish`, `delete_item`, and `convert_to_draft` methods automatically affect all nodes in the subtree.  The `delete_item` and `get_parent_location` methods are now smarter about determining which revision to operate on, by default.
 
 
