@@ -1,4 +1,11 @@
-In preparation for updating edx-platform to use the [Split Modulestore](https://github.com/edx/edx-platform/wiki/Split%3A-the-versioning%2C-structure-saving-DAO), we have implemented an intermediary step 
+In preparation for enabling use of the [Split Modulestore](https://github.com/edx/edx-platform/wiki/Split%3A-the-versioning%2C-structure-saving-DAO), we have updated edx-platform so accesses to modulestores in LMS and Studio are always directed through the `MixedModuleStore`.  The `MixedModuleStore` is a server-wide singleton with a pluggable API where one or more courseware persistence providers can be accessed through a single interface.  Higher layers can call the `MixedModuleStore` with `UsageKeys` or `CourseKeys` and know that calls will be routed to the correct corresponding underlying store.  Each server instance configures its `MixedModuleStore` with its settings and preferred ordered list of providers.
+
+# Summary of Changes
+## Before
+<img alt="master" src="git-diagrams/mixed_modulestore_before.png" style="float:right">
+
+## After
+<img alt="master" src="git-diagrams/mixed_modulestore_after.png" style="float:right">
 
 ## MixedModuleStore API
 * Updated Studio and LMS so all callers, with a few exceptions, go through the MixedModulestore.
@@ -11,7 +18,7 @@ In preparation for updating edx-platform to use the [Split Modulestore](https://
 * Callers can specify whether they want only published versions in their runtime by configuring the modulestore's branch to 'published' (LMS). The default setting is 'draft' (used by CMS and Preview) which prefers Draft versions over Published versions.
 * Since (most) test code now go through the Draft store, some tests needed to be updated to explicitly Publish their newly created items if they assumed they would be in that state.
 * API changes:
-  * Updated APIs for has_item, get_parent_locations, get_items, and delete_item to take in a revision parameter. Refer to docstrings for more detail.
+  * Updated APIs such as has_item, get_parent_location, get_items, and delete_item to take in a revision parameter. Refer to docstrings for more detail.
   * Improvements to the implementation of the following APIs:
     * Publish - so it automatically publishes all the downstream children.
     * Delete - so it does the "right" thing depending on which revision is deleted, etc.
@@ -21,8 +28,3 @@ In preparation for updating edx-platform to use the [Split Modulestore](https://
 * Updated the settings for all Test code so they should all go through Mixed, unless they are explicitly testing a particular store.
 * Introduced a new Setting called MODULESTORE_BRANCH that specifies the default "branch" (draft or published) to be used by relevant modulestore methods. Currently, the DraftModuleStore uses this setting. Eventually, the SplitModuleStore will also honor it.
 
-## Before
-<img alt="master" src="git-diagrams/mixed_modulestore_before.png" style="float:right">
-
-## After
-<img alt="master" src="git-diagrams/mixed_modulestore_after.png" style="float:right">
