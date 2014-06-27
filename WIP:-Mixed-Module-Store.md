@@ -80,7 +80,6 @@ Additionally, we have changed the data structure for `Options[stores]` in the `M
 
 Callers to the modulestore may, at (rare) times, need to override the server's default branch setting for certain operations.  For such cases, we have introduced a `contextmanager` named `store_branch_setting` to temporarily override the default branch setting.
 
-'''
 ```
 # sample usage of the store_branch_setting context manager
 # export only the published content
