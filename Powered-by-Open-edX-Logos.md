@@ -1,6 +1,7 @@
-We ask that all instances of Open edX use one of the following logos in their footer (there is a pull-request for `footer.html` to do this by default).  By using this Powered By Open edX logo, you are helping edX protect the Open edX trademark, and helping create a strong message about the value of Open edX as a platform.
+We have created the following "Powered by Open edX" logos for use by adopters of the Open edX platform.  To help us protect the Open edX trademark and create a strong message about the value of the Open edX platform,
+we ask that all instances of Open edX use one of the following logos in their footer and link the logo to <http://openedx.org/> (there is a pull-request for `footer.html` to do this by default).
 
-Please use the S3 URLs rather than host yourself. The images should be links to <http://openedx.org/>.
+Please use the S3 URLs rather than host the images yourself.
 
 ## Color
 
