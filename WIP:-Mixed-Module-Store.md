@@ -83,4 +83,5 @@ class ModuleStoreEnum(object):
 **A Smarter Mongo**
 As part of this effort, we have updated the Mongo (and Draft) modulestore implementation so it is smarter about which revisions to update and automatically traversing the hierarchy when appropriate.  In particular, the `publish`, `unpublish`, `delete_item`, and `convert_to_draft` methods automatically affect all nodes in the subtree.  The `delete_item` and `get_parent_location` methods are now smarter about determining which revision to operate on, by default.
 
+
 All of these above changes will help us on our way to enabling the `SplitModulestore` (just a hop and a skip away).
