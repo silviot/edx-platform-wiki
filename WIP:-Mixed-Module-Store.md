@@ -4,8 +4,8 @@ The `MixedModuleStore` is a server-wide singleton with a pluggable API where one
 
 Each server instance configures its `MixedModuleStore` with database access parameters and its preferred ordered list of providers.
 
-# Summary of Changes
-*Before*
+## Summary of Changes
+### Before
 Prior to this work, Studio code had to be cognizant of the various Modulestores and explicitly request `Draft` or `Mongo` depending on the revision and category of the `xBlock` it was operating on.  The diagram below illustrates this.
 
 Additionally, logic for traversing `xBlock` hierarchies used to be dispersed in Studio higher level code.  
@@ -14,7 +14,7 @@ Also, each server instance had duplicated configuraton settings for the various 
 
 <img alt="master" src="git-diagrams/mixed_modulestore_before.png" style="float:right">
 
-## After
+### After
 Now, all code goes through the common `MixedModuleStore` API, and there is a clearer distinction between modulestore-level logic (hierarchy traversal, handling revisions) and higher-level logic (handling `xBlock` exceptions such as for `StaticTab`s).
 
 Since different server instances have different preferences for revisions, we have
