@@ -6,9 +6,9 @@ Each server instance configures its `MixedModuleStore` with database access para
 
 ## Summary of Changes
 ### Before
-Prior to this work, Studio code had to be cognizant of the various Modulestores and explicitly request `Draft` or `Mongo` (a.k.a 'direct') depending on the revision and category of the `xBlock` it was operating on.  The diagram below illustrates this.
+Prior to this work, Studio code had to be cognizant of the various Modulestores and explicitly request `Draft` or `Mongo` (a.k.a 'direct') depending on the revision and category of the XBlock it was operating on.  The diagram below illustrates this.
 
-Additionally, logic for traversing hierarchies when doing CRUD operations on xBlocks used to be done in higher layers (in Studio).  
+Additionally, logic for traversing hierarchies when doing CRUD operations on XBlocks used to be done in higher layers (in Studio).  
 
 Also, each server instance had duplicated configuraton settings for the various modulestores.   
 
@@ -17,7 +17,7 @@ Also, each server instance had duplicated configuraton settings for the various 
 ### After
 <img alt="master" src="git-diagrams/mixed_modulestore_after.png" style="float:right">
 
-Now, all code goes through the common `MixedModuleStore` API, and there is a clearer distinction between modulestore-level logic (hierarchy traversal, handling revisions) and higher-level logic (handling `xBlock` exceptional cases such as for `StaticTab`s).
+Now, all code goes through the common `MixedModuleStore` API, and there is a clearer distinction between modulestore-level logic (hierarchy traversal, handling revisions) and higher-level logic (handling XBlock exceptional cases such as for `StaticTab`s).
 
 **Server Configuration Settings**
 
@@ -89,7 +89,7 @@ with store_branch_setting(course.runtime.modulestore, BRANCH_PUBLISHED_ONLY):
 
 ***Optional Revision Parameter***
 
-In other cases, callers may need more detail control of the specific revisions of an xBlock that they want to access.  For such usage, we have provided an optional revision parameter in certain modulestore methods so the caller has more control of which revisions are queried. Currently, the following methods support a revision parameter: `has_item`, `get_item`, `get_items`, `get_parent_location`, and `delete_item`.
+In other cases, callers may need more detail control of the specific revisions of an XBlock that they want to access.  For such usage, we have provided an optional revision parameter in certain modulestore methods so the caller has more control of which revisions are queried. Currently, the following methods support a revision parameter: `has_item`, `get_item`, `get_items`, `get_parent_location`, and `delete_item`.
 
 The branch and revision constants can be found in the `ModuleStoreEnum` class:
 
