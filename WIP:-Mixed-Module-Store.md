@@ -23,7 +23,57 @@ Now, all code goes through the common `MixedModuleStore` API, and there is a cle
 Since different servers may have differing default preferences for the revisions they require, we have 
 introduced a new server configuration setting (`MODULESTORE_BRANCH`) for specifying this preference, with currently supported values being `draft-preferred` (set by Studio) and `published-only` (set by LMS and Preview).
 
-Additionally, we have changed the data structure for `Options[stores]` in the `MixedModuleStore` setting from a `dict` to a `list`, so an _ordered_ list of store preferences can be specified.
+Additionally, we have changed the data structure for `Options[stores]` in the `MixedModuleStore` setting from a `dict` to a `list`, so an _ordered_ list of store preferences can be specified.  Here is an example configuration setting for the `MixedModuleStore`:
+
+```
+"MODULESTORE": {
+    "default": {
+        "ENGINE": "xmodule.modulestore.mixed.MixedModuleStore",
+        "OPTIONS": {
+            "mappings": {
+                'edX/toy/2012_Fall': 'xml',
+                'another/xml/course': 'xml',
+                'can/specify_courses_of/other_types': 'mongo'
+            },
+            "reference_type": "Location",
+            "stores": [
+                {
+                    "NAME": "mongo",
+                    "DOC_STORE_CONFIG": {
+                        "collection": "modulestore",
+                        "db": "test",
+                        "host": ["localhost"],
+                        "password": "password",
+                        "port": 27017,
+                        "user": "edxapp"
+                    },
+                    "ENGINE": "xmodule.modulestore.mongo.DraftMongoModuleStore",
+                    "OPTIONS": {
+                        "collection": "modulestore",
+                        "db": "test",
+                        "default_class": "xmodule.hidden_module.HiddenDescriptor",
+                        "fs_root": "test_root/data",
+                        "host": ["localhost"],
+                        "password": "password",
+                        "port": 27017,
+                        "render_template": "edxmako.shortcuts.render_to_string",
+                        "user": "edxapp"
+                    }
+                },
+                {
+                    "NAME": "xml",
+                    "ENGINE": "xmodule.modulestore.xml.XMLModuleStore",
+                    "OPTIONS": {
+                        "data_dir": "edx-platform/data",
+                        "default_class": "xmodule.hidden_module.HiddenDescriptor"
+                    }
+                }
+            ]
+        }
+    }
+},
+```
+
 
 ***Overriding the Branch Setting via a contextmanager***
 Callers to the modulestore may, at (rare) times, need to override the server's default branch setting for certain operations.  For such cases, we have introduced a `contextmanager` named `store_branch_setting` to temporarily override the default branch setting.
