@@ -60,7 +60,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 ### Create Debug Configuration (LMS, Studio)
 After the PyCharm remote interpter is configured we are ready to debug devstack.
 
-* Create a debug configuration for LMS
+* Create a debug configuration for LMS server
   * Open the file 'edx-platform/manage.py' in your devstack folder
   * Right-click on the file and choose "Create 'manage'..." to create a debug configuration
   * Specify the settings for the new configuration
@@ -76,6 +76,9 @@ After the PyCharm remote interpter is configured we are ready to debug devstack.
     * Deselect "Add content roots to PYTHONPATH"
     * Deselect "Add source roots to PYTHONPATH"
   * Click "OK" to save the new debug configuration
+  * Your LMS server configuration should look something similar to:
+![LMS server configuration]
+(https://lh6.googleusercontent.com/cm-y7JXl-eDWMXH9UB64_rqXiW1pFqkfBOrxM9oMqJwXw7LHCW32DONVMv1bAmB9So62Wg=w1256-h1222)
 * Rake assets (ssh into vagrant first, and su as edxapp user). rake assets[lms,devstack]
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
