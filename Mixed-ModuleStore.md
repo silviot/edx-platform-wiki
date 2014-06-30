@@ -128,8 +128,10 @@ class ModuleStoreEnum(object):
 
     class Branch(object):
         """
-        Branch constants to use for stores, such as Mongo, that have only 2 branches: DRAFT and PUBLISHED
-        Note: These values are taken from server configuration settings, so should not be changed without alerting DevOps
+        Branch constants to use for stores, such as Mongo, that have only 
+           2 branches: DRAFT and PUBLISHED
+        Note: These values are taken from server configuration settings, 
+           so should not be changed without alerting DevOps
         """
         draft_preferred = 'draft-preferred'
         published_only = 'published-only'
