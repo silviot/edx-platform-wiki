@@ -1,3 +1,5 @@
+*A note about this document:* We've changed how the Mongo database is accessed to better handle versioning of courses.  This will be transparent to you if you are using xBlocks, but may be important if you are working deeper in the code.
+
 In preparation for enabling use of the [Split Modulestore](https://github.com/edx/edx-platform/wiki/Split%3A-the-versioning%2C-structure-saving-DAO), we have updated edx-platform so accesses to modulestores in LMS and Studio are now directed through the `MixedModuleStore`.
 
 The `MixedModuleStore` is a server-wide singleton with a pluggable API where one or more courseware persistence providers can be accessed through a single interface.  Higher layers can call the `MixedModuleStore` with `UsageKeys` or `CourseKeys` and know that their calls will be routed to the correct corresponding underlying store.
