@@ -22,7 +22,7 @@ Now, all code goes through the common `MixedModuleStore` API, and there is a cle
 **Server Configuration Settings**
 
 Since different servers may have differing default preferences for the revisions they require, we have 
-introduced a new server configuration setting (`MODULESTORE_BRANCH`) for specifying this preference, with currently supported values being `draft-preferred` (set by Studio) and `published-only` (set by LMS and Preview).
+introduced a new server configuration setting (`MODULESTORE_BRANCH`) for specifying this preference, with currently supported values being `draft-preferred` (set by Studio and Preview) and `published-only` (set by LMS).
 
 Additionally, we have changed the data structure for `Options[stores]` in the `MixedModuleStore` setting from a `dict` to a `list`, so an _ordered_ list of store preferences can be specified.  Here is an example configuration setting for the `MixedModuleStore`:
 
