@@ -126,9 +126,8 @@ PyCharm can also be used to debug Python tests (Bok Choy, Acceptance, CMS...).
   * Change the "Script parameters" to run the test:
     * e.g. ```cms --settings acceptance harvest --traceback --debug-mode --verbosity 2 --with-xunit --xunit-file /edx/app/edxapp/edx-platform/reports/acceptance/cms.xml cms/djangoapps/contentstore/features/problem-editor.feature```
 
-Debugging Bok Choy tests is more complex, as several processes are started up at once including LMS and Studio. If one of these processes is already running then Bok Choy will use it instead. So, if you want to set a breakpoint in Studio, you need to create a clone of the Studio configuration that has the following Script parameter
-* ```./manage.py cms runserver --settings bok_choy 0.0.0.0:8031```
+### Setting up Bokchoy Configuration Server
 
-<a name="theme"></a>
+
 ### Visually debug your tests
 You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ#im-working-with-devstack-and-want-to-debug-the-jasmine-or-acceptance-tests-in-the-browser-on-my-host-system-how-do-i-do-that).
