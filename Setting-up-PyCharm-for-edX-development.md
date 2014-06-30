@@ -92,7 +92,7 @@ After the PyCharm remote interpter is configured we are ready to debug devstack.
   * Change the name to "Studio"
   * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
-* Remember to rake assets (ssh into vagrant first) before running Studio from Pycharm. rake assets[cms,devstack]
+* Remember to rake assets (ssh into vagrant first) before running Studio from Pycharm. ```rake assets[cms,devstack]```
 * If you have XQuartz installed, you can test the server directly by going logging in as edxapp and type ```firefox```.
 
 ### Testing your changes
