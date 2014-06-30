@@ -80,7 +80,7 @@ After the PyCharm remote interpter is configured we are ready to debug devstack.
 ![LMS server configuration]
 (https://lh6.googleusercontent.com/cm-y7JXl-eDWMXH9UB64_rqXiW1pFqkfBOrxM9oMqJwXw7LHCW32DONVMv1bAmB9So62Wg=w1256-h1222)
 * To build (rake) assets:
-  * (ssh into vagrant first, and su as edxapp user). rake assets[lms,devstack]
+  * (ssh into vagrant first, and su as edxapp user). ```rake assets[lms,devstack]```
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up
@@ -93,7 +93,7 @@ After the PyCharm remote interpter is configured we are ready to debug devstack.
   * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
 * Remember to rake assets (ssh into vagrant first) before running Studio from Pycharm. rake assets[cms,devstack]
-* If you have XQuartz installed, you can test the server directly by going logging in as edxapp and type 'firefox'.
+* If you have XQuartz installed, you can test the server directly by going logging in as edxapp and type ```firefox```.
 
 ### Testing your changes
 
