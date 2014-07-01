@@ -61,19 +61,20 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
 * Create a debug configuration for LMS server
   * Open the file 'edx-platform/manage.py' in your devstack folder
   * Right-click on the file and choose "Create 'manage'..." to create a debug configuration
-  * Specify the settings for the new configuration
-    * Change the name to something more memorable, e.g. "LMS"
-    * Specify "./manage.py" for "Script" (thus using a relative path rather than an absolute one)
-    * Specify "lms runserver --settings=devstack 0.0.0.0:8000" for "Script parameters"
-    * Specify "/edx/app/edxapp/edx-platform" for "Working directory"
+  * Specify the settings for the new configuration:
+    * Change the name to something more memorable, e.g. "LMS".
+    * Specify "./manage.py" for "Script" (thus using a relative path rather than an absolute one).
+    * Specify "lms runserver --settings=devstack 0.0.0.0:8000" for "Script parameters".
+    * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+    * Specify "/edx/app/edxapp/edx-platform" for "Working directory".
     * Click to edit the "Path mappings" property
       * Click the "+" button to add a new mapping
       * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/andya/devstack/edx-platform"  (Be sure to specify "Users" rather than the shorthand "~" here.)
-      * Specify "/edx/app/edxapp/edx-platform" for "Remote path"
-      * Click "OK" to save the mappings
-    * Deselect "Add content roots to PYTHONPATH"
-    * Deselect "Add source roots to PYTHONPATH"
-  * Click "OK" to save the new debug configuration
+      * Specify "/edx/app/edxapp/edx-platform" for "Remote path".
+      * Click "OK" to save the mappings.
+    * Deselect "Add content roots to PYTHONPATH".
+    * Deselect "Add source roots to PYTHONPATH".
+  * Click "OK" to save the new debug configuration.
   * Your LMS server configuration should look something similar to:
 ![LMS server configuration]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/LMS_server.png)
@@ -131,6 +132,12 @@ PyCharm can also be used to debug Python tests (Bok Choy, Acceptance, CMS...).
 ### Setting up Bokchoy Test Configuration
 ![Bokchoy Test Configuration]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/bokchoy_server.png)
+* Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+* Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```
+* Script parameters: ```test_bokchoy --fasttest```
+* Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+* Working directory: ```/Users/[username]/devstack/edx-platform```
+* Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
 ### Visually debug your tests
 You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ#im-working-with-devstack-and-want-to-debug-the-jasmine-or-acceptance-tests-in-the-browser-on-my-host-system-how-do-i-do-that).
