@@ -54,6 +54,9 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * When the remote dialog appears, select the "SSH Credentials" radio button.
 * Specify the following configurations:
 ![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
+* After that, you should verify that PyCharms has copied all debugging materials into the ```.pycharm_helpers``` folder by ssh-ing into the vagrant instance and navigating to the helper folder. The directory content should look similar to this:
+![PyCharm helper](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_helpers.png)
+ 
 
 ### Create Debug Configuration for LMS
 After the PyCharm remote interpreter is configured we are ready to debug devstack.
@@ -102,39 +105,24 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
 
 See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
 
-### Debugging your tests
+### Debugging your tests using Paver in PyCharms
 
-PyCharm can also be used to debug Python tests (Bok Choy, Acceptance, CMS...).
+PyCharm can also be used to debug Python tests (Bok Choy, Acceptance, CMS...). The process is fairly simple. Since almost all the test suits can be run using ```paver``` command with different parameters, we just need to supply the appropriate paver path and parameters.
 
-* Create a debug configuration for an edX common unit test
-  * Choose "Run > Edit Configurations..."
-  * Select the "Studio" configuration
-  * Click the "Copy configuration" button (next to the "-" button)
-  * Change the name to "Studio CommonTests"
-  * Change the script to ```/edx/app/edxapp/venvs/edxapp/bin/nosetests```
-  * Change the "Script parameters" to run the test:
-    * e.g. ```common/lib/xmodule/xmodule/tests/test_resource_templates.py```
-* Create a debug configuration for an edX CMS unit test
-  * Choose "Run > Edit Configurations..."
-  * Select the "Studio" configuration
-  * Click the "Copy configuration" button (next to the "-" button)
-  * Change the name to "Studio Tests"
-  * Change the "Script parameters" to run the test:
-    * e.g. ```cms --settings test test cms/djangoapps/contentstore/views/tests/test_helpers.py```
-* Create a debug configuration for an edX acceptance test
-  * Choose "Run > Edit Configurations..."
-  * Select the "Studio" configuration
-  * Click the "Copy configuration" button (next to the "-" button)
-  * Change the name to "Studio Acceptance Tests"
-  * Change the "Script parameters" to run the test:
-    * e.g. ```cms --settings acceptance harvest --traceback --debug-mode --verbosity 2 --with-xunit --xunit-file /edx/app/edxapp/edx-platform/reports/acceptance/cms.xml cms/djangoapps/contentstore/features/problem-editor.feature```
+### Setting up JavaScript Test Configuration
+* Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+* Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
+* Script parameters: ```test_js```. 
+* Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+* Working directory: ```/Users/[username]/devstack/edx-platform```
+* Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
 ### Setting up Bokchoy Test Configuration
 ![Bokchoy Test Configuration]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/bokchoy_server.png)
 * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
-* Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```
-* Script parameters: ```test_bokchoy --fasttest```
+* Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
+* Script parameters: ```test_bokchoy``` or ```test_bokchoy --fasttest``` (if you have already compiled the assets). 
 * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
