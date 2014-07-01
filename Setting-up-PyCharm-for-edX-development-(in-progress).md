@@ -105,14 +105,22 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
 
 See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
 
-### Debugging your tests using Paver in PyCharms
+### Debugging your Paver tests in PyCharms
 
-PyCharm can also be used to debug Python tests (Bok Choy, Acceptance, CMS...). The process is fairly simple. Since almost all the test suits can be run using ```paver``` command with different parameters, we just need to supply the appropriate paver path and parameters.
+Now with the remote interpreter, we can use PyCharm debug Paver tests (JavaScript, Python, Bok Choy, Acceptance, CMS...). The process is fairly simple. Since almost all the test suits can be run using ```paver``` command with different parameters, we just need to supply the appropriate paver path and parameters.
 
 ### Setting up JavaScript Test Configuration
 * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
 * Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
 * Script parameters: ```test_js```. 
+* Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+* Working directory: ```/Users/[username]/devstack/edx-platform```
+* Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+
+### Setting up Python Test Configuration
+* Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+* Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
+* Script parameters: ```test_python```. 
 * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
