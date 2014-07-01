@@ -86,8 +86,8 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * ```paver update_assets lms --settings=devstack```
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
-  * Specify "LMS" and the Django instance should be started up
-  * You should now be able to set breakpoints and hit them
+  * Specify "LMS" and the Django instance should be started up.
+  * You should now be able to set breakpoints and hit them.
 
 ### Create a debug configuration for Studio (CMS) 
 * The CMS configuration is very similar to LMS, so we need to clone LMS configuration and adjust a few parameters. 
@@ -135,5 +135,13 @@ Now with the remote interpreter, we can use PyCharm debug Paver tests (JavaScrip
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
-### Visually debug your tests
+### Visually debug your tests with XQuartz
 You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ#im-working-with-devstack-and-want-to-debug-the-jasmine-or-acceptance-tests-in-the-browser-on-my-host-system-how-do-i-do-that).
+
+### Integrate XQuartz into PyCharms
+The following instructions are for Mac OS X but should work on any Unix-like environment.
+* First, we need to enable XQuartz forward for all ssh agents. To do this, open ```/etc/ssh_config``` and uncomment ```ForwardX11 no``` and change to ```ForwardX11 yes```. We might need to restart the shell.
+* We open a terminal inside PyCharms (Tools => Open Terminal...") and type ```ssh edxapp@127.0.0.1 -p 2222```. After logging in as edxapp user, try to open Firefox by typing ```firefox``` into the terminal. XQuartz should fire up Firefox immediately.
+* Now we need to get the display port number from this terminal by ```echo $DISPLAY```. Depending on the number of existing ssh terminals, usually it says ```localhost:10.0``` if this is the only one.
+* Open a debug configuration (such as Bokchoy) and add DISPLAY to the environment variable with the port number from the previous test. The string ```DISPLAY=localhost:10.0``` should be inside the environment variable string.
+* Now we can start debugging Paver tests with browser windows popping up in XQuartz.
