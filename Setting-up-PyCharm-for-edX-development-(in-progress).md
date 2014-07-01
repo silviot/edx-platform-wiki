@@ -41,12 +41,10 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Click "OK"
   * Click "Yes" to the prompt "Do you want to set this interpreter as Project Interpreter?"
   * You should now have a remote interpreter, *do check*. Something is not fully understood here, it might be that you need to "apply" as well as "saving" at some point. If this step is not properly done, you won't find the "path mapping" step later in the process. Otherwise, you can consult [PyCharm's documentation for remote interpreters](http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html#remote_vagrant) if you want more details
-* (OPTIONAL) to make PyCharm's editor traverse imports in edx-platform python modules:
-  * go to Preferences -> Project Structure
-  * mark the following directories as Source Folders:
-    * lms/djangoapps and lms/lib
-    * cms/djangoapps and cms/lib
-    * common/djangoapps and common/lib
+* (OPTIONAL) to make PyCharm's editor traverse imports in edx-platform python modules, go to Preferences -> Project Structure and mark the following directories as Source Folders:
+  * lms/djangoapps and lms/lib
+  * cms/djangoapps and cms/lib
+  * common/djangoapps and common/lib
 
 ### Create a PyCharm remote interpreter (PyCharm v3.4+)
 * Select "Preferences..." from the Apple menu
@@ -57,8 +55,8 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * Specify the following configurations:
 ![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
 
-### Create Debug Configuration (LMS, Studio)
-After the PyCharm remote interpter is configured we are ready to debug devstack.
+### Create Debug Configuration for LMS
+After the PyCharm remote interpreter is configured we are ready to debug devstack.
 
 * Create a debug configuration for LMS server
   * Open the file 'edx-platform/manage.py' in your devstack folder
@@ -80,12 +78,14 @@ After the PyCharm remote interpter is configured we are ready to debug devstack.
 ![LMS server configuration]
 (https://lh6.googleusercontent.com/cm-y7JXl-eDWMXH9UB64_rqXiW1pFqkfBOrxM9oMqJwXw7LHCW32DONVMv1bAmB9So62Wg=w1256-h1222)
 * To build (rake) assets:
-  * (ssh into vagrant first, and su as edxapp user). ```rake assets[lms,devstack]```
+  * (ssh into vagrant first, and su as edxapp user). ```paver update_assets lms --settings=devstack```
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up
   * You should now be able to set breakpoints and hit them
-* Create a debug configuration for Studio
+
+### Create a debug configuration for Studio (CMS) 
+* The CMS configuration is very similar to LMS, so we need to clone LMS configuration and adjust a few parameters. 
   * Choose "Run > Edit Configurations..."
   * Select "LMS"
   * Click the "Copy configuration" button (next to the "-" button)
