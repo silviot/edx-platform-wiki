@@ -144,4 +144,6 @@ The following instructions are for Mac OS X but should work on any Unix-like env
 * We open a terminal inside PyCharms (Tools => Open Terminal...") and type ```ssh edxapp@127.0.0.1 -p 2222```. After logging in as edxapp user, try to open Firefox by typing ```firefox``` into the terminal. XQuartz should fire up Firefox immediately.
 * Now we need to get the display port number from this terminal by ```echo $DISPLAY```. Depending on the number of existing ssh terminals, usually it says ```localhost:10.0``` if this is the only one.
 * Open a debug configuration (such as Bokchoy) and add DISPLAY to the environment variable with the port number from the previous test. The string ```DISPLAY=localhost:10.0``` should be inside the environment variable string.
+![Display Port Environmental Variable]
+(https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/display_port.png)
 * Now we can start debugging Paver tests with browser windows popping up in XQuartz.
