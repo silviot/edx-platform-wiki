@@ -76,7 +76,7 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Click "OK" to save the new debug configuration
   * Your LMS server configuration should look something similar to:
 ![LMS server configuration]
-(https://lh6.googleusercontent.com/cm-y7JXl-eDWMXH9UB64_rqXiW1pFqkfBOrxM9oMqJwXw7LHCW32DONVMv1bAmB9So62Wg=w1256-h1222)
+(https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/LMS_server.jpg)
 * To build (rake) assets:
   * (ssh into vagrant first, and su as edxapp user).
   * ```paver update_assets lms --settings=devstack```
