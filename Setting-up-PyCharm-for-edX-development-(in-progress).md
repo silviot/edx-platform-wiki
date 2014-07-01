@@ -76,7 +76,7 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Click "OK" to save the new debug configuration
   * Your LMS server configuration should look something similar to:
 ![LMS server configuration]
-(https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/LMS_server.jpg)
+(https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/LMS_server.png)
 * To build (rake) assets:
   * (ssh into vagrant first, and su as edxapp user).
   * ```paver update_assets lms --settings=devstack```
@@ -130,7 +130,7 @@ PyCharm can also be used to debug Python tests (Bok Choy, Acceptance, CMS...).
 
 ### Setting up Bokchoy Test Configuration
 ![Bokchoy Test Configuration]
-(https://lh5.googleusercontent.com/ZjmlhWeugiRD-gBfzTJcVLM3jvpJ4wRXZ9DpSguFGpVOla9qNseEsrLdeE_W1cVzCaIICA=w1416-h682)
+(https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/bokchoy_server.png)
 
 ### Visually debug your tests
 You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ#im-working-with-devstack-and-want-to-debug-the-jasmine-or-acceptance-tests-in-the-browser-on-my-host-system-how-do-i-do-that).
