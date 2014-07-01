@@ -130,7 +130,7 @@ PyCharm can also be used to debug Python tests (Bok Choy, Acceptance, CMS...).
 
 ### Setting up Bokchoy Test Configuration
 ![Bokchoy Test Configuration]
-(https://lh3.googleusercontent.com/lGnjZlFc6L3w4Z0CV1lVxiFkITMl_kVPOsY19iPvg2xHr1ii4fN-blDo0KnqUVtaxY5i0Q=w1256-h1222)
+(https://lh5.googleusercontent.com/ZjmlhWeugiRD-gBfzTJcVLM3jvpJ4wRXZ9DpSguFGpVOla9qNseEsrLdeE_W1cVzCaIICA=w1416-h682)
 
 ### Visually debug your tests
 You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ#im-working-with-devstack-and-want-to-debug-the-jasmine-or-acceptance-tests-in-the-browser-on-my-host-system-how-do-i-do-that).
