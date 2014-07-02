@@ -23,29 +23,6 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * Choose "Empty project" for "Project type" (note: don't choose "Django project" as that can't currently be interpreted remotely)
   * Say "Yes" to the question about using existing sources for the project
 
-### Create a PyCharm remote interpreter (PyCharm v.3.3 and below):
-  * Select "Preferences..." from the Apple menu
-  * Expand "Project Interpreter" under "Project Settings"
-  * Select "Python Interpreters"
-  * Click the "+" button to add a new interpreter
-  * Click on "Remote..." to choose the type of interpreter
-  * Click on "Fill from vagrant config"
-  * Specify your devstack directory and hit "OK"
-  * Update the settings for your new interpreter
-    * Specify "edxapp" for "User name"
-    * Select "Password" for "Auth type"
-    * Specify your edxapp password 
-    * Check "Save password"
-    * Specify "/edx/app/edxapp/venvs/edxapp/bin/python" for "Python interpreter path"
-  * Click "Test connection..." to verify that the settings are correct
-  * Click "OK"
-  * Click "Yes" to the prompt "Do you want to set this interpreter as Project Interpreter?"
-  * You should now have a remote interpreter, *do check*. Something is not fully understood here, it might be that you need to "apply" as well as "saving" at some point. If this step is not properly done, you won't find the "path mapping" step later in the process. Otherwise, you can consult [PyCharm's documentation for remote interpreters](http://www.jetbrains.com/pycharm/quickstart/configuring_interpreter.html#remote_vagrant) if you want more details
-* (OPTIONAL) to make PyCharm's editor traverse imports in edx-platform python modules, go to Preferences -> Project Structure and mark the following directories as Source Folders:
-  * lms/djangoapps and lms/lib
-  * cms/djangoapps and cms/lib
-  * common/djangoapps and common/lib
-
 ### Create a PyCharm remote interpreter (PyCharm v3.4+)
 * Select "Preferences..." from the Apple menu
 * Expand "Project Interpreter" under "Project Settings"
@@ -54,6 +31,8 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * When the remote dialog appears, select the "SSH Credentials" radio button.
 * Specify the following configurations:
 ![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
+*PyCharm will automatically detect the helper folder and upload the debugging files. The final configuration should look like this:
+![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_remote_conf.jpg)
 * After that, you should verify that PyCharms has copied all debugging materials into the ```.pycharm_helpers``` folder by ssh-ing into the vagrant instance and navigating to the helper folder. The directory content should look similar to this:
 ![PyCharm helper](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_helpers.png)
  
