@@ -85,7 +85,7 @@ Callers to the modulestore may, at (rare) times, need to override the server's d
 ```
 # sample usage of the store_branch_setting context manager
 # export only the published content
-with store_branch_setting(course.runtime.modulestore, BRANCH_PUBLISHED_ONLY):
+with store_branch_setting(course.runtime.modulestore, Branch.draft_preferred):
     course.add_xml_to_node(root)
 ```
 
