@@ -114,6 +114,31 @@ Now with the remote interpreter, we can use PyCharm debug Paver tests (JavaScrip
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
+### Create a debug configuration for an edX common unit test          
+* Choose "Run > Edit Configurations..."
+* Select the "Studio" configuration.
+* Click the "Copy configuration" button (next to the "-" button).
+* Change the name to "Studio CommonTests".
+* Change the script to ```/edx/app/edxapp/venvs/edxapp/bin/nosetests```
+* Change the "Script parameters" to run the test:
+  * e.g. ```common/lib/xmodule/xmodule/tests/test_resource_templates.py```
+
+### Create a debug configuration for an edX CMS unit test
+* Choose "Run > Edit Configurations..."
+* Select the "Studio" configuration.
+* Click the "Copy configuration" button (next to the "-" button).
+* Change the name to "Studio Tests".
+* Change the "Script parameters" to run the test:
+  * e.g. ```cms --settings test test cms/djangoapps/contentstore/views/tests/test_helpers.py```
+              
+### Create a debug configuration for an edX acceptance test
+* Choose "Run > Edit Configurations..."
+* Select the "Studio" configuration.
+* Click the "Copy configuration" button (next to the "-" button).
+* Change the name to "Studio Acceptance Tests".
+* Change the "Script parameters" to run the test:
+  * e.g. ```cms --settings acceptance harvest --traceback --debug-mode --verbosity 2 --with-xunit --xunit-file /edx/app/edxapp/edx-platform/reports/acceptance/cms.xml cms/djangoapps/contentstore/features/problem-editor.feature```
+
 ### Visually debug your tests with XQuartz
 You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ#im-working-with-devstack-and-want-to-debug-the-jasmine-or-acceptance-tests-in-the-browser-on-my-host-system-how-do-i-do-that).
 
