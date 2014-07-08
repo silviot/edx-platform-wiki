@@ -31,7 +31,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * When the remote dialog appears, select the "SSH Credentials" radio button.
 * Specify the following configurations:
 ![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_remote_conf.png)
-*PyCharm will automatically detect the helper folder and upload the debugging files. The final configuration should look like this:
+* PyCharm will automatically detect the helper folder and upload the debugging files. The final configuration should look like this:
 ![PyCharm 3.4+ conf] (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
 * After that, you should verify that PyCharm has copied all debugging materials into the ```.pycharm_helpers``` folder by ssh-ing into the vagrant instance and navigating to the helper folder. The directory content should look similar to this:
 ![PyCharm helper](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_helpers.png)
