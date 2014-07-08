@@ -6,6 +6,19 @@ See [[Developing on the edX Developer Stack]] for details as to how to develop a
 ### Where is the general documentation on testing the edx_platform code?
 Here is a link to doc included in the repo itself on [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/docs/en_us/internal/testing.md). Many questions are answered here.
 
+### How do I run paver test for a single file?
+To run single test, specify the name of the test file. For example:
+```paver test_bokchoy -t test_lms.py```
+
+To run single test faster by not repeating setup tasks:
+```paver test_bokchoy -t test_lms.py --fasttest```
+
+To test only a certain feature, specify the file and the testcase class:
+```paver test_bokchoy -t test_lms.py:RegistrationTest```
+
+To execute only a certain test case, specify the file name, class, and test case method:
+```paver test_bokchoy -t test_lms.py:RegistrationTest.test_register```
+
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
 * First off, for Mac OS you will need [XQuartz](http://xquartz.macosforge.org/) installed to support X Windows. We have tested with version 2.7.5.
