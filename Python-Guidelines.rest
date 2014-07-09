@@ -85,7 +85,7 @@ The preferred style is so-called "Google Style" with readable headers for differ
 
         """
 
-Most of our code using an older style::
+Most of our code is written using an older style::
 
     def calculate_grade(course, student):
         """
