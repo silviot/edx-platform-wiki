@@ -8,7 +8,6 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 
 ### How do I run paver test for a single file?
 To run single test, specify the name of the test file. For example:
-
 ```paver test_bokchoy -t test_lms.py```
 
 To run single test faster by not repeating setup tasks:
