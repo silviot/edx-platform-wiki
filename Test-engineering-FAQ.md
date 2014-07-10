@@ -30,7 +30,8 @@ If the test is in a subfolder, just specify the path:
 ### Adding bash completion to paver
 Courtesy of [Gregory Nicholas](https://groups.google.com/forum/#!topic/paver/Ba5YNXNhs9U)
 
-```_paver()
+```
+_paver()
 {
     local cur
     COMPREPLY=()
@@ -47,7 +48,8 @@ Courtesy of [Gregory Nicholas](https://groups.google.com/forum/#!topic/paver/Ba5
 
 # Assign the auto-completion function for our command.
 
-complete -F _paver paver```
+complete -F _paver paver
+```
 
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
