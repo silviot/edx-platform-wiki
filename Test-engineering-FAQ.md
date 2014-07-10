@@ -8,6 +8,7 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 
 ### How do I run paver test for a single file?
 To run single test, specify the name of the test file. For example:
+
 ```paver test_bokchoy -t test_lms.py```
 
 To run single test faster by not repeating setup tasks:
@@ -21,6 +22,10 @@ To test only a certain feature, specify the file and the testcase class:
 To execute only a certain test case, specify the file name, class, and test case method:
 
 ```paver test_bokchoy -t test_lms.py:RegistrationTest.test_register```
+
+If the test is in a subfolder, just specify the path:
+
+```paver test_bokchoy -t video/test_video_module.py```
 
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
