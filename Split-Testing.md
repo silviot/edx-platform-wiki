@@ -4,7 +4,7 @@ Whenever we want to add a new feature to the LMS or otherwise change the website
 
 For example, split testing would have been useful before we deployed inline score displays for each problem. Do users who are shown their problem scores within the courseware leave the courseware as often as those users who are not shown their progress within the courseware? Is the progress page viewed less frequently by those students shown their scores within the courseware? We asked these questions before implementing the inline score display feature, but the only way we could answer them was to implement the feature and observe its impact. Split testing would have allowed us to answer these questions before rolling out the feature to our entire user base.
 
-In short, having the ability to perform split testing of new features before their rollout will allow us to make more intelligent decisions. 
+In short, having the ability to perform split testing of new features before their rollout allows us to make smarter decisions. 
 
 ### Requirements ###
 
