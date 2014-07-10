@@ -16,7 +16,7 @@ modulestore | |
 XModule | @cpennington |
 Capa | @cpennington |
 licensing | |
-git import/export (Studio) | |
+git import/export (Studio) | @carsongee |
 Paver | |
 Rake | |
 Studio docs | @mhoeber |
