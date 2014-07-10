@@ -6,7 +6,7 @@ To enable Stanford theming in a sandbox instance:
 
 ```
 edxapp_use_custom_theme: true
-edxapp_theme_name: 'default'
+edxapp_theme_name: 'stanford'
 edxapp_theme_source_repo: 'git://github.com/Stanford-Online/edx-default-theme.git'
 edxapp_theme_version: 'HEAD'
 ```
@@ -16,6 +16,8 @@ edxapp_theme_version: 'HEAD'
 ```
 sudo /edx/bin/update edx-platform master
 ```
+
+Please note: the stanford theme has some customized code implemented in the latest `edx-platform` and it would only be activated when `edx_theme_name` is set to `stanford`. Also another hack should be applied for successful compiling: `./static/sass/_stanford.scss` should be renamed to `stanford.scss`
 
 # Manual method
 
