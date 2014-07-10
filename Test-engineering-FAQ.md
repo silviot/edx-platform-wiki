@@ -43,11 +43,11 @@ Courtesy of [Gregory Nicholas](https://groups.google.com/forum/#!topic/paver/Ba5
     # Generate possible matches and store them in the
     # array variable COMPREPLY
     COMPREPLY=($(compgen -W "${cmds}" $cur))
-}```
+}
 
 # Assign the auto-completion function for our command.
 
-```complete -F _paver paver```
+complete -F _paver paver```
 
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
