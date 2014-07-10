@@ -27,6 +27,28 @@ If the test is in a subfolder, just specify the path:
 
 ```paver test_bokchoy -t video/test_video_module.py```
 
+### Adding bash completion to paver
+Courtesy of [Gregory Nicholas](https://groups.google.com/forum/#!topic/paver/Ba5YNXNhs9U)
+
+```_paver()
+{
+    local cur
+    COMPREPLY=()
+    # Variable to hold the current word
+    cur="${COMP_WORDS[COMP_CWORD]}"
+
+    # Build a list of the available tasks from: `paver --help --quiet`
+    local cmds=$(paver -hq | awk '/^  ([a-zA-Z][a-zA-Z0-9_]+)/ {print $1}')
+
+    # Generate possible matches and store them in the
+    # array variable COMPREPLY
+    COMPREPLY=($(compgen -W "${cmds}" $cur))
+}```
+
+# Assign the auto-completion function for our command.
+
+```complete -F _paver paver```
+
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
 * First off, for Mac OS you will need [XQuartz](http://xquartz.macosforge.org/) installed to support X Windows. We have tested with version 2.7.5.
