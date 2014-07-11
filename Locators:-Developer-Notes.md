@@ -22,11 +22,13 @@ We used to pass around course identifiers are `course_id`s, which were strings. 
 
 Similarly, we used to pass around XBlock identifiers as `location`s, which were strings.  Then, we passed around XBlock identifiers as `UsageKey`s, which were `OpaqueKey` objects.  Now, we pass around course identifiers as `BlockUsageLocator`s, which are a subclass of `UsageKey`.
 
+````
                          OpaqueKey
                        /            \
 BlockLocatorBase    CourseKey      UsageKey   BlockLocatorBase
                \      |               |          /
                 CourseLocator  BlockUsageLocator
+````
 
 So, the historic path to our Locator-filled present looks like this:
 
