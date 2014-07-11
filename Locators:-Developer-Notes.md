@@ -28,7 +28,7 @@ Similarly, we used to pass around XBlock identifiers as `location`s, which were 
 
 So, the historic path to our Locator-filled present looks like this:
 
-* `course_id` -> CourseKey -> **CourseLocator**
+* course_id -> CourseKey -> **CourseLocator**
 * location -> UsageKey -> **BlockUsageLocator**
 
 Given the [serialized form](#serialization) of a `course_id`, `location`, `CourseKey`, or `UsageKey`, you can then [deserialize](#deserialization) it into an `CourseLocator` or `BlockUsageLocator` object, which you can then [introspect for information](#introspect).
