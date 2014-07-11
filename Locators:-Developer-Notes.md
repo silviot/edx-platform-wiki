@@ -4,11 +4,7 @@ When [pull request 4225](https://github.com/edx/edx-platform/pull/4225) is merge
 
 1. [The Quick Version](#quick)  
 1. [Serializing](#serialization)  
-  * In Studio
-  * In LMS
 1. [Deserializing](#deserialization)  
-  * In Studio
-  * In LMS
 1. [Introspecting  OpaqueKey Objects](#introspect)  
 1. [Saving to the Database](#database)  
 1. [Related Changes](#related)
@@ -38,18 +34,14 @@ WEH Before, you would save `course_id` and `location` strings to the database; n
 <a name="serialization"/>
 ## Serializing
 
-#### In Studio
+To convert a Locator of any sort (CourseLocator, BlockUsageLocator, etc) into a string representation, call `unicode(locator)`, where `locator` is the locator you're wanting to serialize.
 
-To save a Locator of any sort (CourseKey, UsageKey, etc) into a string representation, call `unicode(locator)`, where `locator` is the key you're wanting to serialize.
+You may also call the `to_string()` method, e.g. `locator.to_string()`.
 
-#### In LMS
-
-To serialize `OpaqueKey`s into a string representation, call `foo.to_string()`, where `foo` is some type of `OpaqueKey` object (e.g., either `CourseKey`, `UsageKey`, `CourseLocator`, or `BlockUsageLocator`).
+The resulting format will be `{course_key_string}+{block_type_prefix}+{block_type}+{BLOCK_PREFIX}+{block_id}`.
 
 <a name="deserialization"/>
 ## Deserializing
-
-#### In Studio
 
 `CourseLocator.from_string(bar_string)`
 
@@ -89,11 +81,11 @@ usage_key = Location.from_deprecated_string('i4x://org/course/category/name')
 <a name="introspect"/>
 ## Introspecting Locator Objects
 
-It is possible to get information from these objects. For example, if you are given a `course_locator`, you can use `course_locator.org` to get the organization the course belongs to. The specific pieces of information that can be retrieved from the keys is dependent on the type of key. Check the implementation of the key to see what pieces of information are available; [you can read about the different types of Locators here](https://github.com/edx/edx-platform/wiki/Opaque-Keys).
+To get information from these objects, use the appropriate method/property/etc for that object (ex.: you can use `course_locator.org` to get the organization a course belongs to). Check the implementation of the locator to see what pieces of information are available; [you can read about the different types of Locators here](https://github.com/edx/edx-platform/wiki/Opaque-Keys).
 
 <a name="database"/>
 ## Saving to the Database
-You may see, in our code, custom Django Fields with the names `CourseKeyField` and `LocationKeyField`.  Retrieving the value of one of these fields will give you a .  The implementation of these fields can be found in `common/djangoapps/xmodule_django/models.py`.
+You may see, in our code, custom Django Fields with the names `CourseKeyField` and `LocationKeyField`.  Retrieving the value of one of these fields will give you a `CourseKey` or a `UsageKey`, respectively.  The implementation of these fields can be found in `common/djangoapps/xmodule_django/models.py`.
 
 (The reason for this: in many places, we serialize out the `location` or `course_id` to the database. In the past, when these were strings, we used straight `CharField`s to write out the data.  Now that we're using OpaqueKeys, we use these fields to handle the serialization/deserialization in the database automatically.)
 
@@ -144,9 +136,9 @@ course_url = reverse(
 ## Other Notes
 
 <a name="constructing"/>
-#### Constructing Opaque Keys by Hand
+#### Constructing Locators by Hand
 
-<bold>**In general, this should only be done in tests**.  Avoid explicitly constructing opaque key types in application code.</bold>
+<bold>**In general, this should only be done in tests**.  Avoid explicitly constructing locators in application code.</bold>
 
 To construct an opaque key by hand, you can always use the correct constructor for the correct type of opaque key.
 
