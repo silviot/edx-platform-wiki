@@ -1,4 +1,4 @@
-With the merging of [pull request 2905](https://github.com/edx/edx-platform/pull/2905), the way we handle `course_id`s and `location`s has changed.  This guide includes everything you need to know about how to handle them.
+When [pull request 4225](https://github.com/edx/edx-platform/pull/4225) is merged, the way we handle `CourseKey`s and `UsageKey`s will change.  This guide includes everything you need to know about how to handle them.
 
 ## Table of Contents
 
@@ -22,52 +22,62 @@ With the merging of [pull request 2905](https://github.com/edx/edx-platform/pull
 <a name="quick"/>
 ## The Quick Version
 
-We used to pass around `course_id`s and `location`s as strings.  Now, we are passing these values around as OpaqueKey objects.
+We used to pass around course identifiers are `course_id`s, which were strings.  Then, we passed around course identifiers as `CourseKey`s, which were `OpaqueKey` objects.  Now, we pass around course identifiers as `CourseLocator`s, which are a subclass of `CourseKey`.
 
-For things that were formerly `course_id`s, we now use CourseKeys.  For things that were formerly `locations`, we now use UsageKeys.
+Similarly, we used to pass around XBlock identifiers as `location`s, which were strings.  Then, we passed around XBlock identifiers as `UsageKey`s, which were `OpaqueKey` objects.  Now, we pass around course identifiers as `BlockUsageLocator`s, which are a subclass of `UsageKey`.
 
-Given the [serialized form](#serialization) of a `course_id` or `location`, you can then [deserialize](#deserialization) it into an OpaqueKey object, which you can then [introspect for information](#introspect).
+So, the historic path to our Locator-filled present looks like this:
 
-Before, you would save `course_id` and `location` strings to the database; now you will [save OpaqueKeys to the database](#database).
+`course_id` -> CourseKey -> **CourseLocator**
+location -> UsageKey -> **BlockUsageLocator**
+
+Given the [serialized form](#serialization) of a `course_id`, `location`, `CourseKey`, or `UsageKey`, you can then [deserialize](#deserialization) it into an `CourseLocator` or `BlockUsageLocator` object, which you can then [introspect for information](#introspect).
+
+WEH Before, you would save `course_id` and `location` strings to the database; now you will [save Locators to the database](#database).
 
 <a name="serialization"/>
 ## Serializing
 
 #### In Studio
 
-To serialize a key of any sort (CourseKey, UsageKey, etc) into a string representation, call `unicode(opaque_key)`, where opaque_key is the key you're wanting to serialize.
+To save a Locator of any sort (CourseKey, UsageKey, etc) into a string representation, call `unicode(locator)`, where `locator` is the key you're wanting to serialize.
 
 #### In LMS
 
-To serialize a CourseKey into a string representation, call `foo.to_deprecated_string()`, where `foo` is your CourseKey.
+To serialize `OpaqueKey`s into a string representation, call `foo.to_string()`, where `foo` is some type of `OpaqueKey` object (e.g., either `CourseKey`, `UsageKey`, `CourseLocator`, or `BlockUsageLocator`).
 
 <a name="deserialization"/>
 ## Deserializing
 
 #### In Studio
 
-In Studio, calling `FooKey.from_string(bar_string)` will give you a `FooKey` key, where `bar_string` is the serialized version of that key.  Some examples of serialized keys are: 
+`CourseLocator.from_string(bar_string)`
+
+Calling `FooLocator.from_string(bar_string)` will give you a `FooLocator` object, where `bar_string` is the serialized version of that key.
+
+Examples of serialized `CourseLocator`s:
 ````python
-"edx:org+course.run+branch+foo+version+bar+type+baz+block+id"
-"course-locator:$org+$course.$run+branch+$branch+version+$version+type"
-"ssck:slashes:$org+$course+$run"
+"org/course/run"  # A deprecated format from when we used course_ids.
+"Org.Course.Run/branch/draft/block/Robot_Super_Course"  # A deprecated format from bla bla.
+"ssck:slashes:$org+$course+$run"  # A deprecated format from when we used SlashSeparatedCourseKeys.
+"course-locator:$org+$course.$run+branch+$branch+version+$version+type"  # The preferred serialized version of a string.
 ````
 
-#### In LMS
-
-In the LMS, the use of opaque keys is mostly reserved for in-memory representations.  While we are in the process of updating and migrating the old data, you will need to construct opaque keys out of old-style string representations of `course_id`s or `location`s.
-
-Old-style `course_id`s have the format `"org/course/run"`.  Old-style `location`s have several different formats: `"i4x://org/course/category/name`, `"c4x://org/course/category/name"`, or `"Org.Course.Run/branch/draft/block/Robot_Super_Course"`.
+Examples of serialized `BlockUsageLocator`s:
+````python
+"i4x://org/course/category/name"  # A deprecated format from when we used locations.
+"c4x://org/course/category/name"  # Another deprecated format from when we used locations.
+"edx:org+course.run+branch+foo+version+bar+type+baz+block+id"  # The preferred serialized form of a string.
 
 To construct a course key from an old-style course_id:
 ```python
-course_key = SlashSeparatedCourseKey.from_deprecated_string('org/course/run')
+course_key = SlashSeparatedCourseKey.from_string('org/course/run')
 ```
 
 To construct a UsageKey from an old-style `i4x` string (where `course_key` is a `CourseKey` for the course that the location is within):
 
 ```python
-usage_key = course_key.make_usage_key_from_deprecated_string('i4x://org/course/category/name')
+usage_key = course_key.make_usage_key_from_string('i4x://org/course/category/name')
 ```
 
 If you have no CourseKey (and no `course_id` that you can use to create a CourseKey), a fallback is the UsageKey.from_deprecated_string() method shown below.  Note that this is not preferred; please use the previous method if there's any way you can access the CourseKey.
@@ -77,13 +87,13 @@ usage_key = Location.from_deprecated_string('i4x://org/course/category/name')
 ````
 
 <a name="introspect"/>
-## Introspecting OpaqueKey Objects
+## Introspecting Locator Objects
 
-It is possible to get information from these objects. For example, if you are given a `course_key`, you can use `course_key.org` to get the organization the course belongs to. The specific pieces of information that can be retrieved from the keys is dependent on the type of key. Check the implementation of the key to see what pieces of information are available; [you can read about the different types of OpaqueKeys here](https://github.com/edx/edx-platform/wiki/Opaque-Keys).
+It is possible to get information from these objects. For example, if you are given a `course_locator`, you can use `course_locator.org` to get the organization the course belongs to. The specific pieces of information that can be retrieved from the keys is dependent on the type of key. Check the implementation of the key to see what pieces of information are available; [you can read about the different types of Locators here](https://github.com/edx/edx-platform/wiki/Opaque-Keys).
 
 <a name="database"/>
 ## Saving to the Database
-You may see, in our code, custom Django Fields with the names `CourseKeyField` and `LocationKeyField`.  Retrieving the value of one of these fields will give you an opaque key.  The implementation of these fields can be found in `common/djangoapps/xmodule_django/models.py`.
+You may see, in our code, custom Django Fields with the names `CourseKeyField` and `LocationKeyField`.  Retrieving the value of one of these fields will give you a .  The implementation of these fields can be found in `common/djangoapps/xmodule_django/models.py`.
 
 (The reason for this: in many places, we serialize out the `location` or `course_id` to the database. In the past, when these were strings, we used straight `CharField`s to write out the data.  Now that we're using OpaqueKeys, we use these fields to handle the serialization/deserialization in the database automatically.)
 
