@@ -44,8 +44,6 @@ Because not all of our application can be easily refactored to treat keys as tru
 
 The purpose of this API is to allow parts of the application to indirectly introspect database keys, which (a) allows the application to get the information it needs, and (b) ensures that all requests for this information funnel through a very small number of functions. This way, if we need to change the way that the database stores its data, we can do that behind an abstraction layer, and be confident that the rest of the application won't notice. It also means that multiple database key abstractions (`Location`s and `Locators`) can support the same API, so that the rest of the application can treat them as interchangeable, in classic Python duck-typing fashion.  _Thus, key information should only be retrieved using that key's public methods._
 
-Please look at the implementation of a particular key if you want to know what methods are available for retrieving information.
-
 <a name="hierarchy"/>
 ### OpaqueKey Hierarchy
 
