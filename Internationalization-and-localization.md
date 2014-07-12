@@ -5,9 +5,18 @@ You should also join the [openedx-translation](https://groups.google.com/forum/#
 In order to run your Open edX instance under a different spoken language, for instance for [Spanish (Latin American)](https://www.transifex.com/projects/p/edx-platform/language/es_419/):
 
 1. Switch to edxapp environment:
+
         sudo -H -u edxapp bash
         source /edx/app/edxapp/edxapp_env
-        cd /edx/app/edxapp/edx-platform        
+        cd /edx/app/edxapp/edx-platform
+
+2. Configure your `~/.transifexrc` file:
+
+        [https://www.transifex.com]
+        hostname = https://www.transifex.com
+        username = user
+        password = pass
+        token =        
         
 2. Configure your `~/.transifexrc` file:
 
