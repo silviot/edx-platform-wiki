@@ -3,6 +3,7 @@ We are currently hosting all translations of Open edX framework on www.transifex
 You should also join the [openedx-translation](https://groups.google.com/forum/#!forum/openedx-translation) Google Group.
 
 In order to run your Open edX instance under a different spoken language, for instance for [Spanish (Latin American)](https://www.transifex.com/projects/p/edx-platform/language/es_419/):
+
 1. Configure your `~/.transifexrc` file:
 
         [https://www.transifex.com]
