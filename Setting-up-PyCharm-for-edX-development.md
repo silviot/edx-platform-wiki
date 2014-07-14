@@ -84,9 +84,9 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
 
 See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
 
-### Debugging your Paver tests in PyCharm
+### Debugging edX platform tests in PyCharm
 
-Now with the remote interpreter, we can use PyCharm debug Paver tests (JavaScript, Python, Bok Choy, Acceptance, CMS...). The process is fairly simple. Since almost all the test suits can be run using ```paver``` command with different parameters, we just need to supply the appropriate paver path and parameters.
+Now with the remote interpreter, we can use PyCharm to debug edX platform tests (Python, JavaScript, Bok Choy, Acceptance) kicked off via paver command. The process is fairly simple. Since the test suites can be run using the ```paver``` command with different parameters, we just need to supply the appropriate paver task and parameters.
 
 ### Setting up JavaScript Test Configuration
 * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
