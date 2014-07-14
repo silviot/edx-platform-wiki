@@ -3,22 +3,7 @@ We are currently hosting all translations of Open edX framework on www.transifex
 You should also join the [openedx-translation](https://groups.google.com/forum/#!forum/openedx-translation) Google Group.
 
 In order to run your Open edX instance under a different spoken language, for instance for [Spanish (Latin American)](https://www.transifex.com/projects/p/edx-platform/language/es_419/):
-
-1. Switch to edxapp environment:
-
-        sudo -H -u edxapp bash
-        source /edx/app/edxapp/edxapp_env
-        cd /edx/app/edxapp/edx-platform
-
-2. Configure your `~/.transifexrc` file:
-
-        [https://www.transifex.com]
-        hostname = https://www.transifex.com
-        username = user
-        password = pass
-        token =        
-        
-2. Configure your `~/.transifexrc` file:
+1. Configure your `~/.transifexrc` file:
 
         [https://www.transifex.com]
         hostname = https://www.transifex.com
@@ -27,6 +12,15 @@ In order to run your Open edX instance under a different spoken language, for in
         token =
 
     Token is left blank. You have to have permissions for the project (edx-platform) AFAIK - https://www.transifex.com/projects/p/edx-platform/ 
+
+2. Switch to edxapp environment:
+
+        sudo -H -u edxapp bash
+        source /edx/app/edxapp/edxapp_env
+        cd /edx/app/edxapp/edx-platform
+  
+        
+
 
 3. All of the languages on Transifex are already configured in the edx-platform repo.  If you've added a new language to Transifex, and we haven't added it to the configuration yet, you can add it to `conf/locale/config.yaml`.
 
