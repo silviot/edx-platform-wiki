@@ -20,28 +20,28 @@ For other guidelines on logo usage, see the [Open edX Visual Identity Guidelines
 ```
 
 ## Dark Greyscale for Light Backgrounds
-![dark greyscale logo for light backgrounds](https://s3.amazonaws.com/files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png)
+![dark greyscale logo for light backgrounds](https://files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png)
 
-<https://s3.amazonaws.com/files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png>
+<https://files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png>
 
 ```
 <a href="http://openedx.org">
   <img 
-    src="https://s3.amazonaws.com/files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png"
+    src=https://files.edx.org/openedx-logos/edx-openedx-logo-tag-dark.png"
     width="150" height="50" alt="Powered by Open edX" />
 </a>
 ```
 
 ## Light Greyscale for Dark Backgrounds
 
-![light greyscale logo for dark background](https://s3.amazonaws.com/files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png)
+![light greyscale logo for dark background](https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png)
 
-<https://s3.amazonaws.com/files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png>
+<https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png>
 
 ```
 <a href="http://openedx.org">
   <img
-    src="https://s3.amazonaws.com/files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png"
+    src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png"
     width="150" height="50" alt="Powered by Open edX" />
 </a>
 ```
