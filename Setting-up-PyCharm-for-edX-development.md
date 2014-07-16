@@ -10,8 +10,6 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   sudo passwd edxapp
   [type in a password of your choice]
 ```
-* Edit `/etc/ssh/sshd_config` and change PasswordAuthentication to `yes`
-
 * Next, create the .pycharm_helpers directory where PyCharm will store its remote debugging code
 ```
   sudo su edxapp
