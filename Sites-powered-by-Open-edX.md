@@ -29,3 +29,4 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MoocIT](http://learn-moocit.fr/)
 * [Croatopica](http://croatopica.net/)
 * [PaulusMOOC](https://paulusmooc.org)
+* [Politecnico di Milano](https://www.pok.polimi.it/)
