@@ -7,14 +7,14 @@ For other guidelines on logo usage, see the [Open edX Visual Identity Guidelines
 
 ## Color
 
-![color logo](https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png)
+![color logo](http://files.edx.org/openedx-logos/edx-openedx-logo-tag.png)
 
-<https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png>
+<http://files.edx.org/openedx-logos/edx-openedx-logo-tag.png>
 
 ```
 <a href="http://openedx.org">
   <img 
-    src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png"
+    src="http://files.edx.org/openedx-logos/edx-openedx-logo-tag.png"
     width="150" height="50" alt="Powered by Open edX" />
 </a>
 ```
