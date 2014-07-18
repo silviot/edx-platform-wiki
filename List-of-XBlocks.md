@@ -11,6 +11,7 @@
 * [Image Explorer XBlock](https://github.com/edx-solutions/xblock-image-explorer): to display tooltips on top of an image within the course content
 * [Drag and Drop XBlock](https://github.com/edx-solutions/xblock-drag-and-drop): exercise which asks students to drag and drop text or image elements into different buckets according to their content
 * [Brightcove Video XBlock](https://github.com/edx-solutions/xblock-brightcove): to include Brightcove videos within an edX course
+* [Video JS XBlock](https://github.com/MarCnu/videojsXBlock): Use Video.js HTML5 player (www.videojs.com) instead of the default one.
 
 Experimental XBlocks:
 * [Discussion XBlock](https://github.com/edx-solutions/xblock-discussion): a prototype of the discussion XModule as a separate, pure XBlock. Functional, but requires patches to edx-platform at the moment.
