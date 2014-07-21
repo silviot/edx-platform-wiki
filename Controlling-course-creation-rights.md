@@ -29,6 +29,23 @@ You can grant and revoke course creation rights to individual users via a Django
 ### Enabling control of course creation rights
 In /edx-platform/cms/envs/common.py, or your extension of it, set 'ENABLE_CREATOR_GROUP': True to MITX_FEATURES. Note that DISABLE_COURSE_CREATION (discussed above) takes precedence over ENABLE_CREATOR_GROUP, so make sure that DISABLE_COURSE_CREATION is not set to True.
 
+```
+### 1) Update ENABLE_CREATOR_GROUP in common.py
+cd /edx/app/edxapp/edx-platform/cms/envs
+sudo nano common.py
+
+Set :
+FEATURES {
+    ENABLE_CREATOR_GROUP : True
+}
+
+### 2) Update the database structure of the CMS and reboot the CMS
+cd /edx/app/edxapp/edx-platform
+# Update CMS DB structure
+sudo -u www-data /edx/bin/python.edxapp ./manage.py cms syncdb --migrate --settings aws --migrate –noinput
+# Reboot
+sudo /edx/bin/supervisorctl -c /edx/etc/supervisord.conf restart edxapp:
+```
 ### User workflow
 If ENABLE_CREATOR_GROUP is set to True, this is the workflow for a new Studio user:
 
