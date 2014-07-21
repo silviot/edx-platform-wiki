@@ -90,4 +90,12 @@ then you may be experiencing X11 forwarding timeouts.  The problem and solution 
 vagrant ssh
 sudo rm /edx/var/mongo/mongodb/mongod.lock
 sudo start mongodb`
-  * In the worst case, get a fresh Vagrant instance. 
+  * In the worst case, get a fresh Vagrant instance.
+
+### I got an error saying that Mongo is not running locally. What should I do?
+Under Vagrant user, run:
+
+```
+sudo rm /edx/var/mongo/mongodb/mongod.lock
+sudo start mongodb
+```
