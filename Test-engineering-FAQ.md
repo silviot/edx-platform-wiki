@@ -27,6 +27,16 @@ If the test is in a subfolder, just specify the path:
 
 ```paver test_bokchoy -t video/test_video_module.py```
 
+### How do I debug Python code in vagrant?
+Add the following lines at any point that you want to debug:
+
+```
+from nose.tools import set_trace
+set_trace()
+```
+
+This should bring up the debugger. To debug in [PyCharm](https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development)
+
 ### Adding bash completion to paver
 Courtesy of [Gregory Nicholas](https://groups.google.com/forum/#!topic/paver/Ba5YNXNhs9U)
 
