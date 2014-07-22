@@ -35,7 +35,7 @@ from nose.tools import set_trace
 set_trace()
 ```
 
-This should bring up the debugger. To debug in [PyCharm](https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development)
+This should bring up the debugger. See: [debug in PyCharm](https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development).
 
 ### Adding bash completion to paver
 Courtesy of [Gregory Nicholas](https://groups.google.com/forum/#!topic/paver/Ba5YNXNhs9U)
