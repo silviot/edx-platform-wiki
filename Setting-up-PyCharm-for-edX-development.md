@@ -143,9 +143,10 @@ You can setup your development environment such that you can visually interact w
 ### Integrate XQuartz into PyCharm
 The following instructions are for Mac OS X but should work on any Unix-like environment.
 * First, we need to enable XQuartz forwarding for all ssh agents. To do this, open ```/etc/ssh_config``` on your host system and uncomment ```ForwardX11 no``` and change to ```ForwardX11 yes```.
-* Next open a terminal inside PyCharm (Tools => Open Terminal...") and type ```ssh edxapp@127.0.0.1 -p 2222```. After logging in as edxapp user, try to open Firefox by typing ```firefox``` into the terminal. XQuartz should fire up Firefox immediately.
+* Next open a terminal **inside** PyCharm (Tools => Open Terminal...") and type ```ssh edxapp@127.0.0.1 -p 2222```. After logging in as edxapp user, try to open Firefox by typing ```firefox``` into the terminal. XQuartz should fire up Firefox immediately. Keep this terminal **open**.
 * Now we need to get the display port number from this terminal by ```echo $DISPLAY```. This depends on the number of existing ssh terminals. If this it the only one, it will be ```localhost:10.0```.
 * Open a debug configuration (such as Bokchoy) and add DISPLAY to the environment variable with the port number from the previous step. The string ```DISPLAY=localhost:10.0``` should be inside the environment variable string.
 ![Display Port Environmental Variable]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/display_port.png)
 * Now we can start debugging Paver tests with browser windows popping up in XQuartz.
+* Note: the port number (10.0, 11.0, etc, ...) changes dynamically with the number of open ssh clients. Therefore, you have to open and keep the ssh terminal inside Pycharm all the time.
