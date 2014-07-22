@@ -150,3 +150,9 @@ The following instructions are for Mac OS X but should work on any Unix-like env
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/display_port.png)
 * Now we can start debugging Paver tests with browser windows popping up in XQuartz.
 * Note: the port number (10.0, 11.0, etc, ...) changes dynamically with the number of open ssh clients. Therefore, you have to open and keep the ssh terminal inside Pycharm all the time.
+* If the PyCharm debugger does not attach itself to the thread for some reasons, you can insert the break point manually:
+
+```
+from nose.tools import set_trace
+set_trace()
+```
