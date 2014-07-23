@@ -3,6 +3,9 @@
 * [Mathematica Cdf XBlock](https://github.com/polimediaupv/paellaXBlock)
 * [Staff graded assignment](https://github.com/mitodl/edx-sga)
 * [PDF XBlock]( https://github.com/polimediaupv/pdfXBlock )
+* [PDF XBlock (alternative)](https://github.com/MarCnu/pdfXBlock): Another XBlock to embed PDF, with XBlock title and download buttons.
+* [Flash XBlock](https://github.com/MarCnu/flashXBlock): Embed Flash (.swf) files into your course.
+* [Video JS XBlock](https://github.com/MarCnu/videojsXBlock): Use Video.js HTML5 player (www.videojs.com) instead of the default one.
 * [Audio XBlock](https://github.com/pmitros/AudioXBlock)
 * [Carousel XBlock](https://github.com/metit-bu/xblock-carousel)- XBlock to provide carousel of multimedia instructional content including images, video, documents. This XBlock currently supports three web hosted media formats in a unified media carousel for course content presentation. This XBlock also provides a way to integrate instructional media with a separate workspace that could be used for hands-on activities.Click [here]
 (http://met-testedx2.bu.edu:8000/courses/MET/101/2014/about) for the demo
@@ -12,7 +15,6 @@
 * [Image Explorer XBlock v2](https://github.com/edx-solutions/xblock-drag-and-drop-v2): enhanced version of the Image Explorer XBlock. Due to incompatible data model with v1, the original XBlock still remains
 * [Drag and Drop XBlock](https://github.com/edx-solutions/xblock-drag-and-drop): exercise which asks students to drag and drop text or image elements into different buckets according to their content
 * [Brightcove Video XBlock](https://github.com/edx-solutions/xblock-brightcove): to include Brightcove videos within an edX course
-* [Video JS XBlock](https://github.com/MarCnu/videojsXBlock): Use Video.js HTML5 player (www.videojs.com) instead of the default one.
 
 Experimental XBlocks:
 * [Discussion XBlock](https://github.com/edx-solutions/xblock-discussion): a prototype of the discussion XModule as a separate, pure XBlock. Functional, but requires patches to edx-platform at the moment.
