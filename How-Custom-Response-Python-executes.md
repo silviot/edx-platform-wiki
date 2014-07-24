@@ -15,3 +15,4 @@ def short_response(expect, ans):
 
 But what kind of python code can be specified within these script tags?  For example, what python libraries are available to this python code?
 
+This code executes in a "jailed" environment to protect the servers.  The list of python packages available to this code is listed [here](https://github.com/edx/edx-platform/tree/master/requirements/edx-sandbox).  In addition, [python's standard libraries](https://docs.python.org/2/library/) are available.
