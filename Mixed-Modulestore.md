@@ -80,12 +80,12 @@ Additionally, we have changed the data structure for `Options[stores]` in the `M
 
 ***Overriding the Branch Setting via a contextmanager***
 
-Callers to the modulestore may, at (rare) times, need to override the server's default branch setting for certain operations.  For such cases, we have introduced a `contextmanager` named `store_branch_setting` to temporarily override the default branch setting.
+Callers to the modulestore may, at (rare) times, need to override the server's default branch setting for certain operations.  For such cases, we have introduced a `contextmanager` named `branch_setting` on modulestores to temporarily override the default branch setting.
 
 ```
-# sample usage of the store_branch_setting context manager
+# sample usage of the branch_setting context manager
 # export only the published content
-with store_branch_setting(course.runtime.modulestore, Branch.draft_preferred):
+with module_store.branch_setting(ModuleStoreEnum.Branch.draft_preferred, course_key):
     course.add_xml_to_node(root)
 ```
 
