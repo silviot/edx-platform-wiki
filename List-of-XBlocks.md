@@ -1,6 +1,6 @@
 * [ACID Xblock](https://github.com/edx/acid-block)
 * [Paella Video XBlock](https://github.com/polimediaupv/paellaXBlock)
-* [Mathematica Cdf XBlock](https://github.com/polimediaupv/paellaXBlock)
+* [Mathematica Cdf XBlock](https://github.com/polimediaupv/cdfXblock)
 * [Staff graded assignment](https://github.com/mitodl/edx-sga)
 * [PDF XBlock]( https://github.com/polimediaupv/pdfXBlock )
 * [PDF XBlock (alternative)](https://github.com/MarCnu/pdfXBlock): Another XBlock to embed PDF, with XBlock title and download buttons.
