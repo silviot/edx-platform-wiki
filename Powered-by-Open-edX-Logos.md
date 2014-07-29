@@ -3,7 +3,7 @@ we ask that all instances of Open edX use one of the following logos in their fo
 
 Please use the S3 URLs rather than host the images yourself.  Note these images are 2x (retina) images, the HTML shown here will provide the proper scaling.
 
-For other guidelines on logo usage, see the [Open edX Visual Identity Guidelines](https://openedx.org/openedx_logo_guidelines.pdf).
+For other guidelines on logo usage, see the [Open edX Visual Identity Guidelines](http://openedx.org/openedx_logo_guidelines.pdf).
 
 ## Color
 
