@@ -1,4 +1,4 @@
-This document discusses the design of the Opaque Keys system, as well as the problem Opaque Keys seeks to solve. For practical understanding of how Opaque Keys impacts edX development, see [[Opaque-Keys---Developer-Notes]].
+This document discusses the design of the Opaque Keys system, as well as the problem Opaque Keys seeks to solve. For practical understanding of how Opaque Keys impacts edX development, see [[Locators:-Developer-Notes]].
 
 ### Table of Contents
 1. [Background](#background)
