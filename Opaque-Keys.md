@@ -35,7 +35,7 @@ To solve this problem, we convert these "transparent keys" (keys where the appli
 
 The other key benefit of this solution is it allows us to migrate our data from `Location`s to `Locator`s, something we have been trying to do for quite some time. This makes it easier to reason about where and how our data is stored and accessed.
 
-Read on for more about the architecture of OpaqueKeys. For help understanding how to utilize them in your application, see [[Opaque-Keys---Developer-Notes]].
+Read on for more about the architecture of OpaqueKeys. For help understanding how to utilize them in your application, see [[Locators:-Developer-Notes]].
 
 <a name="introspection"/>
 ### Key Introspection API
