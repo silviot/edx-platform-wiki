@@ -12,7 +12,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 ```
 * Next, create the .pycharm_helpers directory where PyCharm will store its remote debugging code
 ```
-  sudo su edxapp
+  sudo -su edxapp
   mkdir .pycharm_helpers
 ```
 * Create a PyCharm project for devstack (if you don't have one already):
