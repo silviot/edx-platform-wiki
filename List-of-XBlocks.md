@@ -15,6 +15,7 @@
 * [Image Explorer XBlock v2](https://github.com/edx-solutions/xblock-drag-and-drop-v2): enhanced version of the Image Explorer XBlock. Due to incompatible data model with v1, the original XBlock still remains
 * [Drag and Drop XBlock](https://github.com/edx-solutions/xblock-drag-and-drop): exercise which asks students to drag and drop text or image elements into different buckets according to their content
 * [Brightcove Video XBlock](https://github.com/edx-solutions/xblock-brightcove): to include Brightcove videos within an edX course
+* [Pie Chart XBlock](https://github.com/ExtensionEngine/xblock_charting): to include Pie chart within an edX course
 
 Experimental XBlocks:
 * [Discussion XBlock](https://github.com/edx-solutions/xblock-discussion): a prototype of the discussion XModule as a separate, pure XBlock. Functional, but requires patches to edx-platform at the moment.
