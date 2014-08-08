@@ -1,4 +1,5 @@
 * [ACID Xblock](https://github.com/edx/acid-block)
+* [ORA2](https://github.com/edx/edx-ora2): Version 2 of the Open Response Assessor Project. Provides functionality for peer assessment, self assessment, student training. 
 * [Paella Video XBlock](https://github.com/polimediaupv/paellaXBlock)
 * [Mathematica Cdf XBlock](https://github.com/polimediaupv/cdfXblock)
 * [Staff graded assignment](https://github.com/mitodl/edx-sga)
