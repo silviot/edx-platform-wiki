@@ -94,7 +94,7 @@ then you may be experiencing X11 forwarding timeouts.  The problem and solution 
 
 ### I just got a new vagrant instance but some of my tests (Bok Choy, Acceptance, ...) seem to be failing. Should I be worried?
 * Check the particular test's instruction to see if you have accidentally skipped a step. Possible solutions include:
-  * Clean up the git repo: `git clean` and rebuild the static files: `rake assets[cms,devstack]`
+  * Clean up the git repo: `git clean` and rebuild the static files: `paver update_assets`
   * Restart MongoDB server: 
 `vagrant up
 vagrant ssh
