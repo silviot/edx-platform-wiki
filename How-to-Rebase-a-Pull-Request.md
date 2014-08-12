@@ -65,7 +65,7 @@ To do this, we're going to do an [interactive rebase](https://help.github.com/ar
 $ git merge-base my-branch master
 ```
 
-That commit will return a commit hash. Use that commit hash in constructing this next command:
+That command will return a commit hash. Use that commit hash in constructing this next command:
 
 ```shell
 $ git rebase --interactive ${HASH}
