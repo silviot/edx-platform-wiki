@@ -71,7 +71,7 @@ That command will return a commit hash. Use that commit hash in constructing thi
 $ git rebase --interactive ${HASH}
 ```
 
-For example, if your merge base is `abc123`, you would run `$ git rebase --interactive abc123`. Your text editor will open with a file that lists all the commits in your branch, and in front of each commit is the word "pick". It looks something like this:
+Note that you should *replace* `${HASH}` with the actual commit hash from the previous command. For example, if your merge base is `abc123`, you would run `$ git rebase --interactive abc123`. Your text editor will open with a file that lists all the commits in your branch, and in front of each commit is the word "pick". It looks something like this:
 
 ```
 pick 1fc6c95 do something
