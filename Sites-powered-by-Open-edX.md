@@ -32,3 +32,4 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Politecnico di Milano](https://www.pok.polimi.it/)
 * [All.That.Edu](http://www.allthatedu.com/)
 * [MuddX](http://muddx.com)
+* [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
