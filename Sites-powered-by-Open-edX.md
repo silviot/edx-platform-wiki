@@ -31,5 +31,5 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [PaulusMOOC](https://paulusmooc.org)
 * [Politecnico di Milano](https://www.pok.polimi.it/)
 * [All.That.Edu](http://www.allthatedu.com/)
-* [MuddX](http://muddx.com)
+* [MuddX](http://muddx.com) - Harvey Mudd College
 * [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
