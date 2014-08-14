@@ -17,7 +17,7 @@ XModule | @cpennington |
 Capa | @cpennington |
 licensing | |
 git import/export (Studio) | @carsongee |
-Paver | |
+Paver | @clytwynec @benpatterson @jzoldak  |
 Rake | |
 Studio docs | @mhoeber |
 Student docs | |
