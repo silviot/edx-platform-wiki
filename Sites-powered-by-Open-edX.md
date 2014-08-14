@@ -33,3 +33,4 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [All.That.Edu](http://www.allthatedu.com/)
 * [MuddX](http://muddx.com) - Harvey Mudd College
 * [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
+* [Ural Federal University](http://openedu.urfu.ru/)
