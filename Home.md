@@ -2,6 +2,7 @@ Welcome to the edx-platform wiki!
 
 * [[Sites powered by Open edX]]
 * [[List of XBlocks]]
+* [[List of Open edX service providers]]
 
 ## Installation & Usage
 
