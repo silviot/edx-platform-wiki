@@ -7,3 +7,9 @@ This page lists companies and freelancers offering services around Open edX.
 * **ExtensionEngine** (contact: [Glyn Polson](mailto:glyn@extensionengine.com.com)).
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
  * _References/clients_: Harvard Business School, edX
+
+* **Appsembler** (contact: [Nate Aune](mailto:nate@appsembler.com)).
+ * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
+ * _References/clients_: MITx, Stanford, Davidson College, edX
+ * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx)
+
