@@ -13,3 +13,7 @@ This page lists companies and freelancers offering services around Open edX.
  * _References/clients_: MITx, Stanford, Davidson College, edX
  * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx)
 
+* **solutions.curricu.me** (contact: [John Swope](mailto:john@curricu.me)).
+ * _Services_: Instance installation, theming, custom development, curriculum strategy
+ * _References/clients_: St. George's University, FreshDirect
+
