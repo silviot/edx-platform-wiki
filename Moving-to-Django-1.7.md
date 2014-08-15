@@ -7,7 +7,7 @@
 <th>Additional Benefits (requires work)</th></tr>
 <tr>
 <td>1.5</td>
-<td>@clintonb has done [some work on the 1.5 upgrade](https://github.com/edx/edx-platform/tree/clintonb/django-upgrade), however a few tests are broken.</td>
+<td>@clintonb has done <a href="https://github.com/edx/edx-platform/tree/clintonb/django-upgrade">some work on the 1.5 upgrade</a>, however a few tests are broken.</td>
 <td>
 <ul>
 <li>Password-length DOS protection</li></ul></td>
