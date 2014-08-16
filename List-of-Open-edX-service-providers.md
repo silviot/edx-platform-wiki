@@ -1,6 +1,6 @@
 This page lists companies and freelancers offering services around Open edX.
 
-* **OpenCraft** (contact: [Michael Amigot](mailto:amigot@iblstudios.com)).
+* **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com)).
  * _Services_: Instance installation; theming, customization and XBlocks development; hosting and maintenance, course design and video production.
  * _References/clients_: George Washington University, Laureate Universities, Mid Sweden University, U.P. Comillas, Spain's Government Education Department, CEB European Molecular Oncology...
 
