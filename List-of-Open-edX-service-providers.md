@@ -1,10 +1,5 @@
 This page lists companies and freelancers offering services around Open edX.
 
-* **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com)).
- * _Services_: Instance installation, graphic customization, XBlocks, hosting and maintenance, course design and video production.
- * _References/clients_: George Washington University, Laureate Universities, Mid Sweden University, U.P. Comillas, Spain's Ministry of Education, CEB European Molecular Oncology...
- * [Get a free consultancy; use the edX platform along with the Studio authoring tool for free; follow the latest news regarding Open edX](http://iblstudios.com)
-
 * **OpenCraft** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
  * _Services_: Instance installation, custom development, XBlocks.
  * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, FUN (French Ministry of Higher Education and Research).
@@ -22,3 +17,7 @@ This page lists companies and freelancers offering services around Open edX.
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
  * _References/clients_: St. George's University, FreshDirect
 
+* **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com)).
+ * _Services_: Instance installation, graphic customization, XBlocks, hosting and maintenance, course design and video production.
+ * _References/clients_: George Washington University, Laureate Universities, Mid Sweden University, U.P. Comillas, Spain's Ministry of Education, CEB European Molecular Oncology...
+ * [Get a free consultancy; use the edX platform along with the Studio authoring tool for free; follow the latest news regarding Open edX](http://iblstudios.com)
