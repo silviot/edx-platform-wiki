@@ -38,7 +38,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
 5. Execute the following command in your edx-platform directory with your edx-platform virtualenv. 
 
-        $ rake i18n:robot:pull
+        $ paver i18n_robot_pull
 
   Note that this command will pull *reviewed* translations for **all** languages that are listed in `conf/locale/config.yaml`. To only pull down some languages, edit `conf/locale/config.yaml` appropriately.
 
