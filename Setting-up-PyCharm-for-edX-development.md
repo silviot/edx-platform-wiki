@@ -65,7 +65,7 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Your LMS server configuration should look something similar to:
 ![LMS server configuration]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/LMS_server.png)
-* To build (rake) assets:
+* Remember to update assets before running LMS:
   * (ssh into vagrant first, and su as edxapp user).
   * ```paver update_assets lms --settings=devstack```
 * Debug the new "LMS" configuration
@@ -74,14 +74,14 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * You should now be able to set breakpoints and hit them.
 
 ### Create a debug configuration for Studio (CMS) 
-* The CMS configuration is very similar to LMS, so we need to clone LMS configuration and adjust a few parameters. 
+* The Studio configuration is very similar to LMS, so we need to clone the LMS configuration and adjust a few parameters. 
   * Choose "Run > Edit Configurations..."
   * Select "LMS"
   * Click the "Copy configuration" button (next to the "-" button)
   * Change the name to "Studio"
   * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
-* Remember to rake assets (ssh into vagrant first) before running Studio from Pycharm.
+* Remember to update assets (ssh into vagrant first) before running Studio from Pycharm.
 * ```paver update_assets cms --settings=devstack```
 * If you have XQuartz installed, you can test the server directly by going logging in as edxapp and type ```firefox```.
 
