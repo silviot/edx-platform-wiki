@@ -1,4 +1,4 @@
-This page lists companies and freelancers offering services around Open edX.
+This page lists companies and freelancers offering services around Open edX. (Note: service providers, feel free to add yourself to the end of the list!)
 
 * **OpenCraft** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
  * _Services_: Instance installation, custom development, XBlocks.
