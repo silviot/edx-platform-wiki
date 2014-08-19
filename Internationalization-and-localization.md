@@ -46,7 +46,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
 6. When you launch your LMS instance you can launch it normally and things should display properly. However, if in Step 3 you created a special "dev_LANGUAGECODE" file, you'll need to launch the LMS with the environment file explicitly stated:
 
-        $ rake lms[dev_es,0.0.0.0:8000]
+        $ paver lms -s dev_es -p 8000
 
 7. If you experience issues:
    - Be sure your browser is set to prefer the language set in `LANGUAGE_CODE`
