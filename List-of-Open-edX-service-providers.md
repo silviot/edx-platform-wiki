@@ -23,4 +23,4 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: St. George's University, FreshDirect
 
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
- * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
+ * _Services_: Instance installation, theming, custom development, curriculum strategy & course development in Arabic Language
