@@ -21,3 +21,6 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **solutions.curricu.me** (contact: [John Swope](mailto:john@curricu.me)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
  * _References/clients_: St. George's University, FreshDirect
+
+* **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
+ * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
