@@ -18,6 +18,7 @@
 * [Brightcove Video XBlock](https://github.com/edx-solutions/xblock-brightcove): to include Brightcove videos within an edX course
 * [Pie Chart XBlock](https://github.com/ExtensionEngine/xblock_charting): to include Pie chart within an edX course
 * [3D Model Viewer XBlock](https://github.com/ExtensionEngine/xblock_3d_viewer): to include and view 3D .obj models within an edX course
+* [Animation XBlock](https://github.com/pmitros/AnimationXBlock): shows students an animation they can go through. There is a set of images with corresponding text, and a slider for going through these images.
 
 Experimental XBlocks:
 * [Discussion XBlock](https://github.com/edx-solutions/xblock-discussion): a prototype of the discussion XModule as a separate, pure XBlock. Functional, but requires patches to edx-platform at the moment.
