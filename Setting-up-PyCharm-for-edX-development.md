@@ -27,6 +27,9 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * cms/lib
   * common/djangoapps
   * common/lib
+* You can also mark the following symlinks to be "Excluded" so that PyCharm doesn't see multiple copies of the same files:
+  * cms/static/xmodule_js
+  * lms/static/xmodule_js
 
 ### Create a PyCharm remote interpreter (PyCharm v3.4+)
 * Select "Preferences..." from the Apple menu
