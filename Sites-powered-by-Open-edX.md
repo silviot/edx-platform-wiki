@@ -38,3 +38,4 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Unow](http://learn.unow-mooc.org/)
 * [Applied Materials - Nanoloearning](http://nano-learning.org/)
 * [Aquent](http://edx-dev.aquent.com/)
+* [metaStudio](http://courses.metaStudio.org) maintained by the [gnowledge lab](http://www.metastudio.org/gnowledge%20lab/)
