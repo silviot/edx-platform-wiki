@@ -31,5 +31,5 @@ This page lists companies and freelancers offering services around Open edX. (No
  * [Get a free Open edX (ova)](http://www.edustack.org/?page_id=8)
 
 * **EdCast** (contact: [Daniel McKelvey](mailto:info@edcast.com))
-* _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, 24/7 support
-* [Get your branded live instance](http://www.edcast.com/educators) and start your 30 day free trial today!
+ * _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, 24/7 support
+ * [Get your branded live instance](http://www.edcast.com/educators) and start your 30 day free trial today!
