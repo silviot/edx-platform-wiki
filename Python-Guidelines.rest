@@ -116,6 +116,11 @@ Not like this::
     def foo(a, b):
         """Computes the foo of a and b.""" # NO NO NO
 
+Write a Good repr() for Each Class
+----------------------------------
+
+Each class should have a `__repr__() method <https://docs.python.org/2/reference/datamodel.html#object.__repr__>`_ defined, so that calling `repr()` on an instance of the class returns something meaningful that distinguishes objects from each other to a human being. This is useful for debugging purposes.
+
 Pylint Guidelines and Practices
 ===============================
 
