@@ -22,7 +22,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Rocketpedia](http://rocketpedia.org/)
 * [Edraak](https://edraak.org/) - Queen Rania Foundation
 * [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
-* [UNC Online](https://mooc.northcarolina.edu/)
+* [UNC Online](https://mooc.northcarolina.edu/) - University of North Carolina Online
 * [BistuX](http://x.bistu.edu.cn)
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](http://upex.iaen.edu.ec)
 * [edXUCL](http://edx.ucl.br/)
@@ -33,7 +33,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [All.That.Edu](http://www.allthatedu.com/)
 * [MuddX](http://muddx.com) - Harvey Mudd College
 * [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
-* [UNC Online](https://mooc.northcarolina.edu/) - University of North Carolina Online
 * [Ural Federal University](http://openedu.urfu.ru/)
 * [Talan](http://universite.talan.fr)
 * [Unow](http://learn.unow-mooc.org/)
