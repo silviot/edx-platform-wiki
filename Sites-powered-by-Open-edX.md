@@ -35,7 +35,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Japanese
 * [gacco] (http://gacco.org) - courses from Japanese universities
 
-** Arabic
+## Arabic
 * [Edraak] (https://edraak.org/) - Queen Rania Foundation
 
 ***
