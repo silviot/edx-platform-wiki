@@ -1,4 +1,4 @@
-This is a list of sites powered by Open edX.  Feel free to add yours, with a short description.  There's no organization to the page (yet!).
+This is a list of sites powered by Open edX.  Feel free to add yours, with a short description.  (These are organized by primary course language: any better ideas?)
 
 ## English
 * [edX](http://edx.org) - The original, with dozens of members.
