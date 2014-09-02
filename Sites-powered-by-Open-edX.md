@@ -15,12 +15,12 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MuddX](http://muddx.com) - Harvey Mudd College
 * [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
 
-
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/)
 * [MOOC FranceTv Education](http://mooc.francetveducation.fr/)
 * [IONISx](https://ionisx.com) by [IONIS Education Group](http://www.ionis-group.com) - France - Philippe Chiu
 * [MoocIT](http://learn-moocit.fr/)
+* [Talan](http://universite.talan.fr)
 
 ## Spanish
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
@@ -31,6 +31,10 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/)
 * [BistuX](http://x.bistu.edu.cn)
+
+## Russian
+* [pelic.ru](http://pelic.ru) - Correspondence courses?
+* [Ural Federal University](http://openedu.urfu.ru/)
 
 ## Japanese
 * [gacco] (http://gacco.org) - courses from Japanese universities
@@ -49,8 +53,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [PaulusMOOC](https://paulusmooc.org)
 * [Politecnico di Milano](https://www.pok.polimi.it/)
 * [All.That.Edu](http://www.allthatedu.com/)
-* [Ural Federal University](http://openedu.urfu.ru/)
-* [Talan](http://universite.talan.fr)
 * [Unow](http://learn.unow-mooc.org/)
 * [Applied Materials - Nanoloearning](http://nano-learning.org/)
 * [Aquent](http://edx-dev.aquent.com/)
