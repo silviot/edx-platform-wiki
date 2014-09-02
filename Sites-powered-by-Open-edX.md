@@ -21,12 +21,14 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [IONISx](https://ionisx.com) by [IONIS Education Group](http://www.ionis-group.com) - France - Philippe Chiu
 * [MoocIT](http://learn-moocit.fr/)
 * [Talan](http://universite.talan.fr)
+* [Ulibre](http://www.ulibre.ca) - CLOM de la Téluq - l'université à distance de l'Université du Québec
 
 ## Spanish
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
 * [eduNext - Colombia] (http://edx.edunext.co/)
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
+* [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](http://upex.iaen.edu.ec)
 
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/)
@@ -36,22 +38,25 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [pelic.ru](http://pelic.ru) - Correspondence courses?
 * [Ural Federal University](http://openedu.urfu.ru/)
 
+## Portugese
+* [Escola - Portugal](http://cursos.escola.org)
+* [edXUCL](http://edx.ucl.br/)
+
 ## Japanese
 * [gacco] (http://gacco.org) - courses from Japanese universities
 
 ## Arabic
 * [Edraak] (https://edraak.org/) - Queen Rania Foundation
 
+## Italian
+* [Politecnico di Milano](https://www.pok.polimi.it/)
+
 ***
  
 * [Pepper](http://pepperpd.com) - Joshua Marks
 * [University of Zurich](http://www.edx.uzh.ch) - Many courses internally - Paul-Olivier Dehaye 
-* [Escola - Portugal](http://cursos.escola.org)
-* [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](http://upex.iaen.edu.ec)
-* [edXUCL](http://edx.ucl.br/)
 * [Croatopica](http://croatopica.net/)
 * [PaulusMOOC](https://paulusmooc.org)
-* [Politecnico di Milano](https://www.pok.polimi.it/)
 * [All.That.Edu](http://www.allthatedu.com/)
 * [Unow](http://learn.unow-mooc.org/)
 * [Applied Materials - Nanoloearning](http://nano-learning.org/)
@@ -59,4 +64,3 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [metaStudio](http://courses.metaStudio.org) maintained by the [gnowledge lab](http://www.metastudio.org/gnowledge%20lab/)
 
 * [MITx](http://odl.mit.edu/residential-mitx/) Residential MITx courses for MIT students
-* [Ulibre](http://www.ulibre.ca) - CLOM de la Téluq - l'université à distance de l'Université du Québec
