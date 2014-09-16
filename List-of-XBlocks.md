@@ -19,6 +19,8 @@
 * [Pie Chart XBlock](https://github.com/ExtensionEngine/xblock_charting): to include Pie chart within an edX course
 * [3D Model Viewer XBlock](https://github.com/ExtensionEngine/xblock_3d_viewer): to include and view 3D .obj models within an edX course
 * [Animation XBlock](https://github.com/pmitros/AnimationXBlock): shows students an animation they can go through. There is a set of images with corresponding text, and a slider for going through these images.
+* [CarouselWorkspace XBlock](https://github.com/METIT-BU/xblock-carouselworkspace)- This is our second XBlock to combine learning content and practice space within the same window. The first XBlock provided a multimedia carousel to host learning contents [here](https://github.com/metit-bu/xblock-carousel). This XBlock along with providing a multimedia carousel, focuses on embedding a separate url of a web-enabled workspace for hands-on activities. In the example below, we demonstrate this XBlock with terminal emulator using open source Gateone application. Click [here]
+(http://met-testedx2.bu.edu:8000/courses/MET/101/2014/about) for the demo
 
 Experimental XBlocks:
 * [Discussion XBlock](https://github.com/edx-solutions/xblock-discussion): a prototype of the discussion XModule as a separate, pure XBlock. Functional, but requires patches to edx-platform at the moment.
