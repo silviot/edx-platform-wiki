@@ -26,7 +26,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MoocIT](http://learn-moocit.fr/)
 * [Talan](http://universite.talan.fr)
 * [Ulibre](http://www.ulibre.ca) - CLOM de la Téluq - l'université à distance de l'Université du Québec
-* [FBMX - by First Finance group](https://www.fbmx.net/)
+* [FBMX - by First Finance Group](https://www.fbmx.net/)
 
 ## Spanish
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
