@@ -46,7 +46,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Portugese
 * [Escola - Portugal](http://cursos.escola.org)
-* [ESO - Ensino Superior Online](http://eso.org.br/)
+* [ESO - Ensino Superior Online - Brasil](http://eso.org.br/)
 
 ## Japanese
 * [gacco] (http://gacco.org) - courses from Japanese universities
