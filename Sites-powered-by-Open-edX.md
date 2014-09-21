@@ -44,7 +44,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [pelic.ru](http://pelic.ru) - Correspondence courses?
 * [Ural Federal University](http://openedu.urfu.ru/)
 
-## Portugese
+## Portuguese
 * [Escola - Portugal](http://cursos.escola.org)
 * [ESO - Ensino Superior Online - Brasil](http://eso.org.br/)
 
