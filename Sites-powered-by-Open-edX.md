@@ -18,6 +18,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Applied Materials - Nanoloearning](http://nano-learning.org/)
 * [Unow](http://learn.unow-mooc.org/)
 * [Seneca College, Toronto, Canada](http://online-dev.cdot.senecacollege.ca/)
+* [University of Zurich](http://www.edx.uzh.ch) - Many courses internally - Paul-Olivier Dehaye 
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/)
@@ -63,7 +64,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ***
  
-* [University of Zurich](http://www.edx.uzh.ch) - Many courses internally - Paul-Olivier Dehaye 
 * [Aquent](http://edx-dev.aquent.com/)
 * [metaStudio](http://courses.metaStudio.org) maintained by the [gnowledge lab](http://www.metastudio.org/gnowledge%20lab/)
 * [MITx](http://odl.mit.edu/residential-mitx/) Residential MITx courses for MIT students
