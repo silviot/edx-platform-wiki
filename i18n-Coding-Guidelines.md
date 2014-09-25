@@ -1,8 +1,8 @@
 Developers are expected to internationalize (i18n) all user-facing strings.
 
-Detailed instructions, including how to i18n and provide `Translators:` comments in different types of files (Python, Mako, Javascript, etc) can be found here: https://github.com/edx/edx-platform/blob/master/docs/en_us/developers/source/i18n.rst
+**Detailed instructions, including how to i18n and provide `Translators:` comments in different types of files (Python, Mako, Javascript, etc) can be found here: [https://github.com/edx/edx-platform/blob/master/docs/en_us/developers/source/i18n.rst](https://github.com/edx/edx-platform/blob/master/docs/en_us/developers/source/i18n.rst)**
 
-Additionally, here are some general guidelines you should always follow:
+This wiki page contains some brief guidelines, as well as some "Gotchas" taken from the edx-platform codebase.
 
 * Always provide context in your strings - this means using well-named placeholder variables over positional variables (`_("Showing grades for {username}").format(username=username)` as opposed to `_("Showing grades for {0}").format(username)`)
 * Context should also be provided via `# Translators:` comments. These comments can explain in detail how a word is used. This is especially important for shorter phrases that may have a few different interpretations.
