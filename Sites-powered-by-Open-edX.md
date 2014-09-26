@@ -40,7 +40,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/)
-* [BistuX](http://x.bistu.edu.cn)
+* [BistuX 北京信息科技大学](http://x.bistu.edu.cn)
+* [北京外国语大学](http://mooc.bfsu.edu.cn/)
 
 ## Russian
 * [pelic.ru](http://pelic.ru) - Correspondence courses?
