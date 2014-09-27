@@ -5,9 +5,9 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, FUN (French Ministry of Higher Education and Research).
 
 * **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com)).
- * _Services_: Platform installation, graphic and software customization, hosting, upgrades, disaster recovery, training. Technical support for courses and video production following pedagogy best practices.
- * _References/clients_: George Washington University, Laureate Universities, Mid Sweden University, U.P. Comillas - ICADE, CEB European Molecular Oncology, Kare Partners - University of Rochester, Isead - Doral University of Florida, Boyce College, Spain's Ministry of Education.
- * [Download the Open edX guide](http://iblstudios.com/free-ebook-open-edx/); [get a free 30-min. consultancy](http://iblstudios.com); access the Studio tool and create test courses.
+ * _Services_: Platform installation, design and software customization. Hosting, upgrades, disaster recovery. Training and technical support for creating courses. Video production and media support. edX third party partner.
+ * _References/clients_: George Washington University, Cooper Union, Laureate Universities, Mid Sweden University, U.P. Comillas - ICADE, CEB European Molecular Oncology, Kare Partners - University of Rochester, Isead - Doral University of Florida, Boyce College, Spain's Ministry of Education.
+ * [Download the Open edX guide](http://iblstudios.com/edx-guide/); [get a free 30-min. consultancy](http://iblstudios.com); access the Studio tool and create test courses.
 
 * **ExtensionEngine** (contact: [Glyn Polson](mailto:glyn@extensionengine.com.com)).
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
