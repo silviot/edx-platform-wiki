@@ -36,7 +36,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [eduNext - Colombia] (http://edx.edunext.co/)
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
-* [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](http://upex.iaen.edu.ec)
+* [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec)
 * [PaulusMOOC](https://paulusmooc.org)
 
 ## Chinese
