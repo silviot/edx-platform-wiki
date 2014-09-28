@@ -54,8 +54,10 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Right-click on the file and choose "Create 'manage'..." to create a debug configuration
   * Specify the settings for the new configuration:
     * Change the name to something more memorable, e.g. "LMS".
-    * Specify "/edx/app/edxapp/venvs/edxapp/bin/paver" for "Script".
-    * Specify "devstack lms" for "Script parameters".
+    * ~~Specify "/edx/app/edxapp/venvs/edxapp/bin/paver" for "Script".~~
+    * ~~Specify "devstack lms" for "Script parameters".~~
+    * Specify "./manage.py" for "Script".
+    * Specify "lms runserver --settings=devstack 0.0.0.0:8000" for "Script parameters".
     * click to edit the "Environment variables" property
       * Click the "+" button to add a new variable
       * add all variables included in /edx/app/edxapp/edxapp_env 
@@ -84,6 +86,7 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up.
   * You should now be able to set breakpoints and hit them.
+  * **Note on relative paths** If you choose to optionally create symlinks, make sure to specify the full paths, otherwise PyCharm will not recognize the source files. This leads to a "Source File Does Not Exist" error when trying to debug.
 
 ### Create a debug configuration for Studio (CMS) 
 * The Studio configuration is very similar to LMS, so we need to clone the LMS configuration and adjust a few parameters. 
