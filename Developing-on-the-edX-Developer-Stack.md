@@ -97,6 +97,11 @@ To syncdb and migrate from the shell as the edxapp user:
 ./manage.py lms --settings=devstack syncdb
 ./manage.py lms --settings=devstack migrate
 ```
+If there are errors, you might be able to resolve them with 
+```
+./manage.py lms --settings=devstack migrate --merge
+```
+followed by syncdb'ing
 
 Devstack uses mySQL as the DB engine for the edx-platform app.
 You can tell this by starting up the Django shell with:
