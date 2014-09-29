@@ -83,7 +83,7 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Select "LMS"
   * Click the "Copy configuration" button (next to the "-" button)
   * Change the name to "Studio"
-  * Change the "Script parameters" to ```devstack studio```
+  * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
 * If you have XQuartz installed, you can test the server directly by going logging in as edxapp and type ```firefox```.
 
