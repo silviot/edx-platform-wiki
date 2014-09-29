@@ -54,20 +54,9 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Right-click on the file and choose "Create 'manage'..." to create a debug configuration
   * Specify the settings for the new configuration:
     * Change the name to something more memorable, e.g. "LMS".
-    * ~~Specify "/edx/app/edxapp/venvs/edxapp/bin/paver" for "Script".~~
-    * ~~Specify "devstack lms" for "Script parameters".~~
     * Specify "./manage.py" for "Script".
     * Specify "lms runserver --settings=devstack 0.0.0.0:8000" for "Script parameters".
     * click to edit the "Environment variables" property
-      * Click the "+" button to add a new variable
-      * add all variables included in /edx/app/edxapp/edxapp_env 
-        * LANG="en_US.UTF-8"
-        * SKIP_WS_MIGRATIONS="1"
-        * GEM_PATH="/edx/app/edxapp/.gem"
-        * NO_PREREQ_INSTALL="1"
-        * PATH="/edx/app/edxapp/venvs/edxapp/bin:/edx/app/edxapp/edx-platform/bin:/edx/app/edxapp/.rbenv/bin:/edx/app/edxapp/.rbenv/shims:/edx/app/edxapp/.gem/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-        * GEM_HOME="/edx/app/edxapp/.gem"
-        * RBENV_ROOT="/edx/app/edxapp/.rbenv"
     * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
     * Specify "/edx/app/edxapp/edx-platform" for "Working directory".
     * Click to edit the "Path mappings" property
