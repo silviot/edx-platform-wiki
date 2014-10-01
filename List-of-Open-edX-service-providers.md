@@ -33,3 +33,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **EdCast** (contact: [Daniel McKelvey](mailto:info@edcast.com))
  * _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, invite-only courses and control over enrollment schemes, LTI-compliant collaboration tools, 24/7 support
  * [Get your custom-branded live instance](http://www.edcast.com/educators) and start your 30 day free trial today!
+
+* **VeritasU** (contact: [Patrick McGuinness](mailto:patrick@veritasu.com))
+ * _Services_: Instance deployment, managed hosting on veritasu.com and white-labelled, course development and customization including xblock development, custom theming and branding, and support.
+* [Initial free course signup](http://www.veritasu.com/) 
