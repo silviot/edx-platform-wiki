@@ -55,13 +55,12 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Specify the settings for the new configuration:
     * Change the name to something more memorable, e.g. "LMS".
     * Specify "./manage.py" for "Script".
-    * Specify "lms runserver --settings=devstack 0.0.0.0:8000" for "Script parameters".
-    * click to edit the "Environment variables" property
+    * Specify "lms runserver --settings=devstack 0.0.0.0:8000" for "Script parameters".    
     * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
     * Specify "/edx/app/edxapp/edx-platform" for "Working directory".
     * Click to edit the "Path mappings" property
       * Click the "+" button to add a new mapping
-      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/andya/devstack/edx-platform"  (Be sure to specify "Users" rather than the shorthand "~" here.)
+      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/[username]/devstack/edx-platform"  (Be sure to specify "Users" rather than the shorthand "~" here.)
       * Specify "/edx/app/edxapp/edx-platform" for "Remote path".
       * Click "OK" to save the mappings.
     * Deselect "Add content roots to PYTHONPATH".
@@ -103,7 +102,7 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
-### Setting up Python Test Configuration
+### Setting up Python Test Configuration 
 * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
 * Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
 * Script parameters: ```test_python```. 
@@ -111,7 +110,15 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
-### Setting up Bokchoy Test Configuration
+### Setting up Python Test Configuration for catching break points in a specific test
+* Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+* Script: ```./manage.py```.
+* Script parameters: ```cms test --verbosity=1 common/lib/xmodule/xmodule/tests/test_lms.py   --traceback --settings=test```. where you put the path to the script from edx-app/
+* Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+* Working directory: ```/Users/[username]/devstack/edx-platform```
+* Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+
+### (Simple) Setting up Bokchoy Test Configuration (can't catch breakpoints)
 ![Bokchoy Test Configuration]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/bokchoy_server.png)
 * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
@@ -120,6 +127,35 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+
+### (complicated) Setting up Bokchoy Test Configuration for catching break points
+1. Make sure that https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development#integrate-xquartz-into-pycharm is working and to remember the DISPLAY variable.  (in the terminal you can do ```echo $DISPLAY``` and make sure that is non-null
+* Configure and start Bokchoy cms server 
+ * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+ * Change the name to something more memorable, e.g. "CMS Bokchoy server".
+ * Script: ```./manage.py```.
+ * Script parameters: ```cms --settings bok_choy runserver 0.0.0.0:8031 --traceback --noreload``` (if you have already compiled the assets). 
+ * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+ * Working directory: ```/Users/[username]/devstack/edx-platform```
+ * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+* Configure and start Bokchoy lms server 
+ * Change the name to something more memorable, e.g. "LMS Bokchoy server".
+ * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+ * Script: ```./manage.py```.
+ * Script parameters: ```lms --settings bok_choy runserver 0.0.0.0:8003 --traceback --noreload``` (if you have already compiled the assets). 
+ * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+ * Working directory: ```/Users/[username]/devstack/edx-platform```
+ * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+* Configure and debug Bokchoy test run
+ * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+ * Change the name to something more memorable, e.g. "Bokchoy test".
+ * Script: ```/edx/app/edxapp/venvs/edxapp/bin/nosetests```.
+ * Script parameters: ```/edx/app/edxapp/edx-platform/common/test/acceptance/tests/discussion/test_cohort_management.py:CohortConfigurationTest --with-xunit --xunit-file=/edx/app/edxapp/edx-platform/reports/bok_choy/xunit.xml --verbosity=2``` 
+ * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
+ * Working directory: ```/Users/[username]/devstack/edx-platform```
+ * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+ * Click to edit the "Environment variables" property
+  * Set the DISPLAY variable to whatever value you obtained i.e. ```DISPLAY=localhost:11.0```
 
 ### Create a debug configuration for an edX common unit test          
 * Choose "Run > Edit Configurations..."
