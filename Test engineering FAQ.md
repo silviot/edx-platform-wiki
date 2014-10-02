@@ -110,6 +110,14 @@ sudo rm /edx/var/mongo/mongodb/mongod.lock
 sudo start mongodb
 ```
 
+If that still doesn't work, you can try
+```
+sudo rm /edx/var/mongo/mongodb/mongod.lock
+sudo mongod -repair --config /etc/mongodb.conf
+sudo chown -R mongodb:mongodb /edx/var/mongo/mongodb/.
+sudo start mongodb
+```
+
 ### How Test Coverage Works?
 
 Please read the details [here](https://openedx.atlassian.net/wiki/display/TE/How+Test+Coverage+Works)
