@@ -118,7 +118,7 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
-### (Simple) Setting up Bokchoy Test Configuration (can't catch breakpoints)
+### Setting up Bokchoy Test Configuration (can't catch breakpoints)
 ![Bokchoy Test Configuration]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/bokchoy_server.png)
 * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
@@ -128,7 +128,7 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Working directory: ```/Users/[username]/devstack/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
-### (complicated) Setting up Bokchoy Test Configuration for catching break points
+### Setting up Bokchoy Test Configuration for catching break points
 1. Make sure that https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development#integrate-xquartz-into-pycharm is working and to remember the DISPLAY variable.  (in the terminal you can do ```echo $DISPLAY``` and make sure that is non-null
 * Configure and start Bokchoy cms server 
  * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
