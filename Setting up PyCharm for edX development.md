@@ -156,6 +156,7 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
  * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
  * Click to edit the "Environment variables" property
   * Set the DISPLAY variable to whatever value you obtained i.e. ```DISPLAY=localhost:11.0```
+* You might have to log out/ log in to the terminal you opened in the first step if Pycharm can't find your display 
 
 ### Create a debug configuration for an edX common unit test          
 * Choose "Run > Edit Configurations..."
