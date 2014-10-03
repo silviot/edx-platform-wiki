@@ -129,7 +129,9 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
 ### Setting up Bokchoy Test Configuration for catching break points
-1. Make sure that https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development#integrate-xquartz-into-pycharm is working and to remember the DISPLAY variable.  (in the terminal you can do ```echo $DISPLAY``` and make sure that is non-null
+The idea is to start up all the services that will listen on various ports and then run tests individually while those services are up. It is useful to install the [Multirun](http://plugins.jetbrains.com/plugin/7248?pr=pycharm) tool (you can install it directly within the IDE under preferences / plugin); this way you can have one-click deployment of all of these services.
+1. In Preferences/ Project Structure mark ./common/djangoapps/terrain/stubs as a source.
+* Make sure that https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development#integrate-xquartz-into-pycharm is working and to remember the DISPLAY variable.  (in the terminal you can do ```echo $DISPLAY``` and make sure that is non-null
 * Configure and start Bokchoy cms server 
  * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
  * Change the name to something more memorable, e.g. "CMS Bokchoy server".
@@ -139,13 +141,40 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
  * Working directory: ```/Users/[username]/devstack/edx-platform```
  * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 * Configure and start Bokchoy lms server 
+ * Clone the previous setting
  * Change the name to something more memorable, e.g. "LMS Bokchoy server".
- * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
  * Script: ```./manage.py```.
  * Script parameters: ```lms --settings bok_choy runserver 0.0.0.0:8003 --traceback --noreload``` (if you have already compiled the assets). 
+* Configure and start Youtube server 
+ * Clone the previous setting
+ * Change the name to something more memorable, e.g. "Youtube bok choy server".
+ * Script: ```stubs.start```
+ * Script parameters: ```youtube 9080  /edx/app/edxapp/edx-platform/test_root/log/bok_choy_youtube.log``` 
+ * **Interpreter options: ```-u -m```**
  * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
  * Working directory: ```/Users/[username]/devstack/edx-platform```
  * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+ * check **Add source roots to PYTHONPATH**
+* Configure and start Comments server 
+ * Clone previous configuration
+ * Change the name to something more memorable, e.g. "Comments bok choy server".
+ * Script: ```stubs.start```
+ * Script parameters: ```comments 4567  /edx/app/edxapp/edx-platform/test_root/log/bok_choy_comments.log```
+* Configure and start Ora server 
+ * Clone previous configuration
+ * Change the name to something more memorable, e.g. "Ora bok choy server".
+ * Script: ```stubs.start```
+ * Script parameters: ```ora 8041  /edx/app/edxapp/edx-platform/test_root/log/bok_choy_ora.log```
+* Configure and start Video server 
+ * Clone previous configuration
+ * Change the name to something more memorable, e.g. "Video bok choy server".
+ * Script: ```stubs.start```
+ * Script parameters: ```video 8777 root_dir=/edx/app/edxapp/edx-platform/test_root/data/video /edx/app/edxapp/edx-platform/test_root/log/bok_choy_video_sources.log```
+* Configure and start Xqueue server 
+ * Clone previous configuration
+ * Change the name to something more memorable, e.g. "Xqueue bok choy server".
+ * Script: ```stubs.start```
+ * Script parameters: ```xqueue 8040 register_submission_url=http://0.0.0.0:8041/test/register_submission /edx/app/edxapp/edx-platform/test_root/log/bok_choy_xqueue.log```
 * Configure and debug Bokchoy test run
  * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
  * Change the name to something more memorable, e.g. "Bokchoy test".
