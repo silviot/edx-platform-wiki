@@ -33,7 +33,13 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Spanish
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
-* [eduNext - Colombia] (http://edx.edunext.co/)
+* [eduNEXT - Colombia] (http://edx.edunext.co/) - Using microsites to power:
+    * [Educampus] (http://cursos.educampus.la/)
+    * [Sociedad Colombiana de Archivistas] (http://scarchivistas.edunext.co/)
+    * [Mushaisa] (http://blended.mushaisa.co/)
+    * [AFS Colombia] (http://afs.edunext.co/)
+    * [Paqua] (http://paqua.edunext.co/)
+    * [Labranzacero] (http://labranzacero.edunext.co/)
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec)
