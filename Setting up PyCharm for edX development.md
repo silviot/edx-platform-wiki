@@ -81,7 +81,10 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
 * Debug the new "LMS" configuration
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up.
-  * You should now be able to set breakpoints and hit them.
+  * Try the following to ensure that you can set breakpoints:
+    * Open the file lms/envs/common.py
+    * Put a breakpoint on the first line (```PLATFORM_NAME = "Your Platform Name Here"```)
+    * Visit http://localhost:8000/ and verify that PyCharm stops at the breakpoint
   * **Note on relative paths** If you choose to optionally create symlinks, make sure to specify the full paths, otherwise PyCharm will not recognize the source files. This leads to a "Source File Does Not Exist" error when trying to debug.
 
 ### Create a debug configuration for Studio (CMS) 
@@ -92,7 +95,6 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
   * Change the name to "Studio"
   * Change the "Script parameters" to ```cms runserver --settings=devstack 0.0.0.0:8001```
   * Click "OK" to save the new configuration
-* If you have XQuartz installed, you can test the server directly by going logging in as edxapp and type ```firefox```.
 
 ### Testing your changes
 
@@ -100,31 +102,17 @@ See the [[Test Engineering FAQ]] for all your questions about testing the edX pl
 
 ### Debugging edX platform tests in PyCharm
 
-Now with the remote interpreter, we can use PyCharm to debug edX platform tests (Python, JavaScript, Bok Choy, Acceptance) kicked off via paver command. The process is fairly simple. Since the test suites can be run using the ```paver``` command with different parameters, we just need to supply the appropriate paver task and parameters.
+Now with the remote interpreter, we can use PyCharm to debug edX platform tests (Python, JavaScript, Bok Choy, Acceptance). Note: PyCharm tests are invoked using ```paver``` but unfortunately this creates child processes that cannot be debugged. For this reason, it is necessary to execute the child process directly.
 
-### Setting up JavaScript Test Configuration
-* Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
-* Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
-* Script parameters: ```test_js```. 
-* Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
-* Working directory: ```/Users/[username]/devstack/edx-platform```
-* Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+### Create a test configuration for an individual LMS test
 
-### Setting up Python Test Configuration 
-* Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
-* Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
-* Script parameters: ```test_python```. 
-* Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
-* Working directory: ```/Users/[username]/devstack/edx-platform```
-* Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
-
-### Setting up Python Test Configuration for catching break points in a specific test
-* Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
-* Script: ```./manage.py```.
-* Script parameters: ```cms test --verbosity=1 common/lib/xmodule/xmodule/tests/test_lms.py   --traceback --settings=test```. where you put the path to the script from edx-app/
-* Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
-* Working directory: ```/Users/[username]/devstack/edx-platform```
-* Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
+* As before, we need to clone the LMS configuration and adjust a few parameters. In this case, we are going to run ```test_views.py```.
+  * Choose "Run > Edit Configurations..."
+  * Select "LMS"
+  * Click the "Copy configuration" button (next to the "-" button)
+  * Change the name to "LMS Tests"
+  * Change the "Script parameters" to ```lms --settings test test lms/djangoapps/courseware/tests/test_views.py```
+  * Click "OK" to save the new configuration
 
 ### Setting up Bokchoy Test Configuration (can't catch breakpoints)
 ![Bokchoy Test Configuration]
@@ -198,9 +186,9 @@ The idea is to start up all the services that will listen on various ports and t
 
 ### Create a debug configuration for an edX common unit test          
 * Choose "Run > Edit Configurations..."
-* Select the "Studio" configuration.
+* Select the "LMS" configuration.
 * Click the "Copy configuration" button (next to the "-" button).
-* Change the name to "Studio CommonTests".
+* Change the name to "Common Tests".
 * Change the script to ```/edx/app/edxapp/venvs/edxapp/bin/nosetests```
 * Change the "Script parameters" to run the test:
   * e.g. ```common/lib/xmodule/xmodule/tests/test_resource_templates.py```
