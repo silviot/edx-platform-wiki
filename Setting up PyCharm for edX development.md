@@ -42,6 +42,14 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * In the drop down that appears, click on "Add Remote"
 * Select the "SSH Credentials" radio button.
 * Specify the following configurations:
+ * Host: ```127.0.0.1```
+ * User name: ```edxapp```
+ * Auth type: ```password```
+ * Password: the password you specified (ensure that "Save Password" is selected)
+ * Python interpreter path: ```/edx/app/edxapp/venvs/edxapp/bin/python```
+ * The end result should look like this:
+***
+
 ![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_remote_conf.png)
 * PyCharm will automatically detect the helper folder and upload the debugging files. The final configuration should look like this:
 ![PyCharm 3.4+ conf] (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
