@@ -12,8 +12,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 ```
 * Next, create the .pycharm_helpers directory where PyCharm will store its remote debugging code
 ```
-  sudo -
-  su edxapp
+  sudo su edxapp
   mkdir .pycharm_helpers
 ```
 * Create a PyCharm project for devstack (if you don't have one already):
@@ -31,20 +30,21 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * You can also mark the following symlinks to be "Excluded" so that PyCharm doesn't see multiple copies of the same files:
   * cms/static/xmodule_js
   * lms/static/xmodule_js
+  * lms/static/templates
+  * test_root/staticfiles
+* You might also want to hide the translations directory as every language matches when you search for a product string:
+  * conf/locale
 
 ### Create a PyCharm remote interpreter (PyCharm v3.4+)
 * Select "Preferences..." from the Apple menu
-* Expand "Project Interpreter" under "Project Settings"
-* Click the icon in the upper right corner of the dialog box--it looks like it may be a gear or a star.
-* In the popup dialog that appears, click on "Add Remote"
-* When the remote dialog appears, select the "SSH Credentials" radio button.
+* Select "Project Interpreter" under "Project Settings"
+* Click the gear icon in the upper right corner of the dialog box
+* In the drop down that appears, click on "Add Remote"
+* Select the "SSH Credentials" radio button.
 * Specify the following configurations:
 ![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_remote_conf.png)
 * PyCharm will automatically detect the helper folder and upload the debugging files. The final configuration should look like this:
 ![PyCharm 3.4+ conf] (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
-* After that, you should verify that PyCharm has copied all debugging materials into the ```.pycharm_helpers``` folder by ssh-ing into the vagrant instance and navigating to the helper folder. The directory content should look similar to this:
-![PyCharm helper](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_helpers.png)
- 
 
 ### Create Debug Configuration for LMS
 After the PyCharm remote interpreter is configured we are ready to debug devstack.
@@ -60,8 +60,8 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
     * Specify "/edx/app/edxapp/edx-platform" for "Working directory".
     * Click to edit the "Path mappings" property
       * Click the "+" button to add a new mapping
-      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/[username]/devstack/edx-platform"  (Be sure to specify "Users" rather than the shorthand "~" here.)
-      * Specify "/edx/app/edxapp/edx-platform" for "Remote path".
+      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/[username]/devstack/edx-platform/". Note: be sure to include a trailing slash, and don't use the '~' syntax for your home directory.
+      * Specify "/edx/app/edxapp/edx-platform/" for "Remote path".
       * Click "OK" to save the mappings.
     * Deselect "Add content roots to PYTHONPATH".
     * Deselect "Add source roots to PYTHONPATH".
