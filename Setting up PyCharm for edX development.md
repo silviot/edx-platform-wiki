@@ -40,8 +40,8 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * Select "Project Interpreter" under "Project Settings"
 * Click the gear icon in the upper right corner of the dialog box
 * In the drop down that appears, click on "Add Remote"
-* Select the "SSH Credentials" radio button.
-* Specify the following configurations:
+* Select the "SSH Credentials" radio button. If you have trouble getting SSH credentials to work, you can instead use "Key pair (OpenSSH)" and specify the location of your private key file (/Users/<username>/.ssh/id_rsa). This may be necessary with newer versions of MacOS.
+* Directions for "SSH Credentials". Specify the following configurations:
  * Host: ```127.0.0.1```
  * User name: ```edxapp```
  * Auth type: ```password```
