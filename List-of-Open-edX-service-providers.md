@@ -37,3 +37,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **VeritasU** (contact: [Patrick McGuinness](mailto:patrick@veritasu.com))
  * _Services_: Instance deployment, managed hosting on veritasu.com and white-labelled, course development and customization including xblock development, custom theming and branding, and support.
  * [Initial free course signup](http://www.veritasu.com/) 
+
+* **Accredible** (contact: [Alan Heppenstall](mailto:alan@accredible.com)).
+ * _Services_: Certificate issuing, certificate design and course portfolios.
+ * [Find out more](https://www.accredible.com/) 
