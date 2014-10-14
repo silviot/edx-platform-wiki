@@ -51,6 +51,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 ***
 
 ![PyCharm 3.4+ conf](https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_remote_conf.png)
+  * If you have trouble getting this to work, you can instead use "Key pair (OpenSSH)" and specify the location of your private key file (/Users/<username>/.ssh/id_rsa). This may be necessary with newer versions of MacOS.
 * PyCharm will automatically detect the helper folder and upload the debugging files. The final configuration should look like this:
 ![PyCharm 3.4+ conf] (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/pycharm_conf.jpg)
 
