@@ -42,6 +42,6 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Certificate issuing, certificate design and course portfolios.
  * [Find out more](https://www.accredible.com/) 
 
-* **aLabs** (contact: [Antonio Pardo](mailto:hola@alabs.org))
+* **aLabs** (contact: [Antonio Pardo](mailto:hola@alabs.org), Madrid, Spain)
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
  * _References/clients_: UPEx, Instituto de Altos Estudios Nacionales - IAEN.
