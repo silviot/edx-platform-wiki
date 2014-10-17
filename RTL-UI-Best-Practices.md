@@ -15,7 +15,7 @@ In addition to indicating that the raw document content should be read right to 
 _Dev actions: Visually check that layout flips_
 
 ### HTML
-The W3C recommends adding the language direction attribute (dir="rtl") on the root (html) element to define the language direction of the document. Because some browsers incorrectly switch the location of the scroll bar to the left as well, current best-practice is to add the dir="rtl" to the <head> tag and to a <div> wrapping the whole page to flip the entire document (which is an alternate recommendation by W3C) to ensure that the scrollbar isn't flipped.
+The W3C recommends adding the language direction attribute (dir="rtl") on the root (html) element to define the language direction of the document. Because some browsers incorrectly switch the location of the scroll bar to the left as well, current best-practice is to add the dir="rtl" to the `<head>` tag and to a `<div>` wrapping the whole page to flip the entire document (which is an alternate recommendation by W3C) to ensure that the scrollbar isn't flipped.
 
 _Dev actions: Add dir="rtl" to head element and highest content-wrapping div element; add dir="ltr" to any URL or file location text elements_
 
