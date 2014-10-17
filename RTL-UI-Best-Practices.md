@@ -20,7 +20,8 @@ The W3C recommends adding the language direction attribute (dir="rtl") on the ro
 _Dev actions: Add dir="rtl" to head element and highest content-wrapping div element; add dir="ltr" to any URL or file location text elements_
 
 ### SASS/CSS
-There are a variety of ways to use css to change the direction of text, but some are better than others, and following some best-practices can help alleviate trouble later. Most importantly, using "display: inline-block;" correctly when laying out pages can allow the document or element direction property on the document or specific html elements (dir="rtl") to reverse the layout as well as the content. Use the same left and right properties values in the same selector when possible so they don't need to be flipped (e.g. div {margin-left: 15px; margin-right: 15px;}). (thanks to [Integralist](https://gist.github.com/Integralist/7269907) for the gist of this!)
+There are a variety of ways to use css to change the direction of text, but some are better than others, and following some best-practices can help alleviate trouble later. Most importantly, using "display: inline-block;" correctly when laying out pages can allow the document or element direction property on the document or specific html elements (dir="rtl") to reverse the layout as well as the content. Also, setting equal margin/padding on both sides of elements when possible is better than having to explicitly flip. 
+(thanks to [Integralist](https://gist.github.com/Integralist/7269907) for the gist of this!)
 
 _Dev actions: Flip as little as possible; use good practices to set things up for clean flips_
 
