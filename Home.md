@@ -31,6 +31,7 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Python Guidelines]]
 * [[JavaScript Guidelines]]
 * [[i18n Coding Guidelines]]
+* [[RTL UI Best Practices]]
 * [[Test Engineering FAQ]]
 * [[Code Ownership]]
 * [[Hackathons]]
