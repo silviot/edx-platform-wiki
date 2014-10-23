@@ -45,3 +45,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **aLabs** (contact: [Antonio Pardo](mailto:hola@alabs.org), Madrid, Spain)
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
  * _References/clients_: UPEx, Instituto de Altos Estudios Nacionales - IAEN.
+
+* **[eduNEXT](http://www.edunext.co/)** (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
+ * _Services_: Microsites, Custom installation and theming, Localization, course hosting.
+ * _References/clients_: edX, OpenCraft, Fundación Romero.
