@@ -50,6 +50,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [BistuX 北京信息科技大学](http://x.bistu.edu.cn)
 * [北京外国语大学](http://mooc.bfsu.edu.cn/)
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
+* [X-omics 慕序](http://www.x-omics.org/)
 
 ## Russian
 * [pelic.ru](http://pelic.ru) - Correspondence courses?
