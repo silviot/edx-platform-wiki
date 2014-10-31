@@ -46,7 +46,13 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [PaulusMOOC](https://paulusmooc.org)
 
 ## Chinese
-* [XuetangX 学堂在线](http://www.xuetangx.com/)
+* [XuetangX 学堂在线](http://www.xuetangx.com/) - Using microsites to power:
+    * [哈尔滨工业大学](http://hit.xuetangx.com/)
+    * [中国科学技术大学](http://moocs.ustc.edu.cn/)
+    * [复旦大学](http://fudan.xuetangx.com/)
+    * [青海大学](http://qhu.xuetangx.com/)
+    * [南京大学](http://nju.xuetangx.com/)
+    * [清华大学](http://tsinghua.xuetangx.com/)
 * [BistuX 北京信息科技大学](http://x.bistu.edu.cn)
 * [北京外国语大学](http://mooc.bfsu.edu.cn/)
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
