@@ -25,7 +25,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development in Arabic Language
 
-* **eduStack** (contact: [Jason Zhu](mailto:stack@iflab.org),China).
+* **eduStack** (contact: [Jason Zhu](mailto:stack@iflab.org),Beijing,China).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development, mobile (IOS,Android)
  * _References/clients_: BistuX, x-omics.
  * [Get a free Open edX (ova)](http://www.edustack.org/?page_id=8)
