@@ -13,7 +13,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [UNC Online](https://mooc.northcarolina.edu/) - University of North Carolina Online
 * [MuddX](http://muddx.com) - Harvey Mudd College
 * [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
-* [Pepper](http://pepperpd.com) - Joshua Marks
+* [Pepper](http://pepperpd.com) 
 * [Croatopica](http://croatopica.net/)
 * [Applied Materials - Nanoloearning](http://nano-learning.org/)
 * [Unow](http://learn.unow-mooc.org/)
