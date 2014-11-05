@@ -26,7 +26,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MOOC FranceTv Education](http://mooc.francetveducation.fr/)
 * [IONISx](https://ionisx.com) by [IONIS Education Group](http://www.ionis-group.com) - France - Philippe Chiu
 * [Neodemia.com](https://neodemia.com)
-* [UM5RMOOC](http://mooc.um5s.ac.ma)
+* [UM5RMOOC](http://mooc.um5s.ac.ma) - Université Mohammed-V-Rabat MAROC
 * [MoocIT](http://learn-moocit.fr/)
 * [Talan](http://universite.talan.fr)
 * [Ulibre](http://www.ulibre.ca) - CLOM de la Téluq - l'université à distance de l'Université du Québec
