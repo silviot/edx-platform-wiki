@@ -16,6 +16,8 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **Appsembler** (contact: [Nate Aune](mailto:nate@appsembler.com), Cambridge, MA USA).
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
  * _References/clients_: MITx, Davidson College, edX
+ * _Author_: [Making Open edX a Thriving Open Source Project](https://docs.google.com/document/d/1UV0LhaaPLpx8TLHuK1f9luNcRrpSNmXg0baINLk2W34/edit) commissioned by [Stanford University’s Office of the Vice Provost for Online Learning](https://groups.google.com/d/msg/edx-code/DRqcLlMKhgs/KBvzBj13hQ8J). [Official response to the report by edX](http://engineering.edx.org/2014/07/response-to-stanford-report-on-open-edx/).
+ 
  * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx-lite)
 
 * **solutions.curricu.me** (contact: [John Swope](mailto:john@curricu.me)).
