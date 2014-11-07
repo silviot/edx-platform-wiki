@@ -79,6 +79,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Korean
 * [All.That.Edu](http://www.allthatedu.com/)
 
+## Catalan
+* [UCATx](http://www.ucatx.cat/)
+
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
