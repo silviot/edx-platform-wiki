@@ -82,6 +82,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Catalan
 * [UCATx](http://www.ucatx.cat/)
 
+## Ukrainian
+* [Prometheus](http://edx.prometheus.org.ua/)
+
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
