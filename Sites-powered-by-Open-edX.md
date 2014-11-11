@@ -68,7 +68,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Ural Federal University](http://openedu.urfu.ru/)
 
 ## Portuguese
-* [Escola - Portugal](http://cursos.escola.org)
 * [ESO - Ensino Superior Online - Brasil](http://eso.org.br/)
 
 ## Japanese
