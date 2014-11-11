@@ -1,7 +1,7 @@
 This is a list of sites powered by Open edX.  Feel free to add yours, with a short description.  (These are organized by primary course language: any better ideas?)
 
 ## Basque
-* [MetaMOOC](http://metamooc.com) - Unibertsitate batzuen MOOCak
+* [MetaMOOC](http://metamooc.com) - Zenbait unibertsitateren MOOC zentralizazioa
 
 ## English
 * [edX](http://edx.org) - The original, with dozens of members.
