@@ -1,8 +1,5 @@
 This is a list of sites powered by Open edX.  Feel free to add yours, with a short description.  (These are organized by primary course language: any better ideas?)
 
-## Basque
-* [MetaMOOC](http://metamooc.com) - Zenbait unibertsitateren MOOC zentralizazioa
-
 ## English
 * [edX](http://edx.org) - The original, with dozens of members.
 * [Stanford Open edX](https://class.stanford.edu/) - Stanford's edX courses.
@@ -47,7 +44,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec)
-* [PaulusMOOC](https://paulusmooc.org)
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
 
 ## Chinese
@@ -87,6 +83,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Ukrainian
 * [Prometheus](http://edx.prometheus.org.ua/)
+
+## Basque
+* [MetaMOOC](http://metamooc.com) - Zenbait unibertsitateren MOOC zentralizazioa
 
 ***
  
