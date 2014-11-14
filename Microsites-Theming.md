@@ -23,11 +23,12 @@ There are two main things that you will have to do to use Microsites:
 
 * **MICROSITE_ROOT_DIR** - a directory that contains subdirectories of assets for each microsite including css, image and template overrides. The assets for each microsite are located under a subdirectory with the same name as the microsite key in the MICROSITE_CONFIGURATION dict.
 * **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. Keys within each microsite's config are as follows:
+ * **cybersource_config_key** - If the Microsite needs to use a different CyberSource account than the default configuration, then this should be set to the keyname of the configuration section that is in CC_PROCESSOR. Addition details on using distinct CyberSource accounts can be found below.
  * **domain_prefix** - the subdomain that specifies the microsite. E.g. for foo.edx.org it would be "foo"
  * **university** - the university associated with the microsite. E.g. "FooX"
  * **platform_name** - Optional path to override the value of PLATFORM_NAME. Used by many templates in the edx_platform applications.
  * **favicon_path** - Optional path to override the value of FAVICON_PATH
- * **css_overrides_file** - path to stylesheet for css overrides. This is relative to the MICROSITE_ROOT_DIR
+ * **css_overrides_file** - path to stylesheet for css overrides. This is relative to the MICROSITE_ROOT_DIR. See below for more information on how to define CSS overrides.
  * **logo_image_url** - path to the branded logo image to use. This is relative to the MICROSITE_ROOT_DIR
  * **google_analytics_file** - optional override for '../google_analytics.html' which is included in the header of all application pages
  * **email_from_address** - From address for emails. Used by account creation, paid cert order, direct enrollment via instructor dashboard, etc. Overrides DEFAULT_FROM_EMAIL.
@@ -44,6 +45,15 @@ There are two main things that you will have to do to use Microsites:
  * **course_about_show_social_links** - boolean toggle for displaying the social links in the course about page's sidebar. Defaults to True.
  * **course_about_twitter_account** - Optional override for the account on the twitter social link. Defaults to "@edxonline".
  * **course_about_facebook_link** - Optional override for URL of the facebook social link. Defaults to "http://www.facebook.com/EdxOnline".
+ * **COURSE_CATALOG_VISIBILITY_PERMISSION** - Optional override for the permissions check regarding allowing visibility of a course to appear on the homepage and courses listing. Suggested setting should be "see_in_catalog".
+ * **COURSE_ABOUT_VISIBILITY_PERMISSION** - Optional override for the permissions check regarding allowing visibility of the Course About page. Suggested setting should be "see_about_page"
+ * **ENABLE_PAID_COURSE_REGISTRATION** - Optional override for the global settings.FEATURE["ENABLE_PAID_COURSE_REGISTRATION"]. If the Microsite needs to support paywalled courses in an deployment environment which has this global setting to False, then the Microsite should set it to True.
+ * **ENABLE_SHOPPING_CART** - Optional override for the global settings.FEATURE["ENABLE_SHOPPING_CART"]. If the Microsite needs to support the Shopping Cart button in a deployment environment which has this global setting to False, then the Microsite should set it to True.
+* **ENABLE_THIRD_PARTY_AUTH** - Optional override for the global settings.FEATURE["ENABLE_THIRD_PARTY_AUTH"]. If the Microsite cannot support third party authentication in an deployed environment in which the global setting is True, then the Microsite should set it to False.
+* **ALLOW_AUTOMATED_SIGNUPS** - Optional override for the global settings.FEATURE["ALLOW_AUTOMATED_SIGNUPS"] to show/hide the Auto-Register and Enroll feature in the Instructor dashboard.
+* **ALWAYS_REDIRECT_HOMEPAGE_TO_DASHBOARD_FOR_AUTHENTICATED_USER** - Setting this to False will stop the default behavior of redirecting logged in users when the land on the homepage from redirecting to the dashboard. Recommended setting is False.
+* **course_email_template_name** - Name of the CourseEmailTemplate to use when sending course emails. If the Microsite site needs to send a branded Course Email, use the Django Admin website to define an appropriate Course Email Template. Then set the configuration to point to this Template name that was used int the admin pages.
+* **course_email_from_addr** - The "from" address to use when sending course emails.
 * **SUBDOMAIN_BRANDING** - dict that maps a subdomain to a university. e.g. {'foo' : 'FooX'}. NOTE: This is a legacy construct and you will not need to set this yourself.
 
 ## Other Django configuration settings that are important to microsites configuration
