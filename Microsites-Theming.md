@@ -49,11 +49,11 @@ There are two main things that you will have to do to use Microsites:
  * **COURSE_ABOUT_VISIBILITY_PERMISSION** - Optional override for the permissions check regarding allowing visibility of the Course About page. Suggested setting should be "see_about_page"
  * **ENABLE_PAID_COURSE_REGISTRATION** - Optional override for the global settings.FEATURE["ENABLE_PAID_COURSE_REGISTRATION"]. If the Microsite needs to support paywalled courses in an deployment environment which has this global setting to False, then the Microsite should set it to True.
  * **ENABLE_SHOPPING_CART** - Optional override for the global settings.FEATURE["ENABLE_SHOPPING_CART"]. If the Microsite needs to support the Shopping Cart button in a deployment environment which has this global setting to False, then the Microsite should set it to True.
-* **ENABLE_THIRD_PARTY_AUTH** - Optional override for the global settings.FEATURE["ENABLE_THIRD_PARTY_AUTH"]. If the Microsite cannot support third party authentication in an deployed environment in which the global setting is True, then the Microsite should set it to False.
-* **ALLOW_AUTOMATED_SIGNUPS** - Optional override for the global settings.FEATURE["ALLOW_AUTOMATED_SIGNUPS"] to show/hide the Auto-Register and Enroll feature in the Instructor dashboard.
-* **ALWAYS_REDIRECT_HOMEPAGE_TO_DASHBOARD_FOR_AUTHENTICATED_USER** - Setting this to False will stop the default behavior of redirecting logged in users when the land on the homepage from redirecting to the dashboard. Recommended setting is False.
-* **course_email_template_name** - Name of the CourseEmailTemplate to use when sending course emails. If the Microsite site needs to send a branded Course Email, use the Django Admin website to define an appropriate Course Email Template. Then set the configuration to point to this Template name that was used int the admin pages.
-* **course_email_from_addr** - The "from" address to use when sending course emails.
+ * **ENABLE_THIRD_PARTY_AUTH** - Optional override for the global settings.FEATURE["ENABLE_THIRD_PARTY_AUTH"]. If the Microsite cannot support third party authentication in an deployed environment in which the global setting is True, then the Microsite should set it to False.
+ * **ALLOW_AUTOMATED_SIGNUPS** - Optional override for the global settings.FEATURE["ALLOW_AUTOMATED_SIGNUPS"] to show/hide the Auto-Register and Enroll feature in the Instructor dashboard.
+ * **ALWAYS_REDIRECT_HOMEPAGE_TO_DASHBOARD_FOR_AUTHENTICATED_USER** - Setting this to False will stop the default behavior of redirecting logged in users when the land on the homepage from redirecting to the dashboard. Recommended setting is False.
+ * **course_email_template_name** - Name of the CourseEmailTemplate to use when sending course emails. If the Microsite site needs to send a branded Course Email, use the Django Admin website to define an appropriate Course Email Template. Then set the configuration to point to this Template name that was used int the admin pages.
+ * **course_email_from_addr** - The "from" address to use when sending course emails.
 * **SUBDOMAIN_BRANDING** - dict that maps a subdomain to a university. e.g. {'foo' : 'FooX'}. NOTE: This is a legacy construct and you will not need to set this yourself.
 
 ## Other Django configuration settings that are important to microsites configuration
