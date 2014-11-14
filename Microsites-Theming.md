@@ -1,7 +1,7 @@
 
 ## Overview
 
-This feature enables separate, deployable "micro-themes" (e.g. branding elements, Mako template overrides, etc.) for subdomains (e.g. foo.edx.org, bar.edx.org) in order to provide branding "multi-tenancy". This feature also supports the ability (as a configurable option, see below) to map a subdomain to an "ORG" in the courseware catalog. For example, if you wanted foo.edx.org to only show the courses with an "ORG"="Foo" (or "FooX"). Likewise, with this filtering, the User Dashboard on foo.edx.org would only show registered courses in the same ORG filtering. Conversely, in this case, "ORG"="Foo" courses would be filtered *out* of all other course catalog listing on other subdomain, e.g. bar.edx.org would not show "ORG"="Foo" courses.
+This feature enables separate, deployable "micro-themes" (e.g. branding elements, Mako template overrides, etc.) for subdomains (e.g. foo.edx.org, bar.edx.org) in order to provide "branding multi-tenancy". This feature also supports the ability (as a configurable option, see below) to map a subdomain to an "ORG" in the courseware catalog. For example, if you wanted foo.edx.org to only show the courses with an "ORG"="Foo" (or "FooX"). Likewise, with this filtering, the User Dashboard on foo.edx.org would only show registered courses in the same ORG filtering. Conversely, in this case, "ORG"="Foo" courses would be filtered *out* of all other course catalog listing on other subdomain, e.g. bar.edx.org would not show "ORG"="Foo" courses.
 
 This work is similar to the 'Stanford' theming that the fine folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant and doesn't support this course catalog partitioning.
 
