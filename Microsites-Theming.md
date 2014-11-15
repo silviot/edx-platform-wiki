@@ -3,13 +3,15 @@
 
 This feature enables separate, deployable "micro-themes" (e.g. branding elements, Mako template overrides, etc.) for subdomains (e.g. foo.edx.org, bar.edx.org) in order to provide "branding multi-tenancy". This feature also supports the ability (as a configurable option, see below) to map a subdomain to an "ORG" in the courseware catalog. For example, if you wanted foo.edx.org to only show the courses with an "ORG"="Foo" (or "FooX"). Likewise, with this filtering, the User Dashboard on foo.edx.org would only show registered courses in the same ORG filtering. Conversely, in this case, "ORG"="Foo" courses would be filtered *out* of all other course catalog listing on other subdomain, e.g. bar.edx.org would not show "ORG"="Foo" courses.
 
-This work is similar to the 'Stanford' theming that the fine folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant and doesn't support this course catalog partitioning.
+Also, this catalog partitioning also applies on the user's Dashboard. For example, if a user is enrolled in many courses across multiple Microsites, he/she will only see the courses associated with the Microsite on that Microsite's Dashboard.
+
+This work is similar to the 'Stanford' theming that the fine folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant and doesn't support this course catalog partitioning across subdomains.
 
 There are some limitations to Microsites compared to the 'Stanford' theming:
 
 - One cannot use Sass or any compiled means to generate .css at 'deploy time'. However, one could use Sass at design time and compile to .css. At this point in time, our current deployment scripts at edX do Sass compilation at deploy time.
 
-IMPORTANT NOTE: While this does allow for multi-tenancy with respect to visual branding, there is no multi-tenancy at the User database level. Therefore it is the same user account on foo.edx.org and bar.edx.org, i.e. if I had an account on www.edx.org, it'd be the same account on foo.edx.org as well as bar.edx.org. We'd like to extend the ability to have separate user accounts per subdomain, this work is still TBD. If you have interest in taking this on as an Open Source contribution, let us know. There are a few things to consider, such as also partitioning Sessions between subdomains (so a active login on foo.edx.org isn't picked up on bar.edx.org), etc.
+IMPORTANT NOTE: While this does allow for multi-tenancy with respect to visual branding, there is no multi-tenancy at the User database level. Therefore it is the same user account on foo.mydomain.com and bar.mydomain.com, i.e. if I had an account on www.mydomain.com, it'd be the same account on foo.mydomain.com as well as bar.mydomain.com. We'd like to extend the ability to have separate user accounts per subdomain, this work is still TBD. If you have interest in taking this on as an Open Source contribution, let us know. There are a few things to consider, such as also partitioning Sessions between subdomains (so a active login on foo.mydomain.com isn't picked up on bar.mydomain.com), etc.
 
 ## How to define a 'Microsite'
 
