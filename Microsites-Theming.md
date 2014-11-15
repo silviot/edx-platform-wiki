@@ -23,22 +23,24 @@ There are two main things that you will have to do to use Microsites:
 
 ## Django configuration settings used specifically for microsites
 
+These settings will appear - in devstack and fullstack development environments - in the lms.env.json file that can be found on /edx/app/edxapp. 
+
 * **MICROSITE_ROOT_DIR** - a directory that contains subdirectories of assets for each microsite including css, image and template overrides. The assets for each microsite are located under a subdirectory with the same name as the microsite key in the MICROSITE_CONFIGURATION dict.
 * **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. Keys within each microsite's config are as follows:
  * **cybersource_config_key** - If the Microsite needs to use a different CyberSource account than the default configuration, then this should be set to the keyname of the configuration section that is in CC_PROCESSOR. Addition details on using distinct CyberSource accounts can be found below.
- * **domain_prefix** - the subdomain that specifies the microsite. E.g. for foo.edx.org it would be "foo"
- * **university** - the university associated with the microsite. E.g. "FooX"
- * **platform_name** - Optional path to override the value of PLATFORM_NAME. Used by many templates in the edx_platform applications.
- * **favicon_path** - Optional path to override the value of FAVICON_PATH
+ * **domain_prefix** - the subdomain that specifies the microsite. E.g. for foo.mydomain.com it would be "foo"
+ * **university** - the university associated with the microsite. E.g. "FooX". This is a legacy concept in the Open edX code base, but it should be defined. It is recommended to set it to be the same as **domain_prefix***
+ * **platform_name** - Optional path to override the value of PLATFORM_NAME. Used by many templates in the edx_platform applications. For example if you wanted the name of your site to be "My Awesome University", then this is where to set it.
+ * **favicon_path** - Optional path to override the value of FAVICON_PATH.
  * **css_overrides_file** - path to stylesheet for css overrides. This is relative to the MICROSITE_ROOT_DIR. See below for more information on how to define CSS overrides.
  * **logo_image_url** - path to the branded logo image to use. This is relative to the MICROSITE_ROOT_DIR
  * **google_analytics_file** - optional override for '../google_analytics.html' which is included in the header of all application pages
  * **email_from_address** - From address for emails. Used by account creation, paid cert order, direct enrollment via instructor dashboard, etc. Overrides DEFAULT_FROM_EMAIL.
  * **payment_support_email** - Payment support email address, used for the email sent when a payment processing error occurs. Overrides PAYMENT_SUPPORT_EMAIL.
- * **ENABLE_MKTG_SITE** - Optional boolean toggle to override ENABLE_MKTG_SITE for this microsite. Defaults to True if ENABLE_MKTG_SITE is not set at the global level.
- * **SITE_NAME** - hostname portion of the URI for the microsite web address. E.g. "foo.edx.org"
- * **course_org_filter** - string value to use for displaying the correct courses on the student dashboard
- * **show_partners** - boolean toggle for displaying the edX university partners (MIT, Harvard, etc.) on the microsite's home page. Defaults to True.
+ * **ENABLE_MKTG_SITE** - Optional boolean toggle to override ENABLE_MKTG_SITE for this microsite. This should always be set to False.
+ * **SITE_NAME** - hostname portion of the URI for the microsite web address. E.g. "foo.mydomain.com"
+ * **course_org_filter** - string value to use for displaying the correct courses on the student dashboard. For example, if all courses are being created in Studio with ORG="MyDomainX", and if you just want to show just MyDomainX courses on your Microsite, then use the value.
+ * **show_partners** - boolean toggle for displaying the edX university partners (MIT, Harvard, etc.) on the microsite's home page. This should always be set to False.
  * **homepage_overlay_html** - Optional html that is shown on the microsite's home page in place of the "\<h1>The Future of Online Education\</h1>\<h2>For anyone, anywhere, anytime\</h2>" tag line.
  * **show_homepage_promo_video** - boolean toggle for displaying a video on the microsite's home page. Defaults to True.
  * **homepage_promo_video_youtube_id** - Override for the video modal that is displayed on the microsite's home page. Defaults to "XNaiOGxWeto".
@@ -73,7 +75,7 @@ Note, this is informational. You should not need to manipulate these settings as
 Create a directory with the same name as the microsite key under MICROSITE_ROOT_DIR. Under this directory create 3 folders. See common/test/test_microsites/test_microsite for examples.
 * **css** - create a .css file under this dir and specify it with the css_overrides_file setting
 * **images** - create this folder, and in it put your background image, header logo, etc. Specify them with the logo_image_url and course_index_overlay_logo_file settings.
-* **templates** - create a directory named "templates" (hard coded. See common/djangoapps/microsite_configuration/middleware.py method get_microsite_template_path). Under here you would put any mako templates you want to override. These must have the same relative paths as the templates under /lms/templates. For example, if you wanted to override the templates/emails/activation_email.txt, then it should have the same pathing in your overrides directory.
+* **templates** - create a directory named "templates" (hard coded. See common/djangoapps/microsite_configuration/middleware.py method get_microsite_template_path). Under here you would put any mako templates you want to override. These must have the same relative paths as the templates under /lms/templates. For example, if you wanted to override the emails/activation_email.txt, then it should have the same path in your overrides directory (e.g. emails/activation_email.text).
 
 ## Examples
 
