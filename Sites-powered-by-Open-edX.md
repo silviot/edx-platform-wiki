@@ -46,6 +46,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec)
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
 * [ISEAD Business School](http://www.iseadx.com/)
+* [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
 
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/) - Using microsites to power:
