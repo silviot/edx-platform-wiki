@@ -27,7 +27,7 @@ These settings will appear - in devstack and fullstack development environments 
 
 * **FEATURES['USE_MICROSITES']** - This must be set to true to turn on the Microsites feature.
 * **MICROSITE_ROOT_DIR** - a directory that contains subdirectories of assets for each microsite including css, image and template overrides. The assets for each microsite are located under a subdirectory with the same name as the microsite key in the MICROSITE_CONFIGURATION dict.
-* **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. Keys within each microsite's config are as follows:
+* **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. The key name *must* match the directory inside the MICROSITE_ROOT_DIR otherwise the microsite definition will not be valid. The data within each microsite's config are as follows:
  * **cybersource_config_key** - If the Microsite needs to use a different CyberSource account than the default configuration, then this should be set to the keyname of the configuration section that is in CC_PROCESSOR. Addition details on using distinct CyberSource accounts can be found below.
  * **domain_prefix** - the subdomain that specifies the microsite. E.g. for foo.mydomain.com it would be "foo"
  * **university** - the university associated with the microsite. E.g. "FooX". This is a legacy concept in the Open edX code base, but it should be defined. It is recommended to set it to be the same as **domain_prefix***
