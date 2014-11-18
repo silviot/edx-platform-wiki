@@ -78,6 +78,9 @@ Create a directory with the same name as the microsite key under MICROSITE_ROOT_
 * **images** - create this folder, and in it put your background image, header logo, etc. Specify them with the logo_image_url and course_index_overlay_logo_file settings.
 * **templates** - create a directory named "templates" (hard coded. See common/djangoapps/microsite_configuration/middleware.py method get_microsite_template_path). Under here you would put any mako templates you want to override. These must have the same relative paths as the templates under /lms/templates. For example, if you wanted to override the emails/activation_email.txt, then it should have the same path in your overrides directory (e.g. emails/activation_email.text).
 
+When changing any of the assets inside of the MICROSITE_ROOT_DIR, 'gather_assets' must be run in order to compile them into the Django asset pipeline. To do on a devstack or a production stack, use the instructions found in the operations management Wiki: https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack#compile-assets-manually
+
+
 ## Examples
 
 TBD
