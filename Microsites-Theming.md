@@ -25,6 +25,7 @@ There are two main things that you will have to do to use Microsites:
 
 These settings will appear - in devstack and fullstack development environments - in the lms.env.json file that can be found on /edx/app/edxapp. 
 
+* **FEATURES['USE_MICROSITES']** - This must be set to true to turn on the Microsites feature.
 * **MICROSITE_ROOT_DIR** - a directory that contains subdirectories of assets for each microsite including css, image and template overrides. The assets for each microsite are located under a subdirectory with the same name as the microsite key in the MICROSITE_CONFIGURATION dict.
 * **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. Keys within each microsite's config are as follows:
  * **cybersource_config_key** - If the Microsite needs to use a different CyberSource account than the default configuration, then this should be set to the keyname of the configuration section that is in CC_PROCESSOR. Addition details on using distinct CyberSource accounts can be found below.
