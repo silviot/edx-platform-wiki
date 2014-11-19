@@ -4,11 +4,6 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Instance installation, custom development, XBlocks.
  * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, FUN (French Ministry of Higher Education and Research).
 
-* **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com), New York).
- * _Services_: Platform deployment, paywall, LTI, XBlocks; training, 24/7 support; hosting, upgrades, disaster recovery; video production. EdX-appointed third-party provider.  
- * _Clients_: George Washington University, Cooper Union, Laureate, Mid Sweden University, U.P. Comillas - Icade, European Molecular Oncology, Kare Partners - University of Rochester, Doral University of Florida, Boyce College, Spain's Government, 
- * [Free 30-min consultancy; Open edX e-book; Demo platform](http://iblstudios.com/); hablamos español. 
-
 * **ExtensionEngine** (contact: [Glyn Polson](mailto:glyn@extensionengine.com.com)).
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
  * _References/clients_: Harvard Business School, edX
@@ -23,6 +18,11 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **solutions.curricu.me** (contact: [John Swope](mailto:john@curricu.me)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
  * _References/clients_: St. George's University, FreshDirect
+
+* **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com), New York).
+ * _Services_: Platform deployment, paywall, LTI, XBlocks; training, 24/7 support; hosting, upgrades, disaster recovery; video production. EdX-appointed third-party provider.  
+ * _Clients_: George Washington University, Cooper Union, Laureate, Mid Sweden University, U.P. Comillas - Icade, European Molecular Oncology, Kare Partners - University of Rochester, Doral University of Florida, Boyce College, Spain's Government, 
+ * [Free 30-min consultancy; Open edX e-book; Demo platform](http://iblstudios.com/); hablamos español. 
 
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development in Arabic Language
