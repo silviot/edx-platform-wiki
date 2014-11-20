@@ -26,6 +26,7 @@ To enable Paid Course Enrollments, the following configuration must be set in yo
 
 In lms.env.json:
 
+```
 ...
 "FEATURES": {
 ...
@@ -34,9 +35,11 @@ In lms.env.json:
 ...
 }
 ....
+```
 
 Also, in lms.auth.json (which contains production "secrets")
 
+```
 ...
     "CC_PROCESSOR": {
         "CyberSource2": {
@@ -48,6 +51,7 @@ Also, in lms.auth.json (which contains production "secrets")
     }, 
     "CC_PROCESSOR_NAME": "CyberSource2",
 ... 
+```
 
 To configure a course to be a Paid Course Enrollment, a system administrator will need to go to the Django Admin website that is at the /admin URL. In order to gain access to this area of the Django website, the user must have 'superadmin' rights as documented at https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack.
 
