@@ -55,9 +55,7 @@ Also, in lms.auth.json (which contains production "secrets")
 
 To configure a course to be a Paid Course Enrollment, a system administrator will need to go to the Django Admin website that is at the /admin URL. In order to gain access to this area of the Django website, the user must have 'superuser' rights as documented at https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack.
 
-Once you have logged into the Django Admin site you will see a screen which looks something like:
-
-Click on the "Course modes" link. This will show all existing Course Mode that have been defined. At the top right of this page, there will be a button which says "Add course mode". Click that button.
+Once you have logged into the Django Admin look for and click on the "Course modes" link. This will show all existing Course Mode that have been defined. At the top right of this page, there will be a button which says "Add course mode". Click that button.
 
 Then you will see a form to fill out:
 
