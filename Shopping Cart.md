@@ -10,9 +10,12 @@ The Open edX platform supports a number of use cases to enable eCommerce. The mo
 
 Note that edX.org has additional use-cases regarding the purchasing of "Verified Certificates", which will not be covered in this Documentation, as the UX flows are different.
 
+This documentation will be for users of this feature as it currently exists and not developer documentation who may wish to extend the implementation.
+
 # Acknowledgements
 
 This work was originally contributed to Open edX from the group at Stanford University, who was the original author. There have been many additions by edX employees and Open Source contributors since the original submission.
 
+# Paid Course Enrollments
 
 
