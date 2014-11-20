@@ -55,4 +55,4 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Customizing the Registration Form Fields]]
 * [[Optional Advanced Security Features]]
 * [[Optional Splash page]]
-* [[Shopping Cart and PaidCourseEnrollment]]
+* [[Shopping Cart]]
