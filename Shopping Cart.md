@@ -20,6 +20,35 @@ This work was originally contributed to Open edX from the group at Stanford Univ
 
 When a course administrator wishes to only allow enrollments in a course after the user completes a financial transaction through a Credit Card processor, that is called a PaidCourseEnrollment. 
 
+Right now, we only support CyberSource as the payment gateway. There is a an API in the shopping cart to allow for other payment providers, so this is an area of the system that can be extended. However, in the meantime, if you wish to use the Shopping Cart "out-of-the-box", users will have to acquire a merchant account with CyberSource.
+
+To enable Paid Course Enrollments, the following configuration must be set in your environment:
+
+In lms.env.json:
+
+...
+"FEATURES": {
+...
+"ENABLE_SHOPPING_CART": true,
+"ENABLE_PAID_COURSE_REGISTRATION": true,
+...
+}
+....
+
+Also, in lms.auth.json (which contains production "secrets")
+
+...
+    "CC_PROCESSOR": {
+        "CyberSource2": {
+            "ACCESS_KEY": "{fill in with access key provided by CyberSource}", 
+            "PROFILE_ID": "{fill in with profile id provided by CyberSource}", 
+            "PURCHASE_ENDPOINT": "{fill in with endpoint url provided by CyberSource}", 
+            "SECRET_KEY": "{fill in with secret key provided by CyberSource}"
+        }
+    }, 
+    "CC_PROCESSOR_NAME": "CyberSource2",
+... 
+
 To configure a course to be a Paid Course Enrollment, a system administrator will need to go to the Django Admin website that is at the /admin URL. In order to gain access to this area of the Django website, the user must have 'superadmin' rights as documented at https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack.
 
 Once you have logged into the Django Admin site you will see a screen which looks something like:
