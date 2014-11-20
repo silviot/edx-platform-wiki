@@ -80,8 +80,11 @@ For Paid Course Registration courses, on the Instructor Dashboard a new tab 'eCo
 Appropriate course staff members should be entered into a 'finance_admin' role for the course. To do so:
 
 1) Go to the Django Admin site (/admin) as a superuser
+
 2) Scroll down to find the "Course Access Role" (in the Student section). Click on the link.
+
 3) Click "Add Course Access Role" button in the top right
+
 4) Fill in the form. You can search for the user id (by email or username) using the search tool. Make sure the ORG and Course ID are filled in with the appropriate course ID and the ORG should be the same ORG that is part of the Course ID tuple. For the "Role" field, please set it to "finance_admin".
 
 For the permission to take affect the user who was granted this role should log out and log back in.
