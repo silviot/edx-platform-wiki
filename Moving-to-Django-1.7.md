@@ -37,9 +37,9 @@
 <td>
 <ul>
 <li>Persistent DB connections</li>
-<li>Faster <code>Model.save()</code></li>
-<li>Safer session serialization</li></ul></td>
-<td>&nbsp;</td></tr>
+<li>Faster <code>Model.save()</code></li></ul></td>
+<td><ul>
+<li>Safer session serialization</li></ul></td></tr>
 <tr>
 <td colspan="1">1.7</td>
 <td colspan="1">
