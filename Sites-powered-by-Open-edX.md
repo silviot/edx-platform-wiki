@@ -33,6 +33,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [FBMX - by First Finance Group](http://www.fbmx.net/)
 
 ## Spanish
+* [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
+* [Lectya - Fundación Germán Sánchez Ruipérez](http://lectya.com/)
+* [ISEAD Business School](http://www.iseadx.com/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
 * [eduNEXT - Colombia] (http://edx.edunext.co/) - Using microsites to power:
     * [Educampus] (http://cursos.educampus.la/)
@@ -45,8 +48,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec)
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
-* [ISEAD Business School](http://www.iseadx.com/)
-* [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
+
 
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/) - Using microsites to power:
