@@ -53,7 +53,7 @@ Also, in lms.auth.json (which contains production "secrets")
 ... 
 ```
 
-To configure a course to be a Paid Course Enrollment, a system administrator will need to go to the Django Admin website that is at the /admin URL. In order to gain access to this area of the Django website, the user must have 'superadmin' rights as documented at https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack.
+To configure a course to be a Paid Course Enrollment, a system administrator will need to go to the Django Admin website that is at the /admin URL. In order to gain access to this area of the Django website, the user must have 'superuser' rights as documented at https://github.com/edx/configuration/wiki/edX-Managing-the-Production-Stack.
 
 Once you have logged into the Django Admin site you will see a screen which looks something like:
 
@@ -75,4 +75,15 @@ Then you will see a form to fill out:
 
 7) Expiration Date/Date Time. It is recommended to leave these blank.
 
+# Finance Admin Role Permissions
 
+For Paid Course Registration courses, on the Instructor Dashboard a new tab 'eCommerce' will appear. For regular course staff accounts, this will include basic functionality to set up discounts (coupons). For additional capabilities, such as getting reports and to change the price of a course, a new "Course Access Role" has been defined.
+
+Appropriate course staff members should be entered into a 'finance_admin' role for the course. To do so:
+
+1) Go to the Django Admin site (/admin) as a superuser
+2) Scroll down to find the "Course Access Role" (in the Student section). Click on the link.
+3) Click "Add Course Access Role" button in the top right
+4) Fill in the form. You can search for the user id (by email or username) using the search tool. Make sure the ORG and Course ID are filled in with the appropriate course ID and the ORG should be the same ORG that is part of the Course ID tuple. For the "Role" field, please set it to "finance_admin".
+
+For the permission to take affect the user who was granted this role should log out and log back in.
