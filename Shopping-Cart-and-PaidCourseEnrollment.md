@@ -1,3 +1,5 @@
+# Background
+
 The Open edX platform supports a number of use cases to enable eCommerce. The most typical use cases are:
 
 - As an administrator of a run of a course, I would like to only allow students from enrolling in a course unless they purchase the course. 
@@ -6,5 +8,11 @@ The Open edX platform supports a number of use cases to enable eCommerce. The mo
 - As a user, I wish to enter myself into a course that has an associated price (single-seat purchase)
 - As a user, I wish to enter a group of people into a course that has an associated price (multiple-seat purchase)
 
-Note that edX.org has additional use-cases regarding the purchasing of "Verified Certifications", which will not be covered in this Documentation.
+Note that edX.org has additional use-cases regarding the purchasing of "Verified Certificates", which will not be covered in this Documentation, as the UX flows are different.
+
+# Acknowledgements
+
+This work was originally contributed to Open edX from the group at Stanford University, who was the original author. There have been many additions by edX employees and Open Source contributors since the original submission.
+
+
 
