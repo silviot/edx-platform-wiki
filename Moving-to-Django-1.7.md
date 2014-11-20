@@ -39,7 +39,7 @@
 <li>Persistent DB connections</li>
 <li>Faster <code>Model.save()</code></li></ul></td>
 <td><ul>
-<li>Safer session serialization</li></ul></td></tr>
+<li>Safer session serialization: Change SESSION_SERIALIZER to JSON</li></ul></td></tr>
 <tr>
 <td colspan="1">1.7</td>
 <td colspan="1">
