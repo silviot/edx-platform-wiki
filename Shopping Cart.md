@@ -3,10 +3,10 @@
 The Open edX platform supports a number of use cases to enable eCommerce. The most typical use cases are:
 
 - As an administrator of a run of a course, I would like to only allow students from enrolling in a course unless they purchase the course with a Credit Card. 
-- As an administrator of a run of a course, I would like to set up discounting via coupons
+- As an administrator of a run of a course, I would like to set up discounting via coupons.
 - As an administrator of a run of a course, I would also like to get some financial reporting on this course.
-- As a user, I wish to enter myself into a course that has an associated price (single-seat purchase)
-- As a user, I wish to enter a group of people into a course that has an associated price (multiple-seat purchase)
+- As a user, I wish to enter myself into a course that has an associated price (single-seat purchase).
+- As a user, I wish to enter a group of people into a course that has an associated price (multiple-seat purchase).
 
 Note that edX.org has additional use-cases regarding the purchasing of "Verified Certificates", which will not be covered in this Documentation, as the UX flows are different.
 
@@ -61,15 +61,15 @@ Then you will see a form to fill out:
 
 1) Course id: Please put the course id associated with this course. This will be in the format of "{org}/{course}/{run}", such as "foo/bar/baz". It must exactly match the course ID set up in Studio.
 
-2) Mode slug: You must set this to "honor"
+2) Mode slug: You must set this to "honor".
 
-3) Mode display name: You can set this to however you wish to display this "mode". One recommended value would be "Honor Code"
+3) Mode display name: You can set this to however you wish to display this "mode". One recommended value would be "Honor Code".
 
-4) Min Price: Fill in with the price of the course
+4) Min Price: Fill in with the price of the course.
 
-5) Suggested Prices: Use the same price as with #4
+5) Suggested Prices: Use the same price as with #4.
 
-6) Currency: this defaults to "usd" (US Dollars). You can change this to be a different ISO code (e.g. 'chf' for Swiss Francs)
+6) Currency: this defaults to "usd" (US Dollars). You can change this to be a different ISO code (e.g. 'chf' for Swiss Francs).
 
 7) Expiration Date/Date Time. It is recommended to leave these blank.
 
@@ -79,11 +79,11 @@ For Paid Course Registration courses, on the Instructor Dashboard a new tab 'eCo
 
 Appropriate course staff members should be entered into a 'finance_admin' role for the course. To do so:
 
-1) Go to the Django Admin site (/admin) as a superuser
+1) Go to the Django Admin site (/admin) as a superuser.
 
 2) Scroll down to find the "Course Access Role" (in the Student section). Click on the link.
 
-3) Click "Add Course Access Role" button in the top right
+3) Click "Add Course Access Role" button in the top right.
 
 4) Fill in the form. You can search for the user id (by email or username) using the search tool. Make sure the ORG and Course ID are filled in with the appropriate course ID and the ORG should be the same ORG that is part of the Course ID tuple. For the "Role" field, please set it to "finance_admin".
 
