@@ -5,7 +5,7 @@ This feature enables separate, deployable "micro-themes" (e.g. branding elements
 
 Also, this catalog partitioning also applies on the user's Dashboard. For example, if a user is enrolled in many courses across multiple Microsites, he/she will only see the courses associated with the Microsite on that Microsite's Dashboard.
 
-This work is similar to the 'Stanford' theming that the fine folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant and doesn't support this course catalog partitioning across subdomains.
+This work is similar to the 'Stanford' theming that the folks at Stanford university contributed to the platform in Summer, 2013. However, the 'Stanford' theming is strictly single-tenant and doesn't support this course catalog partitioning across subdomains.
 
 There are some limitations to Microsites compared to the 'Stanford' theming:
 
@@ -19,16 +19,16 @@ There are two main things that you will have to do to use Microsites:
 
 * Define a Django configuration (see below)
 
-* Provide a directory (typically a peer directory to edx-platform) which contains all of the microsite content and Mako template overrides
+* Provide a directory (typically a peer directory to edx-platform) which contains all of the microsite content and Mako template overrides.
 
-## Django configuration settings used specifically for microsites
+## Django configuration settings used specifically for microsites.
 
 These settings will appear - in devstack and fullstack development environments - in the lms.env.json file that can be found on /edx/app/edxapp. 
 
 * **FEATURES['USE_MICROSITES']** - This must be set to true to turn on the Microsites feature.
 * **MICROSITE_ROOT_DIR** - a directory that contains subdirectories of assets for each microsite including css, image and template overrides. The assets for each microsite are located under a subdirectory with the same name as the microsite key in the MICROSITE_CONFIGURATION dict.
-* **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. The key name *must* match the directory inside the MICROSITE_ROOT_DIR otherwise the microsite definition will not be valid. The data within each microsite's config are as follows:
- * **cybersource_config_key** - If the Microsite needs to use a different CyberSource account than the default configuration, then this should be set to the keyname of the configuration section that is in CC_PROCESSOR. Addition details on using distinct CyberSource accounts can be found below.
+* **MICROSITE_CONFIGURATION** - A dict of dicts. The existence of this dict in effect enables the microsites feature. Each key in the microsite configuration dict specifies the config for that microsite. The key name *must* match the directory inside the MICROSITE_ROOT_DIR otherwise the microsite definition will not be valid. The data within each microsites config are as follows:
+ * **cybersource_config_key** - If the Microsite needs to use a different CyberSource account than the default configuration, then this should be set to the key name of the configuration section that is in CC_PROCESSOR. Addition details on using distinct CyberSource accounts can be found below.
  * **domain_prefix** - the subdomain that specifies the microsite. E.g. for foo.mydomain.com it would be "foo"
  * **university** - the university associated with the microsite. E.g. "FooX". This is a legacy concept in the Open edX code base, but it should be defined. It is recommended to set it to be the same as **domain_prefix***
  * **platform_name** - Optional path to override the value of PLATFORM_NAME. Used by many templates in the edx_platform applications. For example if you wanted the name of your site to be "My Awesome University", then this is where to set it.
