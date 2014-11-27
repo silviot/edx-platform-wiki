@@ -133,6 +133,11 @@ So, in order to perform the audit via SQL queries, here are the relevant element
 select count(*) as total_enrollments from student_courseenrollment 
 where course_id='{course_id}';
 
+select count(*) as number_of_course_staff from student_courseenrollment ce 
+where course_id='{course_id}' and ce.user_id in 
+(select distinct(user_id) from student_courseaccessrole where 
+(role='instructor' or role='staff') and course_id='{course_id}');
+
 select count(*) as total_purchased_paidcourseregistrations from 
 shoppingcart_paidcourseregistration pci join shoppingcart_orderitem oi 
 on oi.id=pci.orderitem_ptr_id where oi.status='purchased' and 
@@ -147,10 +152,6 @@ where crc.course_id='{course_id}' and rcr.redeemed_by_id not in
 (select distinct(user_id) from student_courseaccessrole where 
 (role='instructor' or role='staff') and course_id='{course_id}');
 
-select count(*) as number_of_course_staff from student_courseenrollment ce 
-where course_id='{course_id}' and ce.user_id in 
-(select distinct(user_id) from student_courseaccessrole where 
-(role='instructor' or role='staff') and course_id='{course_id}');
 ```
 
 Unfortunately, there is no way to audit the count of users that were manually enrolled in a course.
