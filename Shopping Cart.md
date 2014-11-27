@@ -104,3 +104,26 @@ Appropriate course staff members should be entered into a 'finance_admin' role f
 4) Fill in the form. You can search for the user id (by email or username) using the search tool. Make sure the ORG and Course ID are filled in with the appropriate course ID and the ORG should be the same ORG that is part of the Course ID tuple. For the "Role" field, please set it to "finance_admin".
 
 For the permission to take affect the user who was granted this role should log out and log back in.
+
+# Auditing
+
+If you use the shopping cart features on a course, you may wish to perform some audits from time to time. Two areas to audit are:
+
+- Are all *student* course enrollments accounted for via transactions (note, staff enrollments - which are free - should not count)?
+
+- Are the eCommerce totals in the shopping cart database match what is in the payment processor?
+
+## Course Enrollment audits
+
+In essence, the number of students (not course staff) enrolled in a course should equal the number of seats purchased (and redeemed, if applicable).
+
+The business logic would have this equation:
+
+num_course_enrollments = number_of_purchased_paidcourseregistrations + number_of_redeemed_registration_codes + number_of_course_staff + number_of_manually_enrolled_students
+
+Ideally number_of_manually_enrolled_students = 0 as that feature typically would not be used in a shopping cart enabled course.
+
+So, in order to perform the audit via SQL queries, here are the relevant elements. Rather than combining it into one mega-query, each element will have a separate query.
+
+```
+```
