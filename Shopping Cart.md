@@ -119,7 +119,9 @@ In essence, the number of students (not course staff) enrolled in a course shoul
 
 The business logic would have this equation:
 
+```
 num_course_enrollments = number_of_purchased_paidcourseregistrations + number_of_redeemed_registration_codes + number_of_course_staff + number_of_manually_enrolled_students
+```
 
 Ideally number_of_manually_enrolled_students = 0 as that feature typically would not be used in a shopping cart enabled course.
 
