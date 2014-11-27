@@ -157,3 +157,51 @@ where crc.course_id='{course_id}' and rcr.redeemed_by_id not in
 Note that in the last two queries, we're filtering out any course staff which might have also purchased (or redeemed a registration code) to prevent "double_counting". It is not uncommon for course staff to "test" their course to make sure things are working properly, therefore it is prudent to filter them out because they are already being counted in the number of course staff query.
 
 Unfortunately, there is no way to audit the count of users that were manually enrolled in a course. As mentioned earlier, ideally this number should be 0 as students should not be manually enrolled in a shopping cart enabled course.
+
+IMPORTANT: If you run these queries on a course which is has open enrollments, please remember that students could be registering for courses *at the same time* you are doing the audit. So there could be skews in the numbers depending on how active course enrollments are. It is recommended to work off of a database snapshot or to do auditing when the enrollment period is closed.
+
+## Payment Processor audits
+
+Likewise, a typical audit would like to verify that the financial totals in the Shopping Cart database matches the totals that the payment processor service (e.g. CyberSource) has. This is one of the challenges of having a decoupled system: one database for the Open edX app and a separate database for the payment provider. Ideally, the totals should match between the databases.
+
+One current limitation with the Open edX Shopping Cart is that refunds/chargebacks are not recorded in the Open edX Shopping Cart database, but it *is* recorded in the Payment Gateway. Therefore, refunds/chargebacks become one area of reconciliation. Please note that we hope to have a deeper integration of Open edX reporting capabilities to pull refund information from CyberSource, but it does not yet currently exist.
+
+So, in short, the business logic is simply:
+
+```
+total_in_payment_gateway_including_refunds = total_paidcourseregistrationitem + 
+total_regcodeitem - refunds_unrecorded_in_shoppingcart_db
+```
+refunds_unrecorded_in_shoppingcart_db is - unfortunately - not queryable in the Shopping Cart database. So it is preferable to start with something more tangible:
+
+```
+total_in_payment_gateway_including_refunds + refunds_in_payment_gateway = 
+total_paidcourseregistrationitem + total_regcodeitem
+```
+
+To query total_paidcourseregistrationitem and total_regcodeitem, do:
+
+```
+select sum(oi.qty*oi.unit_cost) as total_paidcourseregistrationitem from 
+shoppingcart_paidcourseregistration pcr join shoppingcart_orderitem oi on 
+pcr.orderitem_ptr_id=oi.id where oi.status='purchased' 
+and pcr.course_id='{course_id}';
+
+select sum(oi.qty*oi.unit_cost) as total_regcodeitem from 
+shoppingcart_courseregcodeitem cri join shoppingcart_orderitem oi 
+on cri.orderitem_ptr_id=oi.id where oi.status='purchased' 
+and cri.course_id='{course_id}';
+```
+
+Adding total_paidcourseregistrationitem + total_regcodeitem *should* equal whatever reporting your payment processor (CyberSource) if refunds/chargebacks are not included in the payment processor report. If refunds/chargebacks are included in the payment processor, then it is recommended that you compute the amount of refunds and add them back in.
+
+So if your payment processor generated report looks something like:
+
+transaction_num: 1   total: $100
+transaction_num: 2   total: $100
+transaction_num: 3   total: $200
+transaction_num: 4   total: $-100 (refund)
+
+The total would be $300. However, Shopping Cart queries would come to $400, since it is not aware of the refunded purchase. Therefore, you should add back in the refunded $100, and then the totals will line up.
+
+IMPORTANT: If you run these queries on a course which is has open enrollments, please remember that students could  be registering for courses *at the same time* you are doing the audit. So there could be skews in the numbers depending on how active course enrollments are. It is recommended to work off of a database snapshot or to do auditing when the enrollment period is closed. Also, there might be processing latency with the 3rd party payment processor (like CyberSource) where the change is immediate in the Shopping Cart, but the report in the payment processor report may lag behind (minutes? hours? Hard to tell unfortunately).
