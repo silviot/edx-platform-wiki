@@ -130,17 +130,21 @@ select count(*) as total_enrollments from student_courseenrollment
 where course_id='{course_id}';
 
 select count(*) as total_purchased_paidcourseregistrations from 
-shoppingcart_paidcourseregistration pci 
-join shoppingcart_orderitem oi on oi.id=pci.orderitem_ptr_id 
-where oi.status='purchased' and pci.course_id='{course_id}';
+shoppingcart_paidcourseregistration pci join shoppingcart_orderitem oi 
+on oi.id=pci.orderitem_ptr_id where oi.status='purchased' and 
+pci.course_id='{course_id}' and oi.user_id not in 
+(select distinct(user_id) from student_courseaccessrole where 
+(role='instructor' or role='staff') and course_id='{course_id}');
 
 select count(*) as number_of_redeemed_registration_codes from 
-shoppingcart_registrationcoderedemption rcr 
-join shoppingcart_courseregistrationcode crc on rcr.registration_code_id=crc.id 
-where crc.course_id='{course_id}';
+shoppingcart_registrationcoderedemption rcr join 
+shoppingcart_courseregistrationcode crc on rcr.registration_code_id=crc.id 
+where crc.course_id='{course_id}' and rcr.redeemed_by_id not in 
+(select distinct(user_id) from student_courseaccessrole where 
+(role='instructor' or role='staff') and course_id='{course_id}');
 
 select count(*) as number_of_course_staff from student_courseenrollment ce 
-where course_id='MITProfessionalX/6.BDX/2T2014' and ce.user_id in 
+where course_id='{course_id}' and ce.user_id in 
 (select distinct(user_id) from student_courseaccessrole where 
 (role='instructor' or role='staff') and course_id='{course_id}');
 ```
