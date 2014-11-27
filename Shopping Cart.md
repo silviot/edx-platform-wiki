@@ -157,8 +157,3 @@ where crc.course_id='{course_id}' and rcr.redeemed_by_id not in
 Note that in the last two queries, we're filtering out any course staff which might have also purchased (or redeemed a registration code) to prevent "double_counting". It is not uncommon for course staff to "test" their course to make sure things are working properly, therefore it is prudent to filter them out because they are already being counted in the number of course staff query.
 
 Unfortunately, there is no way to audit the count of users that were manually enrolled in a course. As mentioned earlier, ideally this number should be 0 as students should not be manually enrolled in a shopping cart enabled course.
-
-Note that this above set of queries can cause some limited "double counting" if:
-
-- A course staff also does a purchase (say for testing purposes)
-- A course staff redeems a RegistrationCode
