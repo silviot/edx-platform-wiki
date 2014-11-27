@@ -197,10 +197,12 @@ Adding total_paidcourseregistrationitem + total_regcodeitem *should* equal whate
 
 So if your payment processor generated report looks something like:
 
+```
 transaction_num: 1   total: $100
 transaction_num: 2   total: $100
 transaction_num: 3   total: $200
 transaction_num: 4   total: $-100 (refund)
+```
 
 The total would be $300. However, Shopping Cart queries would come to $400, since it is not aware of the refunded purchase. Therefore, you should add back in the refunded $100, and then the totals will line up.
 
