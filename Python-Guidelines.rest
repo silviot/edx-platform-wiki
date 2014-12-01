@@ -10,7 +10,7 @@ Follow `PEP 8`_
 * Names like this:  modules_and_packages, functions_and_methods, local_variables, GLOBALS, CONSTANTS, MultiWordClasses
 * Acronyms should count as one word:  RobustHtmlParser, not RobustHTMLParser
 * Trailing commas are good: they prevent having to edit the last line in a list when adding a new last line.  You can use them in lists, dicts, function calls, etc.
-* EXCEPT: we aren't (yet) limiting code lines to 79 characters.  Use 120 as a limit for code.  Please use 79 chars as a limit for docstring lines though, so that the text remains readable.
+* Please note that 79 characters is the default line limit.
 
 Breaking long lines
 -------------------
