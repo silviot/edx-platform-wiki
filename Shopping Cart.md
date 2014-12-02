@@ -207,3 +207,27 @@ transaction_num: 4   total: $-100 (refund)
 The total would be $300. However, Shopping Cart queries would come to $400, since it is not aware of the refunded purchase. Therefore, you should add back in the refunded $100, and then the totals will line up.
 
 IMPORTANT: If you run these queries on a course which is has open enrollments, please remember that students could  be registering for courses *at the same time* you are doing the audit. So there could be skews in the numbers depending on how active course enrollments are. It is recommended to work off of a database snapshot or to do auditing when the enrollment period is closed. Also, there might be processing latency with the 3rd party payment processor (like CyberSource) where the change is immediate in the Shopping Cart, but the report in the payment processor report may lag behind (minutes? hours? Hard to tell unfortunately).
+
+## Computing total number of seats sold
+
+It is often a useful metric to compute the total number of seats sold. In terms of business logic, this is:
+
+```
+num_seats_sold = total_purchased_paidcourseregistrations + num_of_regcodes_generated
+```
+
+The num_of_regcodes_generated is a combination of multi-seat purchases (RegCodeItems) as well as registration codes generated via Invoices. Note that registration codes generated via Invoices can be set to any arbitrary price, so keep that in mind when reconciling financials. Also Invoices are settled "out-of-band" and therefore it cannot be reconciled against the payment gateway.
+
+In terms of SQL, use:
+
+```
+select count(*) as total_purchased_paidcourseregistrations from 
+shoppingcart_paidcourseregistration pci join shoppingcart_orderitem oi 
+on oi.id=pci.orderitem_ptr_id where oi.status='purchased' and 
+pci.course_id='{course_id}'
+
+select count(*) as num_of_regcodes_generated from 
+shoppingcart_courseregistrationcode where course_id='{course_id}'
+```
+
+Please note that if course staff perform "test purchases" or "test registration codes", those staff people will be counted in these totals (and that is why we filter them out in the Enrollment audit queries up above). 
