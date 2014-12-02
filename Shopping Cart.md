@@ -213,7 +213,8 @@ IMPORTANT: If you run these queries on a course which is has open enrollments, p
 It is often a useful metric to compute the total number of seats sold. In terms of business logic, this is:
 
 ```
-num_seats_sold = total_purchased_paidcourseregistrations + num_of_regcodes_generated
+num_seats_sold = total_purchased_paidcourseregistrations +
+ num_of_regcodes_generated
 ```
 
 The num_of_regcodes_generated is a combination of multi-seat purchases (RegCodeItems) as well as registration codes generated via Invoices. Note that registration codes generated via Invoices can be set to any arbitrary price, so keep that in mind when reconciling financials. Also Invoices are settled "out-of-band" and therefore it cannot be reconciled against the payment gateway.
