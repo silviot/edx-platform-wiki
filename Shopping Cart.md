@@ -121,8 +121,8 @@ The business logic would have this equation:
 
 ```
 num_course_enrollments = number_of_purchased_paidcourseregistrations + 
-number_of_redeemed_registration_codes + number_of_course_staff + 
-number_of_manually_enrolled_students
+  number_of_redeemed_registration_codes + number_of_course_staff + 
+  number_of_manually_enrolled_students
 ```
 
 Ideally number_of_manually_enrolled_students = 0 as that feature typically would not be used in a shopping cart enabled course.
@@ -170,13 +170,13 @@ So, in short, the business logic is simply:
 
 ```
 total_in_payment_gateway_including_refunds = total_paidcourseregistrationitem + 
-total_regcodeitem - refunds_unrecorded_in_shoppingcart_db
+  total_regcodeitem - refunds_unrecorded_in_shoppingcart_db
 ```
 refunds_unrecorded_in_shoppingcart_db is - unfortunately - not queryable in the Shopping Cart database. So it is preferable to start with something more tangible:
 
 ```
 total_in_payment_gateway_including_refunds + refunds_in_payment_gateway = 
-total_paidcourseregistrationitem + total_regcodeitem
+  total_paidcourseregistrationitem + total_regcodeitem
 ```
 
 To query total_paidcourseregistrationitem and total_regcodeitem, do:
