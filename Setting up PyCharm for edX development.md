@@ -1,8 +1,8 @@
 ### Debugging the devstack image with PyCharm professional edition
 
-Debugging with devstack is more complex than in a direct local development environment, as the source code lives on your local machine but the code is executing within the Vagrant image. One solution is to use [PyCharm Professional Edition](http://www.jetbrains.com/pycharm/) from JetBrains. It is able to debug devstack using its concept of [remote Python interpreters](http://blog.jetbrains.com/pycharm/2013/03/how-pycharm-helps-you-with-remote-development/). Similar setups should also work for any IDE with remote interpreter.
+Debugging with devstack is more complex than in a direct local development environment, as the source code lives on your local machine but the code is executing within the Vagrant image. One solution is to use [PyCharm Professional Edition](http://www.jetbrains.com/pycharm/) from JetBrains. It is able to debug devstack using its concept of [remote Python interpreters](http://blog.jetbrains.com/pycharm/2013/03/how-pycharm-helps-you-with-remote-development/). Similar setups should also work for any IDE which supports a remote interpreter.
 
-Here are the steps to use PyCharm on MacOS (other Unix environments should be similar). 
+Here are the steps to use PyCharm on MacOS (other Unix environments should be similar). Note that PyCharm will start up a new instance of the process you wish to debug. Connecting a debugger to a pre-existing Python process is more involved and is not documented here. For more information, see [PyCharm's remote debugger documentation](https://www.jetbrains.com/pycharm/webhelp/remote-debugging.html).
 
 * First, start up a terminal and give the 'edxapp' user a password
 ```
@@ -78,7 +78,7 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
 ![LMS server configuration]
 (https://1786529bf2dfcc9a4fc2736524bc8aea4a66cc50.googledrive.com/host/0BxQlaq542xl2V182QTM4ZF9kZlU/LMS_server.png)
 
-* Debug the new "LMS" configuration
+* Debug the new "LMS" configuration. Note that this will start up a new LMS instance on port 8000, so ensure that you are not already running the LMS.
   * Choose "Run > Debug..."
   * Specify "LMS" and the Django instance should be started up.
   * Try the following to ensure that you can set breakpoints:
