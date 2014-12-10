@@ -69,7 +69,7 @@ complete -F _paver paver
 * To test XQuartz's installation, in your vagrant machine, type `firefox` in the terminal. This should bring up [Firefox on the host machine] (https://drive.google.com/a/edx.org/file/d/0BxQlaq542xl2QzBHNjU0WUNMRGM/edit?usp=sharing). If you have servers running on the vagrant machine (Studio, LMS, ...) you can use this Firefox instance to connect to those servers like they are being run on the host machine.
 * Similarly, you can also run `paver test_bokchoy` (or if you have compiled the asset files, then `paver test_bokchoy --fast`) in vagrant's terminal. This should also bring up the browser in the host machine.
 * We used to have to do a bunch of manual stuff to update the .Xauthority files, etc. This has been fixed programmatically in the configuration repo, prior to the release of 20140418-injera-devstack.box
-* If you want to run the acceptance tests without browser windows popping up on your host system, as the edxapp user redirect the DISPLAY environment variable.
+* If you want to run the tests without browser windows popping up on your host system, as the edxapp user redirect the DISPLAY environment variable.
 ```
 export DISPLAY=:1
 ```
@@ -78,6 +78,16 @@ export DISPLAY=:1
 ```
 export DISPLAY=localhost:10.0
 ```
+
+* If you wish to debug the tests in your local browser:
+
+Devstack has the nice feature that it exposes localhost to your local machine with IP address 192.168.33.10. So copy the URL that the XQuartz browser window opened, paste the URL into your local browser, and then update the IP address. For example, running the CMS unit tests would have a URL like this:
+
+http://192.168.33.10:TEST_PORT/suite/cms
+
+* If you wish to debug just one test
+
+If you click on a failing test, you will be redirected to a URL that runs only that test. Now when you make a chance and refresh the browser, only this one test is re-run. This gives you a quicker turnaround time, and means that you don't get confused with other tests that are running.
 
 ### Everything was working at first, but now my tests hang and fail without launching the host browser.  What happened?
 
