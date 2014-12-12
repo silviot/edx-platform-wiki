@@ -60,19 +60,20 @@ To "release" a second (or third, or hundreth) language, what you have to do is t
 
 YourAwesomeDomain.com/admin/dark_lang/darklangconfig/
 
-The `LANGUAGE_CODE` variable is for your server's default language. And then to "release" a language, you have to turn them on in the dark lang config on the admin panel - do that by going to the admin url above, then adding language codes for all additional languages you wish to release in a comma separated list. For example, to release French and Chinese (China), you'd add
+The `LANGUAGE_CODE` variable is for your server's default language. And then to "release" a language, you have to turn them on in the dark lang config on the admin panel - do that by going to the admin url above, then adding language codes for all additional languages you wish to release in a comma separated list. For example, to release French and Chinese (China), you'd add: 
 
- `fr, zh-cn`
+        fr, zh-cn
 
 to the dark lang config list. You don't need to add the language code for your server's default language, but it's no problem if you do.
 
-Confusing, I know. The benefit of this is that you can preview languages before you release them by appending
+Confusing, I know. The benefit of this is that you can preview languages before you release them by appending: 
 
-`?lang-code=xx`
+        ?lang-code=xx
 
-to the end of any url, and `?clear-lang` to undo it. Example:
+to the end of any url, and `?clear-lang` to undo it. Example: 
 
-`127.0.0.1:8000/dashboard?preview-lang=ar      # Shows your site in Arabic (if Arabic is unreleased in your instance)`
-`127.0.0.1:8000/dashboard?clear-lang                # Resets your session`
+        127.0.0.1:8000/dashboard?preview-lang=ar      # Shows your site in Arabic (if Arabic is unreleased in your instance)
+
+        127.0.0.1:8000/dashboard?clear-lang                # Resets your session
 
 Remember than lang codes with underscores and capital letters need to be converted to using dashes and lower case letters on the edX platform. For example Chinese (Taiwan) is code "zh_TW" on Transifex, but "zh-tw" on the edX system.
