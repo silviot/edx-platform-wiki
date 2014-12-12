@@ -51,3 +51,28 @@ In order to run your Open edX instance under a different spoken language, for in
 7. If you experience issues:
    - Be sure your browser is set to prefer the language set in `LANGUAGE_CODE`
    - In `common/djangoapps/student/views.py`, the user's language code is tried to be obtained from a saved preferences file. So if you are having issues seeing your language served up, it may be because your User object has a different language saved as a preference. Try creating a new user in your environment, this should clear up the issue.
+
+# Releasing A Language
+
+Setting `LANGUAGE_CODE` sets one language to be your installation's default language. What if you want to support more than one language?
+
+To "release" a second (or third, or hundreth) language, what you have to do is to config the languages on the admin panel:
+
+YourAwesomeDomain.com/admin/dark_lang/darklangconfig/
+
+The `LANGUAGE_CODE` variable is for your server's default language. And then to "release" a language, you have to turn them on in the dark lang config on the admin panel - do that by going to the admin url above, then adding language codes for all additional languages you wish to release in a comma separated list. For example, to release French and Chinese (China), you'd add
+
+ `fr, zh-cn`
+
+to the dark lang config list. You don't need to add the language code for your server's default language, but it's no problem if you do.
+
+Confusing, I know. The benefit of this is that you can preview languages before you release them by appending
+
+`?lang-code=xx`
+
+to the end of any url, and `?clear-lang` to undo it. Example:
+
+`127.0.0.1:8000/dashboard?preview-lang=ar      # Shows your site in Arabic (if Arabic is unreleased in your instance)`
+`127.0.0.1:8000/dashboard?clear-lang                # Resets your session`
+
+Remember than lang codes with underscores and capital letters need to be converted to using dashes and lower case letters on the edX platform. For example Chinese (Taiwan) is code "zh_TW" on Transifex, but "zh-tw" on the edX system.
