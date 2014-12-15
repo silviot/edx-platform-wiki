@@ -20,8 +20,8 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: St. George's University, FreshDirect
 
 * **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com), New York).
- * _Services_: Platform deployment, paywall, LTI, XBlocks; training, 24/7 support; hosting, upgrades, disaster recovery; video production. EdX-appointed third-party provider.  
- * _Clients_: George Washington University, Cooper Union, Laureate, Mid Sweden University, U.P. Comillas - Icade, European Molecular Oncology, Kare Partners - University of Rochester, Doral University of Florida, Boyce College, Spain's Government, 
+ * _Services_: Platform deployment, digital badges, paywall, LTI, XBlocks; training, 24/7 support; hosting, upgrades, disaster recovery; video production. EdX-appointed third-party provider.  
+ * _Clients_: George Washington University, Cooper Union, Indiana, Mid Sweden University, U.P. Comillas - Icade, European Molecular Oncology, Kare Partners - University of Rochester, Doral University of Florida, Boyce College, Spain's Government.
  * [Free 30-min consultancy; Open edX e-book; Demo platform](http://iblstudios.com/); hablamos español. 
 
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
