@@ -17,26 +17,25 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 ```
 * Create a PyCharm project for devstack (if you don't have one already):
   * Select "New Project..." from the "File" menu
+  * Choose "Pure Python" for "Project type" (note: don't choose "Django project" as that can't currently be interpreted remotely)
   * Select your devstack folder as the "Location"
-  * Choose "Empty project" for "Project type" (note: don't choose "Django project" as that can't currently be interpreted remotely)
   * Say "Yes" to the question about using existing sources for the project
-* To make PyCharm's editor traverse imports in edx-platform python modules, go to "File > Settings... > Project Structure" and mark the following directories as "Source Folders":
-  * lms/djangoapps
-  * lms/lib
+* To make PyCharm's editor traverse imports in edx-platform python modules, go to " > Preferences > Project > Project Structure" and mark the following directories as "Source Folders":
   * cms/djangoapps
   * cms/lib
   * common/djangoapps
   * common/lib
+  * lms/djangoapps
+  * lms/lib
 * You can also mark the following symlinks to be "Excluded" so that PyCharm doesn't see multiple copies of the same files:
   * cms/static/xmodule_js
   * lms/static/xmodule_js
   * lms/static/templates
-  * test_root/staticfiles
 * You might also want to hide the translations directory as every language matches when you search for a product string:
   * conf/locale
 
 ### Create a PyCharm remote interpreter (PyCharm v3.4+)
-* Select "Preferences..." from the Apple menu
+* Select  " > Preferences"
 * Select "Project Interpreter" under "Project Settings"
 * Click the gear icon in the upper right corner of the dialog box
 * In the drop down that appears, click on "Add Remote"
