@@ -52,6 +52,7 @@ In order to speed up the build time(from 10-15 seconds to 1-3) on vagrant enviro
 To bypass this, the solution is to run the grunt command from the native OS instead of the ubuntu OS installed in the virtual machine.
 
 To do this you need to [install node in the native OS](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) and then install the grunt command line interface. On devstack:
+
         sudo npm install grunt-cli -g
 
 After this is done, you can call all the grunt tasks directly from edx-platform directory in the console on your native OS. This will reduce the time it takes to compile the assets to around 2 seconds. Also the time it takes for the watch task to notice the changes in the files from around 5 seconds to almost nothing.  
