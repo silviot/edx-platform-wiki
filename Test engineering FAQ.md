@@ -9,19 +9,19 @@ Here is a link to doc included in the repo itself on [Writing and Running Tests]
 ### How do I run paver test for a single file?
 To run single test, specify the name of the test file. For example:
 
-```paver test_bokchoy -t test_lms.py```
+```paver test_bokchoy -t lms/test_lms.py```
 
 To run single test faster by not repeating setup tasks:
 
-```paver test_bokchoy -t test_lms.py --fasttest```
+```paver test_bokchoy -t lms/test_lms.py --fasttest```
 
 To test only a certain feature, specify the file and the testcase class:
 
-```paver test_bokchoy -t test_lms.py:RegistrationTest```
+```paver test_bokchoy -t lms/test_lms.py:RegistrationTest```
 
 To execute only a certain test case, specify the file name, class, and test case method:
 
-```paver test_bokchoy -t test_lms.py:RegistrationTest.test_register```
+```paver test_bokchoy -t lms/test_lms.py:RegistrationTest.test_register```
 
 If the test is in a subfolder, just specify the path:
 
