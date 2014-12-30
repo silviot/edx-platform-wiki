@@ -61,6 +61,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
     * [内蒙古师范大学](http://mooc.imnu.edu.cn/)
 * [BistuX 北京信息科技大学](http://x.bistu.edu.cn)
 * [北京外国语大学](http://mooc.bfsu.edu.cn/)
+* [北京印刷学院](http://mooc.bigc.edu.cn/)
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
 * [X-omics 慕序](http://www.x-omics.org/)
 * [cn-mooc 天津职教集团](http://www.cn-mooc.org/)
