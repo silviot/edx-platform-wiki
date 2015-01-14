@@ -12,7 +12,9 @@ In order to run your Open edX instance under a different spoken language, for in
         password = pass
         token =
 
-    Token is left blank. You have to have permissions for the project (edx-platform) AFAIK - https://www.transifex.com/projects/p/edx-platform/ 
+    Token is left blank. You have to have permissions for the project (edx-platform) AFAIK - https://www.transifex.com/projects/p/edx-platform/ (it is free to sign up and join this project as a translator).
+
+     For help with Transifex configuration, see the Transifex documentation: http://docs.transifex.com/developer/client/setup#configuration
 
 2. Switch to edxapp environment:
 
