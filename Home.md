@@ -37,7 +37,6 @@ edX operates and maintains a special Sandbox hosting environment for people to t
 * [[Hackathons]]
 * [[Writing easily XBlock portable XModules]]
 * [[Internationalization and Localization]]
-* [[Split Testing]]
 * [[Object Identities]]
 * [[Data-Access,-Persistence]]
 * [[Helpful Tools]]
