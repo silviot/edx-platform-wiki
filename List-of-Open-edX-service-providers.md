@@ -40,6 +40,9 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development in Arabic Language
 
+* **MOOC Markteplace** (contact: [Andrew Liu](mailto: andrew@moocmarketplace.com)).
+ * _Services_: Provides an edX online Marketplace to buy & sell apps, themes, and courses.  Free Job boards specific for edX jobs.   
+
 * **OpenCraft** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
  * _Services_: Instance installation, custom development, XBlocks.
  * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, FUN (French Ministry of Higher Education and Research).
