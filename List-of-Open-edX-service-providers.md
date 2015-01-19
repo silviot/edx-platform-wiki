@@ -42,6 +42,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **MOOC Markteplace** (contact: [Andrew Liu](mailto: andrew@moocmarketplace.com)).
  * _Services_: Provides an edX online Marketplace to buy & sell apps, themes, and courses.  Free Job boards specific for edX jobs.   
+[Find out more](https://www.moocmarketplace.com/) 
 
 * **OpenCraft** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
  * _Services_: Instance installation, custom development, XBlocks.
@@ -54,4 +55,3 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **VeritasU** (contact: [Patrick McGuinness](mailto:patrick@veritasu.com))
  * _Services_: Instance deployment, managed hosting on veritasu.com and white-labelled, course development and customization including xblock development, custom theming and branding, and support.
  * [Initial free course signup](http://www.veritasu.com/) 
-
