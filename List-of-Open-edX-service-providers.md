@@ -40,7 +40,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development in Arabic Language
 
-* **[MOOC Markteplace](http://www.moocmarketplace.com/)** (contact: [Andrew Liu](mailto: andrew@moocmarketplace.com)).
+* **[MOOC Markteplace](http://moocmarketplace.com/)** (contact: [Andrew Liu](mailto: andrew@moocmarketplace.com)).
  * _Services_: Provides an edX online Marketplace to buy & sell apps, themes, and courses.  Free Job board specific for edX jobs.   
 
 
