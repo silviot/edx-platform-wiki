@@ -16,7 +16,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx-lite)
 [![Launch demo site](http://launcher.appsembler.com/static/img/buttons/btn-mini-green.png)](http://launcher.appsembler.com/openedx-lite/)
 
-* **[Jazkarta](http://jazkarta.com/edx)** (contact: [Sally Kleinfeldt](mailto:sally@jazkarta.com), Boston, MA USA).
+* **[Jazkarta](http://jazkarta.com/edx)** (contact: [Sally Kleinfeldt](mailto:sales@jazkarta.com), Boston, MA USA).
   * _Services_: Custom development of Open edX, XBlocks development (plugins), integration with other systems
  * _References/clients_: Davidson College, Georgetown University, InterSystems, edX
  * _Projects/contributions_: [Staff Graded Assignment XBlock](https://github.com/mitodl/edx-sga), [JSME XBlock](https://github.com/jazkarta/edx-jsme), [Individual Due Date Extension](https://github.com/edx/edx-platform/pull/2062), [Personal Online Courses](http://goo.gl/owBwoQ), [LinkedIn integration for edX](https://www.edx.org/blog/you-can-now-share-edx-success-linkedin), Integration with SCORMCloud, Through-the-web microsites manager
