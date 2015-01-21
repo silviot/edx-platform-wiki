@@ -9,11 +9,18 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: UPEx, Instituto de Altos Estudios Nacionales - IAEN.
 
 * **Appsembler** (contact: [Nate Aune](mailto:nate@appsembler.com), Cambridge, MA USA).
- * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
- * _References/clients_: MITx, Davidson College, edX
+ * _Services_: Open edX-as-a-service including installation, hosting, theming, support, e-commerce, SCORM, LTI
+ * _References/clients_: MIT Sloan Executive Education, New York Institute of Finance (Financial Times), InterSystems.
+ * _Website_: [Appsembler Open edX](http://openedx.appsembler.com)
  * _Author_: [Making Open edX a Thriving Open Source Project](https://docs.google.com/document/d/1UV0LhaaPLpx8TLHuK1f9luNcRrpSNmXg0baINLk2W34/edit) commissioned by [Stanford University’s Office of the Vice Provost for Online Learning](https://groups.google.com/d/msg/edx-code/DRqcLlMKhgs/KBvzBj13hQ8J). [Official response to the report by edX](http://engineering.edx.org/2014/07/response-to-stanford-report-on-open-edx/).
- 
  * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx-lite)
+[![Launch demo site](http://launcher.appsembler.com/static/img/buttons/btn-mini-green.png)](http://launcher.appsembler.com/openedx-lite/)
+
+* ***Jazkarta** (contact: [Sally Kleinfeldt](mailto:sally@jazkarta.com), Boston, MA USA).
+  * _Services_: Custom development of Open edX, XBlocks development (plugins), integration with other systems
+ * _References/clients_: MITx, Davidson College, edX
+ * _Projects/contributions_: [Staff Graded Assignment XBlock](https://github.com/mitodl/edx-sga), [JSME XBlock](https://github.com/jazkarta/edx-jsme), [Individual Due Date Extension](https://github.com/edx/edx-platform/pull/2062), [Personal Online Courses](http://goo.gl/owBwoQ), [LinkedIn integration for edX](https://www.edx.org/blog/you-can-now-share-edx-success-linkedin), Integration with SCORMCloud, Through-the-web microsites manager
+ * _More info_: [Jazkarta's Open edX development services](http://jazkarta.com/edx)
 
 * **EdCast** (contact: [Daniel McKelvey](mailto:info@edcast.com))
  * _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, invite-only courses and control over enrollment schemes, LTI-compliant collaboration tools, 24/7 support
