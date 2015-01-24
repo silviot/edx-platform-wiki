@@ -26,7 +26,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
   * [Github code repo](https://github.com/openfun/)
 * [MOOC FranceTv Education](http://mooc.francetveducation.fr/)
-* [IONISx](https://ionisx.com) by [IONIS Education Group](http://www.ionis-group.com) - France - Philippe Chiu
+* [IONISx](https://ionisx.com) - Digital Learning platform of [IONIS Education Group](http://www.ionis-group.com) (MOOC, SPOC, Blended)
   * [Github code repo](https://github.com/ionisx/)
   * Check out our [Open edX responsive theme](https://github.com/IONISx/edx-ionisx-theme/)
 * [Neodemia.com](https://neodemia.com)
