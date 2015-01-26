@@ -50,7 +50,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
     * [Labranzacero] (http://labranzacero.edunext.co/)
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
-* [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec)
+* [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec) - MOOC platform based on edX and run by Instituto de Altos Estudios Nacionales, Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
 * [EdXUnicauca - Universidad del Cauca, Colombia](http://edx.unicauca.edu.co)
 
