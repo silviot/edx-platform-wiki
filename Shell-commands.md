@@ -2,18 +2,19 @@
 * To run django admin commands use manage.py with the following syntax:
 
 ```
-path/to/edx-platform/manage.py  [lms|cms]  --settings=aws  --service-variant lms  <cmd>
+path/to/edx-platform/manage.py  [lms|cms]  --settings=aws <cmd>
 ```
 
 For example to see all of the available lms commands on the single server vagrant image:
 
 ```
-sudo -u www-data /opt/edx/bin/python /opt/wwc/edx-platform/manage.py lms --settings=aws --service-variant lms  help
+sudo -u edxapp /edx/bin/python.edxapp /edx/app/edxapp/edx-platform/manage.py lms --settings=aws help
 ```
 
 * To create a superuser account on the edX vagrant image
 ```
-sudo -u www-data /opt/edx/bin/python /opt/wwc/edx-platform/manage.py lms --settings=aws --service-variant lms createsuperuser --username <user>
+sudo -u edxapp /edx/bin/python.edxapp /edx/app/edxapp/edx-platform/manage.py lms --settings=aws
+createsuperuser --username <user>
 ```
 
 
