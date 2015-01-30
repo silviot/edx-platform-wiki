@@ -42,7 +42,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Lectya - Fundación Germán Sánchez Ruipérez](http://lectya.com/)
 * [ISEAD Business School](http://www.iseadx.com/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
-* [eduNEXT - Colombia] (http://edx.edunext.co/) - 
+* [eduNEXT - Colombia] (http://edx.edunext.co/)
     * [Github code repo](https://github.com/eduNEXT/edunext-platform)
     * Some of the microsites we power:
         * [CampusRomero] (http://cursos.campusromero.pe/)
