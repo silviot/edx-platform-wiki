@@ -42,13 +42,15 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Lectya - Fundación Germán Sánchez Ruipérez](http://lectya.com/)
 * [ISEAD Business School](http://www.iseadx.com/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
-* [eduNEXT - Colombia] (http://edx.edunext.co/) - Using microsites to power:
-    * [Educampus] (http://cursos.educampus.la/)
-    * [Sociedad Colombiana de Archivistas] (http://scarchivistas.edunext.co/)
-    * [Mushaisa] (http://blended.mushaisa.co/)
-    * [AFS Colombia] (http://afs.edunext.co/)
-    * [Paqua] (http://paqua.edunext.co/)
-    * [Labranzacero] (http://labranzacero.edunext.co/)
+* [eduNEXT - Colombia] (http://edx.edunext.co/) - 
+    * [Github code repo](https://github.com/eduNEXT/edunext-platform)
+    * Some of the microsites we power:
+        * [CampusRomero] (http://cursos.campusromero.pe/)
+        * [Sociedad Colombiana de Archivistas] (http://scarchivistas.edunext.co/)
+        * [Mushaisa] (http://blended.mushaisa.co/)
+        * [AFS Colombia] (http://afs.edunext.co/)
+        * [Paqua] (http://paqua.edunext.co/)
+        * [Labranzacero] (http://labranzacero.edunext.co/)
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec) - MOOC platform based on edX and run by Instituto de Altos Estudios Nacionales, Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
