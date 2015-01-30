@@ -21,6 +21,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Seneca College, Toronto, Canada](http://online-dev.cdot.senecacollege.ca/)
 * [University of Zurich](http://www.edx.uzh.ch) - Many courses internally 
 * [McKinsey Academy](https://www.mckinseyacademy.com/) - Highly customized branch of Open edX
+* [New York Institute of Finance](https://learning.nyif.com) - Many courses will be ported over in 2015
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
