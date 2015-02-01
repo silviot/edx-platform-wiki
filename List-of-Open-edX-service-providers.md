@@ -35,7 +35,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **IBL Studios Education** (contact: [Michael Amigot](mailto:amigot@iblstudios.com), New York).
  * _Services_: edX platform deployment including design, apps and extensions (i.e. badges, PayPal...); 24/7 maintenance, security, upgrades, disaster recovery; training and consultancy; course creation and video. EdX-appointed third-party provider.  
- * _Clients_: GW - George Washington University, NYU, Cooper Union, Indiana University, Mid Sweden University, Comillas - ICADE, PUC Chile, European Molecular Oncology, Kare Partners - University of Rochester, Boyce College, Spain's Government and Ministry of Education. 
+ * _Clients_: GW - George Washington University, NYU, Cooper Union, Indiana University, Mid Sweden University, Comillas - ICADE, PUC Chile, European Molecular Oncology, Kare Partners - University of Rochester, Boyce College, Spain's Ministry of Education and Red.es. 
  * [Free Open edX guide; free demo platform; 30-min consultancy; news.](http://iblstudios.com/) Hablamos español.
 
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
