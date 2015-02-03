@@ -92,7 +92,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Edraak] (https://edraak.org/) - Queen Rania Foundation
 
 ## Italian
-* [Politecnico di Milano](https://www.pok.polimi.it/)
+* [Politecnico di Milano](https://www.pok.polimi.it/) - POK portal has been conceived primarily in order to accompany students (not only students of Politecnico di Milano) while they try to overtake all the obstacles they meet in the main passages of their career.
 
 ## Korean
 * [All.That.Edu](http://www.allthatedu.com/)
