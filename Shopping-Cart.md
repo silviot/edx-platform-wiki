@@ -232,3 +232,16 @@ shoppingcart_courseregistrationcode where course_id='{course_id}'
 ```
 
 Please note that if course staff perform "test purchases" or "test registration codes", those staff people will be counted in these totals (and that is why we filter them out in the Enrollment audit queries up above). 
+
+## Querying enrollments through non-payment
+
+It is also useful - when auditing - to also be able to get a list of course enrollments that do not have a corresponding entry in the PaidCourseRegistration or CourseRegistrationCode redemption. Typically, one should expect to only see either a) Course Staff  or b) users that were manually enrolled through the Instructor Dashboard.
+
+```
+select au.id, au.email, au.username, ce.created, ce.is_active,ce.id as enrollment_id from student_courseenrollment ce join auth_user au on ce.user_id=au.id where course_id='{course_id}' and au.id NOT IN
+(select o.user_id from shoppingcart_order o join shoppingcart_orderitem oi on oi.order_id=o.id join shoppingcart_paidcourseregistration pcr on pcr.orderitem_ptr_id=oi.id where o.status='purchased' and course_id='{course_id}'
+) and au.id NOT IN 
+(select redeemed_by_id from shoppingcart_registrationcoderedemption
+) and au.id NOT IN
+(select user_id from student_courseaccessrole where course_id='{course_id}')
+```
