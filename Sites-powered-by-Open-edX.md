@@ -29,7 +29,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MOOC FranceTv Education](http://mooc.francetveducation.fr/)
 * [IONISx](https://ionisx.com) - Digital Learning platform of [IONIS Education Group](http://www.ionis-group.com) (MOOC, SPOC, Blended)
   * [Github code repo](https://github.com/ionisx/)
-  * Check out our [Open edX responsive theme](https://github.com/IONISx/edx-ionisx-theme/)
+  * Check out our [Open edX responsive theme](https://github.com/IONISx/edx-theme/)
 * [Neodemia.com](https://neodemia.com)
 * [UM5RMOOC](http://mooc.um5s.ac.ma) - Université Mohammed-V-Rabat MAROC
 * [MoocIT](http://learn-moocit.fr/)
