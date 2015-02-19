@@ -75,7 +75,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [洛阳理工学院](http://x.lit.edu.cn/)
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
 * [cn-mooc 天津职教集团](http://www.cn-mooc.org/)
-* [cnedX 广外肇庆外校](http://x.cnedx.com/)
 
 
 ## Russian
