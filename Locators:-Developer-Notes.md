@@ -58,7 +58,7 @@ Calling `FooLocator.from_string(bar_string)` will give you a `FooLocator` object
 Examples of serialized `CourseLocator`s:
 ````python
 "org/course/run"  # A deprecated format from when we used course_ids.
-"Org.Course.Run/branch/draft/block/Robot_Super_Course"  # A deprecated format from bla bla.
+"Org.Course.Run/branch/draft/block/Robot_Super_Course"  # A deprecated format from when we used course_ids.
 "ssck:slashes:$org+$course+$run"  # A deprecated format from when we used SlashSeparatedCourseKeys.
 "course-locator:$org+$course.$run+branch+$branch+version+$version+type"  # The preferred serialized version of a string.
 ````
@@ -68,6 +68,7 @@ Examples of serialized `BlockUsageLocator`s:
 "i4x://org/course/category/name"  # A deprecated format from when we used locations.
 "c4x://org/course/category/name"  # Another deprecated format from when we used locations.
 "edx:org+course.run+branch+foo+version+bar+type+baz+block+id"  # The preferred serialized form of a string.
+```
 
 To construct a course key from an old-style course_id:
 ```python
