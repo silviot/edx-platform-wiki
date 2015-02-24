@@ -55,6 +55,17 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Instance installation, custom development, XBlocks.
  * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, FUN (French Ministry of Higher Education and Research).
 
+* **[Raccoon Gang](http://raccoongang.com/)** (contact: [Alexander Kryklia](mailto: alex.kryklia@raccoongang.com)).
+ * _Services_: 
+    * Deploy and configuration: AWS, Azure, Digital Ocean, etc.; support and maintenance, migration from other e-learning systems;
+    * XBlock and new platform features development;
+    * Creation of course-specific courseware components;
+    * Platform customization: courseware components, localization, theme creation, certificate design;
+    * Consulting: support and technical assistance, content creation, R&D and analytics;
+ * _References/Clients/Experience_: available upon request; participated in development of a lot of Open edX features, including video player, conditional, poll, LTI and other modules.
+ * _[Free](http://cms.ddev.com.ua/signin?next=/course/)_ one course creation and run on our servers.
+
+
 * **solutions.curricu.me** (contact: [John Swope](mailto:john@curricu.me)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
  * _References/clients_: St. George's University, FreshDirect
