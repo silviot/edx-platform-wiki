@@ -22,6 +22,7 @@
 * [PDF XBlock (alternative)](https://github.com/MarCnu/pdfXBlock): Another XBlock to embed PDF, with XBlock title and download buttons.
 * [Pie Chart XBlock](https://github.com/ExtensionEngine/xblock_charting): to include Pie chart within an edX course
 * [Poll & Survey XBlock](https://github.com/mckinseyacademy/xblock-poll): enables a course author to create survey/poll elements to get feedback from students. Poll XBlocks have one question, and a series of answers. Survey XBlocks have several questions.
+* [Table XBlock](https://github.com/adlnet/Table-XBlock): Table XBlock is powerful tool used to create user-editable tables. 
 * [Staff graded assignment](https://github.com/mitodl/edx-sga): Allows students to upload files to be graded by course staff. 
 * [Video JS XBlock](https://github.com/MarCnu/videojsXBlock): Use Video.js HTML5 player (www.videojs.com) instead of the default one.
 
