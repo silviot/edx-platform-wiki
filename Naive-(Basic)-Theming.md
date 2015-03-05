@@ -1,0 +1,1 @@
+This page will detail how to do theming at the most basic level: what you need to do to specify your company's logos, site name, and (optionally) custom name for Studio.
