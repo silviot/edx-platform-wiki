@@ -55,6 +55,12 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Instance installation, custom development, XBlocks.
  * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, FUN (French Ministry of Higher Education and Research).
 
+
+* **Perpetual** (contact: [Amish G](mailto:info@perpetualny.com)).
+ * _Services_: Instance installation, deployment and AWS configuration, theming and custom development, XBlocks.
+ * _References/clients_: Available upon request.
+
+
 * **[Raccoon Gang](http://raccoongang.com/)** (contact: [Alexander Kryklia](mailto: alex.kryklia@raccoongang.com)).
  * _Services_: 
     * Deploy and configuration: AWS, Azure, Digital Ocean, etc.; support and maintenance, migration from other e-learning systems;
