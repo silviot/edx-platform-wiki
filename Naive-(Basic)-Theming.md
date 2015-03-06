@@ -20,7 +20,9 @@ https://github.com/edx/edx-platform/blob/master/cms/envs/common.py#L50
 To specify your site logos, override the default logo files in these directories:
 
 **LMS**
+
 https://github.com/edx/edx-platform/tree/master/lms/static/images/default-theme
 
 **CMS**
+
 https://github.com/edx/edx-platform/tree/master/cms/static/images/default-theme
