@@ -12,7 +12,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Rocketpedia](http://rocketpedia.org/)
 * [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
 * [UNC Online](https://mooc.northcarolina.edu/) - University of North Carolina Online
-* [MuddX](http://muddx.com) - Harvey Mudd College
+* [MuddX](http://muddx.com) - Harvey Mudd College (This site will be phased out as MuddX joins edX.org as a partner.)
 * [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
 * [Pepper](http://pepperpd.com) 
 * [Croatopica](http://croatopica.net/)
