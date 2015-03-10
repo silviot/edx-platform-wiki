@@ -23,6 +23,11 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [McKinsey Academy](https://www.mckinseyacademy.com/) - Highly customized branch of Open edX
 * [New York Institute of Finance](https://learning.nyif.com) - Many courses will be ported over in 2015
 * [Labster](https://www.labster.com) - Virtual laboratory simulations and courses for life science 
+* [DrupalX](http://www.drupalxcourses.com)
+* [CloudGenius](http://online.cloudgeni.us)
+* [St. George's University](http://online.sgu.edu)
+* [St. Bonaventure](http://mooc.sbu.edu)
+
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
@@ -57,6 +62,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Instituto de Altos Estudios Nacionales del Ecuador - Universidad Pública](https://www.upex.edu.ec) - MOOC platform based on edX and run by Instituto de Altos Estudios Nacionales, Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
 * [EdXUnicauca - Universidad del Cauca, Colombia](http://edx.unicauca.edu.co)
+* [UMHx](http://edx.umh.es)
 
 
 ## Chinese
@@ -91,6 +97,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Arabic
 * [Edraak] (https://edraak.org/) - Queen Rania Foundation
+* [Doroob](https://www.doroob.sa/ar/)
 
 ## Italian
 * [Politecnico di Milano](https://www.pok.polimi.it/) - POK portal has been conceived primarily in order to accompany students (not only students of Politecnico di Milano) while they try to overtake all the obstacles they meet in the main passages of their career.
