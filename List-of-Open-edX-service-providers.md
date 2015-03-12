@@ -69,7 +69,7 @@ This page lists companies and freelancers offering services around Open edX. (No
     * Platform customization: courseware components, localization, theme creation, certificate design;
     * Consulting: support and technical assistance, content creation, R&D and analytics;
  * _References/Clients/Experience_: available upon request; participated in development of a lot of Open edX features, including video player, conditional, poll, LTI and other modules.
- * _[![Free course](https://github.com/raccoongang/raccoongang.github.io/blob/customizations/images/fc_green.png)](http://cms.ddev.com.ua/signin?next=/course/)_ creation and run on our servers.
+ * _[![Free course](https://github.com/raccoongang/raccoongang.github.io/blob/customizations/images/fc_green.png)](http://raccoongang.com/en/)_ creation and run on our servers.
 
 
 * **solutions.curricu.me** (contact: [John Swope](mailto:john@curricu.me)).
