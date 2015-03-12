@@ -13,7 +13,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
 * [UNC Online](https://mooc.northcarolina.edu/) - University of North Carolina Online
 * [MuddX](http://muddx.com) - Harvey Mudd College (This site will be phased out as MuddX joins edX.org as a partner.)
-* [GW Online](http://openedx.seas.gwu.edu/) - George Washington University
+* [GW Online SEAS](http://openedx.seas.gwu.edu/) - George Washington University
+* [GW Online Open](http://mooc.online.gwu.edu/) - George Washington University
 * [Pepper](http://pepperpd.com) 
 * [Croatopica](http://croatopica.net/)
 * [Applied Materials - Nanoloearning](http://nano-learning.org/)
@@ -27,7 +28,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [CloudGenius](http://online.cloudgeni.us)
 * [St. George's University](http://online.sgu.edu)
 * [St. Bonaventure](http://mooc.sbu.edu)
-
+* [Intersystems](http://learning.intersystems.com)
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
