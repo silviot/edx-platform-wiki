@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Installing devstack](#installing-devstack)
+- [Debugging the devstack image](#debugging-the-devstack-image)
+- [Testing your changes](#testing-your-changes)
+- [Visually debug your tests](#visually-debug-your-tests)
+- [Configuring Themes in Devstack](#configuring-themes-in-devstack)
+- [The edx-platform database that devstack uses](#the-edx-platform-database-that-devstack-uses)
+- [Other resources](#other-resources)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 This page describes everything you need to know to begin development on the edX Developer Stack (also known as devstack).
 
 ### Installing devstack
