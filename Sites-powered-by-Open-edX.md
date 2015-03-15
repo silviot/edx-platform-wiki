@@ -44,6 +44,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Ulibre](http://www.ulibre.ca) - CLOM de la Téluq - l'université à distance de l'Université du Québec
 * [FBMX - by First Finance Group](http://www.fbmx.net/)
 * [Cognitum](http://mooc.cognitum.fr)
+* [LOMDESS](http://lms.lomdess.fr/) - École en ligne dans le sanitaire & social
 
 ## Spanish
 * [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
