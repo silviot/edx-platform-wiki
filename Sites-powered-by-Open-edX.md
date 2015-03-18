@@ -30,6 +30,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [St. Bonaventure](http://mooc.sbu.edu)
 * [Intersystems](http://learning.intersystems.com)
 * [Divergence Academy](http://online.divergence.academy)
+* [GBC College for Leadership Development](http://www.gbc-college.com)
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
