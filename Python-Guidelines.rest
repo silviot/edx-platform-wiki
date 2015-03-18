@@ -3,7 +3,7 @@ General Python
 
 Generally, don't edit files just to change the style.  But do aim for this style with new or modified code.
 
-See also https://github.com/edx/edx-platform/blob/master/docs/en_us/developers/source/testing/code-quality.rst
+See also http://edx-developer-guide.readthedocs.org/en/latest/testing/code-quality.html
 
 Follow `PEP 8`_
 ---------------
