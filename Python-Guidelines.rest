@@ -70,7 +70,13 @@ Follow `PEP 257`_
 * Start with a one-line summary.  If you can't fit a summary in one line, think harder, or refactor the code.
 * Write in Sphinx-friendly prose style.  Put backquotes around code names (variables, parameters, methods, etc).
 
-The preferred style is so-called "Google Style" with readable headers for different sections, and all arguments and return values defined (details here: https://pypi.python.org/pypi/sphinxcontrib-napoleon and here: https://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone=Comments#Comments)::
+The preferred style is so-called "Google Style" with readable headers for different sections, and all arguments and return values defined.
+
+See:
+* https://pypi.python.org/pypi/sphinxcontrib-napoleon
+* https://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone=Comments#Comments
+
+Here's how you write documentation in "Google Style"::
 
     def func(arg1, arg2):
         """Summary line.
