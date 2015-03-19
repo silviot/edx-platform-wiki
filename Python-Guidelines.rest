@@ -72,7 +72,7 @@ Follow `PEP 257`_
 
 The preferred style is so-called "Google Style" with readable headers for different sections, and all arguments and return values defined.
 
-See::
+See:
 
 * https://pypi.python.org/pypi/sphinxcontrib-napoleon
 * https://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone=Comments#Comments
