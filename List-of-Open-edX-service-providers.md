@@ -51,9 +51,10 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Provides an edX online Marketplace to buy & sell apps, themes, and courses.  Free Job board specific for edX jobs.   
 
 
-* **OpenCraft** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
+* **[OpenCraft](http://opencraft.com/)** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
  * _Services_: Instance installation, custom development, XBlocks.
- * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, FUN (French Ministry of Higher Education and Research).
+ * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, McKinsey Academy, French Ministry of Higher Education and Research (FUN), Davidson University, Georgetown University, University of Zurich.
+ * _More info_: [OpenCraft.com](http://opencraft.com/)
 
 * **aftermobile** (contact: [Frank Tang](mailto:franktsh@gmail.com)).
  * _Services_: AWS, Instance installation, custom development, XBlocks, Mobile app development, troubleshooting, payment.
