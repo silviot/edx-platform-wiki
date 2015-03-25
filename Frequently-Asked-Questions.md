@@ -53,6 +53,10 @@ From a [stackoverflow question on 0.0.0.0 in Django](http://stackoverflow.com/qu
 
 For devstack, the simplest way is to create a private.py in cms/envs or lms/envs, settings there will override others.
 
+#### How can I change my platform name or site image?
+
+See [https://github.com/edx/edx-platform/wiki/Naive-(Basic)-Theming](https://github.com/edx/edx-platform/wiki/Naive-(Basic)-Theming)
+
 ### Database
 
 #### Why use three different databases (MySQL, SQLite & MongoDB) rather than a single one?
