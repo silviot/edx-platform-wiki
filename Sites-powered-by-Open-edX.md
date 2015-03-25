@@ -2,7 +2,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## English
 * [edX](http://edx.org) - The original, with dozens of members.
-* [Stanford Open edX](https://class.stanford.edu/) - Stanford's edX courses.
+* [Stanford Open edX](https://class.stanford.edu/) - Stanford's Open edX courses.
   * [Github code repo](https://github.com/Stanford-Online/edx-platform).  Check out our [PRs](https://github.com/Stanford-Online/edx-platform/pulls) for early access to features that you might be interested in.  
 * [MongoDB University](https://education.mongodb.com/) - MongoDB courses
 * [Educate Workforce](https://educateworkforce.com/)
@@ -64,7 +64,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
         * [Labranzacero] (http://labranzacero.edunext.co/)
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://edx.campusdomar.es)
-* [Centro de Educación Continua FORMA EP - Universidad Pública](https://www.upex.edu.ec) - MOOC platform based on edX and run by Centro de Educación Continua (based on Instituto de Altos Estudios Nacionales), Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
+* [Centro de Educación Continua FORMA EP - Universidad Pública](https://www.upex.edu.ec) - MOOC platform based on Open edX and run by Centro de Educación Continua (based on Instituto de Altos Estudios Nacionales), Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
 * [EdXUnicauca - Universidad del Cauca, Colombia](http://edx.unicauca.edu.co)
 * [UMHx](http://edx.umh.es)
