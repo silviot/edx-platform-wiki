@@ -90,8 +90,8 @@ http://192.168.33.10:TEST_PORT/suite/cms
 If you click on a failing test, you will be redirected to a URL that runs only that test. Now when you make a chance and refresh the browser, only this one test is re-run. This gives you a quicker turnaround time, and means that you don't get confused with other tests that are running.
 
 * Gotchas:
-- When running `paver test_js_dev` and using a `debugger;` statement in a JavaScript test, the debugger may not be activated unless you have your browser's dev tools open.
-- Some of our tests are not accessible by clicking, as mentioned above. This is due to some incorrect redirects. When attempting to run a single test, if you get a 404, you may need to change your url to match the following: `http://<host>:<port>/suite/<suite>?spec=<test>`. To use an example, `http://localhost:8080/suite/cms?spec=my%20test`
+** When running `paver test_js_dev` and using a `debugger;` statement in a JavaScript test, the debugger may not be activated unless you have your browser's dev tools open.
+** Some of our tests are not accessible by clicking, as mentioned above. This is due to some incorrect redirects. When attempting to run a single test, if you get a 404, you may need to change your url to match the following: `http://<host>:<port>/suite/<suite>?spec=<test>`. To use an example, `http://localhost:8080/suite/cms?spec=my%20test`
 
 ### Everything was working at first, but now my tests hang and fail without launching the host browser.  What happened?
 
