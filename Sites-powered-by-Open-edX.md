@@ -9,7 +9,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Proversity](http://proversity.org)
 * [University of Alaska](http://edx.alaska.edu)
 * [Online Open Education](http://www.ooed.org/) - Architecture education
-* [Rocketpedia](http://rocketpedia.org/)
 * [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
 * [UNC Online](https://mooc.northcarolina.edu/) - University of North Carolina Online
 * [MuddX](http://muddx.com) - Harvey Mudd College (This site will be phased out as MuddX joins edX.org as a partner.)
@@ -107,9 +106,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Italian
 * [Politecnico di Milano](https://www.pok.polimi.it/) - POK portal has been conceived primarily in order to accompany students (not only students of Politecnico di Milano) while they try to overtake all the obstacles they meet in the main passages of their career.
-
-## Korean
-* [All.That.Edu](http://www.allthatedu.com/)
 
 ## Catalan
 * [UCATx](http://www.ucatx.cat/)
