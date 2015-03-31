@@ -28,6 +28,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [St. George's University](http://online.sgu.edu)
 * [St. Bonaventure](http://mooc.sbu.edu)
 * [Intersystems](http://learning.intersystems.com)
+* [Helprace](http://helprace.com)
 * [Divergence Academy](http://online.divergence.academy)
 * [GBC College for Leadership Development](http://www.gbc-college.com)
 
