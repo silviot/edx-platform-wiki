@@ -1,5 +1,5 @@
 * [3D Model Viewer XBlock](https://github.com/ExtensionEngine/xblock_3d_viewer): to include and view 3D .obj models within an edX course
-* [ACID Xblock](https://github.com/edx/acid-block)
+* [ACID Xblock](https://github.com/edx/acid-block): a block for testing the implementation of the XBlock runtime.
 * [Adventure XBlock](https://github.com/edx-solutions/xblock-adventure): creating a simple "[Chose Your Own Adventure](https://github.com/edx-solutions/xblock-adventure)" style simulation.
 * [Animation XBlock](https://github.com/pmitros/AnimationXBlock): shows students an animation they can go through. There is a set of images with corresponding text, and a slider for going through these images.
 * [Audio XBlock](https://github.com/pmitros/AudioXBlock)
@@ -22,6 +22,7 @@
 * [PDF XBlock (alternative)](https://github.com/MarCnu/pdfXBlock): Another XBlock to embed PDF, with XBlock title and download buttons.
 * [Pie Chart XBlock](https://github.com/ExtensionEngine/xblock_charting): to include Pie chart within an edX course
 * [Poll & Survey XBlock](https://github.com/mckinseyacademy/xblock-poll): enables a course author to create survey/poll elements to get feedback from students. Poll XBlocks have one question, and a series of answers. Survey XBlocks have several questions.
+* [School Yourself](https://github.com/schoolyourself/schoolyourself-xblock): This repository contains XBlocks for displaying School Yourself (SY) content on the edX platform. These will be used in the upcoming AlgebraX and GeometryX courses, developed for the High School Initiative.
 * [Staff graded assignment](https://github.com/mitodl/edx-sga): Allows students to upload files to be graded by course staff. 
 * [Table XBlock](https://github.com/adlnet/Table-XBlock): Table XBlock is powerful tool used to create user-editable tables. 
 * [Video JS XBlock](https://github.com/MarCnu/videojsXBlock): Use Video.js HTML5 player (www.videojs.com) instead of the default one.
