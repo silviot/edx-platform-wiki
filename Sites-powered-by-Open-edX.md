@@ -31,6 +31,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Helprace](http://helprace.com)
 * [Divergence Academy](http://online.divergence.academy)
 * [GBC College for Leadership Development](http://www.gbc-college.com)
+* [Blue Planet Life](http://showcase.blue-planet-life.org) - Showcase for online Vocational Training courses
+
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
