@@ -1,7 +1,7 @@
 ## Motivation
 
 * As an XBlock developer it is too difficult to install and play with an XBlock today
-  * See [deployment documentation](https://github.com/edx/edx-platform/blob/master/docs/en_us/developers/source/xblocks.rst#deploying-your-xblock)
+  * See [deployment documentation](https://github.com/edx/edx-platform/wiki/Installing-a-new-XBlock)
 * It is impossible for a course developer to install and use a new XBlock
 * There is no registry of available XBlocks to choose from
 * It would be great to have a list of edX approved XBlocks
