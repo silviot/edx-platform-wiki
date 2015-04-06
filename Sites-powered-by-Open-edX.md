@@ -70,7 +70,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
 * [EdXUnicauca - Universidad del Cauca, Colombia](http://edx.unicauca.edu.co)
 * [UMHx](http://edx.umh.es)
-* [Proyecto Reforma de la Educación Matemática en Costa Rica](cursos.reformatematica.net) - Sitio de cursos MOOC para capacitación docente en educación matemática.
+* [Proyecto Reforma de la Educación Matemática en Costa Rica](http://cursos.reformatematica.net) - Sitio de cursos MOOC para capacitación docente en educación matemática.
 
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/) - Using microsites to power:
