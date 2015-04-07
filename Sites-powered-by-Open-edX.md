@@ -124,4 +124,3 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
  
 * [Aquent](http://edx-dev.aquent.com/)
 * [metaStudio](http://courses.metaStudio.org) maintained by the [gnowledge lab](http://www.metastudio.org/gnowledge%20lab/)
-* [MITx](http://odl.mit.edu/residential-mitx/) Residential MITx courses for MIT students
