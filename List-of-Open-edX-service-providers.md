@@ -47,6 +47,9 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Projects/contributions_: [Staff Graded Assignment XBlock](https://github.com/mitodl/edx-sga), [JSME XBlock](https://github.com/jazkarta/edx-jsme), [Individual Due Date Extension](https://github.com/edx/edx-platform/pull/2062), [Personal Online Courses](http://goo.gl/owBwoQ), [LinkedIn integration for edX](https://www.edx.org/blog/you-can-now-share-edx-success-linkedin), Integration with SCORMCloud, Through-the-web microsites manager
  * _More info_: [Jazkarta's Open edX development services](http://jazkarta.com/edx)
 
+* **[Main Street Computing](http://mainstreetcomputing.com/)** (contact: [Kevin Coughlin](mailto: kevin.coughlin@mainstreetcomputing.com)).
+ * _Services_: Installation and deployment to AWS, Azure, Google Cloud, and others.  Custom software development, native mobile development, custom courseware, custom skinning and branding.  Contributors to core edX open source platform.  
+
 * **[MOOC Markteplace](http://moocmarketplace.com/)** (contact: [Andrew Liu](mailto: andrew@moocmarketplace.com)).
  * _Services_: Provides an edX online Marketplace to buy & sell apps, themes, and courses.  Free Job board specific for edX jobs.   
 
