@@ -86,6 +86,8 @@ Before: `gettext("%(voteNum)s%(startSrSpan)s vote (click to vote)%(endSrSpan)s")
 After: `"%(voteNum)s%(startSrSpan)s " + gettext("vote (click to vote)") + "%(endSrSpan)s"`
 
 
+But, unlike the above lessons, breaking a string into parts may not always have benifits because it may cause a  break of context information for the string to be translated. And also some languages have different word orders than English, so breaking a sentence into parts may cause translating to such languages be more difficult. **You may need a tradeoff between translatability and the rule here.**
+
 
 **Lesson 5.** You can actually translate things within the ".format" clause, which can be helpful:
 
