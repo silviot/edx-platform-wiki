@@ -25,7 +25,12 @@ In order to run your Open edX instance under a different spoken language, for in
         
 
 
-3. All of the languages on Transifex are already configured in the edx-platform repo.  If you've added a new language to Transifex, and we haven't added it to the configuration yet, you can add it to `conf/locale/config.yaml`.
+3. Make sure all languages you wish to download are present and uncommented in `conf/locale/config.yaml`. For example, if you wish to download Arabic and Chinese (China), make sure your config.yaml file looks like this: 
+
+        locales:
+            - ar  # Arabic
+            - zh_CN  # Chinese (China)
+
 
 4. Configure `LANGUAGE_CODE` in your `lms/envs/common.py`. Or, for development purposes, create a dev file called `dev_LANGCODE.py` - eg `dev_es.py` - with the following: 
 
@@ -86,7 +91,7 @@ If you have installed the [Full Stack](https://github.com/edx/configuration/wiki
 
 1. Follow the steps 1 & 2 listed on top of this document to create a `~/.transifexrc` and switch to edxapp environment.
 
-2. If you only need to pull translations of one lanuage, just execute the following command in your edx-platform directory with your edx-platform virtualenv:
+2. If you only need to pull translations of one language, just execute the following command in your edx-platform directory with your edx-platform virtualenv:
 
         $ tx pull -l <lang_code>
 
@@ -106,6 +111,6 @@ If you have installed the [Full Stack](https://github.com/edx/configuration/wiki
 
    Note that there is another command called `paver i18n_generate`. The difference of `paver i18n_fastgenerate` and `paver i18n_generate` is that `paver i18n_generate` will extract strings first by using `paver i18n_extract` and then compile them, while `paver i18n_fastgenerate` just compiles them without extracting.
 
-5. Restart your Full Stack installation according to the commands listed in the page [edX Managing the Full Stack](https://github.com/edx/configuration/wiki/edX-Managing-the-Full-Stack). Note that if you want to change the default lanauged code of a Full Stack, you can modify the value of `LANGUAGE_CODE` inside `lms.env.json` and/or the `cms.env.json` located in `/edx/app/edxapp` before starting your Full Stack.
+5. Restart your Full Stack installation according to the commands listed in the page [edX Managing the Full Stack](https://github.com/edx/configuration/wiki/edX-Managing-the-Full-Stack). Note that if you want to change the default language code of a Full Stack, you can modify the value of `LANGUAGE_CODE` inside `lms.env.json` and/or the `cms.env.json` located in `/edx/app/edxapp` before starting your Full Stack.
 
 6. You will see updated translations after the above steps. If not, you can also try to restart the nginx server and/or clear your browser's cache.
