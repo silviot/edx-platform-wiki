@@ -16,6 +16,16 @@ This page lists companies and freelancers offering services around Open edX. (No
  * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx-birch)
 [![Launch demo site](http://launcher.appsembler.com/static/img/buttons/btn-mini-green.png)](http://launcher.appsembler.com/openedx-birch/)
 
+* **[DRC Systems](http://www.drcsystems.com/mooc/)** (contact: [Chetan Parekh](mailto: chetan.parekh@drcsystems.com)).
+ * _Services_: 
+    * Installation and deployment to AWS, Azure, Google Cloud, Digital Ocean and others.
+    * Development of XBlocks (plugins) and new platform features.
+    * Creation of course-specific components.
+    * Platform customization: white label, theme creation, localization, certificate design.
+    * Consulting: 24/7 support & technical assistance, content creation, video production, training & marketing, R&D and analytic.
+ * _References/Clients_: Available upon request.
+ * _More info_: [Build your own branded MOOC](http://www.drcsystems.com/mooc/)
+
 * **EdCast** (contact: [Daniel McKelvey](mailto:info@edcast.com))
  * _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, invite-only courses and control over enrollment schemes, LTI-compliant collaboration tools, 24/7 support
  * [Get your custom-branded live instance](http://www.edcast.com/corp/educators) and start your 30 day free trial today!
