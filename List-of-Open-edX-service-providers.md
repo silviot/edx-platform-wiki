@@ -61,7 +61,12 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Installation and deployment to AWS, Azure, Google Cloud, and others.  Custom software development, native mobile development, custom courseware, custom skinning and branding.  Contributors to core edX open source platform.  
 
 * **[MOOC Markteplace](http://moocmarketplace.com/)** (contact: [Andrew Liu](mailto: andrew@moocmarketplace.com)).
- * _Services_: Provides an edX online Marketplace to buy & sell apps, themes, and courses.  Free Job board specific for edX jobs.   
+ * _Services_: Provides an edX online Marketplace to buy & sell apps, themes, and courses.  Free Job board specific for edX jobs.
+
+* **[MOOCIT](http://moocit.fr/)** (contact: [Yvain Demollière](mailto:contact@moocit.fr)).
+ * _Services_: Installation and deployment to Amazon Web Service, hosting as a service, theming and branding.
+ * _References/clients_: SAGE, Groupe Acticall, Learning CRM, UNEEJ, AECIS.
+ * _More info_: [moocit.fr](http://moocit.fr)   
 
 
 * **[OpenCraft](http://opencraft.com/)** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
