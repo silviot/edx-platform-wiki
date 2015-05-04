@@ -68,7 +68,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Campus do Mar - University of Vigo (Spain)](http://mooc.campusdomar.es)
 * [Centro de Educación Continua FORMA EP - Universidad Pública](https://www.upex.edu.ec) - MOOC platform based on Open edX and run by Centro de Educación Continua (based on Instituto de Altos Estudios Nacionales), Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
-* [EdXUnicauca - Universidad del Cauca, Colombia](http://edx.unicauca.edu.co)
+* [Universidad del Cauca, Colombia](http://openedx.unicauca.edu.co)
 * [UMHx](http://edx.umh.es)
 * [Proyecto Reforma de la Educación Matemática en Costa Rica](http://cursos.reformamatematica.net) - Sitio de cursos MOOC para capacitación docente en educación matemática.
 
