@@ -72,6 +72,8 @@ Follow `PEP 257`_
 
 The preferred style is so-called "Google Style" with readable headers for different sections, and all arguments and return values defined.
 
+Note: there is one exception. REST APIs created using Django REST Framework (DRF) must use a hybrid format that is suitable both for DRF and ReadTheDocs. This format is documented here: https://openedx.atlassian.net/wiki/display/AC/edX+REST+API+Conventions#edXRESTAPIConventions-docstringsDocstringFormat
+
 See:
 
 * http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html
