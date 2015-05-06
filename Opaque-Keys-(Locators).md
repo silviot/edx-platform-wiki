@@ -1,6 +1,7 @@
 This document discusses the design of the Opaque Keys system, as well as the problem Opaque Keys seeks to solve. For practical understanding of how Opaque Keys impacts edX development, see [[Locators:-Developer-Notes]].
 
 ### Table of Contents
+1. [TLDR Basics](#basics)
 1. [Background](#background)
 1. [The Problem](#problem)
 1. [The Solution](#solution)
@@ -9,6 +10,44 @@ This document discusses the design of the Opaque Keys system, as well as the pro
   * [Utilizing Keys](#utilizing)
   * [Key Relationships](#relationships)
   * [URLs](#urls)
+
+<a name="basics"/>
+## TLDR Basics
+```python
+from opaque_keys.edx.keys import CourseKey, UsageKey
+from opaque_keys import InvalidKeyError
+
+# Create a key from a course_id string arg passed in from a URL.
+# Examples:
+#  * Old style (SlashSeparatedKey): "edX/DemoX.1/2014"
+#  * New style (CourseLocator):     "course-v1:edX+DemoX.1+2014"
+try:
+    # Returns a subclass of CourseKey, depending on the kind of key it is.
+    course_key = CourseKey.from_string(course_id)
+except InvalidKeyError:
+    # We don't recognize this key
+
+# Create a key from the usage_id string for a specific XBlock within a course.
+# Examples:
+# * Old style (Location): "i4x://edX/DemoX.1/problem/466f474fa4d045a8b7bde1b911e095ca"
+# * New style (BlockUsageLocator): "block-v1:edX+DemoX.1+2014+type@problem+block@466f474fa4d045a8b7bde1b911e095ca"
+try:
+    # Old style usage IDs are missing course run information (note the missing
+    # "2004" in the Location example above). We call map_into_course() to add
+    # that potentially missing information. That way, we can later get a
+    # complete CourseKey via usage_key.course_key
+    #
+    # Note: Keys are immutable -- map_into_course() is returning a new key,
+    #       not modifying the old one.
+    usage_key = UsageKey.from_string(usage_id).map_into_course(course_key)
+except InvalidKeyError:
+    # We don't recognize this key
+
+# To serialize back into strings, just call unicode() on them.
+print "Course: {}".format(course_key)
+print "Usage: {}".format(usage_key)
+
+```
 
 <a name="background"/>
 ## Background
