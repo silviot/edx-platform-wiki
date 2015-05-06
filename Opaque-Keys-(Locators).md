@@ -20,7 +20,7 @@ from opaque_keys import InvalidKeyError
 # Create a key from a course_id string arg passed in from a URL.
 # Examples:
 #  * Old style (SlashSeparatedKey): "edX/DemoX.1/2014"
-#  * New style (CourseLocator):     "course-v1:edX+DemoX.1+2014"
+#  * New style (CourseLocator): "course-v1:edX+DemoX.1+2014"
 try:
     # Returns a subclass of CourseKey, depending on the kind of key it is.
     course_key = CourseKey.from_string(course_id)
