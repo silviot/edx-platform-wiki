@@ -13,12 +13,15 @@ This document discusses the design of the Opaque Keys system, as well as the pro
 
 <a name="basics"/>
 ## TLDR Basics
+
+### Imports
 ```python
 from opaque_keys.edx.keys import CourseKey, UsageKey
 from opaque_keys import InvalidKeyError
+```
 
-### Create a key from a course_id string arg passed in from a URL. ###
-#
+### Parse Course IDs
+```python
 # Examples:
 #  * Old style: "edX/DemoX.1/2014"
 #  * New style: "course-v1:edX+DemoX.1+2014"
@@ -27,9 +30,10 @@ try:
     course_key = CourseKey.from_string(course_id)
 except InvalidKeyError:
     # We don't recognize this key
+```
 
-### Create a key from the usage_id string for a specific XBlock within a course. ###
-#
+### Parse Usage IDs (specific XBlock locations within a course)
+```python
 # Examples:
 # * Old style: "i4x://edX/DemoX.1/problem/466f474fa4d045a8b7bde1b911e095ca"
 # * New style: "block-v1:edX+DemoX.1+2014+type@problem+block@466f474fa4d045a8b7bde1b911e095ca"
@@ -46,11 +50,15 @@ try:
     usage_key = UsageKey.from_string(usage_id).map_into_course(course_key)
 except InvalidKeyError:
     # We don't recognize this key
+```
 
-### To serialize back into strings, just call unicode() on them. ###
+### Serialize keys to strings
+
+```python
+# To serialize back into strings, just call unicode() on them or pass
+# them to format() like you'd expect.
 print "Course: {}".format(course_key)
 print "Usage: {}".format(usage_key)
-
 ```
 
 <a name="background"/>
