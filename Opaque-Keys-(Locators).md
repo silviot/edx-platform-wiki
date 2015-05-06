@@ -20,8 +20,8 @@ from opaque_keys import InvalidKeyError
 ### Create a key from a course_id string arg passed in from a URL. ###
 #
 # Examples:
-#  * Old style (SlashSeparatedKey): "edX/DemoX.1/2014"
-#  * New style (CourseLocator): "course-v1:edX+DemoX.1+2014"
+#  * Old style: "edX/DemoX.1/2014"
+#  * New style: "course-v1:edX+DemoX.1+2014"
 try:
     # Returns a subclass of CourseKey, depending on what's being parsed.
     course_key = CourseKey.from_string(course_id)
@@ -31,13 +31,13 @@ except InvalidKeyError:
 ### Create a key from the usage_id string for a specific XBlock within a course. ###
 #
 # Examples:
-# * Old style (Location): "i4x://edX/DemoX.1/problem/466f474fa4d045a8b7bde1b911e095ca"
-# * New style (BlockUsageLocator): "block-v1:edX+DemoX.1+2014+type@problem+block@466f474fa4d045a8b7bde1b911e095ca"
+# * Old style: "i4x://edX/DemoX.1/problem/466f474fa4d045a8b7bde1b911e095ca"
+# * New style: "block-v1:edX+DemoX.1+2014+type@problem+block@466f474fa4d045a8b7bde1b911e095ca"
 #
 # Old style usage IDs are missing course run information (note the missing
-# "2004" in the Location example above). We call map_into_course() to add
-# that potentially missing information. That way, we can later get a
-# complete CourseKey via usage_key.course_key
+# "2004" in the example above). We call map_into_course() to add that
+# potentially missing information. That way, we can later get a complete
+# CourseKey via usage_key.course_key
 #
 # Note: Keys are immutable -- map_into_course() is returning a new key,
 #       not modifying the old one.
