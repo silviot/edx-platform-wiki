@@ -55,7 +55,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Lectya - Fundación Germán Sánchez Ruipérez](http://www.lectylab.com/)
 * [ISEAD Business School](http://www.iseadx.com/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
-* [PolitécnicaX - Colombia](http://lms.huilaconstruyendomundo.com/)
+* [PolitécnicaX - Colombia](http://lms.huilaconstruyendomundo.com/) - Constructivist courses produced by [Musintec](https://www.musintec.com)
 * [eduNEXT - Colombia] (http://edx.edunext.co/)
     * [Github code repo](https://github.com/eduNEXT/edunext-platform)
     * Some of the microsites we power:
