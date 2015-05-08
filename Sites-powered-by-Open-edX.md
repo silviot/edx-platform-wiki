@@ -50,6 +50,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [FBMX - by First Finance Group](http://www.fbmx.net/)
 * [Cognitum](http://mooc.cognitum.fr)
 * [LOMDESS](http://lms.lomdess.fr/) - École en ligne dans le sanitaire & social
+* [EDUlib](http://edulib.org)  a partnership between Université de Montréal, HEC Montréal and Polytechnique Montréal.
 
 ## Spanish
 * [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
