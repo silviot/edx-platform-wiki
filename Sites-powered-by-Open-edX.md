@@ -19,7 +19,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Applied Materials - Nanoloearning](http://nano-learning.org/)
 * [Unow](http://learn.unow-mooc.org/)
 * [Seneca College, Toronto, Canada](http://online-dev.cdot.senecacollege.ca/)
-* [University of Zurich](http://www.edx.uzh.ch) - Many courses internally 
+* [University of Zurich](http://edx.mnf.uzh.ch) - Many courses internally 
+* [avanty.ch](http://www.avanty.ch)
 * [McKinsey Academy](https://www.mckinseyacademy.com/) - Highly customized branch of Open edX
 * [New York Institute of Finance](https://learning.nyif.com) - Many courses will be ported over in 2015
 * [Labster](https://www.labster.com) - Virtual laboratory simulations and courses for life science 
