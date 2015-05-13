@@ -40,19 +40,19 @@ You've made some commits in your branch, pushed them to Github, and created a pu
 
 A "remote", in git terminology, is another clone of the repository that you can share commits with. When you forked the official `edx/edx-platform` project, you created a new git repository called `my-username/edx-platform`, but these two repositories can share commits with each other.
 
-To add `upstream` as a remote, run this command in your repository:
+To add `edx` as a remote, run this command in your repository:
 ```shell
-$ git remote add upstream https://github.com/edx/edx-platform.git
+$ git remote add edx https://github.com/edx/edx-platform.git
 ```
 
-You can verify that you did this successfully by running `$ git remote -v`: you should see `upstream` in the list of remotes. **Note:** this step only needs to be performed once per clone.
+You can verify that you did this successfully by running `$ git remote -v`: you should see `edx` in the list of remotes. **Note:** this step only needs to be performed once per clone.
 
 ### Fetch the latest version of master
 
 Your computer needs to download information from Github about the official repo, so that it knows what's on the latest version of the `master` branch. Once you've got your remote set up, this is simple. Run this command in your repository:
 
 ```shell
-$ git fetch upstream
+$ git fetch edx
 ```
 
 ### Squash your changes (optional)
@@ -96,7 +96,7 @@ Save and close the file, and a moment later a new file should pop up in your edi
 Run this command in your repository:
 
 ```shell
-$ git rebase upstream/master
+$ git rebase edx/master
 ```
 
 Git will start replaying your commits onto the latest version of master. You may get conflicts while doing so: if you do, git will pause and ask you to resolve the conflicts before continuing. This is exactly like resolving conflicts with a merge: you can use `git status` to see which files are in conflict, edit the files to resolve the conflicts, and then use `git add` to indicate that the conflicts have been resolved. However, instead of running `git commit`, you instead want to run `git rebase --continue` to indicate to git that it should continue replaying your commits. If you've squashed your commits before doing this step, you'll only have to pause to resolve conflicts once -- if you didn't squash, you may have to resolve your conflicts multiple times.
