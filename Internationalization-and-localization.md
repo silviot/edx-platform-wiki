@@ -63,7 +63,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
 Setting `LANGUAGE_CODE` sets one language to be your installation's default language. What if you want to support more than one language?
 
-To "release" a second (or third, or hundreth) language, what you have to do is to config the languages on the admin panel:
+To "release" a second (or third, or hundredth) language, you have to configure the languages on the admin panel:
 
 YourAwesomeDomain.com/admin/dark_lang/darklangconfig/
 
