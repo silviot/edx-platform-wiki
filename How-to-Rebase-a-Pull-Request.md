@@ -55,11 +55,13 @@ Your computer needs to download information from Github about the official repo,
 $ git fetch edx
 ```
 
-### Squash your changes (optional)
+### Squash your changes
 
-This step is optional, but recommended. It involves taking all the commits you've made on your branch, and squashing them all into one, larger commit. Doing this makes it easier for you to resolve conflicts while performing the rebase, and easier for us to review your pull request.
+This step is not always necessary, but is required when your commit history is full of small, unimportant commits (such as "Fix pep8", "Add tests", or "ARUURUGHSFDFSDFSDGLJKLJ:GK"). It involves taking all the commits you've made on your branch, and squashing them all into one, larger commit. Doing this makes it easier for you to resolve conflicts while performing the rebase, and easier for us to review your pull request.
 
-To do this, we're going to do an [interactive rebase](https://help.github.com/articles/interactive-rebase). First, find the commit that is base of your branch. You can do this by running:
+To do this, we're going to do an [interactive rebase](https://help.github.com/articles/interactive-rebase). You can also use interactive rebase to change the wording on commit messages (for example, to provide more detail), or reorder commits (use caution here: reordering commits can cause some nasty merge conflicts).
+
+First, find the commit that is base of your branch. You can do this by running:
 
 ```shell
 $ git merge-base my-branch master
@@ -90,6 +92,27 @@ squash c619268 fixing typos
 ```
 
 Save and close the file, and a moment later a new file should pop up in your editor, combining all the commit messages of all the commits. Reword this commit message as you want, and then save and close that file as well. This commit message will be the commit message for the one, big commit that you are squashing all of your larger commits into. Once you've saved and closed that file, your commits have been squashed together, and you're done with this step!
+
+To reword commits, use the command "reword". For example you might perform an interactive rebase and replace this:
+
+```
+pick 1fc6c95 nblargh testing new thing
+pick 6b2481b Awesome New Feature: FED and Jasmine tests
+```
+
+with this:
+
+```
+reword 1fc6c95 nblargh testing new thing
+pick 6b2481b Awesome New Feature: FED and Jasmine tests
+```
+
+Save and close the file, and a moment later a new file should pop up in your editor, showing you the current wording of the commit message. Reword this commit message as you want, and then save and close that file as well. This commit message will be the new commit message for your commit, thus your history can have more useful commit messages such as:
+
+```
+1fc6c95 Awesome New Feature: API Endpoints and Unit Tests
+6b2481b Awesome New Feature: FED and Jasmine tests
+```
 
 ### Perform the rebase
 
