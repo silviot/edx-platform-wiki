@@ -68,6 +68,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: SAGE, Groupe Acticall, Learning CRM, UNEEJ, AECIS.
  * _More info_: [moocit.fr](http://moocit.fr)   
 
+* **[MOOC Agency](http://themoocagency.com/)**
 
 * **[OpenCraft](http://opencraft.com/)** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
  * _Services_: Instance installation, custom development, XBlocks.
