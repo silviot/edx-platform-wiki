@@ -81,7 +81,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **Perpetual** (contact: [Amish G](mailto:info@perpetualny.com)).
  * _Services_: Instance installation, deployment and AWS configuration, theming and custom development, XBlocks.
- * _References/clients_: Available upon request.
+ * _References/clients_:Teach For India,  Families First, Books That Grow, References available upon request.
 
 
 * **[Raccoon Gang](http://raccoongang.com/)** (contact: [Alexander Kryklia](mailto: alex.kryklia@raccoongang.com)).
