@@ -48,11 +48,13 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Talan](http://universite.talan.fr)
 * [Ulibre](http://www.ulibre.ca) - CLOM de la Téluq - l'université à distance de l'Université du Québec
 * [FBMX - by First Finance Group](http://www.fbmx.net/)
-* [Cognitum](http://mooc.cognitum.fr)
+* [Cognitum](http://mooc.cognitum.fr) - By [moocit](http://moocit.fr)
+* [Learning By MOOC](http://mooc.learning-crm.com) - By [moocit](http://moocit.fr)
 * [LOMDESS](http://lms.lomdess.fr/) - École en ligne dans le sanitaire & social
 * [EDUlib](http://www.edulib.org)  a partnership between Université de Montréal, HEC Montréal and Polytechnique Montréal.
 * [INARES](http://www.inares.org) - **In**stitut **Ar**istotélicien d'**É**tudes **S**cientifiques - Cours en ligne francophone de philosophie.
   * [Github theme repo](https://github.com/inares/edx-theme)
+* [UNEEJ](http://www.uneej.com) By [moocit](http://moocit.fr)
 
 ## Spanish
 * [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
