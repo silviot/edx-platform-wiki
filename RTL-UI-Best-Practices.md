@@ -5,11 +5,11 @@ We are using Bi-App Sass to help flip our UI for languages that read right to le
 
 ### Testing Your Feature
 
-To test, spin up your local dev environment and visit the webpage of your feature. In a different browser, or an incognito window, visit the feature again (log in as a different user, if logins are needed). In the second view, append the following string to the end of the url: ?preview-lang=ar
+To test, spin up your local dev environment and visit the webpage of your feature. In a different browser, or an incognito window, visit the feature again (log in as a different user, if logins are needed). In the second view, append the following string to the end of the url: ?preview-lang=rtl (if you are working on master; if you are behind master, use ?preview-lang=ar).
 
-This will switch your session's language to Arabic, which is a RTL language (if Arabic is released on your dev environment, instead just switch your user's profile language to Arabic). Navigate your feature in the English webpage and the Arabic webpage simultaneously. You should see that all elements in the Arabic version mirror the English version.
+This will switch your session's language to a dummy RTL language, or Arabic if you are not up to date with master. If you must test in Arabic and it is a released language on your dev environment, instead just switch your user's profile language to Arabic. Navigate your feature in the English webpage and the RTL webpage simultaneously. You should see that all elements in the RTL version mirror the English version.
 
-Note that certain page elements may not look right because they are controlled by the browser. For the best testing, switch your browser's language to Arabic as well.
+Note that certain page elements may not look right because they are controlled by the browser. For the best testing, switch your browser's language to Arabic or another RTL language (Hebrew, Persian, or Urdu) as well.
 
 Reach out to us on the edx-code mailing list if you have any questions about testing.
 
