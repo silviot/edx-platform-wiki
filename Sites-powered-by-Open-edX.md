@@ -125,6 +125,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Basque
 * [MetaMOOC](http://metamooc.com) - Zenbait unibertsitateren MOOC zentralizazioa
 
+## Persian
+* [GoToClass](www.gotoclass.ir)
+
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
