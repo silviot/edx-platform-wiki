@@ -8,7 +8,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
  * _References/clients_: UPEx, Instituto de Altos Estudios Nacionales - IAEN.
 
-* **[Appsembler](http://openedx.appsembler.com)** (contact: [Nate Aune](mailto:nate@appsembler.com), Cambridge, MA USA).
+* **[Appsembler](http://www.appsembler.com)** (contact: [Nate Aune](mailto:nate@appsembler.com), Cambridge, MA USA).
  * _Services_: Open edX-as-a-service including installation, hosting, theming, support, e-commerce, SCORM, LTI
  * _References/clients_: MIT Sloan Executive Education, New York Institute of Finance (Financial Times), InterSystems.
  * _Website_: [Appsembler's Open edX-as-a-service](http://www.appsembler.com)
