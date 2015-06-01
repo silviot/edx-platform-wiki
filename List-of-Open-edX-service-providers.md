@@ -11,7 +11,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **[Appsembler](http://openedx.appsembler.com)** (contact: [Nate Aune](mailto:nate@appsembler.com), Cambridge, MA USA).
  * _Services_: Open edX-as-a-service including installation, hosting, theming, support, e-commerce, SCORM, LTI
  * _References/clients_: MIT Sloan Executive Education, New York Institute of Finance (Financial Times), InterSystems.
- * _Website_: [Appsembler Open edX](http://openedx.appsembler.com)
+ * _Website_: [Appsembler's Open edX-as-a-service](http://www.appsembler.com)
  * _Author_: [Making Open edX a Thriving Open Source Project](https://docs.google.com/document/d/1UV0LhaaPLpx8TLHuK1f9luNcRrpSNmXg0baINLk2W34/edit) commissioned by [Stanford University’s Office of the Vice Provost for Online Learning](https://groups.google.com/d/msg/edx-code/DRqcLlMKhgs/KBvzBj13hQ8J). [Official response to the report by edX](http://engineering.edx.org/2014/07/response-to-stanford-report-on-open-edx/).
  * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx-birch)
 [![Launch demo site](http://launcher.appsembler.com/static/img/buttons/btn-mini-green.png)](http://launcher.appsembler.com/openedx-birch/)
