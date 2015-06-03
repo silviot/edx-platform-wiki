@@ -124,7 +124,7 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
 ### Setting up Bokchoy Test Configuration for catching break points
-The idea is to start up all the services that will listen on various ports and then run tests individually while those services are up. It is useful to install the [Multirun](http://plugins.jetbrains.com/plugin/7248?pr=pycharm) tool (you can install it directly within the IDE under preferences / plugin); this way you can have one-click deployment of all of these services.
+The idea is to start up all the services that will listen on various ports and then run tests individually while those services are up. It is useful to install the [Multirun](http://plugins.jetbrains.com/plugin/7248?pr=pycharm) tool (you can install it directly within the IDE under preferences -> plugins -> Browse repositories ); this way you can have one-click deployment of all of these services.
 
 **1.  In Preferences/ Project Structure mark ./common/djangoapps/terrain/stubs as a source.**
 * **Make sure that https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development#integrate-xquartz-into-pycharm is working and to remember the DISPLAY variable.  (in the terminal you can do ```echo $DISPLAY``` and make sure that is non-null**
