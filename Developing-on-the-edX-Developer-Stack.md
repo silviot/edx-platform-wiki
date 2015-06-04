@@ -8,7 +8,7 @@
 - [Visually debug your tests](#visually-debug-your-tests)
 - [Configuring Themes in Devstack](#configuring-themes-in-devstack)
 - [The edx-platform database that devstack uses](#the-edx-platform-database-that-devstack-uses)
-- [Making devstack run faster](#making-devstack-run-faster)
+- [Making the local servers run faster](#making-the-local-servers-run-faster)
 - [Other resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -148,9 +148,9 @@ E.g. for MySQL Workbench, you would set up a new Server connection with these se
 
 Note: You may also need to specify the SSH Key File, which should be located at "~/.vagrant.d/insecure_private_key"
 
-### Making devstack run faster
+### Making the local servers run faster
 
-You may want to conditionally disable certain features of devstack on your computer in order to improve performance. To do so, create the files lms/common/private.py and cms/common/private.py and paste in this code:
+While running LMS and Studio locally, you may want to conditionally disable certain features in order to improve performance. To do so, create the files lms/common/private.py and cms/common/private.py and paste in this code:
 
 ```
 DISABLE_DJANGO_TOOLBAR = True
@@ -177,7 +177,7 @@ if DISABLE_CONTRACTS:
     contracts.disable_all()
 ```
 
-Disabling both the Django toolbar and contracts should speed up devstack significantly.
+Disabling both the Django toolbar and contracts should speed up the your local LMS and Studio instances significantly. 
 
 ### Other resources
 
