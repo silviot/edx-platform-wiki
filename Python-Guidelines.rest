@@ -143,6 +143,12 @@ Pylint Guidelines and Practices
 
 The pragma starts with a ``#`` two spaces after the end of the line. We prefer that you use the full name of the error (``pylint: disable=unused-argument`` as opposed to ``pylint: disable=W0613``), so it's more clear what you're disabling in the line.
 
+Classes vs Dictionaries
+-----------------------
+
+It's better to use a class or a ``namedtuple`` to pass around data that has a fixed shape than to use a ``dict``. It makes it easier to debug (because there is a fixed, named set of attributes), and it helps prevent accidental errors of either setting new attributes into the dictionary (which might, for instance, get serialized unexpectedly), or might be typos.
+
+
 Django Good Practices
 =====================
 
