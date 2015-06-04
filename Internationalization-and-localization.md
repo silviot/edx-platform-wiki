@@ -1,3 +1,5 @@
+_This page is intended for site developers. For coding help, please see [this](https://github.com/edx/edx-platform/wiki/i18n-Coding-Guidelines) page._
+
 We are currently hosting all translations of Open edX framework on www.transifex.com. Please feel free to make translation contributions there.
 
 You should also join the [openedx-translation](https://groups.google.com/forum/#!forum/openedx-translation) Google Group.
