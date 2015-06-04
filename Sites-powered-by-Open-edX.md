@@ -32,6 +32,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Blue Planet Life](http://showcase.blue-planet-life.org) - Showcase for online Vocational Training courses
 * [MITx](http://odl.mit.edu/campus/residential-mitx) Residential MITx courses for MIT students
 * [ADLx](http://adlx.adlnet.gov) Exploration with ADL research projects
+* [IMD](http://onlinecourses.imd.org) International Institute for Management Development - Lausanne, Switzerland 
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
