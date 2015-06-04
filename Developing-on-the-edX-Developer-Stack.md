@@ -8,6 +8,7 @@
 - [Visually debug your tests](#visually-debug-your-tests)
 - [Configuring Themes in Devstack](#configuring-themes-in-devstack)
 - [The edx-platform database that devstack uses](#the-edx-platform-database-that-devstack-uses)
+- [Making devstack run faster](#making-devstack-run-faster)
 - [Other resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -146,6 +147,37 @@ E.g. for MySQL Workbench, you would set up a new Server connection with these se
 * Default Schema: edxapp
 
 Note: You may also need to specify the SSH Key File, which should be located at "~/.vagrant.d/insecure_private_key"
+
+### Making devstack run faster
+
+You may want to conditionally disable certain features of devstack on your computer in order to improve performance. To do so, create the files lms/common/private.py and cms/common/private.py and paste in this code:
+
+```
+DISABLE_DJANGO_TOOLBAR = True
+DISABLE_CONTRACTS = True
+
+if DISABLE_DJANGO_TOOLBAR:
+    from .common import INSTALLED_APPS, MIDDLEWARE_CLASSES
+
+    def tuple_without(source_tuple, exclusion_list):
+        """Return new tuple excluding any entries in the exclusion list. Needed because tuples
+        are immutable. Order preserved."""
+        return tuple([i for i in source_tuple if i not in exclusion_list])
+
+    INSTALLED_APPS = tuple_without(INSTALLED_APPS, ['debug_toolbar', 'debug_toolbar_mongo'])
+    MIDDLEWARE_CLASSES = tuple_without(MIDDLEWARE_CLASSES, [
+        'django_comment_client.utils.QueryCountDebugMiddleware',
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ])
+
+    DEBUG_TOOLBAR_MONGO_STACKTRACES = False
+
+if DISABLE_CONTRACTS:
+    import contracts
+    contracts.disable_all()
+```
+
+Disabling both the Django toolbar and contracts should speed up devstack significantly.
 
 ### Other resources
 
