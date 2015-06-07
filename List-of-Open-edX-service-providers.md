@@ -36,7 +36,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **[eduStack](http://www.edustack.org/)** (contact: [Joshua Tseng](mailto:info@edustack.org),Beijing,China).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development, mobile (IOS,Android)， Localization for China(Language、Video、Web Resources).
- * _References/clients_: BGI x-omics(http://www.genomics.cn/) , yongyou seentao(http://www.seentao.com/) , BFSU(Beijing Foreign Studies University) , Bistu(Beijing Information Science&Technology University).
+ * _References/clients_: BGI x-omics(http://www.genomics.cn/) , yonyou seentao(http://www.seentao.com/) , BFSU(Beijing Foreign Studies University) , Bistu(Beijing Information Science&Technology University).
  * [Get a free Open edX (ova)](http://www.edustack.org/?page_id=8)
 
 * **ExtensionEngine** (contact: [Glyn Polson](mailto:glyn@extensionengine.com.com)).
