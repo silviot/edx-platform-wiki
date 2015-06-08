@@ -179,6 +179,8 @@ if DISABLE_CONTRACTS:
 
 Disabling both the Django toolbar and contracts should speed up the your local LMS and Studio instances significantly. 
 
+**IMPORTANT NOTE:** this may cause devstack to behave strangely in certain scenarios, such as running acceptance tests. If something on your devstack is unexplainably not working, try setting both DISABLE_ flags to False. 
+
 ### Other resources
 
 There are a number of other useful documents on the edX platform wiki:
