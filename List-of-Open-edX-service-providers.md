@@ -79,7 +79,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: AWS, Instance installation, custom development, XBlocks, Mobile app development, troubleshooting, payment.
  * _References/clients_: Available upon request.
 
-* **Perpetual** (contact: [Amish G](mailto:info@perpetualny.com)).
+* **[Perpetual Learning](http://learning.perpetualny.com/)** (contact: [Amish G](mailto:info@perpetualny.com)).
  * _Services_: Instance installation, deployment and AWS configuration, theming and custom development, XBlocks.
  * _References/clients_:Teach For India,  Families First, Books That Grow, References available upon request.
 
