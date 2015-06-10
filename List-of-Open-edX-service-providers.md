@@ -16,6 +16,10 @@ This page lists companies and freelancers offering services around Open edX. (No
  * [Get a free Open edX demo site](http://launcher.appsembler.com/openedx-birch)
 [![Launch demo site](http://launcher.appsembler.com/static/img/buttons/btn-mini-green.png)](http://launcher.appsembler.com/openedx-birch/)
 
+* **[curricu.me](http://curricu.me)** (contact: [John Swope](mailto:john@curricu.me)).
+ * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
+ * _References/clients_: St. George's University, FreshDirect
+
 * **[DRC Systems](http://www.drcsystems.com/mooc/)** (contact: [Chetan Parekh](mailto: chetan.parekh@drcsystems.com)).
  * _Services_: 
     * Installation and deployment to AWS, Azure, Google Cloud, Digital Ocean and others.
@@ -95,9 +99,6 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _[![Free course](https://github.com/raccoongang/raccoongang.github.io/blob/customizations/images/fc_green.png)](http://raccoongang.com/en/)_ creation and run on our servers.
 
 
-* **solutions.curricu.me** (contact: [John Swope](mailto:john@curricu.me)).
- * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
- * _References/clients_: St. George's University, FreshDirect
 
 * **VeritasU** (contact: [Patrick McGuinness](mailto:patrick@veritasu.com))
  * _Services_: Instance deployment, managed hosting on veritasu.com and white-labelled, course development and customization including xblock development, custom theming and branding, and support.
