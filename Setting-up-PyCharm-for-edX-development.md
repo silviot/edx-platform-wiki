@@ -229,9 +229,9 @@ set_trace()
 ```
 
 Note - 
-If you somehow `vagrant destroy` the vagrant instance and reinstall it, then follow these steps to restore proper communication between your Vagrant and Pycharm-
+If you somehow `vagrant destroy` the vagrant instance and reinstall it, then follow these steps to restore proper communication between Vagrant and Pycharm-
 * Set new `passwd` for `edxapp`, and create directory `.pycharm_helpers` (Follow steps given above)
-* There are a lot of chances that you might face `Database Error` in unexpected place(Events). To avoid this; run following command-
+* There are a lot of chances that you might face `Database Error` in unexpected places (Events). To avoid this; run following command-
 ```
 paver update_db -s devstack
 ```
