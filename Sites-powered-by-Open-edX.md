@@ -14,6 +14,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MuddX](http://muddx.com) - Harvey Mudd College (This site will be phased out as MuddX joins edX.org as a partner.)
 * [GW Online SEAS](http://openedx.seas.gwu.edu/) - George Washington University
 * [GW Online Open](http://mooc.online.gwu.edu/) - George Washington University
+* [GW Online Executive Education](http://execed.online.gwu.edu/) - George Washington University
 * [Pepper](http://pepperpd.com) 
 * [Croatopica](http://croatopica.net/)
 * [Unow](http://learn.unow-mooc.org/)
@@ -58,6 +59,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Spanish
 * [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
 * [Lectya - Fundación Germán Sánchez Ruipérez](http://www.lectylab.com/)
+* [Educalab - Ministerio de Educación en España](http://mooc.educalab.es)
 * [ISEAD Business School](http://www.iseadx.com/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
 * [PolitécnicaX - Colombia](http://lms.huilaconstruyendomundo.com/) - Constructionist courses produced by [Musintec](https://www.musintec.com)
