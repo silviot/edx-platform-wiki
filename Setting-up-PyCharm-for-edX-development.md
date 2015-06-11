@@ -227,3 +227,15 @@ The following instructions are for Mac OS X but should work on any Unix-like env
 from nose.tools import set_trace
 set_trace()
 ```
+
+Note - 
+If you somehow `vagrant destroy` the vagrant instance and reinstall it, then follow these steps to restore proper communication between your Vagrant and Pycharm-
+* Set new `passwd` for `edxapp`, and create directory `.pycharm_helpers` (Follow steps given above)
+* There are a lot of chances that you might face `Database Error` in unexpected place(Events). To avoid this; run following command-
+```
+paver update_db -s devstack
+```
+* You may have to update static assets too. To do that, run following command-
+```
+paver update_assets
+```
