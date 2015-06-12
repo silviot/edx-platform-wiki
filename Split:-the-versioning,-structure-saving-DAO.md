@@ -1,6 +1,7 @@
 This document describes the split mongostore representation which
 
-* separates course structure from content where each course run (or partial course) can have its own structure and content can have many using structures and versions everything
+* separates course structure from content where each course run (or partial course) can have its own structure and content can have many using structures
+* versions everything
 
 It does not describe the original mongostore representation which combined structure and content and used the key to distinguish draft from published elements.
 
