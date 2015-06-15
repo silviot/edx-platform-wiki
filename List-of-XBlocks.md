@@ -11,7 +11,6 @@
 * [Drag and Drop XBlock](https://github.com/edx-solutions/xblock-drag-and-drop): exercise which asks students to drag and drop text or image elements into different buckets according to their content
 * [Drag and Drop XBlock v2](https://github.com/edx-solutions/xblock-drag-and-drop-v2): enhanced version of the Image Explorer XBlock. Due to incompatible data model with v1, the original XBlock still remains
 * [Flash XBlock](https://github.com/MarCnu/flashXBlock): Embed Flash (.swf) files into your course.
-* [Flashcards XBlock](https://github.com/vkaracic/FlashcardsXBlock): Add and display flashcards.
 * [Google Drive XBlock] (https://github.com/edx-solutions/xblock-google-drive): enables embedding of Google Documents or Google Calendar within edX.
 * [Image Explorer XBlock](https://github.com/edx-solutions/xblock-image-explorer): to display tooltips on top of an image within the course content
 * [LeaderBoard XBlock](https://github.com/open-craft/xblock-leaderboard): allows to display an arbitrary number of top scoring threads in an inline discussion, as well as top scores in a graded exercise.
