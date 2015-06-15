@@ -79,6 +79,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Universidad del Cauca, Colombia](http://openedx.unicauca.edu.co)
 * [UMHx](http://edx.umh.es)
 * [Proyecto Reforma de la Educación Matemática en Costa Rica](http://cursos.reformamatematica.net) - Sitio de cursos MOOC para capacitación docente en educación matemática.
+* [Mac Institute](http://http://institutemaconline.com) - Neuroeconomia Empresarial, una verdadera innovación disruptiva en la formación empresarial y profesional.
 
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/) - Using microsites to power:
