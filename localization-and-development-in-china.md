@@ -24,3 +24,5 @@
 9. 课程搜索/分类
 
 #Blog
+*  [eduStack](http://edustack.org/)
+*  [writing for time](http://wwj718.github.io/category/edx.html)
