@@ -11,6 +11,7 @@
 8. 版本汉化
 9. 文档汉化
 10. 与amazon S3相关的存储问题
+11. Django Admin 退出500错误
 
 #development
 1. docker
