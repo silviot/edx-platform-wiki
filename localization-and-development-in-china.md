@@ -9,7 +9,7 @@
 6. 日常运维（安全策略，备份策略，故障修复）
 7. theme使用
 8. 版本汉化
-9. 文档汉化
+9. 文档汉化  
 https://github.com/ifLab/edx-documentation
 由ifLab和eduStack项目组联合发布，不保证追踪最新版本。
 10. 与amazon S3相关的存储问题
