@@ -8,7 +8,7 @@ This small tutorial is to help you install it and work on it with your devstack.
     $ sudo npm install -g browser-sync
 
 ##Run the Server
-Replace PLATFORM_PATH and THEME_NAME with your paths.
+Replace `PLATFORM_PATH` and `THEME_NAME` with your paths.
 
     $ cd PLATFORM_PATH/edx-platform/lms/
     $ browser-sync start \
