@@ -10,7 +10,7 @@ This small tutorial is to help you install it and work on it with your devstack.
 ##Run the Server
 Please not that my theme is in the following directory, your mileage may vary:
 
-    $ cd ~/edx-platform/lms/
+    $ cd edx-platform/lms/
     $ browser-sync start \
         --port 8100 \
         --proxy='localhost:8000' \
