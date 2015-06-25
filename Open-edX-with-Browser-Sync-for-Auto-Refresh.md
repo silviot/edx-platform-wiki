@@ -8,10 +8,10 @@ This small tutorial is to help you install it and work on it with your devstack.
     $ sudo npm install -g browser-sync
 
 ##Run the Server
-Please not that my theme is in the following directory, your mileage may vary:
+Replace PLATFORM_PATH and THEME_NAME with your paths.
 
-    $ cd edx-platform/lms/
+    $ cd PLATFORM_PATH/edx-platform/lms/
     $ browser-sync start \
         --port 8100 \
         --proxy='localhost:8000' \
-        --files='static/**/*.css, templates/**/*.html, static/**/*.js, /edx/app/edxapp/themes/edraak/templates/**/*.html'
+        --files='static/**/*.css, templates/**/*.html, static/**/*.js, /edx/app/edxapp/themes/THEME_NAME/templates/**/*.html'
