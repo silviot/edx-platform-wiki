@@ -44,6 +44,9 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: BGI x-omics(http://www.genomics.cn/) , yonyou seentao(http://www.seentao.com/) , BFSU(Beijing Foreign Studies University) , Bistu(Beijing Information Science&Technology University).
  * [Get a free Open edX (ova)](http://www.edustack.org/?page_id=8)
 
+* **[eesysite](http://www.eesysite.com/)** (contact: [Sethu V](mailto:svr@eesysite.com), Chennai, India).
+ * _Services_: Cloud Hosting, E-Mail, Chat and Payment Gateway Integration
+
 * **ExtensionEngine** (contact: [Glyn Polson](mailto:glyn@extensionengine.com.com)).
  * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
  * _References/clients_: Harvard Business School, edX
