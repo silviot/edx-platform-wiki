@@ -9,9 +9,8 @@
 6. 日常运维（安全策略，备份策略，故障修复）
 7. theme使用
 8. 版本汉化
-9. 文档汉化  
-https://github.com/ifLab/edx-documentation  
-由ifLab和eduStack项目组联合发布，不保证追踪最新版本。
+9. 文档本地化  
+edX学生指南  http://docs.edustack.org/edX_Guide_for_Students
 10. 与amazon S3相关的存储问题
 11. Django Admin 退出500错误
 12. 磁盘扩展方案
