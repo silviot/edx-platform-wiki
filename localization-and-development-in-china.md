@@ -30,3 +30,6 @@ https://github.com/ifLab/edx-documentation
 #Blog
 *  [eduStack](http://edustack.org/)
 *  [writing for time](http://wwj718.github.io/category/edx.html)
+
+#解决方案
+development.6.API接口 : [启用edx的API](http://wwj718.github.io/edx-api.html)
