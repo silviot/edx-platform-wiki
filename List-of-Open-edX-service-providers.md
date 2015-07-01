@@ -45,7 +45,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * [Get a free Open edX (ova)](http://www.edustack.org/?page_id=8)
 
 * **[ExtensionEngine](http://extensionengine.com)** (contact: [Glyn Polson](mailto:glyn@extensionengine.com)).
- * _Services_: Customized Open edX instances, platform and course development, instructional design, operational analytics, custom xBlocks and theming, hosting, on-going maintenance and support
+ * _Services_: Customized edX instances, platform and course development, instructional design, operational analytics, custom xBlocks and theming, hosting, on-going maintenance and support
  * _References/Clients_: Harvard Business School, MIT, College of the Holy Cross, Johnson & Johnson, Microsoft, edX
 
 * **[IBL Studios Education](http://www.iblstudios.com/)** (contact: [Michael Amigot](mailto:amigot@iblstudios.com), New York).
