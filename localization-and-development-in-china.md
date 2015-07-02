@@ -10,7 +10,8 @@
 7. theme使用
 8. 版本汉化
 9. 文档本地化    
-edX学生指南  http://docs.edustack.org/edX_Guide_for_Students (By iflab.org & edustack.org)
+  *  edX学生指南  http://docs.edustack.org/edX_Guide_for_Students (By iflab.org & edustack.org)
+  *  [edX 開始使用 LMS](http://edx-lms-zhtw.readthedocs.org/zh_TW/latest/read_me.html) (By edXPDRLab)
 10. 与amazon S3相关的存储问题
 11. Django Admin 退出500错误
 12. 磁盘扩展方案
