@@ -34,7 +34,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MITx](http://odl.mit.edu/campus/residential-mitx) Residential MITx courses for MIT students
 * [ADLx](http://adlx.adlnet.gov) Exploration with ADL research projects
 * [IMD](http://onlinecourses.imd.org) International Institute for Management Development - Lausanne, Switzerland 
-* [Teach for India (BETA)] (http://teachforindia.perpetualny.com) - Teacher training for teachers in India
+* [Teach for India] (http://teachforindia.perpetualny.com) - Teacher training for educators in India
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
