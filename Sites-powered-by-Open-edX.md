@@ -5,7 +5,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Stanford Open edX](https://lagunita.stanford.edu/) - Stanford's Open edX courses.
   * [Github code repo](https://github.com/Stanford-Online/edx-platform).  Check out our [PRs](https://github.com/Stanford-Online/edx-platform/pulls) for early access to features that you might be interested in.  
 * [MongoDB University](https://education.mongodb.com/) - MongoDB courses
-* [EducateWorkforce](https://educateworkforce.com/)
+* [EducateWorkforce](https://educateworkforce.com/) - features premium, industry-tested course material that prepares individuals for a career in a technological vocation.
 * [Proversity](http://proversity.org)
 * [University of Alaska](http://edx.alaska.edu)
 * [Online Open Education](http://www.ooed.org/) - Architecture education
