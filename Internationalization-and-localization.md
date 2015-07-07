@@ -45,7 +45,9 @@ In order to run your Open edX instance under a different spoken language, for in
 
   Languages need to be specified with codes Django likes, so a code that is specific on Transifex such as `"de_DE"` must be specified as `"de-de"` in these configuration files. See https://groups.google.com/forum/#!topic/openedx-translation/vrOpMKzA0kU
 
-5. Execute the following command in your edx-platform directory with your edx-platform virtualenv. 
+5. Configure `EDXAPP_LANGUAGE_CODE` in your configuration files: https://github.com/edx/configuration/blob/master/playbooks/roles/edxapp/defaults/main.yml#L219
+
+6. Execute the following command in your edx-platform directory with your edx-platform virtualenv. 
 
         $ paver i18n_robot_pull
 
@@ -53,11 +55,11 @@ In order to run your Open edX instance under a different spoken language, for in
 
   To pull *unreviewed* translations along with reviewed translations, edit `/edx/app/edxapp/venvs/edxapp/src/i18n-tools/i18n/transifex.py`. Particularly, the line `execute('tx pull --mode=reviewed --all')` should be changed to `execute('tx pull --all')`
 
-6. When you launch your LMS instance you can launch it normally and things should display properly. However, if in Step 3 you created a special "dev_LANGUAGECODE" file, you'll need to launch the LMS with the environment file explicitly stated:
+7. When you launch your LMS instance you can launch it normally and things should display properly. However, if in Step 3 you created a special "dev_LANGUAGECODE" file, you'll need to launch the LMS with the environment file explicitly stated:
 
         $ paver lms -s dev_es -p 8000
 
-7. If you experience issues:
+8. If you experience issues:
    - Be sure your browser is set to prefer the language set in `LANGUAGE_CODE`
    - In `common/djangoapps/student/views.py`, the user's language code is tried to be obtained from a saved preferences file. So if you are having issues seeing your language served up, it may be because your User object has a different language saved as a preference. Try creating a new user in your environment, this should clear up the issue.
 
