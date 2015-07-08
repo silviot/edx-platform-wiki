@@ -22,7 +22,8 @@
 * [PDF XBlock]( https://github.com/polimediaupv/pdfXBlock )
 * [PDF XBlock (alternative)](https://github.com/MarCnu/pdfXBlock): Another XBlock to embed PDF, with XBlock title and download buttons.
 * [Pie Chart XBlock](https://github.com/ExtensionEngine/xblock_charting): to include Pie chart within an edX course
-* [Poll & Survey XBlock](https://github.com/mckinseyacademy/xblock-poll): enables a course author to create survey/poll elements to get feedback from students. Poll XBlocks have one question, and a series of answers. Survey XBlocks have several questions.
+* [Poll & Survey XBlock](https://github.com/open-craft/xblock-poll): enables a course author to create survey/poll elements to get feedback from students. Poll XBlocks have one question, and a series of answers. Survey XBlocks have several questions.
+   * Now incorporated into edx-platform natively! See https://open.edx.org/blog/mckinsey-academy-contributes-poll-survey-xblocks
 * [Rating XBlock](https://github.com/UC3Mx/ratingXBlock): Rating and comment the video unit.
 * [School Yourself](https://github.com/schoolyourself/schoolyourself-xblock): This repository contains XBlocks for displaying School Yourself (SY) content on the edX platform. These will be used in the upcoming AlgebraX and GeometryX courses, developed for the High School Initiative.
 * [Staff graded assignment](https://github.com/mitodl/edx-sga): Allows students to upload files to be graded by course staff. 
