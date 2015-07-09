@@ -75,7 +75,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **[MOOC Agency](http://themoocagency.com/)**
 
-* **[MOOCsupport](http://www.moocsupport.com/)**(contact: [David Norwood](mailto:info@moocsupport.com)).
+* **[MOOCsupport](http://www.moocsupport.com/)** (contact: [David Norwood](mailto:info@moocsupport.com)).
 * _Services_: Installation and deployment to AWS, Rackspace, theming, branding, custom development and support.
 
 * **[OpenCraft](http://opencraft.com/)** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
