@@ -75,6 +75,9 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **[MOOC Agency](http://themoocagency.com/)**
 
+* **[MOOCsupport](http://www.moocsupport.com/)**(contact: [David Norwood](mailto:info@moocsupport.com)).
+* _Services_: Installation and deployment to AWS, Rackspace, theming, branding, custom development and support.
+
 * **[OpenCraft](http://opencraft.com/)** (contact: [Xavier Antoviaque](mailto:xavier@opencraft.com)).
  * _Services_: Instance installation, custom development, XBlocks.
  * _References/clients_: Harvard Graduate School of Education, HarvardX, edX, McKinsey Academy, French Ministry of Higher Education and Research (FUN), Davidson University, Georgetown University, University of Zurich.
