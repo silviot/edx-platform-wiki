@@ -23,9 +23,13 @@
 4. 开发环境
 5. 移动端
 6. API接口
-7. 主观题xblock
-8. 社交平台登录
-9. 课程搜索/分类
+7. 社交平台登录
+8. 课程搜索/分类
+
+#Xblock
+1. 主观题
+2. 数学函数图形
+3. Office Mix
 
 #Blog
 *  [eduStack](http://edustack.org/)
