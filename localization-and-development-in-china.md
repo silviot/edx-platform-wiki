@@ -40,5 +40,6 @@ development.6.API接口 : [启用edx的API](http://wwj718.github.io/edx-api.html
 
 #社交网络
 edx安装互助QQ群 197475193
+
 Open edX开发交流QQ群 106781163
 
