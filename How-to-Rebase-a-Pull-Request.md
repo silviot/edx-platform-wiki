@@ -61,7 +61,15 @@ This step is not always necessary, but is required when your commit history is f
 
 To do this, we're going to do an [interactive rebase](https://help.github.com/articles/interactive-rebase). You can also use interactive rebase to change the wording on commit messages (for example, to provide more detail), or reorder commits (use caution here: reordering commits can cause some nasty merge conflicts).
 
-First, find the commit that is base of your branch. You can do this by running:
+If you know the number of commits on your branch that you want to rebase, you can simply run:
+
+```shell
+$ git rebase -i HEAD~n
+```
+
+where `n` is the number of commits to rebase.
+
+If you *don't* know how many commits are on your branch, you'll first need to find the commit that is base of your branch. You can do this by running:
 
 ```shell
 $ git merge-base my-branch master
@@ -70,10 +78,12 @@ $ git merge-base my-branch master
 That command will return a commit hash. Use that commit hash in constructing this next command:
 
 ```shell
-$ git rebase --interactive ${HASH}
+$ git rebase -i ${HASH}
 ```
 
-Note that you should *replace* `${HASH}` with the actual commit hash from the previous command. For example, if your merge base is `abc123`, you would run `$ git rebase --interactive abc123`. Your text editor will open with a file that lists all the commits in your branch, and in front of each commit is the word "pick". It looks something like this:
+Note that you should *replace* `${HASH}` with the actual commit hash from the previous command. For example, if your merge base is `abc123`, you would run `$ git rebase --interactive abc123`. 
+
+Once you've run a `git rebase -i` command, your text editor will open with a file that lists all the commits in your branch, and in front of each commit is the word "pick". It looks something like this:
 
 ```
 pick 1fc6c95 do something
