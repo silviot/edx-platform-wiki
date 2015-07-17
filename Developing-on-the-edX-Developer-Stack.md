@@ -157,7 +157,7 @@ In case your vagrant instance is not using "~/.vagrant.d/insecure_private_key" a
 
 ### Making the local servers run faster
 
-While running LMS and Studio locally, you may want to conditionally disable certain features in order to improve performance. To do so, create the files lms/common/private.py and cms/common/private.py and paste in this code:
+While running LMS and Studio locally, you may want to conditionally disable certain features in order to improve performance. To do so, create the files lms/envs/private.py and cms/envs/private.py and paste in this code:
 
 ```
 DISABLE_DJANGO_TOOLBAR = True
