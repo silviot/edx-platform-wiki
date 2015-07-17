@@ -103,7 +103,9 @@ squash c619268 fixing typos
 
 Save and close the file, and a moment later a new file should pop up in your editor, combining all the commit messages of all the commits. Reword this commit message as you want, and then save and close that file as well. This commit message will be the commit message for the one, big commit that you are squashing all of your larger commits into. Once you've saved and closed that file, your commits have been squashed together, and you're done with this step!
 
-To reword commits, use the command "reword". For example you might perform an interactive rebase and replace this:
+### Rewording commits
+
+To reword commits, perform an interactive rebase as described in the above section. This time, instead of using the `squash` command, use the command `reword`. For example you might perform an interactive rebase and replace this:
 
 ```
 pick 1fc6c95 nblargh testing new thing
@@ -124,9 +126,9 @@ Save and close the file, and a moment later a new file should pop up in your edi
 6b2481b Awesome New Feature: FED and Jasmine tests
 ```
 
-### Perform the rebase
+### Perform a rebase
 
-Run this command in your repository:
+To rebase your branch atop of the latest version of edx-platform, run this command in your repository:
 
 ```shell
 $ git rebase edx/master
