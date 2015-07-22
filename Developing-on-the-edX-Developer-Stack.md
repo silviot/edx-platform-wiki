@@ -28,7 +28,7 @@ See [Setting up PyCharm for edX development](https://github.com/edx/edx-platform
 
 ### Testing your changes
 
-See the [[Test Engineering FAQ]] for all your questions about testing the edX platform.
+See the [[Test Engineering FAQ]] for all your questions about testing the edX platform. You can also find [detailed information on running unit, integration and acceptance tests](https://github.com/edx/edx-platform/blob/master/docs/en_us/internal/testing.rst) in the latest platform docs.
 
 ### Visually debug your tests
 You can setup your development environment such that you can visually interact with browsers and other GUIs in the vagrant machine from the host machine. To do this, you will need to install [XQuartz](http://xquartz.macosforge.org/landing/). For further information, see [Test Engineering FAQ](https://github.com/edx/edx-platform/wiki/Test-engineering-FAQ#im-working-with-devstack-and-want-to-debug-the-jasmine-or-acceptance-tests-in-the-browser-on-my-host-system-how-do-i-do-that).
