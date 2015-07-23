@@ -19,6 +19,10 @@
 #development
 1. docker
 2. 数据分析本地化
+[基于docker的edx数据分析](http://wwj718.github.io/edx-data-analysis-on-docker.html)
+[edx-analytics-pipeline源码解读](http://wwj718.github.io/edx-analytics-pipeline-code-analysis.html)
+[edx中数据可视化相关](http://wwj718.github.io/edx-insight.html)
+
 3. workflow（代码管理，协作）
 4. 开发环境
 5. 移动端
