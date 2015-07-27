@@ -129,7 +129,7 @@ If that still doesn't work, you can try
 sudo rm /edx/var/mongo/mongodb/mongod.lock
 sudo mongod -repair --config /etc/mongod.conf
 sudo chown -R mongodb:mongodb /edx/var/mongo/mongodb/.
-sudo start mongodb
+sudo start mongod
 ```
 
 ### How Test Coverage Works?
