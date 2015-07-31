@@ -1,6 +1,6 @@
 This is a list of sites powered by Open edX.  Feel free to add yours, with a short description.  (These are organized by primary course language: any better ideas?)
 
-## English
+### English
 * [edX](http://edx.org) - The original, with dozens of members.
 * [Stanford Open edX](https://lagunita.stanford.edu/) - Stanford's Open edX courses.
   * [Github code repo](https://github.com/Stanford-Online/edx-platform).  Check out our [PRs](https://github.com/Stanford-Online/edx-platform/pulls) for early access to features that you might be interested in.  
