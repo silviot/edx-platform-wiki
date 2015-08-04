@@ -53,7 +53,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
   Note that this command will pull *reviewed* translations for **all** languages that are listed in `conf/locale/config.yaml`. To only pull down some languages, edit `conf/locale/config.yaml` appropriately.
 
-  To pull *unreviewed* translations along with reviewed translations, edit `/edx/app/edxapp/venvs/edxapp/src/i18n-tools/i18n/transifex.py`. Particularly, the line `execute('tx pull --mode=reviewed --all')` should be changed to `execute('tx pull --all')`
+  To pull *unreviewed* translations along with reviewed translations, edit `/edx/app/edxapp/venvs/edxapp/src/i18n-tools/i18n/transifex.py`. Particularly, the line `execute('tx pull --mode=reviewed -l ' + lang)` should be changed to `execute('tx pull -l' + lang)`
 
 7. When you launch your LMS instance you can launch it normally and things should display properly. However, if in Step 3 you created a special "dev_LANGUAGECODE" file, you'll need to launch the LMS with the environment file explicitly stated:
 
