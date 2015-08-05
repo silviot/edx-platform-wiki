@@ -21,7 +21,7 @@ Please note: the stanford theme has some customized code implemented in the late
 
 # Manual method
 
-Theming only works for the LMS. The CMS and the Wiki are left unchanged.
+Theming only works for the LMS. The CMS and the Wiki are left unchanged.  Note that if you take a theme someone else has created, you *must* use the name they chose.  It is used a few places within the theme itself, so you cannot simply choose your own name for the theme directory.
 
 1) You should first modify `/edx/app/edxapp/lms.env.json`, and set FEATURES.USE_CUSTOM_THEME (True), THEME_NAME (the theme directory name) and PLATFORM_NAME (it will replace "edX" in many views).
 
@@ -34,6 +34,6 @@ The `themes/<theme-name>/templates` directory must contain 4 files :
 - theme-footer.html
 - theme-google-analytics.html (can be empty)
 
-3) You shall then [recompile the LMS assets](https://github.com/edx/configuration/wiki/edX-Managing-the-Full-Stack#compile-assets-manually).
+3) Then [recompile the LMS assets](https://github.com/edx/configuration/wiki/edX-Managing-the-Full-Stack#compile-assets-manually).
 
-If you want deeper customizations, you shall begin by looking at the [/edx/app/edxapp/edx-platform/lms/templates/main.html](https://github.com/edx/edx-platform/blob/master/lms/templates/main.html) file.
+If you want deeper customizations, begin by looking at the [/edx/app/edxapp/edx-platform/lms/templates/main.html](https://github.com/edx/edx-platform/blob/master/lms/templates/main.html) file.
