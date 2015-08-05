@@ -36,6 +36,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [IMD](http://onlinecourses.imd.org) International Institute for Management Development - Lausanne, Switzerland 
 * [Teach for India] (http://teachforindia.perpetualny.com) - Teacher training for educators in India
 * [Perpetual NY Agile/Software Development Training] (http://demo-lms.perpetualny.com/courses/Perpetual/PS101/2015/about) Software Development Process and Tools Training
+* [edLynX] (http://edlynx.org) - Tutorials for high stakes exams such as IIT JEE by leading educators from around the world
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
