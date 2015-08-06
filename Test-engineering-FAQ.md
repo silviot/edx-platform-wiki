@@ -121,7 +121,7 @@ Under Vagrant user, run:
 
 ```
 sudo rm /edx/var/mongo/mongodb/mongod.lock
-sudo start mongodb
+sudo start mongod
 ```
 
 If that still doesn't work, you can try
@@ -129,7 +129,7 @@ If that still doesn't work, you can try
 sudo rm /edx/var/mongo/mongodb/mongod.lock
 sudo mongod -repair --config /etc/mongod.conf
 sudo chown -R mongodb:mongodb /edx/var/mongo/mongodb/.
-sudo start mongod
+sudo start mongo
 ```
 
 ### How Test Coverage Works?
