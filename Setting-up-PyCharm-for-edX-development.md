@@ -42,6 +42,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * Select the "SSH Credentials" radio button. If you have trouble getting SSH credentials to work, you can instead use "Key pair (OpenSSH)" and specify the location of your private key file ```(/Users/your_user_name/.ssh/id_rsa)```. This may be necessary with newer versions of MacOS. In this case you will need to append your public key (```/Users/your_user_name/.ssh/id_rsa.pub```) to the ```~edxapp/.ssh/authorized_keys2``` file on your vm, which you may need to create.
 * Directions for "SSH Credentials". Specify the following configurations:
  * Host: ```127.0.0.1```
+ * Port: ```2222```
  * User name: ```edxapp```
  * Auth type: ```password```
  * Password: the password you specified (ensure that "Save Password" is selected)
