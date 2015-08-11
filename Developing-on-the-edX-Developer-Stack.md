@@ -149,7 +149,7 @@ E.g. for MySQL Workbench, you would set up a new Server connection with these se
 Note: You may also need to specify the SSH Key File, which should be located at "~/.vagrant.d/insecure_private_key"
 
 If you get the "Could not connect the SSH Tunnel; Authentication failed, please check credentials" error while trying to establish connection from a GUI tool, but you're able to access mysql from vagrant terminal session, check to see which SSH Key File your vagrant instance is using. 
-You can do that by using the following command from your vagrant folder on the host machine, use: 
+You can do that by using the following command from your vagrant folder on the host machine: 
 ```
 vagrant ssh-config
 ```
