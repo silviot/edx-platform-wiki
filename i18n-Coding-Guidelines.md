@@ -1,6 +1,6 @@
 Developers are expected to internationalize (i18n) all user-facing strings.
 
-**Detailed instructions, including how to i18n and provide `Translators:` comments in different types of files (Python, Mako, Javascript, etc) can be found here: [Guide for Translating edX Applications](http://edx.readthedocs.org/projects/edx-developer-guide/en/latest/internationalization/i18n.html)**
+### **Detailed instructions, including how to i18n and provide `Translators:` comments in different types of files (Python, Mako, Javascript, etc) can be found here: [Guide for Translating edX Applications](http://edx.readthedocs.org/projects/edx-developer-guide/en/latest/internationalization/i18n.html)**
 
 This wiki page contains some brief guidelines, as well as some "Gotchas" taken from the edx-platform codebase.
 
