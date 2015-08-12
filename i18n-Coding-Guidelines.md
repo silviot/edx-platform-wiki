@@ -4,6 +4,10 @@ Developers are expected to internationalize (i18n) all user-facing strings.
 
 This wiki page contains some brief guidelines, as well as some "Gotchas" taken from the edx-platform codebase.
 
+Your general rule of thumb is: **our translators are non-technical and are not aware of the feature you are building.** 
+
+Thus, your **strings must be able to stand on their own, without the context of the surrounding code.** Translators will not be reading code to figure out how your strings are used.
+
 * Always provide context in your strings - this means using well-named placeholder variables over positional variables (`_("Showing grades for {username}").format(username=username)` as opposed to `_("Showing grades for {0}").format(username)`)
 * Context should also be provided via `# Translators:` comments. These comments can explain in detail how a word is used. This is especially important for shorter phrases that may have a few different interpretations.
 * In Python, use `.format` rather than `%` for variable substitution
