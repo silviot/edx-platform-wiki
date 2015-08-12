@@ -1,6 +1,6 @@
 This is a list of sites powered by Open edX.  Feel free to add yours, with a short description.  (These are organized by primary course language: any better ideas?)
 
-### English
+## English
 * [edX](http://edx.org) - The original, with dozens of members.
 * [Stanford Open edX](https://lagunita.stanford.edu/) - Stanford's Open edX courses.
   * [Github code repo](https://github.com/Stanford-Online/edx-platform).  Check out our [PRs](https://github.com/Stanford-Online/edx-platform/pulls) for early access to features that you might be interested in.  
@@ -104,7 +104,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
 * [cn-mooc 天津职教集团](http://www.cn-mooc.org/)
 
-
 ## Russian
 * [pelic.ru](http://pelic.ru) - Correspondence courses?
 * [Ural Federal University](http://openedu.urfu.ru/)
@@ -120,6 +119,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Edraak] (https://edraak.org/) - Queen Rania Foundation
 * [Doroob](https://www.doroob.sa/ar/)
 * [Moualimooc](http://moualimooc.cnte.tn/) - centre national des technologies en education - edited by ITSolution (Contact: +21693578136)
+* [Institute of Political Training](http://syasi.org/)
 
 ## Italian
 * [Politecnico di Milano](https://www.pok.polimi.it/) - POK portal has been conceived primarily in order to accompany students (not only students of Politecnico di Milano) while they try to overtake all the obstacles they meet in the main passages of their career.
