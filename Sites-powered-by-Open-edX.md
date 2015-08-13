@@ -62,6 +62,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [UNEEJ](http://www.uneej.com) By [moocit](http://moocit.fr)
 
 ## Spanish
+* [Universidad de Chile, proyecto UAbierta](http://uabierta.uchile.cl/)
 * [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
 * [Lectya - Fundación Germán Sánchez Ruipérez](http://www.lectylab.com/)
 * [Educalab - Ministerio de Educación en España](http://mooc.educalab.es)
