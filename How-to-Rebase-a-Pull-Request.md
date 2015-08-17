@@ -81,7 +81,7 @@ That command will return a commit hash. Use that commit hash in constructing thi
 $ git rebase -i ${HASH}
 ```
 
-Note that you should *replace* `${HASH}` with the actual commit hash from the previous command. For example, if your merge base is `abc123`, you would run `$ git rebase --i abc123`. (Your hash will be a lot longer than 6 characters. Also, do NOT include a `$`!)
+Note that you should *replace* `${HASH}` with the actual commit hash from the previous command. For example, if your merge base is `abc123`, you would run `$ git rebase -i abc123`. (Your hash will be a lot longer than 6 characters. Also, do NOT include a `$`!)
 
 Once you've run a `git rebase -i` command, your text editor will open with a file that lists all the commits in your branch, and in front of each commit is the word "pick". It looks something like this:
 
