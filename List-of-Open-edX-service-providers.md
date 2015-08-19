@@ -16,6 +16,10 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Website_: [Appsembler's Open edX-as-a-service](http://www.appsembler.com)
  * _Author_: [Making Open edX a Thriving Open Source Project](https://docs.google.com/document/d/1UV0LhaaPLpx8TLHuK1f9luNcRrpSNmXg0baINLk2W34/edit) commissioned by [Stanford University’s Office of the Vice Provost for Online Learning](https://groups.google.com/d/msg/edx-code/DRqcLlMKhgs/KBvzBj13hQ8J). [Official response to the report by edX](http://engineering.edx.org/2014/07/response-to-stanford-report-on-open-edx/).
 
+* **[BigLMS](http://www.biglms.com/)** (contact: [David Norwood](mailto:info@biglms.com), Atlanta).
+ * Open edX for Enterprise!
+ * _Services_: Installation and deployment to AWS, Rackspace, theming, branding, custom development and support.
+ * _More info_: [BigLMS.com](http://www.biglms.com/)
 
 * **[curricu.me](http://curricu.me)** (contact: [John Swope](mailto:john@curricu.me)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
