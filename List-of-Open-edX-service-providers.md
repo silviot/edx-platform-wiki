@@ -16,7 +16,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Website_: [Appsembler's Open edX-as-a-service](http://www.appsembler.com)
  * _Author_: [Making Open edX a Thriving Open Source Project](https://docs.google.com/document/d/1UV0LhaaPLpx8TLHuK1f9luNcRrpSNmXg0baINLk2W34/edit) commissioned by [Stanford University’s Office of the Vice Provost for Online Learning](https://groups.google.com/d/msg/edx-code/DRqcLlMKhgs/KBvzBj13hQ8J). [Official response to the report by edX](http://engineering.edx.org/2014/07/response-to-stanford-report-on-open-edx/).
 
-* **[BigLMS](http://www.biglms.com/)** (contact: [David Norwood](mailto:info@biglms.com), Atlanta).
+* **[BigLMS](http://www.biglms.com/)** (contact: [David Norwood](mailto:info@biglms.com), Atlanta, GA USA).
  * Open edX for Enterprise - bringing open source education to business!
  * _Services_: Installation and deployment to AWS, Rackspace, theming, branding, custom development and support.
  * _More info_: [BigLMS.com](http://www.biglms.com/)
@@ -80,7 +80,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **[MOOC Agency](http://themoocagency.com/)**
 
-* **[MOOCsupport](http://www.moocsupport.com/)** (contact: [David Norwood](mailto:info@moocsupport.com), Atlanta).
+* **[MOOCsupport](http://www.moocsupport.com/)** (contact: [David Norwood](mailto:info@moocsupport.com), Atlanta, GA USA).
  * _Services_: Installation and deployment to AWS, Rackspace, theming, branding, custom development and support.
  * _More info_: [MOOCsupport.com](http://www.moocsupport.com/)
 
