@@ -71,7 +71,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **[MOOCIT](http://moocit.fr/)** (contact: [Yvain Demollière](mailto:contact@moocit.fr)).
  * _Services_: Installation and deployment to Amazon Web Service, hosting as a service, theming and branding.
- * _References/clients_: SAGE, Groupe Acticall, Learning CRM, UNEEJ, AECIS.
+ * _References/clients_: SAGE, Capgemini, Airbus, Groupe Acticall, Learning CRM, UNEEJ, AECIS.
  * _More info_: [moocit.fr](http://moocit.fr)   
 
 * **[MOOC Agency](http://themoocagency.com/)**
