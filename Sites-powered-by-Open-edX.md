@@ -49,17 +49,19 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
   * Check out our [Open edX responsive theme](https://github.com/IONISx/edx-theme/)
 * [Neodemia.com](https://neodemia.com)
 * [UM5RMOOC](http://mooc.um5s.ac.ma) - Université Mohammed-V-Rabat MAROC
-* [MoocIT](http://learn-moocit.fr/) - For anyone to create, run and follow online courses
+* [MoocIT](http://learn-moocit.fr/) - For anyone to create, run and follow online courses By [moocit](http://moocit.fr)
+* [UNEEJ](http://www.uneej.com) By [moocit](http://moocit.fr)
+* [Cognitum](http://mooc.cognitum.fr) - By [moocit](http://moocit.fr)
+* [Learning By MOOC](http://mooc.learning-crm.com) - By [moocit](http://moocit.fr)
+* [Sage AcademyX](http://academyx.sage.com) - By [moocit](http://moocit.fr)
 * [Talan](http://universite.talan.fr)
 * [Ulibre](http://www.ulibre.ca) - CLOM de la Téluq - l'université à distance de l'Université du Québec
 * [FBMX - by First Finance Group](http://www.fbmx.net/)
-* [Cognitum](http://mooc.cognitum.fr) - By [moocit](http://moocit.fr)
-* [Learning By MOOC](http://mooc.learning-crm.com) - By [moocit](http://moocit.fr)
 * [LOMDESS](http://lms.lomdess.fr/) - École en ligne dans le sanitaire & social
 * [EDUlib](http://www.edulib.org)  a partnership between Université de Montréal, HEC Montréal and Polytechnique Montréal.
 * [INARES](http://www.inares.org) - **In**stitut **Ar**istotélicien d'**É**tudes **S**cientifiques - Cours en ligne francophone de philosophie.
   * [Github theme repo](https://github.com/inares/edx-theme)
-* [UNEEJ](http://www.uneej.com) By [moocit](http://moocit.fr)
+
 
 ## Spanish
 * [Universidad de Chile, proyecto UAbierta](http://uabierta.uchile.cl/)
