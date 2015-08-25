@@ -58,6 +58,9 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: MIT, edX, GW (George Washington University), NYU (New York University), Duke University, Microsoft, The Cooper Union, Open edX Universities Initiative, ETS (Educational Testing Service), Texas State, IndonesiaX, University 4 Industry, UC3M, UP Comillas-ICADE, PUC Chile, Rey Juan Carlos University, Mondragon University, Spain's Ministry of Education...
  * [Free course creation](http://edx-studio.iblstudios.com/signin), latest news, free badges at BadgeOne.com.
 
+* **[Edraak](http://www.edraak.org)** (contact: [Nafez Dakkak, Jordan](mailto:ndakkak@qrf.org)).
+ * _Services_: Full-service Open edX solutions provider in Arabic and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts.
+
 * **iLearn Middle East** (contact: [Mohd Ayman](mailto:solutions@ilearn.ws)).
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development in Arabic Language
 
