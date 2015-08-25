@@ -44,7 +44,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: edX, OpenCraft, Fundación Romero.
 
 * **[eduStack](http://www.edustack.org/)** (contact: [Joshua Tseng](mailto:info@edustack.org),Beijing,China).
- * _Services_: Instance installation, theming, custom development, curriculum strategy & course development, mobile (IOS,Android)， Localization for China(Language、Video、Web Resources).
+ * _Services_: Instance installation, theming, custom development, curriculum strategy & course development, mobile (iOS,Android)， Localization for China(Language,Web Resources)，Hosting(Platform,Video,DataBase).
  * _References/clients_: BGI x-omics(http://www.genomics.cn/) , yonyou seentao(http://www.seentao.com/) , BFSU(Beijing Foreign Studies University) , Bistu(Beijing Information Science&Technology University).
  * [Get a free Open edX (ova)](http://www.edustack.org/?page_id=8)
  * [LMS Demo](http://x.edustack.org) [CMS Demo](http://studio.edustack.org)
