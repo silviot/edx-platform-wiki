@@ -111,7 +111,10 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/Clients/Experience_: available upon request; participated in development of a lot of Open edX features, including video player, conditional, poll, LTI and other modules.
  * _[![Free course](https://github.com/raccoongang/raccoongang.github.io/blob/customizations/images/fc_green.png)](http://raccoongang.com/en/)_ creation and run on our servers.
 
-
+* **[Valutac](http://valutac.com)** (contact: [Rizky Ariestiyansyah](mailto:onto@valutac.com), Jakarta, Indonesia)
+ * _Services_: Full-service Open edX solutions provider in Indonesia and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts
+ * _References/clients_: Available upon request.
+ * _More info_: [Valutac.com](http://valutac.com/)
 
 * **VeritasU** (contact: [Patrick McGuinness](mailto:patrick@veritasu.com))
  * _Services_: Instance deployment, managed hosting on veritasu.com and white-labelled, course development and customization including xblock development, custom theming and branding, and support.
