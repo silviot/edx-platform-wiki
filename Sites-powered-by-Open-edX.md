@@ -18,7 +18,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Pepper](http://pepperpd.com) 
 * [Croatopica](http://croatopica.net/)
 * [Unow](http://learn.unow-mooc.org/)
-* [Seneca College, Toronto, Canada](http://online-dev.cdot.senecacollege.ca/)
+* [Seneca College, Toronto, Canada](http://online.ict.senecacollege.ca/)
 * [avanty.ch](http://avanty.ch)
 * [McKinsey Academy](https://www.mckinseyacademy.com/) - Highly customized branch of Open edX
 * [New York Institute of Finance](https://learning.nyif.com) - Many courses will be ported over in 2015
