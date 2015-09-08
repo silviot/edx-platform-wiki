@@ -140,6 +140,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Persian
 * [GoToClass](http://www.gotoclass.ir)
 
+## Turkish
+* [Hayat Boyu](http://hayatboyu.yasar.edu.tr)
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
