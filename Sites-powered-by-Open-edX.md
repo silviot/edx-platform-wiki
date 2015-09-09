@@ -110,7 +110,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Turkish
 * [Yaşar Universty](http://hayatboyu.yasar.edu.tr) Hayat Boyu
 * [Sakarya University](http://saux.sakarya.edu.tr) SAUX
-* [Anadolu University](http://mooc.anadolu.edu.tr) MOOC
+* [Anadolu University](http://moocs.anadolu.edu.tr) Moocs
 
 
 ## Russian
