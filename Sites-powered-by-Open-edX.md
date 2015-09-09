@@ -107,6 +107,12 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
 * [cn-mooc 天津职教集团](http://www.cn-mooc.org/)
 
+## Turkish
+* [Yaşar Universty](http://hayatboyu.yasar.edu.tr) Hayat Boyu
+* [Sakarya University](http://saux.sakarya.edu.tr) SAUX
+* [Anadolu University](http://mooc.anadolu.edu.tr) MOOC
+
+
 ## Russian
 * [pelic.ru](http://pelic.ru) - Correspondence courses?
 * [Ural Federal University](http://openedu.urfu.ru/)
@@ -140,8 +146,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Persian
 * [GoToClass](http://www.gotoclass.ir)
 
-## Turkish
-* [Hayat Boyu](http://hayatboyu.yasar.edu.tr)
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
