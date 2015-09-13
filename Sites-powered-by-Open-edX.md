@@ -39,7 +39,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [edLynX] (http://edlynx.org) - Tutorials for high stakes exams such as IIT JEE by leading educators from around the world
 * [RensselaerX](http://openedx-test.arc.rpi.edu/) - Rensselaer Polytechnic Institute's developing edX branch for more accessible education.
   * [Github code repo](https://github.com/RPI-OPENEDX).
-
+* [Sci-GaIA courses](http://courses.sci-gaia.eu) - Open Educational Resources for the [Sci-GaIA](http://www.sci-gaia.eu) H2020 project. The project focusses on e-Infrastructure, science gateways and research applications based on them. Effort has been made to ensure that access is made via identity federations (e.g. [edugain](http://services.geant.net/edugain/Pages/Home.aspx)
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
   * [Github code repo](https://github.com/openfun/)
