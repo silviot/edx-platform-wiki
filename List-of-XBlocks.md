@@ -15,6 +15,7 @@
 * [Image Explorer XBlock](https://github.com/edx-solutions/xblock-image-explorer): to display tooltips on top of an image within the course content
 * [LeaderBoard XBlock](https://github.com/open-craft/xblock-leaderboard): allows to display an arbitrary number of top scoring threads in an inline discussion, as well as top scores in a graded exercise.
 * [Mathematica Cdf XBlock](https://github.com/polimediaupv/cdfXblock)
+* [Personality Test](https://github.com/IONISx/xblock-personality-test/)
 * [Problem Builder XBlock](https://github.com/open-craft/problem-builder): Set of interactive exercises, and tools to automate the workflow of real-life mentoring within an edX course. It supports: free-form answers (textarea) which can be shared accross different XBlock instances (for example, to remind a student of an answer he gave before), MCQs (multiple choice questions), MRQs (multiple responses questions), rating scales, progression tracking (allowing to check that the student has completed the previous steps before allowing to complete a given XBlock instance).
 * [Ooyala Video Player XBlock](https://github.com/edx-solutions/xblock-ooyala): to include Ooyala videos within an edX course. It supports transcripts, overlays (to place raw text or html content at a specific moment in your video) and player tokens (to secure your video content using a token with an expiration time)
 * [ORA2](https://github.com/edx/edx-ora2): Version 2 of the Open Response Assessor Project. Provides functionality for peer assessment, self assessment, student training. 
