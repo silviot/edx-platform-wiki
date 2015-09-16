@@ -148,7 +148,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 
 ## Greek
-[Mathesis](http://www.mathesis.cup.gr) - Online courses by Crete University Press
+* [Mathesis](http://www.mathesis.cup.gr) - Online courses by Crete University Press
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
