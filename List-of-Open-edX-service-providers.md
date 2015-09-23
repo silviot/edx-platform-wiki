@@ -98,7 +98,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
 * **[Perpetual Learning](http://learning.perpetualny.com/)** (contact: [Amish G](mailto:info@perpetualny.com) New York NY).
  * _Services_: Platform: Instance installation, deployment and AWS configuration, theming and custom development, XBlocks development
-*Instructional Design: Courseware information architecture and best practices, video production and graphics creation
+ * _Instructional Design_: Courseware information architecture and best practices, video production and graphics creation
  * _References/clients_:Teach For India,  Families First, Books That Grow, others available upon request.
 
 
