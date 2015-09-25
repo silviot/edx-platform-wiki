@@ -13,6 +13,7 @@
 * [Flash XBlock](https://github.com/MarCnu/flashXBlock): Embed Flash (.swf) files into your course.
 * [Google Drive XBlock] (https://github.com/edx-solutions/xblock-google-drive): enables embedding of Google Documents or Google Calendar within edX.
 * [Image Explorer XBlock](https://github.com/edx-solutions/xblock-image-explorer): to display tooltips on top of an image within the course content
+* [Image Modal XBlock](https://github.com/Stanford-Online/xblock-image-modal)
 * [LeaderBoard XBlock](https://github.com/open-craft/xblock-leaderboard): allows to display an arbitrary number of top scoring threads in an inline discussion, as well as top scores in a graded exercise.
 * [Mathematica Cdf XBlock](https://github.com/polimediaupv/cdfXblock)
 * [Personality Test](https://github.com/IONISx/xblock-personality-test/)
