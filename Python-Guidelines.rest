@@ -152,6 +152,17 @@ It's better to use a class or a ``namedtuple`` to pass around data that has a fi
 Django Good Practices
 =====================
 
+Imports
+-------
+
+Always import from the root of the project::
+
+    from lms.djangoapps.hologram.models import 3DExam    # GOOD
+    from hologram.models import 3DExam                   # BAD!
+    from .models import 3DExam                           # BAD!
+
+
+
 Design
 ------
 * Fat Models, Helper Modules, Thin Views, Stupid Templates
