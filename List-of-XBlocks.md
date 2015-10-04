@@ -37,3 +37,4 @@
 Experimental XBlocks:
 * [Discussion XBlock](https://github.com/edx-solutions/xblock-discussion): a prototype of the discussion XModule as a separate, pure XBlock. Functional, but requires patches to edx-platform at the moment.
 * [Group Project XBlock](https://github.com/edx-solutions/xblock-group-project): to allow students to work as a group of 2-5 on a group project, with peer grading between projects and team members. Functional, but requires patches to edx-platform at the moment.
+* [Group Project XBlock v2](https://github.com/open-craft/xblock-group-project-v2) - second generation Group Project XBlock: allow students to work as a group of 2-5 on a group project, with peer grading between projects and team members, embedded discussions support and richer project navigation. Functional, but requires patches to edx-platform at the moment.
