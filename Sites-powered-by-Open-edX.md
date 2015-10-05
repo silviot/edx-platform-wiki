@@ -40,6 +40,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [RensselaerX](http://openedx-test.arc.rpi.edu/) - Rensselaer Polytechnic Institute's developing edX branch for more accessible education.
   * [Github code repo](https://github.com/RPI-OPENEDX).
 * [Sci-GaIA courses](http://courses.sci-gaia.eu) - Open Educational Resources for the [Sci-GaIA](http://www.sci-gaia.eu) H2020 project. The project focusses on e-Infrastructure, science gateways and research applications based on them. Effort has been made to ensure that access is made via identity federations (e.g. [edugain](http://services.geant.net/edugain/Pages/Home.aspx)
+* [University4Industry](https://university4industry.com)
+
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
   * [Github code repo](https://github.com/openfun/)
@@ -88,6 +90,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [UMHx](http://edx.umh.es)
 * [Proyecto Reforma de la Educación Matemática en Costa Rica](http://cursos.reformamatematica.net) - Sitio de cursos MOOC para capacitación docente en educación matemática.
 * [MAC Institute - New York](http://institutemaconline.com) - Neuroeconomia Empresarial, una verdadera innovación disruptiva en la formación empresarial y profesional.
+* [Mondragon U](http://mooc.mondragon.edu)
 
 ## Chinese
 * [XuetangX 学堂在线](http://www.xuetangx.com/) - Using microsites to power:
@@ -150,7 +153,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Persian
 * [GoToClass](http://www.gotoclass.ir)
 
-
+## Indonesian
+* [IndonesiaX](https://indonesiax.co.id/)
 
 ***
  
