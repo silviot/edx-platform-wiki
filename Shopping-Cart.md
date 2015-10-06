@@ -67,11 +67,9 @@ Then you will see a form to fill out:
 
 4) Min Price: Fill in with the price of the course.
 
-5) Suggested Prices: Use the same price as with #4.
+5) Currency: this defaults to "usd" (US Dollars). You can change this to be a different ISO code (e.g. 'chf' for Swiss Francs).
 
-6) Currency: this defaults to "usd" (US Dollars). You can change this to be a different ISO code (e.g. 'chf' for Swiss Francs).
-
-7) Expiration Date/Date Time. It is recommended to leave these blank.
+6) Expiration Date/Date Time. It is recommended to leave these blank.
 
 # Multi-seat purchases (CourseRegCodeItem)
 
@@ -134,27 +132,27 @@ Ideally number_of_manually_enrolled_students = 0 as that feature typically would
 So, in order to perform the audit via SQL queries, here are the relevant elements. Rather than combining it into one mega-query, each element will have a separate query. Please substitute the correct course_id for your query.
 
 ```
-select count(*) as total_enrollments from student_courseenrollment 
-where course_id='{course_id}';
+SELECT COUNT(*) AS total_enrollments FROM student_courseenrollment 
+WHERE course_id='{course_id}';
 
-select count(*) as number_of_course_staff from student_courseenrollment ce 
-where course_id='{course_id}' and ce.user_id in 
-(select distinct(user_id) from student_courseaccessrole where 
-(role='instructor' or role='staff') and course_id='{course_id}');
+SELECT COUNT(*) AS number_of_course_staff FROM student_courseenrollment ce 
+WHERE course_id='{course_id}' AND ce.user_id IN 
+(SELECT DISTINCT(user_id) FROM student_courseaccessrole WHERE 
+(role='instructor' OR role='staff') AND course_id='{course_id}');
 
-select count(*) as total_purchased_paidcourseregistrations from 
-shoppingcart_paidcourseregistration pci join shoppingcart_orderitem oi 
-on oi.id=pci.orderitem_ptr_id where oi.status='purchased' and 
-pci.course_id='{course_id}' and oi.user_id not in 
-(select distinct(user_id) from student_courseaccessrole where 
-(role='instructor' or role='staff') and course_id='{course_id}');
+SELECT COUNT(*) AS total_purchased_paidcourseregistrations FROM 
+shoppingcart_paidcourseregistration pci JOIN shoppingcart_orderitem oi 
+ON oi.id=pci.orderitem_ptr_id WHERE oi.status='purchased' AND 
+pci.course_id='{course_id}' AND oi.user_id NOT IN 
+(SELECT distinct(user_id) FROM student_courseaccessrole WHERE 
+(role='instructor' OR role='staff') AND course_id='{course_id}');
 
-select count(*) as number_of_redeemed_registration_codes from 
-shoppingcart_registrationcoderedemption rcr join 
-shoppingcart_courseregistrationcode crc on rcr.registration_code_id=crc.id 
-where crc.course_id='{course_id}' and rcr.redeemed_by_id not in 
-(select distinct(user_id) from student_courseaccessrole where 
-(role='instructor' or role='staff') and course_id='{course_id}');
+SELECT COUNT(*) AS number_of_redeemed_registration_codes FROM 
+shoppingcart_registrationcoderedemption rcr JOIN 
+shoppingcart_courseregistrationcode crc ON rcr.registration_code_id=crc.id 
+WHERE crc.course_id='{course_id}' AND rcr.redeemed_by_id NOT IN 
+(SELECT distinct(user_id) FROM student_courseaccessrole WHERE 
+(role='instructor' OR role='staff') AND course_id='{course_id}');
 
 ```
 
@@ -186,15 +184,15 @@ total_in_payment_gateway_including_refunds + refunds_in_payment_gateway =
 To query total_paidcourseregistrationitem and total_regcodeitem, do:
 
 ```
-select sum(oi.qty*oi.unit_cost) as total_paidcourseregistrationitem from 
-shoppingcart_paidcourseregistration pcr join shoppingcart_orderitem oi on 
-pcr.orderitem_ptr_id=oi.id where oi.status='purchased' 
-and pcr.course_id='{course_id}';
+SELECT SUM(oi.qty*oi.unit_cost) AS total_paidcourseregistrationitem FROM 
+shoppingcart_paidcourseregistration pcr JOIN shoppingcart_orderitem oi ON 
+pcr.orderitem_ptr_id=oi.id WHERE oi.status='purchased' 
+AND pcr.course_id='{course_id}';
 
-select sum(oi.qty*oi.unit_cost) as total_regcodeitem from 
-shoppingcart_courseregcodeitem cri join shoppingcart_orderitem oi 
-on cri.orderitem_ptr_id=oi.id where oi.status='purchased' 
-and cri.course_id='{course_id}';
+SELECT SUM(oi.qty*oi.unit_cost) AS total_regcodeitem FROM 
+shoppingcart_courseregcodeitem cri JOIN shoppingcart_orderitem oi 
+ON cri.orderitem_ptr_id=oi.id WHERE oi.status='purchased' 
+AND cri.course_id='{course_id}';
 ```
 
 Adding total_paidcourseregistrationitem + total_regcodeitem *should* equal whatever reporting your payment processor (CyberSource) if refunds/chargebacks are not included in the payment processor report. If refunds/chargebacks are included in the payment processor, then it is recommended that you compute the amount of refunds and add them back in.
@@ -226,13 +224,13 @@ The num_of_regcodes_generated is a combination of multi-seat purchases (RegCodeI
 In terms of SQL, use:
 
 ```
-select count(*) as total_purchased_paidcourseregistrations from 
-shoppingcart_paidcourseregistration pci join shoppingcart_orderitem oi 
-on oi.id=pci.orderitem_ptr_id where oi.status='purchased' and 
-pci.course_id='{course_id}'
+SELECT COUNT(*) AS total_purchased_paidcourseregistrations FROM 
+shoppingcart_paidcourseregistration pci JOIN shoppingcart_orderitem oi 
+ON oi.id=pci.orderitem_ptr_id WHERE oi.status='purchased' AND 
+pci.course_id='{course_id}';
 
-select count(*) as num_of_regcodes_generated from 
-shoppingcart_courseregistrationcode where course_id='{course_id}'
+SELECT COUNT(*) AS num_of_regcodes_generated FROM 
+shoppingcart_courseregistrationcode WHERE course_id='{course_id}';
 ```
 
 Please note that if course staff perform "test purchases" or "test registration codes", those staff people will be counted in these totals (and that is why we filter them out in the Enrollment audit queries up above). 
@@ -242,10 +240,10 @@ Please note that if course staff perform "test purchases" or "test registration 
 It is also useful - when auditing - to also be able to get a list of course enrollments that do not have a corresponding entry in the PaidCourseRegistration or CourseRegistrationCode redemption. Typically, one should expect to only see either a) Course Staff  or b) users that were manually enrolled through the Instructor Dashboard.
 
 ```
-select au.id, au.email, au.username, ce.created, ce.is_active,ce.id as enrollment_id from student_courseenrollment ce join auth_user au on ce.user_id=au.id where course_id='{course_id}' and au.id NOT IN
-(select o.user_id from shoppingcart_order o join shoppingcart_orderitem oi on oi.order_id=o.id join shoppingcart_paidcourseregistration pcr on pcr.orderitem_ptr_id=oi.id where o.status='purchased' and course_id='{course_id}'
-) and au.id NOT IN 
-(select redeemed_by_id from shoppingcart_registrationcoderedemption
-) and au.id NOT IN
-(select user_id from student_courseaccessrole where course_id='{course_id}')
+SELECT au.id, au.email, au.username, ce.created, ce.is_active,ce.id AS enrollment_id FROM student_courseenrollment ce JOIN auth_user au ON ce.user_id=au.id WHERE course_id='{course_id}' AND au.id NOT IN
+(SELECT o.user_id FROM shoppingcart_order o JOIN shoppingcart_orderitem oi ON oi.order_id=o.id JOIN shoppingcart_paidcourseregistration pcr ON pcr.orderitem_ptr_id=oi.id WHERE o.status='purchased' AND course_id='{course_id}'
+) AND au.id NOT IN 
+(SELECT redeemed_by_id FROM shoppingcart_registrationcoderedemption
+) AND au.id NOT IN
+(SELECT user_id FROM student_courseaccessrole WHERE course_id='{course_id}');
 ```
