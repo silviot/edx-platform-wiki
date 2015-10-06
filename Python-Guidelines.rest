@@ -169,6 +169,10 @@ The second form (relative import) only works correctly if the importing module i
     @patch('lms.djangoapps.hologram.models.Key', new=MockKey)        # GOOD
     @patch('hologram.models.Key', new=MockKey)                       # BAD!
 
+    INSTALLED_APPS = [
+        'lms.djangoapps.hologram',    # GOOD
+        'hologram',                   # BAD!
+    ]
 
 Design
 ------
