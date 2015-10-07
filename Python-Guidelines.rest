@@ -79,10 +79,11 @@ See:
 * http://sphinxcontrib-napoleon.readthedocs.org/en/latest/example_google.html
 * https://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone=Comments#Comments
 
-Here's how you write documentation in "Google Style"::
+Here's how you write documentation in a mostly "Google Style" manner::
 
     def func(arg1, arg2):
-        """Summary line.
+        """
+        Summary line.
 
         Extended description of function.
 
@@ -94,6 +95,11 @@ Here's how you write documentation in "Google Style"::
             bool: Description of return value
 
         """
+
+Note: there are some exceptions:
+
+* The summary line is on the second line, including single-line comments (see below)
+* Use the full word "Arguments".
 
 Most of our code is written using an older style::
 
