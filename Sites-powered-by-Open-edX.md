@@ -7,6 +7,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [MongoDB University](https://education.mongodb.com/) - MongoDB courses
 * [EducateWorkforce](https://educateworkforce.com/) - features premium, industry-tested course material that prepares individuals for a career in a technological vocation.
 * [Proversity](http://proversity.org)
+* [SPICE Project](http://spice.soi.asia) - Social Platform for Interactive & Collaborative Education presented by SOI ASIA Project and EBA Consortium, currently developed by members from Brawijaya University, Indonesia and Keio University, Japan.
 * [University of Alaska](http://edx.alaska.edu)
 * [Online Open Education](http://www.ooed.org/) - Architecture education
 * [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
