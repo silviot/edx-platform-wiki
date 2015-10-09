@@ -19,14 +19,14 @@
 
 #《Open edX开发指南》
 目录规划
-*Open edX介绍
-*Python＋Django
-开源组件：Mysql/Mongo/rabbitMQ/Celery...
-安装和配置
-基础开发实例（选课人数／分类／标签／推荐）
-Xblock开发
-数据分析
-课程制作和运维
+* Open edX介绍
+* Python＋Django
+* 开源组件：Mysql/Mongo/rabbitMQ/Celery...
+* 安装和配置
+* 基础开发实例（选课人数／分类／标签／推荐）
+* Xblock开发
+* 数据分析
+* 课程制作和运维
 
 #question list
 1. 安装技巧
@@ -90,4 +90,3 @@ Open edX开发交流QQ群 106781163
 * 课程分类
 * Xblock-OfficeMix
 * Xblock-主观题
-
