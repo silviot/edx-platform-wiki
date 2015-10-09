@@ -17,6 +17,17 @@
 
 本文列出中国区Open edX使用者及开发者关注的一些问题，整理开发相关中文资源。
 
+#《Open edX开发指南》
+目录规划
+*Open edX介绍
+*Python＋Django
+开源组件：Mysql/Mongo/rabbitMQ/Celery...
+安装和配置
+基础开发实例（选课人数／分类／标签／推荐）
+Xblock开发
+数据分析
+课程制作和运维
+
 #question list
 1. 安装技巧
 2. 课程介绍视频
