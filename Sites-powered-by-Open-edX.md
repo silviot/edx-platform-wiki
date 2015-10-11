@@ -118,6 +118,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 
 ## Russian
+* [National Platform of Open Education](http://openedu.ru)
 * [pelic.ru](http://pelic.ru) - Correspondence courses?
 * [Ural Federal University](http://openedu.urfu.ru/)
 
