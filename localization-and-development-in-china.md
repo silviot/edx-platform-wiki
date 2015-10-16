@@ -71,7 +71,7 @@
 *  [eduStack](http://edustack.org/)
 *  [writing for time](http://wwj718.github.io/category/edx.html)
 *  [Card Games] (http://www.cnblogs.com/cardgames/)
-*  [ICFly](http://UI66.com/)
+*  [UI66](http://UI66.com/)
 
 #解决方案
 development.6.API接口 : [启用edx的API](http://wwj718.github.io/edx-api.html)
