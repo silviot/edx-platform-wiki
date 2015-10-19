@@ -47,6 +47,7 @@
 
 #文档
 [edX Guide for Students中文版](http://docs.edustack.org/edX_Guide_for_Students/)
+
 [Building and Running an edX Course中文版](http://docs.edustack.org/Building_and_Running_an_edX_Course/)
 
 #development
