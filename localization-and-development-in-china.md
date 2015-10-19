@@ -45,6 +45,10 @@
 11. Django Admin 退出500错误
 12. 磁盘扩展方案
 
+#文档
+[edX Guide for Students中文版](http://docs.edustack.org/edX_Guide_for_Students/)
+[Building and Running an edX Course中文版](http://docs.edustack.org/Building_and_Running_an_edX_Course/)
+
 #development
 1. Docker
 
