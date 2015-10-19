@@ -52,9 +52,8 @@
 
 #development
 1. Docker
-[使用Open edX中国社区Docker版来开发调试edX](http://wwj718.github.io/edx-cypress-cn-for-deveiopment.html)
-
-[Open edX中国社区Docker版安装使用](http://wwj718.github.io/edx-cypress-cn-install-and-use.html)
+  * [使用Open edX中国社区Docker版来开发调试edX](http://wwj718.github.io/edx-cypress-cn-for-deveiopment.html)
+  * [Open edX中国社区Docker版安装使用](http://wwj718.github.io/edx-cypress-cn-install-and-use.html)
 
 2. 数据分析本地化
 [基于docker的edx数据分析](http://wwj718.github.io/edx-data-analysis-on-docker.html)
