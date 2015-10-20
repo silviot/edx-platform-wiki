@@ -73,10 +73,10 @@
 
 #Blog
 *  [Jason Zhu](https://www.idefs.com/) 竹轩的博客
-*  [eduStack](http://edustack.org/)
 *  [writing for time](http://wwj718.github.io/category/edx.html)  种瓜的博客
 *  [Card Games] (http://www.cnblogs.com/cardgames/)
 *  [UI66](http://UI66.com/)  Datochen的博客
+*  [eduStack](http://edustack.org/)
 
 #解决方案
 development.6.API接口 : [启用edx的API](http://wwj718.github.io/edx-api.html)
