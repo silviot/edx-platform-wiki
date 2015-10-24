@@ -6,7 +6,13 @@ You should also join the [openedx-translation](https://groups.google.com/forum/#
 
 In order to run your Open edX instance under a different spoken language, for instance for [Spanish (Latin American)](https://www.transifex.com/projects/p/edx-platform/language/es_419/):
 
-1. Configure your `~/.transifexrc` file:
+1. Switch to edxapp environment:
+
+        sudo -H -u edxapp bash
+        source /edx/app/edxapp/edxapp_env
+        cd /edx/app/edxapp/edx-platform
+  
+2. Configure your `~/.transifexrc` file:
 
         [https://www.transifex.com]
         hostname = https://www.transifex.com
@@ -17,16 +23,7 @@ In order to run your Open edX instance under a different spoken language, for in
     Token is left blank. You have to have permissions for the project (edx-platform) AFAIK - https://www.transifex.com/projects/p/edx-platform/ (it is free to sign up and join this project as a translator).
 
      For help with Transifex configuration, see the Transifex documentation: http://docs.transifex.com/developer/client/setup#configuration
-
-2. Switch to edxapp environment:
-
-        sudo -H -u edxapp bash
-        source /edx/app/edxapp/edxapp_env
-        cd /edx/app/edxapp/edx-platform
-  
         
-
-
 3. Make sure all languages you wish to download are present and uncommented in `conf/locale/config.yaml`. For example, if you wish to download Arabic and Chinese (China), make sure your config.yaml file looks like this: 
 
         locales:
