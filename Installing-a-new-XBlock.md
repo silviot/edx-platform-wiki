@@ -14,8 +14,8 @@ Once the file is updated, you need to reboot to reload the settings.
 
     sudo /edx/bin/supervisorctl -c /edx/etc/supervisord.conf restart edxapp:
 
-### Install / Update a XBlock ###
-To install a XBlock, you must download it, and then run the install script. To update an existing XBlock, use --upgrade.
+### Install an XBlock ###
+To install a XBlock, you must download it, and then run the install script.
 
     # Move to the folder where you want to download the XBlock
     cd /edx/app/edxapp
@@ -23,8 +23,6 @@ To install a XBlock, you must download it, and then run the install script. To u
     sudo -u edxapp git clone https://github.com/xxx/yourXBlock.git
     # If not installed: Install the XBlock
     sudo -u edxapp /edx/bin/pip.edxapp install yourXBlock/
-    # If installed: Upgrade the XBlock using --upgrade
-    sudo -u edxapp /edx/bin/pip.edxapp install yourXBlock/ --upgrade
     # Remove the installation files
     sudo rm -r yourXBlock
 
