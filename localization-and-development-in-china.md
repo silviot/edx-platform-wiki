@@ -29,6 +29,22 @@
 * 数据分析
 * 课程制作和运维
 
+#社交网络
+edx安装互助QQ群 197475193
+
+Open edX开发交流QQ群 106781163
+
+#中国社区版特性
+* 完整汉化 by eduStack [访问](http://edustack.org/2015/10/26/open-edx-cypress%E5%AE%8C%E6%95%B4%E6%B1%89%E5%8C%96%E8%AF%AD%E8%A8%80%E5%8C%85/)
+* 介绍视频使用youtube之外的视频源
+* 选课人数显示
+* 课程搜索
+* 课程分类
+* Xblock-OfficeMix
+* Xblock-主观题
+* 中文教师手册 by eduStack [访问](http://docs.edustack.org/Building_and_Running_an_edX_Course/)
+* 中文学生手册 by eduStack [访问](http://docs.edustack.org/edX_Guide_for_Students/)
+
 #question list
 1. 安装技巧
 2. 课程介绍视频
@@ -81,18 +97,3 @@
 #解决方案
 development.6.API接口 : [启用edx的API](http://wwj718.github.io/edx-api.html)
 
-#社交网络
-edx安装互助QQ群 197475193
-
-Open edX开发交流QQ群 106781163
-
-#中国社区版特性
-* 完整汉化 by eduStack [访问](http://edustack.org/2015/10/26/open-edx-cypress%E5%AE%8C%E6%95%B4%E6%B1%89%E5%8C%96%E8%AF%AD%E8%A8%80%E5%8C%85/)
-* 介绍视频使用youtube之外的视频源
-* 选课人数显示
-* 课程搜索
-* 课程分类
-* Xblock-OfficeMix
-* Xblock-主观题
-* 中文教师手册 by eduStack [访问](http://docs.edustack.org/Building_and_Running_an_edX_Course/)
-* 中文学生手册 by eduStack [访问](http://docs.edustack.org/edX_Guide_for_Students/)
