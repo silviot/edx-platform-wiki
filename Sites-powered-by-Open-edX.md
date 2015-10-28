@@ -42,6 +42,10 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
   * [Github code repo](https://github.com/RPI-OPENEDX).
 * [Sci-GaIA courses](http://courses.sci-gaia.eu) - Open Educational Resources for the [Sci-GaIA](http://www.sci-gaia.eu) H2020 project. The project focusses on e-Infrastructure, science gateways and research applications based on them. Effort has been made to ensure that access is made via identity federations (e.g. [edugain](http://services.geant.net/edugain/Pages/Home.aspx)
 * [University4Industry](https://university4industry.com)
+* [Millionlights](https://www.millionlights.org/)Bringing the best content, curriculum and certification to the Indian market. 
+
+
+
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
