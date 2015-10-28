@@ -94,4 +94,5 @@ Open edX开发交流QQ群 106781163
 * 课程分类
 * Xblock-OfficeMix
 * Xblock-主观题
-* 中文教师和学生手册
+* 中文教师手册 by eduStack (http://docs.edustack.org/Building_and_Running_an_edX_Course/)
+* 中文学生手册 by eduStack (http://docs.edustack.org/edX_Guide_for_Students/)
