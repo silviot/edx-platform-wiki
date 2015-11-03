@@ -91,9 +91,8 @@ Open edX开发交流QQ群 106781163
 *  [Jason Zhu](https://www.idefs.com/) 竹轩的博客
 *  [writing for time](http://wwj718.github.io/category/edx.html)  种瓜的博客
 *  [Card Games] (http://www.cnblogs.com/cardgames/)
-*  [UI66](http://UI66.com/)  Datochen的博客
+*  [datochan](http://datochan.me/)  Datochen的博客
 *  [eduStack](http://edustack.org/)
 
 #解决方案
 development.6.API接口 : [启用edx的API](http://wwj718.github.io/edx-api.html)
-
