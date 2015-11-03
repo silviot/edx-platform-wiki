@@ -94,6 +94,7 @@ Open edX开发交流QQ群 106781163
 *  [datochan](http://datochan.me/)  Datochan的博客
 *  [eduStack](http://edustack.org/)
 *  [晨飞](http://ichenfei.com)
+*  [中科大移动云计算实验室](http://www.mc2lab.com/)
 
 #解决方案
 development.6.API接口 : [启用edx的API](http://wwj718.github.io/edx-api.html)
