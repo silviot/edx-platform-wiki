@@ -44,6 +44,7 @@ Open edX开发交流QQ群 106781163
 * Xblock-主观题
 * 中文教师手册 by eduStack [访问](http://docs.edustack.org/Building_and_Running_an_edX_Course/)
 * 中文学生手册 by eduStack [访问](http://docs.edustack.org/edX_Guide_for_Students/)
+* 国内高教、职教、普教、基教的学科分类预置
 
 #question list
 1. 安装技巧
