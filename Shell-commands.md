@@ -23,11 +23,6 @@ createsuperuser --username <user>
 mongo xmodule --eval "db.dropDatabase()"
 mongo xcontent --eval "db.dropDatabase()"
 ```
-* To delete one course first locate your Organization, Course Number, and Course Name in the CMS> Settings> Schedule & Details page then issue this command.  For <a href="/edX/configuration/wiki" target="_blank">configuration</a> using the <strong>Installing edX on a single Ubuntu 12.04 (Precise) server</strong> instructions, please change 'env' to 'aws'.
-```
-#Command: rake django-admin[delete_course,cms,env,"{Organization}/{Course Number}/{Course Name} commit"]
-rake django-admin[delete_course,cms,aws,"MITx/999/Robot_Super_Course commit"]
-```
 * To seed the permissions for the comment service for user 'robot' course MITx/999/Robot_Super_Course
 ```
 export DJANGO_SETTINGS_MODULE=lms.envs.dev
@@ -35,10 +30,6 @@ export PYTHONPATH=.
 django-admin.py seed_permissions_roles "MITx/999/Robot_Super_Course"
 django-admin.py assign_role robot Moderator "MITx/999/Robot_Super_Course"
 django-admin.py assign_role robot Administrator "MITx/999/Robot_Super_Course"
-```
-* To sync the user info from cms/lms over to the comment service:
-```
-rake django-admin[sync_user_info,lms,dev]
 ```
 
 #### Mongo (courseware)
