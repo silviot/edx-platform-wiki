@@ -1,6 +1,6 @@
-Note: before attempting to debug Open edX, you should follow these steps to run the LMS and Studio outside of the debugger:
+Note: before attempting to debug Open edX, you should follow these steps to run the LMS and Studio outside of the debugger: 
 
-    https://github.com/edx/configuration/wiki/edX-Developer-Stack
+[https://github.com/edx/configuration/wiki/edX-Developer-Stack](https://github.com/edx/configuration/wiki/edX-Developer-Stack)
 
 PyCharm will only run the Python processes for you, and so doesn't do all of the initialization to compile SASS files etc.
 
