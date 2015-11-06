@@ -1,3 +1,9 @@
+Note: before attempting to debug Open edX, you should follow these steps to run the LMS and Studio outside of the debugger:
+
+    https://github.com/edx/configuration/wiki/edX-Developer-Stack
+
+PyCharm will only run the Python processes for you, and so doesn't do all of the initialization to compile SASS files etc.
+
 ### Debugging the devstack image with PyCharm professional edition
 
 Debugging with devstack is more complex than in a direct local development environment, as the source code lives on your local machine but the code is executing within the Vagrant image. One solution is to use [PyCharm Professional Edition](http://www.jetbrains.com/pycharm/) from JetBrains. It is able to debug devstack using its concept of [remote Python interpreters](http://blog.jetbrains.com/pycharm/2013/03/how-pycharm-helps-you-with-remote-development/). Similar setups should also work for any IDE which supports a remote interpreter.
