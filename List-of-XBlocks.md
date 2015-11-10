@@ -12,6 +12,7 @@
 * [Drag and Drop XBlock v2](https://github.com/edx-solutions/xblock-drag-and-drop-v2): enhanced version of the Image Explorer XBlock. Due to incompatible data model with v1, the original XBlock still remains
 * [Flash XBlock](https://github.com/MarCnu/flashXBlock): Embed Flash (.swf) files into your course.
 * [Google Drive XBlock] (https://github.com/edx-solutions/xblock-google-drive): enables embedding of Google Documents or Google Calendar within edX.
+* [hastexo XBlock](https://github.com/hastexo/hastexo-xblock): enables course authors to define and integrate arbitrarily complex computing environments running on private or public clouds, which auto-suspend when not in use. Currently supports [OpenStack Heat](https://wiki.openstack.org/wiki/Heat).
 * [Image Explorer XBlock](https://github.com/edx-solutions/xblock-image-explorer): to display tooltips on top of an image within the course content
 * [Image Modal XBlock](https://github.com/Stanford-Online/xblock-image-modal)
 * [LeaderBoard XBlock](https://github.com/open-craft/xblock-leaderboard): allows to display an arbitrary number of top scoring threads in an inline discussion, as well as top scores in a graded exercise.
