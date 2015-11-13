@@ -4,10 +4,6 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Certificate issuing, certificate design and course portfolios.
  * [Find out more](https://www.accredible.com/) 
 
-* **[aLabs](https://alabs.org)** (contact: [Antonio Pardo](mailto:hola@alabs.org), Madrid, Spain)
- * _Services_: Instance installation, theming, hosting, XBlocks, and custom development
- * _References/clients_: [UPEx](https://formax.edu.ec/), Instituto de Altos Estudios Nacionales - IAEN.
-
 * **[Appsembler](http://www.appsembler.com)** (contact: [Nate Aune](mailto:nate@appsembler.com), Cambridge, MA USA).
  * _Services_: Full-service Open edX solutions provider including planning, implementation, hosting, theming, support, training, custom development, e-commerce. 
  * Get a free Open edX demo site! 
