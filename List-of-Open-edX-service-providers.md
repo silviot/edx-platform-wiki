@@ -105,7 +105,7 @@ This page lists companies and freelancers offering services around Open edX. (No
     * Creation of course-specific courseware components;
     * Platform customization: courseware components, localization, theme creation, certificate design;
     * Consulting: support and technical assistance, content creation, R&D and analytics;
- * _References/Clients/Experience_: available upon request; participated in development of a lot of Open edX features, including video player, conditional, poll, LTI and other modules.
+  * _Clients/Experience/References_: [edX] (https://www.edx.org/),  [Labster] (https://www.labster.com/),  [Open Education] (https://openedu.ru/), [Prometheus] (http://prometheus.org.ua/), [Microsoft Ukraine] (http://www.microsoft.com/), [Shindig] (http://www.shindig.com/), [Million Lights] (https://www.millionlights.org/), [Dersal] (http://dersal.org/); we participated in development of a lot of Open edX features, including video player, conditional, poll, LTI and other modules. References available upon request.
  * _[![Free course](https://github.com/raccoongang/raccoongang.github.io/blob/customizations/images/fc_green.png)](http://raccoongang.com/en/)_ creation and run on our servers.
 
 * **[Valutac](http://valutac.com)** (contact: [Rizky Ariestiyansyah](mailto:onto@valutac.com), Jakarta, Indonesia)
