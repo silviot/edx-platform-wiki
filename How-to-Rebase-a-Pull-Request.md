@@ -4,7 +4,7 @@ When many different people are working on a project simultaneously, pull request
 
 <img alt="master" src="git-diagrams/master.png" style="float:right">
 
-To understand this, we need to understand a bit about how git works. A git repository is a tree structure, where the nodes of the tree are commits. Here's an example of a very simple repository: it has four commits on the master branch, and each commit has an ID (in this case, `a`, `b`, `c`, and `d`). You'll notice that `d` is currently the latest commit (or HEAD) of the `master` branch.
+To understand this, we need to understand a bit about how Git works. A Git repository is a tree structure, where the nodes of the tree are commits. Here's an example of a very simple repository: it has four commits on the master branch, and each commit has an ID (in this case, `a`, `b`, `c`, and `d`). You'll notice that `d` is currently the latest commit (or HEAD) of the `master` branch.
 
 <div style="clear:both"></div>
 <img alt="master and my-branch" src="git-diagrams/branch.png" style="float:right">
@@ -16,13 +16,13 @@ So let's say that `my-branch` has gone stale, and you want to bring it up to dat
 <div style="clear:both"></div>
 <img alt="rebase" src="git-diagrams/rebase.png" style="float:right">
 
-When you rebase, git finds the base of your branch (in this case, `b`), finds all the commits between that base and HEAD (in this case, `e` and `f`), and *re-plays* those commits on the HEAD of the branch you're rebasing onto (in this case, `master`). Git actually creates *new commits* that represent what your changes look like *on top of* `master`: in the diagram, these commits are called `e′` and `f′`. Git doesn't erase your previous commits: `e` and `f` are left untouched, and if something goes wrong with the rebase, you can go right back to the way things used to be.
+When you rebase, Git finds the base of your branch (in this case, `b`), finds all the commits between that base and HEAD (in this case, `e` and `f`), and *re-plays* those commits on the HEAD of the branch you're rebasing onto (in this case, `master`). Git actually creates *new commits* that represent what your changes look like *on top of* `master`: in the diagram, these commits are called `e′` and `f′`. Git doesn't erase your previous commits: `e` and `f` are left untouched, and if something goes wrong with the rebase, you can go right back to the way things used to be.
 
-Another thing to notice, however, is that git treats branches as merely labels. The `master` branch is whatever commit the `master` label is pointing to, as well as all of that commit's parents. When you rebase a branch, git moves the branch label to point at the newly-created commits: `my-branch` is no longer pointing at `f`, it's now pointing at `f′`. Going back to the way things used to be just consists of changing that branch label so that it points back at `f`.
+Another thing to notice, however, is that Git treats branches as merely labels. The `master` branch is whatever commit the `master` label is pointing to, as well as all of that commit's parents. When you rebase a branch, Git moves the branch label to point at the newly-created commits: `my-branch` is no longer pointing at `f`, it's now pointing at `f′`. Going back to the way things used to be just consists of changing that branch label so that it points back at `f`.
 
 ### Changing History
 
-You'll notice that there is not a direct path from `f` to `f′`: from the point of view of anyone else watching `my-branch`, history has suddenly changed. In effect, `c` and `d` have been injected into `my-branch`'s history, as if they had been there the entire time. Unlike most version control systems, git allows you to change the history of your project -- but it is very cautious about letting you do so. We'll come back to this point later.
+You'll notice that there is not a direct path from `f` to `f′`: from the point of view of anyone else watching `my-branch`, history has suddenly changed. In effect, `c` and `d` have been injected into `my-branch`'s history, as if they had been there the entire time. Unlike most version control systems, Git allows you to change the history of your project -- but it is very cautious about letting you do so. We'll come back to this point later.
 
 ## How do I rebase?
 
@@ -38,7 +38,7 @@ You've made some commits in your branch, pushed them to Github, and created a pu
 
 ### Add the official repo as a remote (first time only)
 
-A "remote", in git terminology, is another clone of the repository that you can share commits with. When you forked the official `edx/edx-platform` project, you created a new git repository called `my-username/edx-platform`, but these two repositories can share commits with each other.
+A "remote", in Git terminology, is another clone of the repository that you can share commits with. When you forked the official `edx/edx-platform` project, you created a new Git repository called `my-username/edx-platform`, but these two repositories can share commits with each other.
 
 To add `edx` as a remote, run this command in your repository:
 ```shell
@@ -134,11 +134,11 @@ To rebase your branch atop of the latest version of edx-platform, run this comma
 $ git rebase edx/master
 ```
 
-Git will start replaying your commits onto the latest version of master. You may get conflicts while doing so: if you do, git will pause and ask you to resolve the conflicts before continuing. This is exactly like resolving conflicts with a merge: you can use `git status` to see which files are in conflict, edit the files to resolve the conflicts, and then use `git add` to indicate that the conflicts have been resolved. However, instead of running `git commit`, you instead want to run `git rebase --continue` to indicate to git that it should continue replaying your commits. If you've squashed your commits before doing this step, you'll only have to pause to resolve conflicts once -- if you didn't squash, you may have to resolve your conflicts multiple times. If you are on git version <2.0 and you are stuck with the message "You must edit all merge conflicts and then mark them as resolved using git add" even though you resolved and added the file, run `git diff` and try again. 
+Git will start replaying your commits onto the latest version of master. You may get conflicts while doing so: if you do, Git will pause and ask you to resolve the conflicts before continuing. This is exactly like resolving conflicts with a merge: you can use `git status` to see which files are in conflict, edit the files to resolve the conflicts, and then use `git add` to indicate that the conflicts have been resolved. However, instead of running `git commit`, you instead want to run `git rebase --continue` to indicate to Git that it should continue replaying your commits. If you've squashed your commits before doing this step, you'll only have to pause to resolve conflicts once -- if you didn't squash, you may have to resolve your conflicts multiple times. If you are on Git version <2.0 and you are stuck with the message "You must edit all merge conflicts and then mark them as resolved using Git add" even though you resolved and added the file, run `git diff` and try again. 
 
 ### Force-push to update your pull request
 
-As explained above, when you do a rebase, you are changing the history on your branch. As a result, if you try to do a normal `git push` after a rebase, git will reject it because there isn't a direct path from the commit on the server to the commit on your branch. Instead, you'll need to use the `-f` or `--force` flag to tell git that yes, you really know what you're doing. When doing force pushes, it is *highly* recommended that you set your `push.default` config setting to `simple`, which is the default in Git 2.0. To make sure that your config is correct, run:
+As explained above, when you do a rebase, you are changing the history on your branch. As a result, if you try to do a normal `git push` after a rebase, Git will reject it because there isn't a direct path from the commit on the server to the commit on your branch. Instead, you'll need to use the `-f` or `--force` flag to tell Git that yes, you really know what you're doing. When doing force pushes, it is *highly* recommended that you set your `push.default` config setting to `simple`, which is the default in Git 2.0. To make sure that your config is correct, run:
 
 ```shell
 $ git config --global push.default simple
