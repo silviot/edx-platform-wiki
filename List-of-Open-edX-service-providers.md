@@ -35,9 +35,9 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, invite-only courses and control over enrollment schemes, LTI-compliant collaboration tools, 24/7 support
  * [Get your custom-branded live instance](http://www.edcast.com/corp/educators) and start your 30 day free trial today!
 
-   ![edNEXT - Open edX services provider](http://www.edunext.co/app/themes/oaas/assets/images/logo.png)
+   
 
-* **[eduNEXT](http://www.edunext.co/)** (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
+* **[![eduNEXT - Open edX services provider](http://www.edunext.co/app/uploads/2015/11/edunext180.png)](http://www.edunext.co/)** (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
  * _Services_: 
     * Open edX in Software as a Service Subscriptions.
     * [Deploy your production ready branded instance in minutes](http://www.edunext.co/open-edx-as-a-service/).
