@@ -36,8 +36,13 @@ This page lists companies and freelancers offering services around Open edX. (No
  * [Get your custom-branded live instance](http://www.edcast.com/corp/educators) and start your 30 day free trial today!
 
 * **[eduNEXT](http://www.edunext.co/)** (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
- * _Services_: Microsites, Custom installation and theming, Localization, course hosting.
- * _References/clients_: edX, OpenCraft, Fundación Romero.
+ * _Services_: 
+    * Open edX in Software as a Service Subscriptions.
+    * [Deploy your production ready branded instance in minutes](http://www.edunext.co/open-edx-as-a-service/).
+    * Microsites, Custom installation and theming.
+    * Localization, Multilingual and Right to Left RTL configuration.
+ * _References/clients_: edX, OpenCraft, Fundación Romero, King Abudulaziz University, Corporación Parque explora.
+ * _More info_: [www.edunext.co](http://www.edunext.co)
 
 * **[Edraak](http://www.edraak.org)** (contact: [Nafez Dakkak, Jordan](mailto:ndakkak@qrf.org)).
  * _Services_: Full-service Open edX solutions provider in Arabic and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts.
