@@ -39,7 +39,9 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: 
     * Open edX in Software as a Service Subscriptions.
     * [Deploy your production ready branded instance in minutes](http://www.edunext.co/open-edx-as-a-service/).
-    * Microsites, Custom installation and theming.
+    * Microsites, Multisites and multiorg instalations.
+    * Custom configurations and theming.
+    * Third party integrations.
     * Localization, Multilingual and Right to Left RTL configuration.
  * _References/clients_: edX, OpenCraft, Fundación Romero, King Abudulaziz University, Corporación Parque explora.
  * _More info_: [www.edunext.co](http://www.edunext.co)
