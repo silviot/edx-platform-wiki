@@ -28,6 +28,8 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * common/lib
   * lms/djangoapps
   * lms/lib
+  * openedx
+  * common/lib/xmodule (NOTE: in theory this shouldn't be needed, but it seems to be necessary with PyCharm 5)
 * You can also mark the following symlinks to be "Excluded" so that PyCharm doesn't see multiple copies of the same files:
   * cms/static/xmodule_js
   * lms/static/xmodule_js
