@@ -37,7 +37,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 
    
 
-* **[![eduNEXT - Open edX services provider](http://www.edunext.co/app/uploads/2015/11/edunext150wiki.png](http://www.edunext.co/)** (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
+* **[![eduNEXT - Open edX services provider](http://www.edunext.co/app/uploads/2015/11/edunext150wiki.png)](http://www.edunext.co/)** (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
  * _Services_: 
     * Open edX in Software as a Service Subscriptions.
     * [Deploy your production ready branded instance in minutes](http://www.edunext.co/open-edx-as-a-service/).
