@@ -45,7 +45,7 @@ This page lists companies and freelancers offering services around Open edX. (No
     * Localization, Multilingual and Right to Left RTL configuration.
  * _References/clients_: edX, OpenCraft, Fundación Romero, King Abudulaziz University, Corporación Parque explora.
  * _More info_: [www.edunext.co](http://www.edunext.co)
-![edNEXT - Open edX services provider](http://www.edunext.co/app/themes/oaas/assets/images/logo.png)
+![edNEXT - Open edX services provider](http://www.edunext.co/app/themes/oaas/assets/images/logo-small.png)
 
 * **[Edraak](http://www.edraak.org)** (contact: [Nafez Dakkak, Jordan](mailto:ndakkak@qrf.org)).
  * _Services_: Full-service Open edX solutions provider in Arabic and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts.
