@@ -19,7 +19,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
 * Create a PyCharm project for devstack (if you don't have one already):
   * Select "New Project..." from the "File" menu
   * Choose "Pure Python" for "Project type" (note: don't choose "Django project" as that can't currently be interpreted remotely)
-  * Select your devstack folder as the "Location"
+  * Select your devstack folder as the "Location" (or if your source code is not located under the devstack directory, select the parent folder of your source code)
   * Say "Yes" to the question about using existing sources for the project
 * To make PyCharm's editor traverse imports in edx-platform python modules, go to "PyCharm > Preferences > Project: devstack > Project Structure" and mark the following directories as "Source Folders":
   * cms/djangoapps
