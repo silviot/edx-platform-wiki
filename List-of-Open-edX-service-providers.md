@@ -35,7 +35,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, invite-only courses and control over enrollment schemes, LTI-compliant collaboration tools, 24/7 support
  * [Get your custom-branded live instance](http://www.edcast.com/corp/educators) and start your 30 day free trial today!
 
-* **[eduNEXT](http://www.edunext.co/)** (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
+* **[eduNEXT](http://www.edunext.co/)** ![edNEXT - Open edX services provider](http://www.edunext.co/app/themes/oaas/assets/images/logo.png) (contact: [Felipe Montoya](mailto:felipe.montoya@edunext.co), Bogotá, Colombia)
  * _Services_: 
     * Open edX in Software as a Service Subscriptions.
     * [Deploy your production ready branded instance in minutes](http://www.edunext.co/open-edx-as-a-service/).
@@ -45,7 +45,6 @@ This page lists companies and freelancers offering services around Open edX. (No
     * Localization, Multilingual and Right to Left RTL configuration.
  * _References/clients_: edX, OpenCraft, Fundación Romero, King Abudulaziz University, Corporación Parque explora.
  * _More info_: [www.edunext.co](http://www.edunext.co)
-![edNEXT - Open edX services provider](http://www.edunext.co/app/themes/oaas/assets/images/logo-small.png)
 
 * **[Edraak](http://www.edraak.org)** (contact: [Nafez Dakkak, Jordan](mailto:ndakkak@qrf.org)).
  * _Services_: Full-service Open edX solutions provider in Arabic and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts.
