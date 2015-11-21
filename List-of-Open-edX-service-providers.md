@@ -118,7 +118,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _[![Free course](https://github.com/raccoongang/raccoongang.github.io/blob/customizations/images/fc_green.png)](http://raccoongang.com/en/)_ creation and run on our servers.
 
 * **[Valutac](http://valutac.com)** (contact: [Rizky Ariestiyansyah](mailto:onto@valutac.com), Jakarta, Indonesia)
- * _Services_: Full-service Open edX solutions provider in Indonesia and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts
+ * _Services_: Full-service Open edX solutions provider in ASIA, Indonesia and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts
  * _References/clients_: Available upon request.
  * _More info_: [Valutac.com](http://valutac.com/)
 
