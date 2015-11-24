@@ -107,7 +107,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_:Teach For India,  Families First, Books That Grow, others available upon request.
 
 
-* **[![Raccoon Gang] (http://raccoongang.com/media/img/logo-2.png)](http://raccoongang.com/)** (contact: [Alexander Kryklia](mailto: alex.kryklia@raccoongang.com)).
+* **[![Raccoon Gang] (http://raccoongang.com/media/img/logo_2.png)](http://raccoongang.com/)** (contact: [Alexander Kryklia](mailto: alex.kryklia@raccoongang.com)).
  * _Services_: 
     * Deploy and configuration: AWS, Azure, Digital Ocean, etc.; support and maintenance, migration from other e-learning systems;
     * XBlock and new platform features development;
