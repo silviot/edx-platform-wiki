@@ -101,11 +101,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: AWS, Instance installation, custom development, XBlocks, Mobile app development, troubleshooting, payment.
  * _References/clients_: Available upon request.
 
-* **[![eduNEXT - Open edX services provider](http://www.edunext.co/app/uploads/2015/11/edunext150wiki.png)](http://www.edunext.co/)**
-
 * **[![Perpetual Learning](http://learning.perpetualny.com/uploads/1/3/5/3/13538990/1443799473.png)](http://learning.perpetualny.com/)** (contact: [Amish G](mailto:info@perpetualny.com) New York NY).
-
-* **[Perpetual Learning](http://learning.perpetualny.com/)** (contact: [Amish G](mailto:info@perpetualny.com) New York NY).
  * _Services_: Platform: Instance installation, deployment and AWS configuration, theming and custom development, XBlocks development
  * _Instructional Design_: Courseware information architecture and best practices, video production and graphics creation
  * _References/clients_:Teach For India,  Families First, Books That Grow, others available upon request.
