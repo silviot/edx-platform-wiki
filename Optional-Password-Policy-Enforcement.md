@@ -1,6 +1,6 @@
 ## Overview
 
-This feature is to be able to enforce Open edX account password policies, via reuse of the django-password project. This feature is enabled via a FEATURES["USE_PASSWORD_POLICY_ENFORCEMENT"] = True switch. Default is False (aka don't use this feature).
+This feature is to be able to enforce Open edX account password policies, via reuse of the django-password project. This feature is enabled via a `FEATURES["ENFORCE_PASSWORD_POLICY"] = True` switch. Default is False (aka don't use this feature).
 
 The various password policies to control are:
 
@@ -17,7 +17,7 @@ IMPORTANT: Right now this enforcement only happens on new account creation. Howe
 ## Example on how to Configure to use Policies
 
 ```
-FEATURES['USE_PASSWORD_POLICY_ENFORCEMENT'] = True
+FEATURES['ENFORCE_PASSWORD_POLICY'] = True
 
 PASSWORD_MIN_LENGTH = 4
 PASSWORD_MAX_LENGTH = 12
