@@ -9,6 +9,7 @@
 - [Configuring Themes in Devstack](#configuring-themes-in-devstack)
 - [The edx-platform database that devstack uses](#the-edx-platform-database-that-devstack-uses)
 - [Making the local servers run faster](#making-the-local-servers-run-faster)
+- [Configuring Video Upload](#configuring-video-upload)
 - [Other resources](#other-resources)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -187,6 +188,75 @@ if DISABLE_CONTRACTS:
 Disabling both the Django toolbar and contracts should speed up the your local LMS and Studio instances significantly. 
 
 **IMPORTANT NOTE:** this may cause devstack to behave strangely in certain scenarios, such as running acceptance tests. If something on your devstack is unexplainably not working, try setting both DISABLE_ flags to False. 
+
+### Configuring Video Upload
+
+**Note:** These steps will only get you through the upload stage.  Video
+processing and YouTube deployment are not covered here.
+
+**Amazon Web Service (AWS)**
+
+To use the Video Upload feature in devstack, you'll need an [AWS
+account](https://aws.amazon.com/s3/).
+
+1. Login to AWS, and locate the S3 storage service.
+
+1. Create a bucket.  Note the bucket name for configuration below.
+
+1. Under the bucket's ```Properties > Permissions```, add this CORS configuration:
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+            <CORSRule>
+                <AllowedOrigin>http://localhost:8001</AllowedOrigin>
+                <AllowedMethod>GET</AllowedMethod>
+                <AllowedMethod>POST</AllowedMethod>
+                <AllowedMethod>PUT</AllowedMethod>
+                <AllowedMethod>HEAD</AllowedMethod>
+                <MaxAgeSeconds>3000</MaxAgeSeconds>
+                <AllowedHeader>*</AllowedHeader>
+            </CORSRule>
+        </CORSConfiguration>
+        
+    **Note:** ```<AllowedOrigin>*</AllowedOrigin>``` doesn't work for most browsers, so you'll need to add an
+    ```<AllowedOrigin>``` block for each URL you'll be using to POST to the S3 service.
+
+1. Locate the AWS IAM security service.
+
+1. Add a new User, and Create Access Key.  Note the key and secret for configuration below.
+
+1. Add a new Group, with (at least) the ```AmazonS3FullAccess``` policy attached.
+
+1. Add your IAM user to the Group.
+
+**Configure**
+
+1. Change these settings in ```/edx/app/edxapp/cms.envs.json```
+
+        "FEATURES": {
+            ...
+            "ENABLE_VIDEO_UPLOAD_PIPELINE": true,
+            ...
+        },
+
+    and
+
+        ...
+        VIDEO_UPLOAD_PIPELINE = {
+            "BUCKET": "<S3 bucket name>",
+            "ROOT_PATH": "<bucket subfolder (optional)>"
+        },
+        ...
+
+1. Change these settings in ```/edx/app/edxapp/cms.auth.json```
+
+        ...
+        "AWS_ACCESS_KEY_ID": "<IAM user key>",
+        "AWS_SECRET_ACCESS_KEY": "<IAM user secret>",
+        ...
+
+You should now be able to see the ```Content > Video Upload``` option in your
+devstack CMS, and see the uploaded videos in your S3 bucket.
 
 ### Other resources
 
