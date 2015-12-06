@@ -56,8 +56,14 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Full-service Open edX solutions provider in Arabic and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts.
 
 * **[eduStack](http://www.edustack.org/)** (contact: [Joshua Tseng](mailto:info@edustack.org),Beijing,China).
- * _Services_: Instance installation, theming, custom development, curriculum strategy & course development, mobile (iOS,Android)， Localization for China(Language,Web Resources)，Hosting(Platform,Video,DataBase).
- * _References/clients_: BGI x-omics(http://www.genomics.cn/) , yonyou seentao(http://www.seentao.com/) , BFSU(Beijing Foreign Studies University).
+ * _Services_:
+    *Instance installation
+    *Theming
+    *Custom development
+    *Mobile (iOS,Android)
+    *Localization for China(Language,Web Resources)
+    *Hosting(Platform,Video,DataBase)
+ * _References/clients_: BGI x-omics(http://www.genomics.cn/) , Seentao(http://www.seentao.com/) , BFSU(Beijing Foreign Studies University).
  * [Get a free Open edX (VMware OVA)](http://www.edustack.org/?page_id=8)
  * [LMS Demo](http://x.edustack.org) [CMS Demo](http://studio.edustack.org)
 
