@@ -1,5 +1,11 @@
 This page lists companies and freelancers offering services around Open edX. (Note: service providers, feel free to add yourself into the list alphabetically)
 
+
+* **[Eqra Tech](http://www.eqratech.com/#/eqratech)** (contact: [Dr. Hussein Hiyassat ](mailto:hiyassat@gmail.com), Amman, JI)
+ * _Services_: Full-service Open edX solutions provider including planning, implementation, hosting, theming, support, training, custom development, e-commerce.
+ الدكتور المهندس حسين حياصات مستشار EDX
+ * _Reference/clients_: Available upon request
+
 * **[Abstract Technology Agency](http://abstract-technology.com/)** (contact: [Vincenzo Barone](mailto:vincenzo.barone@abstract.it), Rom, IT and Berlin, DE)
  * _Services_: Deployment to cloud platforms (AWS, Digital Ocean and others), Configuration, Development of XBlocks components, Theming and branding, Content migration from other LMSs, Consulting services
  * _Reference/clients_: Available upon request
