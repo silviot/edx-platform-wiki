@@ -153,6 +153,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Ukrainian
 * [Prometheus](http://edx.prometheus.org.ua/)
 * [EdEra](https://study.ed-era.com/)
+* [Raccoon Univerity] (http://edx.raccoongang.com/)
 
 ## Basque
 * [MetaMOOC](http://metamooc.com) - Zenbait unibertsitateren MOOC zentralizazioa
