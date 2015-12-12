@@ -55,7 +55,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **[Edraak](http://www.edraak.org)** (contact: [Nafez Dakkak, Jordan](mailto:ndakkak@qrf.org)).
  * _Services_: Full-service Open edX solutions provider in Arabic and English including planning, implementation, hosting, theming, support, training, and custom development including integration with existing efforts.
 
-* **[eduStack](http://www.edustack.org/)** (contact: [Joshua Tseng](mailto:info@edustack.org),Beijing,China).
+* **[eduStack](http://www.edustack.org/)** (contact: [Joshua Tseng](mailto:info@edustack.org), Beijing, China).
  * _Services_:
     * Instance installation
     * Theming
