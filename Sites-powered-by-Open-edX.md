@@ -8,7 +8,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [EducateWorkforce](https://educateworkforce.com/) - features premium, industry-tested course material that prepares individuals for a career in a technological vocation.
 * [Proversity](http://proversity.org)
 * [SPICE Project](http://spice.soi.asia) - Social Platform for Interactive & Collaborative Education presented by SOI ASIA Project and EBA Consortium, currently developed by members from Brawijaya University, Indonesia and Keio University, Japan.
-* [University of Alaska](http://edx.alaska.edu)
 * [Online Open Education](http://www.ooed.org/) - Architecture education
 * [BITS Pilani](http://any-learn.bits-pilani.ac.in/)
 * [UNC Online](https://mooc.northcarolina.edu/) - University of North Carolina Online
@@ -72,7 +71,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Spanish
 * [Universidad de Chile, proyecto UAbierta](http://uabierta.uchile.cl/)
-* [Pontificia Universidad Católica de Chile](http://ingopenedx.com/)
+* [Pontificia Universidad Católica de Chile](http://www.ingopenedx.cl/)
 * [Lectya - Fundación Germán Sánchez Ruipérez](http://www.lectylab.com/)
 * [Educalab - Ministerio de Educación en España](http://mooc.educalab.es)
 * [ISEAD Business School](http://www.iseadx.com/)
@@ -105,13 +104,10 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
     * [青海大学](http://qhu.xuetangx.com/)
     * [南京大学](http://nju.xuetangx.com/)
     * [清华大学](http://tsinghua.xuetangx.com/)
-    * [内蒙古师范大学](http://mooc.imnu.edu.cn/)
 * [BistuX 北京信息科技大学](http://x.bistu.edu.cn)
 * [北京外国语大学](http://mooc.bfsu.edu.cn/)
-* [北京印刷学院](http://mooc.bigc.edu.cn/)
 * [X-omics 慕序](http://www.x-omics.org/)
 * [湖北大学](http://x.hubu.edu.cn/)
-* [洛阳理工学院](http://x.lit.edu.cn/)
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
 * [cn-mooc 天津职教集团](http://www.cn-mooc.org/)
 
@@ -124,7 +120,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Russian
 * [National Platform of Open Education](http://openedu.ru)
 * [EdRuX](http://edrux.ru)
-* [pelic.ru](http://pelic.ru) - Correspondence courses?
 * [Ural Federal University](http://openedu.urfu.ru/)
 
 ## Portuguese
