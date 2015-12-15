@@ -42,7 +42,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
   Languages need to be specified with codes Django likes, so a code that is specific on Transifex such as `"de_DE"` must be specified as `"de-de"` in these configuration files. See https://groups.google.com/forum/#!topic/openedx-translation/vrOpMKzA0kU
 
-5. Configure `EDXAPP_LANGUAGE_CODE` in your configuration files: https://github.com/edx/configuration/blob/master/playbooks/roles/edxapp/defaults/main.yml#L219
+5. Configure `EDXAPP_LANGUAGE_CODE` in your configuration files: https://github.com/edx/configuration/blob/master/playbooks/roles/edxapp/defaults/main.yml#L236
 
 6. Execute the following command in your edx-platform directory with your edx-platform virtualenv. 
 
