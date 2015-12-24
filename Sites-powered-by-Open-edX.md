@@ -111,6 +111,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [XiaoDun platform 校盾计划](http://mooc.xiaodun.cn/)
 * [cn-mooc 天津职教集团](http://www.cn-mooc.org/)
 
+## Taiwan
+* [中華開放教育聯盟](http://www.openedu.tw)
+
 ## Turkish
 * [Yaşar Universty](http://hayatboyu.yasar.edu.tr) Hayat Boyu
 * [Sakarya University](http://saux.sakarya.edu.tr) SAUX
