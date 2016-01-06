@@ -34,7 +34,7 @@
 * [Table XBlock](https://github.com/adlnet/Table-XBlock): Table XBlock is powerful tool used to create user-editable tables. 
 * [Video JS XBlock](https://github.com/MarCnu/videojsXBlock): Use Video.js HTML5 player (www.videojs.com) instead of the default one.
 * [SSH XBlock](https://github.com/Denis1990/sshxblock): Provides a web-based terminal emulator through which students can send commands to a server via ssh. The server details and credentials are set by the tutor in the XBlock settings and are not visible to the student.
-* [Voice Recognizer XBlock](https://github.com/CuelogicTech/voice-recognizer-xblock): This XBlock allows students to recognize their voice and can see the what they spoken in text format. It supports multiple languages. This version work best on Google Chrome.
+* [Voice Recognizer XBlock](https://github.com/CuelogicTech/voice-recognizer-xblock): This XBlock allows students to recognize their voice and can see the what they spoken in text format. It supports multiple languages. This version works best on Google Chrome.
 
 Experimental XBlocks:
 * [Discussion XBlock](https://github.com/edx-solutions/xblock-discussion): a prototype of the discussion XModule as a separate, pure XBlock. Functional, but requires patches to edx-platform at the moment.
