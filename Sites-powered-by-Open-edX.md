@@ -151,7 +151,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Ukrainian
 * [Prometheus](http://edx.prometheus.org.ua/)
 * [EdEra](https://study.ed-era.com/)
-* [Raccoon Univerity] (http://edx.raccoongang.com/)
+* [Raccoon Univerity] (http://edx.raccoongang.com/) - Ukrainian platform for online education
 
 ## Basque
 * [MetaMOOC](http://metamooc.com) - Zenbait unibertsitateren MOOC zentralizazioa
@@ -161,6 +161,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 ## Indonesian
 * [IndonesiaX](https://indonesiax.co.id/)
+
+## Ireland
+* [Camara](http://camara.org/) - Camara Education
 
 ***
  
