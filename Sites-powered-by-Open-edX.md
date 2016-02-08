@@ -164,7 +164,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [IndonesiaX](https://indonesiax.co.id/)
 
 ## Ireland
-* [Camara](http://camara.org/) - Camara Education
+* [Camara](http://learn.camara.org/) - Camara Education
 
 ***
  
