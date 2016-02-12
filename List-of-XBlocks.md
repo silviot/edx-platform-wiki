@@ -1,3 +1,7 @@
+**Important note:** This page is no longer considered authoritative and may be out of date. For a current list, please go to <https://openedx.atlassian.net/wiki/display/COMM/XBlocks+Directory>
+***
+
+
 * [3D Model Viewer XBlock](https://github.com/ExtensionEngine/xblock_3d_viewer): to include and view 3D .obj models within an edX course
 * [ACID Xblock](https://github.com/edx/acid-block): a block for testing the implementation of the XBlock runtime.
 * [Adventure XBlock](https://github.com/edx-solutions/xblock-adventure): creating a simple "[Chose Your Own Adventure](https://github.com/edx-solutions/xblock-adventure)" style simulation.
