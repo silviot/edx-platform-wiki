@@ -34,16 +34,6 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Instance installation, theming, custom development, curriculum strategy & course development
  * _References/clients_: St. George's University, FreshDirect
 
-* **[DRC Systems](http://www.drcsystems.com/mooc/)** (contact: [Chetan Parekh](mailto: chetan.parekh@drcsystems.com)).
- * _Services_: 
-    * Installation and deployment to AWS, Azure, Google Cloud, Digital Ocean and others.
-    * Development of XBlocks (plugins) and new platform features.
-    * Creation of course-specific components.
-    * Platform customization: white label, theme creation, localization, certificate design.
-    * Consulting: 24/7 support & technical assistance, content creation, video production, training & marketing, R&D and analytic.
- * _References/Clients_: Available upon request.
- * _More info_: [Build your own branded MOOC](http://www.drcsystems.com/mooc/)
-
 * **EdCast** (contact: [Daniel McKelvey](mailto:info@edcast.com))
  * _Services_: Instance deployment and hosting, customizable and white-labelled instances, paywall integration, invite-only courses and control over enrollment schemes, LTI-compliant collaboration tools, 24/7 support
  * [Get your custom-branded live instance](http://www.edcast.com/corp/educators) and start your 30 day free trial today!
@@ -98,6 +88,16 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _References/clients_: Davidson College, Georgetown University, InterSystems, edX, MIT
  * _Projects/contributions_: [Staff Graded Assignment XBlock](https://github.com/mitodl/edx-sga), [JSME XBlock](https://github.com/jazkarta/edx-jsme), [Individual Due Date Extension](https://github.com/edx/edx-platform/pull/2062), [Personal Online Courses](http://goo.gl/owBwoQ), [LinkedIn integration for edX](https://www.edx.org/blog/you-can-now-share-edx-success-linkedin), Integration with SCORMCloud, Through-the-web microsites manager
  * _More info_: [Jazkarta's Open edX development services](http://jazkarta.com/edx)
+
+* **[LearniΦ](http://www.learniphi.com/)** (contact: [Chetan Parekh](mailto: chetan@learniphi.com)).
+ * _Services_: 
+    * Installation and deployment to AWS, Azure, Google Cloud, Digital Ocean and others.
+    * Development of XBlocks (plugins) and new platform features.
+    * Creation of course-specific components.
+    * Platform customization: white label, theme creation, localization, certificate design.
+    * Consulting: 24/7 support & technical assistance, content creation, video production, training & marketing, R&D and analytic.
+ * _References/Clients_: Available upon request.
+ * _More info_: [Build your own branded MOOC](http://www.learniphi.com/)
 
 * **[Main Street Computing](http://mainstreetcomputing.com/)** (contact: [Kevin Coughlin](mailto: kevin.coughlin@mainstreetcomputing.com)).
  * _Services_: Installation and deployment to AWS, Azure, Google Cloud, and others.  Custom software development, native mobile development, custom courseware, custom skinning and branding.  Contributors to core edX open source platform.  
