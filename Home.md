@@ -1,7 +1,7 @@
 Welcome to the edx-platform wiki!
 
 * [[Sites powered by Open edX]]
-* [[List of XBlocks]]
+* [List of XBlocks](https://openedx.atlassian.net/wiki/display/COMM/XBlocks+Directory)
 * [[List of Open edX service providers]]
 * [[Reporting Bugs]]
 
