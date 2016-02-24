@@ -22,7 +22,7 @@ When [pull request 4225](https://github.com/edx/edx-platform/pull/4225) is merge
 <a name="quick"/>
 ## The Quick Version
 
-We used to pass around course identifiers are `course_id`s, which were strings.  Then, we passed around course identifiers as `CourseKey`s, which were `OpaqueKey` objects.  Now, we pass around course identifiers as `CourseLocator`s, which are a subclass of `CourseKey`.
+We used to pass around course identifiers as `course_id`s, which were strings.  Then, we passed around course identifiers as `CourseKey`s, which were `OpaqueKey` objects.  Now, we pass around course identifiers as `CourseLocator`s, which are a subclass of `CourseKey`.
 
 Similarly, we used to pass around XBlock identifiers as `location`s, which were strings.  Then, we passed around XBlock identifiers as `UsageKey`s, which were `OpaqueKey` objects.  Now, we pass around course identifiers as `BlockUsageLocator`s, which are a subclass of `UsageKey`.
 
