@@ -43,8 +43,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [University4Industry](https://university4industry.com)
 * [Millionlights] (https://www.millionlights.org/) Bringing the best content, curriculum and certification to the Indian market.
 * [hastexo Academy](https://academy.hastexo.com) - Self-paced courses on OpenStack, Ceph and other distributed technologies, including complex, realistic lab environments built with the [hastexo XBlock](/hastexo/hastexo-xblock) 
-
-
+* [Veritas High School of South Florida](http://mycampus.veritashs.com)
+* [Dimagi Academy](http://academy.dimagi.com)
 
 
 ## French
@@ -78,15 +78,12 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [ISEAD Business School](http://www.iseadx.com/)
 * [UPV [X] Universitat Politècnica de València](http://edx.upv.es/)
 * [PolitécnicaX - Colombia](http://lms.huilaconstruyendomundo.com/) - Constructionist courses produced by [Musintec](https://www.musintec.com)
-* [eduNEXT - Colombia] (http://edx.edunext.co/)
+* [eduNEXT - Colombia] (http://openedx.edunext.co/)
     * [Github code repo](https://github.com/eduNEXT/edunext-platform)
-    * Some of the microsites we power:
-        * [CampusRomero] (http://cursos.campusromero.pe/)
-        * [Sociedad Colombiana de Archivistas] (http://scarchivistas.edunext.co/)
-        * [Mushaisa] (http://blended.mushaisa.co/)
-        * [AFS Colombia] (http://afs.edunext.co/)
-        * [Paqua] (http://paqua.edunext.co/)
-        * [Labranzacero] (http://labranzacero.edunext.co/)
+* [ICH Chile](http://academiaich.edunext.io)
+* [AFS Colombia] (http://onlinetraining.afs.org.co)
+* [ASBA] (http://elearning.asba-supervision.org)
+* [Mushaisa] (http://blended.mushaisa.co)
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://mooc.campusdomar.es)
 * [Centro de Educación Continua FORMA EP - Universidad Pública](https://www.formax.edu.ec) - MOOC platform based on Open edX and run by Centro de Educación Continua (based on Instituto de Altos Estudios Nacionales), Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
