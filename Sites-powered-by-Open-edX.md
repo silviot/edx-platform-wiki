@@ -164,6 +164,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Indonesian
 * [IndonesiaX](https://indonesiax.co.id/)
 
+## Danish
+* [SEGES](http://seges.edunext.co/)
+
 ## Ireland
 * [Camara](http://learn.camara.org/) - Camara Education
 
