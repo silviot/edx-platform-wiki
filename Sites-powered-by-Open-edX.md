@@ -35,6 +35,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 1. [ADLx](http://adlx.adlnet.gov) Exploration with ADL research projects
 1. [IMD](http://onlinecourses.imd.org) International Institute for Management Development - Lausanne, Switzerland 
 1. [Teach for India] (http://firki.co) - Teacher training for educators in India
+1. [Families First] (http://learning.familiesfirst.org) - Families First: Ensuring the success of children in jeopardy by empowering families
 1. [Perpetual NY Agile/Software Development Training] (http://demo-lms.perpetualny.com/courses/Perpetual/PS101/2015/about) Software Development Process and Tools Training
 1. [edLynX] (http://edlynx.org) - Tutorials for high stakes exams such as IIT JEE by leading educators from around the world
 1. [RensselaerX](http://openedx-test.arc.rpi.edu/) - Rensselaer Polytechnic Institute's developing edX branch for more accessible education.
