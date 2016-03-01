@@ -85,6 +85,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 1. [AFS Colombia] (http://onlinetraining.afs.org.co)
 1. [ASBA] (http://elearning.asba-supervision.org)
 1. [Mushaisa] (http://blended.mushaisa.co)
+1. [Campus Virtual Romero] (http://campusromero.pe)
 1. [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 1. [Campus do Mar - University of Vigo (Spain)](http://mooc.campusdomar.es)
 1. [Centro de Educación Continua FORMA EP - Universidad Pública](https://www.formax.edu.ec) - MOOC platform based on Open edX and run by Centro de Educación Continua (based on Instituto de Altos Estudios Nacionales), Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
