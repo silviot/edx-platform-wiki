@@ -46,7 +46,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 1. [hastexo Academy](https://academy.hastexo.com) - Self-paced courses on OpenStack, Ceph and other distributed technologies, including complex, realistic lab environments built with the [hastexo XBlock](/hastexo/hastexo-xblock) 
 1. [Veritas High School of South Florida](http://mycampus.veritashs.com)
 1. [Dimagi Academy](http://academy.dimagi.com)
-1. [Naor Learning](http://www.naorlearning.org)
+1. [Naor Learning](http://www.naorlearning.org) - Online Jewish education for anyone, anywhere.
 
 ## French
 1. [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
