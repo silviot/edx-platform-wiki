@@ -1,7 +1,7 @@
 This is a list of sites powered by Open edX.  Feel free to add yours, with a short description.  (These are organized by primary course language: any better ideas?)
 
 ## English
-1. [edX](http://edx.org) - The original, with more than 80 member institutions and 500 courses.
+1. [edX](http://edx.org) - The original, with more than 90 member institutions and 800 courses.
 1. [Stanford Open edX](https://lagunita.stanford.edu/) - Stanford's Open edX courses.
   1. [Github code repo](https://github.com/Stanford-Online/edx-platform).  Check out our [PRs](https://github.com/Stanford-Online/edx-platform/pulls) for early access to features that you might be interested in.  
 1. [MongoDB University](https://education.mongodb.com/) - MongoDB courses
