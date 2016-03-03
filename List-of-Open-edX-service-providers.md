@@ -128,7 +128,7 @@ This page lists companies and freelancers offering services around Open edX. (No
 * **[![Perpetual Learning](http://learning.perpetualny.com/uploads/1/3/5/3/13538990/4447586_orig.png)](http://learning.perpetualny.com/)** (Contact: [Amish G](mailto:info@perpetualny.com) New York NY).
  * _Services_: Platform: Instance installation, deployment and AWS configuration, theming and custom development, XBlocks development
  * _Instructional Design_: Courseware information architecture and best practices, video production and graphics creation
- * _References/clients_:Teach For India,  Families First, Books That Grow, others available upon request.
+ * _References/clients_:Teach For India,  Families First, RadX, Books That Grow, others available upon request.
 
 * **[![Raccoon Gang](http://drive.google.com/uc?export=view&id=0BxbpfIc1-o3mMTJqWkQ3RnB2VEE)](https://raccoongang.com/)** (contact: [Alexander Kryklia](mailto: alex.kryklia@raccoongang.com)).
  * _Services_: 
