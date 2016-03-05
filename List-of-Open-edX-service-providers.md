@@ -9,7 +9,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * [Find out more](https://www.accredible.com/) 
 
 
-* **[Amir Tadrisi](https://plus.google.com/108118669268998528344)** (contact: [Amir Tadrisi](mailto:amirtds@gmail.com), Quito, Ecuador).
+* **[Amir Tadrisi](https://plus.google.com/108118669268998528344)(http://i.imgur.com/XSaxYgo.jpg)** (contact: [Amir Tadrisi](mailto:amirtds@gmail.com), Quito, Ecuador).
  * _Services_: 
     * Custom configurations and theming.
     * Third party integrations.
