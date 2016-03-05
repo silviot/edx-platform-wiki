@@ -8,6 +8,15 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Certificate issuing, certificate design and course portfolios.
  * [Find out more](https://www.accredible.com/) 
 
+
+* **[Amir Tadrisi](https://plus.google.com/108118669268998528344)** (contact: [Amir Tadrisi](mailto:amirtds@gmail.com), Quito, Ecuador).
+ * _Services_: 
+    * Custom configurations and theming.
+    * Third party integrations.
+    * Localization, Multilingual and Right to Left RTL configuration.
+    * Installation and deployment to AWS and other clouds solutions.
+
+
 * **[Appsembler](http://www.appsembler.com)** (contact: [Nate Aune](mailto:nate@appsembler.com), Cambridge, MA USA).
  * _Services_: Full-service Open edX solutions provider including planning, implementation, hosting, theming, support, training, custom development, e-commerce. 
  * Get a free Open edX demo site! 
@@ -17,12 +26,6 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Author_: [Making Open edX a Thriving Open Source Project](https://docs.google.com/document/d/1UV0LhaaPLpx8TLHuK1f9luNcRrpSNmXg0baINLk2W34/edit) commissioned by [Stanford University’s Office of the Vice Provost for Online Learning](https://groups.google.com/d/msg/edx-code/DRqcLlMKhgs/KBvzBj13hQ8J). [Official response to the report by edX](http://engineering.edx.org/2014/07/response-to-stanford-report-on-open-edx/).
 
 
-* **[Amir Tadrisi](https://plus.google.com/108118669268998528344)** (contact: [Amir Tadrisi](mailto:amirtds@gmail.com), Quito, Ecuador).
- * _Services_: 
-    * Custom configurations and theming.
-    * Third party integrations.
-    * Localization, Multilingual and Right to Left RTL configuration.
-    * Installation and deployment to AWS and other clouds solutions.
 
 
 * **[BigLMS](http://www.biglms.com/)** (contact: [David Norwood](mailto:info@biglms.com), Atlanta, GA USA).
