@@ -8,7 +8,7 @@ This page lists companies and freelancers offering services around Open edX. (No
  * _Services_: Certificate issuing, certificate design and course portfolios.
  * [Find out more](https://www.accredible.com/) 
 
-* **[![Amir Tadrisi - Open edX service provider]()](https://plus.google.com/108118669268998528344)** (contact: [Amir Tadrisi](mailto:amirtds@gmail.com), Quito, Ecuador)
+* **[![Amir Tadrisi - Open edX service provider](http://i.imgur.com/SGCcWdO.png)](https://plus.google.com/108118669268998528344)** (contact: [Amir Tadrisi](mailto:amirtds@gmail.com), Quito, Ecuador)
  * _Services_: 
     * Custom configurations and theming.
     * Third party integrations.
