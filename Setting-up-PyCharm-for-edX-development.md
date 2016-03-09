@@ -71,7 +71,7 @@ After the PyCharm remote interpreter is configured we are ready to debug devstac
     * Specify "/edx/app/edxapp/edx-platform" for "Working directory".
     * Click to edit the "Path mappings" property
       * Click the "+" button to add a new mapping
-      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/[username]/devstack/edx-platform/". Note: be sure to include a trailing slash, and don't use the '~' syntax for your home directory.
+      * Specify the full local path to "edx-platform" for "Local path". This should be the edx-platform directly beneath your devstack folder, e.g. "/Users/[username]/devstack/edx-platform/". Note: be sure to include a trailing slash, and don't use the '~' syntax for your home directory. You have to enter two trailing slashes in the input field order for the trailing slash to be preserved.
       * Specify "/edx/app/edxapp/edx-platform/" for "Remote path".
       * Click "OK" to save the mappings.
     * Deselect "Add content roots to PYTHONPATH".
