@@ -217,7 +217,7 @@ You can setup your development environment such that you can visually interact w
 
 ### Integrate XQuartz into PyCharm
 The following instructions are for Mac OS X but should work on any Unix-like environment.
-* First, we need to enable XQuartz forwarding for all ssh agents. To do this, open ```/etc/ssh_config``` on your host system and uncomment ```ForwardX11 no``` and change to ```ForwardX11 yes```.
+* First, we need to enable XQuartz forwarding for all ssh agents. To do this, open ```/etc/ssh/ssh_config``` on your host system and uncomment ```ForwardX11 no``` and change to ```ForwardX11 yes```.
 * Next open a terminal **inside** PyCharm (Tools -> at bottom-left corner - ![](https://www.jetbrains.com/img/webhelp/idea/show_hide_tool_window_bars.png) -> Terminal) and type ```ssh edxapp@127.0.0.1 -p 2222```. After logging in as edxapp user, try to open Firefox by typing ```firefox``` into the terminal. XQuartz should fire up Firefox immediately. Keep this terminal **open**, DO NOT close it.
 * Now we need to get the display port number from this terminal by ```echo $DISPLAY```. This depends on the number of existing ssh terminals. If this it the only one, it will be ```localhost:10.0```.
 * Open a debug configuration (such as Bokchoy) and add DISPLAY to the environment variable with the port number from the previous step. The string ```DISPLAY=localhost:10.0``` should be inside the environment variable string.
