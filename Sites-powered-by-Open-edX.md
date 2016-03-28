@@ -138,7 +138,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Zadi] (https://zadi.net/) - Zadgroup Zadi Islamic Platform
 * [Edraak] (https://edraak.org/) - Queen Rania Foundation
 * [Doroob](https://www.doroob.sa/ar/)
-* [Moualimooc](http://moualimooc.cnte.tn/) - centre national des technologies en education - edited by ITSolution (Contact: +21693578136)
+* [Moualimooc](http://moualimooc.cnte.tn/) - centre national des technologies en education - edited by [ITSolution Tunisie](http://www.itsolution-tn.com/) (Contact: +21693578136)
 * [Institute of Political Training](http://syasi.org/)
 * [KAUx](http://kaux.kau.edu.sa/)
 
