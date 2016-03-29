@@ -97,7 +97,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Mondragon U](http://mooc.mondragon.edu)
 
 * [Sunset Technology Center - New York](http://sunsetcenteronline.com/) - La nueva tecnologia de los Paneles Solares.
-
+*[QlassRoom] (http://Qlassroom.com)
 ## Chinese
 * [XuetangX ／ Tsinghua University](http://www.xuetangx.com/) - Using microsites to power:
     * [哈尔滨工业大学](http://hit.xuetangx.com/)
