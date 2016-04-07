@@ -89,6 +89,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Universidad Carlos III de Madrid](http://spoc.uc3m.es)
 * [Campus do Mar - University of Vigo (Spain)](http://mooc.campusdomar.es)
 * [Centro de Educación Continua FORMA EP - Universidad Pública](https://www.formax.edu.ec) - MOOC platform based on Open edX and run by Centro de Educación Continua (based on Instituto de Altos Estudios Nacionales), Quito, Ecuador (iaen.edu.ec) to launch massive courses of public interest to all citizens and to specific government clients such as Education Ministry, Central Bank, etc., on behalf of learning "for all."
+* [MetaUniversidad](http://campus.metauniversidad.com) - Formación y aprendizaje online con contenido rico y de calidad
 * [MetaMOOC](http://metamooc.com) - Centralización de MOOCs de varias universidades
 * [Universidad del Cauca, Colombia](http://openedx.unicauca.edu.co)
 * [UMHx](http://edx.umh.es)
@@ -159,6 +160,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Raccoon Univerity] (http://edx.raccoongang.com/) - Platform for online education
 
 ## Basque
+* [MetaUniversidad](http://campus.metauniversidad.com) - Onlineko formazioa eta ikaskuntza eduki aberats eta kalitatekoekin
 * [MetaMOOC](http://metamooc.com) - Zenbait unibertsitateren MOOC zentralizazioa
 
 ## Persian
