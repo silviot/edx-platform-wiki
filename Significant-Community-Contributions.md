@@ -9,7 +9,7 @@ There have been hundreds of merged pull requests from the larger community.  The
 * Targeted feedback (Stanford)
 * Paver tooling
 * Git workflow (MIT)
-* Staff Graded Assignments (MIT)
+* SGA: [Staff Graded Assignment XBlock](https://github.com/mitodl/edx-sga) (MIT, Jazkarta)
 * Right-to-left language support (QRF)
 * Diff-cover maintenance
 * Capa refactoring (Google)
@@ -25,7 +25,6 @@ There have been hundreds of merged pull requests from the larger community.  The
 * Roles extension for API (Stanford)
 * Theming improvements (Stanford, edunext)
 * CCX: [Custom Courses Experience](https://edx.readthedocs.org/projects/open-edx-ca/en/named-release-dogwood.rc/set_up_course/custom_courses.html) (MIT, [Jazkarta](https://jazkarta.com/projects/custom-courses-for-edx)) 
-* SGA: [Staff Graded Assignment XBlock](https://github.com/mitodl/edx-sga) (MIT, Jazkarta)
 * IDDE: [Individual Due Date Extensions](https://github.com/mitodl/ccx-idde-overrides-slides/blob/master/markdown/slides.md#individual-due-date-extensions-idde) (MIT, Jazkarta)
 * JSME: [Molecular Editor XBlock](https://edx.readthedocs.org/projects/open-edx-ca/en/named-release-dogwood.rc/exercises_tools/molecule_editor.html) (Davidson College, [Jazkarta](https://jazkarta.com/projects/molecule-editor-for-open-edx))
 
