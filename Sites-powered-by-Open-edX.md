@@ -175,6 +175,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Ireland
 * [Camara](http://learn.camara.org/) - Camara Education
 
+## Vietnamese
+* [Kienhoc](http://kienhoc.vn/) - online university level education for Vietnamese
+
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
