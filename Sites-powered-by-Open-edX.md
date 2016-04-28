@@ -47,6 +47,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Veritas High School of South Florida](http://mycampus.veritashs.com)
 * [Dimagi Academy](http://academy.dimagi.com)
 * [Naor Learning](http://www.naorlearning.org) - Online Jewish education for anyone, anywhere.
+* [NoticeAbility] (http://workshop.noticeability.org/) - A nonprofit organization empowering students with dyslexia and providing tools to the adults who support them.
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
