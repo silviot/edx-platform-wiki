@@ -38,7 +38,7 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * conf/locale
 
 ### Create a PyCharm remote interpreter (PyCharm v3.4+)
-* Select  " > Preferences"
+* Select  "PyCharm > Preferences"
 * Select "Project Interpreter" under "Project Settings"
 * Click the gear icon in the upper right corner of the dialog box
 * In the drop down that appears, click on "Add Remote"
