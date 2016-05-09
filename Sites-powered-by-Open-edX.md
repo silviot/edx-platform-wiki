@@ -179,6 +179,10 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Vietnamese
 * [Kienhoc](http://kienhoc.vn/) - online university level education for Vietnamese
 
+## Korean
+* [K-MOOC](http://kmooc.kr/) - Korea Online Open Courseware - Courses from the best universities in Korea 
+* [CNU-MOOC](http://cnumooc.kr/) - Chungnam University MOOC
+
 ***
  
 * [Aquent](http://edx-dev.aquent.com/)
