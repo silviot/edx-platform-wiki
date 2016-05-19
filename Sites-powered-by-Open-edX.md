@@ -73,6 +73,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 
 
 ## Spanish
+* [Universidad de La Serena, Campus Digital](https://campus.userena.digital/)
 * [Universidad de Chile, proyecto UAbierta](http://uabierta.uchile.cl/)
 * [Pontificia Universidad Católica de Chile](http://www.ingopenedx.cl/)
 * [Lectya - Fundación Germán Sánchez Ruipérez](http://www.lectylab.com/)
