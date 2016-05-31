@@ -4,4 +4,4 @@ https://github.com/edx/edx-platform/wiki/Internationalization-and-localization
 
 For instructions on how to translate the site into your language, please visit:
 
-http://edx.readthedocs.org/projects/edx-developer-guide/en/latest/internationalization/i18n_translators_guide.html  
+http://edx.readthedocs.io/projects/edx-developer-guide/en/latest/conventions/internationalization/i18n.html 
