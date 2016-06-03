@@ -31,9 +31,10 @@ International Content - Unicode characters in the email subject and body is supp
 ## Feature Description
 
 Instructors access the feature through the instructor dashboard by clicking the Email link,
-which is toggled by the feature flag ENABLE_INSTRUCTOR_EMAIL. Instructors can select to send
-themselves, staff and instructors, or everyone in the course (students, staff and instructors).
-Sending to themself first is suggested to make sure the email looks as desired before sending
+and is feature flagged using the BulkEmailFlag model on the django admin panel (located at
+<your site>/admin/bulk_email/bulkemailflag/). Instructors can select to send themselves,
+staff and instructors, all learners, or any combination of those options.
+Sending to oneself first is suggested to make sure the email looks as desired before sending
 out to others. The HTML editor is ported from the Studio side to allow users to compose email
 visually and/or the raw HTML. It is loaded as an XModule which brings along some unused code; eventually factoring out the editor as a self-contained library will be ideal.
 ![Creating an email](image/bulkemail-compose.png)
