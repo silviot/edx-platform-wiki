@@ -30,10 +30,17 @@ Here are the steps to use PyCharm on MacOS (other Unix environments should be si
   * lms/lib
   * openedx
   * common/lib/xmodule (NOTE: in theory this shouldn't be needed, but it seems to be necessary with PyCharm 5)
-* You can also mark the following symlinks to be "Excluded" so that PyCharm doesn't see multiple copies of the same files:
+* You can also mark all symlinks to be "Excluded" so that PyCharm doesn't see multiple copies of the same files. All symlinks have a little arrow icon next to them.  Here are some samples:
+  * cms/static/common
+  * cms/static/edx-pattern-library
+  * cms/static/edx-ui-toolkit
+  * cms/static/templates
   * cms/static/xmodule_js
-  * lms/static/xmodule_js
+  * lms/static/common
+  * lms/static/edx-pattern-library
+  * lms/static/edx-ui-toolkit
   * lms/static/templates
+  * lms/static/xmodule_js
 * You might also want to hide the translations directory as every language matches when you search for a product string:
   * conf/locale
 
@@ -124,67 +131,34 @@ Now with the remote interpreter, we can use PyCharm to debug edX platform tests 
 * Script: ```/edx/app/edxapp/venvs/edxapp/bin/paver```.
 * Script parameters: ```test_bokchoy``` or ```test_bokchoy --fasttest``` (if you have already compiled the assets). 
 * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
-* Working directory: ```/Users/[username]/devstack/edx-platform```
+* Working directory: ```/edx/app/edxapp/edx-platform```
 * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 
 ### Setting up Bokchoy Test Configuration for catching break points
-The idea is to start up all the services that will listen on various ports and then run tests individually while those services are up. It is useful to install the [Multirun](http://plugins.jetbrains.com/plugin/7248?pr=pycharm) tool (you can install it directly within the IDE under preferences -> plugins -> Browse repositories ); this way you can have one-click deployment of all of these services.
+The idea is to start up the LMS and CMS servers with a special configuration (see bleow) and then run tests individually while those services are up.
+
+**Note:** You may need to set FEATURES['MILESTONES_APP'] and FEATURES['ORGANIZATIONS_APP'] to False in cms/envs/bok_choy.py and lms/envs/bok_choy.py.
 
 **1.  In Preferences/ Project Structure mark ./common/djangoapps/terrain/stubs as a source.**
 * **Make sure that https://github.com/edx/edx-platform/wiki/Setting-up-PyCharm-for-edX-development#integrate-xquartz-into-pycharm is working and to remember the DISPLAY variable.  (in the terminal you can do ```echo $DISPLAY``` and make sure that is non-null**
 * **Configure and start Bokchoy cms server**
- * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+ * Go to Run -> Edit Configurations.
+ * Clone the earlier Studio or LMS server configuration.
  * Change the name to something more memorable, e.g. "CMS Bokchoy server".
  * Script: ```./manage.py```.
  * Script parameters: ```cms --settings bok_choy runserver 0.0.0.0:8031 --traceback --noreload``` (if you have already compiled the assets). 
- * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
- * Working directory: ```/Users/[username]/devstack/edx-platform```
- * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
 * **Configure and start Bokchoy lms server**
  * Clone the previous setting
  * Change the name to something more memorable, e.g. "LMS Bokchoy server".
  * Script: ```./manage.py```.
  * Script parameters: ```lms --settings bok_choy runserver 0.0.0.0:8003 --traceback --noreload``` (if you have already compiled the assets). 
-* **Configure and start Youtube server**
- * Clone the previous setting
- * Change the name to something more memorable, e.g. "Youtube bok choy server".
- * Script: ```stubs.start```
- * Script parameters: ```youtube 9080  /edx/app/edxapp/edx-platform/test_root/log/bok_choy_youtube.log``` 
- * **Interpreter options: ```-u -m```**
- * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
- * Working directory: ```/Users/[username]/devstack/edx-platform```
- * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
- * check **Add source roots to PYTHONPATH**
-* **Configure and start Comments server**
- * Clone previous configuration
- * Change the name to something more memorable, e.g. "Comments bok choy server".
- * Script: ```stubs.start```
- * Script parameters: ```comments 4567  /edx/app/edxapp/edx-platform/test_root/log/bok_choy_comments.log```
-* **Configure and start Ora server**
- * Clone previous configuration
- * Change the name to something more memorable, e.g. "Ora bok choy server".
- * Script: ```stubs.start```
- * Script parameters: ```ora 8041  /edx/app/edxapp/edx-platform/test_root/log/bok_choy_ora.log```
-* **Configure and start Video server**
- * Clone previous configuration
- * Change the name to something more memorable, e.g. "Video bok choy server".
- * Script: ```stubs.start```
- * Script parameters: ```video 8777 root_dir=/edx/app/edxapp/edx-platform/test_root/data/video /edx/app/edxapp/edx-platform/test_root/log/bok_choy_video_sources.log```
-* **Configure and start Xqueue server**
- * Clone previous configuration
- * Change the name to something more memorable, e.g. "Xqueue bok choy server".
- * Script: ```stubs.start```
- * Script parameters: ```xqueue 8040 register_submission_url=http://0.0.0.0:8041/test/register_submission /edx/app/edxapp/edx-platform/test_root/log/bok_choy_xqueue.log```
 * **Configure and debug Bokchoy test run**
- * Go to Run -> Edit Configurations -> Add New Configuration (usually a +sign on the left).
+ * Clone the previous setting
  * Change the name to something more memorable, e.g. "Bokchoy test".
  * Script: ```/edx/app/edxapp/venvs/edxapp/bin/nosetests```.
  * Script parameters: ```/edx/app/edxapp/edx-platform/common/test/acceptance/tests/discussion/test_cohort_management.py:CohortConfigurationTest --with-xunit --xunit-file=/edx/app/edxapp/edx-platform/reports/bok_choy/xunit.xml --verbosity=2``` 
- * Choose the remote interpreter (usually named as "Remote Python 2.7.3 (ssh://edxapp.127.0.0.1:2222/...)").
- * Working directory: ```/Users/[username]/devstack/edx-platform```
- * Path mappings: ```/Users/[username]/devstack/edx-platform=/edx/app/edxapp/edx-platform```
  * Click to edit the "Environment variables" property
-  * Set the DISPLAY variable to whatever value you obtained i.e. ```DISPLAY=localhost:11.0```
+  * Set the DISPLAY variable to whatever value you obtained when setting up XQuartz (see instructions) i.e. ```DISPLAY=localhost:11.0```
 * **You might have to log out/ log in to the terminal you opened in the first step if Pycharm can't find your display**
 
 ### Create a debug configuration for an edX common unit test          
