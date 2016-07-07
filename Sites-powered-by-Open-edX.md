@@ -30,7 +30,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Intersystems](http://learning.intersystems.com)
 * [Divergence Academy](http://online.divergence.academy)
 * [GBC College for Leadership Development](http://www.gbc-college.com)
-* [Blue Planet Life](http://showcase.blue-planet-life.org) - Showcase for online Vocational Training courses
+* [Blue Planet Life](http://blue-planet-academy.org) - Online Vocational Training courses
 * [MITx](http://odl.mit.edu/campus/residential-mitx) Residential MITx courses for MIT students
 * [ADLx](http://adlx.adlnet.gov) Exploration with ADL research projects
 * [IMD](http://onlinecourses.imd.org) International Institute for Management Development - Lausanne, Switzerland 
