@@ -13,8 +13,9 @@
 
 武汉
  
-上海
+上海 
 
+深圳 @时间之爱
 
 
 ##Open edX Beijing Meetup
