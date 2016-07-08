@@ -24,7 +24,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [New York Institute of Finance](https://learning.nyif.com) - Many courses will be ported over in 2015
 * [Labster](https://www.labster.com) - Virtual laboratory simulations and courses for life science 
 * [DrupalX](http://www.drupalxcourses.com)
-* [Cloud Genius](https://be.a.cloudgeni.us) - rated among the top * by CIO magazine
+* [Cloud Genius](https://be.a.cloudgeni.us) - rated among the [top 10 by CIO magazine](http://www.cio.com/article/2895792/certifications/10-top-vendor-neutral-cloud-computing-certifications.html#slide9)
 * [St. George's University](http://online.sgu.edu)
 * [St. Bonaventure](http://mooc.sbu.edu)
 * [Intersystems](http://learning.intersystems.com)
