@@ -1,14 +1,32 @@
-#Open edX中国用户社区
+#Open edX中国用户组
+##Open edX Beijing Meetup
+时间：2016年7月17日
+地点：北京外国语大学
+
+讨论关于Open edX的各种内容：部署、定制、开发、分析；也欢迎关于在线教育、教育技术 、学习分析方面的内容。 
+Talks about Open edX: deployment; customize; development; analytics.  Online education, edutech,learning anaytics contents are welcome.
+
+主题  Topics
+• 种瓜 / Open edX 架构 － Open edX Architecture
+• 崔老师-南开大学 / 基于Open edX的课程设计 － Course design based on Open edX
+• 张老师-华中师范大学 / Open edX在K12的应用展望 － Open edX in K12
+• （待定）点滴云 / Open edX职业教育应用实践 － Open edX in vocational education
+• （待定）伟东云 / edX与伟东云教育平台的集成策略及用户体验改进问题探讨
+• 曾老师 / Open edX开发环境配置 - Open edX development envirment setup
+• 黄永亮 / Insights架构和配置 - Insights components and configuration  
+• 黄鸿飞 / 分布式部署简介 - Introduction of distributed deployment 
+• 种瓜-wwj / Open edX和IM的结合 - Open edX and IM
+
+
 ##第一次筹备会
 时间：2015年9月26日
 
 内容：
-* 社区的目标为推广Open edX在国内的应用，推进Open edX的本地化、研发技术的普及
-* 社区的组成包括开发者和用户
-* 社区将发布基于Docker的Open edX国内版本（开发演示版） 
-* 建立技术委员会，用户委员会
+* 用户组的目标为推广Open edX在国内的应用，推进Open edX的本地化、研发技术的普及
+* 用户组的组成包括开发者和用户
+* 用户组将发布基于Docker的Open edX国内版本（开发演示版） 
 * 定期Open edX线下交流活动
-* 将组织社区技术力量编撰出版《Open edX开发指南》
+* 将组织技术力量编撰出版《Open edX开发指南》
 * 欢迎有研发能力和愿意奉献时间的开发者加入，贡献者有小奖励哦~
 * 技术委员会职责：
     * 制定基于Docker版本的开发规范、开发方法
