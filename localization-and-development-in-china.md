@@ -7,16 +7,15 @@
 
 北京 @MT
 
-天津 @崔老师
+天津 @南开崔老师
 
 南京 @种瓜 
-
-武汉
  
 上海 
 
 深圳 @时间之爱
 
+桂林 @桂电文老师
 
 ##Open edX Beijing Meetup
 http://www.meetup.com/Beijing-Open-edX-Meetup
