@@ -175,6 +175,9 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 ## Danish
 * [SEGES](http://seges.edunext.co/)
 
+## Norway
+* [AkademiX](https://beta.akademix.no)
+
 ## Ireland
 * [Camara](http://learn.camara.org/) - Camara Education
 
