@@ -76,13 +76,11 @@ to the dark lang config list. You don't need to add the language code for your s
 
 Confusing, I know. The benefit of this is that you can preview languages before you release them by appending: 
 
-        ?lang-code=xx
+        /update_lang/
 
-to the end of any url, and `?clear-lang` to undo it. Example: 
+to the end of the root LMS or Studio URL, and then using the form to set or reset the preview language, Example: 
 
-        127.0.0.1:8000/dashboard?preview-lang=ar      # Shows your site in Arabic (if Arabic is unreleased in your instance)
-
-        127.0.0.1:8000/dashboard?clear-lang           # Resets your session
+        127.0.0.1:8000/update_lang/    # Shows the Preview Language form with a set and reset option
 
 Remember that language codes with underscores and capital letters need to be converted to using dashes and lower case letters on the edX platform. For example the language code of Chinese (Taiwan) is "zh_TW" on Transifex, but "zh-tw" on the edX system.
 
