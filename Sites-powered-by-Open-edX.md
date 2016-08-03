@@ -51,6 +51,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [NoticeAbility] (http://workshop.noticeability.org/) - A nonprofit organization empowering students with dyslexia and providing tools to the adults who support them.
 * [IITBombayX] (https://iitbombayx.in) - IITBombayX is the online eXtension educational service of IIT Bombay. The  website, launched on 26 January 2015, is a platform built on top of Open edX, offering Massive Open Online Courses (MOOCs) to Indian learners. IITBombayX is also used to train college teachers in select subjects, empowering them to become experts in discussing, problem­-solving, and mentoring. IITBombayX has enhanced the Open edX platform to accommodate additional functionalities required by the partnering institutions. The platform offers 
 courses for vocational training as well. So far, IITBombayX has offered 36 courses to over 110,000 learners.
+
 IITBombayX also offers a Blended model to Indian students, which combines the benefits of a high quality MOOC, and the advantage of face-to-face learning and mentoring by their own teachers.
 
 
