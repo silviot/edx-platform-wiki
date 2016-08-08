@@ -7,7 +7,7 @@ For other guidelines on logo usage, see the [Open edX Visual Identity Guidelines
 
 ## Color
 
-![color logo](https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png)
+![color logo](https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png?123)
 
 <https://files.edx.org/openedx-logos/edx-openedx-logo-tag.png>
 
