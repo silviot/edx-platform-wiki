@@ -205,5 +205,5 @@ The "Reference" type fields (that refer to content defined elsewhere in the cour
 
 <a name="reading"/>
 #### Further Reading
-*  [Opaque Keys Overview](https://github.com/edx/edx-platform/wiki/Opaque-Keys)
+*  [Opaque Keys Overview](https://github.com/edx/edx-platform/wiki/Opaque-Keys-(Locators))
 *  [Split Mongo Architecture](https://github.com/edx/edx-platform/wiki/Split:-the-versioning,-structure-saving-DAO)
