@@ -104,7 +104,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [Mondragon U](http://mooc.mondragon.edu)
 
 * [Sunset Technology Center - New York](http://sunsetcenteronline.com/) - La nueva tecnologia de los Paneles Solares.
-* [QlassRoom](http://Qlassroom.com)
+
 
 
 ## Chinese
