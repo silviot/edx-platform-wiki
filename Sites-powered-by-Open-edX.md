@@ -108,19 +108,14 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 
 
 ## Chinese
-* [XuetangX ／ Tsinghua University](http://www.xuetangx.com/) - Using microsites to power:
-    * [哈尔滨工业大学](http://hit.xuetangx.com/)
-    * [中国科学技术大学](http://moocs.ustc.edu.cn/)
-    * [复旦大学](http://fudan.xuetangx.com/)
-    * [青海大学](http://qhu.xuetangx.com/)
-    * [南京大学](http://nju.xuetangx.com/)
-    * [清华大学](http://tsinghua.xuetangx.com/)
-* [BistuX ／ Beijing Information Science & Technology University](http://x.bistu.edu.cn)
+* [XuetangX / Tsinghua University](http://www.xuetangx.com/) - Using microsites to power:
+* [USTC](http://moocs.ustc.edu.cn/)
+* [ifLabX](http://x.iflab.org)
 * [Beijing Foreign Studies University](http://mooc.bfsu.edu.cn/)
-* [X-omics ／ BGI-College](http://www.x-omics.org/)
+* [X-omics BGI-College](http://www.x-omics.org/)
 * [HuBei University](http://x.hubu.edu.cn/)
-* [XiaoDun platform ](http://mooc.xiaodun.cn/)
 * [cn-mooc 天津职教集团](http://www.cn-mooc.org/)
+* [SHUMBA]
 
 ## Taiwan
 * [中華開放教育聯盟](http://www.openedu.tw)
