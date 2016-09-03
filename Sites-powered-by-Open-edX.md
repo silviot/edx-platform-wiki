@@ -102,9 +102,8 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [Proyecto Reforma de la Educación Matemática en Costa Rica](http://cursos.reformamatematica.net) - Sitio de cursos MOOC para capacitación docente en educación matemática.
 * [MAC Institute - New York](http://institutemaconline.com) - Neuroeconomia Empresarial, una verdadera innovación disruptiva en la formación empresarial y profesional.
 * [Mondragon U](http://mooc.mondragon.edu)
-
 * [Sunset Technology Center - New York](http://sunsetcenteronline.com/) - La nueva tecnologia de los Paneles Solares.
-
+* [Publiconsulting Media - Madrid](http://cursos.publiconsulting.com/) - Cursos Publiconsulting Media (beta version hasta el 31/12/2016).
 
 
 ## Chinese
