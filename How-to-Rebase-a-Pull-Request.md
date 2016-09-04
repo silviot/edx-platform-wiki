@@ -34,7 +34,7 @@ $ cd edx-platform
 $ git checkout -b my-branch
 ```
 
-You've made some commits in your branch, pushed them to Github, and created a pull request. You're going through the code review process, responding to comments, and someone asks you to rebase your pull request. Here's what you do:
+You've made some commits in your branch, pushed them to GitHub, and created a pull request. You're going through the code review process, responding to comments, and someone asks you to rebase your pull request. Here's what you do:
 
 ### Add the official repo as a remote (first time only)
 
@@ -49,7 +49,7 @@ You can verify that you did this successfully by running `$ git remote -v`: you 
 
 ### Fetch the latest version of master
 
-Your computer needs to download information from Github about the official repo, so that it knows what's on the latest version of the `master` branch. Once you've got your remote set up, this is simple. Run this command in your repository:
+Your computer needs to download information from GitHub about the official repo, so that it knows what's on the latest version of the `master` branch. Once you've got your remote set up, this is simple. Run this command in your repository:
 
 ```shell
 $ git fetch edx
