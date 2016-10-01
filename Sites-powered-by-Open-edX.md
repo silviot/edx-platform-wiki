@@ -193,5 +193,4 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 
 ***
  
-* [Aquent](http://edx-dev.aquent.com/)
 * [metaStudio](http://courses.metaStudio.org) maintained by the [gnowledge lab](http://www.metastudio.org/gnowledge%20lab/)
