@@ -19,15 +19,21 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Croatopica](http://croatopica.net/)
 * [Unow](http://learn.unow-mooc.org/)
 * [Seneca College, Toronto, Canada](http://online.cdot.senecacollege.ca/)
-* [avanty.ch](http://avanty.ch)
 * [McKinsey Academy](https://www.mckinseyacademy.com/) - Highly customized branch of Open edX
-* [New York Institute of Finance](https://learning.nyif.com) - Many courses will be ported over in 2015
+* [New York Institute of Finance](https://learning.nyif.com) - site by @Appsembler
+* [Aquent's Gymnasium](http://thegymnasium.com) - site by @Appsembler
+* [Intersystems](http://openedx.learning.intersystems.com) - site by @Appsembler
+* [NXP](http://training.nxp.com) - site by @Appsembler
+* [Body Mind Institute](http://courses.bodymindinstitute.com) - site by @Appsembler
+* [Metalogix Academy](http://academy.metalogix.com) - site by @Appsembler
+* [Cloudera OnDemand](http://ondemand.cloudera.com) - site by @Appsembler
+* [MIT Sloan Online Executive Education](http://online.executive.mit.edu) - site by @Appsembler
+* [Texas Gateway Courses](http://texascourses.org) - site by @Appsembler. Gateway Courses offer statewide online professional development opportunities for Texas teachers.
 * [Labster](https://www.labster.com) - Virtual laboratory simulations and courses for life science 
 * [DrupalX](http://www.drupalxcourses.com)
 * [Cloud Genius](https://be.a.cloudgeni.us) - rated among the [top 10 by CIO magazine](http://www.cio.com/article/2895792/certifications/10-top-vendor-neutral-cloud-computing-certifications.html#slide9)
 * [St. George's University](http://online.sgu.edu)
 * [St. Bonaventure](http://mooc.sbu.edu)
-* [Intersystems](http://learning.intersystems.com)
 * [Divergence Academy](http://online.divergence.academy)
 * [GBC College for Leadership Development](http://www.gbc-college.com)
 * [Blue Planet Life](http://blue-planet-academy.org) - Online Vocational Training courses
