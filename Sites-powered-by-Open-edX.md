@@ -191,6 +191,9 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [K-MOOC](http://kmooc.kr/) - Korea Online Open Courseware - Courses from the best universities in Korea 
 * [CNU-MOOC](http://cnumooc.kr/) - Chungnam University MOOC
 
+## Urdu
+* [eQuranAcademy](http://e.quranacademy.com) - Online MOOC for understanding Quran
+
 ***
  
 * [metaStudio](http://courses.metaStudio.org) maintained by the [gnowledge lab](http://www.metastudio.org/gnowledge%20lab/)
