@@ -58,6 +58,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [IITBombayX] (https://iitbombayx.in) - IITBombayX is the online eXtension educational service of IIT Bombay. The  website, launched on 26 January 2015, is a platform built on top of Open edX, offering Massive Open Online Courses (MOOCs) to Indian learners. IITBombayX is also used to train college teachers in select subjects, empowering them to become experts in discussing, problem­-solving, and mentoring. IITBombayX has enhanced the Open edX platform to accommodate additional functionalities required by the partnering institutions. The platform offers 
 courses for vocational training as well. IITBombayX also offers a Blended model to Indian students, which combines the benefits of a high quality MOOC, and the advantage of face-to-face learning and mentoring by their own teachers.
 * [Econ School](http://learn.econschool.in) - Free online economics courses offered using a unique problem solving approach. 
+* [MOOC Técnico](http://mooc.ist.utl.pt/) - The courses MOOC Técnico approach several topics of Basic Sciences of Engineering and Technology and are available at different levels: introduction to Basic Sciences of Engineering and Technology; topics corresponding to undergraduate and graduate courses; and courses on cross-cutting themes of Science and Technology of general interest for the public at large.
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
@@ -139,6 +140,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 ## Portuguese
 * [ESO - Ensino Superior Online - Brasil](http://eso.org.br/)
   * [Github code repo](https://github.com/ESOedX). 
+* [MOOC Técnico](http://mooc.ist.utl.pt/) - Os cursos MOOC Técnico abordam diversos tópicos de ciências básicas de engenharia e tecnologia, e estão disponíveis em diferentes níveis de formação: iniciação às ciências básicas e de engenharia e tecnologia; temas correspondentes a unidades curriculares do 1º e 2º ciclos; e cursos sobre temas transversais de áreas científicas e tecnológicas com interesse para a população em geral. .
 
 ## Japanese
 * [gacco] (http://gacco.org) - courses from Japanese universities
