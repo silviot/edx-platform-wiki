@@ -64,6 +64,8 @@ complete -F _paver paver
 ### I'm working with devstack and want to debug the Jasmine or Acceptance tests in the browser on my host system. How do I do that?
 
 * First off, for Mac OS you will need [XQuartz](http://xquartz.macosforge.org/) installed to support X Windows. We have tested with version 2.7.5.
+* **IF YOU HAVE JUST INSTALLED XQUARTZ YOU WILL NEED TO REBOOT YOUR MAC!** 
+(Or figure out which service(s) need to be restarted and update this page.)
 * XQuartz is useful because we can use it to visually interact with GUI from the vagrant instance on the host machine. 
 * On your host machine, run `export VAGRANT_X11=1`. You may want to put this in your .bashrc, .bash_profile or similar file so it will always execute at startup. If you have already been running vagrant, do `vagrant reload` after you have set the VAGRANT_X11 system environment variable on your host system.
 * To test XQuartz's installation, in your vagrant machine, type `firefox` in the terminal. This should bring up [Firefox on the host machine] (https://drive.google.com/a/edx.org/file/d/0BxQlaq542xl2QzBHNjU0WUNMRGM/edit?usp=sharing). If you have servers running on the vagrant machine (Studio, LMS, ...) you can use this Firefox instance to connect to those servers like they are being run on the host machine.
