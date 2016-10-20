@@ -180,7 +180,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 ## Danish
 * [SEGES](http://seges.edunext.co/)
 
-## Norway
+## Norwegian
 * [AkademiX](https://beta.akademix.no)
 
 ## Ireland
