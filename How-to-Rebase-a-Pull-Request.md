@@ -72,7 +72,7 @@ where `n` is the number of commits to rebase.
 If you *don't* know how many commits are on your branch, you'll first need to find the commit that is base of your branch. You can do this by running:
 
 ```shell
-$ git merge-base my-branch master
+$ git merge-base my-branch edx/master
 ```
 
 That command will return a commit hash. Use that commit hash in constructing this next command:
