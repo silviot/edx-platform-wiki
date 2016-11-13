@@ -194,6 +194,9 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [K-MOOC](http://kmooc.kr/) - Korea Online Open Courseware - Courses from the best universities in Korea 
 * [CNU-MOOC](http://cnumooc.kr/) - Chungnam University MOOC
 
+## Kazakh
+* [MOOCs by KazNU](http://open.kaznu.kz/) - Courses from Al-Farabi Kazakh National University 
+
 ## Urdu
 * [eQuranAcademy](http://e.quranacademy.com) - Online MOOC for understanding Quran
 
