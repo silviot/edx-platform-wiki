@@ -39,6 +39,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Zanamedical](https://courses.zanamedical.com) — By [Raccoon Gang](https://raccoongang.com/)
 * [edVantez](https://courses.edvantez.com) — By [Raccoon Gang](https://raccoongang.com/)
 * [MobileUni](https://courses.mobileuni.org) — By [Raccoon Gang](https://raccoongang.com/)
+* [ThemeX](https://themex.io) FREE Open edX themes — By [Raccoon Gang](https://raccoongang.com/)
 * [DrupalX](http://www.drupalxcourses.com)
 * [Cloud Genius](https://be.a.cloudgeni.us) - rated among the [top 10 by CIO magazine](http://www.cio.com/article/2895792/certifications/10-top-vendor-neutral-cloud-computing-certifications.html#slide9)
 * [St. George's University](http://online.sgu.edu)
