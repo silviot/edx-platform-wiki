@@ -29,7 +29,8 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Cloudera OnDemand](http://ondemand.cloudera.com) - site by @Appsembler
 * [MIT Sloan Online Executive Education](http://online.executive.mit.edu) - site by @Appsembler
 * [Texas Gateway Courses](http://texascourses.org) - site by @Appsembler. Gateway Courses offer statewide online professional development opportunities for Texas teachers.
-* [Labster](https://www.labster.com) - Virtual laboratory simulations and courses for life science 
+* [Labster](https://www.labster.com) - Virtual laboratory simulations and courses for life science — By [Raccoon Gang](https://raccoongang.com/)
+* [Indiana University | School of Informatics and Computing](https://soic.scholargrid.org) — By [Raccoon Gang](https://raccoongang.com/)
 * [DrupalX](http://www.drupalxcourses.com)
 * [Cloud Genius](https://be.a.cloudgeni.us) - rated among the [top 10 by CIO magazine](http://www.cio.com/article/2895792/certifications/10-top-vendor-neutral-cloud-computing-certifications.html#slide9)
 * [St. George's University](http://online.sgu.edu)
@@ -43,18 +44,19 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Teach for India] (http://firki.co) - Teacher training for educators in India
 * [Families First] (http://learning.familiesfirst.org) - Families First: Ensuring the success of children in jeopardy by empowering families
 * [Perpetual NY Agile/Software Development Training] (http://demo-lms.perpetualny.com/courses/Perpetual/PS101/2015/about) Software Development Process and Tools Training
-* [Polestar Education] (http://courses.polestarpilates.com) - Pilates education support for international students training to be Pilates Instructors
+* [Polestar Education] (http://courses.polestarpilates.com) - Pilates education support for international students training to be Pilates Instructors — By [Raccoon Gang](https://raccoongang.com/)
+* [Reddin Consultants](http://courses.reddinx.com) — By [Raccoon Gang](https://raccoongang.com/)
 * [edLynX] (http://edlynx.org) - Tutorials for high stakes exams such as IIT JEE by leading educators from around the world
 * [RensselaerX](http://openedx-test.arc.rpi.edu/) - Rensselaer Polytechnic Institute's developing edX branch for more accessible education.
   * [Github code repo](https://github.com/RPI-OPENEDX).
 * [Sci-GaIA courses](http://courses.sci-gaia.eu) - Open Educational Resources for the [Sci-GaIA](http://www.sci-gaia.eu) H2020 project. The project focusses on e-Infrastructure, science gateways and research applications based on them. Effort has been made to ensure that access is made via identity federations (e.g. [edugain](http://services.geant.net/edugain/Pages/Home.aspx)
 * [University4Industry](https://university4industry.com)
-* [Millionlights] (https://www.millionlights.org/) Bringing the best content, curriculum and certification to the Indian market.
+* [Millionlights] (https://www.millionlights.org/) Bringing the best content, curriculum and certification to the Indian market — By [Raccoon Gang](https://raccoongang.com/)
 * [hastexo Academy](https://academy.hastexo.com) - Self-paced courses on OpenStack, Ceph and other distributed technologies, including complex, realistic lab environments built with the [hastexo XBlock](/hastexo/hastexo-xblock) 
 * [Veritas High School of South Florida](http://mycampus.veritashs.com)
 * [Dimagi Academy](http://academy.dimagi.com)
 * [Naor Learning](http://www.naorlearning.org) - Online Jewish education for anyone, anywhere.
-* [NoticeAbility] (http://workshop.noticeability.org/) - A nonprofit organization empowering students with dyslexia and providing tools to the adults who support them.
+* [NoticeAbility] (http://workshop.noticeability.org/) - A nonprofit organization empowering students with dyslexia and providing tools to the adults who support them — By [Raccoon Gang](https://raccoongang.com/)
 * [IITBombayX] (https://iitbombayx.in) - IITBombayX is the online eXtension educational service of IIT Bombay. The  website, launched on 26 January 2015, is a platform built on top of Open edX, offering Massive Open Online Courses (MOOCs) to Indian learners. IITBombayX is also used to train college teachers in select subjects, empowering them to become experts in discussing, problem­-solving, and mentoring. IITBombayX has enhanced the Open edX platform to accommodate additional functionalities required by the partnering institutions. The platform offers 
 courses for vocational training as well. IITBombayX also offers a Blended model to Indian students, which combines the benefits of a high quality MOOC, and the advantage of face-to-face learning and mentoring by their own teachers.
 * [Econ School](http://learn.econschool.in) - Free online economics courses offered using a unique problem solving approach. 
@@ -134,7 +136,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 
 
 ## Russian
-* [National Platform of Open Education](http://openedu.ru)
+* [National Platform of Open Education](http://openedu.ru)8 Universities, more than 150K students — By [Raccoon Gang](https://raccoongang.com/)
 * [EdRuX](http://edrux.ru)
 * [Ural Federal University](http://openedu.urfu.ru/)
 
@@ -164,9 +166,9 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [UCATx](http://www.ucatx.cat/)
 
 ## Ukrainian
-* [Prometheus](http://edx.prometheus.org.ua/)
+* [Prometheus](http://edx.prometheus.org.ua/)Biggest ukrainian MOOC - over 250K users — By [Raccoon Gang](https://raccoongang.com/)
 * [EdEra](https://study.ed-era.com/)
-* [Raccoon Univerity] (http://edx.raccoongang.com/) - Platform for online education
+* [Raccoon Univerity] (http://edx.raccoongang.com/) - Platform for online education — By [Raccoon Gang](https://raccoongang.com/)
 
 ## Basque
 * [MetaUniversidad](http://campus.metauniversidad.com) - Onlineko formazioa eta ikaskuntza eduki aberats eta kalitatekoekin
@@ -185,7 +187,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [AkademiX](https://beta.akademix.no)
 
 ## Ireland
-* [Camara](http://learn.camara.org/) - Camara Education
+* [Camara](http://learn.camara.org/) - Camara Education for African continent — By [Raccoon Gang](https://raccoongang.com/)
 
 ## Vietnamese
 * [Kienhoc](http://kienhoc.vn/) - online university level education for Vietnamese
@@ -199,6 +201,9 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 
 ## Urdu
 * [eQuranAcademy](http://e.quranacademy.com) - Online MOOC for understanding Quran
+
+## German
+* [DO School](https://online.thedoschool.org/) - The DO School is all about Good Business. Good business is business that is humane, sustainable and profitable. Our experiential learning programs focus on innovation and implementation skills. That’s how we empower people and large organizations from all over the world to turn great start-up ventures or new corporate initiatives into action and to make Good Business a reality — By [Raccoon Gang](https://raccoongang.com/)
 
 ***
  
