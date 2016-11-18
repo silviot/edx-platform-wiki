@@ -31,6 +31,14 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Texas Gateway Courses](http://texascourses.org) - site by @Appsembler. Gateway Courses offer statewide online professional development opportunities for Texas teachers.
 * [Labster](https://www.labster.com) - Virtual laboratory simulations and courses for life science — By [Raccoon Gang](https://raccoongang.com/)
 * [Indiana University | School of Informatics and Computing](https://soic.scholargrid.org) — By [Raccoon Gang](https://raccoongang.com/)
+* [DO School](https://online.thedoschool.org/) - The DO School is all about Good Business. Good business is business that is humane, sustainable and profitable. Our experiential learning programs focus on innovation and implementation skills. That’s how we empower people and large organizations from all over the world to turn great start-up ventures or new corporate initiatives into action and to make Good Business a reality — By [Raccoon Gang](https://raccoongang.com/)
+* [Barwit](http://training.barwit.com/) — By [Raccoon Gang](https://raccoongang.com/)
+* [Mehackit](https://learn.mehackit.org)— By [Raccoon Gang](https://raccoongang.com/)
+* [Zitsung](http://courses.zitsung.com/) — By [Raccoon Gang](https://raccoongang.com/)
+* [GSEN](http://courses.gcsen.com) — By [Raccoon Gang](https://raccoongang.com/)
+* [Zanamedical](https://courses.zanamedical.com) — By [Raccoon Gang](https://raccoongang.com/)
+* [edVantez](https://courses.edvantez.com) — By [Raccoon Gang](https://raccoongang.com/)
+* [MobileUni](https://courses.mobileuni.org) — By [Raccoon Gang](https://raccoongang.com/)
 * [DrupalX](http://www.drupalxcourses.com)
 * [Cloud Genius](https://be.a.cloudgeni.us) - rated among the [top 10 by CIO magazine](http://www.cio.com/article/2895792/certifications/10-top-vendor-neutral-cloud-computing-certifications.html#slide9)
 * [St. George's University](http://online.sgu.edu)
@@ -136,7 +144,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 
 
 ## Russian
-* [National Platform of Open Education](http://openedu.ru)8 Universities, more than 150K students — By [Raccoon Gang](https://raccoongang.com/)
+* [National Platform of Open Education](http://openedu.ru) 8 Universities, more than 150K students — By [Raccoon Gang](https://raccoongang.com/)
 * [EdRuX](http://edrux.ru)
 * [Ural Federal University](http://openedu.urfu.ru/)
 
@@ -166,7 +174,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [UCATx](http://www.ucatx.cat/)
 
 ## Ukrainian
-* [Prometheus](http://edx.prometheus.org.ua/)Biggest ukrainian MOOC - over 250K users — By [Raccoon Gang](https://raccoongang.com/)
+* [Prometheus](http://edx.prometheus.org.ua/) Biggest Ukrainian MOOC - over 250K users — By [Raccoon Gang](https://raccoongang.com/)
 * [EdEra](https://study.ed-era.com/)
 * [Raccoon Univerity] (http://edx.raccoongang.com/) - Platform for online education — By [Raccoon Gang](https://raccoongang.com/)
 
@@ -201,9 +209,6 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 
 ## Urdu
 * [eQuranAcademy](http://e.quranacademy.com) - Online MOOC for understanding Quran
-
-## German
-* [DO School](https://online.thedoschool.org/) - The DO School is all about Good Business. Good business is business that is humane, sustainable and profitable. Our experiential learning programs focus on innovation and implementation skills. That’s how we empower people and large organizations from all over the world to turn great start-up ventures or new corporate initiatives into action and to make Good Business a reality — By [Raccoon Gang](https://raccoongang.com/)
 
 ***
  
