@@ -31,7 +31,7 @@ In order to run your Open edX instance under a different spoken language, for in
             - zh_CN  # Chinese (China)
 
 
-4. Configure `LANGUAGE_CODE` in your `lms/envs/common.py`. Or, for development purposes, create a dev file called `dev_LANGCODE.py` - eg `dev_es.py` - with the following: 
+4. Configure `LANGUAGE_CODE` in your `lms/envs/common.py`. Or, for development purposes, create a dev file called `dev_LANGCODE.py` - eg `dev_es.py` - in the `lms/envs` directory, with the following: 
 
         from .dev import *
         
