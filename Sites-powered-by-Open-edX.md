@@ -70,7 +70,6 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 courses for vocational training as well. IITBombayX also offers a Blended model to Indian students, which combines the benefits of a high quality MOOC, and the advantage of face-to-face learning and mentoring by their own teachers.
 * [Econ School](http://learn.econschool.in) - Free online economics courses offered using a unique problem solving approach. 
 * [MOOC Técnico](https://courses.mooc.tecnico.ulisboa.pt/) - The courses MOOC Técnico approach several topics of Basic Sciences of Engineering and Technology and are available at different levels: introduction to Basic Sciences of Engineering and Technology; topics corresponding to undergraduate and graduate courses; and courses on cross-cutting themes of Science and Technology of general interest for the public at large.
-* [LXR&CO](https://www.lxrco.com) Omni-Channel Vintage Luxury curator. We use OpenEdX to train our staff to have the best in-store experience for our customers.
 
 ## French
 * [FUN - France Université Numérique](https://www.france-universite-numerique-mooc.fr/) - courses from French higher education institutions.
