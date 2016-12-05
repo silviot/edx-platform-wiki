@@ -167,6 +167,8 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 ## Italian
 * [Politecnico di Milano](https://www.pok.polimi.it/) - POK portal has been conceived primarily in order to accompany students (not only students of Politecnico di Milano) while they try to overtake all the obstacles they meet in the main passages of their career.
 
+* [Elastico Academy](http://academy.elastico.co) - A community learning platform which provides online course materials about Project Management and cloud technologies.
+
 ## Greek
 * [Mathesis](http://mathesis.cup.gr) - Online courses by Crete University Press
 
