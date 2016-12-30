@@ -135,7 +135,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [SHUMBA]
 
 ## Taiwan
-* [中華開放教育聯盟](http://www.openedu.tw)
+* [中華開放教育平台](http://www.openedu.tw)
 
 ## Turkish
 * [Yaşar Universty](http://hayatboyu.yasar.edu.tr) Hayat Boyu
