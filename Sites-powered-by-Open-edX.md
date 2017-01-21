@@ -148,7 +148,7 @@ courses for vocational training as well. IITBombayX also offers a Blended model 
 * [National Platform of Open Education](http://openedu.ru) 8 Universities, more than 150K students — By [Raccoon Gang](https://raccoongang.com/)
 * [EdRuX](http://edrux.ru)
 * [Ural Federal University](http://openedu.urfu.ru/)
-* [Ресурсный учебно-методический центр высшего профессионального образования студентов с инвалидностью и ограниченными возможностями здоровья](http://edx.fpkmgppu.ru/)
+* [LMS высшего профессионального образования студентов с инвалидностью и ограниченными возможностями здоровья](http://edx.fpkmgppu.ru/)
 
 ## Portuguese
 * [ESO - Ensino Superior Online - Brasil](http://eso.org.br/)
