@@ -71,9 +71,8 @@ Talks about Open edX: deployment; customize; development; analytics.  Online edu
 * 课程制作和运维
 
 #社交网络
-edx安装互助QQ群 197475193
 
-Open edX开发交流QQ群 106781163
+用户组QQ群 106781163
 
 #中国社区版特性
 * 完整汉化 by eduStack [访问](http://edustack.org/2015/10/26/open-edx-cypress%E5%AE%8C%E6%95%B4%E6%B1%89%E5%8C%96%E8%AF%AD%E8%A8%80%E5%8C%85/)
