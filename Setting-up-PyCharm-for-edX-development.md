@@ -1,1 +1,0 @@
-This page has been moved to https://openedx.atlassian.net/wiki/display/ENG/PyCharm
