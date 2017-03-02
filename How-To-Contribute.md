@@ -1,1 +1,0 @@
-Rather than maintaining multiple copies of the How To Contribute guide, please now see the [CONTRIBUTING.rst](https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst) file in the `edx-platform` repository.
