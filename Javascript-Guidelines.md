@@ -1,1 +1,0 @@
-The content on this page has been moved to the edX Developer's Guide. See http://edx.readthedocs.io/projects/edx-developer-guide/en/latest/style_guides/javascript_guidelines.html.
