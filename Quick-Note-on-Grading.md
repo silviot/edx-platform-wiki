@@ -1,7 +1,0 @@
-The original design reflects the idea that a) problems will be buggy and b) the score is a part of the user state for a given problem. So every time a student looks at a problem, we evaluate their state, calculate the score they should have, and update that score in the database. However, this approach makes it painfully slow to show grade summary information for a student, because we'd have to instantiate and evaluate every problem in the course. So a compromise was made -- during grading or progress page display, we use whatever values for grade and max_grade are recorded for a student's problem state (`StudentModule`), without doing the full evaluation of the problem.
-
-Well, almost. There are certain problem types that *always* recalculate their score based on their state: peer grading, combined open ended, foldit. But for most problem types, we use the pre-calculated scores when computing grades.
-
-The drawback, of course, is that when a problem changes, students who never go back to the problem will be stuck with their old score. So the current implementation of regrading just ensures that re-evaluation is forced.
-
-In the longer term, we want to separate problem state from submissions/grading. But while we have ideas around this, there's nothing implemented yet.
