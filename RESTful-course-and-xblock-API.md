@@ -1,1 +1,0 @@
-This page had an aspirational design for an Open edX API, but it was old and not useful.  If you are curious, look at the previous revisions.
