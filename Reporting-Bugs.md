@@ -1,1 +1,0 @@
-Open edX uses JIRA for our issue tracker, not GitHub Issues. [Please read our documentation for how to create bug reports on JIRA.](https://openedx.atlassian.net/wiki/display/SUST/How+to+File+a+Quality+Bug+Report)
