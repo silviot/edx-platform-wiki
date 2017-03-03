@@ -1,0 +1,1 @@
+hello，i met a problem when i try to Enable Open edX Search,i can use course search,but the dashboard search dose not work,can you give me some help?
