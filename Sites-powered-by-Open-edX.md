@@ -21,7 +21,7 @@ This is a list of sites powered by Open edX.  Feel free to add yours, with a sho
 * [Seneca College, Toronto, Canada](http://online.cdot.senecacollege.ca/)
 * [McKinsey Academy](https://www.mckinseyacademy.com/) - Highly customized branch of Open edX
 * [New York Institute of Finance](https://learning.nyif.com) - site by @Appsembler
-* [Aquent's Gymnasium](http://thegymnasium.com) - site by @Appsembler
+* [Aquent Gymnasium](http://thegymnasium.com) - The Gymnasium offers free, online courses for digital, creative, and communications professionals to equip them with in-demand skills and advance their careers. Designed and developed by the [Gymnasium](https://github.com/gymnasium) team in partnership with @Appsembler.
 * [Intersystems](http://openedx.learning.intersystems.com) - site by @Appsembler
 * [NXP](http://training.nxp.com) - site by @Appsembler
 * [Body Mind Institute](http://courses.bodymindinstitute.com) - site by @Appsembler
