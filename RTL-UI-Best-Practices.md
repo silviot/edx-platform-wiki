@@ -1,1 +1,1 @@
-This content has been moved here: [https://openedx.atlassian.net/wiki/spaces/LOC/pages/219545811/RTL+Developer+Guide](RTL Developer's Guide)
+This content has been moved here: https://openedx.atlassian.net/wiki/spaces/LOC/pages/219545811/RTL+Developer+Guide
