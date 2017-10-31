@@ -7,20 +7,6 @@ We are using Transifex as our translation platform. We have a number of translat
 When running with the development environment settings, registration emails are not sent out. However, the URL with their activation key is logged to the console. Just copy it from there and paste it into the browser.
 
 
-#### How do I make my account global staff?
-
-When you make a new account on your local dev environment, it will be a standard student account. You can drop into the sql shell and make your account global staff, which means that it will automatically have access to "Instructor" tab on all courses in the LMS. To do this, drop into the sql shell:
-
-`sudo -u www-data /edx/app/edxapp/venvs/edxapp/bin/python /edx/app/edxapp/edx-platform/manage.py lms --settings aws dbshell`
-
-The following command will make all local users global staff:
-
-`update auth_user set is_staff=1;`
-
-A similar command will make all local users global superusers, which means they'll have unrestricted access to `localhost:8000/admin`:
-
-`update auth_user set is_superuser=1;`
-
 #### How do I upgrade to a newer version
 
 You can reuse the same playbook which you used for installation. Just put use the deploy tag with  "--tags deploy".
