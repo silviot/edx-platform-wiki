@@ -6,13 +6,6 @@ We are using Transifex as our translation platform. We have a number of translat
 
 When running with the development environment settings, registration emails are not sent out. However, the URL with their activation key is logged to the console. Just copy it from there and paste it into the browser.
 
-#### Which are Default Accounts on EDX
-
-* User: honor@example.com Password: edx
-* User: audit@example.com Password: edx
-* User: verified@example.com Password: edx
-* User: staff@example.com Password:edx
-
 
 #### How do I make my account global staff?
 
