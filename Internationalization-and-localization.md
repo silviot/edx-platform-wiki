@@ -44,7 +44,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
 5. Configure `EDXAPP_LANGUAGE_CODE` in your configuration files: https://github.com/edx/configuration/blob/master/playbooks/roles/edxapp/defaults/main.yml#L282
 
-6. Execute the following command in your edx-platform directory with your edx-platform virtualenv. Make sure that at this point your git repository is set up, because the script will attempt to auto-commit the changes.
+6. Execute the following command in your edx-platform directory with your edx-platform virtualenv (Normally `cd /edx/app/edxapp && source edxapp_env && cd edx-platform`). Make sure that at this point your git repository is set up, because the script will attempt to auto-commit the changes.
 
         $ paver i18n_robot_pull
 
