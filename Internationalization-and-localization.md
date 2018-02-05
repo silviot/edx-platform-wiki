@@ -58,6 +58,7 @@ In order to run your Open edX instance under a different spoken language, for in
 
 8. If you experience issues:
    - Be sure your browser is set to prefer the language set in `LANGUAGE_CODE`
+   - Note that in some cases, a language change may not be apparent because the there are no translations available. You can check that the language has been applied by checking the `lang` attribute of the `<html>` element.
    - In `common/djangoapps/student/views.py`, the user's language code is tried to be obtained from a saved preferences file. So if you are having issues seeing your language served up, it may be because your User object has a different language saved as a preference. Try creating a new user in your environment, this should clear up the issue.
 
 # Releasing A Language
