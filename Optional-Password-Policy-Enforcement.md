@@ -23,7 +23,7 @@ The rest of these options are gated behind a ENFORCE_PASSWORD_POLICY feature fla
   - **DIGITS**: The number of unique 0-9 characters that must appear in the password.
   - **NUMERIC**: The number of number characters that must appear in the password. (This is more expansive than DIGITS, allowing the full range of Unicode numbers.) _New in Hawthorn._
   - **PUNCTUATION**: The number of unique ASCII punctuation characters that must appear in the password.
-  - **NON ASCII**: The number of unique non-ASCII characters that must appear in the password.
+  - **NON ASCII**: The number of unique symbol characters (non-letter, non-digit, non-punctuation) that must appear in the password.
   - **WORDS**: The number of unique words (separated by whitespace) that must appear in the password.
 
 ## Example
