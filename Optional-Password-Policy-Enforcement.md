@@ -1,3 +1,9 @@
+# Ironwood and newer
+
+Documentation is available at [readthedocs](https://edx.readthedocs.io/projects/edx-installing-configuring-and-running/en/latest/configuration/password.html).
+
+# Hawthorn and older
+
 ## Overview
 
 Open edX installations can configure how complex user passwords are required to be. These rules will be enforced whenever a user is setting a new password (e.g. on account creation or password reset).
