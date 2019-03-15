@@ -4,7 +4,7 @@
 See [[Developing on the edX Developer Stack]] for details as to how to develop and debug the edX platform.
 
 ### Where is the general documentation on testing the edx_platform code?
-Here is a link to doc included in the repo itself on [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/docs/en_us/internal/testing.rst). Many questions are answered here.
+Here is a link to doc included in the repo itself on [Writing and Running Tests](https://github.com/edx/edx-platform/blob/master/docs/testing.rst). Many questions are answered here.
 
 ### How do I run paver test for a single file?
 To run single test, specify the name of the test file. For example:
